@@ -1,0 +1,26 @@
+body {
+    background-color: #8da1ad;
+    font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.box {
+    width: 70%;
+    margin: 5% auto auto;
+
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    padding: 20px;
+}
+
+a {
+    color: #41c3ff;
+}
+
+h1 {
+    font-family: "Sniglet", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.scribble {
+    font-family: "Indie Flower", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
