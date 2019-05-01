@@ -2,28 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>gerben.dev</title>
-    <link rel="stylesheet" href="main20190306.css">
+
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <link rel="stylesheet" href="main20190501.css">
     <link href="https://fonts.googleapis.com/css?family=Fauna+One|Sniglet" rel="stylesheet">
 </head>
 <body>
-<main class="box">
-    <h1>gerben.dev 👷‍♂️</h1>
-    <p>
-        Welcome aboard the hype train!
-    </p>
-    <p>
-        You are looking at my <strong>new</strong> personal web page. One that will contain cool things!
-    </p>
-    <p>
-        <a href="https://twitter.com/gerbenjacobs">@gerbenjacobs</a>
-    </p>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col padding">
+                <h1>gerben.dev 👷‍♂️</h1>
+                <p>
+                    Welcome to my personal online presence.
+                </p>
+                <p>
+                    Check out some of my projects below or head over to <a href="https://blog.gerbenjacobs.nl">my
+                    blog</a>.
+                </p>
+                <p>
+                    <a href="https://twitter.com/gerbenjacobs">@gerbenjacobs</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="projects">
+        <div class="row">
+            <div class="col-6 padding">
+                <h2>Habbowidgets.com</h2>
+                <p>
+                    <small class="text-grey">Since <strong>Nov. 1st, 2015</strong></small>
+                </p>
+                <p>
+                    A site dedicated to Habbo Hotel, using the <a href="https://github.com/gerbenjacobs/HabboAPI">self-written
+                    HabboAPI library</a>
+                    that uses Habbo's unofficial and undocumented API.
+                </p>
+                <p>
+                    Allows users to search their (and their friends') profile along with its subresources
+                    such as badges, friends, groups, rooms and photos.
+                </p>
+                <p>
+                    The site is well-visited with the majority of visitors coming from Brazil and active users are
+                    2.3k, 11k, 34k for daily, weekly and monthly retrospectively.
+                    <small class="text-grey">(As of May 2019)</small>
+                </p>
+                <p>
+                    <a href="https://www.habbowidgets.com" class="button">habbowidgets.com</a>
+                </p>
+            </div>
+            <div class="col-6 padding">
+                <h2>Transport Game Europe</h2>
+                <p>
+                    <small class="text-grey">Since <strong>Apr. 11th, 2019</strong></small>
+                </p>
+
+                <blockquote>
+                    <p>
+                        A free-to-play persistent browser based game where you can run your own transport company.
+                    </p>
+                    <p>
+                        Be in charge of buying vehicles and trailers, accepting and assigning jobs and maintaining the
+                        operations and finances of your own company.
+                    </p>
+                </blockquote>
+                <p>
+                    A mobile friendly browser text game with trucks, trailers, cargo and much more.
+                    Released in alpha state to gauge feasibility.
+                </p>
+                <p>
+                    <a href="https://transportgame.eu" class="button">transportgame.eu</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </main>
-<aside id="space" class="box">
-<p>
-    It's dangerous out there, please take some space dust!
-</p>
+<aside class="container" id="space">
+    <div class="row">
+        <div class="col padding is-text-center">
+            It's dangerous out there, please take some space dust!
+        </div>
+    </div>
 </aside>
 </body>
 </html>

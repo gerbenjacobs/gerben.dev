@@ -1,0 +1,41 @@
+body {
+    background-color: lavender;
+    font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+h1, h2 {
+    font-family: "Sniglet", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+a {
+    color: rebeccapurple;
+}
+
+#space {
+    background: #121212 url('https://media.giphy.com/media/NzSUEgbTWB7TW/giphy.gif');
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#projects .button {
+    background-color: rebeccapurple;
+    color: #fff;
+}
+
+.container {
+    background: #ffffff;
+}
+
+.padding {
+    padding: 20px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        margin-top: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+    #space {
+        margin-bottom: 20px;
+    }
+}
