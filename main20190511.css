@@ -1,5 +1,5 @@
 body {
-    background-color: lavender;
+    background-color: #e6e6fa;
     font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -9,6 +9,9 @@ h1, h2 {
 
 a {
     color: rebeccapurple;
+    text-decoration: underline;
+    text-underline-position: under;
+    background-color: rgba(102, 51, 153, 0.1);
 }
 
 #space {
