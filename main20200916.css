@@ -3,18 +3,18 @@ body {
     font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-h1, h2 {
+#site h1, #site h2 {
     font-family: "Sniglet", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-a {
+#site a {
     color: rebeccapurple;
     text-decoration: underline;
     text-underline-position: under;
     background-color: rgba(102, 51, 153, 0.1);
 }
 
-#space {
+#site #space {
     background: #121212 url('https://media.giphy.com/media/NzSUEgbTWB7TW/giphy.gif');
     color: #ffffff;
     margin-bottom: 0;
@@ -25,20 +25,20 @@ a {
     color: #fff;
 }
 
-.container {
+#site .container {
     background: #ffffff;
 }
 
-.padding {
+#site .padding {
     padding: 20px;
 }
 
 @media (min-width: 600px) {
-    .container {
+    #site .container {
         margin-top: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
-    #space {
+    #site #space {
         margin-bottom: 20px;
     }
 }
