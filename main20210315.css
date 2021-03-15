@@ -33,11 +33,16 @@ body {
     padding: 20px;
 }
 
+#archived-warning {
+    background-color: #cfcfcf;
+}
+
 @media (min-width: 600px) {
     #site .container {
         margin-top: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
+
     #site #space {
         margin-bottom: 20px;
     }
