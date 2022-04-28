@@ -8,11 +8,11 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2961761-29"></script>
     <link rel="icon" type="image/png" href="favicon.png">
-    <noscript>
-        <link rel="stylesheet" href="https://unpkg.com/chota@0.8.0/dist/chota.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Fauna+One|Sniglet" rel="stylesheet">
-        <link rel="stylesheet" href="main20210315.css">
-    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fauna+One|Sniglet" rel="stylesheet">
+    <link rel="stylesheet" href="main20220428.css">
+
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -29,7 +29,7 @@
 <main>
     <div class="container">
         <div class="row">
-            <div class="col padding">
+            <div class="col s12 m8 padding">
                 <h1>gerben.dev 👷‍♂️</h1>
                 <p>
                     Welcome to my personal online presence.
@@ -38,24 +38,34 @@
                     Check out some of my projects below or head over to
                     <a href="https://blog.gerbenjacobs.nl">my blog</a>.
                 </p>
-                <p>
-                    <strong style="color: #1DA1F2;">Twitter:</strong>
-                    <a href="https://twitter.com/gerbenjacobs">@gerbenjacobs</a><br>
-                    <strong style="color: #2867B2;">LinkedIn:</strong>
-                    <a href="https://linkedin.com/in/gerbenjacobs">gerbenjacobs</a><br>
-                    <strong style="color: #FE424D;">Patreon:</strong>
-                    <a href="https://patreon.com/gerbendev">gerbendev</a><br>
-                </p>
+            </div>
+            <div class="col s12 m4 padding">
+                <div class="collection">
+                    <a class="collection-item" href="https://twitter.com/gerbenjacobs">
+                        @gerbenjacobs
+                        <b class="secondary-content" style="color: #1DA1F2;">Twitter</b>
+                    </a>
+                    <a class="collection-item" href="https://linkedin.com/in/gerbenjacobs">
+                        gerbenjacobs
+                        <b class="secondary-content" style="color: #2867B2;">LinkedIn</b>
+                    </a>
+                    <a class="collection-item" href="https://patreon.com/gerbendev">
+                        gerbendev
+                        <b class="secondary-content" style="color: #FE424D;">Patreon</b>
+                    </a>
+                    <a class="collection-item" href="https://github.com/gerbenjacobs">
+                        gerbenjacobs
+                        <b class="secondary-content" style="color: #24292F;">GitHub</b>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <div class="container" id="projects">
         <div class="row">
-            <div class="col-6 padding">
+            <div class="col s12 m6 padding">
                 <h2>🚛 Transport Game Europe</h2>
-                <p>
-                    <small class="text-grey">Since <strong>Apr. 11th, 2019</strong></small>
-                </p>
+                <h6 class="purple-text text-lighten-1">Since <b>Apr. 11th, 2019</b></h6>
 
                 <blockquote>
                     <p>
@@ -70,21 +80,15 @@
                     A mobile friendly browser text game with trucks, trailers, cargo and much more.
                     Released in alpha state to gauge feasibility.
                 </p>
-                <figure class="text-center">
-                    <a href="images/transportgame.png">
-                        <img src="images/transportgame.png" alt="Screenshot of Transportgame.eu"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
-                <p class="text-center">
-                    <a href="https://transportgame.eu" class="button">transportgame.eu</a>
+                <img src="images/transportgame.png" alt="Screenshot of Transportgame.eu"
+                     class="responsive-img materialboxed">
+                <p class="center-align">
+                    <a href="https://transportgame.eu" class="btn">transportgame.eu</a>
                 </p>
             </div>
-            <div class="col-6 padding">
+            <div class="col s12 m6 padding">
                 <h2>🏨 Habbowidgets.com</h2>
-                <p>
-                    <small class="text-grey">Since <strong>Nov. 1st, 2015</strong></small>
-                </p>
+                <h6 class="purple-text text-lighten-1">Since <b>Nov. 1st, 2015</b></h6>
                 <p>
                     A site dedicated to Habbo Hotel, using the
                     <a href="https://github.com/gerbenjacobs/HabboAPI">self-written HabboAPI library</a>
@@ -97,36 +101,26 @@
                 <p>
                     The site is well-visited with the majority of visitors coming from Brazil and the US.
                     Visitor numbers are 4.6k, 19k, 66k for daily, weekly and monthly retrospectively.
-                    <small class="text-grey">(As of January 2022)</small>
+                    <small>(As of January 2022)</small>
                 </p>
-                <figure class="text-center">
-                    <a href="images/habbowidgets.png">
-                        <img src="images/habbowidgets.png" alt="Screenshot of Habbowidgets.com"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
-                <p class="text-center">
-                    <a href="https://www.habbowidgets.com" class="button">habbowidgets.com</a>
+                <img src="images/habbowidgets.png" alt="Screenshot of Habbowidgets.com"
+                     class="responsive-img materialboxed">
+                <p class="center-align">
+                    <a href="https://www.habbowidgets.com" class="btn">habbowidgets.com</a>
                 </p>
             </div>
         </div>
     </div>
     <div class="container" id="archived">
-        <div class="row" id="archived-warning">
-            <div class="col padding">
-                <p class="text-center is-marginless">
-                    These are archived projects.
-                </p>
-            </div>
+        <div id="archived-warning">
+            <p class="padding center-align">These are archived projects.</p>
         </div>
         <div class="row">
-            <div class="col-6 padding">
+            <div class="col s12 m6 padding">
                 <h2>🚗 Wieg Tot Weg</h2>
+                <h6 class="purple-text text-lighten-1">From <b>Sept. 2012 - Sept. 2013</b></h6>
                 <p>
-                    <small class="text-grey">From <strong>Sept. 2012 - Sept. 2013</strong></small>
-                </p>
-                <p>
-                    "Cradle To Road" was a small PHP project that I made for a competition organized by the
+                    "Cradle To Road" was a h6 PHP project that I made for a competition organized by the
                     <a href="https://rdw.nl">RDW</a> (Dutch Vehicle Authority). I ended up with 3rd place and used the
                     money to buy an iMac.
                 </p>
@@ -137,18 +131,12 @@
                 <p>
                     The older you were, the more difficult it was to find a road legal car that hadn't broken down!
                 </p>
-                <figure class="text-center">
-                    <a href="images/wiegtotweg.png">
-                        <img src="images/wiegtotweg.png" alt="Screenshot of WiegTotWeg.nl with English language"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
+                <img src="images/wiegtotweg.png" alt="Screenshot of WiegTotWeg.nl with English language"
+                     class="responsive-img materialboxed">
             </div>
-            <div class="col-6 padding">
+            <div class="col s12 m6 padding">
                 <h2>🔮 Gleetch.com</h2>
-                <p>
-                    <small class="text-grey">From <strong>Oct. 2011 - Dec. 2012</strong></small>
-                </p>
+                <h6 class="purple-text text-lighten-1">From <b>Oct. 2011 - Dec. 2012</b></h6>
                 <p>
                     Glitch (whimsical MMO made in Flash) + Tweet = Gleetch. Gleetch was an app that allowed you to
                     link your <a href="https://www.glitchthegame.com/">Glitch</a> account with your Twitter account
@@ -159,39 +147,29 @@
                     The app died with the unfortunate demise of Glitch the game itself. The team then made Slack,
                     so I guess good on them ;)
                 </p>
-                <figure class="text-center">
-                    <a href="images/gleetch.png">
-                        <img src="images/gleetch.png" alt="Screenshot of a Tweet showcasing a Gleetch submission"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
+                <img src="images/gleetch.png" alt="Screenshot of a Tweet showcasing a Gleetch submission"
+                     class="responsive-img materialboxed">
             </div>
-            <div class="col-6 padding">
+        </div>
+        <div class="row">
+            <div class="col s12 m6 padding">
                 <h2>🐦 Longer Tweets, Get Some (lt.gs)</h2>
-                <p>
-                    <small class="text-grey">From <strong>Jun. 2011 - Jan. 2015</strong></small>
-                </p>
+                <h6 class="purple-text text-lighten-1">From <b>Jun. 2011 - Jan. 2015</b></h6>
                 <p>
                     A service that lets you post longer tweets. The <abbr title="Unique Selling Point">USP</abbr>
                     of this service is that the site will use your Twitter design on the website to make
                     the transition from twitter.com to lt.gs as smooth as possible.
                 </p>
                 <p>
-                    <strong>Fun fact:</strong> the domain is a <a href="https://en.wikipedia.org/wiki/Backcronym">backcronym</a>
+                    <b>Fun fact:</b> the domain is a <a href="https://en.wikipedia.org/wiki/Backcronym">backcronym</a>
                     and was picked for its short length; the full name was created later.
                 </p>
-                <figure class="text-center">
-                    <a href="images/ltgs.jpg">
-                        <img src="images/ltgs.jpg" alt="Screenshot of lt.gs as part of designing it"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
+                <img src="images/ltgs.jpg" alt="Screenshot of lt.gs as part of designing it"
+                     class="responsive-img materialboxed">
             </div>
-            <div class="col-6 padding">
+            <div class="col s12 m6 padding">
                 <h2><span title="Oma Rietje!">👵</span> Habbies.nl</h2>
-                <p>
-                    <small class="text-grey">From <strong>Sept. 2008 - Jan. 2016</strong></small>
-                </p>
+                <h6 class="purple-text text-lighten-1">From <b>Sept. 2008 - Jan. 2016</b></h6>
                 <p>
                     A community for (kids &) teens about the social network Habbo.nl.
                     Averaging 800 unique visitors per day and 25k unique visitors a month.
@@ -200,37 +178,24 @@
                     It used to have some tools (called "widgets") that were quite popular with non-Dutch visitors
                     and it eventually evolved into Habbowidgets.com.
                 </p>
-                <figure class="text-center">
-                    <a href="images/habbies.png">
-                        <img src="images/habbies.png" alt="Screenshot of Habbies.nl via Wayback Machine"
-                             style="max-height: 300px;">
-                    </a>
-                </figure>
+                <img src="images/habbies.png" alt="Screenshot of Habbies.nl via Wayback Machine"
+                     class="responsive-img materialboxed">
             </div>
         </div>
     </div>
 </main>
-<aside class="container" id="space">
-    <div class="row">
-        <div class="col padding text-center">
+<footer>
+    <div class="container" id="space">
+        <p class="center-align padding">
             It's dangerous out there, please take some space dust!
-        </div>
+        </p>
     </div>
-</aside>
-<script>
-    function lazyLoadCSS(href) {
-        let cssElem = document.createElement('link');
-        cssElem.href = href;
-        cssElem.rel = 'stylesheet';
-        cssElem.type = 'text/css';
-        document.getElementsByTagName('head')[0].appendChild(cssElem);
-    }
+</footer>
 
-    (function () {
-        lazyLoadCSS('https://unpkg.com/chota@0.8.0/dist/chota.min.css')
-        lazyLoadCSS('https://fonts.googleapis.com/css?family=Fauna+One|Sniglet')
-        lazyLoadCSS('main20210315.css')
-    })();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
 </script>
+
 </body>
 </html>

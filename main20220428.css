@@ -5,13 +5,18 @@ body {
 
 #site h1, #site h2 {
     font-family: "Sniglet", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 2rem;
 }
 
-#site a {
+a {
     color: rebeccapurple;
     text-decoration: underline;
     text-underline-position: under;
     background-color: rgba(102, 51, 153, 0.1);
+}
+.collection a.collection-item {
+    text-decoration: none;
+    color: rebeccapurple;
 }
 
 #site #space {
@@ -20,7 +25,7 @@ body {
     margin-bottom: 0;
 }
 
-#projects .button {
+#projects .btn {
     background-color: rebeccapurple;
     color: #fff;
 }
@@ -35,6 +40,11 @@ body {
 
 #archived-warning {
     background-color: #cfcfcf;
+}
+
+.responsive-img {
+    max-height: 300px;
+    margin: 0 auto;
 }
 
 @media (min-width: 600px) {
