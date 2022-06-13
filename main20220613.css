@@ -14,13 +14,14 @@ a {
     text-underline-position: under;
     background-color: rgba(102, 51, 153, 0.1);
 }
+
 .collection a.collection-item {
     text-decoration: none;
     color: rebeccapurple;
 }
 
 #site #space {
-    background: #121212 url('https://media.giphy.com/media/NzSUEgbTWB7TW/giphy.gif');
+    background: #121212 url('images/stars.gif');
     color: #ffffff;
     margin-bottom: 0;
 }
@@ -55,5 +56,12 @@ a {
 
     #site #space {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        overflow: hidden;
     }
 }
