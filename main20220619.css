@@ -1,0 +1,106 @@
+body {
+    background-image: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(172, 253, 163, 0.64) 112.1%);
+    font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#site h1, #site h2 {
+    font-family: "Sniglet", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 2rem;
+}
+
+a {
+    color: rebeccapurple;
+    text-decoration: underline;
+    text-underline-position: under;
+    background-color: rgba(102, 51, 153, 0.1);
+}
+
+.collection a.collection-item {
+    text-decoration: none;
+    color: rebeccapurple;
+}
+
+#site #space {
+    background: #121212 url('images/stars.gif');
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#site .container {
+    background: #ffffff;
+}
+
+#site .padding {
+    padding: 20px;
+}
+
+#archived-warning {
+    color: darkblue;
+    font-weight: bolder;
+    background-image: linear-gradient(65.9deg, rgba(85, 228, 224, 1) 5.5%, rgba(75, 68, 224, 0.74) 54.2%, rgba(64, 198, 238, 1) 55.2%, rgba(177, 36, 224, 1) 98.4%);
+}
+
+.responsive-img {
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    #site .container {
+        margin-top: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 1em;
+    }
+
+    #site #space {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #archived-warning p {
+        margin: 0;
+    }
+
+    #intro:after, #projects:after, #archived:after {
+        content: "";
+        display: block;
+        height: 2em;
+        background-image: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(172, 253, 163, 0.64) 112.1%);
+    }
+}
+
+/* From uiverse.io */
+.showcase {
+    display: inline-block;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: #fff;
+    background-color: rebeccapurple;
+    border: none;
+    border-radius: 1em;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.showcase:hover {
+    background-image: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(172, 253, 163, 0.64) 112.1%);
+    box-shadow: 0 15px 20px rgba(254, 122, 152, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.showcase:active {
+    transform: translateY(-1px);
+}
