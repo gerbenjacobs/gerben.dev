@@ -1,6 +1,6 @@
 body {
     background-color: #79747c;
-    background-image: url("images/prism.png");
+    background-image: url("/images/prism.png");
     font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -28,7 +28,7 @@ a {
 }
 
 #site #space {
-    background: #121212 url('images/stars.gif');
+    background: #121212 url('/images/stars.gif');
     color: #ffffff;
     margin-bottom: 0;
 }
