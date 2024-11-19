@@ -1,0 +1,5 @@
+# humans.txt
+
+Hello, welcome to my humble abode!
+
+This site is maintained by Gerben, it's a little webserver written in Go.

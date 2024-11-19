@@ -25,6 +25,8 @@ func New(dependencies Dependencies) *Handler {
 
 	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("images"))))
 	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
+	r.HandleFunc("GET /robots.txt", singlePage("robots.txt"))
+	r.HandleFunc("GET /humans.txt", singlePage("humans.txt"))
 
 	r.HandleFunc("GET /{$}", h.Homepage)
 
@@ -36,4 +38,10 @@ func New(dependencies Dependencies) *Handler {
 // this keeps the underlying mux private
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
+}
+
+func singlePage(fileName string) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, fileName)
+	}
 }
