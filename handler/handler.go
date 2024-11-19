@@ -1,0 +1,39 @@
+package handler
+
+import (
+	"net/http"
+
+	"github.com/gerbenjacobs/gerben.dev/internal"
+)
+
+// Handler is your dependency container
+type Handler struct {
+	mux http.Handler
+	Dependencies
+}
+
+// Dependencies contains all the dependencies your application and its services require
+type Dependencies struct{}
+
+// New creates a new handler given a set of dependencies
+func New(dependencies Dependencies) *Handler {
+	h := &Handler{
+		Dependencies: dependencies,
+	}
+
+	r := http.NewServeMux()
+
+	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("images"))))
+	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
+
+	r.HandleFunc("GET /{$}", h.Homepage)
+
+	h.mux = internal.LogWriter(r)
+	return h
+}
+
+// ServeHTTP makes sure Handler implements the http.Handler interface
+// this keeps the underlying mux private
+func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	h.mux.ServeHTTP(w, r)
+}
