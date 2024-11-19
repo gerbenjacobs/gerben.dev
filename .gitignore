@@ -1,2 +1,9 @@
+# IDE
 .idea
+
+# Config
 config.yml
+
+# Build artifacts
+app
+app.exe
