@@ -47,7 +47,7 @@ func main() {
 
 	// start running the server
 	go func() {
-		log.Print("Server started on " + srv.Addr)
+		log.Print("Server started on http://" + srv.Addr)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("failed to listen: %v", err)
 		}
