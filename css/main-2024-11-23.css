@@ -58,6 +58,15 @@ a {
     background-image: linear-gradient(65.9deg, rgba(85, 228, 224, 1) 5.5%, rgba(75, 68, 224, 0.74) 54.2%, rgba(64, 198, 238, 1) 55.2%, rgba(177, 36, 224, 1) 98.4%);
 }
 
+#me {
+    border: 10px solid rebeccapurple;
+}
+
+#me img {
+    width: 8em;
+    border-radius: 4em;
+}
+
 .responsive-img {
     max-height: 300px;
     margin: 0 auto;
