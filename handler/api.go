@@ -14,5 +14,6 @@ func (h *Handler) ApiAnonPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	resp := spew.Sdump(r.PostForm)
+	slog.Info("received data on api/anon", "data", resp)
 	w.Write([]byte(resp))
 }
