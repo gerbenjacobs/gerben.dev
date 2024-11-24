@@ -29,6 +29,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /humans.txt", singlePage("humans.txt"))
 
 	r.HandleFunc("GET /{$}", h.Homepage)
+	r.HandleFunc("POST /api/anon", h.ApiAnonPost)
 
 	h.mux = internal.LogWriter(r)
 	return h

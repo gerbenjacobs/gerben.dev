@@ -3,6 +3,7 @@ module github.com/gerbenjacobs/gerben.dev
 go 1.23.2
 
 require (
+	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/lmittmann/tint v1.0.5
 	github.com/spf13/viper v1.19.0
 )
