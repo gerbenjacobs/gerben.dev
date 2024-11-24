@@ -3,8 +3,6 @@ package handler
 import (
 	"log/slog"
 	"net/http"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 func (h *Handler) ApiAnonPost(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +11,7 @@ func (h *Handler) ApiAnonPost(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	resp := spew.Sdump(r.PostForm)
-	slog.Info("received data on api/anon", "data", resp)
-	w.Write([]byte(resp))
+
+	slog.Info("received data on api/anon", "data", r.PostForm, "headers", r.Header)
+	w.WriteHeader(http.StatusNoContent)
 }
