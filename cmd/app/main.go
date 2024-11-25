@@ -24,16 +24,11 @@ func main() {
 	c := internal.NewConfig()
 
 	// set output logging
-	level := slog.LevelDebug
-	if c.Svc.Env != "dev" {
-		level = slog.LevelInfo
+	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
+	if c.Svc.Env == "dev" {
+		logger = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: slog.LevelDebug}))
 	}
-
-	slog.SetDefault(
-		slog.New(
-			tint.NewHandler(os.Stdout, &tint.Options{Level: level}),
-		),
-	)
+	slog.SetDefault(logger)
 
 	noopDependencies := handler.Dependencies{}
 	// set up the route handler and server
