@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fauna+One|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/main-2024-11-24.css">
 
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
@@ -51,31 +52,26 @@
 </head>
 
 <body id="site">
-    <main>
-        
-    </main>
-    <aside>
-        <div class="container h-card" id="me">
-            <div class="row">
-                <div class="col padding">
-                    <picture>
-                        <img src="/images/avatar.jpg" alt="Photo of Gerben Jacobs" class="u-photo">
-                    </picture>
-                </div>
-                <div class="col">
-                    <h2>Hi, my name is <b class="p-name">Gerben Jacobs</b></h2>
-                    <p class="p-note">
-                        A <span class="p-job-title">software engineer</span> from 
-                        <span class="p-locality">Ede</span>, <span class="p-country-name">the Netherlands</span>
-                    </p>
-                    <p>
-                        Welcome to <a href="https://gerben.dev" class="u-url">https://gerben.dev</a>,
-                        my little nook on the internet
-                    </p>
-                </div>
-            </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="/images/favicon.png" alt="Return home" height="64"></a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="hide-on-small-only" style="margin-left: 64px;">
+                {{ template "navbar" . }}
+            </ul>
         </div>
-    </aside>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        {{ template "navbar" . }}
+    </ul>
+
+    <main>
+        {{ template "content" . }}
+    </main>
+
+    {{ template "aside-hcard" . }}
+    
     <footer>
         <div class="container" id="space">
             <p class="center-align padding">

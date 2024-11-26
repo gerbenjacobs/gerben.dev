@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"html/template"
 	"net/http"
 
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -23,15 +24,14 @@ func New(dependencies Dependencies) *Handler {
 
 	r := http.NewServeMux()
 
-	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("images"))))
-	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
+	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("static/images"))))
+	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
 	r.HandleFunc("GET /robots.txt", singlePage("robots.txt"))
 	r.HandleFunc("GET /humans.txt", singlePage("humans.txt"))
 
-	r.HandleFunc("GET /{$}", h.Homepage)
-	r.HandleFunc("POST /api/anon", h.ApiAnonPost)
-
-	r.HandleFunc("GET /joke", singlePage("content/single/joke.html"))
+	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html"))
+	r.HandleFunc("GET /joke", h.singlePageLayout("content/single/joke.html"))
+	r.HandleFunc("GET /changelog", h.singlePageLayout("content/single/changelog.html"))
 
 	h.mux = internal.LogWriter(r)
 	return h
@@ -46,5 +46,21 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func singlePage(fileName string) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, fileName)
+	}
+}
+
+func (h *Handler) singlePageLayout(fileName string) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		tmpls := []string{
+			"static/views/baseLayout.html",
+			"static/views/partials/navbar.html",
+			"static/views/partials/aside-hcard.html",
+			fileName,
+		}
+		t := template.Must(template.ParseFiles(tmpls...))
+
+		if err := t.Execute(w, nil); err != nil {
+			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+		}
 	}
 }

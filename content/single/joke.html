@@ -1,16 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>A microformat joke.. and really a test!</title>
-</head>
-<body>
-    <div class="h-entry">
-        <p class="e-content">Two naked tags walk into a bar. The bartender exclaims, "Hey, you can't come in here without microformats, this is a classy joint!"</p>
-        <a class="u-bridgy-fed" href="https://fed.brid.gy/" hidden="hidden"></a>
+{{ define "content" }}
+
+<div class="container">
+    <div class="row">
+        <div class="col padding">
+            <article class="kindy-note h-entry">
+                <p class="e-content">Two naked tags walk into a bar. The bartender exclaims, "Hey, you can't come in
+                    here without microformats, this is a classy joint!"</p>
+                <a class="u-bridgy-fed" href="https://fed.brid.gy/" hidden="hidden"></a>
+                <footer>
+                    <div class="h-card p-author">
+                        <img class="u-photo" src="https://gerben.dev/images/avatar.jpg" alt="Photo of Gerben Jacobs" loading="lazy" hidden>
+                        👨‍🎨 <a class="u-url p-name" href="https://gerben.dev" rel="me author">Gerben Jacobs</a>
+                    </div>
+            
+                    🕰️ <time class="dt-published" datetime="2024-11-26 12:00:00">Nov 26th, 2024</time>
+                </footer>
+            </article>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+{{ end}}
