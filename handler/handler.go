@@ -26,8 +26,8 @@ func New(dependencies Dependencies) *Handler {
 
 	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("static/images"))))
 	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
-	r.HandleFunc("GET /robots.txt", singlePage("robots.txt"))
-	r.HandleFunc("GET /humans.txt", singlePage("humans.txt"))
+	r.HandleFunc("GET /robots.txt", singlePage("static/robots.txt"))
+	r.HandleFunc("GET /humans.txt", singlePage("static/humans.txt"))
 
 	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html"))
 	r.HandleFunc("GET /joke", h.singlePageLayout("content/single/joke.html"))
