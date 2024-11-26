@@ -1,0 +1,36 @@
+{{ define "content" }}
+
+<div class="container">
+    <div class="row">
+        <div class="col padding">
+            <h1>Sitemap</h1>
+            <p>
+                This sitemap is manually generated. An XML version will be here soon..
+            </p>
+
+            <h2>Navbar pages</h2>
+            <p>
+                These pages are also available in the navigation bar.
+            </p>
+            <ul>
+                {{ template "navbar" . }}
+            </ul>
+
+            <h2>Single pages</h2>
+            <p>
+                These page are standalone endpoints, and are not necessarily listed.
+            </p>
+            <ul>
+                <li><a href="/joke">Joke</a> - A first attempt at creating a microformats post</li>
+            </ul>
+
+            <h2>Text files</h2>
+            <ul>
+                <li><a href="/robots.txt">robots.txt</a> - Should probably put something in it..</li>
+                <li><a href="/humans.txt">humans.txt</a> - As opposed to 🤖, this is about 👨‍💻</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{ end}}

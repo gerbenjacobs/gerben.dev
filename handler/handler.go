@@ -32,6 +32,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html"))
 	r.HandleFunc("GET /joke", h.singlePageLayout("content/single/joke.html"))
 	r.HandleFunc("GET /changelog", h.singlePageLayout("content/single/changelog.html"))
+	r.HandleFunc("GET /sitemap", h.singlePageLayout("content/single/sitemap.html"))
 
 	h.mux = internal.LogWriter(r)
 	return h
