@@ -1,13 +1,15 @@
 body {
     background-color: #79747c;
     background-image: url("/images/prism.png");
-    font-family: "Fauna One", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: "Atkinson Hyperlegible", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 1.2em;
 }
 
 #site h1,
 #site h2 {
     font-family: "Montserrat", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 2rem;
+    margin: 0;
 }
 
 a {
@@ -90,13 +92,20 @@ a {
         overflow: hidden;
     }
 
+    /* hack to make .collection full width */
+    .row .col {
+        float: none;
+    }
+
     #archived-warning p {
         margin: 0;
     }
 
     #repositories .row:after,
     #projects:after,
-    #archived:after {
+    #archived:after,
+    aside:before,
+    footer:before {
         content: "";
         display: block;
         height: 2em;
