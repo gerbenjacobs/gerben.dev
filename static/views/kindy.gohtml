@@ -18,6 +18,17 @@
         border-radius: 50%;
         margin-right: 0.5em;
     }
+    .kindy-type-post .p-summary {
+        font-style: italic;
+    }
+    @media (min-width: 800px) {
+        .kindy-type-post {
+            display: block;
+            margin: auto;
+            width: clamp(320px, 80%, 800px);
+            text-align: justify;
+        }
+    }
 </style>
 <div class="container">
     <div class="row">
@@ -53,14 +64,14 @@
                         {{- end }}
                     </div>
                 </header>
+                {{ if .LikeOf }}
+                <span class="kindy-like">
+                    <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
+                </span>
+                {{ end }}
                 {{ if .Summary -}}
                 <p class="p-summary">
                     {{ .Summary }}
-                    {{ if .LikeOf }}
-                    <span class="kindy-like">
-                        <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
-                    </span>
-                    {{ end }}
                 </p>
                 {{- end }}
                 {{ if .Content -}}
