@@ -7,3 +7,4 @@ config.yml
 # Build artifacts
 app
 app.exe
+/tmp

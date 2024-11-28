@@ -7,6 +7,12 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
+var layoutFiles = []string{
+	"static/views/baseLayout.html",
+	"static/views/partials/navbar.html",
+	"static/views/partials/aside-hcard.html",
+}
+
 // Handler is your dependency container
 type Handler struct {
 	mux http.Handler
@@ -34,6 +40,11 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /changelog", h.singlePageLayout("content/single/changelog.html"))
 	r.HandleFunc("GET /sitemap", h.singlePageLayout("content/single/sitemap.html"))
 
+	r.HandleFunc("GET /notes/{file}", h.Kindy)
+	r.HandleFunc("GET /posts/{file}", h.Kindy)
+	r.HandleFunc("GET /likes/{file}", h.Kindy)
+	r.HandleFunc("GET /replies/{file}", h.Kindy)
+
 	h.mux = internal.LogWriter(r)
 	return h
 }
@@ -52,13 +63,7 @@ func singlePage(fileName string) func(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) singlePageLayout(fileName string) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		tmpls := []string{
-			"static/views/baseLayout.html",
-			"static/views/partials/navbar.html",
-			"static/views/partials/aside-hcard.html",
-			fileName,
-		}
-		t := template.Must(template.ParseFiles(tmpls...))
+		t := template.Must(template.ParseFiles(append(layoutFiles, fileName)...))
 
 		if err := t.Execute(w, nil); err != nil {
 			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)

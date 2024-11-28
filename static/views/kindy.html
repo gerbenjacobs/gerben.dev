@@ -1,0 +1,80 @@
+{{ define "content" }}
+<style>
+    #site .kindy h1 {
+        margin-bottom: 1em;
+    }
+    .dt-published::before {
+        content: "🕰️";
+    }
+    .kindy-syndication::before {
+        content: "📢";
+    }
+    .kindy-like::before {
+        content: "⭐";
+    }
+    .kindy-header img {
+        vertical-align: middle;
+        width: 32px;
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col padding">
+            <article class="kindy kindy-type-{{ .Type }} {{ .MFType }}">
+                <header>
+                    {{ if .Title -}}
+                    <h1 class="p-name">{{ .Title }}</h1>
+                    {{- end }}
+                    <div class="kindy-header">
+                        {{- if .Author -}}
+                        <span class="h-card p-author">
+                            <img class="u-photo" src="{{ .Author.Photo }}" alt="Photo of {{ .Author.Name }}" loading="lazy">
+                            <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
+                        </span>
+                        {{- end -}}
+
+                        <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                            <a href="{{ .Permalink }}" class="u-url" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                                {{ .PublishedAt.Format "Jan 02, 2006" }}
+                            </a>
+                        </time>
+                        {{ if .Syndication -}}
+                            {{- range $syn := .Syndication -}}
+                            <span class="kindy-syndication"></span>
+                                <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}">{{ $syn.Type }}</a>
+                            </span>
+                            {{- end -}}
+                        {{- end }}
+                    </div>
+                </header>
+                {{ if .Summary -}}
+                <p class="p-summary">
+                    {{ .Summary }}
+                    {{ if .LikeOf }}
+                    <span class="kindy-like">
+                        <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
+                    </span>
+                    {{ end }}
+                </p>
+                {{- end }}
+                {{ if .Content -}}
+                <div class="e-content">
+                    {{ .Content }}
+                </div>
+                {{- end }}
+                <a class="u-bridgy-fed" href="https://fed.brid.gy/" hidden="hidden"></a>
+            </article>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <link rel="stylesheet" href="https://blog.gerbenjacobs.nl/css/webmention.css">
+            <div id="webmentions"></div>
+            <script src="https://blog.gerbenjacobs.nl/js/webmention.js" data-page-url="{{ .Permalink }}"></script>
+        </div>
+    </div>
+</div>
+
+{{ end}}
