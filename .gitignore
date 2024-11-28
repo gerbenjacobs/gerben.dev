@@ -3,6 +3,7 @@
 
 # Config
 config.yml
+.air.toml
 
 # Build artifacts
 app
