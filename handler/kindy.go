@@ -29,19 +29,19 @@ func (h *Handler) Kindy(w http.ResponseWriter, r *http.Request) {
 
 	// tz, _ := time.LoadLocation("Europe/Amsterdam")
 	// testKind := local.Kindy{
-	// 	Type:   "like",
+	// 	Type:   "note",
 	// 	MFType: "h-entry",
 	// 	// Title:       "Help, I have created a microformatted post",
-	// 	Summary:     "Liked",
-	// 	PublishedAt: time.Date(2024, 11, 28, 0, 40, 0, 0, tz),
+	// 	Summary:     "Well, apart from webmentions working, this should be my first proper note! Hello world! 👋",
+	// 	PublishedAt: time.Date(2024, 11, 28, 1, 43, 0, 0, tz),
 	// 	// Content:     "Hello world, I'm read from a file!<br>Actually, that's a joke.. <strong>I'm really just a hardcoded string</strong><p>But I do have HTML!</p>",
 	// 	Permalink: r.RequestURI,
-	// 	LikeOf:    "https://todon.nl/@gerben/113556315040488570",
-	// 	// Author: local.KindyAuthor{
-	// 	// 	Name:  "Gerben Jacobs",
-	// 	// 	URL:   "https://gerben.dev",
-	// 	// 	Photo: "https://gerben.dev/images/avatar.jpg",
-	// 	// },
+	// 	// LikeOf:    "https://todon.nl/@gerben/113556315040488570",
+	// 	Author: &local.KindyAuthor{
+	// 		Name:  "Gerben Jacobs",
+	// 		URL:   "https://gerben.dev",
+	// 		Photo: "https://gerben.dev/images/avatar.jpg",
+	// 	},
 	// 	// Syndication: []local.KindySyndication{
 	// 	// 	{
 	// 	// 		Type: "twitter",
