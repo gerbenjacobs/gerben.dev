@@ -28,21 +28,25 @@
                     <h1 class="p-name">{{ .Title }}</h1>
                     {{- end }}
                     <div class="kindy-header">
-                        {{- if .Author -}}
+                        {{ if .Author -}}
                         <span class="h-card p-author">
                             <img class="u-photo" src="{{ .Author.Photo }}" alt="Photo of {{ .Author.Name }}" loading="lazy">
                             <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
                         </span>
-                        {{- end -}}
+                        {{- end }}
 
                         <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                            {{ if .Permalink -}}
                             <a href="{{ .Permalink }}" class="u-url" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                                 {{ .PublishedAt.Format "Jan 02, 2006" }}
                             </a>
+                            {{- else -}}
+                                {{ .PublishedAt.Format "Jan 02, 2006" }}
+                            {{- end }}
                         </time>
                         {{ if .Syndication -}}
                             {{- range $syn := .Syndication -}}
-                            <span class="kindy-syndication"></span>
+                            <span class="kindy-syndication">
                                 <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}">{{ $syn.Type }}</a>
                             </span>
                             {{- end -}}
@@ -64,9 +68,7 @@
                     {{ .Content }}
                 </div>
                 {{- end }}
-                <small>
-                    Bridged via <a class="u-bridgy-fed" href="https://fed.brid.gy">https://fed.brid.gy</a>
-                </small>
+                <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
             </article>
         </div>
     </div>

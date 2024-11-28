@@ -11,7 +11,7 @@ import (
 )
 
 func (h *Handler) Kindy(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.html")...))
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
 	b, err := os.ReadFile("content/kindy" + r.URL.Path + ".json")
 	if err != nil {
