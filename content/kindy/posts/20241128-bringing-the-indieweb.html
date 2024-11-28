@@ -1,0 +1,89 @@
+<p>
+    As part of my move towards the indieweb, I've been creating a system on
+    <a href="https://gerben.dev">gerben.dev</a> to create notes, posts, likes etc.
+</p>
+<p>
+    This started out as a new project, but for now I'm just creating it internally.
+</p>
+
+<h2>Kindy</h2>
+
+<p>
+    I've named the system Kindy, because I'm making different <b>kind</b> of content.
+    <em>I also discovered that Australia and New Zealand use this word to mean <b>kindergarten</b>.</em>
+</p>
+
+<p>
+    My Kindy however, is a JSON format for which I've created a Go <code>template/html</code> that
+    turns those fields into HTML with <a href="https://microformats.org/wiki/h-entry">Microformats's h-entry</a>.
+</p>
+
+<p>
+    Which works nicely for likes and notes, but for posts, which ideally includes quite a bit of HTML
+    it was actually quite difficult. Can't have multiline support in <code>JSON</code>.<br>
+    So I switched to <code>YAML</code> and while that worked, I was not getting formatting help.
+    So time for, yet, another solution.
+</p>
+
+<p>
+    I now put a filename in my <code>content</code> field and when I detect this (hardcoded to <code>.html</code>
+    for now) I load that file and replace the content.
+</p>
+
+<h2>Customization</h2>
+
+<p>
+    The reason I stopped with making this an open source project, is that I early on noticed how many
+    decisions need to be made in regard to mark up, styling and overall design of the product.
+</p>
+
+<p>
+    When I talked with my wife about this, she mentioned that it <b>is</b> a lot of work and probably only
+    developers can deal with it, defeating the purpose of the project.
+</p>
+
+<p>
+    The thing about customization is that if you want to implement this properly, your product
+    will have a lot of configuration. For which you need a lot of code and even more documentation.
+</p>
+
+<p>
+    But this means <i>regular users</i> always have to have some sort of compromise on how their
+    website looks, unless they themselves become tech-savvy enough to basically create their own.
+    <br>
+    Which brings us back to <a class="p-category" href="/tags/indieweb">indieweb</a>: everyone should have
+    <a href="https://indieweb.org/why">their own website</a>.
+</p>
+
+<h2>Bridging and syndication</h2>
+
+<p>
+    Meanwhile, I've been actively trying to get <a href="https://fed.brid.gy">fed.brid.gy</a> to work,
+    and while it does work for webmentions and Fediverse bridging, I'm having a lot of trouble
+    with getting the Bluesky stuff to work.
+</p>
+
+<p>
+    Then I read <a href="https://adactio.com">Jeremy Keith's</a> blog and notice how he's doing the
+    syndication himself, by use of some simple PHP scripts. So should I start doing it myself too?
+</p>
+
+<p>
+    Being a programmer actually makes it way more difficult with all these existing indieweb solutions,
+    because you technically can learn how to do it... <i>and then roll your own</i>, a programmer's favourite pastime.
+</p>
+
+<hr>
+
+<p>
+    Anyway, I should probably continue with finishing my content management system and see what kind
+    of data it creates. Syndicating can come later...
+    <span title="See ya later, alligator!">🐊</span>
+</p>
+
+<p>
+    <i>
+        P.s. What should I do with permalinks? For now, I got <code>/posts/{YYYYMMDD}-{slug}</code>,
+        but I also would like to just have the slug. But can I trust myself to always come up with unique titles?
+    </i>
+</p>

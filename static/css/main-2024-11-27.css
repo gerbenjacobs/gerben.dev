@@ -78,6 +78,11 @@ nav ul a, .sidenav li>a {
     margin: 0 auto;
 }
 
+code {
+    color: #c81576;
+    background-color: rgba(102, 51, 153, 0.1);
+}
+
 @media (min-width: 600px) {
     #site .container {
         margin-top: 20px;

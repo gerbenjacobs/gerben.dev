@@ -40,6 +40,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /changelog", h.singlePageLayout("content/single/changelog.html"))
 	r.HandleFunc("GET /sitemap", h.singlePageLayout("content/single/sitemap.html"))
 
+	r.HandleFunc("GET /tags/{tag}", h.tags)
 	r.HandleFunc("GET /notes/{file}", h.Kindy)
 	r.HandleFunc("GET /posts/{file}", h.Kindy)
 	r.HandleFunc("GET /likes/{file}", h.Kindy)
@@ -68,5 +69,13 @@ func (h *Handler) singlePageLayout(fileName string) func(w http.ResponseWriter, 
 		if err := t.Execute(w, nil); err != nil {
 			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 		}
+	}
+}
+
+func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
+
+	if err := t.Execute(w, r.PathValue("tag")); err != nil {
+		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
 }
