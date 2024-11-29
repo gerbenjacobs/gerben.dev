@@ -22,6 +22,6 @@ func LogWriter(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		lw := &logWriter{w, http.StatusOK}
 		next.ServeHTTP(lw, r)
-		slog.Debug(r.URL.Path, "code", lw.code)
+		slog.Debug(r.Method+"\t"+r.URL.Path, "code", lw.code)
 	})
 }

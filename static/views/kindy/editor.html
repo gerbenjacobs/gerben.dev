@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Kindy Editor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+</head>
+
+<body>
+    <header class="container">
+        <hgroup>
+            <h1>Kindy Editor</h1>
+            <p>Create, edit, store and publish your own content!</p>
+        </hgroup>
+    </header>
+    <main class="container">
+        {{ if .Flash }}
+            <article style="background-color: rgb(217, 53, 38); color: white;">{{ .Flash }}</article>
+        {{ end }}
+        <h2>Author</h2>
+
+        {{ if .Author.Name }}
+        <p>
+            <img src="{{ .Author.Photo }}" alt="{{ .Author.Name }}"
+                style="float: left; width: 48px; border-radius: 50%; margin-right: 1em;">
+            <b>{{ .Author.Name }}</b><br>
+            <i>{{ .Author.URL }}</i>
+        </p>
+        {{ else }}
+        <p>
+            The author object will be added all the time, you'll only have to supply it once.
+        </p>
+        {{ end }}
+
+        <details>
+            <summary><span data-tooltip="Click to open Edit author form">Edit author</span></summary>
+            <form method="post" action="/kindy">
+                <input type="hidden" name="type" value="author">
+                <fieldset>
+                    <label>
+                        Name
+                        <input type="text" name="name" placeholder="Your name" value="{{ .Author.Name }}">
+                    </label>
+                    <label>
+                        URL
+                        <input type="url" name="url" placeholder="https://yourwebsite.co" value="{{ .Author.URL }}">
+                    </label>
+                    <label>
+                        Photo
+                        <input type="text" name="photo" placeholder="https://yourwebsite.co/images/avatar.jpg"
+                            value="{{ .Author.Photo }}">
+                        <small>Image has to be uploaded already, place your URL here</small>
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Save" />
+            </form>
+        </details>
+
+        <h2>Notes</h2>
+
+        <form method="post" action="/kindy">
+            <input type="hidden" name="type" value="note">
+            <fieldset>
+                <label>
+                    Content
+                    <textarea id="content" name="content" placeholder="Write your note.."></textarea>
+                    <details>
+                        <summary><span data-tooltip="Emoji picker">😀</span></summary>
+                        <emoji-picker></emoji-picker>
+                    </details>
+                </label>
+                <label>
+                    Publish date
+                    <input type="datetime-local" name="publishedat" aria-label="Datetime local">
+                    <small>By default we'll set the date when you submit the form.</small>
+                </label>
+                <label>
+                    URL slug
+                    <input type="text" name="slug" aria-label="Datetime local">
+                    <small>By default we'll set the date when you submit the form.</small>
+                </label>
+            </fieldset>
+
+            <input type="submit" value="Publish" />
+        </form>
+
+    </main>
+
+    <script>
+        let content = document.getElementById('content')
+        document.querySelector('emoji-picker').addEventListener('emoji-click', event => {
+            content.value += event.detail.unicode
+        });
+    </script>
+</body>
+
+</html>

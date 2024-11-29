@@ -10,9 +10,10 @@ type Kindy struct {
 	Type        string             `json:"type"`
 	MFType      string             `json:"mfType"` // Microformat type; often h-entry
 	Title       string             `json:"title,omitempty"`
-	Summary     string             `json:"summary"`
+	Summary     string             `json:"summary,omitempty"`
 	PublishedAt time.Time          `json:"publishedAt"`
 	Content     template.HTML      `json:"content,omitempty"`
+	Slug        string             `json:"slug,omitempty"`
 	Permalink   string             `json:"permalink,omitempty"`
 	Author      *KindyAuthor       `json:"author,omitempty"`
 	Syndication []KindySyndication `json:"syndication,omitempty"`

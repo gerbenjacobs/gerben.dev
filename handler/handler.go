@@ -20,7 +20,9 @@ type Handler struct {
 }
 
 // Dependencies contains all the dependencies your application and its services require
-type Dependencies struct{}
+type Dependencies struct {
+	SecretKey string
+}
 
 // New creates a new handler given a set of dependencies
 func New(dependencies Dependencies) *Handler {
@@ -41,10 +43,12 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /sitemap", h.singlePageLayout("content/single/sitemap.html"))
 
 	r.HandleFunc("GET /tags/{tag}", h.tags)
-	r.HandleFunc("GET /notes/{file}", h.Kindy)
-	r.HandleFunc("GET /posts/{file}", h.Kindy)
-	r.HandleFunc("GET /likes/{file}", h.Kindy)
-	r.HandleFunc("GET /replies/{file}", h.Kindy)
+	r.HandleFunc("GET /notes/{file}", Kindy)
+	r.HandleFunc("GET /posts/{file}", Kindy)
+	r.HandleFunc("GET /likes/{file}", Kindy)
+	r.HandleFunc("GET /replies/{file}", Kindy)
+
+	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
 
 	h.mux = internal.LogWriter(r)
 	return h

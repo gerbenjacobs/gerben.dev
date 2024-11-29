@@ -30,9 +30,12 @@ func main() {
 	}
 	slog.SetDefault(logger)
 
-	noopDependencies := handler.Dependencies{}
+	dependencies := handler.Dependencies{
+		SecretKey: c.Svc.SecretToken,
+	}
+
 	// set up the route handler and server
-	app := handler.New(noopDependencies)
+	app := handler.New(dependencies)
 	srv := &http.Server{
 		Addr:         c.Svc.Address,
 		ReadTimeout:  5 * time.Second,
