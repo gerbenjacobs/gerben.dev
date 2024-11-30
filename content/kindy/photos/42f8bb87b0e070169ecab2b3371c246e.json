@@ -12,7 +12,13 @@
         "photo": "https://gerben.dev/images/avatar.jpg"
     },
     "geo": {
-        "latitude": 52.103280, 
+        "latitude": 52.103280,
         "longitude": 5.689587
-    }
+    },
+    "syndication": [
+        {
+            "type": "fediverse",
+            "url": "https://todon.nl/@gerben/113573581591986053"
+        }
+    ]
 }
