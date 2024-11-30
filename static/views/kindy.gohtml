@@ -104,8 +104,8 @@
                 {{ end }}
                 {{ if eq .Type "photo" }}
                     <figure class="e-content">
-                        <img class="u-photo" src="{{ .Content }}" alt="{{ .Summary }}">
-                        <figcaption>{{ .Summary }}</figcaption>
+                        <img class="u-photo" src="{{ .Content }}" alt="{{ .Title }}">
+                       {{ if .Summary }}<figcaption>{{ .Summary }}</figcaption>{{- end }}
                     </figure>
                 {{ else }}
                     {{ if .Summary -}}
