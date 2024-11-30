@@ -36,7 +36,8 @@ a {
     color: rebeccapurple;
 }
 
-nav ul a, .sidenav li>a {
+nav ul a,
+.sidenav li>a {
     font-size: 1.2rem;
 }
 
@@ -73,7 +74,9 @@ nav ul a, .sidenav li>a {
     border-radius: 4em;
 }
 
-.responsive-img {
+#projects .responsive-img,
+#repositories .responsive-img,
+#archived .responsive-img {
     max-height: 300px;
     margin: 0 auto;
 }

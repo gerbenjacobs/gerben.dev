@@ -68,7 +68,7 @@
             <fieldset>
                 <label>
                     Content
-                    <textarea id="content" name="content" placeholder="Write your note.."></textarea>
+                    <textarea id="content" name="content" placeholder="Write your note.." required></textarea>
                     <details>
                         <summary><span data-tooltip="Emoji picker">😀</span></summary>
                         <emoji-picker></emoji-picker>
@@ -81,8 +81,8 @@
                 </label>
                 <label>
                     URL slug
-                    <input type="text" name="slug" aria-label="Datetime local">
-                    <small>By default we'll set the date when you submit the form.</small>
+                    <input type="text" name="slug">
+                    <small>Optional. Default value will be a hash of the publish date.</small>
                 </label>
             </fieldset>
 

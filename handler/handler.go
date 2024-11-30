@@ -47,6 +47,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /posts/{file}", Kindy)
 	r.HandleFunc("GET /likes/{file}", Kindy)
 	r.HandleFunc("GET /replies/{file}", Kindy)
+	r.Handle("GET /photos/", http.StripPrefix("/photos/", http.FileServer(http.Dir("content/kindy/data/photo"))))
 
 	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
 
