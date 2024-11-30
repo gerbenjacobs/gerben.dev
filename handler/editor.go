@@ -119,6 +119,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		return nil, errors.New("can't publish empty content")
 	}
 
+	// TODO: can't use custom date yet
 	publishedAt := time.Now()
 	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
 
