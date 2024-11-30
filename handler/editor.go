@@ -130,7 +130,6 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 	note := kindy.Kindy{
 		Type:        "note",
 		MFType:      "h-entry",
-		Summary:     data.Get("content"),
 		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
 		Slug:        slug,
