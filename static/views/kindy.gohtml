@@ -12,6 +12,9 @@
     .kindy-like::before {
         content: "⭐";
     }
+    .h-geo::before {
+        content: "🗺️";
+    }
     .kindy-header img {
         vertical-align: middle;
         width: 32px;
@@ -24,12 +27,30 @@
     .e-content {
         margin-top: 1em;
     }
+    .p-summary > .u-photo,
+    .e-content > .u-photo,
+    .kindy-type-photo figure > .u-photo {
+        width: 100%;
+    }
+    .kindy-type-photo figure > .u-photo {
+        filter: drop-shadow(5px 5px 10px #666);
+    }
+    figure {
+        /* reset */
+        margin: 2rem 0; 
+    }
+    figcaption {
+        font-size: 150%;
+    }
     @media (min-width: 800px) {
         .kindy-type-post {
             display: block;
             margin: auto;
             width: clamp(320px, 80%, 800px);
             text-align: justify;
+        }
+        figure {
+            margin: 2rem;
         }
     }
 </style>
@@ -44,11 +65,12 @@
                     <div class="kindy-header">
                         {{ if .Author -}}
                         <span class="h-card p-author">
+                            {{ if .Author.Photo -}}
                             <img class="u-photo" src="{{ .Author.Photo }}" alt="Photo of {{ .Author.Name }}" loading="lazy">
+                            {{ end -}}
                             <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
                         </span>
                         {{- end }}
-
                         <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                             {{ if .Permalink -}}
                             <a href="{{ .Permalink }}" class="u-url" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -58,9 +80,17 @@
                                 {{ .PublishedAt.Format "Jan 02, 2006" }}
                             {{- end }}
                         </time>
+                        {{ if .Geo -}}
+                        <span class="h-geo">
+                            <a href="https://www.openstreetmap.org/search?query={{ .Geo.Latitude }},{{ .Geo.Longitude }}">
+                                <span class="p-latitude">{{ .Geo.Latitude }}</span>,
+                                <span class="p-longitude">{{ .Geo.Longitude }}</span>
+                            </a>
+                        </span>
+                        {{- end }}
                         {{ if .Syndication -}}
                             {{- range $syn := .Syndication -}}
-                            <span class="kindy-syndication">
+                            <span class="kindy-syndication {{ $syn.Type }}">
                                 <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}">{{ $syn.Type }}</a>
                             </span>
                             {{- end -}}
@@ -72,16 +102,23 @@
                     <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
                 </span>
                 {{ end }}
-                {{ if .Summary -}}
-                <p class="p-summary">
-                    {{ .Summary }}
-                </p>
-                {{- end }}
-                {{ if .Content -}}
-                <div class="e-content">
-                    {{ .Content }}
-                </div>
-                {{- end }}
+                {{ if eq .Type "photo" }}
+                    <figure>
+                        <img class="u-photo" src="{{ .Content }}" alt="{{ .Summary }}">
+                        <figcaption>{{ .Summary }}</figcaption>
+                    </figure>
+                {{ else }}
+                    {{ if .Summary -}}
+                    <p class="p-summary">
+                        {{ .Summary }}
+                    </p>
+                    {{- end }}
+                    {{ if .Content -}}
+                    <div class="e-content">
+                        {{ .Content }}
+                    </div>
+                    {{- end }}
+                {{ end }}
                 <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
             </article>
         </div>

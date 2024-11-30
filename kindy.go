@@ -18,6 +18,7 @@ type Kindy struct {
 	Author      *KindyAuthor       `json:"author,omitempty"`
 	Syndication []KindySyndication `json:"syndication,omitempty"`
 	LikeOf      string             `json:"likeOf,omitempty"`
+	Geo         *KindyGeo          `json:"geo,omitempty"`
 }
 
 type KindyAuthor struct {
@@ -29,4 +30,9 @@ type KindyAuthor struct {
 type KindySyndication struct {
 	Type string `json:"type,omitempty"` // Free form field to be set by the user, can be used to display different type of icons
 	URL  string `json:"url,omitempty"`
+}
+
+type KindyGeo struct {
+	Latitude  float64 `json:"latitude"`
+	Longitude float64 `json:"longitude"`
 }
