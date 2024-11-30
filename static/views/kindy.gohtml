@@ -100,7 +100,7 @@
                 </span>
                 {{ end }}
                 {{ if eq .Type "photo" }}
-                    <figure>
+                    <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .Summary }}">
                         <figcaption>{{ .Summary }}</figcaption>
                     </figure>
