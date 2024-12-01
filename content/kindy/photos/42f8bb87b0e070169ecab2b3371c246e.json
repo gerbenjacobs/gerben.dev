@@ -1,6 +1,5 @@
 {
     "type": "photo",
-    "mfType": "h-entry",
     "publishedAt": "2024-11-30T19:03:00+01:00",
     "content": "/kd/photos/DJI_20241130153356_0059_D_1280.JPG",
     "title": "Drone photo taken at Wekeromse Zand",
@@ -21,5 +20,6 @@
             "type": "fediverse",
             "url": "https://todon.nl/@gerben/113573581591986053"
         }
-    ]
+    ],
+    "tags": ["drone", "Wekerom"]
 }

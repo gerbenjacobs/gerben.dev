@@ -1,6 +1,5 @@
 {
     "type": "note",
-    "mfType": "h-entry",
     "publishedAt": "2024-11-30T21:37:23.1364891+01:00",
     "content": "Surprisingly good info (and probably most important) aesthetics to teach new users about the fediverse: \u003ca href=\"https://fediverse.info/\"\u003ehttps://fediverse.info/\u003c/a\u003e",
     "slug": "83383a929302cb1c23a92564756478e2",
@@ -9,5 +8,6 @@
         "name": "Gerben Jacobs",
         "url": "https://gerben.dev",
         "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+    },
+    "tags": ["fediverse"]
 }

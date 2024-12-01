@@ -7,10 +7,18 @@ import (
 	"github.com/microcosm-cc/bluemonday"
 )
 
+type KindyType string
+
+const (
+	KindyTypeNote  = "note"
+	KindyTypePost  = "post"
+	KindyTypePhoto = "photo"
+	KindyTypeLike  = "like"
+)
+
 // Kindy is a datastructure for content that adheres to Microformats 2
 type Kindy struct {
-	Type        string             `json:"type"`
-	MFType      string             `json:"mfType"` // Microformat type; often h-entry
+	Type        KindyType          `json:"type"`
 	Title       string             `json:"title,omitempty"`
 	Summary     string             `json:"summary,omitempty"`
 	PublishedAt time.Time          `json:"publishedAt"`
@@ -21,6 +29,7 @@ type Kindy struct {
 	Syndication []KindySyndication `json:"syndication,omitempty"`
 	LikeOf      string             `json:"likeOf,omitempty"`
 	Geo         *KindyGeo          `json:"geo,omitempty"`
+	Tags        []string           `json:"tags,omitempty"`
 }
 
 type KindyAuthor struct {
@@ -37,6 +46,11 @@ type KindySyndication struct {
 type KindyGeo struct {
 	Latitude  float64 `json:"latitude"`
 	Longitude float64 `json:"longitude"`
+}
+
+// MFType returns the microformat h-type based on the type of Kindy
+func (k Kindy) MFType() string {
+	return "h-entry"
 }
 
 // ContentStripped strips all HTML with a strict policy
@@ -67,7 +81,7 @@ func (k Kindy) MustTitle() string {
 		return k.Permalink
 	}
 
-	return k.Type
+	return string(k.Type)
 }
 
 func (k Kindy) MustDescription() string {
@@ -79,5 +93,5 @@ func (k Kindy) MustDescription() string {
 		return p.Sanitize(string(k.Content))
 	}
 
-	return k.Type
+	return string(k.Type)
 }

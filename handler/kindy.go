@@ -51,7 +51,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 
 	metadata := internal.Metadata{
-		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(kind.Type),
+		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(string(kind.Type)),
 		Description: internal.Descriptify(kind.MustDescription()),
 	}
 	if kind.Type == "photo" {
