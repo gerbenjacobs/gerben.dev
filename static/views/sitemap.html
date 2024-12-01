@@ -5,7 +5,7 @@
         <div class="col padding">
             <h1>Sitemap</h1>
             <p>
-                This sitemap is manually generated. An XML version will be here soon..
+                This sitemap is (partially) manually generated. An XML version will be here soon..
             </p>
         </div>
     </div>
@@ -34,23 +34,32 @@
             </ul>
         </div>
         <div class="col m6 padding">
-            <p>
-                I'm adding these manually for now.
-            </p>
             <h2>Posts</h2>
+            {{ if .Posts }}
             <ul>
-                <li>
-                    Nov 28th, 2024
-                    <a href="/posts/20241128-bringing-the-indieweb">Bringing the indieweb</a>
-                </li>
+                {{ range .Posts }}
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
             </ul>
+            {{ end }}
+
             <h2>Photos</h2>
+            {{ if .Photos }}
             <ul>
-                <li>
-                    Nov 30th, 2024
-                    <a href="/photos/42f8bb87b0e070169ecab2b3371c246e">Drone photo taken at Wekeromse Zand</a>
-                </li>
+                {{ range .Photos }}
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
             </ul>
+            {{ end }}
+
+            <h2>Notes</h2>
+            {{ if .Notes }}
+            <ul>
+                {{ range .Notes }}
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .ContentStripped }}
+                {{ end }}
+            </ul>
+            {{ end }}
         </div>
     </div>
 </div>

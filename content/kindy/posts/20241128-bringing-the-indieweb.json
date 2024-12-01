@@ -10,5 +10,6 @@
     "url": "https://gerben.dev",
     "photo": "https://gerben.dev/images/avatar.jpg"
   },
-  "permalink": "https://gerben.dev/posts/20241128-bringing-the-indieweb"
+  "permalink": "/posts/20241128-bringing-the-indieweb",
+  "slug": "20241128-bringing-the-indieweb"
 }

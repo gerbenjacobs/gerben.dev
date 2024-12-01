@@ -3,6 +3,8 @@ package gerbendev
 import (
 	"html/template"
 	"time"
+
+	"github.com/microcosm-cc/bluemonday"
 )
 
 // Kindy is a datastructure for content that adheres to Microformats 2
@@ -35,4 +37,11 @@ type KindySyndication struct {
 type KindyGeo struct {
 	Latitude  float64 `json:"latitude"`
 	Longitude float64 `json:"longitude"`
+}
+
+// ContentStripped strips all HTML with a strict policy
+// but still returns a template.HTML so that properly escaped HTML entities still work
+func (k Kindy) ContentStripped() template.HTML {
+	p := bluemonday.StrictPolicy()
+	return template.HTML(p.Sanitize(string(k.Content)))
 }

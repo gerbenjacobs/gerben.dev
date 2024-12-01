@@ -6,12 +6,16 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"sort"
+	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
+
+	// TODO: move kindy content creation to seperate service
 
 	b, err := os.ReadFile("content/kindy" + r.URL.Path + ".json")
 	if err != nil {
@@ -41,4 +45,38 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	if err := t.Execute(w, kind); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func GetKindyByType(kindyType string) (entries []local.Kindy, err error) {
+	contentPath := KindyContentPath + kindyType
+	files, err := os.ReadDir(contentPath)
+	if err != nil {
+		return nil, err
+	}
+
+	// Do folder walking, file reading and JSON unmarshalling
+	for _, f := range files {
+		if !strings.HasSuffix(f.Name(), ".json") {
+			// skip all non .json files
+			continue
+		}
+
+		b, err := os.ReadFile(contentPath + "/" + f.Name())
+		if err != nil {
+			return nil, err
+		}
+
+		var tmp local.Kindy
+		if err := json.Unmarshal(b, &tmp); err != nil {
+			return nil, err
+		}
+		entries = append(entries, tmp)
+	}
+
+	// Sort the entries on
+	sort.Slice(entries, func(i, j int) bool {
+		return entries[i].PublishedAt.After(entries[j].PublishedAt)
+	})
+
+	return entries, nil
 }
