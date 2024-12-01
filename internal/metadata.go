@@ -1,6 +1,9 @@
 package internal
 
-import "strings"
+import (
+	"html"
+	"strings"
+)
 
 var (
 	TitlifyLenght     = 51
@@ -17,6 +20,7 @@ type Metadata struct {
 }
 
 func Titlify(title string) string {
+	title = html.UnescapeString(title)
 	if len(title) > TitlifyLenght {
 		return title[:TitlifyLenght] + "..."
 	}

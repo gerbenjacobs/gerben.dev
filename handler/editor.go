@@ -22,8 +22,7 @@ const cookieName = "flash"
 
 var (
 	KindyContentPath = "content/kindy/"
-	KindyBaseURL     = "https://gerben.dev/"
-	KindyURLNotes    = "notes/"
+	KindyURLNotes    = "/notes/"
 )
 
 func kindyEditor(w http.ResponseWriter, r *http.Request) {

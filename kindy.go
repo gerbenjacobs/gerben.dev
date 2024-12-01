@@ -41,9 +41,14 @@ type KindyGeo struct {
 
 // ContentStripped strips all HTML with a strict policy
 // but still returns a template.HTML so that properly escaped HTML entities still work
-func (k Kindy) ContentStripped() template.HTML {
+// It has an 'optional' args list, but we really only except 1 int which limits the length
+func (k Kindy) ContentStripped(args ...int) template.HTML {
+	content := string(k.Content)
+	if len(args) > 0 && len(content) > args[0] {
+		content = content[:args[0]] + "&hellip;"
+	}
 	p := bluemonday.StrictPolicy()
-	return template.HTML(p.Sanitize(string(k.Content)))
+	return template.HTML(p.Sanitize(content))
 }
 
 func (k Kindy) MustTitle() string {
