@@ -134,7 +134,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
 		Slug:        slug,
-		Permalink:   KindyBaseURL + KindyURLNotes + slug,
+		Permalink:   KindyURLNotes + slug,
 		Author:      author,
 	}
 
