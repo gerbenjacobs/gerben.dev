@@ -45,3 +45,34 @@ func (k Kindy) ContentStripped() template.HTML {
 	p := bluemonday.StrictPolicy()
 	return template.HTML(p.Sanitize(string(k.Content)))
 }
+
+func (k Kindy) MustTitle() string {
+	if k.Title != "" {
+		return k.Title
+	}
+	if k.Summary != "" {
+		return k.Summary
+	}
+	if k.Type == "note" {
+		// for Notes, we might as well use the content
+		p := bluemonday.StrictPolicy()
+		return p.Sanitize(string(k.Content))
+	}
+	if k.Permalink != "" {
+		return k.Permalink
+	}
+
+	return k.Type
+}
+
+func (k Kindy) MustDescription() string {
+	if k.Summary != "" {
+		return k.Summary
+	}
+	if k.Content != "" {
+		p := bluemonday.StrictPolicy()
+		return p.Sanitize(string(k.Content))
+	}
+
+	return k.Type
+}

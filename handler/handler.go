@@ -7,6 +7,7 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
+// layoutFiles are all the files required to create the site w.r.t. template/define
 var layoutFiles = []string{
 	"static/views/baseLayout.html",
 	"static/views/partials/navbar.html",
@@ -39,9 +40,21 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /humans.txt", singlePage("static/humans.txt"))
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html"))
-	r.HandleFunc("GET /joke", h.singlePageLayout("content/single/joke.html"))
-	r.HandleFunc("GET /changelog", h.singlePageLayout("content/single/changelog.html"))
+	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{}))
+	r.HandleFunc("GET /joke", h.singlePageLayout(
+		"content/single/joke.html",
+		internal.Metadata{
+			Title:       "fed.brid.gy test",
+			Description: "Test page to see how fed.brid.gy posts content, copied from https://fed.brid.gy/docs#web-how-post",
+		},
+	))
+	r.HandleFunc("GET /changelog", h.singlePageLayout(
+		"content/single/changelog.html",
+		internal.Metadata{
+			Title:       "Changelog",
+			Description: "This page explains all the (structural) changes that happened to this site.",
+		},
+	))
 	r.HandleFunc("GET /sitemap", h.sitemap)
 	r.HandleFunc("GET /tags/{tag}", h.tags)
 
@@ -70,11 +83,14 @@ func singlePage(fileName string) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (h *Handler) singlePageLayout(fileName string) func(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		t := template.Must(template.ParseFiles(append(layoutFiles, fileName)...))
 
-		if err := t.Execute(w, nil); err != nil {
+		type pageData struct {
+			Metadata internal.Metadata
+		}
+		if err := t.Execute(w, pageData{metadata}); err != nil {
 			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 		}
 	}
@@ -83,7 +99,18 @@ func (h *Handler) singlePageLayout(fileName string) func(w http.ResponseWriter, 
 func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
 
-	if err := t.Execute(w, r.PathValue("tag")); err != nil {
+	type pageData struct {
+		Metadata internal.Metadata
+		Tag      string
+	}
+	data := pageData{
+		Metadata: internal.Metadata{
+			Title:       r.PathValue("tag") + " | Tags",
+			Description: "All content on gerben.de for the term: " + r.PathValue("tag"),
+		},
+		Tag: r.PathValue("tag"),
+	}
+	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
 }

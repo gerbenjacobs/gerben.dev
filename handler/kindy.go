@@ -10,6 +10,9 @@ import (
 	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
+	"github.com/gerbenjacobs/gerben.dev/internal"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
@@ -42,7 +45,23 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		kind.Content = template.HTML(b)
 	}
 
-	if err := t.Execute(w, kind); err != nil {
+	type pageData struct {
+		Metadata internal.Metadata
+		local.Kindy
+	}
+
+	metadata := internal.Metadata{
+		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(kind.Type),
+		Description: internal.Descriptify(kind.MustDescription()),
+	}
+	if kind.Type == "photo" {
+		metadata.Image = string(kind.Content)
+	}
+	data := pageData{
+		Metadata: metadata,
+		Kindy:    kind,
+	}
+	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
 }

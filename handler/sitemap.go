@@ -6,15 +6,17 @@ import (
 	"net/http"
 
 	local "github.com/gerbenjacobs/gerben.dev"
+	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
 func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/sitemap.html")...))
 
-	type sitemap struct {
-		Posts  []local.Kindy
-		Photos []local.Kindy
-		Notes  []local.Kindy
+	type pageData struct {
+		Metadata internal.Metadata
+		Posts    []local.Kindy
+		Photos   []local.Kindy
+		Notes    []local.Kindy
 	}
 
 	posts, err := GetKindyByType("posts")
@@ -30,10 +32,11 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 		slog.Error("failed to load kindy notes", "error", err)
 	}
 
-	data := sitemap{
-		Posts:  posts,
-		Photos: photos,
-		Notes:  notes,
+	data := pageData{
+		Metadata: internal.Metadata{Title: "Sitemap", Description: "A HTML version of my sitemap"},
+		Posts:    posts,
+		Photos:   photos,
+		Notes:    notes,
 	}
 
 	if err := t.Execute(w, data); err != nil {
