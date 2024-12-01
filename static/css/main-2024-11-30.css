@@ -67,6 +67,12 @@ nav ul a,
 
 #me {
     border: 10px solid rebeccapurple;
+    background-color: #423e44 !important;
+    color: #fefefe;
+}
+
+#me a {
+    color: #ccc;
 }
 
 #me img {
@@ -114,9 +120,7 @@ code {
     }
 
     #repositories .row:after,
-    #projects:after,
-    #archived:after,
-    footer:before {
+    #projects:after {
         content: "";
         display: block;
         height: 2em;

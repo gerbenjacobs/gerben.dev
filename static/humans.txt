@@ -3,3 +3,5 @@
 Hello, welcome to my humble abode!
 
 This site is maintained by Gerben, it's a little webserver written in Go.
+
+It has Microformats (v2) and Webmentions. I'm actively trying to participate in the #IndieWeb
