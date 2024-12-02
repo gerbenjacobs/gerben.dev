@@ -65,7 +65,18 @@
             {{ if .Likes -}}
             <ul>
                 {{- range .Likes }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .LikeOf }}">{{ .LikeOf }}</a></li>
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
+                    ⭐ <a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a></li>
+                {{- end }}
+            </ul>
+            {{- end }}
+
+            <h2>Reposts ({{ index .Counts "reposts" }})</h2>
+            {{ if .Reposts -}}
+            <ul>
+                {{- range .Reposts }}
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
+                    🔁 <a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}

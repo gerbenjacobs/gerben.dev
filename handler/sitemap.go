@@ -19,6 +19,7 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 		Photos   []local.Kindy
 		Notes    []local.Kindy
 		Likes    []local.Kindy
+		Reposts  []local.Kindy
 		Replies  []local.Kindy
 	}
 
@@ -38,6 +39,10 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		slog.Error("failed to load kindy likes", "error", err)
 	}
+	reposts, err := GetKindyByType("reposts")
+	if err != nil {
+		slog.Error("failed to load kindy reposts", "error", err)
+	}
 	// replies, err := GetKindyByType("replies")
 	// if err != nil {
 	// 	slog.Error("failed to load kindy replies", "error", err)
@@ -46,16 +51,18 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	data := pageData{
 		Metadata: internal.Metadata{Title: "Sitemap", Description: "A HTML version of my sitemap"},
 		Counts: map[string]int{
-			"posts":  len(posts),
-			"photos": len(photos),
-			"notes":  len(notes),
-			"likes":  len(likes),
+			"posts":   len(posts),
+			"photos":  len(photos),
+			"notes":   len(notes),
+			"likes":   len(likes),
+			"reposts": len(reposts),
 			// "replies": len(replies),
 		},
-		Posts:  kindyLimit(posts, 10),
-		Photos: kindyLimit(photos, 10),
-		Notes:  kindyLimit(notes, 10),
-		Likes:  kindyLimit(likes, 10),
+		Posts:   kindyLimit(posts, 10),
+		Photos:  kindyLimit(photos, 10),
+		Notes:   kindyLimit(notes, 10),
+		Likes:   kindyLimit(likes, 10),
+		Reposts: kindyLimit(reposts, 10),
 		// Replies: kindyLimit(replies, 10),
 	}
 

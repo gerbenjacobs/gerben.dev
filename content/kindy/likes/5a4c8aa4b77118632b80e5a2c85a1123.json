@@ -3,5 +3,10 @@
     "summary": "Liked",
     "publishedAt": "2024-11-28T00:40:00+01:00",
     "permalink": "/likes/5a4c8aa4b77118632b80e5a2c85a1123",
-    "likeOf": "https://todon.nl/@gerben/113556315040488570"
+    "likeOf": "https://todon.nl/@gerben/113556315040488570",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    }
 }

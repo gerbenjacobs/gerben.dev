@@ -11,10 +11,11 @@ import (
 type KindyType string
 
 const (
-	KindyTypeNote  = "note"
-	KindyTypePost  = "post"
-	KindyTypePhoto = "photo"
-	KindyTypeLike  = "like"
+	KindyTypeNote   = "note"
+	KindyTypePost   = "post"
+	KindyTypePhoto  = "photo"
+	KindyTypeLike   = "like"
+	KindyTypeRepost = "repost"
 )
 
 // Kindy is a datastructure for content that adheres to Microformats 2
@@ -29,6 +30,7 @@ type Kindy struct {
 	Author      *KindyAuthor       `json:"author,omitempty"`
 	Syndication []KindySyndication `json:"syndication,omitempty"`
 	LikeOf      string             `json:"likeOf,omitempty"`
+	RepostOf    string             `json:"repostOf,omitempty"`
 	Geo         *KindyGeo          `json:"geo,omitempty"`
 	Tags        []string           `json:"tags,omitempty"`
 }
@@ -67,6 +69,13 @@ func (k Kindy) ContentStripped(args ...int) template.HTML {
 }
 
 func (k Kindy) MustTitle() string {
+	if k.Type == KindyTypeLike || k.Type == KindyTypeRepost {
+		url := k.LikeOf
+		if k.Type == KindyTypeRepost {
+			url = k.RepostOf
+		}
+		return k.Summary + " " + url
+	}
 	if k.Title != "" {
 		return k.Title
 	}

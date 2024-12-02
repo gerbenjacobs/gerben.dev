@@ -15,6 +15,9 @@
     .kindy-like::before {
         content: "⭐";
     }
+    .kindy-repost::before {
+        content: "🔁";
+    }
     .h-geo::before {
         content: "🗺️";
     }
@@ -100,11 +103,6 @@
                         {{- end }}
                     </div>
                 </header>
-                {{ if .LikeOf }}
-                <span class="kindy-like">
-                    <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
-                </span>
-                {{ end }}
                 {{ if eq .Type "photo" }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .Title }}">
@@ -114,6 +112,16 @@
                     {{ if .Summary -}}
                     <p class="p-summary">
                         {{ .Summary }}
+                        {{ if .LikeOf }}
+                            <span class="kindy-like">
+                             <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
+                            </span>
+                        {{ end }}
+                        {{ if .RepostOf }}
+                            <span class="kindy-repost">
+                             <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
+                            </span>
+                        {{ end }}
                     </p>
                     {{- end }}
                     {{ if .Content -}}
