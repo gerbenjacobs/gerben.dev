@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col m5 padding">
+        <div class="col l5 padding">
             <h2>Navbar pages</h2>
             <p>
                 These pages are also available in the navigation bar.
@@ -33,7 +33,7 @@
                 <li><a href="/humans.txt">humans.txt</a> - As opposed to 🤖, this is about 👨‍💻</li>
             </ul>
         </div>
-        <div class="col m7 padding">
+        <div class="col l7 padding">
             <h2>Posts ({{ index .Counts "posts" }})</h2>
             {{ if .Posts -}}
             <ul>
@@ -66,7 +66,7 @@
             <ul>
                 {{- range .Likes }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    ⭐ <a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a></li>
+                    ⭐ <a target="_blank" href="{{ .LikeOf }}" style="word-break: break-all;">{{ .LikeOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -76,7 +76,7 @@
             <ul>
                 {{- range .Reposts }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    🔁 <a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a></li>
+                    🔁 <a target="_blank" href="{{ .RepostOf }}" style="word-break: break-all;">{{ .RepostOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
