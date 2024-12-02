@@ -3,7 +3,7 @@
     #site .kindy h1 {
         margin-bottom: 1em;
     }
-    .dt-published::before {
+    .kindy .dt-published::before {
         content: "🕰️";
     }
     .kindy-syndication::before {
@@ -21,7 +21,7 @@
     .h-geo::before {
         content: "🗺️";
     }
-    .p-category::before {
+    .kindy .p-category::before {
         content: "#";
     }
     .kindy-header img {
@@ -33,18 +33,18 @@
     .kindy-type-post .p-summary {
         font-style: italic;
     }
-    .e-content {
+    .kindy .e-content {
         margin-top: 1em;
     }
-    .p-summary > .u-photo,
-    .e-content > .u-photo,
+    .kindy .p-summary > .u-photo,
+    .kindy .e-content > .u-photo,
     .kindy-type-photo figure > .u-photo {
         width: 100%;
     }
     .kindy-type-photo figure > .u-photo {
         filter: drop-shadow(5px 5px 10px #666);
     }
-    figure {
+    .kindy figure {
         /* reset */
         margin: 2rem 0; 
     }
@@ -55,7 +55,7 @@
             width: clamp(320px, 80%, 800px);
             text-align: justify;
         }
-        figure {
+        .kindy figure {
             margin: 2rem;
         }
     }
