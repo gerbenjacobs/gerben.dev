@@ -75,18 +75,31 @@
                     </details>
                 </label>
                 <label>
-                    Publish date
+                    Publishing date
                     <input type="datetime-local" name="publishedat" aria-label="Datetime local">
-                    <small>By default we'll set the date when you submit the form.</small>
+                    <small>By default, we'll set the date when you submit the form.</small>
                 </label>
                 <label>
                     URL slug
                     <input type="text" name="slug">
-                    <small>Optional. Default value will be a hash of the publish date.</small>
+                    <small>Optional. Default value will be a hash of the publishing date.</small>
                 </label>
             </fieldset>
 
             <input type="submit" value="Publish" />
+        </form>
+
+        <h2>Likes</h2>
+
+        <form method="post" action="/kindy">
+            <input type="hidden" name="type" value="like">
+            <fieldset>
+                <label>
+                    URL
+                    <input type="url" name="url" required>
+                </label>
+            </fieldset>
+            <input type="submit" value="Publish">
         </form>
 
     </main>

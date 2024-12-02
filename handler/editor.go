@@ -21,8 +21,12 @@ import (
 const cookieName = "flash"
 
 var (
-	KindyContentPath = "content/kindy/"
-	KindyURLNotes    = "/notes/"
+	KindyEditorPath    = "/kindy"
+	KindyContentPath   = "content/kindy/"
+	KindyURLNotes      = "/notes/"
+	KindyURLLikes      = "/likes/"
+	KindySummaryLike   = "Liked"
+	KindySummaryRepost = "Reposted"
 )
 
 func kindyEditor(w http.ResponseWriter, r *http.Request) {
@@ -36,28 +40,46 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 
 	// handle POST
 	if r.Method == "POST" {
-		r.ParseForm()
+		if err := r.ParseForm(); err != nil {
+			slog.Error("failed to parse POST form", "error", err)
+		}
 
 		if r.PostForm.Get("type") == "author" {
 			if err := postAuthor(r.PostForm); err != nil {
 				slog.Error("failed to store author", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
 			}
-			http.Redirect(w, r, "/kindy", http.StatusFound)
+			http.Redirect(w, r, KindyEditorPath, http.StatusFound)
 			return
 		}
 
 		if r.PostForm.Get("type") == "note" {
-			note, err := postNote(r.PostForm)
+			entry, err := postNote(r.PostForm)
 			if err != nil {
 				slog.Error("failed to publish note", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
-				http.Redirect(w, r, "/kindy", http.StatusFound)
+				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
 				return
 			}
-			http.Redirect(w, r, KindyURLNotes+note.Slug, http.StatusFound)
+			http.Redirect(w, r, KindyURLNotes+entry.Slug, http.StatusFound)
 			return
 		}
+
+		if r.PostForm.Get("type") == "like" {
+			entry, err := postLike(r.PostForm)
+			if err != nil {
+				slog.Error("failed to publish like", "error", err)
+				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
+				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+				return
+			}
+			http.Redirect(w, r, KindyURLLikes+entry.Slug, http.StatusFound)
+			return
+		}
+
+		http.SetCookie(w, &http.Cookie{Name: cookieName, Value: "Nothing was updated."})
+		http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+		return
 	}
 
 	// handle GET
@@ -72,7 +94,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// get flash message cookie
-	c, err := r.Cookie("flash")
+	c, err := r.Cookie(cookieName)
 	if err != nil {
 		slog.Warn("failed to get cookie", "error", err)
 	} else {
@@ -127,7 +149,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 	}
 
 	author, _ := getAuthor()
-	note := kindy.Kindy{
+	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeNote,
 		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
@@ -136,12 +158,39 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		Author:      author,
 	}
 
-	b, err := json.MarshalIndent(note, "", "    ")
+	b, err := json.MarshalIndent(entry, "", "    ")
 	if err != nil {
 		return nil, err
 	}
 
-	return &note, os.WriteFile(KindyContentPath+"notes/"+slug+".json", b, 0644)
+	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
+}
+
+func postLike(data url.Values) (*kindy.Kindy, error) {
+	if data.Get("url") == "" {
+		return nil, errors.New("can't publish empty URL")
+	}
+
+	publishedAt := time.Now()
+	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
+
+	author, _ := getAuthor()
+	entry := kindy.Kindy{
+		Type:        kindy.KindyTypeLike,
+		Summary:     KindySummaryLike,
+		LikeOf:      data.Get("url"),
+		PublishedAt: publishedAt,
+		Slug:        slug,
+		Permalink:   KindyURLLikes + slug,
+		Author:      author,
+	}
+
+	b, err := json.MarshalIndent(entry, "", "    ")
+	if err != nil {
+		return nil, err
+	}
+
+	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
 }
 
 func getTitleURLFromString(title string) (output string) {
