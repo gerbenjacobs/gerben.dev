@@ -102,6 +102,19 @@
             <input type="submit" value="Publish">
         </form>
 
+        <h2>Reposts</h2>
+        
+        <form method="post" action="/kindy">
+            <input type="hidden" name="type" value="repost">
+            <fieldset>
+                <label>
+                    URL
+                    <input type="url" name="url" required>
+                </label>
+            </fieldset>
+            <input type="submit" value="Publish">
+        </form>
+
     </main>
 
     <script>

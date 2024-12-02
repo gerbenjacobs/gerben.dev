@@ -25,6 +25,7 @@ var (
 	KindyContentPath   = "content/kindy/"
 	KindyURLNotes      = "/notes/"
 	KindyURLLikes      = "/likes/"
+	KindyURLReposts    = "/reposts/"
 	KindySummaryLike   = "Liked"
 	KindySummaryRepost = "Reposted"
 )
@@ -74,6 +75,18 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			http.Redirect(w, r, KindyURLLikes+entry.Slug, http.StatusFound)
+			return
+		}
+
+		if r.PostForm.Get("type") == "repost" {
+			entry, err := postRepost(r.PostForm)
+			if err != nil {
+				slog.Error("failed to publish repost", "error", err)
+				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
+				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+				return
+			}
+			http.Redirect(w, r, KindyURLReposts+entry.Slug, http.StatusFound)
 			return
 		}
 
@@ -182,6 +195,33 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   KindyURLLikes + slug,
+		Author:      author,
+	}
+
+	b, err := json.MarshalIndent(entry, "", "    ")
+	if err != nil {
+		return nil, err
+	}
+
+	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
+}
+
+func postRepost(data url.Values) (*kindy.Kindy, error) {
+	if data.Get("url") == "" {
+		return nil, errors.New("can't publish empty URL")
+	}
+
+	publishedAt := time.Now()
+	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
+
+	author, _ := getAuthor()
+	entry := kindy.Kindy{
+		Type:        kindy.KindyTypeRepost,
+		Summary:     KindySummaryRepost,
+		RepostOf:    data.Get("url"),
+		PublishedAt: publishedAt,
+		Slug:        slug,
+		Permalink:   KindyURLReposts + slug,
 		Author:      author,
 	}
 
