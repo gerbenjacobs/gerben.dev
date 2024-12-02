@@ -34,32 +34,50 @@
             </ul>
         </div>
         <div class="col m7 padding">
-            <h2>Posts</h2>
-            {{ if .Posts }}
+            <h2>Posts ({{ index .Counts "posts" }})</h2>
+            {{ if .Posts -}}
             <ul>
-                {{ range .Posts }}
+                {{- range .Posts }}
                 <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                {{ end }}
+                {{- end }}
             </ul>
-            {{ end }}
+            {{- end }}
 
-            <h2>Photos</h2>
-            {{ if .Photos }}
+            <h2>Photos ({{ index .Counts "photos" }})</h2>
+            {{ if .Photos -}}
             <ul>
-                {{ range .Photos }}
+                {{- range .Photos }}
                 <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                {{ end }}
+                {{- end }}
             </ul>
-            {{ end }}
+            {{- end }}
 
-            <h2>Notes</h2>
-            {{ if .Notes }}
+            <h2>Notes ({{ index .Counts "notes" }})</h2>
+            {{ if .Notes -}}
             <ul>
-                {{ range .Notes }}
-                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .ContentStripped 130 }}
-                {{ end }}
+                {{- range .Notes }}
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .ContentStripped 130 }}</li>
+                {{- end }}
             </ul>
-            {{ end }}
+            {{- end }}
+
+            <h2>Likes ({{ index .Counts "likes" }})</h2>
+            {{ if .Likes -}}
+            <ul>
+                {{- range .Likes }}
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .LikeOf }}">{{ .LikeOf }}</a></li>
+                {{- end }}
+            </ul>
+            {{- end }}
+
+            <h2>Replies ({{ index .Counts "replies" }})</h2>
+            {{ if .Replies -}}
+            <ul>
+                {{- range .Replies }}
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="#">{{ .Content }}</a></li>
+                {{- end }}
+            </ul>
+            {{- end }}
         </div>
     </div>
 </div>

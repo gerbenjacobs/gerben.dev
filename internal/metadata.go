@@ -21,6 +21,7 @@ type Metadata struct {
 
 func Titlify(title string) string {
 	title = html.UnescapeString(title)
+	title = strings.Join(strings.Fields(title), " ")
 	if len(title) > TitlifyLenght {
 		return title[:TitlifyLenght] + "..."
 	}

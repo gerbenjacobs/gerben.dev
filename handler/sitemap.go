@@ -14,9 +14,12 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 
 	type pageData struct {
 		Metadata internal.Metadata
+		Counts   map[string]int
 		Posts    []local.Kindy
 		Photos   []local.Kindy
 		Notes    []local.Kindy
+		Likes    []local.Kindy
+		Replies  []local.Kindy
 	}
 
 	posts, err := GetKindyByType("posts")
@@ -31,15 +34,40 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		slog.Error("failed to load kindy notes", "error", err)
 	}
+	likes, err := GetKindyByType("likes")
+	if err != nil {
+		slog.Error("failed to load kindy likes", "error", err)
+	}
+	// replies, err := GetKindyByType("replies")
+	// if err != nil {
+	// 	slog.Error("failed to load kindy replies", "error", err)
+	// }
 
 	data := pageData{
 		Metadata: internal.Metadata{Title: "Sitemap", Description: "A HTML version of my sitemap"},
-		Posts:    posts,
-		Photos:   photos,
-		Notes:    notes,
+		Counts: map[string]int{
+			"posts":  len(posts),
+			"photos": len(photos),
+			"notes":  len(notes),
+			"likes":  len(likes),
+			// "replies": len(replies),
+		},
+		Posts:  kindyLimit(posts, 10),
+		Photos: kindyLimit(photos, 10),
+		Notes:  kindyLimit(notes, 10),
+		Likes:  kindyLimit(likes, 10),
+		// Replies: kindyLimit(replies, 10),
 	}
 
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func kindyLimit(entries []local.Kindy, limit int) []local.Kindy {
+	if len(entries) > limit {
+		return entries[:limit]
+	}
+
+	return entries
 }

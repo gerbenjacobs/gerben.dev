@@ -2,6 +2,7 @@ package gerbendev
 
 import (
 	"html/template"
+	"strings"
 	"time"
 
 	"github.com/microcosm-cc/bluemonday"
@@ -57,7 +58,7 @@ func (k Kindy) MFType() string {
 // but still returns a template.HTML so that properly escaped HTML entities still work
 // It has an 'optional' args list, but we really only except 1 int which limits the length
 func (k Kindy) ContentStripped(args ...int) template.HTML {
-	content := string(k.Content)
+	content := strings.Join(strings.Fields(string(k.Content)), " ")
 	if len(args) > 0 && len(content) > args[0] {
 		content = content[:args[0]] + "&hellip;"
 	}
