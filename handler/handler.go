@@ -41,13 +41,6 @@ func New(dependencies Dependencies) *Handler {
 
 	// Pages
 	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{}))
-	r.HandleFunc("GET /joke", h.singlePageLayout(
-		"content/single/joke.html",
-		internal.Metadata{
-			Title:       "fed.brid.gy test",
-			Description: "Test page to see how fed.brid.gy posts content, copied from https://fed.brid.gy/docs#web-how-post",
-		},
-	))
 	r.HandleFunc("GET /changelog", h.singlePageLayout(
 		"content/single/changelog.html",
 		internal.Metadata{
