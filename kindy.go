@@ -56,6 +56,21 @@ func (k Kindy) MFType() string {
 	return "h-entry"
 }
 
+func (k Kindy) TypeEmoji() string {
+	emojis := map[KindyType]string{
+		KindyTypePost:   "📝",
+		KindyTypeNote:   "🗒",
+		KindyTypePhoto:  "📸",
+		KindyTypeRepost: "🔁",
+		KindyTypeLike:   "⭐",
+	}
+	if v, ok := emojis[k.Type]; ok {
+		return v
+	}
+
+	return emojis[KindyTypePost]
+}
+
 // ContentStripped strips all HTML with a strict policy
 // but still returns a template.HTML so that properly escaped HTML entities still work
 // It has an 'optional' args list, but we really only except 1 int which limits the length

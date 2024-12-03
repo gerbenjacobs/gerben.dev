@@ -18,7 +18,7 @@ import (
 func Kindy(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
-	// TODO: move kindy content creation to seperate service
+	// TODO: move kindy content creation to separate service
 
 	b, err := os.ReadFile("content/kindy" + r.URL.Path + ".json")
 	if err != nil {

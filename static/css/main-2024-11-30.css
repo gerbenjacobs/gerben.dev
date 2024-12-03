@@ -92,6 +92,11 @@ code {
     background-color: rgba(102, 51, 153, 0.1);
 }
 
+.content img {
+    width: 100%;
+    margin: auto;
+}
+
 @media (min-width: 600px) {
     #site .container {
         margin-top: 20px;

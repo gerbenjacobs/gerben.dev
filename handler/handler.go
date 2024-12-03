@@ -61,6 +61,8 @@ func New(dependencies Dependencies) *Handler {
 	r.Handle("GET /kd/", http.StripPrefix("/kd/", http.FileServer(http.Dir("content/kindy/data"))))
 	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
 
+	r.HandleFunc("GET /posts/{$}", h.posts)
+
 	h.mux = internal.LogWriter(r)
 	return h
 }

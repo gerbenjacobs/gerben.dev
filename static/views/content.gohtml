@@ -1,0 +1,33 @@
+{{ define "content" }}
+    <div class="container">
+        <div class="row">
+            <div class="col padding">
+                {{ range .Entries }}
+                    <article class="content {{ .Type }}">
+                        <h4>{{ .TypeEmoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+                        🕰️
+                        <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
+                              title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                            <a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a>
+                        </time>
+                        {{ if .Tags -}}
+                            🏷️
+                            <span>
+                            {{- range .Tags -}}
+                                <a href="/tags/{{.}}">#{{.}}</a>
+                            {{ end -}}
+                        </span>
+                        {{- end }}
+                        {{ if eq .Type "photo" }}
+                            <p>
+                                <img src="{{ .Content }}" alt="{{ .Title }}" style="width: 200px;">
+                            </p>
+                        {{ end }}
+                        <p>{{ or .Summary .Content }}</p>
+                    </article>
+                    <hr>
+                {{ end}}
+            </div>
+        </div>
+    </div>
+{{ end }}

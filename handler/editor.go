@@ -21,11 +21,15 @@ import (
 const cookieName = "flash"
 
 var (
-	KindyEditorPath    = "/kindy"
-	KindyContentPath   = "content/kindy/"
-	KindyURLNotes      = "/notes/"
-	KindyURLLikes      = "/likes/"
-	KindyURLReposts    = "/reposts/"
+	KindyEditorPath  = "/kindy"
+	KindyContentPath = "content/kindy/"
+
+	KindyURLLikes   = "/likes/"
+	KindyURLNotes   = "/notes/"
+	KindyURLPhotos  = "/photos/"
+	KindyURLPosts   = "/posts/"
+	KindyURLReposts = "/reposts/"
+
 	KindySummaryLike   = "Liked"
 	KindySummaryRepost = "Reposted"
 )
