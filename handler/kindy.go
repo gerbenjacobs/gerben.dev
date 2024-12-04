@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"path"
 	"sort"
 	"strings"
 
@@ -16,7 +17,12 @@ import (
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
+	funcs := map[string]any{
+		"hasSuffix": func(s template.HTML, suffix string) bool {
+			return strings.HasSuffix(string(s), suffix)
+		},
+	}
+	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
 	// TODO: move kindy content creation to separate service
 

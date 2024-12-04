@@ -1,0 +1,25 @@
+{
+    "type": "photo",
+    "summary": "Panoramic view over city of Veenendaal from Dikkenberg hill.\n     ",
+    "publishedAt": "2016-06-28T17:58:15+02:00",
+    "content": "/kd/photos/media/posts/201606/E841C45743710A0CAC0BDC6C84B458A1_video_dashinit_17851950010070844.mp4",
+    "slug": "e6847ba87f4889bd909eadde101ea75d",
+    "permalink": "/photos/e6847ba87f4889bd909eadde101ea75d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "geo": {
+        "latitude": 51.9931305692,
+        "longitude": 5.55312417448
+    },
+    "tags": [
+        "panorama",
+        "skyline",
+        "forest",
+        "pines",
+        "veenendaal",
+        "dikkenberg"
+    ]
+}

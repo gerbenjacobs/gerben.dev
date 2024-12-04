@@ -52,7 +52,15 @@
             {{ if .Photos -}}
             <ul>
                 {{- range .Photos }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">
+                    {{ if .Title -}}
+                    {{ .Title }}
+                    {{- else if .Summary -}}
+                    {{ printf "%.50s.." .Summary }}
+                    {{- else -}}
+                    Untitled
+                    {{- end }}
+                </a></li>
                 {{- end }}
             </ul>
             {{- end }}

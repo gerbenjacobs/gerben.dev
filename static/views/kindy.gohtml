@@ -39,7 +39,7 @@
     .kindy .p-summary > .u-photo,
     .kindy .e-content > .u-photo,
     .kindy-type-photo figure > .u-photo {
-        width: 100%;
+        max-width: 100%;
     }
     .kindy-type-photo figure > .u-photo {
         filter: drop-shadow(5px 5px 10px #666);
@@ -88,7 +88,7 @@
                         </time>
                         {{ if .Geo -}}
                         <span class="h-geo">
-                            <a href="https://www.openstreetmap.org/search?query={{ .Geo.Latitude }},{{ .Geo.Longitude }}">
+                            <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">
                                 <span class="p-latitude">{{ .Geo.Latitude }}</span>,
                                 <span class="p-longitude">{{ .Geo.Longitude }}</span>
                             </a>
@@ -104,10 +104,20 @@
                     </div>
                 </header>
                 {{ if eq .Type "photo" }}
+                    {{ if hasSuffix .Content ".mp4" }}
+                    <div class="e-content">
+                        <video class="responsive-video" autoplay loop muted controls>
+                            <source class="u-video" src="{{.Content}}" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        {{ if .Summary }}<p class="p-summary">{{ .Summary }}</p>{{- end }}
+                    </div>
+                    {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .Title }}">
-                       {{ if .Summary }}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+                       {{ if .Summary }}<figcaption class="p-summary">{{ .Summary }}</figcaption>{{- end }}
                     </figure>
+                    {{ end }}
                 {{ else }}
                     {{ if .Summary -}}
                     <p class="p-summary">

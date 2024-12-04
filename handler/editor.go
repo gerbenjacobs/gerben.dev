@@ -22,6 +22,7 @@ const cookieName = "flash"
 
 var (
 	KindyEditorPath  = "/kindy"
+	KindyDataPath    = "/kd/"
 	KindyContentPath = "content/kindy/"
 
 	KindyURLLikes   = "/likes/"

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "summary": "Beautiful day in the Belmonte arboretum in Wageningen.\n   ",
+    "publishedAt": "2017-07-15T21:07:20+02:00",
+    "content": "/kd/photos/media/posts/201707/19985464_1235262419918676_5392072466484953088_n_17877127654098075.jpg",
+    "slug": "753adb301a47a14c8e94b21662852578",
+    "permalink": "/photos/753adb301a47a14c8e94b21662852578",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "geo": {
+        "latitude": 51.96662,
+        "longitude": 5.6891999
+    },
+    "tags": [
+        "nofilter",
+        "belmonte",
+        "arboretum",
+        "wageningen"
+    ]
+}

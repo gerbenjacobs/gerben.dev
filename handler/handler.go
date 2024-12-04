@@ -62,6 +62,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
 
 	r.HandleFunc("GET /posts/{$}", h.posts)
+	r.HandleFunc("GET /photos/{$}", h.photos)
 
 	h.mux = internal.LogWriter(r)
 	return h

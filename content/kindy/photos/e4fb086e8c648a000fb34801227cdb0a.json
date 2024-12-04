@@ -1,0 +1,17 @@
+{
+    "type": "photo",
+    "summary": "Heidekoeien.",
+    "publishedAt": "2016-03-07T16:18:01+01:00",
+    "content": "/kd/photos/media/posts/201603/12783463_165944943790724_1412351867_n_17854543405057024.jpg",
+    "slug": "e4fb086e8c648a000fb34801227cdb0a",
+    "permalink": "/photos/e4fb086e8c648a000fb34801227cdb0a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "geo": {
+        "latitude": 52.100729066,
+        "longitude": 5.68200871
+    }
+}

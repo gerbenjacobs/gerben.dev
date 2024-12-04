@@ -1,0 +1,16 @@
+{
+    "type": "photo",
+    "publishedAt": "2016-02-07T22:03:38+01:00",
+    "content": "/kd/photos/media/posts/201602/1169913_1687744221507574_904398132_n_17852492677022857.jpg",
+    "slug": "4f6df98076a8df36706603c198c17e96",
+    "permalink": "/photos/4f6df98076a8df36706603c198c17e96",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "geo": {
+        "latitude": 52.004437204,
+        "longitude": 5.468406256
+    }
+}
