@@ -83,9 +83,8 @@
     <script>
         M.AutoInit(document.body);
 
-        let upButton;
+        let upButton = document.getElementById("btn-back-to-top");
         document.addEventListener("DOMContentLoaded", function () {
-            upButton = document.getElementById("btn-back-to-top");
             upButton.addEventListener("click", backToTop);
         });
         window.onscroll = function () {
