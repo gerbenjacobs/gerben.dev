@@ -1,7 +1,9 @@
 package gerbendev
 
 import (
+	"fmt"
 	"html/template"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -69,6 +71,16 @@ func (k Kindy) TypeEmoji() string {
 	}
 
 	return emojis[KindyTypePost]
+}
+
+func (k Kindy) Thumbnail() string {
+	if k.Type == KindyTypePhoto {
+		filePath := string(k.Content)
+		ext := filepath.Ext(filePath)
+		return fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
+	}
+
+	return ""
 }
 
 // ContentStripped strips all HTML with a strict policy

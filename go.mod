@@ -3,10 +3,11 @@ module github.com/gerbenjacobs/gerben.dev
 go 1.23.2
 
 require (
+	github.com/gerbenjacobs/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/lmittmann/tint v1.0.5
 	github.com/microcosm-cc/bluemonday v1.0.27
 	github.com/spf13/viper v1.19.0
-	golang.org/x/text v0.20.0
+	golang.org/x/text v0.21.0
 )
 
 require (
