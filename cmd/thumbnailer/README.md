@@ -4,8 +4,7 @@
 
 It can go recursively through a directory and generate thumbnails for all images it finds.
 
-Thumbnails are stored with the same name as the original image, but with a `_thumb` suffix
-and a lowercase file extension i.e. `.jpg`.
+Thumbnails are stored with the same name as the original image, but with a `_thumb` suffix.
 
 It has a configurable limit for `width` and keeps the aspect ratio of the original image.
 As such it might not be a good fit if you have high/long images.
@@ -14,7 +13,7 @@ As such it might not be a good fit if you have high/long images.
 
 - Only supports JPEG (WEBP) and PNG images.
 - Resizes based on width only, but keeps aspect ratio.
-- Stores thumbnails in the same directory as the original image with a `_thumb` suffix and lowercase file extension.
+- Stores thumbnails in the same directory as the original image with a `_thumb` suffix.
 - Use as-is, no warranties.
 
 ## Installing

@@ -77,7 +77,7 @@ func (k Kindy) Thumbnail() string {
 	if k.Type == KindyTypePhoto {
 		filePath := string(k.Content)
 		ext := filepath.Ext(filePath)
-		return fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), strings.ToLower(ext))
+		return fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
 	}
 
 	return ""
