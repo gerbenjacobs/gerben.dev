@@ -65,7 +65,7 @@
         <div class="padding">
             <article class="kindy kindy-type-{{ .Type }} {{ .MFType }}">
                 <header>
-                    {{ if .Title -}}
+                    {{- if .Title -}}
                     <h1 class="p-name">{{ .Title }}</h1>
                     {{- end }}
                     <div class="kindy-header">
@@ -87,7 +87,7 @@
                             {{- end }}
                         </time>
                         {{ if .Geo -}}
-                        <span class="h-geo">
+                        <span class="p-location h-geo">
                             <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">
                                 <span class="p-latitude">{{ .Geo.Latitude }}</span>,
                                 <span class="p-longitude">{{ .Geo.Longitude }}</span>
@@ -111,11 +111,13 @@
                             Your browser does not support the video tag.
                         </video>
                         {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
+                        <span style="display: none;">(Posted on <a href="{{ .Permalink }}">gerben.dev</a>)</span>
                     </div>
                     {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
                        {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+                        <span hidden="hidden">(Posted on <a href="{{ .Permalink }}">gerben.dev</a>)</span>
                     </figure>
                     {{ end }}
                 {{ else }}
@@ -137,14 +139,15 @@
                     {{ if .Content -}}
                     <div class="e-content">
                         {{ .Content }}
+                        <span hidden="hidden">(Posted on <a href="{{ .Permalink }}">gerben.dev</a>)</span>
                     </div>
                     {{- end }}
                 {{ end }}
                 {{ if .Tags -}}
                 <footer>
-                    {{ range .Tags }}
+                    {{ range .Tags -}}
                         <a class="p-category" href="/tags/{{.}}">{{.}}</a>
-                    {{ end }}
+                    {{ end -}}
                 </footer>
                 {{- end }}
                 <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
