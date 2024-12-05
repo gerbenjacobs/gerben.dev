@@ -28,68 +28,73 @@ func main() {
 
 	fmt.Printf("searching through %q with recursion set to %v\n", *dir, *recur)
 
-	// walk through dir to find photos
-	var dirs []string
-	var photos []string
-	err := filepath.WalkDir(*dir,
-		func(path string, info os.DirEntry, err error) error {
-			if err != nil {
-				return err
-			}
-
-			if info.IsDir() {
-				dirs = append(dirs, path)
-				// if we're not recursing, skip all subdirectories
-				// once the original directory is done
-				if path != *dir && !*recur {
-					return filepath.SkipAll
-				}
-				return nil
-			}
-			photos = append(photos, path)
-			return nil
-		})
+	photos, err := findPhotos(*dir, *recur)
 	if err != nil {
-		log.Println(err)
+		log.Fatalf("error finding photos: %v", err)
 	}
 
-	// turn photos into thumbnails
 	thumbnails := findMissingThumbnails(photos)
-
 	for _, t := range thumbnails {
-		file, err := os.Open(t)
-		if err != nil {
-			log.Fatalf("failed to open file %q: %v", t, err)
+		if err := createThumbnail(t, *width); err != nil {
+			log.Printf("error creating thumbnail for %q: %v", t, err)
 		}
-		ext := strings.ToLower(filepath.Ext(t))
-		var img image.Image
-		switch ext {
-		case ".jpg", ".jpeg", ".webp":
-			img, err = jpeg.Decode(file)
-		case ".png":
-			img, err = png.Decode(file)
-		default:
-			log.Printf("unsupported file type %q\n", t)
-			continue
-		}
-		if err != nil {
-			log.Fatalf("failed to decode image %q: %v", t, err)
-		}
-		m := resize.Resize(*width, 0, img, resize.Lanczos3)
-		tf := fileWithoutExtension(t) + thumbExtension + ext
-		out, err := os.Create(tf)
-		if err != nil {
-			log.Fatalf("failed to create thumbnail file %q: %v", t, err)
-		}
-		defer out.Close()
+	}
+}
 
-		// write new image to file
-		err = jpeg.Encode(out, m, nil)
+func findPhotos(dir string, recur bool) ([]string, error) {
+	var photos []string
+	err := filepath.WalkDir(dir, func(path string, info os.DirEntry, err error) error {
 		if err != nil {
-			log.Fatalf("failed to encode thumbnail image %q: %v", t, err)
+			return err
 		}
+		if info.IsDir() && path != dir && !recur {
+			return filepath.SkipDir
+		}
+		if !info.IsDir() {
+			photos = append(photos, path)
+		}
+		return nil
+	})
+	return photos, err
+}
 
-		fmt.Printf("created thumbnail %q\n", tf)
+func createThumbnail(filePath string, width uint) error {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return fmt.Errorf("failed to open file %q: %v", filePath, err)
+	}
+	defer file.Close()
+
+	img, err := decodeImage(file, filePath)
+	if err != nil {
+		return fmt.Errorf("failed to decode image %q: %v", filePath, err)
+	}
+
+	m := resize.Resize(width, 0, img, resize.Lanczos3)
+	tf := fileWithoutExtension(filePath) + thumbExtension + filepath.Ext(filePath)
+	out, err := os.Create(tf)
+	if err != nil {
+		return fmt.Errorf("failed to create thumbnail file %q: %v", filePath, err)
+	}
+	defer out.Close()
+
+	if err := jpeg.Encode(out, m, nil); err != nil {
+		return fmt.Errorf("failed to encode thumbnail image %q: %v", filePath, err)
+	}
+
+	fmt.Printf("created thumbnail %q\n", tf)
+	return nil
+}
+
+func decodeImage(file *os.File, filePath string) (image.Image, error) {
+	ext := strings.ToLower(filepath.Ext(filePath))
+	switch ext {
+	case ".jpg", ".jpeg", ".webp":
+		return jpeg.Decode(file)
+	case ".png":
+		return png.Decode(file)
+	default:
+		return nil, fmt.Errorf("unsupported file type %q", filePath)
 	}
 }
 
@@ -99,7 +104,6 @@ func findMissingThumbnails(files []string) []string {
 		Thumbed bool
 	})
 
-	// store all files in the map, thumbnails are set to 'false' by default
 	for _, f := range files {
 		thumbs[fileWithoutExtension(f)] = struct {
 			File    string
@@ -107,14 +111,10 @@ func findMissingThumbnails(files []string) []string {
 		}{File: f, Thumbed: !fileIsThumbnail(f)}
 	}
 
-	// find out who needs a thumbnail
 	for fx, t := range thumbs {
 		if !t.Thumbed {
-			// doesn't need to be thumbnailed
 			continue
 		}
-
-		// look if we have a thumbnail version
 		if _, ok := thumbs[fx+thumbExtension]; ok {
 			thumbs[fx] = struct {
 				File    string
