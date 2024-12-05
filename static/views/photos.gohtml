@@ -53,7 +53,7 @@
                 </video>
                 {{ else }}
                 <a href="{{ .Permalink }}">
-                    <img src="{{ .Thumbnail }}" alt="{{ .Title }}" loading="lazy">
+                    <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
                 </a>
                 {{ end }}
             </article>
