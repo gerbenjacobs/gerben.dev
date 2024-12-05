@@ -8,6 +8,21 @@
     <title>Kindy Editor</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <style>
+        .tag {
+            background-color: #f0f0f0;
+            border-radius: 0.25em;
+            color: #333;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 0.5em;
+            padding: 0.25em 0.5em;
+        }
+        .tag::after {
+            content: '×';
+            margin-left: 0.5em;
+        }
+    </style>
 </head>
 
 <body>
@@ -84,6 +99,22 @@
                     <input type="text" name="slug">
                     <small>Optional. Default value will be a hash of the publishing date.</small>
                 </label>
+                <label>
+                    Tags
+                    <span class="tag-container"></span>
+                    <input list="tags" class="tagger" />
+                    <small>Press enter to add a tag</small>
+
+                    <input type="hidden" name="tags">
+
+                    <datalist id="tags">
+                        <option value="Chocolate"></option>
+                        <option value="Coconut"></option>
+                        <option value="Mint"></option>
+                        <option value="Strawberry"></option>
+                        <option value="Vanilla"></option>
+                    </datalist>
+                </label>
             </fieldset>
 
             <input type="submit" value="Publish" />
@@ -118,9 +149,46 @@
     </main>
 
     <script>
-        let content = document.getElementById('content')
-        document.querySelector('emoji-picker').addEventListener('emoji-click', event => {
-            content.value += event.detail.unicode
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.getElementById('content');
+            const emojiPicker = document.querySelector('emoji-picker');
+            const tags = document.querySelectorAll('.tagger');
+
+            emojiPicker.addEventListener('emoji-click', event => {
+                content.value += event.detail.unicode;
+            });
+
+            tags.forEach(tag => {
+                tag.addEventListener('change', addTag);
+                tag.addEventListener('keydown', event => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        addTag(event);
+                    }
+                });
+            });
+
+            function addTag(event) {
+                const tagValue = event.target.value.trim();
+                if (tagValue === '') return;
+
+                const tagContainer = event.target.closest('fieldset').querySelector('.tag-container');
+                const tagsInput = event.target.closest('fieldset').querySelector('input[name="tags"]');
+                const tagElement = document.createElement('span');
+                tagElement.textContent = tagValue;
+                tagElement.classList.add('tag');
+                tagElement.addEventListener('click', () => {
+                    tagElement.remove();
+                    // also remove the tag from the hidden input
+                    tagsInput.value = tagsInput.value.replace(`${tagValue},`, '');
+                });
+                tagContainer.appendChild(tagElement);
+
+                // add tag to hidden input field
+                tagsInput.value += `${tagValue},`;
+
+                event.target.value = '';
+            }
         });
     </script>
 </body>

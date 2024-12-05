@@ -166,6 +166,15 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		slug = getTitleURLFromString(data.Get("slug"))
 	}
 
+	// handle tags
+	var tags []string
+	for _, t := range strings.Split(data.Get("tags"), ",") {
+		tt := strings.TrimSpace(t)
+		if tt != "" {
+			tags = append(tags, strings.TrimSpace(t))
+		}
+	}
+
 	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeNote,
@@ -174,6 +183,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		Slug:        slug,
 		Permalink:   KindyURLNotes + slug,
 		Author:      author,
+		Tags:        tags,
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")
