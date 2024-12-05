@@ -104,7 +104,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	data := pageData{
 		Metadata: internal.Metadata{
 			Title:       r.PathValue("tag") + " | Tags",
-			Description: "All content on gerben.de for the term: " + r.PathValue("tag"),
+			Description: "All content on gerben.dev for the term: " + r.PathValue("tag"),
 		},
 		Tag: r.PathValue("tag"),
 	}

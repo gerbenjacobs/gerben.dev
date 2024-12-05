@@ -44,6 +44,8 @@ go run cmd/thumbnailer/main.go -r -dir ./content/kindy/data/photos
 ```plaintext
   -dir string
         directory with images that need to be turned into thumbnails
+  -dry-run
+        do not create thumbnails, just list the files that would be created
   -r    recursively look through subdirectories
   -w uint
         width of the thumbnail (default 300)

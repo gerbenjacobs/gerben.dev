@@ -20,6 +20,7 @@ func main() {
 	dir := flag.String("dir", "", "directory with images that need to be turned into thumbnails")
 	recur := flag.Bool("r", false, "recursively look through subdirectories")
 	width := flag.Uint("w", 300, "width of the thumbnail")
+	dryrun := flag.Bool("dry-run", false, "do not create thumbnails, just list the files that would be created")
 	flag.Parse()
 
 	if *dir == "" {
@@ -35,6 +36,10 @@ func main() {
 
 	thumbnails := findMissingThumbnails(photos)
 	for _, t := range thumbnails {
+		if *dryrun {
+			fmt.Printf("would create thumbnail for %q\n", t)
+			continue
+		}
 		if err := createThumbnail(t, *width); err != nil {
 			log.Printf("error creating thumbnail for %q: %v", t, err)
 		}
