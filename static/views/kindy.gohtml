@@ -114,8 +114,8 @@
                     </div>
                     {{ else }}
                     <figure class="e-content">
-                        <img class="u-photo" src="{{ .Content }}" alt="{{ or .Summary .Title }}">
-                       {{ if .Summary }}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+                        <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
+                       {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
                     </figure>
                     {{ end }}
                 {{ else }}
