@@ -110,12 +110,12 @@
                             <source class="u-video" src="{{.Content}}" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
-                        {{ if .Summary }}<p class="p-summary">{{ .Summary }}</p>{{- end }}
+                        {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
                     </div>
                     {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .Title }}">
-                       {{ if .Summary }}<figcaption class="p-summary">{{ .Summary }}</figcaption>{{- end }}
+                       {{ if .Summary }}<figcaption>{{ .Summary }}</figcaption>{{- end }}
                     </figure>
                     {{ end }}
                 {{ else }}
