@@ -10,6 +10,25 @@ If you find a spelling error or want to add something cool, feel free to contrib
 
 ### Images
 
+#### Instagram Archiver
+
+To archive Instagram images, run the following command:
+
+```shell
+go run cmd/igarchiver/main.go -workdir /path/to/your/instagram/archive -outputdir content/kindy/data/photos/media
+```
+
+```plaintext
+  -outputdir string
+        Output directory i.e. your Kindy content folder
+  -postsfile string
+        JSON file containing your posts, as seen from workdir (default "/your_instagram_activity/content/posts_1.json")
+  -workdir string
+        Working directory of your Instagram archive
+```
+
+Where the `workdir` is the root directory where you extracted your Instagram archive.
+
 #### Thumbnails
 
 By default, we should put photos in `content/kindy/data/photos`.
@@ -22,7 +41,7 @@ Generate thumbnails for images in a directory, by running the following command:
 go run cmd/thumbnailer/main.go -r -dir ./content/kindy/data/photos
 ```
 
-```
+```plaintext
   -dir string
         directory with images that need to be turned into thumbnails
   -r    recursively look through subdirectories

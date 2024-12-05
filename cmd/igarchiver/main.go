@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strings"
 	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
@@ -123,7 +124,7 @@ func createKindyPhoto(url, title string, publishedAt time.Time, geo *local.Kindy
 	for _, match := range matches {
 		tags = append(tags, match[1])
 	}
-	title = hashtagRemoverRe.ReplaceAllString(title, "")
+	title = strings.TrimSpace(hashtagRemoverRe.ReplaceAllString(title, ""))
 
 	author, _ := getAuthor()
 	entry := local.Kindy{
