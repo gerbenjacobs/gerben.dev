@@ -1,9 +1,60 @@
 {{ define "content" }}
+<style>
+    .loader {
+        display: inline-block;
+        animation: hithere 1s ease infinite;
+    }
 
+    @keyframes hithere {
+        30% {
+            transform: scale(1.2);
+        }
+
+        40%,
+        60% {
+            transform: rotate(-20deg) scale(1.2);
+        }
+
+        50% {
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        70% {
+            transform: rotate(0deg) scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .bounce2 {
+        display: inline-block;
+        animation: bounce2 2s ease infinite;
+    }
+
+    @keyframes bounce2 {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col padding">
-            <h1>🎧 Listening</h1>
+            <h1><span class="bounce2">🎧</span> Listening</h1>
 
             <p>
                 Scrobbles from my <a href="https://last.fm/user/theonewithout" target="_blank">Last.fm profile</a>,
@@ -34,15 +85,15 @@
                             </p>
                             <p>
                                 <small>
-                                <a href="{{ .Link }}" target="_blank">
-                                {{ if .PublishedParsed }}
-                                    <time datetime="{{ .PublishedParsed.Format "2006-01-02T15:04:05Z07:00" }}">
-                                        {{ .PublishedParsed.Format "Jan _2, 15:04 UTC" }}
-                                    </time>
-                                {{ else }}
-                                    Listening now
-                                {{ end }}
-                                </a>
+                                    <a href="{{ .Link }}" target="_blank">
+                                        {{ if .PublishedParsed }}
+                                        <time datetime="{{ .PublishedParsed.Format " 2006-01-02T15:04:05Z07:00" }}">
+                                            {{ .PublishedParsed.Format "Jan _2, 15:04 UTC" }}
+                                        </time>
+                                        {{ else }}
+                                        Listening now <span class="loader">📻</span>
+                                        {{ end }}
+                                    </a>
                                 </small>
                             </p>
                         </div>
