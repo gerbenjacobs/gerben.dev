@@ -12,5 +12,8 @@
     "geo": {
         "latitude": 51.50028,
         "longitude": 3.61556
-    }
+    },
+    "tags": [
+        "Middelburg"
+    ]
 }

@@ -7,6 +7,7 @@ import (
 	"log/slog"
 	"os"
 	"path/filepath"
+	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -78,6 +79,7 @@ func extractTags(file string) (local.KindyType, string, []string) {
 
 func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file string, tags []string) {
 	for _, tag := range tags {
+		tag = strings.ToLower(tag)
 		tmp := tagMap[tag]
 		tmp.Count++
 		if tmp.Permalinks == nil {
