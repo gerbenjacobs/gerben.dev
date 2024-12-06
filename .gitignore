@@ -4,6 +4,8 @@
 # Config
 config.yml
 .air.toml
+.cache/*
+!.cache/.gitkeep
 
 # Build artifacts
 app
