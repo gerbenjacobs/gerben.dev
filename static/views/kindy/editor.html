@@ -18,6 +18,7 @@
             margin-right: 0.5em;
             padding: 0.25em 0.5em;
         }
+
         .tag::after {
             content: '×';
             margin-left: 0.5em;
@@ -34,7 +35,7 @@
     </header>
     <main class="container">
         {{ if .Flash }}
-            <article style="background-color: rgb(217, 53, 38); color: white;">{{ .Flash }}</article>
+        <article style="background-color: rgb(217, 53, 38); color: white;">{{ .Flash }}</article>
         {{ end }}
         <h2>Author</h2>
 
@@ -102,17 +103,14 @@
                 <label>
                     Tags
                     <span class="tag-container"></span>
-                    <input list="tags" class="tagger" />
-                    <small>Press enter to add a tag</small>
-
                     <input type="hidden" name="tags">
 
-                    <datalist id="tags">
-                        <option value="Chocolate"></option>
-                        <option value="Coconut"></option>
-                        <option value="Mint"></option>
-                        <option value="Strawberry"></option>
-                        <option value="Vanilla"></option>
+                    <input list="tagger" class="tagger" />
+                    <small>Press enter to add a tag</small>
+                    <datalist id="tagger">
+                        {{ range .Tags -}}
+                        <option value="{{ . }}"></option>
+                        {{ end -}}
                     </datalist>
                 </label>
             </fieldset>
@@ -134,7 +132,7 @@
         </form>
 
         <h2>Reposts</h2>
-        
+
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="repost">
             <fieldset>

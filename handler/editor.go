@@ -12,6 +12,7 @@ import (
 	"net/url"
 	"os"
 	"regexp"
+	"sort"
 	"strings"
 	"time"
 
@@ -41,6 +42,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	type kindyEditorStruct struct {
 		Author kindy.KindyAuthor
 		Entry  kindy.Kindy
+		Tags   []string
 		Flash  string
 	}
 
@@ -101,7 +103,9 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// handle GET
-	var data kindyEditorStruct
+	data := kindyEditorStruct{
+		Tags: getTags(),
+	}
 
 	// try to get author
 	author, err := getAuthor()
@@ -125,6 +129,28 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func getTags() []string {
+	var tagMap map[string]int
+	b, err := os.ReadFile(KindyContentPath + "data/tags.json")
+	if err != nil {
+		slog.Warn("failed to read tags.json", "error", err)
+		return nil
+	}
+	if err := json.Unmarshal(b, &tagMap); err != nil {
+		slog.Warn("failed to unmarshal tags.json", "error", err)
+		return nil
+	}
+
+	var tags []string
+	for tag, count := range tagMap {
+		if count > 1 {
+			tags = append(tags, strings.ToLower(tag))
+		}
+	}
+	sort.Strings(tags)
+	return tags
 }
 
 func getAuthor() (*kindy.KindyAuthor, error) {
