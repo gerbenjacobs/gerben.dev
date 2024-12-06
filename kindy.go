@@ -13,11 +13,24 @@ import (
 type KindyType string
 
 const (
-	KindyTypeNote   = "note"
-	KindyTypePost   = "post"
-	KindyTypePhoto  = "photo"
-	KindyTypeLike   = "like"
-	KindyTypeRepost = "repost"
+	KindyEditorPath  = "/kindy"
+	KindyDataPath    = "/kd/"
+	KindyContentPath = "content/kindy/"
+
+	KindyURLLikes   = "/likes/"
+	KindyURLNotes   = "/notes/"
+	KindyURLPhotos  = "/photos/"
+	KindyURLPosts   = "/posts/"
+	KindyURLReposts = "/reposts/"
+
+	KindySummaryLike   = "Liked"
+	KindySummaryRepost = "Reposted"
+
+	KindyTypeNote   KindyType = "note"
+	KindyTypePost   KindyType = "post"
+	KindyTypePhoto  KindyType = "photo"
+	KindyTypeLike   KindyType = "like"
+	KindyTypeRepost KindyType = "repost"
 )
 
 // Kindy is a datastructure for content that adheres to Microformats 2
@@ -56,21 +69,6 @@ type KindyGeo struct {
 // MFType returns the microformat h-type based on the type of Kindy
 func (k Kindy) MFType() string {
 	return "h-entry"
-}
-
-func (k Kindy) TypeEmoji() string {
-	emojis := map[KindyType]string{
-		KindyTypePost:   "📝",
-		KindyTypeNote:   "🗒",
-		KindyTypePhoto:  "📸",
-		KindyTypeRepost: "🔁",
-		KindyTypeLike:   "⭐",
-	}
-	if v, ok := emojis[k.Type]; ok {
-		return v
-	}
-
-	return emojis[KindyTypePost]
 }
 
 func (k Kindy) Thumbnail() string {
@@ -131,4 +129,19 @@ func (k Kindy) MustDescription() string {
 	}
 
 	return string(k.Type)
+}
+
+func (kt KindyType) Emoji() string {
+	emojis := map[KindyType]string{
+		KindyTypePost:   "📝",
+		KindyTypeNote:   "📜",
+		KindyTypePhoto:  "📸",
+		KindyTypeRepost: "🔁",
+		KindyTypeLike:   "⭐",
+	}
+	if v, ok := emojis[kt]; ok {
+		return v
+	}
+	// default to post
+	return emojis[KindyTypePost]
 }

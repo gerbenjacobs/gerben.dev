@@ -4,7 +4,7 @@
             <div class="col padding">
                 {{ range .Entries }}
                     <article class="content {{ .Type }}">
-                        <h4>{{ .TypeEmoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+                        <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
                         🕰️
                         <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
                               title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">

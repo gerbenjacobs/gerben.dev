@@ -73,7 +73,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetKindyByType(kindyType string) (entries []local.Kindy, err error) {
-	contentPath := KindyContentPath + kindyType
+	contentPath := local.KindyContentPath + kindyType
 	files, err := os.ReadDir(contentPath)
 	if err != nil {
 		return nil, err

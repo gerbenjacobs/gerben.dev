@@ -12,7 +12,7 @@
         {{ range .Entries }}
         <div class="col">
             <article class="padding content {{ .Type }}">
-                <h6>{{ .TypeEmoji }} <a href="{{ .Permalink }}">
+                <h6>{{ .Type.Emoji }} <a href="{{ .Permalink }}">
                     {{ if .Title -}}
                     {{ .Title }}
                     {{- else if .Summary -}}

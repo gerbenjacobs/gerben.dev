@@ -12,29 +12,14 @@ import (
 	"net/url"
 	"os"
 	"regexp"
-	"sort"
 	"strings"
 	"time"
 
 	kindy "github.com/gerbenjacobs/gerben.dev"
+	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
 const cookieName = "flash"
-
-var (
-	KindyEditorPath  = "/kindy"
-	KindyDataPath    = "/kd/"
-	KindyContentPath = "content/kindy/"
-
-	KindyURLLikes   = "/likes/"
-	KindyURLNotes   = "/notes/"
-	KindyURLPhotos  = "/photos/"
-	KindyURLPosts   = "/posts/"
-	KindyURLReposts = "/reposts/"
-
-	KindySummaryLike   = "Liked"
-	KindySummaryRepost = "Reposted"
-)
 
 func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles("static/views/kindy/editor.html"))
@@ -57,7 +42,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				slog.Error("failed to store author", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
 			}
-			http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+			http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 			return
 		}
 
@@ -66,10 +51,10 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				slog.Error("failed to publish note", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
-				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
-			http.Redirect(w, r, KindyURLNotes+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, kindy.KindyURLNotes+entry.Slug, http.StatusFound)
 			return
 		}
 
@@ -78,10 +63,10 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				slog.Error("failed to publish like", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
-				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
-			http.Redirect(w, r, KindyURLLikes+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, kindy.KindyURLLikes+entry.Slug, http.StatusFound)
 			return
 		}
 
@@ -90,21 +75,21 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				slog.Error("failed to publish repost", "error", err)
 				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
-				http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
-			http.Redirect(w, r, KindyURLReposts+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, kindy.KindyURLReposts+entry.Slug, http.StatusFound)
 			return
 		}
 
 		http.SetCookie(w, &http.Cookie{Name: cookieName, Value: "Nothing was updated."})
-		http.Redirect(w, r, KindyEditorPath, http.StatusFound)
+		http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 		return
 	}
 
 	// handle GET
 	data := kindyEditorStruct{
-		Tags: getTags(),
+		Tags: internal.GetTags(),
 	}
 
 	// try to get author
@@ -131,31 +116,9 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getTags() []string {
-	var tagMap map[string]int
-	b, err := os.ReadFile(KindyContentPath + "data/tags.json")
-	if err != nil {
-		slog.Warn("failed to read tags.json", "error", err)
-		return nil
-	}
-	if err := json.Unmarshal(b, &tagMap); err != nil {
-		slog.Warn("failed to unmarshal tags.json", "error", err)
-		return nil
-	}
-
-	var tags []string
-	for tag, count := range tagMap {
-		if count > 1 {
-			tags = append(tags, strings.ToLower(tag))
-		}
-	}
-	sort.Strings(tags)
-	return tags
-}
-
 func getAuthor() (*kindy.KindyAuthor, error) {
 	var author kindy.KindyAuthor
-	b, err := os.ReadFile(KindyContentPath + "author.json")
+	b, err := os.ReadFile(kindy.KindyContentPath + "author.json")
 	if err != nil {
 		return nil, err
 	}
@@ -176,7 +139,7 @@ func postAuthor(data url.Values) error {
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(KindyContentPath+"author.json", b, 0644)
+	return os.WriteFile(kindy.KindyContentPath+"author.json", b, 0644)
 }
 
 func postNote(data url.Values) (*kindy.Kindy, error) {
@@ -215,7 +178,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
 		Slug:        slug,
-		Permalink:   KindyURLNotes + slug,
+		Permalink:   kindy.KindyURLNotes + slug,
 		Author:      author,
 		Tags:        tags,
 	}
@@ -225,7 +188,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
 }
 
 func postLike(data url.Values) (*kindy.Kindy, error) {
@@ -239,11 +202,11 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeLike,
-		Summary:     KindySummaryLike,
+		Summary:     kindy.KindySummaryLike,
 		LikeOf:      data.Get("url"),
 		PublishedAt: publishedAt,
 		Slug:        slug,
-		Permalink:   KindyURLLikes + slug,
+		Permalink:   kindy.KindyURLLikes + slug,
 		Author:      author,
 	}
 
@@ -252,7 +215,7 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
 }
 
 func postRepost(data url.Values) (*kindy.Kindy, error) {
@@ -266,11 +229,11 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeRepost,
-		Summary:     KindySummaryRepost,
+		Summary:     kindy.KindySummaryRepost,
 		RepostOf:    data.Get("url"),
 		PublishedAt: publishedAt,
 		Slug:        slug,
-		Permalink:   KindyURLReposts + slug,
+		Permalink:   kindy.KindyURLReposts + slug,
 		Author:      author,
 	}
 
@@ -279,7 +242,7 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
 }
 
 func getTitleURLFromString(title string) (output string) {

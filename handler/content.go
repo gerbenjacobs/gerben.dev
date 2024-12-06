@@ -12,10 +12,10 @@ import (
 )
 
 func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/content.gohtml")...))
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/posts.gohtml")...))
 
 	// get posts
-	kindyType := KindyURLPosts
+	kindyType := local.KindyURLPosts
 	entries, err := GetKindyByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)
@@ -48,7 +48,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/photos.gohtml")...))
 
 	// get posts
-	kindyType := KindyURLPhotos
+	kindyType := local.KindyURLPhotos
 	entries, err := GetKindyByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)

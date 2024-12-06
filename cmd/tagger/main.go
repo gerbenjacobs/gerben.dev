@@ -9,6 +9,7 @@ import (
 	"path/filepath"
 
 	local "github.com/gerbenjacobs/gerben.dev"
+	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
 func main() {
@@ -27,9 +28,10 @@ func main() {
 	}
 	slog.Info("found Kindy JSON files", "files", len(files))
 
-	tags := map[string]int{}
+	tags := map[string]internal.TagInfo{}
 	for _, file := range files {
-		mergeTags(tags, extractTags(file))
+		t, pm, tg := extractTags(file)
+		mergeTags(tags, t, pm, tg)
 	}
 
 	slog.Info("writing tags.json", "output", *output)
@@ -58,24 +60,30 @@ func findKindyJSON(dir string) ([]string, error) {
 	return files, err
 }
 
-func extractTags(file string) []string {
+func extractTags(file string) (local.KindyType, string, []string) {
 	b, err := os.ReadFile(file)
 	if err != nil {
 		slog.Error("failed to read file", "file", file, "error", err)
-		return nil
+		return "", "", nil
 	}
 
 	var kind local.Kindy
 	if err := json.Unmarshal(b, &kind); err != nil {
 		slog.Warn("failed to unmarshal kindy", "file", file, "error", err)
-		return nil
+		return "", "", nil
 	}
 
-	return kind.Tags
+	return kind.Type, kind.Permalink, kind.Tags
 }
 
-func mergeTags(tagMap map[string]int, tags []string) {
+func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file string, tags []string) {
 	for _, tag := range tags {
-		tagMap[tag]++
+		tmp := tagMap[tag]
+		tmp.Count++
+		if tmp.Permalinks == nil {
+			tmp.Permalinks = map[local.KindyType][]string{}
+		}
+		tmp.Permalinks[t] = append(tmp.Permalinks[t], file)
+		tagMap[tag] = tmp
 	}
 }

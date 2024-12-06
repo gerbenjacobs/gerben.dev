@@ -103,16 +103,20 @@ func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) 
 func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
 
+	tags := internal.GetTag(r.PathValue("tag"))
+
 	type pageData struct {
 		Metadata internal.Metadata
 		Tag      string
+		Tags     map[string]internal.TagInfo
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
 			Title:       r.PathValue("tag") + " | Tags",
 			Description: "All content on gerben.dev for the term: " + r.PathValue("tag"),
 		},
-		Tag: r.PathValue("tag"),
+		Tag:  r.PathValue("tag"),
+		Tags: tags,
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)

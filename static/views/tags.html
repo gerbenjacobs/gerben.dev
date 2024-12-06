@@ -5,9 +5,20 @@
         <div class="col padding">
             <h1>Tags</h1>
 
-            <p>
-                Sorry, <i>tags</i> have not been implemented yet&hellip;
-            </p>
+            {{ if .Tags }}
+            {{ $tag := index .Tags .Tag }}
+            <ul>
+                {{ range $type, $tags := $tag.Permalinks }}
+                {{ range $tags }}
+                <li>
+                    {{ $type.Emoji }} <a href="{{ . }}">{{ . }}</a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+            {{ else }}
+            <p>No tags found.</p>
+            {{ end }}
 
             <p style="font-weight: bolder; color: rebeccapurple;">─────────๑♡⁠๑─────────</p>
 
