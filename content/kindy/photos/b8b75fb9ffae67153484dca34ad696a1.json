@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Locks at Terherne",
+    "publishedAt": "2013-01-28T15:26:04Z",
+    "content": "/kd/photos/flickr/locks-at-terherne_8467055613_o.jpg",
+    "slug": "b8b75fb9ffae67153484dca34ad696a1",
+    "permalink": "/photos/b8b75fb9ffae67153484dca34ad696a1",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8467055613/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.044728,
+        "longitude": 5.769227
+    }
+}

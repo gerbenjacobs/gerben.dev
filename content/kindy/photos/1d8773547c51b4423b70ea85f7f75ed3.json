@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Day 7 camping spot",
+    "publishedAt": "2013-07-20T17:10:18Z",
+    "content": "/kd/photos/flickr/day-7-camping-spot_9392904396_o.jpg",
+    "slug": "1d8773547c51b4423b70ea85f7f75ed3",
+    "permalink": "/photos/1d8773547c51b4423b70ea85f7f75ed3",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392904396/"
+        }
+    ]
+}

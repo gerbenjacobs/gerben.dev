@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Glacier at Nigardsbreen",
+    "publishedAt": "2013-07-23T09:46:12Z",
+    "content": "/kd/photos/flickr/glacier-at-nigardsbreen_9390775411_o.jpg",
+    "slug": "fdd5ab4a0f262b186e8ce3e1ac0f200c",
+    "permalink": "/photos/fdd5ab4a0f262b186e8ce3e1ac0f200c",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390775411/"
+        }
+    ]
+}

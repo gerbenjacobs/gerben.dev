@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Perfect spot",
+    "publishedAt": "2013-07-18T15:01:58Z",
+    "content": "/kd/photos/flickr/perfect-spot_9392754592_o.jpg",
+    "slug": "606debead33c971ba736de58285dfaea",
+    "permalink": "/photos/606debead33c971ba736de58285dfaea",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392754592/"
+        }
+    ]
+}

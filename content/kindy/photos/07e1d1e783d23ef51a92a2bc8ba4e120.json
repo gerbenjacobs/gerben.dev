@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Sunset in Zillertal",
+    "publishedAt": "2012-12-23T16:42:12Z",
+    "content": "/kd/photos/flickr/sunset-in-zillertal_8321468846_o.jpg",
+    "slug": "07e1d1e783d23ef51a92a2bc8ba4e120",
+    "permalink": "/photos/07e1d1e783d23ef51a92a2bc8ba4e120",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8321468846/"
+        }
+    ]
+}

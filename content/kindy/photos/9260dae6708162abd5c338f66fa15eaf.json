@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Franz Klammer slope",
+    "publishedAt": "2016-01-20T10:23:39Z",
+    "content": "/kd/photos/flickr/franz-klammer-slope_24017351853_o.jpg",
+    "slug": "9260dae6708162abd5c338f66fa15eaf",
+    "permalink": "/photos/9260dae6708162abd5c338f66fa15eaf",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/24017351853/"
+        }
+    ],
+    "geo": {
+        "latitude": 46.802468,
+        "longitude": 13.798012
+    }
+}

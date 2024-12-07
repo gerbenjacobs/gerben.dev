@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Riksvei 55 mountain pass",
+    "publishedAt": "2013-07-23T12:55:07Z",
+    "content": "/kd/photos/flickr/riksvei-55-mountain-pass_9393533942_o.jpg",
+    "slug": "29233425491bbb8120f247773ae144b9",
+    "permalink": "/photos/29233425491bbb8120f247773ae144b9",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393533942/"
+        }
+    ]
+}

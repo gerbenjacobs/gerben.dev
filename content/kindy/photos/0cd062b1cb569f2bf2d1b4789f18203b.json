@@ -1,0 +1,25 @@
+{
+    "type": "photo",
+    "title": "Ginkelse Heide",
+    "summary": "Ginkelse Heide, Ede, the Netherlands",
+    "publishedAt": "2015-12-13T15:09:25Z",
+    "content": "/kd/photos/flickr/ginkelse-heide_23771948305_o.jpg",
+    "slug": "0cd062b1cb569f2bf2d1b4789f18203b",
+    "permalink": "/photos/0cd062b1cb569f2bf2d1b4789f18203b",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/23771948305/"
+        }
+    ],
+    "tags": [
+        "Ede",
+        "Ginkelse",
+        "Heide"
+    ]
+}

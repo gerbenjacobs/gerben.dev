@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Ice in the locks",
+    "publishedAt": "2013-01-28T15:22:04Z",
+    "content": "/kd/photos/flickr/ice-in-the-locks_8468151870_o.jpg",
+    "slug": "d167ce7f668ce073324009490f45630f",
+    "permalink": "/photos/d167ce7f668ce073324009490f45630f",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8468151870/"
+        }
+    ]
+}

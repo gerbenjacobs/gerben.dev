@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Hjejlen steampaddler",
+    "publishedAt": "2013-07-15T12:07:32Z",
+    "content": "/kd/photos/flickr/hjejlen-steampaddler_9386917901_o.jpg",
+    "slug": "51beb9748e849791ad3475ac11d3cd01",
+    "permalink": "/photos/51beb9748e849791ad3475ac11d3cd01",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9386917901/"
+        }
+    ]
+}

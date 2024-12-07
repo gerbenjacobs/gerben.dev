@@ -131,6 +131,15 @@ func (k Kindy) MustDescription() string {
 	return string(k.Type)
 }
 
+func (k Kindy) HasFlickrSyndication() bool {
+	for _, s := range k.Syndication {
+		if s.Type == "flickr" {
+			return true
+		}
+	}
+	return false
+}
+
 func (kt KindyType) Emoji() string {
 	emojis := map[KindyType]string{
 		KindyTypePost:   "📝",

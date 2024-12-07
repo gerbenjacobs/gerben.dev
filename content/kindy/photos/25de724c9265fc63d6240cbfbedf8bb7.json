@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "\"19 red\"",
+    "publishedAt": "2012-12-27T10:39:49Z",
+    "content": "/kd/photos/flickr/19-red_8320435975_o.jpg",
+    "slug": "25de724c9265fc63d6240cbfbedf8bb7",
+    "permalink": "/photos/25de724c9265fc63d6240cbfbedf8bb7",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8320435975/"
+        }
+    ]
+}

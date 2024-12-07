@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Granary in Lom",
+    "publishedAt": "2013-07-23T18:46:40Z",
+    "content": "/kd/photos/flickr/granary-in-lom_9390882393_o.jpg",
+    "slug": "9c22b668ad428977e70c616db005b3b0",
+    "permalink": "/photos/9c22b668ad428977e70c616db005b3b0",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390882393/"
+        }
+    ]
+}

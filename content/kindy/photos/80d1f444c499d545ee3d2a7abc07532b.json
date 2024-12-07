@@ -1,0 +1,24 @@
+{
+    "type": "photo",
+    "title": "St. Patrick's Cathedral in downtown Manhattan",
+    "summary": "Great, great, GREAT architecture! I love these gothic buildings.",
+    "publishedAt": "2011-05-13T23:38:10Z",
+    "content": "/kd/photos/flickr/st-patricks-cathedral-in-downtown-manhattan_5716606447_o.jpg",
+    "slug": "80d1f444c499d545ee3d2a7abc07532b",
+    "permalink": "/photos/80d1f444c499d545ee3d2a7abc07532b",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5716606447/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.75714,
+        "longitude": -73.981761
+    }
+}

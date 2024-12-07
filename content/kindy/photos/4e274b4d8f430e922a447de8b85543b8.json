@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Homegrown deliciousness!",
+    "publishedAt": "2013-07-07T14:44:27Z",
+    "content": "/kd/photos/flickr/homegrown-deliciousness_9228796983_o.jpg",
+    "slug": "4e274b4d8f430e922a447de8b85543b8",
+    "permalink": "/photos/4e274b4d8f430e922a447de8b85543b8",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9228796983/"
+        }
+    ]
+}

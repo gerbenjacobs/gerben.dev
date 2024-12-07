@@ -1,0 +1,20 @@
+{
+    "type": "photo",
+    "title": "Snowy sunflower",
+    "summary": "Really old picture taken with a Sony Ericsson phone. Auto focus is making a bokeh effect.",
+    "publishedAt": "2009-01-09T15:07:04Z",
+    "content": "/kd/photos/flickr/snowy-sunflower_8058007229_o.jpg",
+    "slug": "4acc6ede76595c5b1af8be6cca47e6da",
+    "permalink": "/photos/4acc6ede76595c5b1af8be6cca47e6da",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8058007229/"
+        }
+    ]
+}

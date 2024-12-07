@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Malaga's \"Furola\"",
+    "publishedAt": "2012-07-26T12:58:04Z",
+    "content": "/kd/photos/flickr/malagas-furola_7683728548_o.jpg",
+    "slug": "f2fe2ed7e85646308fa24ea3b9ac3482",
+    "permalink": "/photos/f2fe2ed7e85646308fa24ea3b9ac3482",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683728548/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.71423,
+        "longitude": -4.414755
+    }
+}

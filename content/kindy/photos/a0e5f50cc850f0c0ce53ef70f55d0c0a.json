@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Alcazaba",
+    "publishedAt": "2012-07-25T12:24:47Z",
+    "content": "/kd/photos/flickr/alcazaba_7683703484_o.jpg",
+    "slug": "a0e5f50cc850f0c0ce53ef70f55d0c0a",
+    "permalink": "/photos/a0e5f50cc850f0c0ce53ef70f55d0c0a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683703484/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.721454,
+        "longitude": -4.415881
+    }
+}

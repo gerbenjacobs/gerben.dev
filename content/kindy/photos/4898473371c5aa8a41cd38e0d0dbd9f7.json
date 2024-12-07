@@ -1,0 +1,28 @@
+{
+    "type": "photo",
+    "title": "Little, but old, sailboat",
+    "publishedAt": "2012-04-08T11:36:25Z",
+    "content": "/kd/photos/flickr/little-but-old-sailboat_6941469090_o.jpg",
+    "slug": "4898473371c5aa8a41cd38e0d0dbd9f7",
+    "permalink": "/photos/4898473371c5aa8a41cd38e0d0dbd9f7",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/6941469090/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.029806,
+        "longitude": 5.751256
+    },
+    "tags": [
+        "terherne",
+        "friesland",
+        "sneekermeer"
+    ]
+}

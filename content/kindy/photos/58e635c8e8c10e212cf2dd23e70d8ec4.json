@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Spiegelrei",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T12:07:14Z",
+    "content": "/kd/photos/flickr/spiegelrei_9696836854_o.jpg",
+    "slug": "58e635c8e8c10e212cf2dd23e70d8ec4",
+    "permalink": "/photos/58e635c8e8c10e212cf2dd23e70d8ec4",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696836854/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

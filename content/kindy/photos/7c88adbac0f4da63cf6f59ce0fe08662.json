@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Tiny cairn",
+    "publishedAt": "2013-07-17T19:23:26Z",
+    "content": "/kd/photos/flickr/tiny-cairn_9389807896_o.jpg",
+    "slug": "7c88adbac0f4da63cf6f59ce0fe08662",
+    "permalink": "/photos/7c88adbac0f4da63cf6f59ce0fe08662",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389807896/"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "photo",
+    "title": "Chinook with Sling Load",
+    "publishedAt": "2011-09-16T12:13:44Z",
+    "content": "/kd/photos/flickr/chinook-with-sling-load_6155841149_o.jpg",
+    "slug": "2177772b8c2a4f769c515b2bdd113aaf",
+    "permalink": "/photos/2177772b8c2a4f769c515b2bdd113aaf",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/6155841149/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.224547,
+        "longitude": 5.753917
+    },
+    "tags": [
+        "Luchtmachtdagen 2011"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Fancy building in Oslo",
+    "publishedAt": "2013-07-26T13:31:00Z",
+    "content": "/kd/photos/flickr/fancy-building-in-oslo_9391111715_o.jpg",
+    "slug": "a75702e285cbd57f7ea917a972fd2df0",
+    "permalink": "/photos/a75702e285cbd57f7ea917a972fd2df0",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391111715/"
+        }
+    ]
+}

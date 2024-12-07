@@ -1,0 +1,28 @@
+{
+    "type": "photo",
+    "title": "Om nom nom, wolkendek",
+    "publishedAt": "2011-05-07T00:43:05Z",
+    "content": "/kd/photos/flickr/om-nom-nom-wolkendek_5694658848_o.jpg",
+    "slug": "1eb2642655a5cd31bbc6d48f4b07eb94",
+    "permalink": "/photos/1eb2642655a5cd31bbc6d48f4b07eb94",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5694658848/"
+        }
+    ],
+    "geo": {
+        "latitude": 41.409775,
+        "longitude": -53.759767
+    },
+    "tags": [
+        "wolken",
+        "clouds",
+        "airplane"
+    ]
+}

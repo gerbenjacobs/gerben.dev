@@ -1,0 +1,29 @@
+{
+    "type": "photo",
+    "title": "The river Inn",
+    "summary": "Flying over the river Inn in Innsbruck, Austria",
+    "publishedAt": "2012-02-19T13:05:02Z",
+    "content": "/kd/photos/flickr/the-river-inn_6938021907_o.jpg",
+    "slug": "74b680d73bc3c8dbaa4e8e95fad0480d",
+    "permalink": "/photos/74b680d73bc3c8dbaa4e8e95fad0480d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/6938021907/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.264786,
+        "longitude": 11.297035
+    },
+    "tags": [
+        "inn",
+        "innsbruck",
+        "aerial"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Bunkers at Løkken",
+    "publishedAt": "2013-07-16T13:43:45Z",
+    "content": "/kd/photos/flickr/bunkers-at-lkken_9386910927_o.jpg",
+    "slug": "ca8b266b0434083aa91b8780d9464850",
+    "permalink": "/photos/ca8b266b0434083aa91b8780d9464850",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9386910927/"
+        }
+    ]
+}

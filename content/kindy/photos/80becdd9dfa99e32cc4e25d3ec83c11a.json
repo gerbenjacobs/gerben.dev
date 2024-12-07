@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "River in Lom",
+    "publishedAt": "2013-07-23T18:55:24Z",
+    "content": "/kd/photos/flickr/river-in-lom_9393651694_o.jpg",
+    "slug": "80becdd9dfa99e32cc4e25d3ec83c11a",
+    "permalink": "/photos/80becdd9dfa99e32cc4e25d3ec83c11a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393651694/"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Malaga Puerto",
+    "publishedAt": "2012-07-25T14:34:42Z",
+    "content": "/kd/photos/flickr/malaga-puerto_7683795670_o.jpg",
+    "slug": "7c90510906cec564fa37ca89b5894a25",
+    "permalink": "/photos/7c90510906cec564fa37ca89b5894a25",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683795670/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.718917,
+        "longitude": -4.407706
+    }
+}

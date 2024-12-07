@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Trollstigen",
+    "publishedAt": "2013-07-24T13:27:03Z",
+    "content": "/kd/photos/flickr/trollstigen_9390855653_o.jpg",
+    "slug": "098d03010615f3cd72e63fe5d5d924c4",
+    "permalink": "/photos/098d03010615f3cd72e63fe5d5d924c4",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390855653/"
+        }
+    ]
+}

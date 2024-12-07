@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Lift station at the top of Kaiserburg",
+    "publishedAt": "2016-01-22T15:34:16Z",
+    "content": "/kd/photos/flickr/lift-station-at-the-top-of-kaiserburg_24016014714_o.jpg",
+    "slug": "a904ceaa25ad6a66f281efca8a672a8d",
+    "permalink": "/photos/a904ceaa25ad6a66f281efca8a672a8d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/24016014714/"
+        }
+    ],
+    "geo": {
+        "latitude": 46.782892,
+        "longitude": 13.827205
+    }
+}

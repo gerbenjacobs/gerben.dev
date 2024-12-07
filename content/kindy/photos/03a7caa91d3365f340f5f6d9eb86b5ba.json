@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Hike to the top of Tvindefossen waterfalls",
+    "publishedAt": "2013-07-22T08:52:14Z",
+    "content": "/kd/photos/flickr/hike-to-the-top-of-tvindefossen-waterfalls_9390482145_o.jpg",
+    "slug": "03a7caa91d3365f340f5f6d9eb86b5ba",
+    "permalink": "/photos/03a7caa91d3365f340f5f6d9eb86b5ba",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390482145/"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "type": "photo",
+    "title": "Plaza del Toros, Malaga",
+    "summary": "La Malagueta",
+    "publishedAt": "2012-07-25T13:48:39Z",
+    "content": "/kd/photos/flickr/plaza-del-toros-malaga_7683719710_o.jpg",
+    "slug": "55ae159f2f1fa7dfd7306127246c0589",
+    "permalink": "/photos/55ae159f2f1fa7dfd7306127246c0589",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683719710/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.720448,
+        "longitude": -4.410828
+    }
+}

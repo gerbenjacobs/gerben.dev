@@ -1,0 +1,20 @@
+{
+    "type": "photo",
+    "title": "Rock carvings in Tanum",
+    "summary": "A Unesco heritage site.. right next to our camping.",
+    "publishedAt": "2013-07-26T20:05:26Z",
+    "content": "/kd/photos/flickr/rock-carvings-in-tanum_9394267128_o.jpg",
+    "slug": "488ad0ebe9aad949afc3ed60115ec2a5",
+    "permalink": "/photos/488ad0ebe9aad949afc3ed60115ec2a5",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394267128/"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Lake near the camping",
+    "publishedAt": "2013-07-22T20:41:29Z",
+    "content": "/kd/photos/flickr/lake-near-the-camping_9390468983_o.jpg",
+    "slug": "2bb527e424339e3c50e1632e43e12a68",
+    "permalink": "/photos/2bb527e424339e3c50e1632e43e12a68",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390468983/"
+        }
+    ]
+}

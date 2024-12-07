@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Don't get in the water sheep!",
+    "publishedAt": "2012-05-28T15:08:53Z",
+    "content": "/kd/photos/flickr/dont-get-in-the-water-sheep_7317207182_o.jpg",
+    "slug": "7740087fe31c7538b02edb5c4e7e4daa",
+    "permalink": "/photos/7740087fe31c7538b02edb5c4e7e4daa",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7317207182/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.067342,
+        "longitude": 5.811467
+    }
+}

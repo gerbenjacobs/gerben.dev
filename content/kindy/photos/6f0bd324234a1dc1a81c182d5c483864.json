@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Green fields and golf course",
+    "publishedAt": "2014-11-08T15:21:48Z",
+    "content": "/kd/photos/flickr/green-fields-and-golf-course_20602346064_o.jpg",
+    "slug": "6f0bd324234a1dc1a81c182d5c483864",
+    "permalink": "/photos/6f0bd324234a1dc1a81c182d5c483864",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/20602346064/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.726376,
+        "longitude": 5.56347
+    }
+}

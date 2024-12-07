@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"image"
@@ -14,14 +15,26 @@ import (
 	"github.com/gerbenjacobs/resize"
 )
 
-const thumbExtension = "_thumb"
+var thumbExtension = "_thumb"
+var overwrite = false
 
 func main() {
 	dir := flag.String("dir", "", "directory with images that need to be turned into thumbnails")
 	recur := flag.Bool("r", false, "recursively look through subdirectories")
 	width := flag.Uint("w", 300, "width of the thumbnail")
+	fileExt := flag.String("ext", "", "the file path suffix to identify thumbnails")
 	dryrun := flag.Bool("dry-run", false, "do not create thumbnails, just list the files that would be created")
 	flag.Parse()
+
+	if fileExt == nil || *fileExt == "" {
+		confirmed := askForConfirmation("No file extension specified with `-ext`, this will overwrite the files. Are you sure?")
+		if !confirmed {
+			log.Fatalf("aborting")
+		}
+		overwrite = true
+	}
+
+	thumbExtension = *fileExt
 
 	if *dir == "" {
 		log.Fatalf("the `dir` flag is required to operate")
@@ -117,7 +130,7 @@ func findMissingThumbnails(files []string) []string {
 	}
 
 	for fx, t := range thumbs {
-		if !t.Thumbed {
+		if !t.Thumbed || overwrite {
 			continue
 		}
 		if _, ok := thumbs[fx+thumbExtension]; ok {
@@ -134,7 +147,6 @@ func findMissingThumbnails(files []string) []string {
 			thumbFiles = append(thumbFiles, t.File)
 		}
 	}
-
 	return thumbFiles
 }
 
@@ -143,5 +155,29 @@ func fileWithoutExtension(filePath string) string {
 }
 
 func fileIsThumbnail(filePath string) bool {
+	if overwrite {
+		return false
+	}
 	return strings.HasSuffix(fileWithoutExtension(filePath), thumbExtension)
+}
+
+func askForConfirmation(s string) bool {
+	reader := bufio.NewReader(os.Stdin)
+
+	for {
+		fmt.Printf("%s [y/n]: ", s)
+
+		response, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		response = strings.ToLower(strings.TrimSpace(response))
+
+		if response == "y" || response == "yes" {
+			return true
+		} else if response == "n" || response == "no" {
+			return false
+		}
+	}
 }

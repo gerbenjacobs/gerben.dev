@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "City council in Oslo",
+    "publishedAt": "2013-07-26T10:17:42Z",
+    "content": "/kd/photos/flickr/city-council-in-oslo_9393922366_o.jpg",
+    "slug": "4935ad510d2befef81a3804d56cb977d",
+    "permalink": "/photos/4935ad510d2befef81a3804d56cb977d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393922366/"
+        }
+    ]
+}

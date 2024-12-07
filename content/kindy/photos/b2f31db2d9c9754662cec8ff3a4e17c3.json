@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Burg, Brugge (with oldtimers)",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T15:21:57Z",
+    "content": "/kd/photos/flickr/burg-brugge-with-oldtimers_9696962360_o.jpg",
+    "slug": "b2f31db2d9c9754662cec8ff3a4e17c3",
+    "permalink": "/photos/b2f31db2d9c9754662cec8ff3a4e17c3",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696962360/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

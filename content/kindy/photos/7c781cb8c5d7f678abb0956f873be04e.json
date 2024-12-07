@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Gerlos from the Ebenfeld X-Press",
+    "publishedAt": "2011-02-26T09:13:37Z",
+    "content": "/kd/photos/flickr/gerlos-from-the-ebenfeld-x-press_5486383675_o.jpg",
+    "slug": "7c781cb8c5d7f678abb0956f873be04e",
+    "permalink": "/photos/7c781cb8c5d7f678abb0956f873be04e",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5486383675/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.233498,
+        "longitude": 12.032089
+    }
+}

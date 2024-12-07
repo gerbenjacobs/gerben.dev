@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -103,7 +104,8 @@ func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) 
 func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
 
-	tags := internal.GetTag(r.PathValue("tag"))
+	tag := strings.ToLower(r.PathValue("tag"))
+	tags := internal.GetTag(tag)
 
 	type pageData struct {
 		Metadata internal.Metadata
@@ -112,10 +114,10 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
-			Title:       r.PathValue("tag") + " | Tags",
-			Description: "All content on gerben.dev for the term: " + r.PathValue("tag"),
+			Title:       tag + " | Tags",
+			Description: "All content on gerben.dev for the term: " + tag,
 		},
-		Tag:  r.PathValue("tag"),
+		Tag:  tag,
 		Tags: tags,
 	}
 	if err := t.Execute(w, data); err != nil {

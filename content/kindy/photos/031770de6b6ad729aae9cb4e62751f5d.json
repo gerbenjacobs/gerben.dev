@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Sunset",
+    "publishedAt": "2012-05-26T21:30:40Z",
+    "content": "/kd/photos/flickr/sunset_7317219486_o.jpg",
+    "slug": "031770de6b6ad729aae9cb4e62751f5d",
+    "permalink": "/photos/031770de6b6ad729aae9cb4e62751f5d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7317219486/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.038019,
+        "longitude": 5.772789
+    }
+}

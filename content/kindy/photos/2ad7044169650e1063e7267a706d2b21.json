@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Insert witty comment here",
+    "publishedAt": "2010-11-07T16:51:15Z",
+    "content": "/kd/photos/flickr/insert-witty-comment-here_5157849792_o.jpg",
+    "slug": "2ad7044169650e1063e7267a706d2b21",
+    "permalink": "/photos/2ad7044169650e1063e7267a706d2b21",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5157849792/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.986677,
+        "longitude": 4.101676
+    }
+}

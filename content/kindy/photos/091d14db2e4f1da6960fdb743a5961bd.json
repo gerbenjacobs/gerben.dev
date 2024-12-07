@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Belfort",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T14:38:51Z",
+    "content": "/kd/photos/flickr/belfort_9696945344_o.jpg",
+    "slug": "091d14db2e4f1da6960fdb743a5961bd",
+    "permalink": "/photos/091d14db2e4f1da6960fdb743a5961bd",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696945344/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

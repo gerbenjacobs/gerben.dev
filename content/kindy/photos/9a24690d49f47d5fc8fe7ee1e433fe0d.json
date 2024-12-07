@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Bronze Age farm replica",
+    "publishedAt": "2013-07-26T18:57:48Z",
+    "content": "/kd/photos/flickr/bronze-age-farm-replica_9394294988_o.jpg",
+    "slug": "9a24690d49f47d5fc8fe7ee1e433fe0d",
+    "permalink": "/photos/9a24690d49f47d5fc8fe7ee1e433fe0d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394294988/"
+        }
+    ]
+}

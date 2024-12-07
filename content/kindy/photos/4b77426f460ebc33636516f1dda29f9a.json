@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Pottenmakerstraat",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T13:07:52Z",
+    "content": "/kd/photos/flickr/pottenmakerstraat_9696916024_o.jpg",
+    "slug": "4b77426f460ebc33636516f1dda29f9a",
+    "permalink": "/photos/4b77426f460ebc33636516f1dda29f9a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696916024/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

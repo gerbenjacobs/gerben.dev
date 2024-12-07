@@ -1,0 +1,20 @@
+{
+    "type": "photo",
+    "title": "Flowerfields",
+    "summary": "The county placed a sign that said \u0026quot;This is a pickable flowergarden!\u0026quot;",
+    "publishedAt": "2013-07-06T19:46:48Z",
+    "content": "/kd/photos/flickr/flowerfields_9223713373_o.jpg",
+    "slug": "0324d2e65308c7ae710c0f020e3cdc79",
+    "permalink": "/photos/0324d2e65308c7ae710c0f020e3cdc79",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9223713373/"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Løkken",
+    "publishedAt": "2013-07-16T12:26:19Z",
+    "content": "/kd/photos/flickr/lkken_9386913185_o.jpg",
+    "slug": "e3dc03690ffcbcfbe6d7800efdb07128",
+    "permalink": "/photos/e3dc03690ffcbcfbe6d7800efdb07128",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9386913185/"
+        }
+    ]
+}

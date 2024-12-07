@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "English monastery",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T12:38:33Z",
+    "content": "/kd/photos/flickr/english-monastery_9693641871_o.jpg",
+    "slug": "5d87902ad2909f95be1a9eb9ddf1ab71",
+    "permalink": "/photos/5d87902ad2909f95be1a9eb9ddf1ab71",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9693641871/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

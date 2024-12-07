@@ -1,0 +1,26 @@
+{
+    "type": "photo",
+    "title": "Vliegtuig doet om nom nom.",
+    "publishedAt": "2011-05-10T21:52:48Z",
+    "content": "/kd/photos/flickr/vliegtuig-doet-om-nom-nom_5707578463_o.jpg",
+    "slug": "a780a44f24fa08c2cd997451fa9cf622",
+    "permalink": "/photos/a780a44f24fa08c2cd997451fa9cf622",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5707578463/"
+        }
+    ],
+    "geo": {
+        "latitude": 52.308058,
+        "longitude": 4.758911
+    },
+    "tags": [
+        "schiphol"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Ground lackey (malacosoma castrense) on a leaf of grass.",
+    "publishedAt": "2016-06-24T21:03:02Z",
+    "content": "/kd/photos/flickr/ground-lackey-malacosoma-castrense-on-a-leaf-of-grass_27322551684_o.jpg",
+    "slug": "f462caedd70738600c5d2d738ac6069b",
+    "permalink": "/photos/f462caedd70738600c5d2d738ac6069b",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/27322551684/"
+        }
+    ],
+    "geo": {
+        "latitude": 52.036653,
+        "longitude": 5.785717
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "photo",
+    "title": "Lower Manhattan",
+    "summary": "Met financial district op de achtergrond.",
+    "publishedAt": "2011-05-02T16:40:21Z",
+    "content": "/kd/photos/flickr/lower-manhattan_5707679755_o.jpg",
+    "slug": "da84cea505b7e9d98857bd44f4c83614",
+    "permalink": "/photos/da84cea505b7e9d98857bd44f4c83614",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5707679755/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.71455,
+        "longitude": -74.007118
+    }
+}

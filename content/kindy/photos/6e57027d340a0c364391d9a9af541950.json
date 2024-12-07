@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Swords of Stavanger (Sverd i fjell)",
+    "publishedAt": "2013-07-18T12:12:55Z",
+    "content": "/kd/photos/flickr/swords-of-stavanger-sverd-i-fjell_9387029183_o.jpg",
+    "slug": "6e57027d340a0c364391d9a9af541950",
+    "permalink": "/photos/6e57027d340a0c364391d9a9af541950",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9387029183/"
+        }
+    ]
+}

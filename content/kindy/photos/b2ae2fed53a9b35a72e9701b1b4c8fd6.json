@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Top of Tvindefossen waterfalls",
+    "publishedAt": "2013-07-22T09:09:28Z",
+    "content": "/kd/photos/flickr/top-of-tvindefossen-waterfalls_9393246418_o.jpg",
+    "slug": "b2ae2fed53a9b35a72e9701b1b4c8fd6",
+    "permalink": "/photos/b2ae2fed53a9b35a72e9701b1b4c8fd6",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393246418/"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "P1000174",
+    "publishedAt": "2010-09-29T14:26:06Z",
+    "content": "/kd/photos/flickr/p1000174_5059472433_o.jpg",
+    "slug": "48f874a1176c9f79f4e499c585460cfa",
+    "permalink": "/photos/48f874a1176c9f79f4e499c585460cfa",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5059472433/"
+        }
+    ],
+    "geo": {
+        "latitude": 52.008608,
+        "longitude": 5.895709
+    }
+}

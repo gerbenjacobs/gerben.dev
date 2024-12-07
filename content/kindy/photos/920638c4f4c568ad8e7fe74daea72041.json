@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Hut next to the Marna river",
+    "publishedAt": "2013-07-17T19:17:29Z",
+    "content": "/kd/photos/flickr/hut-next-to-the-marna-river_9387035415_o.jpg",
+    "slug": "920638c4f4c568ad8e7fe74daea72041",
+    "permalink": "/photos/920638c4f4c568ad8e7fe74daea72041",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9387035415/"
+        }
+    ]
+}

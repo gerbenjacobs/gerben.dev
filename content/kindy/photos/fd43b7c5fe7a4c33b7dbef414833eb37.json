@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Cabin on Ebenfeld",
+    "publishedAt": "2011-02-26T09:14:17Z",
+    "content": "/kd/photos/flickr/cabin-on-ebenfeld_5486989052_o.jpg",
+    "slug": "fd43b7c5fe7a4c33b7dbef414833eb37",
+    "permalink": "/photos/fd43b7c5fe7a4c33b7dbef414833eb37",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5486989052/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.233498,
+        "longitude": 12.032089
+    }
+}

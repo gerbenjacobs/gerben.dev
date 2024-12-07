@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Busy @ Larmachalm",
+    "publishedAt": "2011-02-26T12:16:36Z",
+    "content": "/kd/photos/flickr/busy--larmachalm_5486415551_o.jpg",
+    "slug": "bed764c58c6207dad4ca49148fec8c5e",
+    "permalink": "/photos/bed764c58c6207dad4ca49148fec8c5e",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5486415551/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.25164,
+        "longitude": 12.100684
+    }
+}

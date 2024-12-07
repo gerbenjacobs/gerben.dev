@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Entering Sweden",
+    "publishedAt": "2013-07-26T16:03:54Z",
+    "content": "/kd/photos/flickr/entering-sweden_9394309856_o.jpg",
+    "slug": "ebb9a48dcf9066dc117dd955e98912d5",
+    "permalink": "/photos/ebb9a48dcf9066dc117dd955e98912d5",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394309856/"
+        }
+    ]
+}

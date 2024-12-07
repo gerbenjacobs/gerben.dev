@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Statue infront of palace",
+    "publishedAt": "2013-07-26T11:04:23Z",
+    "content": "/kd/photos/flickr/statue-infront-of-palace_9391141975_o.jpg",
+    "slug": "8d68b7a9cce79cb497b32eb3c47e0f53",
+    "permalink": "/photos/8d68b7a9cce79cb497b32eb3c47e0f53",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391141975/"
+        }
+    ]
+}

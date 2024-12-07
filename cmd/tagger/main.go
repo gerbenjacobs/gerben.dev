@@ -79,13 +79,13 @@ func extractTags(file string) (local.KindyType, string, []string) {
 
 func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file string, tags []string) {
 	for _, tag := range tags {
-		tag = strings.ToLower(tag)
-		tmp := tagMap[tag]
+		lcTag := strings.ToLower(tag)
+		tmp := tagMap[lcTag]
 		tmp.Count++
 		if tmp.Permalinks == nil {
 			tmp.Permalinks = map[local.KindyType][]string{}
 		}
 		tmp.Permalinks[t] = append(tmp.Permalinks[t], file)
-		tagMap[tag] = tmp
+		tagMap[lcTag] = tmp
 	}
 }

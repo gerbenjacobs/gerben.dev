@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Minnewater castle \"La Faille\"",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T16:18:30Z",
+    "content": "/kd/photos/flickr/minnewater-castle-la-faille_9696993658_o.jpg",
+    "slug": "e995602eaa48932a70b10cbc4751cc3c",
+    "permalink": "/photos/e995602eaa48932a70b10cbc4751cc3c",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696993658/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

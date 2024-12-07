@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Silver-studded blue butterfly on a dewberry plant.",
+    "publishedAt": "2016-07-03T17:22:39Z",
+    "content": "/kd/photos/flickr/silver-studded-blue-butterfly-on-a-dewberry-plant_27498588523_o.jpg",
+    "slug": "40d1d6aef8cf5717e6e9f5cdfd7bae66",
+    "permalink": "/photos/40d1d6aef8cf5717e6e9f5cdfd7bae66",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/27498588523/"
+        }
+    ]
+}

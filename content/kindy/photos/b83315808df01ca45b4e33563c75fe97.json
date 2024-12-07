@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Gerlos",
+    "publishedAt": "2011-02-26T10:41:15Z",
+    "content": "/kd/photos/flickr/gerlos_5486408161_o.jpg",
+    "slug": "b83315808df01ca45b4e33563c75fe97",
+    "permalink": "/photos/b83315808df01ca45b4e33563c75fe97",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5486408161/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.25264,
+        "longitude": 12.093844
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "photo",
+    "title": "Akerhus fortress",
+    "summary": "Akershus fortress",
+    "publishedAt": "2013-07-26T13:24:58Z",
+    "content": "/kd/photos/flickr/akerhus-fortress_9393889556_o.jpg",
+    "slug": "a6a5dab3946819c26c2e7d7d50c7bded",
+    "permalink": "/photos/a6a5dab3946819c26c2e7d7d50c7bded",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393889556/"
+        }
+    ]
+}

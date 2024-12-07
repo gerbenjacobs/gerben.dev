@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Swedes sure love Knäckebröd",
+    "publishedAt": "2013-07-27T09:45:18Z",
+    "content": "/kd/photos/flickr/swedes-sure-love-knckebrd_9395578736_o.jpg",
+    "slug": "15946afd735879ff60f2ee3a23bdab6e",
+    "permalink": "/photos/15946afd735879ff60f2ee3a23bdab6e",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9395578736/"
+        }
+    ]
+}

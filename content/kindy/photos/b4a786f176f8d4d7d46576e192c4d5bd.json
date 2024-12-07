@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Dag Amsterdam..",
+    "publishedAt": "2011-05-07T00:42:55Z",
+    "content": "/kd/photos/flickr/dag-amsterdam_5694086343_o.jpg",
+    "slug": "b4a786f176f8d4d7d46576e192c4d5bd",
+    "permalink": "/photos/b4a786f176f8d4d7d46576e192c4d5bd",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5694086343/"
+        }
+    ],
+    "geo": {
+        "latitude": 52.33408,
+        "longitude": 4.499588
+    },
+    "tags": [
+        "amsterdam",
+        "airplane"
+    ]
+}

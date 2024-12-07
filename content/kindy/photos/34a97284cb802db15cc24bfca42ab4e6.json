@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "On the road to Geiranger",
+    "publishedAt": "2013-07-24T10:19:54Z",
+    "content": "/kd/photos/flickr/on-the-road-to-geiranger_9390875477_o.jpg",
+    "slug": "34a97284cb802db15cc24bfca42ab4e6",
+    "permalink": "/photos/34a97284cb802db15cc24bfca42ab4e6",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390875477/"
+        }
+    ]
+}

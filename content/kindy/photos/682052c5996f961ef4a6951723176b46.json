@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "View of Lysefjord from Preikestolen",
+    "publishedAt": "2013-07-19T12:50:29Z",
+    "content": "/kd/photos/flickr/view-of-lysefjord-from-preikestolen_9389965031_o.jpg",
+    "slug": "682052c5996f961ef4a6951723176b46",
+    "permalink": "/photos/682052c5996f961ef4a6951723176b46",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389965031/"
+        }
+    ]
+}

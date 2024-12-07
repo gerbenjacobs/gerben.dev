@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Peer Gyntveggen",
+    "publishedAt": "2013-07-25T10:58:15Z",
+    "content": "/kd/photos/flickr/peer-gyntveggen_9393815718_o.jpg",
+    "slug": "fffb70956bcb42be5601c1eca851662a",
+    "permalink": "/photos/fffb70956bcb42be5601c1eca851662a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393815718/"
+        }
+    ]
+}

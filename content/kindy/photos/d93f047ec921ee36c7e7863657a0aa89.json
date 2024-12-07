@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Bay near Stord",
+    "publishedAt": "2013-07-20T18:57:03Z",
+    "content": "/kd/photos/flickr/bay-near-stord_9390127483_o.jpg",
+    "slug": "d93f047ec921ee36c7e7863657a0aa89",
+    "permalink": "/photos/d93f047ec921ee36c7e7863657a0aa89",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390127483/"
+        }
+    ]
+}

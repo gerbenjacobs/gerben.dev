@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "View over Veenendaal from Kwintelooijen",
+    "publishedAt": "2016-06-28T16:38:22Z",
+    "content": "/kd/photos/flickr/view-over-veenendaal-from-kwintelooijen_28035989031_o.jpg",
+    "slug": "d5d11a1c8431ac0ff40fa63d47cd48ab",
+    "permalink": "/photos/d5d11a1c8431ac0ff40fa63d47cd48ab",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/28035989031/"
+        }
+    ]
+}

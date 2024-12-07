@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Day 4 camping spot",
+    "publishedAt": "2013-07-17T18:47:02Z",
+    "content": "/kd/photos/flickr/day-4-camping-spot_9387037869_o.jpg",
+    "slug": "6bee93be17ef898cf846bdd880ba0494",
+    "permalink": "/photos/6bee93be17ef898cf846bdd880ba0494",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9387037869/"
+        }
+    ]
+}

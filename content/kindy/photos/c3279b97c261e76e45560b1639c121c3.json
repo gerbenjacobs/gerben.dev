@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Jan van Eyck",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T11:59:55Z",
+    "content": "/kd/photos/flickr/jan-van-eyck_9696818772_o.jpg",
+    "slug": "c3279b97c261e76e45560b1639c121c3",
+    "permalink": "/photos/c3279b97c261e76e45560b1639c121c3",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696818772/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

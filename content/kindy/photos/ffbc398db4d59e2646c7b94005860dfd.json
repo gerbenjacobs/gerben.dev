@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Ambulance and cars on a street in New York",
+    "publishedAt": "2011-05-11T22:15:37Z",
+    "content": "/kd/photos/flickr/ambulance-and-cars-on-a-street-in-new-york_5711269518_o.jpg",
+    "slug": "ffbc398db4d59e2646c7b94005860dfd",
+    "permalink": "/photos/ffbc398db4d59e2646c7b94005860dfd",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5711269518/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.721762,
+        "longitude": -73.998641
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "type": "photo",
+    "title": "Brooklyn Bridge",
+    "summary": "The 'north' tower of the Brooklyn Bridge with it's many wires running down.",
+    "publishedAt": "2011-05-24T01:48:45Z",
+    "content": "/kd/photos/flickr/brooklyn-bridge_5752445203_o.jpg",
+    "slug": "db9c96143213d0a8c5d35457a4661a16",
+    "permalink": "/photos/db9c96143213d0a8c5d35457a4661a16",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5752445203/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.75714,
+        "longitude": -73.981761
+    },
+    "tags": [
+        "brooklyn bridge",
+        "suspension bridge",
+        "new york",
+        "nyc"
+    ]
+}

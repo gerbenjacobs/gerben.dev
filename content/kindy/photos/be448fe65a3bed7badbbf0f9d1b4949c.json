@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Day 10 camping spot",
+    "publishedAt": "2013-07-23T15:03:26Z",
+    "content": "/kd/photos/flickr/day-10-camping-spot_9393662538_o.jpg",
+    "slug": "be448fe65a3bed7badbbf0f9d1b4949c",
+    "permalink": "/photos/be448fe65a3bed7badbbf0f9d1b4949c",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393662538/"
+        }
+    ]
+}

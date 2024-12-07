@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Malagueta beach",
+    "publishedAt": "2012-07-26T13:59:37Z",
+    "content": "/kd/photos/flickr/malagueta-beach_7683731114_o.jpg",
+    "slug": "f25e438b787bfbb0e421ca87392f5ec3",
+    "permalink": "/photos/f25e438b787bfbb0e421ca87392f5ec3",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683731114/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.717395,
+        "longitude": -4.409959
+    }
+}

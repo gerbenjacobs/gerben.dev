@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Beachlife",
+    "publishedAt": "2012-07-26T13:03:30Z",
+    "content": "/kd/photos/flickr/beachlife_7683757214_o.jpg",
+    "slug": "a0acfbaef595d0a5e496fa67500acb80",
+    "permalink": "/photos/a0acfbaef595d0a5e496fa67500acb80",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683757214/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.71466,
+        "longitude": -4.412448
+    }
+}

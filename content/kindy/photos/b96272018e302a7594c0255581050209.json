@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Curious cat",
+    "publishedAt": "2013-07-06T20:49:33Z",
+    "content": "/kd/photos/flickr/curious-cat_9223700069_o.jpg",
+    "slug": "b96272018e302a7594c0255581050209",
+    "permalink": "/photos/b96272018e302a7594c0255581050209",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9223700069/"
+        }
+    ]
+}

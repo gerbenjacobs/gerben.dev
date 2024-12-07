@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Oslo harbour",
+    "publishedAt": "2013-07-26T10:46:12Z",
+    "content": "/kd/photos/flickr/oslo-harbour_9393916648_o.jpg",
+    "slug": "a2ff8843b59691c36b04214e6bc4c77b",
+    "permalink": "/photos/a2ff8843b59691c36b04214e6bc4c77b",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393916648/"
+        }
+    ]
+}

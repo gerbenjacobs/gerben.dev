@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Hiking to Nigardsbreen",
+    "publishedAt": "2013-07-23T08:52:59Z",
+    "content": "/kd/photos/flickr/hiking-to-nigardsbreen_9393551206_o.jpg",
+    "slug": "c99a4bf6c45bf84bb0a7cdb6013de627",
+    "permalink": "/photos/c99a4bf6c45bf84bb0a7cdb6013de627",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393551206/"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Ebenfeld X-Press mountain station",
+    "publishedAt": "2011-02-26T09:18:28Z",
+    "content": "/kd/photos/flickr/ebenfeld-x-press-mountain-station_5486420987_o.jpg",
+    "slug": "64134c5cc719966022f7e1e8e8d9f864",
+    "permalink": "/photos/64134c5cc719966022f7e1e8e8d9f864",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5486420987/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.232712,
+        "longitude": 12.020845
+    }
+}

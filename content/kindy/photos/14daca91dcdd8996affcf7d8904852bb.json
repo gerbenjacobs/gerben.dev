@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Old Spanish buildings",
+    "publishedAt": "2012-07-28T15:43:05Z",
+    "content": "/kd/photos/flickr/old-spanish-buildings_7683747924_o.jpg",
+    "slug": "14daca91dcdd8996affcf7d8904852bb",
+    "permalink": "/photos/14daca91dcdd8996affcf7d8904852bb",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683747924/"
+        }
+    ]
+}

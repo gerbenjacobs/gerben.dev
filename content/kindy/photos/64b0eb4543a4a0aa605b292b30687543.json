@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Herning, Denmark",
+    "publishedAt": "2013-07-16T10:59:38Z",
+    "content": "/kd/photos/flickr/herning-denmark_9392804123_o.jpg",
+    "slug": "64b0eb4543a4a0aa605b292b30687543",
+    "permalink": "/photos/64b0eb4543a4a0aa605b292b30687543",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392804123/"
+        }
+    ]
+}

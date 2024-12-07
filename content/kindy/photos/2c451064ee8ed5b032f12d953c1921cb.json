@@ -1,0 +1,20 @@
+{
+    "type": "photo",
+    "title": "Old building in the fort in Oslo",
+    "summary": "Akershus fortress",
+    "publishedAt": "2013-07-26T13:13:31Z",
+    "content": "/kd/photos/flickr/old-building-in-the-fort-in-oslo_9393897246_o.jpg",
+    "slug": "2c451064ee8ed5b032f12d953c1921cb",
+    "permalink": "/photos/2c451064ee8ed5b032f12d953c1921cb",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393897246/"
+        }
+    ]
+}

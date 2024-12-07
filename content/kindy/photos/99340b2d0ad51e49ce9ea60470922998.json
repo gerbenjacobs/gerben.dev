@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Himmelbjerget",
+    "publishedAt": "2013-07-15T12:38:04Z",
+    "content": "/kd/photos/flickr/himmelbjerget_9389680066_o.jpg",
+    "slug": "99340b2d0ad51e49ce9ea60470922998",
+    "permalink": "/photos/99340b2d0ad51e49ce9ea60470922998",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389680066/"
+        }
+    ]
+}

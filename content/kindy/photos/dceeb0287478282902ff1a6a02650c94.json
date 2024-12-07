@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Driving in Norway",
+    "publishedAt": "2013-07-21T15:52:04Z",
+    "content": "/kd/photos/flickr/driving-in-norway_9393241136_o.jpg",
+    "slug": "dceeb0287478282902ff1a6a02650c94",
+    "permalink": "/photos/dceeb0287478282902ff1a6a02650c94",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393241136/"
+        }
+    ]
+}

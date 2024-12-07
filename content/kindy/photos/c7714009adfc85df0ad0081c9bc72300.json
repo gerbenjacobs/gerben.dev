@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Bad weather ahead in Norway",
+    "publishedAt": "2013-07-18T10:46:52Z",
+    "content": "/kd/photos/flickr/bad-weather-ahead-in-norway_9389802642_o.jpg",
+    "slug": "c7714009adfc85df0ad0081c9bc72300",
+    "permalink": "/photos/c7714009adfc85df0ad0081c9bc72300",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389802642/"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Stavanger",
+    "publishedAt": "2013-07-18T14:56:27Z",
+    "content": "/kd/photos/flickr/stavanger_9389981107_o.jpg",
+    "slug": "41ea17a305eb46a03dfc05b0f65c3b53",
+    "permalink": "/photos/41ea17a305eb46a03dfc05b0f65c3b53",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389981107/"
+        }
+    ]
+}

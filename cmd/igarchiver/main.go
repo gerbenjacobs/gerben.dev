@@ -62,12 +62,11 @@ var hashtagRemoverRe = regexp.MustCompile(`#(\w+)`)
 
 func main() {
 	wd := flag.String("workdir", "", "Working directory of your Instagram archive")
-	od := flag.String("outputdir", "", "Output directory i.e. your Kindy content folder")
 	pf := flag.String("postsfile", "/your_instagram_activity/content/posts_1.json", "JSON file containing your posts, as seen from workdir")
 	flag.Parse()
 
-	if *wd == "" || *od == "" {
-		log.Fatalf("the flags `workdir` and `outputdir` are required\nworkdir: %#v\noutputdir: %#v\n", *wd, *od)
+	if *wd == "" {
+		log.Fatalf("the flags `workdir` and `outputdir` are required\nworkdir: %#v\n", *wd)
 	}
 
 	postsFile := filepath.Join(*wd + *pf)

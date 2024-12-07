@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Meehhhh.",
+    "publishedAt": "2012-05-28T15:08:49Z",
+    "content": "/kd/photos/flickr/meehhhh_7317210604_o.jpg",
+    "slug": "ec333dc180b9fe6e5440a364c0a93509",
+    "permalink": "/photos/ec333dc180b9fe6e5440a364c0a93509",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7317210604/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.067342,
+        "longitude": 5.811467
+    }
+}

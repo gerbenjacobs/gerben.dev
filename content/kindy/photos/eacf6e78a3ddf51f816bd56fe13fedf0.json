@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Tvindefossen waterfalls",
+    "publishedAt": "2013-07-22T08:57:15Z",
+    "content": "/kd/photos/flickr/tvindefossen-waterfalls_9390479131_o.jpg",
+    "slug": "eacf6e78a3ddf51f816bd56fe13fedf0",
+    "permalink": "/photos/eacf6e78a3ddf51f816bd56fe13fedf0",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390479131/"
+        }
+    ]
+}

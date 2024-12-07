@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Posing at the glacier",
+    "publishedAt": "2013-07-23T09:45:06Z",
+    "content": "/kd/photos/flickr/posing-at-the-glacier_9390775933_o.jpg",
+    "slug": "c9b389d5df955a401b46966fe0d7227a",
+    "permalink": "/photos/c9b389d5df955a401b46966fe0d7227a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390775933/"
+        }
+    ]
+}

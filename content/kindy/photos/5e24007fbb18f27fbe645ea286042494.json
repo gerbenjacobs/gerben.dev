@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Mälmo, Sweden",
+    "publishedAt": "2013-07-27T14:11:37Z",
+    "content": "/kd/photos/flickr/mlmo-sweden_9394250076_o.jpg",
+    "slug": "5e24007fbb18f27fbe645ea286042494",
+    "permalink": "/photos/5e24007fbb18f27fbe645ea286042494",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394250076/"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "type": "photo",
+    "title": "Saint-Salvators cathedral",
+    "summary": "Brugge, Belgium",
+    "publishedAt": "2013-09-07T13:47:36Z",
+    "content": "/kd/photos/flickr/saint-salvators-cathedral_9696940226_o.jpg",
+    "slug": "7381ee1881c407f4e07669492fe7e7d1",
+    "permalink": "/photos/7381ee1881c407f4e07669492fe7e7d1",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9696940226/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge"
+    ]
+}

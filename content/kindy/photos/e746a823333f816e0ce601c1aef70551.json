@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Library in Lom",
+    "publishedAt": "2013-07-23T18:44:02Z",
+    "content": "/kd/photos/flickr/library-in-lom_9390883001_o.jpg",
+    "slug": "e746a823333f816e0ce601c1aef70551",
+    "permalink": "/photos/e746a823333f816e0ce601c1aef70551",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390883001/"
+        }
+    ]
+}

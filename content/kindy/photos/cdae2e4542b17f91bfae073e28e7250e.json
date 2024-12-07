@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "First time driving in Norway",
+    "publishedAt": "2013-07-17T15:41:33Z",
+    "content": "/kd/photos/flickr/first-time-driving-in-norway_9387039151_o.jpg",
+    "slug": "cdae2e4542b17f91bfae073e28e7250e",
+    "permalink": "/photos/cdae2e4542b17f91bfae073e28e7250e",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9387039151/"
+        }
+    ]
+}

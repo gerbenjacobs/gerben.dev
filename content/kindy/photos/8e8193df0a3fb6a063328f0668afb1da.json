@@ -1,0 +1,24 @@
+{
+    "type": "photo",
+    "title": "Hoch Elten (DE)",
+    "summary": "As seen from the watchtower on the Hulzenberg hill near Stokkum (NL)",
+    "publishedAt": "2016-02-13T15:00:03Z",
+    "content": "/kd/photos/flickr/hoch-elten-de_24374423483_o.jpg",
+    "slug": "8e8193df0a3fb6a063328f0668afb1da",
+    "permalink": "/photos/8e8193df0a3fb6a063328f0668afb1da",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/24374423483/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.876954,
+        "longitude": 6.197662
+    }
+}

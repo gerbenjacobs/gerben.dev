@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Mountains behind Malaga",
+    "publishedAt": "2012-07-25T14:21:54Z",
+    "content": "/kd/photos/flickr/mountains-behind-malaga_7683721962_o.jpg",
+    "slug": "8d5d426897420229123f712f0b49f52d",
+    "permalink": "/photos/8d5d426897420229123f712f0b49f52d",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683721962/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.723415,
+        "longitude": -4.411171
+    }
+}

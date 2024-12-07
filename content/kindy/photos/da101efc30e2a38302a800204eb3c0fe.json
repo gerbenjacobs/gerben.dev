@@ -1,0 +1,26 @@
+{
+    "type": "photo",
+    "title": "C-130 Hercules",
+    "publishedAt": "2011-09-16T12:02:22Z",
+    "content": "/kd/photos/flickr/c-130-hercules_6155840903_o.jpg",
+    "slug": "da101efc30e2a38302a800204eb3c0fe",
+    "permalink": "/photos/da101efc30e2a38302a800204eb3c0fe",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/6155840903/"
+        }
+    ],
+    "geo": {
+        "latitude": 53.224547,
+        "longitude": 5.753917
+    },
+    "tags": [
+        "Luchtmachtdagen 2011"
+    ]
+}

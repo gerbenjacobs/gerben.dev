@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "A november day at the beach",
+    "publishedAt": "2010-11-07T16:14:59Z",
+    "content": "/kd/photos/flickr/a-november-day-at-the-beach_5157234033_o.jpg",
+    "slug": "48642c9b8fae86becc0cdb5edfa5d61c",
+    "permalink": "/photos/48642c9b8fae86becc0cdb5edfa5d61c",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5157234033/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.986677,
+        "longitude": 4.101676
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "View from Kaiserburg, Bad Kleinkirchheim",
+    "publishedAt": "2016-01-22T14:58:43Z",
+    "content": "/kd/photos/flickr/view-from-kaiserburg-bad-kleinkirchheim_24617967386_o.jpg",
+    "slug": "2362b85ba16b2f9b68f143ca981f4dda",
+    "permalink": "/photos/2362b85ba16b2f9b68f143ca981f4dda",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/24617967386/"
+        }
+    ],
+    "geo": {
+        "latitude": 46.778947,
+        "longitude": 13.828032
+    }
+}

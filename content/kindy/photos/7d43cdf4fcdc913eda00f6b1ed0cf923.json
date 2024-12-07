@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Ferry to Oanes",
+    "publishedAt": "2013-07-20T11:37:12Z",
+    "content": "/kd/photos/flickr/ferry-to-oanes_9392738152_o.jpg",
+    "slug": "7d43cdf4fcdc913eda00f6b1ed0cf923",
+    "permalink": "/photos/7d43cdf4fcdc913eda00f6b1ed0cf923",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392738152/"
+        }
+    ]
+}

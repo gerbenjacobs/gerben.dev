@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Camping harbour in Langset",
+    "publishedAt": "2013-07-25T17:11:16Z",
+    "content": "/kd/photos/flickr/camping-harbour-in-langset_9393804290_o.jpg",
+    "slug": "996bf62889fe06fc4ddea12e6ed314fb",
+    "permalink": "/photos/996bf62889fe06fc4ddea12e6ed314fb",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393804290/"
+        }
+    ]
+}

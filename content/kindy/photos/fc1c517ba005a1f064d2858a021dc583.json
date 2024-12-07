@@ -1,0 +1,31 @@
+{
+    "type": "photo",
+    "title": "City Of Dubai",
+    "summary": "De Boeing 747-400 (van KLM Asia) die ons naar JFK bracht.",
+    "publishedAt": "2011-05-10T23:42:20Z",
+    "content": "/kd/photos/flickr/city-of-dubai_5708454294_o.jpg",
+    "slug": "fc1c517ba005a1f064d2858a021dc583",
+    "permalink": "/photos/fc1c517ba005a1f064d2858a021dc583",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5708454294/"
+        }
+    ],
+    "geo": {
+        "latitude": 52.308058,
+        "longitude": 4.758911
+    },
+    "tags": [
+        "city of dubai",
+        "klm asia",
+        "catering",
+        "boeing",
+        "747-400"
+    ]
+}

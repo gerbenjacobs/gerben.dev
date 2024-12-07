@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "First sights in Norway",
+    "publishedAt": "2013-07-17T15:57:25Z",
+    "content": "/kd/photos/flickr/first-sights-in-norway_9389811388_o.jpg",
+    "slug": "9e97e9d643cf4935d269d18724ec5b66",
+    "permalink": "/photos/9e97e9d643cf4935d269d18724ec5b66",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389811388/"
+        }
+    ]
+}

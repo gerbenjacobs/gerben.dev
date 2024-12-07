@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Grazing sheep",
+    "publishedAt": "2013-07-06T19:27:21Z",
+    "content": "/kd/photos/flickr/grazing-sheep_9226521034_o.jpg",
+    "slug": "08ad660bf0d44e5ea3f5ccc7654b8ffd",
+    "permalink": "/photos/08ad660bf0d44e5ea3f5ccc7654b8ffd",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9226521034/"
+        }
+    ]
+}

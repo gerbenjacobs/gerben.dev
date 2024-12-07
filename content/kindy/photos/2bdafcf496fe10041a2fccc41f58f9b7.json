@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "My instagram skills without instagram..",
+    "summary": "also first flickr app test..",
+    "publishedAt": "2012-06-30T21:52:06Z",
+    "content": "/kd/photos/flickr/my-instagram-skills-without-instagram_7474314796_o.jpg",
+    "slug": "2bdafcf496fe10041a2fccc41f58f9b7",
+    "permalink": "/photos/2bdafcf496fe10041a2fccc41f58f9b7",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7474314796/"
+        }
+    ],
+    "tags": [
+        "flickrandroidapp:filter=none"
+    ]
+}

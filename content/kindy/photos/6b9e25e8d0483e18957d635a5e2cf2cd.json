@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "The only photo from Herning",
+    "publishedAt": "2013-07-15T15:12:15Z",
+    "content": "/kd/photos/flickr/the-only-photo-from-herning_9389686622_o.jpg",
+    "slug": "6b9e25e8d0483e18957d635a5e2cf2cd",
+    "permalink": "/photos/6b9e25e8d0483e18957d635a5e2cf2cd",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389686622/"
+        }
+    ]
+}

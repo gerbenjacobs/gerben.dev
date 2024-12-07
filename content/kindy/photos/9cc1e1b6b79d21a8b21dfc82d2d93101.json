@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Driving to Geiranger",
+    "publishedAt": "2013-07-24T10:35:50Z",
+    "content": "/kd/photos/flickr/driving-to-geiranger_9390874637_o.jpg",
+    "slug": "9cc1e1b6b79d21a8b21dfc82d2d93101",
+    "permalink": "/photos/9cc1e1b6b79d21a8b21dfc82d2d93101",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390874637/"
+        }
+    ]
+}

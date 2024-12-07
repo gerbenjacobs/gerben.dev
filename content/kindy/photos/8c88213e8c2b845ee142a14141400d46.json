@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Nobel center",
+    "publishedAt": "2013-07-26T10:49:24Z",
+    "content": "/kd/photos/flickr/nobel-center_9391142479_o.jpg",
+    "slug": "8c88213e8c2b845ee142a14141400d46",
+    "permalink": "/photos/8c88213e8c2b845ee142a14141400d46",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391142479/"
+        }
+    ]
+}

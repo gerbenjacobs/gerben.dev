@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "The Hague on the horizon",
+    "publishedAt": "2010-11-07T16:12:28Z",
+    "content": "/kd/photos/flickr/the-hague-on-the-horizon_5157842578_o.jpg",
+    "slug": "fbff2c517ce8e8880b8f8725ee0654f1",
+    "permalink": "/photos/fbff2c517ce8e8880b8f8725ee0654f1",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5157842578/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.986677,
+        "longitude": 4.101676
+    }
+}

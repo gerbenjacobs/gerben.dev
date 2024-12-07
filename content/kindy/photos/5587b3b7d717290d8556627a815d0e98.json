@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Waterfalls next to the E136",
+    "publishedAt": "2013-07-24T14:52:00Z",
+    "content": "/kd/photos/flickr/waterfalls-next-to-the-e136_9390849685_o.jpg",
+    "slug": "5587b3b7d717290d8556627a815d0e98",
+    "permalink": "/photos/5587b3b7d717290d8556627a815d0e98",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390849685/"
+        }
+    ]
+}

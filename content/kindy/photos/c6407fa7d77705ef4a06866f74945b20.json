@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Cruiseship in Geirangerfjord",
+    "publishedAt": "2013-07-24T11:27:01Z",
+    "content": "/kd/photos/flickr/cruiseship-in-geirangerfjord_9390870119_o.jpg",
+    "slug": "c6407fa7d77705ef4a06866f74945b20",
+    "permalink": "/photos/c6407fa7d77705ef4a06866f74945b20",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390870119/"
+        }
+    ]
+}

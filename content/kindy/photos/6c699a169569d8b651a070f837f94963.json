@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Hiking to Preikestolen",
+    "publishedAt": "2013-07-19T11:41:50Z",
+    "content": "/kd/photos/flickr/hiking-to-preikestolen_9392747222_o.jpg",
+    "slug": "6c699a169569d8b651a070f837f94963",
+    "permalink": "/photos/6c699a169569d8b651a070f837f94963",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392747222/"
+        }
+    ]
+}

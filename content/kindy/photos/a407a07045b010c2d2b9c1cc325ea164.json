@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Road to Stavanger",
+    "publishedAt": "2013-07-18T11:30:37Z",
+    "content": "/kd/photos/flickr/road-to-stavanger_9389802570_o.jpg",
+    "slug": "a407a07045b010c2d2b9c1cc325ea164",
+    "permalink": "/photos/a407a07045b010c2d2b9c1cc325ea164",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389802570/"
+        }
+    ]
+}

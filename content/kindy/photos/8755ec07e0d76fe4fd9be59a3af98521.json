@@ -1,0 +1,29 @@
+{
+    "type": "photo",
+    "title": "Downtown New York, with the financial district",
+    "summary": "Shot from the Empire State Building",
+    "publishedAt": "2011-06-20T20:40:01Z",
+    "content": "/kd/photos/flickr/downtown-new-york-with-the-financial-district_5853402751_o.jpg",
+    "slug": "8755ec07e0d76fe4fd9be59a3af98521",
+    "permalink": "/photos/8755ec07e0d76fe4fd9be59a3af98521",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5853402751/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.75714,
+        "longitude": -73.981761
+    },
+    "tags": [
+        "nyc",
+        "financial district",
+        "esb"
+    ]
+}

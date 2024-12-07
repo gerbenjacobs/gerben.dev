@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "Crowded pier",
+    "publishedAt": "2010-11-07T16:32:15Z",
+    "content": "/kd/photos/flickr/crowded-pier_5157239299_o.jpg",
+    "slug": "3f8a4c2d72cbea4fa4712d9f8c497b37",
+    "permalink": "/photos/3f8a4c2d72cbea4fa4712d9f8c497b37",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5157239299/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.986677,
+        "longitude": 4.101676
+    }
+}

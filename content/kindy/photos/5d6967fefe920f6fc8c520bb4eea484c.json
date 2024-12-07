@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Church in Stavanger",
+    "publishedAt": "2013-07-18T15:07:03Z",
+    "content": "/kd/photos/flickr/church-in-stavanger_9392753870_o.jpg",
+    "slug": "5d6967fefe920f6fc8c520bb4eea484c",
+    "permalink": "/photos/5d6967fefe920f6fc8c520bb4eea484c",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392753870/"
+        }
+    ]
+}

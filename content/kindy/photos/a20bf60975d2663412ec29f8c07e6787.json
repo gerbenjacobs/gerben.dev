@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Bergen",
+    "publishedAt": "2013-07-21T10:49:32Z",
+    "content": "/kd/photos/flickr/bergen_9390125585_o.jpg",
+    "slug": "a20bf60975d2663412ec29f8c07e6787",
+    "permalink": "/photos/a20bf60975d2663412ec29f8c07e6787",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390125585/"
+        }
+    ]
+}

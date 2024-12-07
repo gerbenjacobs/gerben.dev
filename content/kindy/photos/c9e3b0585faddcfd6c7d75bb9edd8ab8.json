@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Somewhere in Norway",
+    "publishedAt": "2013-07-19T10:50:03Z",
+    "content": "/kd/photos/flickr/somewhere-in-norway_9389975581_o.jpg",
+    "slug": "c9e3b0585faddcfd6c7d75bb9edd8ab8",
+    "permalink": "/photos/c9e3b0585faddcfd6c7d75bb9edd8ab8",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389975581/"
+        }
+    ]
+}

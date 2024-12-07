@@ -1,0 +1,23 @@
+{
+    "type": "photo",
+    "title": "At a bar infront of the Malaga Cathedral",
+    "publishedAt": "2012-07-29T13:58:42Z",
+    "content": "/kd/photos/flickr/at-a-bar-infront-of-the-malaga-cathedral_7683741710_o.jpg",
+    "slug": "15bace36f337a280314c50315182eb5e",
+    "permalink": "/photos/15bace36f337a280314c50315182eb5e",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683741710/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.720052,
+        "longitude": -4.420291
+    }
+}

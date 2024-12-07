@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "We did it!",
+    "publishedAt": "2013-07-19T12:49:00Z",
+    "content": "/kd/photos/flickr/we-did-it_9392742130_o.jpg",
+    "slug": "1488522361fe80fb53bf45c3563fb917",
+    "permalink": "/photos/1488522361fe80fb53bf45c3563fb917",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392742130/"
+        }
+    ]
+}

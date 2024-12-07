@@ -1,0 +1,19 @@
+{
+    "type": "photo",
+    "title": "Voss",
+    "publishedAt": "2013-07-21T15:55:22Z",
+    "content": "/kd/photos/flickr/voss_9390490445_o.jpg",
+    "slug": "bc00047a128559aedc0192fb5120928a",
+    "permalink": "/photos/bc00047a128559aedc0192fb5120928a",
+    "author": {
+        "name": "Gerben Jacobs",
+        "url": "https://gerben.dev",
+        "photo": "https://gerben.dev/images/avatar.jpg"
+    },
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390490445/"
+        }
+    ]
+}
