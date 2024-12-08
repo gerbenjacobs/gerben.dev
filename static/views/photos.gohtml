@@ -10,8 +10,7 @@
     </div>
     <div class="photogrid">
         {{ range .Entries }}
-        <div class="col">
-            <article class="padding content {{ .Type }}">
+            <article class="padding">
                 <h6>{{if .HasFlickrSyndication}}🖼️{{else}}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
                     {{ if .Title -}}
                     {{ .Title }}
@@ -57,7 +56,6 @@
                 </a>
                 {{ end }}
             </article>
-        </div>
         {{ end}}
     </div>
 </div>

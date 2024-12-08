@@ -1,0 +1,23 @@
+{{ define "content" }}
+
+<div class="container">
+    <div class="padding center-align">
+        <h1>@gerben.dev &mdash; Timeline</h1>
+        <p>A collection of all my notes, reposts and likes, sorted by date.</p>
+        <p>
+            You can follow this site on the Fediverse at <span style="color: rebeccapurple;">@gerben.dev@gerben.dev</span>
+            or on Bluesky at <span style="color: #2a588a;">@gerben.dev</span>.
+            <br><small>I do have a native Fediverse account, but try to use this site as my source.</small>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="padding">
+        {{ range .Entries }}
+        {{ template "kindy" . }}
+        {{ end }}
+    </div>
+</div>
+
+{{ end }}

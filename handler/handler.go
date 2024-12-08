@@ -6,6 +6,8 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"slices"
+	"sort"
 	"strings"
 	"time"
 
@@ -19,6 +21,7 @@ var layoutFiles = []string{
 	"static/views/baseLayout.html",
 	"static/views/partials/navbar.html",
 	"static/views/partials/aside-hcard.html",
+	"static/views/partials/kindy.gohtml",
 }
 
 // Handler is your dependency container
@@ -59,6 +62,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /sitemap", h.sitemap)
 	r.HandleFunc("GET /tags/{tag}", h.tags)
 	r.HandleFunc("GET /listening", h.listening)
+	r.HandleFunc("GET /timeline", h.timeline)
 
 	// Kindy endpoints
 	r.HandleFunc("GET /notes/{file}", Kindy)
@@ -199,6 +203,37 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 			Description: "This page lists what I'm currently listening to.",
 		},
 		Feed: feed,
+	}
+	if err := t.Execute(w, data); err != nil {
+		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml")...))
+
+	notes, _ := GetKindyByType("notes")
+	likes, _ := GetKindyByType("likes")
+	reposts, _ := GetKindyByType("reposts")
+	replies, _ := GetKindyByType("replies")
+
+	entries := slices.Concat(notes, likes, reposts, replies)
+
+	// Sort the entries on published date
+	sort.Slice(entries, func(i, j int) bool {
+		return entries[i].PublishedAt.After(entries[j].PublishedAt)
+	})
+
+	type pageData struct {
+		Metadata internal.Metadata
+		Entries  []local.Kindy
+	}
+	data := pageData{
+		Metadata: internal.Metadata{
+			Title:       "Timeline",
+			Description: "This page lists all notes, reposts and likes on gerben.dev in chronological order.",
+		},
+		Entries: entries,
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)

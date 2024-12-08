@@ -92,15 +92,19 @@ code {
     background-color: rgba(102, 51, 153, 0.1);
 }
 
-.content img{
-    max-width: 100%;
-    margin: auto;
-}
-
 .photogrid {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, 310px);
+    grid-template-columns: repeat(auto-fill, minmax(310px, auto));
+}
+
+.kindy img,
+iframe, .photogrid img {
+    max-width: 100%;
+}
+
+.kindy a {
+    word-break: break-all;
 }
 
 @media (min-width: 600px) {

@@ -6,49 +6,7 @@
 
         {{ if .Entries }}
             {{ range .Entries }}
-            <article>
-                <p class="center-align"
-                    style="font-weight: bolder; background: linear-gradient(to left,#cc2b5e,#753a88); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    ────────────๑♡⁠๑────────────
-                </p>
-                <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
-                {{ if .Title }}<h2>{{ .Title }}</h2>{{ end }}
-                <p>
-                    {{ .Type.Emoji }}
-                    <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
-                        🕰️ <a href="{{ .Permalink }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-                            {{ .PublishedAt.Format "Jan 02, 2006" }}
-                        </a>
-                    </time>
-                    {{ if .Geo -}}
-                    🗺️ <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">
-                        <span>{{ .Geo.Latitude }}</span>,
-                        <span>{{ .Geo.Longitude }}</span>
-                    </a>
-                    {{- end }}
-                    {{ if .Syndication -}}
-                    {{- range $syn := .Syndication -}}
-                    📢 <a href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}">{{ $syn.Type }}</a>
-                    {{- end -}}
-                    {{- end }}
-                    {{ if .Tags -}}
-                    <br>
-                    {{- range .Tags -}}
-                    🏷️<a href="/tags/{{ . }}">{{ . }}</a>
-                    {{- end -}}
-                    {{- end }}
-                </p>
-                {{ if eq .Type "photo" }}
-                <figure class="center-align" style="margin: 0;">
-                    <a href="{{ .Permalink }}">
-                        <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}">
-                    </a>
-                    {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-                </figure>
-                {{ else}}
-                {{ if .Summary }}<p>{{ .Summary }}</p>{{else}}<p>{{ .MustDescription }}</p>{{ end }}
-                {{ end }}
-            </article>
+            {{ template "kindy" . }}
             {{ end }}
         {{ else }}
         <p>No tags found.</p>

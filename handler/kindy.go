@@ -108,7 +108,7 @@ func GetKindyByType(kindyType string) (entries []local.Kindy, err error) {
 		entries = append(entries, tmp)
 	}
 
-	// Sort the entries on
+	// Sort the entries on published date
 	sort.Slice(entries, func(i, j int) bool {
 		return entries[i].PublishedAt.After(entries[j].PublishedAt)
 	})

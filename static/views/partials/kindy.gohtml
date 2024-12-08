@@ -1,0 +1,47 @@
+{{ define "kindy"}}
+<article class="kindy">
+    <p class="center-align"
+        style="font-weight: bolder; background: linear-gradient(to left,#cc2b5e,#753a88); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        ────────────๑♡⁠๑────────────
+    </p>
+    <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+    {{ if .Title }}<h2>{{ .Title }}</h2>{{ end }}
+    <p>
+        {{ .Type.Emoji }}
+        <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
+            🕰️ <a href="{{ .Permalink }}" title="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
+                {{ .PublishedAt.Format "Jan 02, 2006" }}
+            </a>
+        </time>
+        {{ if .Geo -}}
+        🗺️ <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">
+            <span>{{ .Geo.Latitude }}</span>,
+            <span>{{ .Geo.Longitude }}</span>
+        </a>
+        {{- end }}
+        {{ if .Tags -}}
+        {{- range .Tags -}}
+        🏷️<a href="/tags/{{ . }}">{{ . }}</a>
+        {{- end -}}
+        {{- end }}
+    </p>
+    {{ if eq .Type "photo" }}
+        <figure class="center-align" style="margin: 0;">
+            <a href="{{ .Permalink }}">
+                <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
+            </a>
+            {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+        </figure>
+    {{ else}}
+        {{ if .Summary }}
+            <p>
+                {{ .Summary }}
+                {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
+                {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
+            </p>
+        {{else}}
+            <p>{{ .Content }}</p>
+        {{ end }}
+    {{ end }}
+</article>
+{{ end}}

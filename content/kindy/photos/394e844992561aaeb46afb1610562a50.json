@@ -5,13 +5,13 @@
     "content": "/kd/photos/media/posts/201607/9E48E01A7A7B3808C8247C635853D487_video_dashinit_17858630755049326.mp4",
     "slug": "394e844992561aaeb46afb1610562a50",
     "permalink": "/photos/394e844992561aaeb46afb1610562a50",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "geo": {
         "latitude": 50.85,
         "longitude": 5.68333
-    }
+    },
+    "tags": [
+        "Maastricht",
+        "Maas",
+        "Meuse"
+    ]
 }
