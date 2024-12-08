@@ -5,14 +5,18 @@
         <h1>Content for tag <span style="color: rebeccapurple;">#{{.Tag}}</span> ({{len .Entries}})</h1>
 
         {{ if .Entries }}
-        <ul>
             {{ range .Entries }}
-            <li>
+            <article>
+                <p class="center-align"
+                    style="font-weight: bolder; background: linear-gradient(to left,#cc2b5e,#753a88); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    ────────────๑♡⁠๑────────────
+                </p>
                 <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
                 {{ if .Title }}<h2>{{ .Title }}</h2>{{ end }}
                 <p>
-                    <time class="dt-published" datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
-                        🕰️ <a href="{{ .Permalink }}" class="u-url" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Type.Emoji }}
+                    <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
+                        🕰️ <a href="{{ .Permalink }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                             {{ .PublishedAt.Format "Jan 02, 2006" }}
                         </a>
                     </time>
@@ -35,7 +39,7 @@
                     {{- end }}
                 </p>
                 {{ if eq .Type "photo" }}
-                <figure>
+                <figure class="center-align" style="margin: 0;">
                     <a href="{{ .Permalink }}">
                         <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}">
                     </a>
@@ -44,12 +48,8 @@
                 {{ else}}
                 {{ if .Summary }}<p>{{ .Summary }}</p>{{else}}<p>{{ .MustDescription }}</p>{{ end }}
                 {{ end }}
-                <p class="center-align" style="font-weight: bolder; background: linear-gradient(to left,#cc2b5e,#753a88); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    ────────────๑♡⁠๑────────────
-                </p>
-            </li>
+            </article>
             {{ end }}
-        </ul>
         {{ else }}
         <p>No tags found.</p>
         {{ end }}
