@@ -82,7 +82,7 @@ func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file strin
 		lcTag := strings.ToLower(tag)
 		tmp := tagMap[lcTag]
 		tmp.Count++
-		tmp.Entries = append(tmp.Entries, internal.TagEntry{KindyType: t, KindyPath: file})
+		tmp.Entries = append(tmp.Entries, internal.TagEntry{KindyType: t, KindyPath: filepath.ToSlash(file)})
 		tagMap[lcTag] = tmp
 	}
 }
