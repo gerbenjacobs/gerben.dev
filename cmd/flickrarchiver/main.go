@@ -137,7 +137,7 @@ func createKindyPhoto(url, title, description, flickrUrl string, tags []string, 
 	entry := local.Kindy{
 		Type:        local.KindyTypePhoto,
 		Title:       title,
-		Summary:     description,
+		Summary:     template.HTML(description),
 		Content:     template.HTML(KindyDataPath + "photos/flickr/" + url),
 		PublishedAt: publishedAt,
 		Slug:        slug,

@@ -127,7 +127,7 @@ func createKindyPhoto(url, title string, publishedAt time.Time, geo *local.Kindy
 
 	entry := local.Kindy{
 		Type:        local.KindyTypePhoto,
-		Summary:     title,
+		Summary:     template.HTML(title),
 		Content:     template.HTML(KindyDataPath + "photos/" + url),
 		PublishedAt: publishedAt,
 		Slug:        slug,
