@@ -4,11 +4,6 @@
     "content": "<p>Hi, this note is written from my new editor! 🥰</p>\n<img class=\"u-photo\" src=\"/kd/images/kindy-editor.png\" alt=\"Screenshot of my editor\">",
     "slug": "01eb85b50ebc2b96466250482b6e3ff3",
     "permalink": "/notes/01eb85b50ebc2b96466250482b6e3ff3",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "tags": [
         "indieweb"
     ]

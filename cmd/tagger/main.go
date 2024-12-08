@@ -74,7 +74,7 @@ func extractTags(file string) (local.KindyType, string, []string) {
 		return "", "", nil
 	}
 
-	return kind.Type, kind.Permalink, kind.Tags
+	return kind.Type, file, kind.Tags
 }
 
 func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file string, tags []string) {
@@ -82,10 +82,7 @@ func mergeTags(tagMap map[string]internal.TagInfo, t local.KindyType, file strin
 		lcTag := strings.ToLower(tag)
 		tmp := tagMap[lcTag]
 		tmp.Count++
-		if tmp.Permalinks == nil {
-			tmp.Permalinks = map[local.KindyType][]string{}
-		}
-		tmp.Permalinks[t] = append(tmp.Permalinks[t], file)
+		tmp.Entries = append(tmp.Entries, internal.TagEntry{KindyType: t, KindyPath: file})
 		tagMap[lcTag] = tmp
 	}
 }

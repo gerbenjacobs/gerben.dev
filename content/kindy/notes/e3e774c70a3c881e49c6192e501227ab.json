@@ -2,11 +2,6 @@
   "type": "note",
   "content": "Time to test another note.. this time really bare bones.. ",
   "publishedAt": "2024-11-28T12:03:00+01:00",
-  "author": {
-    "name": "Gerben Jacobs",
-    "url": "https://gerben.dev",
-    "photo": "https://gerben.dev/images/avatar.jpg"
-  },
   "permalink": "/notes/e3e774c70a3c881e49c6192e501227ab",
   "slug": "e3e774c70a3c881e49c6192e501227ab"
 }

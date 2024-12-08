@@ -11,8 +11,13 @@ import (
 )
 
 type TagInfo struct {
-	Count      int                          `json:"count"`
-	Permalinks map[kindy.KindyType][]string `json:"permalinks"`
+	Count   int        `json:"count"`
+	Entries []TagEntry `json:"entries"`
+}
+
+type TagEntry struct {
+	KindyType kindy.KindyType `json:"kindyType"`
+	KindyPath string          `json:"kindyPath"`
 }
 
 func GetTags() []string {
@@ -32,13 +37,13 @@ func GetAllTags() map[string]TagInfo {
 	return tagMap
 }
 
-func GetTag(tag string) map[string]TagInfo {
+func GetTag(tag string) TagInfo {
 	tagMap := GetAllTags()
 	tagInfo, ok := tagMap[tag]
 	if !ok {
-		return nil
+		return TagInfo{}
 	}
-	return map[string]TagInfo{tag: tagInfo}
+	return tagInfo
 }
 
 func getTagFile() (map[string]TagInfo, error) {

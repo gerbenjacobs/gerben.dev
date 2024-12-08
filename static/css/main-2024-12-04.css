@@ -97,14 +97,21 @@ code {
     margin: auto;
 }
 
-
-
 .photogrid {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, 310px);
 }
 
+.tag-kindy {
+    display: inline-block;
+    width: 300px;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin: 0.5em;
+}
 
 @media (min-width: 600px) {
     #site .container {

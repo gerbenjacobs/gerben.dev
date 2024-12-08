@@ -125,7 +125,6 @@ func createKindyPhoto(url, title string, publishedAt time.Time, geo *local.Kindy
 	}
 	title = strings.TrimSpace(hashtagRemoverRe.ReplaceAllString(title, ""))
 
-	author, _ := getAuthor()
 	entry := local.Kindy{
 		Type:        local.KindyTypePhoto,
 		Summary:     title,
@@ -133,7 +132,6 @@ func createKindyPhoto(url, title string, publishedAt time.Time, geo *local.Kindy
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   KindyURLPhotos + slug,
-		Author:      author,
 		Geo:         geo,
 		Tags:        tags,
 	}
@@ -144,17 +142,4 @@ func createKindyPhoto(url, title string, publishedAt time.Time, geo *local.Kindy
 	}
 
 	return &entry, os.WriteFile(KindyContentPath+entry.Permalink+".json", b, 0644)
-}
-
-func getAuthor() (*local.KindyAuthor, error) {
-	var author local.KindyAuthor
-	b, err := os.ReadFile(KindyContentPath + "author.json")
-	if err != nil {
-		return nil, err
-	}
-	if err := json.Unmarshal(b, &author); err != nil {
-		return nil, err
-	}
-
-	return &author, nil
 }

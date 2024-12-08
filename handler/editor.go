@@ -92,7 +92,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 		Tags: internal.GetTags(),
 	}
 
-	// try to get author
+	// author for author form
 	author, err := getAuthor()
 	if err != nil {
 		slog.Warn("kindy: failed to get author", "error", err)
@@ -172,14 +172,12 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		}
 	}
 
-	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeNote,
 		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   kindy.KindyURLNotes + slug,
-		Author:      author,
 		Tags:        tags,
 	}
 
@@ -199,7 +197,6 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 	publishedAt := time.Now()
 	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
 
-	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeLike,
 		Summary:     kindy.KindySummaryLike,
@@ -207,7 +204,6 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   kindy.KindyURLLikes + slug,
-		Author:      author,
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")
@@ -226,7 +222,6 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 	publishedAt := time.Now()
 	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
 
-	author, _ := getAuthor()
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeRepost,
 		Summary:     kindy.KindySummaryRepost,
@@ -234,7 +229,6 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   kindy.KindyURLReposts + slug,
-		Author:      author,
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")

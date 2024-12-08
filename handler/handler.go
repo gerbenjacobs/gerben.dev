@@ -9,6 +9,7 @@ import (
 	"strings"
 	"time"
 
+	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/mmcdole/gofeed"
 )
@@ -104,21 +105,36 @@ func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) 
 func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
 
+	// find all Kindy content with the tag
 	tag := strings.ToLower(r.PathValue("tag"))
-	tags := internal.GetTag(tag)
+	tagInfo := internal.GetTag(tag)
+	var paths []string
+	for _, entry := range tagInfo.Entries {
+		paths = append(paths, entry.KindyPath)
+	}
+
+	entries, err := GetKindyPaths(paths)
+	if err != nil {
+		slog.Error("failed to load kindy entries", "error", err)
+	}
+
+	// get all tags
+	allTags := internal.GetAllTags()
 
 	type pageData struct {
 		Metadata internal.Metadata
 		Tag      string
-		Tags     map[string]internal.TagInfo
+		Entries  []local.Kindy
+		AllTags  map[string]internal.TagInfo
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
 			Title:       tag + " | Tags",
 			Description: "All content on gerben.dev for the term: " + tag,
 		},
-		Tag:  tag,
-		Tags: tags,
+		Tag:     tag,
+		Entries: entries,
+		AllTags: allTags,
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
