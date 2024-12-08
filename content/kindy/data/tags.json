@@ -1422,6 +1422,15 @@
       }
     ]
   },
+  "gifts": {
+    "count": 1,
+    "entries": [
+      {
+        "kindyType": "note",
+        "kindyPath": "content/kindy/notes/49c0925362a45587c216f657d9a549a3.json"
+      }
+    ]
+  },
   "ginkelse": {
     "count": 5,
     "entries": [
@@ -1971,8 +1980,12 @@
     ]
   },
   "kids": {
-    "count": 1,
+    "count": 2,
     "entries": [
+      {
+        "kindyType": "note",
+        "kindyPath": "content/kindy/notes/49c0925362a45587c216f657d9a549a3.json"
+      },
       {
         "kindyType": "note",
         "kindyPath": "content/kindy/notes/92705a63868bf64dc3eda6ec707f5d23.json"
@@ -2659,6 +2672,15 @@
       {
         "kindyType": "photo",
         "kindyPath": "content/kindy/photos/e6847ba87f4889bd909eadde101ea75d.json"
+      }
+    ]
+  },
+  "parenting": {
+    "count": 1,
+    "entries": [
+      {
+        "kindyType": "note",
+        "kindyPath": "content/kindy/notes/49c0925362a45587c216f657d9a549a3.json"
       }
     ]
   },
