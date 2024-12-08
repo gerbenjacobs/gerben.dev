@@ -68,7 +68,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 
 	metadata := internal.Metadata{
 		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(string(kind.Type)),
-		Description: internal.Descriptify(kind.MustDescription()),
+		Description: internal.Descriptify(string(kind.MustDescription())),
 	}
 	if kind.Type == "photo" {
 		metadata.Image = string(kind.Content)

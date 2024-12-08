@@ -37,9 +37,9 @@ const (
 type Kindy struct {
 	Type        KindyType          `json:"type"`
 	Title       string             `json:"title,omitempty"`
-	Summary     string             `json:"summary,omitempty"`
-	PublishedAt time.Time          `json:"publishedAt"`
+	Summary     template.HTML      `json:"summary,omitempty"`
 	Content     template.HTML      `json:"content,omitempty"`
+	PublishedAt time.Time          `json:"publishedAt"`
 	Slug        string             `json:"slug,omitempty"`
 	Permalink   string             `json:"permalink,omitempty"`
 	Author      *KindyAuthor       `json:"author,omitempty"`
@@ -99,13 +99,13 @@ func (k Kindy) MustTitle() string {
 		if k.Type == KindyTypeRepost {
 			url = k.RepostOf
 		}
-		return k.Summary + " " + url
+		return string(k.Summary) + " " + url
 	}
 	if k.Title != "" {
 		return k.Title
 	}
 	if k.Summary != "" {
-		return k.Summary
+		return string(k.Summary)
 	}
 	if k.Type == "note" {
 		// for Notes, we might as well use the content
@@ -119,16 +119,16 @@ func (k Kindy) MustTitle() string {
 	return string(k.Type)
 }
 
-func (k Kindy) MustDescription() string {
+func (k Kindy) MustDescription() template.HTML {
+	p := bluemonday.StrictPolicy()
 	if k.Summary != "" {
-		return k.Summary
+		return template.HTML(p.Sanitize(string(k.Summary)))
 	}
 	if k.Content != "" {
-		p := bluemonday.StrictPolicy()
-		return p.Sanitize(string(k.Content))
+		return template.HTML(p.Sanitize(string(k.Content)))
 	}
 
-	return string(k.Type)
+	return template.HTML(k.Type)
 }
 
 func (k Kindy) HasFlickrSyndication() bool {
