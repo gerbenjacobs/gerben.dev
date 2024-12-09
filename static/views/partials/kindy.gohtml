@@ -1,9 +1,6 @@
 {{ define "kindy"}}
 <article class="kindy">
-    <p class="center-align"
-        style="font-weight: bolder; background: linear-gradient(to left,#cc2b5e,#753a88); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        ────────────๑♡⁠๑────────────
-    </p>
+    <p class="kindy-divider">────────────๑♡⁠๑────────────</p>
     <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
     {{ if .Title }}<h2>{{ .Title }}</h2>{{ end }}
     <p>

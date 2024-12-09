@@ -224,8 +224,10 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 		return entries[i].PublishedAt.After(entries[j].PublishedAt)
 	})
 
+	author, _ := getAuthor()
 	type pageData struct {
 		Metadata internal.Metadata
+		Author   *local.KindyAuthor
 		Entries  []local.Kindy
 	}
 	data := pageData{
@@ -233,6 +235,7 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 			Title:       "Timeline",
 			Description: "This page lists all notes, reposts and likes on gerben.dev in chronological order.",
 		},
+		Author:  author,
 		Entries: entries,
 	}
 	if err := t.Execute(w, data); err != nil {

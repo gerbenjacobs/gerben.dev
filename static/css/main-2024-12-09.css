@@ -99,13 +99,33 @@ code {
 }
 
 .kindy img,
-iframe, .photogrid img {
+iframe,
+.photogrid img {
     max-width: 100%;
 }
 
 .kindy a {
-    word-break: break-all;
+    word-break: break-word;
 }
+
+.kindy-divider {
+    text-align: center;
+    font-weight: bolder;
+    background: linear-gradient(to left, #cc2b5e, #753a88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    clear: both;
+}
+
+#timeline-header {
+    background: 50% 17% url("/kd/photos/DJI_20241130153356_0059_D_1280.JPG") !important;
+}
+.timeline-author {
+    width: 32px;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+
 
 @media (min-width: 600px) {
     #site .container {

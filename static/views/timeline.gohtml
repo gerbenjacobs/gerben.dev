@@ -1,23 +1,67 @@
 {{ define "content" }}
 
-<div class="container">
-    <div class="padding center-align">
+<header class="container" id="timeline-header">
+    <div class="padding center-align" style="background-color: rgba(255, 255, 255, 0.5); border-radius: 1em;">
         <h1>@gerben.dev &mdash; Timeline</h1>
-        <p>A collection of all my notes, reposts and likes, sorted by date.</p>
+        <p>A collection of all my notes, reposts and likes, sorted by date. <a href="/notes/94d0f11c31bcd357fdf7c6599476cecc">(Why?)</a></p>
         <p>
             You can follow this site on the Fediverse at <span style="color: rebeccapurple;">@gerben.dev@gerben.dev</span>
-            or on Bluesky at <span style="color: #2a588a;">@gerben.dev</span>.
+            <br>or on Bluesky at <span style="color: #2a588a;">@gerben.dev</span>, thanks to <a href="https://fed.brid.gy">fed.brid.gy</a> 🩵.
             <br><small>I do have a native Fediverse account, but try to use this site as my source.</small>
         </p>
     </div>
-</div>
+</header>
 
 <div class="container">
-    <div class="padding">
-        {{ range .Entries }}
-        {{ template "kindy" . }}
-        {{ end }}
-    </div>
+    {{ range .Entries }}
+    <article class="kindy padding">
+        <p class="kindy-divider">────────────๑♡⁠๑────────────</p>
+        <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+        <div class="timeline-content">
+            <p>
+                <a href="/">
+                    <img src="{{ $.Author.Photo }}" alt="{{ $.Author.Name }}" class="timeline-author" loading="lazy">
+                    <span title="{{ $.Author.Name }}">@gerben.dev</span>
+                </a>
+                {{ .Type.Emoji }}
+                <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
+                    🕰️&nbsp;<a href="{{ .Permalink }}" title="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
+                        {{ .PublishedAt.Format "Jan 02, 2006" }}
+                    </a>
+                </time>
+                {{ if .Geo -}}
+                🗺️&nbsp;<a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">
+                    <span>{{ .Geo.Latitude }}</span>,
+                    <span>{{ .Geo.Longitude }}</span>
+                </a>
+                {{- end }}
+                {{ if .Tags -}}
+                {{- range .Tags -}}
+                🏷️&nbsp;<a href="/tags/{{ . }}">#{{ . }}</a>
+                {{- end -}}
+                {{- end }}
+            </p>
+            {{ if eq .Type "photo" }}
+            <figure class="center-align" style="margin: 0;">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
+                </a>
+                {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+            </figure>
+            {{ else}}
+            {{ if .Summary }}
+            <p>
+                {{ .Summary }}
+                {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
+                {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
+            </p>
+            {{else}}
+            <p>{{ .Content }}</p>
+            {{ end }}
+            {{ end }}
+        </div>
+    </article>
+    {{ end }}
 </div>
 
 {{ end }}

@@ -1079,11 +1079,15 @@
     ]
   },
   "fediverse": {
-    "count": 1,
+    "count": 2,
     "entries": [
       {
         "kindyType": "note",
         "kindyPath": "content/kindy/notes/83383a929302cb1c23a92564756478e2.json"
+      },
+      {
+        "kindyType": "note",
+        "kindyPath": "content/kindy/notes/94d0f11c31bcd357fdf7c6599476cecc.json"
       }
     ]
   },
@@ -1861,7 +1865,7 @@
     ]
   },
   "indieweb": {
-    "count": 5,
+    "count": 6,
     "entries": [
       {
         "kindyType": "note",
@@ -1874,6 +1878,10 @@
       {
         "kindyType": "note",
         "kindyPath": "content/kindy/notes/778e38479996c67755917111f4d5ba0d.json"
+      },
+      {
+        "kindyType": "note",
+        "kindyPath": "content/kindy/notes/94d0f11c31bcd357fdf7c6599476cecc.json"
       },
       {
         "kindyType": "post",
