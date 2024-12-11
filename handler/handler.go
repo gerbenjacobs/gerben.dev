@@ -1,11 +1,11 @@
 package handler
 
 import (
+	"bytes"
 	"html/template"
 	"io"
 	"log/slog"
 	"net/http"
-	"os"
 	"slices"
 	"sort"
 	"strings"
@@ -150,44 +150,25 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 	feedUrl := "https://lfm.xiffy.nl/theonewithout"
 	cacheFile := ".cache/listening.xml"
 
-	info, err := os.Stat(cacheFile)
-	if os.IsNotExist(err) || info.ModTime().Before(time.Now().Add(-10*time.Minute)) {
+	// check if cache file exists and is not older than 10 minutes
+	b, err := internal.GetCache(cacheFile, 10*time.Minute)
+	if err != nil {
 		slog.Warn("downloading new listening feed")
-		// download data from feedUrl
 		resp, err := http.Get(feedUrl)
 		if err != nil {
 			http.Error(w, "failed to get feed:"+err.Error(), http.StatusInternalServerError)
 			return
 		}
-
-		// create cache file
-		file, err := os.Create(cacheFile)
+		b, err = io.ReadAll(resp.Body)
 		if err != nil {
-			http.Error(w, "failed to create cache file:"+err.Error(), http.StatusInternalServerError)
+			http.Error(w, "failed to read feed:"+err.Error(), http.StatusInternalServerError)
 			return
 		}
-		defer file.Close()
-
-		// write data to cache file
-		_, err = io.Copy(file, resp.Body)
-		if err != nil {
-			http.Error(w, "failed to write cache file:"+err.Error(), http.StatusInternalServerError)
-			return
-		}
-	} else if err != nil {
-		http.Error(w, "failed to stat cache file:"+err.Error(), http.StatusInternalServerError)
-		return
+		internal.SetCache(cacheFile, b)
 	}
-
-	// open our cache
-	file, err := os.Open(cacheFile)
-	if err != nil {
-		slog.Error("failed to open cache file", "error", err)
-	}
-	defer file.Close()
 
 	fp := gofeed.NewParser()
-	feed, err := fp.Parse(file)
+	feed, err := fp.Parse(bytes.NewReader(b))
 	if err != nil {
 		http.Error(w, "failed to parse feed:"+err.Error(), http.StatusInternalServerError)
 		return
