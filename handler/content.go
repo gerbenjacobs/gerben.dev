@@ -15,8 +15,8 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/posts.gohtml")...))
 
 	// get posts
-	kindyType := local.KindyURLPosts
-	entries, err := GetKindyByType(kindyType)
+	kindyType := local.KindyTypePost
+	entries, err := internal.GetKindyByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)
 		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
@@ -48,8 +48,8 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/photos.gohtml")...))
 
 	// get posts
-	kindyType := local.KindyURLPhotos
-	entries, err := GetKindyByType(kindyType)
+	kindyType := local.KindyTypePhoto
+	entries, err := internal.GetKindyByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)
 		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)

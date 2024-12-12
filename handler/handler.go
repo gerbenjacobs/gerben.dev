@@ -117,7 +117,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 		paths = append(paths, entry.KindyPath)
 	}
 
-	entries, err := GetKindyPaths(paths)
+	entries, err := internal.GetKindyPaths(paths)
 	if err != nil {
 		slog.Error("failed to load kindy entries", "error", err)
 	}
@@ -193,12 +193,11 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml")...))
 
-	notes, _ := GetKindyByType("notes")
-	likes, _ := GetKindyByType("likes")
-	reposts, _ := GetKindyByType("reposts")
-	replies, _ := GetKindyByType("replies")
+	notes, _ := internal.GetKindyCacheByType(local.KindyTypeNote)
+	likes, _ := internal.GetKindyCacheByType(local.KindyTypeLike)
+	reposts, _ := internal.GetKindyCacheByType(local.KindyTypeRepost)
 
-	entries := slices.Concat(notes, likes, reposts, replies)
+	entries := slices.Concat(notes, likes, reposts)
 
 	// Sort the entries on published date
 	sort.Slice(entries, func(i, j int) bool {

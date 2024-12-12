@@ -1,12 +1,9 @@
 package handler
 
 import (
-	"bytes"
-	"encoding/gob"
 	"html/template"
 	"log/slog"
 	"net/http"
-	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -15,53 +12,16 @@ import (
 func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/sitemap.html")...))
 
-	cacheFile := ".cache/sitemap.gob"
-	b, err := internal.GetCache(cacheFile, 24*time.Hour)
-	slog.Warn("checking cache", "error", err)
-	if err != nil {
-		posts, err := GetKindyByType("posts")
+	kindyData := map[local.KindyType][]local.Kindy{}
+	for _, kindyType := range internal.KindyTypes {
+		entries, err := internal.GetKindyCacheByType(kindyType)
 		if err != nil {
-			slog.Error("failed to load kindy posts", "error", err)
+			slog.Error("failed to load entries", "type", kindyType, "error", err)
+			http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
+			return
 		}
-		photos, err := GetKindyByType("photos")
-		if err != nil {
-			slog.Error("failed to load kindy photos", "error", err)
-		}
-		notes, err := GetKindyByType("notes")
-		if err != nil {
-			slog.Error("failed to load kindy notes", "error", err)
-		}
-		likes, err := GetKindyByType("likes")
-		if err != nil {
-			slog.Error("failed to load kindy likes", "error", err)
-		}
-		reposts, err := GetKindyByType("reposts")
-		if err != nil {
-			slog.Error("failed to load kindy reposts", "error", err)
-		}
-		// replies, err := GetKindyByType("replies")
-		// if err != nil {
-		// 	slog.Error("failed to load kindy replies", "error", err)
-		// }
-		gob.Register(local.Kindy{})
-		var buf bytes.Buffer
-		enc := gob.NewEncoder(&buf)
-		enc.Encode(posts)
-		enc.Encode(photos)
-		enc.Encode(notes)
-		enc.Encode(likes)
-		enc.Encode(reposts)
-		internal.SetCache(cacheFile, buf.Bytes())
-		b = buf.Bytes()
+		kindyData[kindyType] = entries
 	}
-
-	var posts, photos, notes, likes, reposts []local.Kindy
-	dec := gob.NewDecoder(bytes.NewReader(b))
-	dec.Decode(&posts)
-	dec.Decode(&photos)
-	dec.Decode(&notes)
-	dec.Decode(&likes)
-	dec.Decode(&reposts)
 
 	type pageData struct {
 		Metadata internal.Metadata
@@ -77,19 +37,17 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	data := pageData{
 		Metadata: internal.Metadata{Title: "Sitemap", Description: "A HTML version of my sitemap"},
 		Counts: map[string]int{
-			"posts":   len(posts),
-			"photos":  len(photos),
-			"notes":   len(notes),
-			"likes":   len(likes),
-			"reposts": len(reposts),
-			// "replies": len(replies),
+			"posts":   len(kindyData[local.KindyTypePost]),
+			"photos":  len(kindyData[local.KindyTypePhoto]),
+			"notes":   len(kindyData[local.KindyTypeNote]),
+			"likes":   len(kindyData[local.KindyTypeLike]),
+			"reposts": len(kindyData[local.KindyTypeRepost]),
 		},
-		Posts:   kindyLimit(posts, 10),
-		Photos:  kindyLimit(photos, 10),
-		Notes:   kindyLimit(notes, 10),
-		Likes:   kindyLimit(likes, 10),
-		Reposts: kindyLimit(reposts, 10),
-		// Replies: kindyLimit(replies, 10),
+		Posts:   kindyLimit(kindyData[local.KindyTypePost], 10),
+		Photos:  kindyLimit(kindyData[local.KindyTypePhoto], 10),
+		Notes:   kindyLimit(kindyData[local.KindyTypeNote], 10),
+		Likes:   kindyLimit(kindyData[local.KindyTypeLike], 10),
+		Reposts: kindyLimit(kindyData[local.KindyTypeRepost], 10),
 	}
 
 	if err := t.Execute(w, data); err != nil {

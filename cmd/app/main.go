@@ -30,6 +30,11 @@ func main() {
 	}
 	slog.SetDefault(logger)
 
+	// create caches
+	if err := internal.CreateCaches(); err != nil {
+		log.Fatalf("failed to create cache: %v", err)
+	}
+
 	dependencies := handler.Dependencies{
 		SecretKey: c.Svc.SecretToken,
 	}
