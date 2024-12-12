@@ -50,11 +50,11 @@ func getTagFile() (map[string]TagInfo, error) {
 	var tagMap map[string]TagInfo
 	b, err := os.ReadFile(KindyTagsCache)
 	if err != nil {
-		slog.Warn("failed to read tags.json", "error", err)
+		slog.Warn("failed to read tags", "error", err, "file", KindyTagsCache)
 		return nil, err
 	}
 	if err := json.Unmarshal(b, &tagMap); err != nil {
-		slog.Warn("failed to unmarshal tags.json", "error", err)
+		slog.Warn("failed to unmarshal tags", "error", err, "file", KindyTagsCache)
 		return nil, err
 	}
 	return tagMap, nil
