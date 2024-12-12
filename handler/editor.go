@@ -54,6 +54,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
+			internal.CreateCaches()
 			http.Redirect(w, r, kindy.KindyURLNotes+entry.Slug, http.StatusFound)
 			return
 		}
@@ -66,6 +67,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
+			internal.CreateCaches()
 			http.Redirect(w, r, kindy.KindyURLLikes+entry.Slug, http.StatusFound)
 			return
 		}
@@ -78,6 +80,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 				return
 			}
+			internal.CreateCaches()
 			http.Redirect(w, r, kindy.KindyURLReposts+entry.Slug, http.StatusFound)
 			return
 		}

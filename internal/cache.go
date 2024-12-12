@@ -68,6 +68,8 @@ func SetCache(filePath string, data []byte) error {
 
 // CreateCaches creates the caches all data, on startup
 func CreateCaches() error {
+	start := time.Now()
+	slog.Warn("creating caches")
 	// kindy caches
 	for _, kindyType := range KindyTypes {
 		if err := CreateKindyCacheByType(kindyType); err != nil {
@@ -80,6 +82,7 @@ func CreateCaches() error {
 		return err
 	}
 
+	slog.Warn("caches created", "duration", time.Since(start))
 	return nil
 }
 
