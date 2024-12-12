@@ -48,7 +48,7 @@ func GetTag(tag string) TagInfo {
 
 func getTagFile() (map[string]TagInfo, error) {
 	var tagMap map[string]TagInfo
-	b, err := os.ReadFile(kindy.KindyContentPath + "data/tags.json")
+	b, err := os.ReadFile(KindyTagsCache)
 	if err != nil {
 		slog.Warn("failed to read tags.json", "error", err)
 		return nil, err
