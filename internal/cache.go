@@ -36,7 +36,6 @@ func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
 	switch {
 	// if no expiry, skip switch, always fetch from cache
 	case expiry == 0:
-		break
 	case os.IsNotExist(err):
 		_, err := os.Create(filePath)
 		if err != nil {
@@ -111,7 +110,7 @@ func CreateKindyCacheByType(kind local.KindyType) error {
 		return err
 	}
 
-	b, err := json.MarshalIndent(entries, "", "  ")
+	b, err := json.Marshal(entries)
 	if err != nil {
 		return err
 	}
@@ -133,7 +132,7 @@ func CreateTagCache() error {
 		mergeTags(tags, entry.Type, fp, entry.Tags)
 	}
 
-	b, err := json.MarshalIndent(tags, "", "  ")
+	b, err := json.Marshal(tags)
 	if err != nil {
 		return err
 	}
