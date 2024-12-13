@@ -7,6 +7,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/dustin/go-humanize"
 	"github.com/microcosm-cc/bluemonday"
 )
 
@@ -138,6 +139,10 @@ func (k Kindy) HasFlickrSyndication() bool {
 		}
 	}
 	return false
+}
+
+func (k Kindy) TimeAgo() string {
+	return humanize.Time(k.PublishedAt)
 }
 
 func (kt KindyType) Emoji() string {

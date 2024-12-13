@@ -3,6 +3,7 @@ module github.com/gerbenjacobs/gerben.dev
 go 1.23.2
 
 require (
+	github.com/dustin/go-humanize v1.0.1
 	github.com/gerbenjacobs/resize v0.0.0-20180221191011-83c6a9932646
 	github.com/lmittmann/tint v1.0.5
 	github.com/microcosm-cc/bluemonday v1.0.27

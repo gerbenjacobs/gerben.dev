@@ -26,7 +26,7 @@
                 {{ .Type.Emoji }}
                 <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
                     🕰️&nbsp;<a href="{{ .Permalink }}" title="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}">
-                        {{ .PublishedAt.Format "Jan 02, 2006" }}
+                        {{ .TimeAgo }}
                     </a>
                 </time>
                 {{ if .Geo -}}
