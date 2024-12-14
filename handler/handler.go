@@ -56,6 +56,7 @@ func New(dependencies Dependencies) *Handler {
 		internal.Metadata{
 			Title:       "Changelog",
 			Description: "This page explains all the (structural) changes that happened to this site.",
+			Permalink:   "/changelog",
 		},
 	))
 	r.HandleFunc("GET /sitemap", h.sitemap)
@@ -78,6 +79,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /notes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /likes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))
+	r.HandleFunc("GET /tags/{$}", redirect("/timeline"))
 
 	h.mux = internal.LogWriter(r)
 	return h
@@ -143,6 +145,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 		Metadata: internal.Metadata{
 			Title:       tag + " | Tags",
 			Description: "All content on gerben.dev for the term: #" + tag,
+			Permalink:   "/tags/" + tag,
 		},
 		Tag:     tag,
 		Entries: entries,

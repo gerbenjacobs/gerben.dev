@@ -31,6 +31,7 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 		Metadata: internal.Metadata{
 			Title:       "Posts",
 			Description: "These are the posts written on gerben.dev",
+			Permalink:   "/posts/",
 		},
 		Entries: entries,
 	}
@@ -64,6 +65,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 		Metadata: internal.Metadata{
 			Title:       "Photos",
 			Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
+			Permalink:   "/photos/",
 		},
 		Entries: entries,
 	}
