@@ -56,7 +56,7 @@
                 {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
             </p>
             {{else}}
-            <p>{{ .Content }}</p>
+            <p>{{ .GetContent }}</p>
             {{ end }}
             {{ end }}
         </div>

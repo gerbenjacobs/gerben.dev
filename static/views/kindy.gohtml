@@ -142,9 +142,9 @@
                         {{ end }}
                     </p>
                     {{- end }}
-                    {{ if .Content -}}
+                    {{ if .HasContent -}}
                     <div class="e-content">
-                        {{ .Content }}
+                        {{ .GetContent }}
                     </div>
                     {{- end }}
                 {{ end }}

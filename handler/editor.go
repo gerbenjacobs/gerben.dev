@@ -177,11 +177,17 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeNote,
-		Content:     template.HTML(data.Get("content")),
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   kindy.KindyURLNotes + slug,
 		Tags:        tags,
+	}
+
+	// handle markdown
+	if data.Has("markdown") {
+		entry.Markdown = data.Get("content")
+	} else {
+		entry.Content = template.HTML(data.Get("content"))
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")

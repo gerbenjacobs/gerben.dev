@@ -51,7 +51,7 @@ func New(dependencies Dependencies) *Handler {
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{}))
+	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Image: "/images/opengraph.png"}))
 	r.HandleFunc("GET /changelog", h.singlePageLayout(
 		"content/single/changelog.html",
 		internal.Metadata{
@@ -76,6 +76,9 @@ func New(dependencies Dependencies) *Handler {
 
 	r.HandleFunc("GET /posts/{$}", h.posts)
 	r.HandleFunc("GET /photos/{$}", h.photos)
+	r.HandleFunc("GET /notes/{$}", redirect("/timeline"))
+	r.HandleFunc("GET /likes/{$}", redirect("/timeline"))
+	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))
 
 	h.mux = internal.LogWriter(r)
 	return h
@@ -85,6 +88,12 @@ func New(dependencies Dependencies) *Handler {
 // this keeps the underlying mux private
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
+}
+
+func redirect(url string) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, url, http.StatusFound)
+	}
 }
 
 func singlePage(fileName string) func(w http.ResponseWriter, r *http.Request) {
@@ -134,7 +143,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	data := pageData{
 		Metadata: internal.Metadata{
 			Title:       tag + " | Tags",
-			Description: "All content on gerben.dev for the term: " + tag,
+			Description: "All content on gerben.dev for the term: #" + tag,
 		},
 		Tag:     tag,
 		Entries: entries,

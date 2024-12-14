@@ -9,6 +9,7 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/microcosm-cc/bluemonday"
+	"github.com/russross/blackfriday/v2"
 )
 
 type KindyType string
@@ -40,6 +41,7 @@ type Kindy struct {
 	Title       string             `json:"title,omitempty"`
 	Summary     template.HTML      `json:"summary,omitempty"`
 	Content     template.HTML      `json:"content,omitempty"`
+	Markdown    string             `json:"markdown,omitempty"`
 	PublishedAt time.Time          `json:"publishedAt"`
 	Slug        string             `json:"slug,omitempty"`
 	Permalink   string             `json:"permalink,omitempty"`
@@ -82,11 +84,25 @@ func (k Kindy) Thumbnail() string {
 	return ""
 }
 
+// HasContent returns true if the Kindy has content
+// either as Markdown or as HTML
+func (k Kindy) HasContent() bool {
+	return k.Markdown != "" || k.Content != ""
+}
+
+// GetContent returns content or Markdown if it exists
+func (k Kindy) GetContent() template.HTML {
+	if k.Markdown != "" {
+		return template.HTML(MarkdownToHTML(k.Markdown))
+	}
+	return k.Content
+}
+
 // ContentStripped strips all HTML with a strict policy
 // but still returns a template.HTML so that properly escaped HTML entities still work
 // It has an 'optional' args list, but we really only except 1 int which limits the length
 func (k Kindy) ContentStripped(args ...int) template.HTML {
-	content := strings.Join(strings.Fields(string(k.Content)), " ")
+	content := strings.Join(strings.Fields(string(k.GetContent())), " ")
 	if len(args) > 0 && len(content) > args[0] {
 		content = content[:args[0]] + "&hellip;"
 	}
@@ -111,7 +127,7 @@ func (k Kindy) MustTitle() string {
 	if k.Type == "note" {
 		// for Notes, we might as well use the content
 		p := bluemonday.StrictPolicy()
-		return p.Sanitize(string(k.Content))
+		return p.Sanitize(string(k.GetContent()))
 	}
 	if k.Permalink != "" {
 		return k.Permalink
@@ -125,8 +141,9 @@ func (k Kindy) MustDescription() template.HTML {
 	if k.Summary != "" {
 		return template.HTML(p.Sanitize(string(k.Summary)))
 	}
-	if k.Content != "" {
-		return template.HTML(p.Sanitize(string(k.Content)))
+	content := k.GetContent()
+	if content != "" {
+		return template.HTML(p.Sanitize(string(content)))
 	}
 
 	return template.HTML(k.Type)
@@ -158,4 +175,10 @@ func (kt KindyType) Emoji() string {
 	}
 	// default to post
 	return emojis[KindyTypePost]
+}
+
+func MarkdownToHTML(md string) string {
+	return string(blackfriday.Run([]byte(md),
+		blackfriday.WithExtensions(blackfriday.CommonExtensions|blackfriday.AutoHeadingIDs|blackfriday.HardLineBreak|blackfriday.Footnotes),
+	))
 }

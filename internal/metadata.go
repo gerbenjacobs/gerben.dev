@@ -3,6 +3,8 @@ package internal
 import (
 	"html"
 	"strings"
+
+	local "github.com/gerbenjacobs/gerben.dev"
 )
 
 var (
@@ -17,6 +19,7 @@ type Metadata struct {
 	Description string
 	Permalink   string
 	Image       string
+	Kindy       *local.Kindy
 }
 
 func Titlify(title string) string {

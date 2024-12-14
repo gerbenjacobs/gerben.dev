@@ -23,8 +23,6 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
-	// TODO: move kindy content creation to separate service
-
 	b, err := os.ReadFile("content/kindy" + r.URL.Path + ".json")
 	if err != nil {
 		slog.Error("failed to read file", "file", r.URL.Path, "error", err)
@@ -68,6 +66,8 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	metadata := internal.Metadata{
 		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(string(kind.Type)),
 		Description: internal.Descriptify(string(kind.MustDescription())),
+		Permalink:   kind.Permalink,
+		Kindy:       &kind,
 	}
 	if kind.Type == "photo" {
 		metadata.Image = string(kind.Content)
