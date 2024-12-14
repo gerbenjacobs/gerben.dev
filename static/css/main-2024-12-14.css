@@ -120,6 +120,12 @@ iframe,
 #timeline-header {
     background: 50% 17% url("/kd/photos/DJI_20241130153356_0059_D_1280.JPG") !important;
 }
+
+#timeline-header-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1em;
+}
+
 .timeline-author {
     width: 32px;
     border-radius: 50%;
@@ -164,6 +170,10 @@ iframe,
 
     #site .padding {
         padding: 1em;
+    }
+
+    #timeline-header-content {
+        border-radius: 0;
     }
 }
 

@@ -52,8 +52,7 @@ func New(dependencies Dependencies) *Handler {
 
 	// Pages
 	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Image: "/images/opengraph.png"}))
-	r.HandleFunc("GET /changelog", h.singlePageLayout(
-		"content/single/changelog.html",
+	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html",
 		internal.Metadata{
 			Title:       "Changelog",
 			Description: "This page explains all the (structural) changes that happened to this site.",
