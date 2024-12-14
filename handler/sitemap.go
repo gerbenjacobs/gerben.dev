@@ -42,12 +42,14 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 			"notes":   len(kindyData[local.KindyTypeNote]),
 			"likes":   len(kindyData[local.KindyTypeLike]),
 			"reposts": len(kindyData[local.KindyTypeRepost]),
+			"replies": len(kindyData[local.KindyTypeReplies]),
 		},
 		Posts:   kindyLimit(kindyData[local.KindyTypePost], 10),
 		Photos:  kindyLimit(kindyData[local.KindyTypePhoto], 10),
 		Notes:   kindyLimit(kindyData[local.KindyTypeNote], 10),
 		Likes:   kindyLimit(kindyData[local.KindyTypeLike], 10),
 		Reposts: kindyLimit(kindyData[local.KindyTypeRepost], 10),
+		Replies: kindyLimit(kindyData[local.KindyTypeReplies], 10),
 	}
 
 	if err := t.Execute(w, data); err != nil {

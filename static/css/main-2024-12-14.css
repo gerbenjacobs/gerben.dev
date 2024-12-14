@@ -111,8 +111,9 @@ iframe,
 .kindy-divider {
     text-align: center;
     font-weight: bolder;
-    background: linear-gradient(to left, #cc2b5e, #753a88);
+    background: linear-gradient(to left, #cc2b5e 25%, #753a88 70%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     clear: both;
 }

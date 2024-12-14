@@ -207,8 +207,9 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	notes, _ := internal.GetKindyCacheByType(local.KindyTypeNote)
 	likes, _ := internal.GetKindyCacheByType(local.KindyTypeLike)
 	reposts, _ := internal.GetKindyCacheByType(local.KindyTypeRepost)
+	replies, _ := internal.GetKindyCacheByType(local.KindyTypeReplies)
 
-	entries := slices.Concat(notes, likes, reposts)
+	entries := slices.Concat(notes, likes, reposts, replies)
 
 	// Sort the entries on published date
 	sort.Slice(entries, func(i, j int) bool {

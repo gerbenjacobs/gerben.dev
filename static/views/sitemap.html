@@ -46,7 +46,7 @@
             {{ if .Posts -}}
             <ul>
                 {{- range .Posts }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} {{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -55,7 +55,7 @@
             {{ if .Photos -}}
             <ul>
                 {{- range .Photos }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="{{ .Permalink }}">
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} {{ .Type.Emoji }} <a href="{{ .Permalink }}">
                     {{ if .Title -}}
                     {{ .Title }}
                     {{- else if .Summary -}}
@@ -72,7 +72,7 @@
             {{ if .Notes -}}
             <ul>
                 {{- range .Notes }}
-                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .ContentStripped 130 }}</li>
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{ .ContentStripped 130 }}</li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -82,7 +82,7 @@
             <ul>
                 {{- range .Likes }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    ⭐ <a target="_blank" href="{{ .LikeOf }}" style="word-break: break-all;">{{ .LikeOf }}</a></li>
+                    {{ .Type.Emoji }} <a target="_blank" href="{{ .LikeOf }}" style="word-break: break-all;">{{ .LikeOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -92,7 +92,7 @@
             <ul>
                 {{- range .Reposts }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    🔁 <a target="_blank" href="{{ .RepostOf }}" style="word-break: break-all;">{{ .RepostOf }}</a></li>
+                    {{ .Type.Emoji }} <a target="_blank" href="{{ .RepostOf }}" style="word-break: break-all;">{{ .RepostOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -101,7 +101,7 @@
             {{ if .Replies -}}
             <ul>
                 {{- range .Replies }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} <a href="#">{{ .GetContent }}</a></li>
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{ .ContentStripped 130 }}</li>
                 {{- end }}
             </ul>
             {{- end }}

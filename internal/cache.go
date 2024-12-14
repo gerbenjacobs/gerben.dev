@@ -20,7 +20,8 @@ var (
 )
 
 // KindyTypes are all the active Kindy types on this site
-var KindyTypes = []local.KindyType{local.KindyTypeLike, local.KindyTypePhoto, local.KindyTypePost, local.KindyTypeRepost, local.KindyTypeNote}
+var KindyTypes = []local.KindyType{local.KindyTypeLike, local.KindyTypePhoto, local.KindyTypePost,
+	local.KindyTypeRepost, local.KindyTypeNote, local.KindyTypeReplies}
 
 var (
 	KindyTagsCache    = ".cache/kindy_tags.json"
@@ -29,6 +30,7 @@ var (
 	KindyRepostsCache = ".cache/kindy_reposts.json"
 	KindyLikesCache   = ".cache/kindy_likes.json"
 	KindyNotesCache   = ".cache/kindy_notes.json"
+	KindyRepliesCache = ".cache/kindy_replies.json"
 )
 
 func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
@@ -131,7 +133,7 @@ func CreateTagCache() error {
 
 	tags := map[string]TagInfo{}
 	for _, entry := range entries {
-		fp := fmt.Sprintf("%s%s/%s.json", local.KindyContentPath, entry.Type+"s", entry.Slug)
+		fp := fmt.Sprintf("%s%s/%s.json", local.KindyContentPath, entry.Type.URL(), entry.Slug)
 		mergeTags(tags, entry.Type, fp, entry.Tags)
 	}
 
@@ -170,6 +172,8 @@ func kindyCacheFile(kind local.KindyType) string {
 		return KindyLikesCache
 	case local.KindyTypeNote:
 		return KindyNotesCache
+	case local.KindyTypeReplies:
+		return KindyRepliesCache
 	default:
 		return ""
 	}

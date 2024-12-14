@@ -31,15 +31,17 @@ const (
 	KindyURLPhotos  = "/photos/"
 	KindyURLPosts   = "/posts/"
 	KindyURLReposts = "/reposts/"
+	KindyURLReplies = "/replies/"
 
 	KindySummaryLike   = "Liked"
 	KindySummaryRepost = "Reposted"
 
-	KindyTypeNote   KindyType = "note"
-	KindyTypePost   KindyType = "post"
-	KindyTypePhoto  KindyType = "photo"
-	KindyTypeLike   KindyType = "like"
-	KindyTypeRepost KindyType = "repost"
+	KindyTypeNote    KindyType = "note"
+	KindyTypePost    KindyType = "post"
+	KindyTypePhoto   KindyType = "photo"
+	KindyTypeLike    KindyType = "like"
+	KindyTypeRepost  KindyType = "repost"
+	KindyTypeReplies KindyType = "reply"
 )
 
 func init() {
@@ -68,6 +70,7 @@ type Kindy struct {
 	Syndication []KindySyndication `json:"syndication,omitempty"`
 	LikeOf      string             `json:"likeOf,omitempty"`
 	RepostOf    string             `json:"repostOf,omitempty"`
+	ReplyTo     string             `json:"replyTo,omitempty"`
 	Geo         *KindyGeo          `json:"geo,omitempty"`
 	Tags        []string           `json:"tags,omitempty"`
 }
@@ -143,7 +146,7 @@ func (k Kindy) MustTitle() string {
 	if k.Summary != "" {
 		return string(k.Summary)
 	}
-	if k.Type == "note" {
+	if k.Type == KindyTypeNote || k.Type == KindyTypeReplies {
 		// for Notes, we might as well use the content
 		p := bluemonday.StrictPolicy()
 		return p.Sanitize(string(k.GetContent()))
@@ -183,17 +186,37 @@ func (k Kindy) TimeAgo() string {
 
 func (kt KindyType) Emoji() string {
 	emojis := map[KindyType]string{
-		KindyTypePost:   "📝",
-		KindyTypeNote:   "📜",
-		KindyTypePhoto:  "📸",
-		KindyTypeRepost: "🔁",
-		KindyTypeLike:   "⭐",
+		KindyTypePost:    "📝",
+		KindyTypeNote:    "📜",
+		KindyTypePhoto:   "📸",
+		KindyTypeRepost:  "🔁",
+		KindyTypeLike:    "⭐",
+		KindyTypeReplies: "💬",
 	}
 	if v, ok := emojis[kt]; ok {
 		return v
 	}
 	// default to post
 	return emojis[KindyTypePost]
+}
+
+func (kt KindyType) URL() string {
+	switch kt {
+	case KindyTypeNote:
+		return KindyURLNotes
+	case KindyTypePhoto:
+		return KindyURLPhotos
+	case KindyTypePost:
+		return KindyURLPosts
+	case KindyTypeRepost:
+		return KindyURLReposts
+	case KindyTypeLike:
+		return KindyURLLikes
+	case KindyTypeReplies:
+		return KindyURLReplies
+	default:
+		return ""
+	}
 }
 
 func MarkdownToHTML(md string) string {

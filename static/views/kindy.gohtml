@@ -83,6 +83,7 @@
                             <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
                         </span>
                         {{- end }}
+                        <span title="{{ .Type }}">{{ .Type.Emoji }}</span>
                         <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                             {{ if .Permalink -}}
                             <a href="{{ .Permalink }}" class="u-url" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -140,6 +141,11 @@
                                 <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
                             </span>
                         {{ end }}
+                    </p>
+                    {{- end }}
+                    {{- if .ReplyTo }}
+                    <p>
+                        <small>In reply to: <a class="u-in-reply-to" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
                     </p>
                     {{- end }}
                     {{ if .HasContent -}}

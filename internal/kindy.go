@@ -10,7 +10,7 @@ import (
 )
 
 func GetKindyByType(kindyType local.KindyType) (entries []local.Kindy, err error) {
-	contentPath := local.KindyContentPath + string(kindyType) + "s"
+	contentPath := local.KindyContentPath + kindyType.URL()
 	files, err := os.ReadDir(contentPath)
 	if err != nil {
 		return nil, err
