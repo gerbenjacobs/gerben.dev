@@ -6,7 +6,7 @@
 
         {{ if .Entries }}
             {{ range .Entries }}
-            {{ template "kindy" . }}
+            {{ template "tag-preview" . }}
             {{ end }}
         {{ else }}
         <p>No tags found.</p>

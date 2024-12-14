@@ -8,8 +8,8 @@ require (
 	github.com/lmittmann/tint v1.0.5
 	github.com/microcosm-cc/bluemonday v1.0.27
 	github.com/mmcdole/gofeed v1.3.0
-	github.com/russross/blackfriday/v2 v2.0.1
 	github.com/spf13/viper v1.19.0
+	github.com/yuin/goldmark v1.7.8
 	golang.org/x/text v0.21.0
 )
 
@@ -29,7 +29,6 @@ require (
 	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/sagikazarmark/locafero v0.6.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
-	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.7.0 // indirect

@@ -21,7 +21,7 @@ var layoutFiles = []string{
 	"static/views/baseLayout.html",
 	"static/views/partials/navbar.html",
 	"static/views/partials/aside-hcard.html",
-	"static/views/partials/kindy.gohtml",
+	"static/views/partials/tag-preview.gohtml",
 }
 
 // Handler is your dependency container

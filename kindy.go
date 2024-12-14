@@ -1,16 +1,23 @@
 package gerbendev
 
 import (
+	"bytes"
 	"fmt"
 	"html/template"
+	"log/slog"
 	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/dustin/go-humanize"
 	"github.com/microcosm-cc/bluemonday"
-	"github.com/russross/blackfriday/v2"
+	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/extension"
+	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 )
+
+var gm goldmark.Markdown
 
 type KindyType string
 
@@ -34,6 +41,18 @@ const (
 	KindyTypeLike   KindyType = "like"
 	KindyTypeRepost KindyType = "repost"
 )
+
+func init() {
+	gm = goldmark.New(
+		goldmark.WithExtensions(extension.GFM),
+		goldmark.WithParserOptions(
+			parser.WithAutoHeadingID(),
+		),
+		goldmark.WithRendererOptions(
+			html.WithHardWraps(),
+		),
+	)
+}
 
 // Kindy is a datastructure for content that adheres to Microformats 2
 type Kindy struct {
@@ -178,7 +197,10 @@ func (kt KindyType) Emoji() string {
 }
 
 func MarkdownToHTML(md string) string {
-	return string(blackfriday.Run([]byte(md),
-		blackfriday.WithExtensions(blackfriday.CommonExtensions|blackfriday.AutoHeadingIDs|blackfriday.HardLineBreak|blackfriday.Footnotes),
-	))
+	var buf bytes.Buffer
+	if err := gm.Convert([]byte(md), &buf); err != nil {
+		slog.Error("failed to convert markdown to html", "error", err)
+	}
+
+	return buf.String()
 }
