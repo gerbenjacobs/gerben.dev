@@ -56,7 +56,12 @@
                 {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
             </p>
             {{else}}
-            <p>{{ .GetContent }}</p>
+            {{- if .ReplyTo }}
+            <p>
+                <small>In reply to: <a target="_blank" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
+            </p>
+            {{- end }}
+            <div>{{ .GetContent }}</div>
             {{ end }}
             {{ end }}
         </div>
