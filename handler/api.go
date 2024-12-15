@@ -15,9 +15,6 @@ import (
 var opengraphCache = ".cache/opengraph/"
 
 func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
-	// block if not a local request
-	slog.Warn("apiOpenGraph", "remote", r.RemoteAddr, "request", r)
-
 	url := r.URL.Query().Get("url")
 	if url == "" {
 		http.Error(w, "missing url parameter", http.StatusBadRequest)

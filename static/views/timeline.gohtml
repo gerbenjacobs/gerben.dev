@@ -14,7 +14,7 @@
 
 <div class="container">
     {{ range .Entries }}
-    <article class="kindy padding">
+    <article class="kindy padding read-heavy">
         <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
         <h2 class="right"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
         <div class="timeline-content">
@@ -42,31 +42,69 @@
                 {{- end }}
             </p>
             {{ if eq .Type "photo" }}
-            <figure class="center-align" style="margin: 0;">
-                <a href="{{ .Permalink }}">
-                    <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
-                </a>
-                {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-            </figure>
+                <figure class="center-align" style="margin: 0;">
+                    <a href="{{ .Permalink }}">
+                        <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
+                    </a>
+                    {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+                </figure>
             {{ else}}
-            {{ if .Summary }}
-            <p>
-                {{ .Summary }}
-                {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
-                {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
-            </p>
-            {{else}}
-            {{- if .ReplyTo }}
-            <p>
-                <small>In reply to: <a target="_blank" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
-            </p>
-            {{- end }}
-            <div>{{ .GetContent }}</div>
-            {{ end }}
+                {{ if eq .Type "like" "repost" "reply" }}
+                <div class="opengraph" data-url="{{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+                {{ end }}
+                {{ if .Summary }}
+                <p>
+                    {{ .Summary }}
+                    {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
+                    {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
+                </p>
+                {{else}}
+                    {{- if .ReplyTo }}
+                    <p>
+                        <small>In reply to: <a target="_blank" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
+                    </p>
+                    {{- end }}
+                <div>{{ .GetContent }}</div>
+                {{ end }}
             {{ end }}
         </div>
     </article>
     {{ end }}
 </div>
 
+<script>
+    document.querySelectorAll('.opengraph').forEach(function (element) {
+        let observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    fetch('/api/opengraph?url=' + element.getAttribute('data-url'))
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.title) {
+                                let favicon = data.favicon.url ? new URL(data.favicon.url, data.url).href : '';
+                                let html = `
+                                    <blockquote>
+                                        <div>
+                                            <p><img src="${favicon}" alt="${data.title}" class="timeline-author" loading="lazy"> <b>${data.title}</b></p>
+                                            <p>${data.description}</p>
+                                        </div>
+                                `;
+                                if (data.image) {
+                                    data.image.forEach(function (image) {
+                                        let alt = image.alt ? image.alt : data.title;
+                                        html += `<figure><img src="${image.url}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
+                                    });
+                                }
+                                html += '<cite>&mdash; <a href="' + data.url + '">' + data.title + '</a></cite>';
+                                html += '</blockquote>';
+                                element.innerHTML = html;
+                            }
+                        });
+                    observer.unobserve(element);
+                }
+            });
+        });
+        observer.observe(element);
+    });
+</script>
 {{ end }}

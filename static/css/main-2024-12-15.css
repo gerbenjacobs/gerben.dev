@@ -128,11 +128,10 @@ iframe,
 }
 
 .timeline-author {
-    width: 32px;
+    max-width: 32px !important;
     border-radius: 50%;
     vertical-align: bottom;
 }
-
 
 @media (min-width: 600px) {
     #site .container {
@@ -143,6 +142,13 @@ iframe,
 
     #site #space {
         margin-bottom: 20px;
+    }
+
+    .read-heavy {
+        display: block;
+        margin: auto;
+        width: clamp(320px, 80%, 800px);
+        text-align: justify;
     }
 }
 
