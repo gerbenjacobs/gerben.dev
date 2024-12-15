@@ -8,6 +8,7 @@ require (
 	github.com/lmittmann/tint v1.0.5
 	github.com/microcosm-cc/bluemonday v1.0.27
 	github.com/mmcdole/gofeed v1.3.0
+	github.com/otiai10/opengraph/v2 v2.1.0
 	github.com/spf13/viper v1.19.0
 	github.com/yuin/goldmark v1.7.8
 	golang.org/x/text v0.21.0
