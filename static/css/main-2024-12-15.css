@@ -37,7 +37,7 @@ a {
 }
 
 nav ul a,
-.sidenav li>a {
+.sidenav li > a {
     font-size: 1.2rem;
 }
 
@@ -133,6 +133,15 @@ iframe,
     vertical-align: bottom;
 }
 
+@media (min-width: 800px) {
+    .read-heavy {
+        display: block;
+        margin: auto;
+        width: clamp(320px, 80%, 800px);
+        text-align: justify;
+    }
+}
+
 @media (min-width: 600px) {
     #site .container {
         margin-top: 20px;
@@ -142,13 +151,6 @@ iframe,
 
     #site #space {
         margin-bottom: 20px;
-    }
-
-    .read-heavy {
-        display: block;
-        margin: auto;
-        width: clamp(320px, 80%, 800px);
-        text-align: justify;
     }
 }
 
