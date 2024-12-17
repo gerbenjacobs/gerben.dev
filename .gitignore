@@ -6,6 +6,7 @@ config.yml
 .air.toml
 .cache/*
 !.cache/.gitkeep
+!.cache/opengraph/.gitkeep
 
 # Build artifacts
 app
