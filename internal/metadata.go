@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	TitlifyLenght     = 51
+	TitlifyLength     = 51
 	DescriptifyLength = 200
 )
 
@@ -25,8 +25,8 @@ type Metadata struct {
 func Titlify(title string) string {
 	title = html.UnescapeString(title)
 	title = strings.Join(strings.Fields(title), " ")
-	if len(title) > TitlifyLenght {
-		return title[:TitlifyLenght] + "..."
+	if len(title) > TitlifyLength {
+		return title[:TitlifyLength] + "..."
 	}
 	return title
 }

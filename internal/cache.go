@@ -31,6 +31,7 @@ var (
 	KindyLikesCache   = ".cache/kindy_likes.json"
 	KindyNotesCache   = ".cache/kindy_notes.json"
 	KindyRepliesCache = ".cache/kindy_replies.json"
+	TimelineRssCache  = ".cache/timeline_rss.xml"
 )
 
 func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
@@ -81,6 +82,15 @@ func CreateCaches() error {
 
 	// tag cache
 	if err := CreateTagCache(); err != nil {
+		return err
+	}
+
+	// timeline rss cache
+	b, err := CreateTimelineXML()
+	if err != nil {
+		return err
+	}
+	if err := SetCache(TimelineRssCache, b); err != nil {
 		return err
 	}
 
