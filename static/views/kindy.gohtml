@@ -128,7 +128,9 @@
                     </figure>
                     {{ end }}
                 {{ else }}
+                    {{ if eq .Type "like" "repost" "reply" -}}
                     <div class="opengraph" data-url="{{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+                    {{- end }}
                     {{ if .Summary -}}
                     <p class="p-summary">
                         {{ .Summary }}

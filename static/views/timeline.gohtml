@@ -49,9 +49,9 @@
                     {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
                 </figure>
             {{ else}}
-                {{ if eq .Type "like" "repost" "reply" }}
+                {{ if eq .Type "like" "repost" "reply" -}}
                 <div class="opengraph" data-url="{{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
-                {{ end }}
+                {{- end }}
                 {{ if .Summary }}
                 <p>
                     {{ .Summary }}
