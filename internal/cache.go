@@ -20,8 +20,8 @@ var (
 )
 
 // KindyTypes are all the active Kindy types on this site
-var KindyTypes = []local.KindyType{local.KindyTypeLike, local.KindyTypePhoto, local.KindyTypePost,
-	local.KindyTypeRepost, local.KindyTypeNote, local.KindyTypeReplies}
+// It's specifically ordered for the sitemap
+var KindyTypes = []local.KindyType{local.KindyTypePost, local.KindyTypeNote, local.KindyTypeRepost, local.KindyTypeReplies, local.KindyTypeLike, local.KindyTypePhoto}
 
 var (
 	KindyTagsCache    = ".cache/kindy_tags.json"
