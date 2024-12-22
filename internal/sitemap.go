@@ -54,6 +54,17 @@ func CreateSitemapXML() ([]byte, error) {
 		items = append(items, item)
 	}
 
+	// add Tags
+	for _, tag := range GetTags() {
+		url := "https://gerben.dev/tags/" + tag
+		item := &xmlSitemapItem{
+			Loc:        url,
+			ChangeFreq: "weekly",
+			Priority:   "0.4",
+		}
+		items = append(items, item)
+	}
+
 	sitemap := &xmlSitemap{
 		Xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9",
 		URL:   items,
