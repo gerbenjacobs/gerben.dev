@@ -58,6 +58,7 @@ func New(dependencies Dependencies) *Handler {
 		},
 	))
 	r.HandleFunc("GET /sitemap", h.sitemap)
+	r.HandleFunc("GET /sitemap.xml", h.sitemapXML)
 	r.HandleFunc("GET /tags/{tag}", h.tags)
 	r.HandleFunc("GET /listening", h.listening)
 	r.HandleFunc("GET /timeline", h.timeline)

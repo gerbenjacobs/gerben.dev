@@ -32,6 +32,7 @@ var (
 	KindyNotesCache   = ".cache/kindy_notes.json"
 	KindyRepliesCache = ".cache/kindy_replies.json"
 	TimelineRssCache  = ".cache/timeline_rss.xml"
+	SitemapXMLCache   = ".cache/sitemap.xml"
 )
 
 func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
@@ -91,6 +92,15 @@ func CreateCaches() error {
 		return err
 	}
 	if err := SetCache(TimelineRssCache, b); err != nil {
+		return err
+	}
+
+	// sitemap cache
+	b, err = CreateSitemapXML()
+	if err != nil {
+		return err
+	}
+	if err := SetCache(SitemapXMLCache, b); err != nil {
 		return err
 	}
 

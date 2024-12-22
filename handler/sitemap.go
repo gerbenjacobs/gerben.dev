@@ -57,6 +57,11 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func (h *Handler) sitemapXML(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/xml; charset=utf-8")
+	http.ServeFile(w, r, internal.SitemapXMLCache)
+}
+
 func kindyLimit(entries []local.Kindy, limit int) []local.Kindy {
 	if len(entries) > limit {
 		return entries[:limit]
