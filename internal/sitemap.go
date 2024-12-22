@@ -24,9 +24,9 @@ type xmlSitemap struct {
 
 type xmlSitemapItem struct {
 	Loc        string `xml:"loc"`
-	LastMod    string `xml:"lastmod"`
-	ChangeFreq string `xml:"changefreq"`
-	Priority   string `xml:"priority"`
+	LastMod    string `xml:"lastmod,omitempty"`
+	ChangeFreq string `xml:"changefreq,omitempty"`
+	Priority   string `xml:"priority,omitempty"`
 }
 
 func CreateSitemapXML() ([]byte, error) {
