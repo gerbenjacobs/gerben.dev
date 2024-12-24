@@ -22,7 +22,9 @@ var opengraphTemplate = `
 		<p>{{.DescriptionHTML}}</p>
 	</div>
 	{{range .Image}}
+	{{ if .URL }}
 	<figure><img src="{{.URL}}" alt="{{or .Alt $.Title}}" loading="lazy"><figcaption>{{.Alt}}</figcaption></figure>
+	{{end}}
 	{{end}}
 	<cite>&mdash; <a href="{{.URL}}">{{.Title}}</a></cite>
 </blockquote>
@@ -44,7 +46,7 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		slog.Info("downloading new opengraph data", "url", url)
 		// fetch fresh data
-		ogp, err := opengraph.Fetch(url)
+		ogp, err := internal.Opengraph(url)
 		if err != nil {
 			http.Error(w, fmt.Sprintf("failed to fetch opengraph data: %v", err), http.StatusInternalServerError)
 			return
@@ -63,6 +65,15 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 
 	var og opengraph.OpenGraph
 	err = json.Unmarshal(b, &og)
+
+	// remove empty images
+	for i := 0; i < len(og.Image); i++ {
+		if og.Image[i].URL == "" {
+			og.Image = append(og.Image[:i], og.Image[i+1:]...)
+			i--
+		}
+	}
+
 	absErr := og.ToAbs()
 	if err != nil || absErr != nil {
 		http.Error(w, fmt.Sprintf("failed to unmarshal opengraph data: %v", err), http.StatusInternalServerError)
