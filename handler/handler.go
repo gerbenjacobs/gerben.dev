@@ -14,6 +14,8 @@ import (
 	"github.com/mmcdole/gofeed"
 )
 
+var Env string
+
 // layoutFiles are all the files required to create the site w.r.t. template/define
 var layoutFiles = []string{
 	"static/views/baseLayout.html",
@@ -34,7 +36,8 @@ type Dependencies struct {
 }
 
 // New creates a new handler given a set of dependencies
-func New(dependencies Dependencies) *Handler {
+func New(env string, dependencies Dependencies) *Handler {
+	Env = env
 	h := &Handler{
 		Dependencies: dependencies,
 	}
@@ -49,9 +52,10 @@ func New(dependencies Dependencies) *Handler {
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Image: "/images/opengraph.png"}))
+	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Env: Env, Image: "/images/opengraph.png"}))
 	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html",
 		internal.Metadata{
+			Env:         Env,
 			Title:       "Changelog",
 			Description: "This page explains all the (structural) changes that happened to this site.",
 			Permalink:   "/changelog",
@@ -82,7 +86,7 @@ func New(dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /tags/{$}", redirect("/timeline"))
 
 	// API stuff?
-	r.HandleFunc("GET /api/opengraph", h.apiOpenGraph)
+	r.HandleFunc("POST /api/opengraph", h.apiOpenGraph)
 
 	h.mux = internal.LogWriter(r)
 	return h
@@ -146,6 +150,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
+			Env:         Env,
 			Title:       tag + " | Tags",
 			Description: "All content on gerben.dev for the term: #" + tag,
 			Permalink:   "/tags/" + tag,
@@ -194,6 +199,7 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
+			Env:         Env,
 			Title:       "Listening",
 			Description: "This page lists what I'm currently listening to.",
 		},

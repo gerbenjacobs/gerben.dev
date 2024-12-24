@@ -124,12 +124,13 @@ func (k Kindy) GetContent() template.HTML {
 // but still returns a template.HTML so that properly escaped HTML entities still work
 // It has an 'optional' args list, but we really only except 1 int which limits the length
 func (k Kindy) ContentStripped(args ...int) template.HTML {
-	content := strings.Join(strings.Fields(string(k.GetContent())), " ")
+	p := bluemonday.StrictPolicy()
+	content := p.Sanitize(string(k.GetContent()))
+	content = strings.Join(strings.Fields(content), " ")
 	if len(args) > 0 && len(content) > args[0] {
 		content = content[:args[0]] + "&hellip;"
 	}
-	p := bluemonday.StrictPolicy()
-	return template.HTML(p.Sanitize(content))
+	return template.HTML(content)
 }
 
 func (k Kindy) MustTitle() string {

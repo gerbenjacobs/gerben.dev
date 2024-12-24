@@ -36,7 +36,7 @@
             </figure>
         {{ else}}
             {{ if eq .Type "like" "repost" "reply" -}}
-            <div class="opengraph" data-url="{{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+            <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
             {{- end }}
             {{ if .Summary }}
             <p>
@@ -71,39 +71,4 @@
       </div>
 </div>
 {{ end }}
-<script>
-    document.querySelectorAll('.opengraph').forEach(function (element) {
-        let observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    fetch('/api/opengraph?url=' + element.getAttribute('data-url'))
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.title) {
-                                let favicon = data.favicon.url ? new URL(data.favicon.url, data.url).href : '';
-                                let html = `
-                                    <blockquote>
-                                        <div>
-                                            <p><img src="${favicon}" alt="${data.title}" class="timeline-author" loading="lazy"> <b>${data.title}</b></p>
-                                            <p>${data.description}</p>
-                                        </div>
-                                `;
-                                if (data.image) {
-                                    data.image.forEach(function (image) {
-                                        let alt = image.alt ? image.alt : data.title;
-                                        html += `<figure><img src="${image.url}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
-                                    });
-                                }
-                                html += '<cite>&mdash; <a href="' + data.url + '">' + data.title + '</a></cite>';
-                                html += '</blockquote>';
-                                element.innerHTML = html;
-                            }
-                        });
-                    observer.unobserve(element);
-                }
-            });
-        });
-        observer.observe(element);
-    });
-</script>
 {{ end }}

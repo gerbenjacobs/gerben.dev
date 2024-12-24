@@ -64,6 +64,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 
 	metadata := internal.Metadata{
+		Env:         Env,
 		Title:       internal.Titlify(kind.MustTitle()) + " | " + cases.Title(language.Und).String(string(kind.Type)),
 		Description: internal.Descriptify(string(kind.MustDescription())),
 		Permalink:   kind.Permalink,

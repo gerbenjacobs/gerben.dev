@@ -29,6 +29,7 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
+			Env:         Env,
 			Title:       "Posts",
 			Description: "These are the posts written on gerben.dev",
 			Permalink:   "/posts/",
@@ -63,6 +64,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
+			Env:         Env,
 			Title:       "Photos",
 			Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
 			Permalink:   "/photos/",

@@ -15,6 +15,7 @@ var (
 // Metadata can be created for every page
 // it holds information for title, description and opengraph data
 type Metadata struct {
+	Env         string
 	Title       string
 	Description string
 	Permalink   string

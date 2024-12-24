@@ -40,7 +40,7 @@ func main() {
 	}
 
 	// set up the route handler and server
-	app := handler.New(dependencies)
+	app := handler.New(c.Svc.Env, dependencies)
 	srv := &http.Server{
 		Addr:         c.Svc.Address,
 		ReadTimeout:  5 * time.Second,

@@ -55,11 +55,14 @@
         margin: 2rem 0; 
     }
     @media (min-width: 800px) {
-        .kindy-type-post {
+        .kindy {
             display: block;
             margin: auto;
             width: clamp(320px, 80%, 800px);
             text-align: justify;
+        }
+        .kindy-type-photo {
+            width: 100%;
         }
         .kindy figure {
             margin: 2rem;
@@ -129,7 +132,7 @@
                     {{ end }}
                 {{ else }}
                     {{ if eq .Type "like" "repost" "reply" -}}
-                    <div class="opengraph" data-url="{{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+                    <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
                     {{- end }}
                     {{ if .Summary -}}
                     <p class="p-summary">
@@ -168,41 +171,6 @@
             </article>
         </div>
     </div>
-    <script>
-        document.querySelectorAll('.opengraph').forEach(function (element) {
-            let observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        fetch('/api/opengraph?url=' + element.getAttribute('data-url'))
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.title) {
-                                    let favicon = data.favicon.url ? new URL(data.favicon.url, data.url).href : '';
-                                    let html = `
-                                        <blockquote>
-                                            <div>
-                                                <p><img src="${favicon}" alt="${data.title}" class="timeline-author" loading="lazy"> <b>${data.title}</b></p>
-                                                <p>${data.description}</p>
-                                            </div>
-                                    `;
-                                    if (data.image) {
-                                        data.image.forEach(function (image) {
-                                            let alt = image.alt ? image.alt : data.title;
-                                            html += `<figure><img src="${image.url}" alt="${alt}" loading="lazy"><figcaption>${alt}</figcaption></figure>`;
-                                        });
-                                    }
-                                    html += '<cite>&mdash; <a href="' + data.url + '">' + data.title + '</a></cite>';
-                                    html += '</blockquote>';
-                                    element.innerHTML = html;
-                                }
-                            });
-                        observer.unobserve(element);
-                    }
-                });
-            });
-            observer.observe(element);
-        });
-    </script>
     <div class="row">
         <div class="col">
             <link rel="stylesheet" href="https://blog.gerbenjacobs.nl/css/webmention.css">
@@ -211,5 +179,5 @@
         </div>
     </div>
 </div>
-
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
 {{ end}}

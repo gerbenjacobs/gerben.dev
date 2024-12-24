@@ -35,7 +35,7 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := pageData{
-		Metadata: internal.Metadata{Title: "Sitemap", Description: "A HTML version of my sitemap", Permalink: "/sitemap"},
+		Metadata: internal.Metadata{Env: Env, Title: "Sitemap", Description: "A HTML version of my sitemap", Permalink: "/sitemap"},
 		Counts: map[string]int{
 			"posts":   len(kindyData[local.KindyTypePost]),
 			"photos":  len(kindyData[local.KindyTypePhoto]),
