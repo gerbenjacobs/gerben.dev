@@ -10,7 +10,8 @@ import (
 )
 
 func CreateTimelineXML() ([]byte, error) {
-	entries := GetTimelineData()
+	timelineCutoffDate := time.Now().AddDate(0, -3, 0)
+	entries := GetTimelineData(time.Now(), &timelineCutoffDate)
 	if len(entries) == 0 {
 		return nil, nil
 	}
@@ -55,13 +56,25 @@ func CreateTimelineXML() ([]byte, error) {
 	return xml.Marshal(fullRss)
 }
 
-func GetTimelineData() []local.Kindy {
+func GetTimelineData(since time.Time, upto *time.Time) []local.Kindy {
 	notes, _ := GetKindyCacheByType(local.KindyTypeNote)
 	likes, _ := GetKindyCacheByType(local.KindyTypeLike)
 	reposts, _ := GetKindyCacheByType(local.KindyTypeRepost)
 	replies, _ := GetKindyCacheByType(local.KindyTypeReplies)
 
 	entries := slices.Concat(notes, likes, reposts, replies)
+
+	// Filter out entries if a since query is provided
+	entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
+		return e.PublishedAt.After(since)
+	})
+
+	// Filter out entries if an upto query is provided
+	if upto != nil {
+		entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
+			return e.PublishedAt.Before(*upto)
+		})
+	}
 
 	// Sort the entries on published date
 	sort.Slice(entries, func(i, j int) bool {
