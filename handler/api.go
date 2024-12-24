@@ -22,7 +22,7 @@ var opengraphTemplate = `
 		<p>{{.Description}}</p>
 	</div>
 	{{range .Image}}
-	<figure><img src="{{.URL}}" alt="{{.Alt}}" loading="lazy"><figcaption>{{.Alt}}</figcaption></figure>
+	<figure><img src="{{.URL}}" alt="{{or .Alt $.Title}}" loading="lazy"><figcaption>{{.Alt}}</figcaption></figure>
 	{{end}}
 	<cite>&mdash; <a href="{{.URL}}">{{.Title}}</a></cite>
 </blockquote>

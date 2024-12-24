@@ -14,5 +14,11 @@
         "Hardcore",
         "SongOfTheYear",
         "SOTY"
+    ],
+    "syndication":[
+        {
+            "type": "fediverse",
+            "url": "https://todon.nl/@gerben/113709569623500647"
+        }
     ]
 }
