@@ -19,7 +19,7 @@ var opengraphTemplate = `
 <blockquote>
 	<div>
 		<p><img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy"> <b>{{.Title}}</b></p>
-		<p>{{.Description}}</p>
+		<p>{{.DescriptionHTML}}</p>
 	</div>
 	{{range .Image}}
 	<figure><img src="{{.URL}}" alt="{{or .Alt $.Title}}" loading="lazy"><figcaption>{{.Alt}}</figcaption></figure>
@@ -68,7 +68,12 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("failed to unmarshal opengraph data: %v", err), http.StatusInternalServerError)
 		return
 	}
-	if err := tmpl.Execute(w, og); err != nil {
+
+	type localOG struct {
+		opengraph.OpenGraph
+		DescriptionHTML template.HTML
+	}
+	if err := tmpl.Execute(w, localOG{og, template.HTML(og.Description)}); err != nil {
 		http.Error(w, fmt.Sprintf("failed to execute template: %v", err), http.StatusInternalServerError)
 	}
 }
