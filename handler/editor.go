@@ -13,6 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -306,6 +307,23 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		}
 	}
 
+	// geo
+	geo := &kindy.KindyGeo{}
+	if data.Get("latitude") != "" && data.Get("longitude") != "" {
+		lat, err := strconv.ParseFloat(data.Get("latitude"), 64)
+		if err != nil {
+			return nil, err
+		}
+		lng, err := strconv.ParseFloat(data.Get("longitude"), 64)
+		if err != nil {
+			return nil, err
+		}
+		geo = &kindy.KindyGeo{
+			Latitude:  lat,
+			Longitude: lng,
+		}
+	}
+
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypePhoto,
 		Title:       data.Get("title"),
@@ -315,6 +333,7 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		Slug:        slug,
 		Permalink:   kindy.KindyURLPhotos + slug,
 		Tags:        tags,
+		Geo:         geo,
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")

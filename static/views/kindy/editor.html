@@ -56,22 +56,20 @@
             <summary><span data-tooltip="Click to open Edit author form">Edit author</span></summary>
             <form method="post" action="/kindy">
                 <input type="hidden" name="type" value="author">
-                <fieldset>
-                    <label>
-                        Name
-                        <input type="text" name="name" placeholder="Your name" value="{{ .Author.Name }}">
-                    </label>
-                    <label>
-                        URL
-                        <input type="url" name="url" placeholder="https://yourwebsite.co" value="{{ .Author.URL }}">
-                    </label>
-                    <label>
-                        Photo
-                        <input type="text" name="photo" placeholder="https://yourwebsite.co/images/avatar.jpg"
-                            value="{{ .Author.Photo }}">
-                        <small>Image has to be uploaded already, place your URL here</small>
-                    </label>
-                </fieldset>
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Your name" value="{{ .Author.Name }}">
+                </label>
+                <label>
+                    URL
+                    <input type="url" name="url" placeholder="https://yourwebsite.co" value="{{ .Author.URL }}">
+                </label>
+                <label>
+                    Photo
+                    <input type="text" name="photo" placeholder="https://yourwebsite.co/images/avatar.jpg"
+                        value="{{ .Author.Photo }}">
+                    <small>Image has to be uploaded already, place your URL here</small>
+                </label>
 
                 <input type="submit" value="Save" />
             </form>
@@ -81,43 +79,41 @@
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="note">
-            <fieldset>
-                <label>
-                    Content
-                    <textarea id="content" name="content" placeholder="Write your note.." required></textarea>
-                    <details>
-                        <summary><span data-tooltip="Emoji picker">😀</span></summary>
-                        <emoji-picker></emoji-picker>
-                    </details>
-                </label>
-                <label>
-                    <input type="checkbox" name="markdown" />
-                    Use Markdown?
-                </label>
-                <label>
-                    Publishing date
-                    <input type="datetime-local" name="publishedat" aria-label="Datetime local">
-                    <small>By default, we'll set the date when you submit the form.</small>
-                </label>
-                <label>
-                    URL slug
-                    <input type="text" name="slug">
-                    <small>Optional. Default value will be a hash of the publishing date.</small>
-                </label>
-                <label>
-                    Tags
-                    <span class="tag-container"></span>
-                    <input type="hidden" name="tags">
+            <label>
+                Content
+                <textarea id="content" name="content" placeholder="Write your note.." required></textarea>
+                <details>
+                    <summary><span data-tooltip="Emoji picker">😀</span></summary>
+                    <emoji-picker></emoji-picker>
+                </details>
+            </label>
+            <label>
+                <input type="checkbox" name="markdown" />
+                Use Markdown?
+            </label>
+            <label>
+                Publishing date
+                <input type="datetime-local" name="publishedat" aria-label="Datetime local">
+                <small>By default, we'll set the date when you submit the form.</small>
+            </label>
+            <label>
+                URL slug
+                <input type="text" name="slug">
+                <small>Optional. Default value will be a hash of the publishing date.</small>
+            </label>
+            <label>
+                Tags
+                <span class="tag-container"></span>
+                <input type="hidden" name="tags">
 
-                    <input list="tagger" class="tagger" />
-                    <small>Press enter to add a tag</small>
-                    <datalist id="tagger">
-                        {{ range .Tags -}}
-                        <option value="{{ . }}"></option>
-                        {{ end -}}
-                    </datalist>
-                </label>
-            </fieldset>
+                <input list="tagger" class="tagger" />
+                <small>Press enter to add a tag</small>
+                <datalist id="tagger">
+                    {{ range .Tags -}}
+                    <option value="{{ . }}"></option>
+                    {{ end -}}
+                </datalist>
+            </label>
 
             <input type="submit" value="Publish" />
         </form>
@@ -126,12 +122,10 @@
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="like">
-            <fieldset>
-                <label>
-                    URL
-                    <input type="url" name="url" required>
-                </label>
-            </fieldset>
+            <label>
+                URL
+                <input type="url" name="url" required>
+            </label>
             <input type="submit" value="Publish">
         </form>
 
@@ -139,12 +133,10 @@
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="repost">
-            <fieldset>
-                <label>
-                    URL
-                    <input type="url" name="url" required>
-                </label>
-            </fieldset>
+            <label>
+                URL
+                <input type="url" name="url" required>
+            </label>
             <input type="submit" value="Publish">
         </form>
 
@@ -152,38 +144,51 @@
 
         <form method="post" action="/kindy" enctype="multipart/form-data">
             <input type="hidden" name="type" value="photos">
-            <fieldset>
+            <label>
+                Photo<br>
+                <img src="" id="preview">
+                <input type="file" id="photo" name="photo" required>
+            </label>
+            <label>
+                Title (optional)
+                <input type="text" name="title">
+            </label>
+            <label>
+                Summary
+                <textarea name="summary" placeholder="Write your summary.." required></textarea>
+                <details>
+                    <summary><span data-tooltip="Emoji picker">😀</span></summary>
+                    <emoji-picker></emoji-picker>
+                </details>
+            </label>
+            <label>
+                Publishing date
+                <input id="photo-publishedat" type="datetime-local" name="publishedat" aria-label="Datetime local">
+                <small>By default, we'll set the date when you submit the form.</small>
+            </label>
+            <fieldset class="grid">
                 <label>
-                    Photo
-                    <input type="file" name="photo" required>
+                    Latitude
+                    <input type="number" step="0.0000001" name="latitude">
                 </label>
                 <label>
-                    Title (optional)
-                    <input type="text" name="title">
-                </label>
-                <label>
-                    Summary
-                    <textarea name="summary" placeholder="Write your summary" required></textarea>
-                </label>
-                <label>
-                    Publishing date
-                    <input type="datetime-local" name="publishedat" aria-label="Datetime local">
-                    <small>By default, we'll set the date when you submit the form.</small>
-                </label>
-                <label>
-                    Tags
-                    <span class="tag-container"></span>
-                    <input type="hidden" name="tags">
-    
-                    <input list="tagger" class="tagger" />
-                    <small>Press enter to add a tag</small>
-                    <datalist id="tagger">
-                        {{ range .Tags -}}
-                        <option value="{{ . }}"></option>
-                        {{ end -}}
-                    </datalist>
+                    Longitude
+                    <input type="number" step="0.0000001" name="longitude">
                 </label>
             </fieldset>
+            <label>
+                Tags
+                <span class="tag-container"></span>
+                <input type="hidden" name="tags">
+
+                <input list="tagger" class="tagger" />
+                <small>Press enter to add a tag</small>
+                <datalist id="tagger">
+                    {{ range .Tags -}}
+                    <option value="{{ . }}"></option>
+                    {{ end -}}
+                </datalist>
+            </label>
             <input type="submit" value="Publish">
         </form>
 
@@ -191,12 +196,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const content = document.getElementById('content');
-            const emojiPicker = document.querySelector('emoji-picker');
+            const emojiPickers = document.querySelectorAll('emoji-picker');
             const tags = document.querySelectorAll('.tagger');
 
-            emojiPicker.addEventListener('emoji-click', event => {
-                content.value += event.detail.unicode;
+            emojiPickers.forEach(emojiPicker => {
+                emojiPicker.addEventListener('emoji-click', event => {
+                    nearbyTextarea = event.target.parentNode.parentNode.querySelector('textarea');
+                    nearbyTextarea.value += event.detail.unicode;
+                });
             });
 
             tags.forEach(tag => {
@@ -213,8 +220,8 @@
                 const tagValue = event.target.value.trim();
                 if (tagValue === '') return;
 
-                const tagContainer = event.target.closest('fieldset').querySelector('.tag-container');
-                const tagsInput = event.target.closest('fieldset').querySelector('input[name="tags"]');
+                const tagContainer = event.target.closest('label').querySelector('.tag-container');
+                const tagsInput = event.target.closest('label').querySelector('input[name="tags"]');
                 const tagElement = document.createElement('span');
                 tagElement.textContent = tagValue;
                 tagElement.classList.add('tag');
@@ -231,6 +238,25 @@
                 event.target.value = '';
             }
         });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
+    <script>
+        let photo = document.querySelector('#photo')
+        let preview = document.querySelector('#preview')
+        let photoPublishedAt = document.querySelector('#photo-publishedat')
+
+        photo.addEventListener('change', async e => {
+            let file = e.target.files[0]
+            let gps = await window.exifr.gps(file)
+            if (gps) {
+                document.querySelector('input[name="latitude"]').value = gps.latitude.toFixed(7)
+                document.querySelector('input[name="longitude"]').value = gps.longitude.toFixed(7)
+            }
+            let exif = await window.exifr.parse(file)
+            photoPublishedAt.value = exif.DateTimeOriginal.toISOString().slice(0, 16)
+
+            preview.src = await window.exifr.thumbnailUrl(file)
+        })
     </script>
 </body>
 
