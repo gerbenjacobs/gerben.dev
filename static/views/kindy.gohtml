@@ -121,13 +121,11 @@
                             Your browser does not support the video tag.
                         </video>
                         {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
-                        <small style="display: none;">(Posted on <a href="{{ .Permalink }}">gerben.dev</a>)</small>
                     </div>
                     {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
                        {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-                        <small hidden="hidden">(Posted on <a href="{{ .Permalink }}">gerben.dev</a>)</small>
                     </figure>
                     {{ end }}
                 {{ else }}
