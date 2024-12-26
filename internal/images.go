@@ -65,7 +65,7 @@ func createThumbnail(fp string, img image.Image, fileType string) error {
 func encodeImage(file *os.File, img image.Image, fileType string) error {
 	switch fileType {
 	case "jpg", "jpeg", "webp":
-		return jpeg.Encode(file, img, nil)
+		return jpeg.Encode(file, img, &jpeg.Options{Quality: 85})
 	case "png":
 		return png.Encode(file, img)
 	default:
