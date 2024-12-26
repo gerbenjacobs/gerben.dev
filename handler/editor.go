@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"regexp"
 	"strings"
 	"time"
@@ -33,8 +34,15 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 
 	// handle POST
 	if r.Method == "POST" {
+		if err := r.ParseMultipartForm(10 << 20); err != nil { // 10 MB
+			slog.Error("failed to parse POST multipart form", "error", err)
+			http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
+			http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
+		}
 		if err := r.ParseForm(); err != nil {
 			slog.Error("failed to parse POST form", "error", err)
+			http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
+			http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
 		}
 
 		if r.PostForm.Get("type") == "author" {
@@ -82,6 +90,19 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 			}
 			internal.CreateCaches()
 			http.Redirect(w, r, kindy.KindyURLReposts+entry.Slug, http.StatusFound)
+			return
+		}
+
+		if r.PostForm.Get("type") == "photos" {
+			entry, err := postPhotos(r)
+			if err != nil {
+				slog.Error("failed to publish photos", "error", err)
+				http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
+				http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
+				return
+			}
+			internal.CreateCaches()
+			http.Redirect(w, r, kindy.KindyURLPhotos+entry.Slug, http.StatusFound)
 			return
 		}
 
@@ -238,6 +259,65 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 		PublishedAt: publishedAt,
 		Slug:        slug,
 		Permalink:   kindy.KindyURLReposts + slug,
+	}
+
+	b, err := json.MarshalIndent(entry, "", "    ")
+	if err != nil {
+		return nil, err
+	}
+
+	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
+}
+
+func postPhotos(req *http.Request) (*kindy.Kindy, error) {
+	data := req.PostForm
+
+	// handle photo
+	in, header, err := req.FormFile("photo")
+	if err != nil {
+		return nil, err
+	}
+	defer in.Close()
+
+	f, err := internal.HandleUploadedFile(in, header)
+	if err != nil {
+		return nil, err
+	}
+
+	publishedAt := time.Now()
+	if data.Get("publishedat") != "" {
+		pa, err := time.Parse("2006-01-02T15:04", data.Get("publishedat"))
+		if err != nil {
+			return nil, err
+		}
+		if !pa.IsZero() {
+			publishedAt = pa
+		}
+	}
+	slug := fmt.Sprintf("%x", md5.Sum([]byte(publishedAt.Format(time.RFC3339))))
+
+	if data.Get("slug") != "" {
+		slug = getTitleURLFromString(data.Get("slug"))
+	}
+
+	// handle tags
+	var tags []string
+	for _, t := range strings.Split(data.Get("tags"), ",") {
+		tt := strings.TrimSpace(t)
+		if tt != "" {
+			tags = append(tags, strings.TrimSpace(t))
+		}
+	}
+
+	entry := kindy.Kindy{
+		Type:        kindy.KindyTypePhoto,
+		Title:       data.Get("title"),
+		Summary:     template.HTML(data.Get("summary")),
+		Content:     template.HTML(kindy.KindyDataPath + "photos/" + filepath.Base(f.Name())),
+		PublishedAt: publishedAt,
+		Slug:        slug,
+		Permalink:   kindy.KindyURLPhotos + slug,
+		Tags:        tags,
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")

@@ -77,7 +77,7 @@
             </form>
         </details>
 
-        <h2>Notes</h2>
+        <h2 id="notes">Notes</h2>
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="note">
@@ -122,7 +122,7 @@
             <input type="submit" value="Publish" />
         </form>
 
-        <h2>Likes</h2>
+        <h2 id="likes">Likes</h2>
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="like">
@@ -135,7 +135,7 @@
             <input type="submit" value="Publish">
         </form>
 
-        <h2>Reposts</h2>
+        <h2 id="reposts">Reposts</h2>
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="repost">
@@ -143,6 +143,45 @@
                 <label>
                     URL
                     <input type="url" name="url" required>
+                </label>
+            </fieldset>
+            <input type="submit" value="Publish">
+        </form>
+
+        <h2 id="photos">Photos</h2>
+
+        <form method="post" action="/kindy" enctype="multipart/form-data">
+            <input type="hidden" name="type" value="photos">
+            <fieldset>
+                <label>
+                    Photo
+                    <input type="file" name="photo" required>
+                </label>
+                <label>
+                    Title (optional)
+                    <input type="text" name="title">
+                </label>
+                <label>
+                    Summary
+                    <textarea name="summary" placeholder="Write your summary" required></textarea>
+                </label>
+                <label>
+                    Publishing date
+                    <input type="datetime-local" name="publishedat" aria-label="Datetime local">
+                    <small>By default, we'll set the date when you submit the form.</small>
+                </label>
+                <label>
+                    Tags
+                    <span class="tag-container"></span>
+                    <input type="hidden" name="tags">
+    
+                    <input list="tagger" class="tagger" />
+                    <small>Press enter to add a tag</small>
+                    <datalist id="tagger">
+                        {{ range .Tags -}}
+                        <option value="{{ . }}"></option>
+                        {{ end -}}
+                    </datalist>
                 </label>
             </fieldset>
             <input type="submit" value="Publish">
