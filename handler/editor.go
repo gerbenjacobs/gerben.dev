@@ -34,16 +34,13 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 
 	// handle POST
 	if r.Method == "POST" {
-		if err := r.ParseMultipartForm(10 << 20); err != nil { // 10 MB
-			slog.Error("failed to parse POST multipart form", "error", err)
-			http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
-			http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
-		}
 		if err := r.ParseForm(); err != nil {
 			slog.Error("failed to parse POST form", "error", err)
 			http.SetCookie(w, &http.Cookie{Name: cookieName, Value: err.Error()})
 			http.Redirect(w, r, kindy.KindyEditorPath, http.StatusFound)
+			return
 		}
+		_ = r.ParseMultipartForm(10 << 20) // 10 MB
 
 		if r.PostForm.Get("type") == "author" {
 			if err := postAuthor(r.PostForm); err != nil {
