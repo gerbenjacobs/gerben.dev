@@ -9,5 +9,11 @@
         "Drone",
         "Spooky",
         "Cars"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/777987409885507521"
+        }
     ]
 }
