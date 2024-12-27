@@ -14,5 +14,11 @@
         "Doesburg",
         "Nature",
         "Weather"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/778354007199038609"
+        }
     ]
 }
