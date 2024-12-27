@@ -308,7 +308,7 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 	}
 
 	// geo
-	geo := &kindy.KindyGeo{}
+	var geo kindy.KindyGeo
 	if data.Get("latitude") != "" && data.Get("longitude") != "" {
 		lat, err := strconv.ParseFloat(data.Get("latitude"), 64)
 		if err != nil {
@@ -318,7 +318,7 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		if err != nil {
 			return nil, err
 		}
-		geo = &kindy.KindyGeo{
+		geo = kindy.KindyGeo{
 			Latitude:  lat,
 			Longitude: lng,
 		}
@@ -333,7 +333,10 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		Slug:        slug,
 		Permalink:   kindy.KindyURLPhotos + slug,
 		Tags:        tags,
-		Geo:         geo,
+	}
+
+	if geo.Latitude != 0 && geo.Longitude != 0 {
+		entry.Geo = &geo
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")
