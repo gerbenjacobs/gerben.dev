@@ -26,7 +26,7 @@
                 </time>
                 {{ if .Geo -}}
                 <span>
-                    <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}">🗺️</a>
+                    <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">🗺️</a>
                 </span>
                 {{- end }}
                 {{ if .Tags -}}

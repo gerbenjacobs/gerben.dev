@@ -68,6 +68,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 			Title:       "Photos",
 			Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
 			Permalink:   "/photos/",
+			Image:       string(entries[0].Content), // use latest photo as og:image
 		},
 		Entries: entries,
 	}
