@@ -11,7 +11,7 @@ import (
 )
 
 func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml", "static/views/partials/timeline-partial.gohtml")...))
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml", "static/views/partials/timeline-paginated.gohtml")...))
 
 	// handle since query
 	oldestContentDate := time.Date(2024, 11, 28, 0, 0, 0, 0, time.UTC)
@@ -45,7 +45,7 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	// if HTMX call, we return partials only
 	isHX := r.Header.Get("HX-Request") //r.URL.Query().Get("HX-Request") to test
 	if isHX == "true" {
-		if err := t.ExecuteTemplate(w, "timeline-partial", data); err != nil {
+		if err := t.ExecuteTemplate(w, "timeline-paginated", data); err != nil {
 			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 		}
 		return
