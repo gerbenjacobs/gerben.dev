@@ -12,5 +12,11 @@
     "tags": [
         "Butterfly",
         "🦋"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/779027882109758502"
+        }
     ]
 }
