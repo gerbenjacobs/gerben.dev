@@ -5,11 +5,14 @@ import (
 	"log/slog"
 	"net/http"
 	"path"
+	"strconv"
 	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
+
+const PhotosPerPage = 56
 
 func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/posts.gohtml")...))
@@ -47,7 +50,9 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 			return strings.HasSuffix(string(s), suffix)
 		},
 	}
-	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/photos.gohtml")...))
+	t := template.Must(template.New(path.Base(layoutFiles[0])).
+		Funcs(funcs).
+		ParseFiles(append(layoutFiles, "static/views/photos.gohtml", "static/views/partials/photos-paginated.gohtml")...))
 
 	// get posts
 	kindyType := local.KindyTypePhoto
@@ -57,10 +62,26 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
+	totalEntries := len(entries)
+
+	// paginate
+	page := 0
+	if r.URL.Query().Get("page") != "" {
+		page, _ = strconv.Atoi(r.URL.Query().Get("page"))
+	}
+	nextPage := page + 1
+	lastEntry := nextPage * PhotosPerPage
+	if nextPage*PhotosPerPage > totalEntries {
+		nextPage = 0
+		lastEntry = totalEntries
+	}
+	entries = entries[page*PhotosPerPage : lastEntry]
 
 	type pageData struct {
-		Metadata internal.Metadata
-		Entries  []local.Kindy
+		Metadata     internal.Metadata
+		TotalEntries int
+		NextPage     int
+		Entries      []local.Kindy
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
@@ -70,8 +91,20 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 			Permalink:   "/photos/",
 			Image:       string(entries[0].Content), // use latest photo as og:image
 		},
-		Entries: entries,
+		NextPage:     nextPage,
+		TotalEntries: totalEntries,
+		Entries:      entries,
 	}
+
+	// if HTMX call, we return partials only
+	isHX := r.Header.Get("HX-Request") //r.URL.Query().Get("HX-Request") to test
+	if isHX == "true" {
+		if err := t.ExecuteTemplate(w, "photos-paginated", data); err != nil {
+			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+		}
+		return
+	}
+
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
