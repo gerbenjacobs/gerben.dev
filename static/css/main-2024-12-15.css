@@ -133,6 +133,14 @@ iframe,
     vertical-align: bottom;
 }
 
+.collected {
+    position: relative;
+    width: 100%;
+    height: 960px;
+    background: url("/kd/photos/PXL_20240911_124800628.jpg") no-repeat center center;
+    overflow: auto;
+}
+
 @media (min-width: 800px) {
     .read-heavy {
         display: block;
@@ -183,6 +191,13 @@ iframe,
 
     #timeline-header-content {
         border-radius: 0;
+    }
+
+    .collected * {
+        position: relative !important;
+        top: inherit !important;
+        left: inherit !important;
+        right: inherit !important;
     }
 }
 
