@@ -32,10 +32,9 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	since, upto, cursor := h.handleTimePagination(r.URL.Query().Get("since"), oldestContentDate)
 
 	// get data
-	entries, totalEntries := internal.GetTimelineData(since, &upto, showNotes, showReplies, showReposts, showLikes)
+	entries := internal.GetTimelineData(since, &upto, showNotes, showReplies, showReposts, showLikes)
 
 	// if last entry is 'younger' than upto value, we have reached the end
-	slog.Info("last entry", "entry", entries[len(entries)-1].PublishedAt, "upto", upto, "total", totalEntries)
 	if entries[len(entries)-1].PublishedAt.Before(upto) {
 		cursor = ""
 	}

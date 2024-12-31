@@ -13,7 +13,7 @@ var MinimumTimelineEntries = 20
 
 func CreateTimelineXML() ([]byte, error) {
 	timelineCutoffDate := time.Now().AddDate(0, -3, 0)
-	entries, _ := GetTimelineData(time.Now(), &timelineCutoffDate, true, true, true, true)
+	entries := GetTimelineData(time.Now(), &timelineCutoffDate, true, true, true, true)
 	if len(entries) == 0 {
 		return nil, nil
 	}
@@ -58,7 +58,7 @@ func CreateTimelineXML() ([]byte, error) {
 	return xml.Marshal(fullRss)
 }
 
-func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, showReposts, showLikes bool) ([]local.Kindy, int) {
+func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, showReposts, showLikes bool) []local.Kindy {
 	var entries []local.Kindy
 
 	if showNotes {
@@ -82,7 +82,6 @@ func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, s
 	entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
 		return e.PublishedAt.After(since)
 	})
-	totalEntries := len(entries)
 
 	// Filter out entries if an upto query is provided
 	if len(entries) > MinimumTimelineEntries && upto != nil {
@@ -96,5 +95,5 @@ func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, s
 		return entries[i].PublishedAt.After(entries[j].PublishedAt)
 	})
 
-	return entries, totalEntries
+	return entries
 }
