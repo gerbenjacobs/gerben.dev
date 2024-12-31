@@ -9,9 +9,11 @@ import (
 	local "github.com/gerbenjacobs/gerben.dev"
 )
 
+var MinimumTimelineEntries = 20
+
 func CreateTimelineXML() ([]byte, error) {
 	timelineCutoffDate := time.Now().AddDate(0, -3, 0)
-	entries := GetTimelineData(time.Now(), &timelineCutoffDate)
+	entries, _ := GetTimelineData(time.Now(), &timelineCutoffDate, true, true, true, true)
 	if len(entries) == 0 {
 		return nil, nil
 	}
@@ -56,21 +58,34 @@ func CreateTimelineXML() ([]byte, error) {
 	return xml.Marshal(fullRss)
 }
 
-func GetTimelineData(since time.Time, upto *time.Time) []local.Kindy {
-	notes, _ := GetKindyCacheByType(local.KindyTypeNote)
-	likes, _ := GetKindyCacheByType(local.KindyTypeLike)
-	reposts, _ := GetKindyCacheByType(local.KindyTypeRepost)
-	replies, _ := GetKindyCacheByType(local.KindyTypeReplies)
+func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, showReposts, showLikes bool) ([]local.Kindy, int) {
+	var entries []local.Kindy
 
-	entries := slices.Concat(notes, likes, reposts, replies)
+	if showNotes {
+		notes, _ := GetKindyCacheByType(local.KindyTypeNote)
+		entries = append(entries, notes...)
+	}
+	if showReplies {
+		replies, _ := GetKindyCacheByType(local.KindyTypeReplies)
+		entries = append(entries, replies...)
+	}
+	if showReposts {
+		reposts, _ := GetKindyCacheByType(local.KindyTypeRepost)
+		entries = append(entries, reposts...)
+	}
+	if showLikes {
+		likes, _ := GetKindyCacheByType(local.KindyTypeLike)
+		entries = append(entries, likes...)
+	}
 
 	// Filter out entries if a since query is provided
 	entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
 		return e.PublishedAt.After(since)
 	})
+	totalEntries := len(entries)
 
 	// Filter out entries if an upto query is provided
-	if upto != nil {
+	if len(entries) > MinimumTimelineEntries && upto != nil {
 		entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
 			return e.PublishedAt.Before(*upto)
 		})
@@ -81,5 +96,5 @@ func GetTimelineData(since time.Time, upto *time.Time) []local.Kindy {
 		return entries[i].PublishedAt.After(entries[j].PublishedAt)
 	})
 
-	return entries
+	return entries, totalEntries
 }

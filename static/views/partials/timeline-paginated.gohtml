@@ -57,7 +57,8 @@
 </article>
 {{ end }}
 {{ if .NewSince }}
-<div hx-get="/timeline?since={{ .NewSince }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
+<div hx-get="/timeline?since={{ .NewSince }}{{if .ShowNotes}}&showNotes=on{{end}}{{if .ShowReplies}}&showReplies=on{{end}}{{if .ShowReposts}}&showReposts=on{{end}}{{if .ShowLikes}}&showLikes=on{{end}}" 
+hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
     <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
           <div class="circle-clipper left">
