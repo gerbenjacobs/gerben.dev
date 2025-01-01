@@ -1,12 +1,31 @@
 {{ define "content" }}
+<style>
+    @keyframes bounce2 {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+</style>
 <div class="container">
     <div class="row padding">
         <h2>{{ .Metadata.Title }}</h2>
         <p>{{ .Metadata.Description }}</p>
-        <p><small>This page is best-viewed in desktop mode. <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This photo</a> used for the background.</small></p>
+        <p><small>This page is best-viewed in desktop mode. <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This photo</a> is used for the background.</small></p>
     </div>
     <div class="collected" id="collected">
-        <div style="position: absolute; top: 420px; right: 50px;">
+        <div style="position: absolute; top: 420px; right: 50px; animation: bounce2 2s ease infinite;">
             <img src="/images/collected/toothless.webp"
                 alt="Toothless, the Night Fury dragon from How to Train Your Dragon" loading="lazy" width="400"
                 height="225">

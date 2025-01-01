@@ -59,7 +59,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	},
 	))
 	r.HandleFunc("GET /collection", h.singlePageLayout("static/views/collection.html", internal.Metadata{
-		Env: Env, Permalink: "/collection", Title: "My Collection",
+		Env: Env, Permalink: "/collection", Title: "My Collection", Image: "/kd/photos/PXL_20240911_124800628.jpg",
 		Description: "Sometimes when my kids and I play, I collect things, achievements, and other stuff. This page lists them.",
 	}))
 	r.HandleFunc("GET /sitemap", h.sitemap)
