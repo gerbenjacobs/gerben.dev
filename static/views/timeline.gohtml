@@ -13,6 +13,33 @@
 </header>
 
 <div class="container">
+    <div class="padding center-align">
+        <form method="get" action="/timeline">
+            <div class="switch">
+                <label>
+                Notes
+                <input type="checkbox" {{ if .ShowNotes }}checked{{ end }} name="showNotes">
+                <span class="lever"></span>
+                </label>
+                <label>
+                Replies
+                <input type="checkbox" {{ if .ShowReplies }}checked{{ end }} name="showReplies">
+                <span class="lever"></span>
+                </label>
+                <label>
+                Reposts
+                <input type="checkbox" {{ if .ShowReposts }}checked{{ end }} name="showReposts">
+                <span class="lever"></span>
+                </label>
+                <label>
+                Likes
+                <input type="checkbox" {{ if .ShowLikes }}checked{{ end }} name="showLikes">
+                <span class="lever"></span>
+                </label>
+                <button type="submit" class="btn">Filter</button>
+            </div>
+        </form>
+    </div>
     {{ template "timeline-paginated" $ }}
 </div>
 

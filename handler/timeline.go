@@ -13,18 +13,42 @@ import (
 func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml", "static/views/partials/timeline-paginated.gohtml")...))
 
+	// handle content type queries
+	showNotes := r.URL.Query().Get("showNotes") == "on"
+	showReplies := r.URL.Query().Get("showReplies") == "on"
+	showReposts := r.URL.Query().Get("showReposts") == "on"
+	showLikes := r.URL.Query().Get("showLikes") == "on"
+
+	if !r.URL.Query().Has("showNotes") && !r.URL.Query().Has("showReplies") && !r.URL.Query().Has("showReposts") && !r.URL.Query().Has("showLikes") {
+		// nothing selected, default to show all
+		showNotes = true
+		showReplies = true
+		showReposts = true
+		showLikes = true
+	}
+
 	// handle since query
 	oldestContentDate := time.Date(2024, 11, 28, 0, 0, 0, 0, time.UTC)
 	since, upto, cursor := h.handleTimePagination(r.URL.Query().Get("since"), oldestContentDate)
 
 	// get data
-	entries := internal.GetTimelineData(since, &upto)
+	entries := internal.GetTimelineData(since, &upto, showNotes, showReplies, showReposts, showLikes)
+
+	// if last entry is 'younger' than upto value, we have reached the end
+	if entries[len(entries)-1].PublishedAt.Before(upto) {
+		cursor = ""
+	}
+
 	author, _ := getAuthor()
 	type pageData struct {
-		Metadata internal.Metadata
-		Author   *local.KindyAuthor
-		Entries  []local.Kindy
-		NewSince string
+		Metadata    internal.Metadata
+		Author      *local.KindyAuthor
+		Entries     []local.Kindy
+		NewSince    string
+		ShowNotes   bool
+		ShowReplies bool
+		ShowReposts bool
+		ShowLikes   bool
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
@@ -32,9 +56,13 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 			Title:       "Timeline",
 			Description: "This page lists all notes, reposts and likes on gerben.dev in chronological order.",
 		},
-		Author:   author,
-		Entries:  entries,
-		NewSince: cursor,
+		Author:      author,
+		Entries:     entries,
+		NewSince:    cursor,
+		ShowNotes:   showNotes,
+		ShowReplies: showReplies,
+		ShowReposts: showReposts,
+		ShowLikes:   showLikes,
 	}
 
 	if len(entries) == 0 {

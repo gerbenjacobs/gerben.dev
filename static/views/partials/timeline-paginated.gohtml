@@ -3,30 +3,30 @@
 <article class="kindy padding read-heavy">
     <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
     <h2 class="right" style="margin-left: 1em;"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+    <p>
+        <a href="/">
+            <img src="{{ $.Author.Photo }}" alt="{{ $.Author.Name }}" class="timeline-author" loading="lazy">
+            <span title="{{ $.Author.Name }}">@gerben.dev</span>
+        </a>
+        {{ .Type.Emoji }}
+        <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+            🕰️&nbsp;<a href="{{ .Permalink }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{- .TimeAgo -}}
+            </a>
+        </time>
+        {{ if .Geo -}}
+        🗺️&nbsp;<a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">
+            <span>{{ .Geo.Latitude }}</span>,
+            <span>{{ .Geo.Longitude }}</span>
+        </a>
+        {{- end }}
+        {{ if .Tags -}}
+        {{- range .Tags -}}
+        🏷️&nbsp;<a href="/tags/{{ . }}">#{{ . }}</a>
+        {{- end -}}
+        {{- end }}
+    </p>
     <div class="timeline-content">
-        <p>
-            <a href="/">
-                <img src="{{ $.Author.Photo }}" alt="{{ $.Author.Name }}" class="timeline-author" loading="lazy">
-                <span title="{{ $.Author.Name }}">@gerben.dev</span>
-            </a>
-            {{ .Type.Emoji }}
-            <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-                🕰️&nbsp;<a href="{{ .Permalink }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-                    {{- .TimeAgo -}}
-                </a>
-            </time>
-            {{ if .Geo -}}
-            🗺️&nbsp;<a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">
-                <span>{{ .Geo.Latitude }}</span>,
-                <span>{{ .Geo.Longitude }}</span>
-            </a>
-            {{- end }}
-            {{ if .Tags -}}
-            {{- range .Tags -}}
-            🏷️&nbsp;<a href="/tags/{{ . }}">#{{ . }}</a>
-            {{- end -}}
-            {{- end }}
-        </p>
         {{ if eq .Type "photo" }}
             <figure class="center-align" style="margin: 0;">
                 <a href="{{ .Permalink }}">
@@ -57,7 +57,8 @@
 </article>
 {{ end }}
 {{ if .NewSince }}
-<div hx-get="/timeline?since={{ .NewSince }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
+<div hx-get="/timeline?since={{ .NewSince }}{{if .ShowNotes}}&showNotes=on{{end}}{{if .ShowReplies}}&showReplies=on{{end}}{{if .ShowReposts}}&showReposts=on{{end}}{{if .ShowLikes}}&showLikes=on{{end}}" 
+hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
     <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
           <div class="circle-clipper left">
