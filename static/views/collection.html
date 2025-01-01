@@ -1,0 +1,56 @@
+{{ define "content" }}
+<style>
+    @keyframes bounce2 {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+</style>
+<div class="container">
+    <div class="row padding">
+        <h2>{{ .Metadata.Title }}</h2>
+        <p>{{ .Metadata.Description }}</p>
+        <p><small>This page is best-viewed in desktop mode. <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This photo</a> is used for the background.</small></p>
+    </div>
+    <div class="collected" id="collected">
+        <div style="position: absolute; top: 420px; right: 50px; animation: bounce2 2s ease infinite;">
+            <img src="/images/collected/toothless.webp"
+                alt="Toothless, the Night Fury dragon from How to Train Your Dragon" loading="lazy" width="400"
+                height="225">
+        </div>
+    </div>
+    <div class="row padding">
+        <details open>
+            <summary>Collected items</summary>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><time datetime="2024-12-29">Dec 29th, 2024</time></td>
+                        <td>Toothless, the Night Fury dragon</td>
+                        <td>We've watched movie 1 and 2 and I had to tame one with fish, then it became mine, like I was Hiccup.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>
+    </div>
+</div>
+{{ end }}

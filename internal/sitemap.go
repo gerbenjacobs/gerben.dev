@@ -14,6 +14,7 @@ var sitemapPages = []*xmlSitemapItem{
 	{Loc: "https://gerben.dev/changelog", ChangeFreq: "weekly", Priority: "0.6"},
 	{Loc: "https://gerben.dev/sitemap", ChangeFreq: "daily", Priority: "0.6"},
 	{Loc: "https://gerben.dev/listening", ChangeFreq: "daily", Priority: "0.6"},
+	{Loc: "https://gerben.dev/collection", ChangeFreq: "monthly", Priority: "0.6"},
 }
 
 type xmlSitemap struct {

@@ -53,14 +53,15 @@ func New(env string, dependencies Dependencies) *Handler {
 
 	// Pages
 	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Env: Env, Image: "/images/opengraph.png"}))
-	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html",
-		internal.Metadata{
-			Env:         Env,
-			Title:       "Changelog",
-			Description: "This page explains all the (structural) changes that happened to this site.",
-			Permalink:   "/changelog",
-		},
+	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html", internal.Metadata{
+		Env: Env, Permalink: "/changelog", Title: "Changelog",
+		Description: "This page explains all the (structural) changes that happened to this site.",
+	},
 	))
+	r.HandleFunc("GET /collection", h.singlePageLayout("static/views/collection.html", internal.Metadata{
+		Env: Env, Permalink: "/collection", Title: "My Collection", Image: "/kd/photos/PXL_20240911_124800628.jpg",
+		Description: "Sometimes when my kids and I play, I collect things, achievements, and other stuff. This page lists them.",
+	}))
 	r.HandleFunc("GET /sitemap", h.sitemap)
 	r.HandleFunc("GET /sitemap.xml", h.sitemapXML)
 	r.HandleFunc("GET /tags/{tag}", h.tags)
