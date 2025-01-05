@@ -12,5 +12,11 @@
     "tags": [
         "Castle",
         "Renswoude"
+    ],
+    "syndication": [
+        {
+            "url": "https://pixelfed.social/i/web/post/781621447312332536",
+            "type": "pixelfed"
+        }
     ]
 }
