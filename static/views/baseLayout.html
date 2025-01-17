@@ -35,6 +35,7 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gerben.dev/sitemap.xml">
 
     <meta name="description" content="{{ $description }}">
+    {{ if .Metadata.Permalink -}}<link rel="canonical" href="{{ $permalink }}">{{ end }}
 
     <meta property="og:url" content="{{ $permalink }}">
     <meta property="og:title" content="{{ $title }}">
