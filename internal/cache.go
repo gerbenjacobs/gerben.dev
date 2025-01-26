@@ -77,31 +77,31 @@ func CreateCaches() error {
 	// kindy caches
 	for _, kindyType := range KindyTypes {
 		if err := CreateKindyCacheByType(kindyType); err != nil {
-			return err
+			return fmt.Errorf("failed to create cache for %s: %w", kindyType, err)
 		}
 	}
 
 	// tag cache
 	if err := CreateTagCache(); err != nil {
-		return err
+		return fmt.Errorf("failed to create tag cache: %w", err)
 	}
 
 	// timeline rss cache
 	b, err := CreateTimelineXML()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to create timeline rss: %w", err)
 	}
 	if err := SetCache(TimelineRssCache, b); err != nil {
-		return err
+		return fmt.Errorf("failed to set timeline rss cache: %w", err)
 	}
 
 	// sitemap cache
 	b, err = CreateSitemapXML()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to create sitemap xml: %w", err)
 	}
 	if err := SetCache(SitemapXMLCache, b); err != nil {
-		return err
+		return fmt.Errorf("failed to set sitemap xml cache: %w", err)
 	}
 
 	slog.Warn("caches created", "duration", time.Since(start))
