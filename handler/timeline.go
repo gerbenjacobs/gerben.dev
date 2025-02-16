@@ -35,7 +35,7 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	entries := internal.GetTimelineData(since, &upto, showNotes, showReplies, showReposts, showLikes)
 
 	// if last entry is 'younger' than upto value, we have reached the end
-	if entries[len(entries)-1].PublishedAt.Before(upto) {
+	if len(entries) > 0 && entries[len(entries)-1].PublishedAt.Before(upto) {
 		cursor = ""
 	}
 
@@ -100,7 +100,7 @@ func (h *Handler) handleTimePagination(timeString string, lastTime time.Time) (f
 			from = s
 		}
 	}
-	to = from.AddDate(0, 0, -7)
+	to = from.AddDate(0, -1, -7)
 	cursor = to.Format("2006-01-02")
 	if to.Before(lastTime) {
 		// stop loading if we're going back too far
