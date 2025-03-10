@@ -1,7 +1,7 @@
 {{- $title := print .Metadata.Title " | gerben.dev" -}}
 {{- if eq .Metadata.Title "" }}{{ $title = "gerben.dev" }}{{ end -}}
 
-{{- $description := print "Welcome to my project-based website. These are some of the projects, tools and libraries I have worked on." -}}
+{{- $description := print "Welcome to my personal website on the #IndieWeb!" -}}
 {{- if .Metadata.Description }}{{ $description = .Metadata.Description }}{{ end -}}
 
 {{- $permalink := print "https://gerben.dev" .Metadata.Permalink -}}
@@ -35,7 +35,7 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gerben.dev/sitemap.xml">
 
     <meta name="description" content="{{ $description }}">
-    {{ if .Metadata.Permalink -}}<link rel="canonical" href="{{ $permalink }}">{{ end }}
+    {{ if $permalink -}}<link rel="canonical" href="{{ $permalink }}">{{ end }}
 
     <meta property="og:url" content="{{ $permalink }}">
     <meta property="og:title" content="{{ $title }}">

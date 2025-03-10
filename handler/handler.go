@@ -52,7 +52,11 @@ func New(env string, dependencies Dependencies) *Handler {
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{Env: Env, Image: "/images/opengraph.png"}))
+	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{
+		Env: Env, Permalink: "",
+		Image: "/images/opengraph.png",
+	},
+	))
 	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html", internal.Metadata{
 		Env: Env, Permalink: "/changelog", Title: "Changelog",
 		Description: "This page explains all the (structural) changes that happened to this site.",
@@ -203,6 +207,7 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 			Env:         Env,
 			Title:       "Listening",
 			Description: "This page lists what I'm currently listening to.",
+			Permalink:   "/listening",
 		},
 		Feed: feed,
 	}

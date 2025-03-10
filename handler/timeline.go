@@ -55,6 +55,7 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 			Env:         Env,
 			Title:       "Timeline",
 			Description: "This page lists all notes, reposts and likes on gerben.dev in chronological order.",
+			Permalink:   "/timeline",
 		},
 		Author:      author,
 		Entries:     entries,
