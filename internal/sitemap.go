@@ -7,14 +7,15 @@ import (
 )
 
 var sitemapPages = []*xmlSitemapItem{
-	{Loc: "https://gerben.dev/", ChangeFreq: "yearly", Priority: "0.5"},
+	{Loc: "https://gerben.dev/", ChangeFreq: "daily", Priority: "1.0"},
+	{Loc: "https://gerben.dev/projects", ChangeFreq: "monthly", Priority: "0.5"},
 	{Loc: "https://gerben.dev/posts", ChangeFreq: "weekly", Priority: "0.8"},
 	{Loc: "https://gerben.dev/photos", ChangeFreq: "weekly", Priority: "0.8"},
 	{Loc: "https://gerben.dev/timeline", ChangeFreq: "daily", Priority: "1.0"},
-	{Loc: "https://gerben.dev/changelog", ChangeFreq: "weekly", Priority: "0.6"},
+	{Loc: "https://gerben.dev/changelog", ChangeFreq: "weekly", Priority: "0.5"},
 	{Loc: "https://gerben.dev/sitemap", ChangeFreq: "daily", Priority: "0.6"},
 	{Loc: "https://gerben.dev/listening", ChangeFreq: "daily", Priority: "0.6"},
-	{Loc: "https://gerben.dev/collection", ChangeFreq: "monthly", Priority: "0.6"},
+	{Loc: "https://gerben.dev/collection", ChangeFreq: "monthly", Priority: "0.4"},
 }
 
 type xmlSitemap struct {
