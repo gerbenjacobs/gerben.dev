@@ -52,11 +52,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.singlePageLayout("static/views/index.html", internal.Metadata{
-		Env: Env, Permalink: "",
-		Image: "/images/opengraph.png",
-	},
-	))
+	r.HandleFunc("GET /{$}", h.indexPage)
 	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html", internal.Metadata{
 		Env: Env, Permalink: "/changelog", Title: "Changelog",
 		Description: "This page explains all the (structural) changes that happened to this site.",
@@ -65,6 +61,10 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /collection", h.singlePageLayout("static/views/collection.html", internal.Metadata{
 		Env: Env, Permalink: "/collection", Title: "My Collection", Image: "/kd/photos/PXL_20240911_124800628.jpg",
 		Description: "Sometimes when my kids and I play, I collect things, achievements, and other stuff. This page lists them.",
+	}))
+	r.HandleFunc("GET /projects", h.singlePageLayout("static/views/projects.html", internal.Metadata{
+		Env: Env, Permalink: "/projects", Title: "My projects", Image: "/kd/photos/PXL_20240924_105523447.jpg",
+		Description: "These are some of the projects, tools and libraries I have worked on.",
 	}))
 	r.HandleFunc("GET /sitemap", h.sitemap)
 	r.HandleFunc("GET /sitemap.xml", h.sitemapXML)

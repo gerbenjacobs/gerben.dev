@@ -7,12 +7,62 @@ import (
 	"path"
 	"strconv"
 	"strings"
+	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
 const PhotosPerPage = 56
+
+func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/index.gohtml", "static/views/partials/timeline-paginated.gohtml")...))
+
+	// get posts
+	kindyType := local.KindyTypePost
+	posts, err := internal.GetKindyCacheByType(kindyType)
+	if err != nil {
+		slog.Error("failed to load entries", "type", kindyType, "error", err)
+		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	// get photos
+	kindyType = local.KindyTypePhoto
+	photos, err := internal.GetKindyCacheByType(kindyType)
+	if err != nil {
+		slog.Error("failed to load entries", "type", kindyType, "error", err)
+		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	// get timeline entries
+	entries := internal.GetTimelineData(time.Now(), nil, true, true, true, true)
+
+	author, _ := getAuthor() // goddamn, what a hack..
+	type pageData struct {
+		Metadata internal.Metadata
+		Author   *local.KindyAuthor
+		NewSince string
+		Posts    []local.Kindy
+		Photos   []local.Kindy
+		Entries  []local.Kindy
+	}
+	data := pageData{
+		Metadata: internal.Metadata{
+			Env:         Env,
+			Description: "Welcome to my personal website. Here you can find my blog posts and photos.",
+			Image:       "/images/opengraph.png",
+			Permalink:   "",
+		},
+		Author:   author,
+		NewSince: "", // disables auto scrolling
+		Posts:    kindyLimit(posts, 3),
+		Photos:   kindyLimit(photos, 12),
+		Entries:  kindyLimit(entries, 10),
+	}
+	if err := t.Execute(w, data); err != nil {
+		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+	}
+}
 
 func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/posts.gohtml")...))

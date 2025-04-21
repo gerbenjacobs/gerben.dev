@@ -1,0 +1,119 @@
+{{ define "content" }}
+<div class="container" id="intro">
+    <div class="row">
+        <div class="col m6 padding">
+            <h1>gerben.dev 👷‍♂️</h1>
+            <p>
+                Welcome to my personal website. This website is part of the IndieWeb movement,
+                and has my <a href="/posts/">blog</a>, <a href="/photos/">photos</a>, 
+                and <a href="/projects">projects</a> or check out the <a href="/sitemap">sitemap</a> 
+                to see what else there's to do..
+            </p>
+            <p>
+                Check out my 'socials' on the right, or read more <a href="#me">about me</a>
+            </p>
+            <p>
+                My Dutch blogposts can be found at <a target="_blank" href="https://blog.gerbenjacobs.nl" rel="me">blog.gerbenjacobs.nl</a>
+            </p>
+        </div>
+        <div class="col m6 padding">
+            <div class="collection">
+                <a class="collection-item" href="https://linkedin.com/in/gerbenjacobs" rel="me">
+                    gerbenjacobs
+                    <b class="secondary-content" style="color: #2867B2;">LinkedIn</b>
+                </a>
+                <a class="collection-item" href="https://patreon.com/gerbendev" rel="me">
+                    gerbendev
+                    <b class="secondary-content" style="color: #FE424D;">Patreon</b>
+                </a>
+                <a class="collection-item" href="https://github.com/gerbenjacobs" rel="me">
+                    gerbenjacobs
+                    <b class="secondary-content" style="color: #24292F;">GitHub</b>
+                </a>
+                <a class="collection-item" href="https://todon.nl/@gerben" rel="me">
+                    @gerben@todon.nl
+                    <b class="secondary-content" style="color: #595aff;">Mastodon</b>
+                </a>
+                <a class="collection-item" href="https://pixelfed.social/@gerben" rel="me">
+                    @gerben@pixelfed.social
+                    <b class="secondary-content" style="color: #1E1937;">Pixelfed</b>
+                </a>
+                <a class="collection-item hide" href="https://web.brid.gy/gerben.dev" rel="me">
+                    https://web.brid.gy/gerben.dev
+                </a>
+                <a class="collection-item hide" href="https://web.brid.gy/r/https://gerben.dev" rel="me">
+                    https://web.brid.gy/r/https://gerben.dev
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m6">
+            <h2>Posts</h2>
+            {{ range .Posts }}
+            <article>
+                <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+                🕰️
+                <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                    <a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a>
+                </time>
+                {{ if .Tags -}}
+                🏷️
+                <span>
+                    {{- range .Tags -}}
+                    <a href="/tags/{{.}}">#{{.}}</a>
+                    {{ end -}}
+                </span>
+                {{- end }}
+                <p>{{ or .Summary .GetContent }}</p>
+            </article>
+            <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
+            {{ end }}
+            <a href="/posts/" class="btn">View all posts</a>
+        </div>
+        <div class="col m6">
+            <h2>Timeline</h2>
+            <div style="max-height: 800px; overflow: auto; background-color: #c9c7c7;">
+            {{ template "timeline-paginated" $ }}
+            </div>
+            <a href="/timeline" class="btn" style="margin-top: 1em;">View entire timeline</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>Photos</h2>
+            {{ range .Photos }}
+            <article class="home-photo" style="background-image: url({{ .Thumbnail }});">
+                <a href="{{ .Permalink }}">
+                    {{ if .Title -}}
+                    {{ .Title }}
+                    {{- else if .Summary -}}
+                    {{ printf "%.50s.." .Summary }}
+                    {{- else -}}
+                    Untitled
+                    {{- end }}
+                    {{ if .Tags -}}
+                    <br>
+                    <span>
+                        {{ if gt (len .Tags) 2 }}
+                        {{- range slice .Tags 0 2 -}}
+                            #{{.}}
+                        {{ end -}}
+                        <small>{{ len (slice .Tags 2) }} tags</small>
+                        {{ else }}
+                        {{- range .Tags -}}
+                            #{{.}}
+                        {{ end -}}
+                        {{ end }}
+                    </span>
+                    {{- end }}
+                </a>
+            </article>
+            {{ end }}
+            <a href="/photos/" class="btn">View all photos</a>
+        </div>
+    </div>
+    <div style="clear: both;">&nbsp;</div>
+</div>
+
+{{ end }}
