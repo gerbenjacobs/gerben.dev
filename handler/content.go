@@ -16,7 +16,8 @@ import (
 const PhotosPerPage = 56
 
 func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/index.gohtml", "static/views/partials/timeline-paginated.gohtml")...))
+	pageFile := "static/views/index.gohtml"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/timeline-paginated.gohtml")...))
 
 	// get posts
 	kindyType := local.KindyTypePost
@@ -52,6 +53,7 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 			Description: "Welcome to my personal website. Here you can find my blog posts and photos.",
 			Image:       "/images/opengraph.png",
 			Permalink:   "",
+			SourceLink:  codeSourcePath + pageFile,
 		},
 		Author:   author,
 		NewSince: "", // disables auto scrolling
@@ -65,7 +67,8 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/posts.gohtml")...))
+	pageFile := "static/views/posts.gohtml"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile)...))
 
 	// get posts
 	kindyType := local.KindyTypePost
@@ -86,6 +89,7 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 			Title:       "Posts",
 			Description: "These are the posts written on gerben.dev",
 			Permalink:   "/posts/",
+			SourceLink:  codeSourcePath + pageFile,
 		},
 		Entries: entries,
 	}
@@ -95,6 +99,7 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
+	pageFile := "static/views/photos.gohtml"
 	funcs := map[string]any{
 		"hasSuffix": func(s template.HTML, suffix string) bool {
 			return strings.HasSuffix(string(s), suffix)
@@ -102,7 +107,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 	}
 	t := template.Must(template.New(path.Base(layoutFiles[0])).
 		Funcs(funcs).
-		ParseFiles(append(layoutFiles, "static/views/photos.gohtml", "static/views/partials/photos-paginated.gohtml")...))
+		ParseFiles(append(layoutFiles, pageFile, "static/views/partials/photos-paginated.gohtml")...))
 
 	// get posts
 	kindyType := local.KindyTypePhoto
@@ -139,6 +144,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 			Title:       "Photos",
 			Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
 			Permalink:   "/photos/",
+			SourceLink:  codeSourcePath + pageFile,
 			Image:       string(entries[0].Content), // use latest photo as og:image
 		},
 		NextPage:     nextPage,

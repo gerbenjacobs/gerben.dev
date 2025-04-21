@@ -10,7 +10,8 @@ import (
 )
 
 func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/sitemap.html")...))
+	pageFile := "static/views/sitemap.html"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile)...))
 
 	kindyData := map[local.KindyType][]local.Kindy{}
 	for _, kindyType := range internal.KindyTypes {
@@ -35,7 +36,13 @@ func (h *Handler) sitemap(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := pageData{
-		Metadata: internal.Metadata{Env: Env, Title: "Sitemap", Description: "A HTML version of my sitemap", Permalink: "/sitemap"},
+		Metadata: internal.Metadata{
+			Env:         Env,
+			Title:       "Sitemap",
+			Description: "A HTML version of my sitemap",
+			Permalink:   "/sitemap",
+			SourceLink:  codeSourcePath + pageFile,
+		},
 		Counts: map[string]int{
 			"posts":   len(kindyData[local.KindyTypePost]),
 			"photos":  len(kindyData[local.KindyTypePhoto]),

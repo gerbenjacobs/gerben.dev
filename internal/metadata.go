@@ -21,6 +21,7 @@ type Metadata struct {
 	Permalink   string
 	Image       string
 	Kindy       *local.Kindy
+	SourceLink  string
 }
 
 func Titlify(title string) string {

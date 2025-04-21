@@ -83,6 +83,11 @@
 
     <main>
         {{ template "content" . }}
+        {{ if .Metadata.SourceLink }}
+        <p class="center-align">
+            <a href="{{ .Metadata.SourceLink }}" class="btn purple">View source</a>
+        </p>
+        {{ end }}
     </main>
 
     {{ template "aside-hcard" . }}

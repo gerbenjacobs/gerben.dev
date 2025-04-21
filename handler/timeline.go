@@ -11,7 +11,8 @@ import (
 )
 
 func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/timeline.gohtml", "static/views/partials/timeline-paginated.gohtml")...))
+	pageFile := "static/views/timeline.gohtml"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/timeline-paginated.gohtml")...))
 
 	// handle content type queries
 	showNotes := r.URL.Query().Get("showNotes") == "on"
@@ -56,6 +57,7 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 			Title:       "Timeline",
 			Description: "This page lists all notes, reposts and likes on gerben.dev in chronological order.",
 			Permalink:   "/timeline",
+			SourceLink:  codeSourcePath + pageFile,
 		},
 		Author:      author,
 		Entries:     entries,

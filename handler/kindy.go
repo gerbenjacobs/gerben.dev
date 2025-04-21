@@ -23,7 +23,8 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
-	b, err := os.ReadFile("content/kindy" + r.URL.Path + ".json")
+	kindyFile := "content/kindy" + r.URL.Path + ".json"
+	b, err := os.ReadFile(kindyFile)
 	if err != nil {
 		slog.Error("failed to read file", "file", r.URL.Path, "error", err)
 		http.Error(w, "entry not found", http.StatusNotFound)
@@ -69,6 +70,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		Description: internal.Descriptify(string(kind.MustDescription())),
 		Permalink:   kind.Permalink,
 		Kindy:       &kind,
+		SourceLink:  codeSourcePath + kindyFile,
 	}
 	if kind.Type == "photo" {
 		metadata.Image = string(kind.Content)

@@ -14,6 +14,10 @@ import (
 	"github.com/mmcdole/gofeed"
 )
 
+const (
+	codeSourcePath = "https://github.com/gerbenjacobs/gerben.dev/blob/master/"
+)
+
 var Env string
 
 // layoutFiles are all the files required to create the site w.r.t. template/define
@@ -47,6 +51,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	// static
 	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("static/images"))))
 	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
+	r.Handle("GET /js/", http.StripPrefix("/js/", http.FileServer(http.Dir("static/js"))))
 	r.HandleFunc("GET /robots.txt", singlePage("static/robots.txt"))
 	r.HandleFunc("GET /humans.txt", singlePage("static/humans.txt"))
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
@@ -119,6 +124,8 @@ func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) 
 	return func(w http.ResponseWriter, r *http.Request) {
 		t := template.Must(template.ParseFiles(append(layoutFiles, fileName)...))
 
+		metadata.SourceLink = codeSourcePath + fileName
+
 		type pageData struct {
 			Metadata internal.Metadata
 		}
@@ -170,7 +177,8 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/listening.html")...))
+	pageFile := "static/views/listening.html"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile)...))
 	feedUrl := "https://lfm.xiffy.nl/theonewithout"
 	cacheFile := ".cache/listening.xml"
 
@@ -208,6 +216,7 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 			Title:       "Listening",
 			Description: "This page lists what I'm currently listening to.",
 			Permalink:   "/listening",
+			SourceLink:  codeSourcePath + pageFile,
 		},
 		Feed: feed,
 	}
