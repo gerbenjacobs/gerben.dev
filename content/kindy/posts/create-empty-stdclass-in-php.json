@@ -1,0 +1,13 @@
+{
+    "type": "post",
+    "title": "Quickly create an empty stdClass object in PHP",
+    "summary": "For when you need the scaffolding of an empty PHP class object",
+    "content": "/posts/create-empty-stdclass-in-php.html",
+    "publishedAt": "2013-04-19T12:00:00+02:00",
+    "slug": "create-empty-stdclass-in-php",
+    "permalink": "/posts/create-empty-stdclass-in-php",
+    "tags": [
+        "tech",
+        "php"
+    ]
+}

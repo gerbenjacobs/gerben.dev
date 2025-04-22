@@ -1,0 +1,83 @@
+<div class="card-panel pink lighten-3" role="alert">
+    This blogpost is for historical purposes.
+    There is a better way with <a
+        href="https://www.php.net/manual/en/function.array-splice.php">array_splice</a>.
+</div>
+
+<p>
+    At work today, my colleague needed to add, or rather 'insert', a value into an existing array <em>AND</em> on a
+    specific index.
+    This because we fed it into a JS table sorter, once we pulled it through <code>json_encode()</code>.
+</p>
+
+<p>So what we really required: <strong><code>array_push_insert</code></strong></p>
+
+<p>
+    We couldn't find any existing <a href="https://www.php.net/manual/en/ref.array.php">Array function</a> at php.net,
+    so
+    I decided to make my own version.
+</p>
+
+<p>
+    At first I wanted it to work with associative arrays too, but it got complicated fast and at the time we didn't even
+    need it; feature creep.
+    So for now it only works with numeric array keys.
+</p>
+
+<p><strong>What it does..</strong></p>
+<p>
+    First it checks whether the index you supplied (<code>$index</code>) is available in the array
+    (<code>$array</code>), if so, dissects the array in half,
+    starting from the point you supplied (<code>$index</code>) (there's no default function for this either, so I used
+    array_slice).
+    You now have a 'first' and a 'last' array. Then you add your value (<code>$value</code>) to the first array, merge
+    both arrays back together, and you're done!
+</p>
+
+<pre><code class="language-go">function array_push_insert($array, $index, $value) {
+    if (array_key_exists($index, $array)) {
+        $firstArray = array_slice($array, 0, ($index + 1));
+        $lastArray = array_slice($array, ($index + 1));
+        array_push($firstArray, $value);
+        $array = array_merge($firstArray, $lastArray);
+    }
+    return $array;
+}
+</code></pre>
+
+
+<p><strong>Example</strong></p>
+<p>
+    We call the function and supply it with our original array, the index after which we want our new value to be
+    inserted and the value itself.
+    So in the next example, we want to add the letter "D" after the "B", and this value's key is 1. So we send in the
+    array ($array), the key (1) and our new value ("D").
+</p>
+
+<pre><code class="language-go">$array = array(
+    "A", // 0
+
+    "B", // 1
+
+    "C" // 2
+
+);
+
+$finalArray = array_push_insert($array, 1, "D");
+</code></pre>
+
+<p>So when we print_r() the <code>$finalArray</code>, it looks like this:</p>
+
+<pre><code class="language-go">Array (
+    [0] => A
+    [1] => B
+    [2] => D
+    [3] => C
+)
+</code></pre>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+<script>hljs.highlightAll();</script>

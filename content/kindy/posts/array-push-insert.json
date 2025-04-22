@@ -1,0 +1,13 @@
+{
+  "type": "post",
+  "title": "array_push_insert: Push new value into array with PHP",
+  "summary": "Insert a value into a specific index of a PHP array",
+  "content": "/posts/array-push-insert.html",
+  "publishedAt": "2011-05-19T12:00:00+01:00",
+  "permalink": "/posts/array-push-insert",
+  "slug": "array-push-insert",
+  "tags": [
+    "tech",
+    "php"
+  ]
+}

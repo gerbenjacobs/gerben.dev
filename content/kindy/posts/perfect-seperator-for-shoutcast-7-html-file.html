@@ -1,0 +1,39 @@
+<p>
+    To go along nicely with <a href="/posts/add-ip-address-to-shoutcast-rip">my previous Shoutcast tip</a>,
+    here is a trick to separate the data in the Shoutcast 7.html for displaying.
+</p>
+
+<p>
+    If you, like me, use the <em>Shoutcast 7.html trick</em> to get some quick stats about your stream broadcast
+    but are getting some inconsistencies with parsing the comma-separated input you get, try this:
+</p>
+
+<pre><code class="language-php">$data = preg_split("/[,]+/", $string, 7);</code></pre>
+
+<p>
+    A possible outcome would be this:
+</p>
+<pre><code class="language-php">Array (
+    [0] => 1
+    [1] => 1
+    [2] => 1
+    [3] => 1000
+    [4] => 1
+    [5] => 192
+    [6] => "Woe, Is Me - Hell, or High Water"
+)
+</code></pre>
+
+<p>
+    If you were to <code>explode()</code> this string, you'd get the artist in 2 nodes and with this song title you'd get that one in 2 nodes as well.
+</p>
+
+<p>
+    The <code>preg_split</code> function has the nice ability to add a <code>limit</code> parameter, thus saying "Split this string on commas, but only do it for the first 7"
+    and this will guarantee that your artist and song title are stuck together on the last index.
+</p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+<script>hljs.highlightAll();</script>

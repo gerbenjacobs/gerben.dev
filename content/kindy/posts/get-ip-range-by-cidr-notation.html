@@ -1,0 +1,119 @@
+<p>
+    I wanted to get the IPv4 range of a WHOIS record provided by
+    <a title="Latin America and Caribbean Internet Address Registry" href="http://www.lacnic.net/en/web/lacnic/inicio" >LACNIC</a>,
+    because unlike other <a title="Regional Internet Registries" href="https://en.wikipedia.org/wiki/Regional_Internet_registry" >RIRs</a>
+    they don't supply you with the range, but with just
+    a <a title="Classless Inter-Domain Routing on Wikipedia" href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >CIDR notation</a>.
+</p>
+
+<p>
+    To make matters worse, they give 'incomplete' net numbers. The only working "CIDR to IP range" function I could find didn't accept it, so I had to sprinkle some <em>magic</em>.
+</p>
+
+<pre><code class="language-php">$ipdata = explode('/', ltrim($incomplete_cidr_notation, '0'));
+$dotcount = substr_count($ipdata[0], '.');
+if ($dotcount != 3) {
+    $ipdata[0] .= str_repeat('.0', (3-$dotcount));
+}
+$finalip = sprintf('%s/%s', $ipdata[0], $ipdata[1]);
+$range = cidr_conv($finalip);
+</code></pre>
+
+<p>
+    The final <code>cidr_conv()</code> is written by someone unknown in 2003 and can be
+    <a title="cidr_conv()" href="https://www.php.net/manual/en/ref.network.php#30910" >found in the PHP.net comments of the Network functions page</a>.
+</p>
+
+<pre><code class="language-php">function cidr_conv($cidr_address) {
+    $first = substr($cidr_address, 0, strpos($cidr_address, "/"));
+    $netmask = substr(strstr($cidr_address, "/"), 1);
+
+    $first_bin = str_pad(decbin(ip2long($first)), 32, "0", STR_PAD_LEFT);
+    $netmask_bin = str_pad(str_repeat("1", (integer)$netmask), 32, "0", STR_PAD_RIGHT);
+
+    for ($i = 0; $i < 32; $i++) {
+        if ($netmask_bin[$i] == "1")
+            $last_bin .= $first_bin[$i];
+        else
+            $last_bin .= "1";
+    }
+
+    $last = long2ip(bindec($last_bin));
+
+    return array($first, $last);
+}
+</code></pre>
+
+<p>
+    So you can enter <code>190.151.192/18</code> as <code>$incomplete_cidr_notation</code> and get
+</p>
+
+<pre><code class="language-php">(
+    [0] => 190.151.192.0
+    [1] => 190.151.255.255
+)
+</code></pre>
+
+<p>
+    But even if you enter <code>17/8</code> (or with a leading zero, straight out of IANAs IP allocation file) it will work, and you'll get in this case Apple's IP range
+</p>
+
+<pre><code class="language-php">(
+    [0] => 17.0.0.0
+    [1] => 17.255.255.255
+)
+</code></pre>
+
+<hr>
+
+<p>
+    <small>
+        <strong>Update:</strong> Since this article is getting quite a few hits and when I read this back it seemed kinda confusing, 
+        I've recreated this a bit better as a Gist. <a href="https://gist.github.com/gerbenjacobs/6973722">https://gist.github.com/gerbenjacobs/6973722</a>
+    </small>
+</p>
+
+<pre><code class="language-php">
+function getIPRangeByCIDR($cidr) {
+    // Making sure IPs are valid
+    $ipdata = explode('/', ltrim($cidr, '0'));
+    $dotcount = substr_count($ipdata[0], '.');
+    if ($dotcount != 3) {
+        $ipdata[0] .= str_repeat('.0', (3-$dotcount));
+    }
+    $cidr_address = sprintf('%s/%s', $ipdata[0], $ipdata[1]);
+    
+    // By 'unknown' http://www.php.net/manual/en/ref.network.php#30910
+    $first = substr($cidr_address, 0, strpos($cidr_address, "/"));
+    $netmask = substr(strstr($cidr_address, "/"), 1);
+    
+    $first_bin = str_pad(decbin(ip2long($first)), 32, "0", STR_PAD_LEFT);
+    $last_bin = '';
+    $netmask_bin = str_pad(str_repeat("1", (integer)$netmask), 32, "0", STR_PAD_RIGHT);
+    
+    for ($i = 0; $i < 32; $i++) {
+        if ($netmask_bin[$i] == "1")
+            $last_bin .= $first_bin[$i];
+        else
+            $last_bin .= "1";
+    }
+    
+    $last = long2ip(bindec($last_bin));
+    return array($first, $last);
+}
+
+print_r(getIPRangeByCIDR('190.151.192/18')); 
+// Array ( [0] => 190.151.192.0 [1] => 190.151.255.255 ) 
+
+print_r(getIPRangeByCIDR('17/8')); 
+// (Apple) Array ( [0] => 17.0.0.0 [1] => 17.255.255.255 ) 
+
+print_r(getIPRangeByCIDR('65.192/11')); 
+// (NSA?) Array ( [0] => 65.192.0.0 [1] => 65.223.255.255 )
+</code></pre>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+<script>hljs.highlightAll();</script>
