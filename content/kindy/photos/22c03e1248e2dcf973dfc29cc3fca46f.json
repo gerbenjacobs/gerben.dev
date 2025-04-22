@@ -13,5 +13,11 @@
         "Wuppertal",
         "Buildings",
         "Germany"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/804789961306132574"
+        }
     ]
 }

@@ -13,5 +13,15 @@
         "Easter",
         "Nature",
         "Daisy"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3lnduybpjmoq2"
+        },
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/i/web/post/820012571355000853"
+        }
     ]
 }

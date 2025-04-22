@@ -9,5 +9,11 @@
         "PBBG",
         "PHP",
         "Development"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3lf3xzmisag62"
+        }
     ]
 }

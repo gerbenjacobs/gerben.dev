@@ -9,5 +9,11 @@
         "MelodicHardcore",
         "Video",
         "Music"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3lmnnw5cljda2"
+        }
     ]
 }

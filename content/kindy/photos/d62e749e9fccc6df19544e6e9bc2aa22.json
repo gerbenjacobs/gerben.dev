@@ -12,5 +12,11 @@
     "tags": [
         "Mushroom",
         "Fungi"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3lfampyjsojm2"
+        }
     ]
 }

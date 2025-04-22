@@ -10,5 +10,11 @@
         "Wuppertal",
         "Germany",
         "Travel"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3ljx5nzbql3t2"
+        }
     ]
 }

@@ -12,5 +12,11 @@
     "tags": [
         "Feather",
         "Nature"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/i/web/post/778737317359941102"
+        }
     ]
 }
