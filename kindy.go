@@ -14,7 +14,7 @@ import (
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
-	"github.com/yuin/goldmark/renderer/html"
+	"go.abhg.dev/goldmark/frontmatter"
 )
 
 var gm goldmark.Markdown
@@ -46,12 +46,12 @@ const (
 
 func init() {
 	gm = goldmark.New(
-		goldmark.WithExtensions(extension.GFM),
+		goldmark.WithExtensions(
+			extension.GFM,
+			&frontmatter.Extender{},
+		),
 		goldmark.WithParserOptions(
 			parser.WithAutoHeadingID(),
-		),
-		goldmark.WithRendererOptions(
-			html.WithHardWraps(),
 		),
 	)
 }
