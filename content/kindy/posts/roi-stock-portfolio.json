@@ -1,0 +1,14 @@
+{
+    "type": "post",
+    "title": "My ROI stock portfolio experiment",
+    "summary": "An experimental stock portfolio that's based on stocks that have 25% or higher Return On Investment metrics.",
+    "content": "/posts/roi-stock-portfolio.html",
+    "publishedAt": "2022-09-17T00:00:00+02:00",
+    "slug": "roi-stock-portfolio",
+    "permalink": "/posts/roi-stock-portfolio",
+    "tags": [
+        "stocks",
+        "personal",
+        "roi-stock-portfolio"
+    ]
+}

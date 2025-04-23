@@ -1,0 +1,243 @@
+<strong>Table of contents</strong>
+<ul class="browser-default">
+    <li><a href="#svc">svc</a>
+        <ul class="browser-default">
+            <li><a href="#handlers">Handlers</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#storages">Storages</a></li>
+        </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+</ul>
+
+<p>
+    I have been writing Go (or Golang) for about 6 years now. In that time I've seen quite a few different ways
+    on how to organize a Go project. During my time at <a href="https://www.messagebird.com/">MessageBird</a> I got
+    introduced to a nice layered approach.
+    I've taken those lessons and applied them to something that feels right for me; <a
+        href="https://github.com/gerbenjacobs/svc">github.com/gerbenjacobs/svc</a>
+</p>
+<h2 id="svc">svc</h2>
+<p>svc is not an actual framework, but more a convention for creating microservices.</p>
+<p>The core of svc is centered around 3 layers: <strong>handlers</strong>, <strong>services</strong> and
+    <strong>storages</strong>.
+    Together with the <code>cmd</code> folder they are responsible for organizing your code into a clean and
+    well-organized structure.
+</p>
+<p>The idea is that requests only flow down the stack and answers flow up. These layers are connected via <strong>domain
+        models</strong>.</p>
+<p>Communication between the layers is done via interfaces. These are located in the file with the same name as the
+    layer.
+    So in order to learn more about what kind of storages we have, for example, you can visit
+    <code>/storages/storage.go</code>.
+</p>
+
+<figure>
+    <img src="/kd/gj/2022/layers.png" alt="The layers and directions of svc" />
+    <figcaption>The layers and directions of svc</figcaption>
+</figure>
+
+<h3 id="handlers">Handlers</h3>
+<p>Handler is a struct that acts as a dependency injection container.
+    They are the entry point for your application, everything is delegated from there.</p>
+<p>They translate your requests into domain models and delegate the actual work to services, and vice versa.</p>
+<pre><code class="language-go">// Handler is your dependency container
+type Handler struct {
+    mux http.Handler
+    Dependencies
+}
+
+// Dependencies contains all the dependencies your application and its services require
+type Dependencies struct {
+    UserSvc    services.UserService
+    WebhookSvc services.WebhookService
+    Auth       *services.Auth
+}
+
+// New creates a new handler given a set of dependencies
+func New(dependencies Dependencies) *Handler {
+    h := &amp;Handler{
+        Dependencies: dependencies,
+    }
+    
+    r := httprouter.New()
+    r.GET(&quot;/&quot;, redirect(&quot;health&quot;))
+    r.GET(&quot;/health&quot;, health)
+    
+    r.POST(&quot;/v1/user&quot;, h.createUser)
+    r.GET(&quot;/v1/user&quot;, h.AuthMiddleware(h.readUser))
+    r.GET(&quot;/v1/webhook/:webhookID&quot;, h.readWebhook)
+
+    return h
+}
+</code></pre>
+<p>The actual <code>main</code> function of your application then creates a new Handler and passes the required
+    dependencies to it.
+    In this case it's set up as an HTTP server, but you could switch these out with GRPC for example.</p>
+<pre><code class="language-go">// set up the route handler and server
+app := handler.New(handler.Dependencies{
+    Auth:       auth,
+    UserSvc:    userSvc,
+    WebhookSvc: webhookSvc,
+})
+srv := &amp;http.Server{
+    Addr:         &quot;:8080&quot;,
+    ReadTimeout:  5 * time.Second,
+    WriteTimeout: 10 * time.Second,
+    Handler:      app,
+}
+</code></pre>
+<p>The route that's responsible for reading webhooks then relies on the webhook service. We know that the webhook
+    service
+    replies with a <code>Webhook</code> model or an error and handle accordingly. In fact, we know about
+    <code>ErrWebhookNotFound</code> and
+    can handle that differently, namely with a 404 status code.
+</p>
+<pre><code class="language-go">func (h *Handler) readWebhook(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+    // we go into our dependency container and get the webhook service
+    webhook, err := h.WebhookSvc.Read(r.Context(), p.ByName(&quot;webhookID&quot;))
+    switch {
+        // note that errors are also considered as domain models
+        case errors.Is(err, app.ErrWebhookNotFound):
+            http.Error(w, err.Error(), http.StatusNotFound)
+            return
+        case err != nil:
+            error500(w, err)
+            return
+    }
+    
+    // custom output format for webhooks
+    type webhookOutput struct {
+        URL         string    `json:&quot;url&quot;`
+        Triggers    []string  `json:&quot;triggers&quot;`
+        TriggeredAt time.Time `json:&quot;triggered_at&quot;`
+    }
+    
+    // apparently our API docs are a bit different from our local domain model
+    whResp := webhookOutput{
+        URL:         webhook.URL,
+        Triggers:    webhook.Events,
+        TriggeredAt: webhook.UpdatedAt,
+    }
+    
+    if err := json.NewEncoder(w).Encode(whResp); err != nil {
+        error500(w, err)
+        return
+    }
+}
+</code></pre>
+<h3 id="services">Services</h3>
+<p>Services are the glue between the layers. They are running the business logic of your application.
+    This includes business validation, collecting data from the storage layer, and any kind of generating, collecting or
+    filtering.</p>
+<p>The file <code>/services/service.go</code> contains the definition of the service interface. This interface is also
+    part of
+    the dependencies in the handler.</p>
+<pre><code class="language-go">type UserService interface {
+	Add(ctx context.Context, user *app.User) error
+	User(ctx context.Context, userID uuid.UUID) (*app.User, error)
+}
+</code></pre>
+<p>In the file <code>/services/user.go</code> you can see how the service is implemented. We can't use the name
+    <code>UserService</code> because
+    that's already taken by the interface. <em>This is also the reason I called the project <code>svc</code>, if I
+        remember correctly.</em>
+</p>
+<pre><code class="language-go">// UserSvc is our service struct that implements the services.UserService interface
+type UserSvc struct {
+	storage storage.UserStorage
+	auth    *Auth
+}
+
+func NewUserSvc(userStorage storage.UserStorage, auth *Auth) (*UserSvc, error) {
+	return &amp;UserSvc{
+		storage: userStorage,
+		auth:    auth,
+	}, nil
+}
+
+// User returns the user based on the user ID
+func (u *UserSvc) User(ctx context.Context, userID uuid.UUID) (*app.User, error) {
+	return u.storage.Read(ctx, userID)
+}
+
+// Add adds a user to our service and repository
+func (u *UserSvc) Add(ctx context.Context, user *app.User) error {
+	userID := uuid.New()
+
+	token, err := u.auth.Create(userID.String())
+	if err != nil {
+		return err
+	}
+
+	// create user object
+	user.ID = userID
+	user.Token = token
+	n := time.Now().UTC()
+	user.CreatedAt = n
+	user.UpdatedAt = n
+
+	// persist it
+	return u.storage.Create(ctx, user)
+}
+</code></pre>
+<h3 id="storages">Storages</h3>
+<p>Storages handle the persistence of the domain models. Sometimes these can be taken directly from the model,
+    sometimes they need to be converted to a storage model, or DAO if you wish.</p>
+<p>In the file <code>/storages/storage.go</code> we can again find the interface. Having our storages be interfaces
+    allows us
+    to easily swap out the storage implementation for testing.</p>
+<pre><code class="language-go">type UserStorage interface {
+	Create(ctx context.Context, user *app.User) error
+	Read(ctx context.Context, userID uuid.UUID) (*app.User, error)
+	AllUsers(ctx context.Context) []*app.User
+}
+</code></pre>
+<p>It's good to keep in mind that you're only allowed to communicate with domain models. You can see this in action
+    when dealing with MySQL errors, something the service should know nothing about.</p>
+<pre><code class="language-go">func (u *UserRepository) Read(ctx context.Context, userID uuid.UUID) (*app.User, error) {
+	uid, _ := userID.MarshalBinary()
+	row := u.db.QueryRowContext(ctx, &quot;SELECT id, name, token, createdAt, updatedAt FROM users WHERE id = ?&quot;, uid)
+
+	// Rationale: I'm reusing the app.User here because the fields are quite primitive types
+	// Depending on your scheme you could easily do some transformations here to change
+	// app.User to a customer UserDAO struct, f.e. when your database engine stores bools as tinyints.
+	user := new(app.User)
+	err := row.Scan(&amp;user.ID, &amp;user.Name, &amp;user.Token, &amp;user.CreatedAt, &amp;user.UpdatedAt)
+	switch {
+	// Rationale: Our service layer knows nothing about sql.ErrNoRows, but we at this point do
+	// that's why it's important to convert your database engine errors to common Domain model errors
+	// that are known within the application.
+	// This specific example makes use of the %w verb to wrap errors with a custom message
+	case err == sql.ErrNoRows:
+		return nil, fmt.Errorf(&quot;user with ID %q not found: %w&quot;, userID, app.ErrUserNotFound)
+	// Rationale: Here we're explicitly not wrapping the error as the service shouldn't do anything with it.
+	// However, if you started noticing these in your logs, you can probably handle them like the above case.
+	case err != nil:
+		return nil, fmt.Errorf(&quot;unknown error while scanning user: %v&quot;, err)
+	}
+
+	return user, nil
+}
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>If you want to get separation of concerns and clarity when developing, this is a nice convention to follow.</p>
+<ul class="browser-default">
+    <li>Your application is divided into layers.</li>
+    <li>Layers communicate with other layers, via interfaces, by sending and receiving domain models</li>
+    <li>Handlers talk to services, services talk to other services and storages.</li>
+</ul>
+<p>I introduced this <em>framework</em> successfully at <a href="https://www.kramphub.nl/">Kramp Hub</a>, and it allowed
+    the team to easily jump between
+    projects and quickly get started. We used GRPC so some interfaces were actually protobuf services, but other
+    than that it still worked the same.</p>
+<p>I'm also introducing it at <a href="https://www.github.com/">GitHub</a> with my team right now. This time however
+    it's a bit more difficult.
+    The team is larger and the project is already quite large; perhaps not even <em>micro</em> anymore.
+    I've switched from &quot;layers with packages&quot; to &quot;layers in packages&quot;. This is an ongoing process,
+    so I might write a follow-up on that.</p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>

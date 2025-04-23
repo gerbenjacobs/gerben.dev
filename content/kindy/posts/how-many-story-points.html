@@ -1,0 +1,98 @@
+<p>It's time for a mental exercise. You are going to give <a
+        href="https://www.atlassian.com/agile/project-management/estimation">story points</a> to a user story, that I
+    actually completed.
+    Then I'm going to tell you what I had to do and which issues I ran into.</p>
+<h2 id="background">Background</h2>
+<p>We have a page that lists birthdays for people on that day, but excluding the current year. This way we can showcase
+    everyone who is 1 year or older.</p>
+<p>This is nice, but if you want to find birthdays for a specific date, you might have to wait a year for it to come
+    around.</p>
+<p>Time to add a form that allows us to pick a specific date!</p>
+<p><em>The site is multilingual and we are using PHP.</em></p>
+<h2 id="the-story">The story</h2>
+<p><img src="/kd/gj/2018/form_birthday.png" alt="Birthday form" title="Birthday form"></p>
+<p>Add a form to the page that lets you select a specific date or all days by adding &quot;All years&quot; to the year
+    field.
+    Have the form post to a different route than the actual birthday page.</p>
+<p>So? How much story points would you give this? Is it a small, medium or large task?
+    Try to think of the things you have to do.</p>
+<p>Good, now let's find out what I had to do..</p>
+<h2 id="what-i-needed-to-do">What I needed to do..</h2>
+<ul class="browser-default">
+    <li>Add a new route for the form handling</li>
+    <li>Create the HTML for the form
+        <ul class="browser-default">
+            <li>Fill 3 <code>&lt;select&gt;</code> dropdowns with day, month and year</li>
+            <li>Add a separate <code>&lt;option&gt;</code> for &quot;All years&quot;</li>
+            <li>Add logic to put &quot;selected&quot; on the current (or selected) date</li>
+        </ul>
+    </li>
+    <li>Add new routes for the date specific birthday page (for SEO and share-ability reasons)
+        <ul class="browser-default">
+            <li>One for a complete date: <code>/birthdays/{date}</code></li>
+            <li>One for a specific day: <code>/birthdays/{month}/{day}</code></li>
+        </ul>
+    </li>
+    <li>Validate the incoming request
+        <ul class="browser-default">
+            <li>Do we have &quot;full date&quot; option, if so is it not empty?</li>
+            <li>Do we have &quot;date only&quot;? Then we must have <code>month</code> and <code>day</code> parameters
+            </li>
+            <li>We have neither? Then use the original logic</li>
+        </ul>
+    </li>
+    <li>Validate the date
+        <ul class="browser-default">
+            <li>&quot;Full date&quot;: try to parse the string as a date</li>
+            <li>&quot;Date only&quot;: see if month is range <code>1</code> to <code>12</code> and day in range
+                <code>1</code> to <code>31</code></li>
+        </ul>
+    </li>
+    <li>Update the model/repository
+        <ul class="browser-default">
+            <li>The function now needs to take in a date and a boolean whether we want &quot;full date&quot; or
+                &quot;date only&quot;</li>
+            <li>If we're using &quot;date only&quot; we can reuse the current query; show all birthdays on this
+                day/month but skip the current year</li>
+            <li>For &quot;full date&quot; we need to write a new query -- side quest: what is the most efficient way to
+                search on date in MySQL</li>
+        </ul>
+    </li>
+    <li>Other small changes
+        <ul class="browser-default">
+            <li>Change the title of the page to show which specific date is used, unless it's the old logic (SEO)</li>
+            <li>Send the actual picked date along to the view</li>
+            <li>Change all new text to translatable strings and translate them</li>
+            <li>Use automatic month translation in the form by setting the correct <code>LC_TIME</code> locale</li>
+        </ul>
+    </li>
+</ul>
+<p>During this process a couple of complications showed up.</p>
+<ul class="browser-default">
+    <li>Because of the automatic setting of the current date, the &quot;All years&quot; option is never chosen -- but
+        I'm okay with that</li>
+    <li>The date validation does not handle days gracefully i.e. february 31st is possible to select.
+        I tried to use <a href="https://github.com/briannesbitt/Carbon">Carbon</a> to parse the date, but when you
+        entered 50 as day, it would just roll over to the next month -- not what I want</li>
+    <li>I was having a weird bug where my query worked, but the date on the page was the next day.
+        Turned out that Carbon and the underlying <code>DateTime</code> operations are done on the object.
+        To fix it I <code>.clone()</code> the date in my query function as not to mess with the input date. I can't
+        remember ever having to do this in PHP before..</li>
+    <li>To prevent regression and keep it feeling the same, I had to add logic for when the selected date was equal to
+        the current date --
+        that meant I would redirect back to the normal <code>/birthdays</code> endpoint and not show the date in the
+        title</li>
+    <li><code>setlocale()</code> and friends also kept me running in circles for a while. I started programming on my
+        Macbook,
+        but then moved to my Windows PC and also had to check the Linux server that the site actually runs on.
+        Turns out there's no simple OS-agnostic way to get the correct locale if you only have a country code --
+        in the end I just created a small custom array to map country codes to locales</li>
+</ul>
+<h2 id="no-small-task">No small task</h2>
+<p>Did you pick a low amount of story points? So did I!</p>
+<p>If you read the story you think all you have to do is add a form and change the query for fetching birthdays a bit.
+    But then you have to add user interface, user experience, security, validation and ideally have tests too.
+    Then, if you care about SEO and multilingualism, you have to add that too!</p>
+<p>So it appears that the theory &quot;estimating (or <em>pokering</em>) for points is hard&quot; also holds true in
+    practice
+    and that whatever you pick in the beginning, you better double it!</p>
