@@ -1,7 +1,7 @@
 The universe has been aligned ever since I posted about [my social media detox](/posts/social-media-detox).
 With my new-found intention to start blogging more, I've been going down rabbit holes. 🐰
 
-It started with (re-)discovering Neocities and finding _cool internet concepts_ like a [/now](/now) page.
+It started with (re-)discovering Neocities and finding _cool internet concepts_ like a /now page.
 
 It was 2004 when I first got embroiled in web development, making fan-sites for Habbo Hotel.
 Which led to me building communities, which then evolved to tooling and open-source.

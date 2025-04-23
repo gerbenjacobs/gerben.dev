@@ -11,7 +11,8 @@
 		"go",
 		"unix",
 		"tutorial",
-		"OpenSource"
+		"OpenSource",
+        "BlogMigration"
 	],
 	"syndication": [
 		{
