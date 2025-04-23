@@ -1,0 +1,43 @@
+
+<figure>
+    <img src="/kd/gj/2014/wordpress_queue.png" alt="Spam queue in Wordpress" />
+    <figcaption>Spam queue in Wordpress</figcaption>
+</figure>
+
+<p>
+    I have been noticing a severe drop in spam in my comment queue. I used to have to delete anywhere from 5 to 10
+    comments a day in the queue with just Akismet.
+    Now there's not <strong>one</strong> comment.. 99.99% of the time.
+</p>
+
+<p>
+    I didn't really think anything of it until I just realized why this change occurred; I had enabled Cloudflare for my
+    blog.
+</p>
+
+<figure>
+    <img src="/kd/gj/2014/cloudfare_saved.png" alt="Cloudflare saving requests and thus MBs" />
+    <figcaption>Cloudflare saving requests and thus MBs</figcaption>
+</figure>
+
+<p>
+    <a title="Cloudflare" href="https://www.cloudflare.com/">Cloudflare</a> acts as somewhat of a
+    firewall and CDN in one, it blocks malicious requests and
+    serves cached versions of your blog/site/resources. For this particular blog the stats aren't that overwhelming, but
+    for one of my other sites we're talking about multiple gigabytes!
+</p>
+
+<p>
+    The <a title="Cloudflare plugin for Wordpress" href="https://wordpress.org/plugins/cloudflare/">Cloudflare
+    plugin for Wordpress</a> doesn't only adjust the incoming IPs (they have to change it to the <code>X-FORWARDED-FOR</code>) but it also will tag
+    any comment (and accompanying meta-data) as a spammer in the <abbr title="CloudFlare">CF</abbr> system.
+</p>
+
+<p>
+    So with my efforts and those of the other thousand of Cloudflare users combined, the spam queue is getting smaller
+    and smaller every month. Making Cloudflare a better spam protection than <a href="https://akismet.com">Akismet</a>.
+</p>
+
+<p>
+    <em>The spammers don't even get to reach the stage where Akismet has to kick in.</em>
+</p>

@@ -1,0 +1,180 @@
+<p>
+    Last weekend I attended the <a title="Dutch Open Hackathon" href="https://www.dutchopenhackathon.com/">Dutch Open Hackathon</a>
+    in the UP building (previously known as IJ-toren) in Amsterdam.
+    <br>I went there as part of team 'Pi Ducks'. The team consisted of some colleagues from
+    <a title="bol.com" href="https://www.bol.com" >bol.com</a> (where I started working in July) and a front-end designer we met through Twitter.
+    We had a pretty broad range of skills in one team!
+</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <figure class="figure ">
+            
+                <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/doh/amsterdam.jpg alt=Good&#32;morning&#32;Amsterdam!>
+            
+        
+            <figcaption class="figure-caption">Good morning Amsterdam!</figcaption>
+        </figure>
+    </div>
+    <div class="col-md-6">
+        <figure class="figure ">
+            
+                <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/doh/billie.jpg alt=Billie&#32;got&#32;hacked!>
+            
+        
+            <figcaption class="figure-caption">Billie got hacked!</figcaption>
+        </figure>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <figure class="figure ">
+            
+                <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/doh/flightchairs.jpg alt=Tired&#32;of&#32;coding?&#32;Take&#32;a&#32;&amp;#039;flight&amp;#039;&#32;to&#32;chillzone.>
+            
+        
+            <figcaption class="figure-caption">Tired of coding? Take a &amp;#039;flight&amp;#039; to chillzone.</figcaption>
+        </figure>
+    </div>
+    <div class="col-md-6">
+        <figure class="figure ">
+            
+                <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/doh/atnight.jpg alt=A&#32;little&#32;bit&#32;of&#32;hacking,&#32;a&#32;little&#32;bit&#32;of&#32;fresh&#32;air&#32;on&#32;the&#32;roof>
+            
+        
+            <figcaption class="figure-caption">A little bit of hacking, a little bit of fresh air on the roof</figcaption>
+        </figure>
+    </div>
+</div>
+
+<h2>Going on holiday</h2>
+
+<p>
+    Our working title was "Ik ga op vakantie en neem mee" which is a Dutch little memory game where everyone has to cite a list of
+    items to bring on holiday, pick a new item and then the turn goes to the next person, who has to cite that entire thing again. N+1.
+</p>
+
+<h3>The idea</h3>
+
+<figure class="figure ">
+    <a href=/kd/gj/2014/goingonholiday.jpg>
+        <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/goingonholiday.jpg alt=Ik&#32;ga&#32;op&#32;vakantie&#32;en&#32;neem&#32;mee>
+    </a>
+
+    <figcaption class="figure-caption">Ik ga op vakantie en neem mee</figcaption>
+</figure>
+
+<p>
+    The idea of the app however, is that you think of a mood or some type of holiday characteristics such as "snow", "sun", "sea", "city" or "adventure".
+    Based on what you like, we will pick a destination for you.
+    After you pick the flight you want, we look at the current weather of the city you're headed for. Based on the temperature among others, we also give you a
+    list of products to bring. So you want "sun" and "sea" in Barcelona? How about some sunscreen, beach towels and a book to read! To get into the mood
+    even more before your holiday begins, we also suggest some dishes based on the location.
+    We had thought of this idea a bit before the hackathon during a meetup we had planned, but we weren't really sure if it was the final plan.
+</p>
+
+<h3>The build</h3>
+<p>
+    We had quickly decided to make it an HTML5 web app which would make it compatible for all devices.
+    Also something lightweight with a REST API backend. The front-end is a heavily modified Twitter Bootstrap with jQuery for event handling and loading and parsing of the JSON.
+    Meanwhile, we used CSS3 for some subtle animations.
+    The backend is a Gradle project written in Java/Groovy (not everyone knew Groovy well enough, so it got rather mixed) which boots up a
+    Jetty server with Jersey, so we would have a REST API.
+</p>
+
+<p>
+    <strong>Flow of the app</strong><br>
+    The flow of the app was to <strong>find flights</strong> leaving from a <strong>specific airport</strong> for that day from transavia.com <small>(makes it limited to their journeys)</small>,
+    then <strong>get the prices</strong> and <strong>the weather for the destination</strong>, after that we would <strong>load products</strong> from bol.com
+    <strong>based on the type of weather</strong> <small>(hard coded mapping, "sun" == "sunscreen")</small> then we would <strong>load recipes</strong> from ah.nl
+    <small>(hard coded mapping, "spain" == "spaans", which won't find "paella" unless "spaans" is included in the title)</small>.
+</p>
+
+<p>
+    <strong>Use ALL the APIs!</strong><br>
+    API-wise we used the APIs provided by Transavia (flight data), Schiphol (airport data), bol.com (product data), Albert Heijn (recipe data).
+    We also used some APIs and data from other sources, outside of the event, namely openweathermap.org (weather data) and two big JSON lists of
+    <a title="List of airports in JSON" href="https://github.com/jbrooksuk/JSON-Airports">airports</a> and
+    <a title="List of countries in JSON" href="https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.json">countries</a> worldwide.
+</p>
+
+<p>
+    Of those APIs only the bol.com API is up and running, the other APIs were specifically built for the event. Which is a little sad, as it is great data.
+    But perhaps this event has opened their eyes?
+</p>
+
+<p>
+    <strong>App lifecycle</strong><br>
+    The app is unfortunately not able to go to production or a cloud of some sorts. This is mainly because most of the APIs aren't live anymore.
+    The Transavia API was also not really used, we used the XML dump that they had made because it offered a little more flexibility.
+    The Transavia guy also suggested this to us after we asked how to do slightly more difficult queries. He told us that the API was purely built just for this weekend.
+</p>
+
+<p>
+    There was also some hardcoded categories and mappings in our app. But it was still dynamic and it worked. If someone didn't want to do our Barcelona example,
+    they could easily change it and they would get different results. But in the end, with not enough API data and not enough time or resources to do some smart
+    mapping or machine learning for that 'personal touch', this app won't go live.
+</p>
+
+<h2>The result</h2>
+<p>
+    The result is a nice looking application that actually works (something I particularly like to point out) and if there was full support for
+    APIs and data could actually work rather well.
+</p>
+
+<iframe src="https://player.vimeo.com/video/106816097?h=a427f64fea" width="640" height="833" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p>
+    <a href="https://vimeo.com/106816097"><small>Screencast Going on Holiday - Pi Ducks @ Dutch Open Hackathon</small></a>
+</p>
+
+<h4>The hackathon</h4>
+
+<figure class="figure ">
+    
+        <img loading="lazy" class="figure-img img-fluid rounded" src=/kd/gj/2014/doh.jpg alt=Dutch&#32;Open&#32;Hackathon&#32;2014>
+    
+
+    <figcaption class="figure-caption">Dutch Open Hackathon 2014</figcaption>
+</figure>
+
+<p>
+    I guess by definition this would count as my first hackathon, but it didn't feel like that. The Dutch Open Hackathon
+    <small>(where 'Open' is made significant by the large enterprises; AH, bol.com, Transavia, Philips, TomTom that actually opened
+    up their (often) closed data)</small> was a great success!
+</p>
+
+<p>
+    There were a couple of issues though. The building was nice and the organisation was thoughtful about a lot of things,
+    but the floors had been unused for a while and the AC didn't work or nobody was able to turn it on for day one.
+    So 40 sweaty nerds with 50 laptops and about 10 external monitors were producing a lot of heat.
+</p>
+
+<p>
+    Also the communication wasn't that great. Often people had to come in and say "this and that starts right now, even though the program says 9am".
+    I still don't really know who was running the show. There were people in black polo shirts with the Dutch Open Hackathon logo and "Staff" badges,
+    but there were also people in red shirts who were "Organisation". It was a good thing they were all friendly people!
+</p>
+
+<p>
+    One last tiny issue, but maybe that's personal. I didn't like that in the end we had to do pitches and that that's also how they were judged.
+    Our app lost to a team that only had minimal coding working and just had a good idea and some photoshop prints. But maybe I'm just a sore loser :)
+</p>
+
+<p>
+    But let's not forget about the good parts, logistically everything was pretty well arranged. There was ample food and even more drinks like water,
+    cola and energy drinks (as everyone knows, caffeine == coder productivity). They managed to get a lot of field beds and blankets,
+    great for those 3 hours of sleep I got. <small>(Guess I should have used the earplugs and sleep mask like my teammate did, who managed to get 8 hours of sleep)</small>
+</p>
+
+<p>
+    The companies actually showed up and their teams were really helpful. I spoke with Maarten Korz, a representative from Rabobank.
+    He was really happy that he was able to represent his company, and they were finally willing to go forward with APIs and opening their data.
+</p>
+
+<p>
+    What I also really liked was that we were able to go on the roof of the 18th floor and look over Amsterdam. I loved that.
+</p>
+
+<p>
+    So will I be at the next hackathon? Hell yes! Will enterprises be there too? I very much hope so!
+</p>

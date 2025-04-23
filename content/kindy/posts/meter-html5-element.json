@@ -1,0 +1,14 @@
+{
+    "type": "post",
+    "title": "meter; the HTML5 element",
+    "summary": "A progress bar in HTML5 with parameters for min, max, low and high. With some Javascript and CSS you can make them beatiful and animated.",
+    "content": "/posts/meter-html5-element.html",
+    "publishedAt": "2014-05-14T12:00:00+01:00",
+    "slug": "meter-html5-element",
+    "permalink": "/posts/meter-html5-element",
+    "tags": [
+        "tech",
+        "web",
+        "html"
+    ]
+}
