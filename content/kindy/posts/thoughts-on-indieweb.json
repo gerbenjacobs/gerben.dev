@@ -1,0 +1,13 @@
+{
+    "type": "post",
+    "title": "Thoughts on IndieWeb",
+    "summary": "The death of silos, identity crises and a web presence as a form of self-expression. What is indieweb?",
+    "content": "/posts/thoughts-on-indieweb.md",
+    "publishedAt": "2024-11-18T19:00:07+01:00",
+    "slug": "thoughts-on-indieweb",
+    "permalink": "/posts/thoughts-on-indieweb",
+    "tags": [
+        "personal",
+        "indieweb"
+    ]
+}
