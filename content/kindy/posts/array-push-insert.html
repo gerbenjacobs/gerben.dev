@@ -10,7 +10,7 @@
     This because we fed it into a JS table sorter, once we pulled it through <code>json_encode()</code>.
 </p>
 
-<p>So what we really required: <strong><code>array_push_insert</code></strong></p>
+<p>So what we really required: <b><code>array_push_insert</code></b></p>
 
 <p>
     We couldn't find any existing <a href="https://www.php.net/manual/en/ref.array.php">Array function</a> at php.net,
@@ -24,7 +24,7 @@
     So for now it only works with numeric array keys.
 </p>
 
-<p><strong>What it does..</strong></p>
+<p><b>What it does..</b></p>
 <p>
     First it checks whether the index you supplied (<code>$index</code>) is available in the array
     (<code>$array</code>), if so, dissects the array in half,
@@ -46,7 +46,7 @@
 </code></pre>
 
 
-<p><strong>Example</strong></p>
+<p><b>Example</b></p>
 <p>
     We call the function and supply it with our original array, the index after which we want our new value to be
     inserted and the value itself.
