@@ -1,0 +1,20 @@
+{
+    "type": "post",
+    "title": "SocialSpace at ESTEC in Noordwijk",
+    "summary": "I went to ESTEC during a Social Tweetup organised by ESA, met awesome people and learned amazing things. This was my experience.",
+    "content": "/posts/socialspace-estec-noordwijk.html",
+    "publishedAt": "2013-10-08T12:00:00+02:00",
+    "slug": "socialspace-estec-noordwijk",
+    "permalink": "/posts/socialspace-estec-noordwijk",
+    "tags": [
+        "personal",
+        "ESA",
+        "Space",
+        "Noordwijk",
+        "BlogMigration"
+    ],
+    "geo": {
+        "latitude": 52.217222,
+        "longitude": 4.421389
+    }
+}

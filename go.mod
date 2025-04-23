@@ -11,10 +11,12 @@ require (
 	github.com/otiai10/opengraph/v2 v2.1.0
 	github.com/spf13/viper v1.20.1
 	github.com/yuin/goldmark v1.7.10
+	go.abhg.dev/goldmark/frontmatter v0.2.0
 	golang.org/x/text v0.24.0
 )
 
 require (
+	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/PuerkitoBio/goquery v1.10.3 // indirect
 	github.com/andybalholm/cascadia v1.3.3 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect

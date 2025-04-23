@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "Dutch Open Hackathon",
+    "summary": "In september 2014 I attended the first Dutch Open Hackathon and together with an awesome team created working prototype for our travel assistance app!",
+    "content": "/posts/dutch-open-hackathon.html",
+    "publishedAt": "2014-09-25T12:00:00+01:00",
+    "slug": "dutch-open-hackathon",
+    "permalink": "/posts/dutch-open-hackathon",
+    "tags": [
+        "tech",
+        "personal",
+        "hackathon",
+        "BlogMigration"
+    ]
+}

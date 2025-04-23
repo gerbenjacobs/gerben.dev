@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "Perfect separator for Shoutcast 7.html file",
+    "summary": "If you use the Shoutcast 7.html trick to get some quick stats about your stream broadcast but are getting some inconsistencies with parsing the comma-separated input you get, try this!",
+    "content": "/posts/perfect-seperator-for-shoutcast-7-html-file.html",
+    "publishedAt": "2012-04-08T12:00:00+02:00",
+    "slug": "perfect-seperator-for-shoutcast-7-html-file",
+    "permalink": "/posts/perfect-seperator-for-shoutcast-7-html-file",
+    "tags": [
+        "tech",
+        "php",
+        "Shoutcast",
+        "BlogMigration"
+    ]
+}

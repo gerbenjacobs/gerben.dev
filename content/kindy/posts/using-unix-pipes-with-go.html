@@ -1,0 +1,129 @@
+<p>Go has made it easy to work with Unix operations, it comes with the platform-independent built-in package
+	<code>os</code> to interface with the operating system.
+</p>
+<p>They offer nice features such as <code>os.Stdin</code> and <code>os.Stdout</code>, wrappers of type
+	<code>os.File</code> around the OS's common standard streams.
+</p>
+<p>The <code>os/exec</code> package is also great. It allows you to run Unix-tools from within your Go application.</p>
+<blockquote>
+	<p>Package exec runs external commands. It wraps os.StartProcess to make it easier to remap stdin and stdout,
+		connect I/O with pipes, and do other adjustments.</p>
+</blockquote>
+<p>We however are only going to read and write from <em>standard out</em>.</p>
+<h2 id="-course">📒 Course</h2>
+<p>At work I wanted to teach some Go as well as show off cross-compiling.
+	Since the audience is a mix of developers and system engineers I figured I'd make a CLI tool that touches on a few
+	things.</p>
+<blockquote>
+	<p>This course will show you how to make a Go binary that acts as a unix tool.</p>
+	<p>We will read data from <code>stdin</code>, convert it to our custom JSON model and push it through to
+		<code>stdout</code>, completing the cycle.
+	</p>
+	<p><em>This is a beginner to intermediate course for both Go and Unix, some things will be explained, but if you're
+			unsure you should be able to autonomously search for the right information.</em></p>
+</blockquote>
+<p>If you want to do this course/tutorial for yourself, you can find it at <a
+		href="https://github.com/gerbenjacobs/unix-pipe-course">https://github.com/gerbenjacobs/unix-pipe-course</a></p>
+<p>⚠️ The rest of this post contains spoilers.</p>
+<h2 id="-pipes">🔩 Pipes</h2>
+<p>In case you're not familiar with piping, it allows you to combine multiple programs in a chain using the pipe-symbol
+	&quot;<code>|</code>&quot; and in essence create a 'pipeline'.</p>
+<p>Data from one program gets sent on the 'stdout' and back into the 'stdin' for the next program.</p>
+<p>You might have already used this unknowingly while pretty-printing a cURL response:</p>
+<pre><code class="language-sh">curl -s https://dummyjson.com/test | jq
+</code></pre>
+<h2 id="-reading-and-writing">📝 Reading and writing</h2>
+<p>Since <code>os.Stdin</code> is a <code>os.File</code> we can use a myriad of methods that deal with this.
+	Assuming we are in control of what the input is (i.e. don't expect 100GB dumps), we can use <code>io.ReadAll</code>
+	to read the data straight into memory.</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+)
+
+func main() {
+	data, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		fmt.Printf(&quot;failed to read data: %v&quot;, err)
+		return
+	}
+
+	fmt.Printf(&quot;Input: %#v | len(%d)&quot;, string(data), len(data))
+}
+</code></pre>
+<p>And that's <b>literally</b> it for the reading part.</p>
+<p>We've learned to use a <code>io.ReadAll</code> (which implements the <code>io.Reader</code> interface) in combination
+	with <code>stdin</code>,
+	but for writing we'll need to use a <code>io.Writer</code>.</p>
+<p>Since we know we're going to use JSON we can have a look at the <code>encoding/json</code> <a
+		href="https://pkg.go.dev/encoding/json">package</a>.</p>
+<p>You're probably familiar with <code>json.Marshal</code> but the package also comes with an <code>json.Encoder</code>,
+	that needs to be initialized with a <code>io.Writer</code> interface.</p>
+<p>We can use the <code>os.Stdout</code> file descriptor for this, cause as you remember, it's a wrapper around
+	<code>os.File</code>
+	and those adhere to the <code>io.Writer</code> interface.
+</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;encoding/json&quot;
+	&quot;fmt&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+)
+
+type Output struct {
+	Message string `json:&quot;message&quot;`
+	Length  int    `json:&quot;len&quot;`
+}
+
+func main() {
+	data, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		fmt.Printf(&quot;failed to read data: %v&quot;, err)
+		return
+	}
+
+	enc := json.NewEncoder(os.Stdout)
+	err = enc.Encode(Output{
+		Message: string(data),
+		Length:  len(data),
+	})
+	if err != nil {
+		fmt.Printf(&quot;failed to encode json: %v&quot;, err)
+	}
+}
+</code></pre>
+<p>In this example we pretend there's a reason for us to create a custom JSON object with the special
+	<code>message</code> and <code>len</code> names.
+</p>
+<p>We create a <code>json.Encoder</code> where the output stream is <code>os.Stdout</code> and we call
+	<code>Encode()</code> with an inlined <code>Output</code>-struct.
+</p>
+<p>We make sure we typecast our <code>[]byte</code> data as 'string' and in case there are no errors, we have
+	succesfully written to 'standard out'.</p>
+<h2 id="-result">✔️ Result</h2>
+<p>When piping &quot;Hello World&quot; to our program using <code>echo</code> and outputting our work to <code>jq</code>
+	(a pretty-printer for JSON), we will get the following.</p>
+<pre><code class="language-sh">echo -n &quot;Hello World&quot; | go run main.go | jq
+</code></pre>
+<pre><code class="language-json">{
+    &quot;message&quot;: &quot;Hello World&quot;,
+    &quot;len&quot;: 11
+}
+</code></pre>
+<p>Now if you build your Go program and call it 'json_encoder' it will look even more like you're doing regular ol' Unix
+	piping!</p>
+<pre><code class="language-sh">cat important_business.txt | json_encoder | jq
+</code></pre>
+<p>Congratulations! Your Go program is now pipable, you're a pipe in a bigger Unix pipeline.</p>
+<p><em>If you want to know more about <b>cross-compiling</b> check <a
+			href="https://github.com/gerbenjacobs/unix-piping-course/tree/main/step3">step 3 of the course</a>.</em></p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>

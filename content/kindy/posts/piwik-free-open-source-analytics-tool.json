@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "Piwik, a free open-source analytics tool",
+    "summary": "Piwik is a JavaScript tracking snippet backed by a PHP dashboard and MySQL backend. Installation is really simple and it works out of the box.",
+    "content": "/posts/piwik-free-open-source-analytics-tool.html",
+    "publishedAt": "2014-03-05T12:00:00+01:00",
+    "slug": "piwik-free-open-source-analytics-tool",
+    "permalink": "/posts/piwik-free-open-source-analytics-tool",
+    "tags": [
+        "tech",
+        "web",
+        "analytics",
+        "BlogMigration"
+    ]
+}

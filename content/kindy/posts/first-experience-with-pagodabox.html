@@ -1,0 +1,100 @@
+<h2>What is PagodaBox</h2>
+
+<div class="alert alert-primary" role="alert">
+    <small>This blog post is written about what would now be known as <em>Pagoda v1</em> and might not be representative.</small>
+</div>
+
+<figure>
+    <img src="/kd/gj/2013/pagoda.png" class="u-photo responsive-img">
+    <figcaption>Pagoda Box</figcaption>
+</figure>
+
+<p>
+    <a href="https://pagodabox.io">PagodaBox.com</a> is a Platform as a Service (PaaS) for PHP.
+    <br>They have plans for Ruby and Python, but they're not here yet as of this writing.
+</p>
+
+<p>
+    At Pagoda you can launch components, such as; <b>web</b> (Apache + PHP), <b>database</b> (I know MySQL works for a fact),
+    <b>cache</b> (Memcache or Redis), <b>worker</b> and <b>cron job</b> (beta).
+</p>
+
+<p>
+    My <i>app</i> uses the first two, but I'm actually trying to figure out Memcache as I type this.
+</p>
+
+<p>
+    The idea is that you can just launch new components to scale your app. This is so easy that
+    <a href="https://techcrunch.com/2012/09/11/pagoda-box-is-easier-than-amazon-web-services-but-more-customizable-than-heroku/" >a non-techy front office person can monitor the app and scale it when needed</a>,
+    it is literally just one click of a button.
+</p>
+
+<h2>Up, up and away (with Wordpress)</h2>
+
+<p>
+    I think I ended up at the site because I was looking at Heroku stuff. Anyway, a colleague of mine saw it and he knew it too.
+    Said it was <abbr title="Platform as a Service">PaaS</abbr> for PHP, so in the end I decided to test it out.
+</p>
+
+<p>
+    First I ran a simple pre-configured WordPress app, this worked. But this is not what this service is for.
+</p>
+
+<h2>My experience</h2>
+
+<figure>
+    <img src="/kd/gj/2013/sad_database.png" class="u-photo responsive-img">
+    <figcaption>Sad Database component</figcaption>
+</figure>
+
+<p>
+    So my next attempt was making it all by myself. First a PHP web component, yep, worked and <code>phpinfo()</code> gave me a bunch of nice stats.
+    <br>Then the database component, up and running within a few seconds.
+    <br>But it showed me a sad smiley face. Apparently, without any tables and whatever, the MySQL component takes up 90% of the allocated 10MB.
+</p>
+
+<p>
+    <b>Git</b><br>
+    Then I started working on my app, staging files to my local git repo, committing them, pushing them.. and waiting. A long time.
+</p>
+
+<p>
+    <b>Redeploying from git commits.</b><br>
+    <figure>
+        <img src="/kd/gj/2013/happy_web.png" class="u-photo responsive-img">
+        <figcaption>Happy Web component</figcaption>
+    </figure>
+    When you push your local changes to the PagodaBox git server <small>(you can also choose the not-recommended SFTP option when signing up)</small> they totally rebuild,
+    redeploy and relocate your components. This last part is nice because when you add changes, your 'old' site still works until the new one is up and running
+    after which some magic happens and your URL gets redirected to the new machine.
+</p>
+
+<p>
+    Only after I finished my app that evening, I noticed you can turn this feature off in your account settings. But then you have to deploy your site yourself based on a commit.
+    Maybe it would be nice if you could send some kind of flag with your <code>git push</code> command; <code>--no-deploy</code>.
+</p>
+
+<p>
+    <b>Pagoda Tunneling</b><br>
+    Also there's no PHPMyAdmin, the beast we all came to love. To work on your database you have to use their
+    <a title="Pagoda Tunnel system" href="https://pagodabox.io/docs/pagoda_cli#tunnel-into-a-data-service" >Pagoda Tunnel</a> system.
+    This requires you to install Ruby and download their Tunnel gem. After that you can tunnel into your app by opening the command line tool:
+    <code>pagoda tunnel -a &lt;app_name&gt; -c &lt;component_name&gt;</code>
+</p>
+
+<p>
+    This will turn your terminal window into a little server/tunnel, and you can use a SQL tool (I used HeidiSQL) to connect to
+    <code>localhost:45000</code> where you will find your Pagoda database.
+</p>
+
+<p>
+    <b>Learning</b><br>
+    So as you understand it's quite a big endeavour, and I personally don't require the need for scaling,
+    so I can't really test any of that. But I can say it was quite a nice learning experience.
+</p>
+
+<p>
+    Also, I did manage to get Memcache running <small>(first time ever)</small> but I'm not noticing any difference,
+    guess my queries and database aren't that big for it to be noticeable.
+    <br>.. or the fact that all these servers are probably in the US and it takes 600ms anyway.
+</p>

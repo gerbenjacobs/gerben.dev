@@ -1,0 +1,58 @@
+<p>
+    I'm amazed at how often I still "discover" a new HTML5 element. I say discover because really they're all written down in specs. But then again, who reads specs for their enjoyment?
+</p>
+
+<p>
+    Today I discovered the meter-element <small>(by first discovering the progress-element)</small>. They're essentially the same, except that <code>&lt;meter&gt;</code> also adds
+    some sugary deliciousness in the form of colouring. It's here that you should note that IE10 (and higher) only support &lt;progress&gt; at the moment and not &lt;meter&gt;.
+    So while both elements are rendered pretty much the same by <span style="border-bottom: 1px dotted;" title="REAL browsers ;)">browsers</span>,
+    it's the semantic meaning that you have to pick.
+</p>
+
+<h2>What makes &lt;meter&gt; cool</h2>
+
+<p>
+    So what makes it cool, you ask? Well the sugary deliciousness that I mentioned.
+</p>
+
+<p>
+    The meter-element has your standard <code>min</code> and <code>max</code> attributes, but also <code>low</code>, <code>high</code> and <code>optimum</code>.
+</p>
+
+
+<iframe src="https://jsfiddle.net/gjacobs/ekwEA/1/embedded/result,html,js/" width="100%" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+<p>
+    If you're using <a title="Can I Use: Meter" href="https://caniuse.com/progressmeter">a supported browser for &lt;meter&gt;</a>
+    you will see the bar in the Result tab. I have added some JavaScript to update the bar with 5 units every 500 milliseconds. My bar is set up from 0 to 100,
+    so it could be percentage based. You're of course free to choose any numbers.
+</p>
+
+<p>
+    If you're using IE or a specific mobile browser, you'll probably see the fallback message. This element falls back graciously and I even added some JavaScript
+    to also update my fallback text. Although I later found out that <code>meter.value</code> is <em>NaN</em>, so you have to change the JS to be independent of that element.
+</p>
+
+<p>
+    For IE 10 and higher, you could also change the meter-element to a <code>&lt;progress&gt;</code>-element and it will work, even with the same JavaScript code.
+    The low, high and optimum attributes won't do anything and as such you will have no colour, but still a cool progress bar in HTML5.
+</p>
+
+<h2>Automatic colouring</h2>
+
+<p>
+    If you look at the HTML again, you can see how you're supposed to use the <code>low</code>, <code>high</code> and <code>optimum</code> attributes.
+    These are your 'breaking points' for when the browser starts to make your bar red, yellow and green respectively.
+    You can even use <a title="&lt;meter&gt; CSS style" href="https://docs.webplatform.org/wiki/html/elements/meter#Examples">CSS to change the &lt;meter&gt;'s style</a>,
+    although this is still vendor prefixed.
+</p>
+
+<p>
+    My meter is using sensible breaking points at 30% (low) and 60% (high). But you can change this and for example, if you're using it as an Health Points bar,
+    you might have the low on 10% and high on 40%.
+</p>
+
+<p>
+    To be honest, I'm not really sure why there is an <code>optimum</code> attribute, so far it doesn't really do anything.
+    But all in all, a really cool HTML5 element that takes away so much manual work for you!
+</p>

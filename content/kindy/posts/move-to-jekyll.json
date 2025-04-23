@@ -1,0 +1,13 @@
+{
+    "type": "post",
+    "title": "Move to Jekyll",
+    "summary": "I decided to move my blog to Github Pages, fueled by Jekyll.",
+    "content": "/posts/move-to-jekyll.md",
+    "publishedAt": "2015-08-19T10:36:00+02:00",
+    "slug": "move-to-jekyll",
+    "permalink": "/posts/move-to-jekyll",
+    "tags": [
+        "tech",
+        "BlogMigration"
+    ]
+}

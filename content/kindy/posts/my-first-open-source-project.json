@@ -1,0 +1,14 @@
+{
+    "type": "post",
+    "title": "My first open source project",
+    "summary": "Some lessons learned from my first open source project.",
+    "content": "/posts/my-first-open-source-project.html",
+    "publishedAt": "2015-11-20T12:00:00+02:00",
+    "slug": "my-first-open-source-project",
+    "permalink": "/posts/my-first-open-source-project",
+    "tags": [
+        "tech",
+        "OpenSource",
+        "BlogMigration"
+    ]
+}

@@ -1,0 +1,74 @@
+<p>
+    Pretty semantic title, huh? But that's basically what this is all about.
+</p>
+
+<figure>
+    <img src="/kd/gj/2012/shoutcast.gif" class="u-photo responsive-img">
+    <figcaption>Shoutcast logo</figcaption>
+</figure>
+
+<p>
+    If you have a Shoutcast host that is set to private, only people whose IP address in the RIP list (Reserved IP) can access your stream.
+    <br>A lot of free Shoutcast server providers do this, to make it a bit less profitable to free ride their services.
+</p>
+
+<p>
+    Let's have a quick look at the code and then analyze it to understand what it's doing.
+</p>
+
+<pre><code class="language-php">// Config
+$username = 'admin';
+$password = 'password';
+$host = 'myshoutcastserver.com';
+$port = 8080;
+
+// Set up URL
+$ip = explode('.', $_SERVER['REMOTE_ADDR']);
+$url = sprintf('http://%s:%d/admin.cgi?mode=ripip&ip1=%d&ip2=%d&ip3=%d&ip4=%d',
+    $host, $port, $ip[0], $ip[1], $ip[2], $ip[3]
+);
+
+// Create context stream
+$context = stream_context_create(array(
+    'http' => array(
+        'method' => 'GET',
+        'user_agent'  => $_SERVER['HTTP_USER_AGENT'],
+        'header'  => array(
+            'Authorization: Basic ' . base64_encode("$username:$password"),
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        )
+    )
+));
+
+// A poor mans CURL request
+file_get_contents($url, false, $context);
+</code></pre>
+
+<p>
+    First we get the IP address of the visitor, we explode() it on the dots to get 4 separate numbers, together forming a valid IP address.
+    <br>Then we set up a URL that will look like this: <b>https://myshoutcastserver.com:8080/admin.cgi?mode=ripip&ip1=127&ip2=0&ip3=0&ip4=1</b>
+</p>
+
+<p>
+    This URL will submit (GET) a form that adds the IP to the RIP list. See why we had to separate the IP on the dots?
+    'Why' you ask, well because this is somewhat of a hack. We fill the form through GET parameters.
+</p>
+
+<p>
+    Of course the admin.cgi page is behind a password protected bit. This is however a simple Basic Authorization, so we create a stream context and add Basic Authorization.
+</p>
+
+<p>
+    Shoutcast Servers aren't completely dumb, only a little. But they're smart enough to notice 'robots'.
+    So we also add some headers to make it believe we are a real browser and that we would like to accept normal HTML back.
+    We don't really need anything back at all, so that's why you don't have to do anything with the data you get back from file_get_contents.
+</p>
+
+<p>
+    Just running the command, with the context stream and the pimped out URL is enough to add an IP to the Reserved IP List in Shoutcast. <b>You're done!</b>
+</p>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+<script>hljs.highlightAll();</script>

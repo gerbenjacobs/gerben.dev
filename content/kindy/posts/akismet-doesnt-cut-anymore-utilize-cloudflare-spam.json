@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "Akismet doesn't cut it anymore, utilize Cloudflare against spam",
+    "summary": "When even Akismet can't keep up with the spam, there is another way to not prevent spam comments but bots all together.",
+    "content": "/posts/akismet-doesnt-cut-anymore-utilize-cloudflare-spam.html",
+    "publishedAt": "2014-02-27T12:00:00+01:00",
+    "slug": "akismet-doesnt-cut-anymore-utilize-cloudflare-spam",
+    "permalink": "/posts/akismet-doesnt-cut-anymore-utilize-cloudflare-spam",
+    "tags": [
+        "tech",
+        "Akismet",
+        "Cloudflare",
+        "BlogMigration"
+    ]
+}

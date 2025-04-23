@@ -1,0 +1,63 @@
+<p>
+    I'm at a place where there's no internet, so I hooked up my T-Mobile G1 (an HTC Dream) to my laptop through the
+    <a title="PdaNet at the Android Market" href="https://market.android.com/details?id=com.pdanet">PdaNet app</a>.
+</p>
+
+<p>
+    When I was browsing a site, I noticed an image that wasn't working. So I opened it up in a new tab, where it seemed to work again, but I then noticed the URL.
+    The http:// part of the original source was dropped and replaced by <code>http://1.2.3.12/bmi/</code>, i.e.:
+    <code>http://1.2.3.9/bmi/www.gerbenjacobs.nl/wp-content/uploads/2011/01/cute-kitten-laughing-64x64.jpg</code>
+</p>
+
+<p>
+    My first instinct was <a href="http://twitter.com/#!/gerbenjacobs/statuses/59245645202079744">to ask</a> customer support (god, am I that customer?) followed by Google.
+    I then found this blogpost "<a title="Blogpost by Peter Steinberger" href="http://petersteinberger.com/2010/03/t-mobile-rewrites-image-urls/">T-Mobile rewrites image urls</a>"
+    which is 13 months old, but I never noticed T-Mobile doing this. So they must have recently added this 'service' to T-Mobile Netherlands.
+</p>
+
+<h2>T-Mobile Edge</h2>
+<p>After more research, it turns out that T-Mobile calls this service 'EDGE' (Enhanced Data Rates for Global Evolution) and what it does is basically a giant loadbalancer and CDN in one.</p>
+
+<p>
+    When you inspect the <a title="Information about the IP" href="https://whois.domaintools.com/1.2.3.12">IP address</a> it shows up as an Australian server,
+    which shocked me initially, but after some tests I didn't notice any speed loss. So it must be using some kind of geo-aware content delivery network.
+    <br><small>(The weird thing is that I can't seem to trace the IP in Cmd.exe with the 'tracert' command, so I have no idea which
+        server they appoint to my geolocation)</small>
+</p>
+
+<h2>Advantages</h2>
+<p>So how is this <em>enhanced</em>, you may ask. Well, just look at the following image (click to enlarge):</p>
+
+
+<figure>
+    <img src="/kd/gj/2011/tmobile_edge.png" class="u-photo responsive-img">
+    <figcaption>Parallel downloads with T-Mobile Edge</figcaption>
+</figure>
+
+<p>
+    It's hard to see, because it's not the entire page load, but all the images (they were
+    avatars on a forum) were loaded simultaneously. I was using Firefox 4 which can handle up to 5 (or was it 8?)
+    parallel downloads at the same time. Then the 'loadbalancing' (for lack of a better word) comes to play, using the
+    multiple servers 1.2.3.9 to 1.2.3.13 (great IP address by the way!) it loaded them all. So that's 5 x 5 (or 8),
+    which is up to 25 (or 40) resources, or forum avatars, at once.
+</p>
+
+<p>
+    That's the only advantage I can spot of this so-called EDGE service, which came unannounced.
+</p>
+
+<h2>Disadvantages</h2>
+<p>
+    Then there is the disadvantage, that applies to all proxies in general; single entry point and thus single entry point of failure.
+    So in other words, when their servers get hacked, we have no idea what is being sent.
+</p>
+<p>
+    Applying to the single entry point, also means the possibility of tracking. But I doubt that this would be any worse than what Google does,
+    they probably know everything about you already. And maybe the CIA is behind it.. or the New World Order..
+</p>
+<p>
+    However, without going off-topic too much, about 95% of T-Mobile customers wouldn't mind this (and probably wouldn't understand it either),
+    but I do wonder why this hasn't been announced, or why there is so little information about it. I'm not really sure what my opinion on the issue is..
+    <br>At the moment I'm in favour of it, because I like pages to load quickly, duh!
+    <br>On the other hand I wish there was more transparency, because this is kind of <em>a big thing</em>.
+</p>

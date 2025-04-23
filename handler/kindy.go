@@ -49,6 +49,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// if our content is inside another file, load it
+	// for HTML content
 	if string(kind.Content) == r.URL.Path+".html" {
 		b, err = os.ReadFile("content/kindy" + string(kind.Content))
 		if err != nil {
@@ -57,6 +58,16 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		kind.Content = template.HTML(b)
+	}
+	// for markdown content
+	if strings.HasSuffix(string(kind.Content), ".md") {
+		b, err = os.ReadFile("content/kindy" + string(kind.Content))
+		if err != nil {
+			slog.Error("failed to read content file", "file", r.URL.Path, "content", kind.Content, "error", err)
+			http.Error(w, "entry not found", http.StatusNotFound)
+			return
+		}
+		kind.Content = template.HTML(local.MarkdownToHTML(string(b)))
 	}
 
 	type pageData struct {
