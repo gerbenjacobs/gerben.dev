@@ -168,10 +168,6 @@ iframe,
         margin: auto;
         width: clamp(320px, 80%, 800px);
     }
-
-    .read-heavy>div {
-        text-align: justify;
-    }
 }
 
 @media (min-width: 600px) {
