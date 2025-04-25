@@ -1,0 +1,35 @@
+server {
+    server_name gerben.dev;
+
+    root /var/www/html/gerben.dev;
+    access_log /var/log/nginx/gerben.dev/access.log;
+    error_log /var/log/nginx/gerben.dev/error.log;
+
+    client_max_body_size 10m;
+
+    # log access to drop file in /etc/nginx/ but don't log 404
+    location = /favicon.ico {
+        access_log drop;
+        log_not_found off;
+    }
+
+    # log access to denied file in /etc/nginx/ but don't log 404 and also deny all to dot files
+    location ~ /\.(?!well-known).* {
+        access_log denied;
+        log_not_found off;
+        deny all;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    rewrite ^/\.well-known/(host-meta|webfinger).* https://fed.brid.gy$request_uri? redirect;
+
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=gerben.dev Go server
+Wants=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=gerbendev
+Group=gerbendev
+WorkingDirectory=/var/www/html/gerben.dev
+ExecStart=/var/www/html/gerben.dev/app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

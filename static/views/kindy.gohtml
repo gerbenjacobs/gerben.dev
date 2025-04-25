@@ -124,13 +124,13 @@
                             Your browser does not support the video tag.
                         </video>
                         {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
-                        <p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>
+                        {{- if .Tags }}<p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>{{- end }}
                     </div>
                     {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
                        {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-                        <p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>
+                       {{- if .Tags }}<p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>{{- end }}
                     </figure>
                     {{ end }}
                 {{ else }}
@@ -160,7 +160,7 @@
                     {{ if .HasContent -}}
                     <div class="e-content">
                         {{ .GetContent }}
-                        <p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>
+                        {{- if .Tags }}<p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>{{- end }}
                     </div>
                     {{- end }}
                 {{ end }}
