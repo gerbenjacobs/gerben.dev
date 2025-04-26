@@ -9,6 +9,7 @@ import (
 	"log/slog"
 	"net/http"
 
+	app "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/otiai10/opengraph/v2"
 )
@@ -80,11 +81,14 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	type localOG struct {
+	data := struct {
 		opengraph.OpenGraph
 		DescriptionHTML template.HTML
+	}{
+		OpenGraph:       og,
+		DescriptionHTML: template.HTML(app.MarkdownToHTML(og.Description)),
 	}
-	if err := tmpl.Execute(w, localOG{og, template.HTML(og.Description)}); err != nil {
+	if err := tmpl.Execute(w, data); err != nil {
 		http.Error(w, fmt.Sprintf("failed to execute template: %v", err), http.StatusInternalServerError)
 	}
 }
