@@ -12,9 +12,11 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
 	"go.abhg.dev/goldmark/frontmatter"
+	"go.abhg.dev/goldmark/hashtag"
 )
 
 var gm goldmark.Markdown
@@ -44,11 +46,25 @@ const (
 	KindyTypeReplies KindyType = "reply"
 )
 
+type HashtagResolver struct{}
+
+func (r *HashtagResolver) ResolveHashtag(n *hashtag.Node) (destination []byte, err error) {
+	// if parent type is a link, we don't want to resolve it
+	if n.Parent().Kind() == ast.KindLink {
+		return nil, nil
+	}
+	return append([]byte("/tags/"), n.Tag...), nil
+}
+
 func init() {
 	gm = goldmark.New(
 		goldmark.WithExtensions(
 			extension.GFM,
 			&frontmatter.Extender{},
+			&hashtag.Extender{
+				Resolver: &HashtagResolver{},
+				Variant:  hashtag.ObsidianVariant,
+			},
 		),
 		goldmark.WithParserOptions(
 			parser.WithAutoHeadingID(),

@@ -1,6 +1,6 @@
 {{ define "timeline-paginated" }}
 {{ range .Entries }}
-<article class="kindy padding read-heavy">
+<article class="kindy read-heavy">
     <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
     <h2 class="right" style="margin-left: 1em;"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
     <p>
@@ -39,7 +39,7 @@
             <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
             {{- end }}
             {{ if .Summary }}
-            <p>
+            <p class="truncate">
                 {{ .Summary }}
                 {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
                 {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
