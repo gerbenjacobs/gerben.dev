@@ -85,6 +85,7 @@
             {{ range .Photos }}
             <article class="home-photo" style="background-image: url({{ .Thumbnail }});">
                 <a href="{{ .Permalink }}">
+                    {{ .Type.Emoji }}
                     {{ if .Title -}}
                     {{ .Title }}
                     {{- else if .Summary -}}
@@ -94,18 +95,19 @@
                     {{- end }}
                     {{ if .Tags -}}
                     <br>
-                    <span>
+                    🏷️
+                    <small>
                         {{ if gt (len .Tags) 2 }}
                         {{- range slice .Tags 0 2 -}}
                             #{{.}}
                         {{ end -}}
-                        <small>{{ len (slice .Tags 2) }} tags</small>
+                        +{{ len (slice .Tags 2) }} tags
                         {{ else }}
                         {{- range .Tags -}}
                             #{{.}}
                         {{ end -}}
                         {{ end }}
-                    </span>
+                    </small>
                     {{- end }}
                 </a>
             </article>
