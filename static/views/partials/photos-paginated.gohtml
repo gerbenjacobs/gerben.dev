@@ -1,6 +1,7 @@
 {{ define "photos-paginated"}}
 {{ range .Entries }}
 <article class="padding">
+    <div style="height: 5em; line-height: 1em;">
     <h6>{{if .HasFlickrSyndication}}🖼️{{else}}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
             {{ if .Title -}}
             {{ .Title }}
@@ -12,7 +13,7 @@
         </a></h6>
     🕰️
     <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-        <a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a>
+        <small><a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a></small>
     </time>
     {{ if .Geo -}}
     <span>
@@ -22,27 +23,28 @@
     {{ if .Tags -}}
     <br>
     🏷️
-    <span>
+    <small>
         {{ if gt (len .Tags) 2 }}
         {{- range slice .Tags 0 2 -}}
         <a href="/tags/{{.}}">#{{.}}</a>
         {{ end -}}
-        <small>{{ len (slice .Tags 2) }} tags</small>
+        +{{ len (slice .Tags 2) }} tags
         {{ else }}
         {{- range .Tags -}}
         <a href="/tags/{{.}}">#{{.}}</a>
         {{ end -}}
         {{ end }}
-    </span>
+    </small>
     {{- end }}
+    </div>
     {{ if hasSuffix .Content ".mp4" }}
     <video class="responsive-video" autoplay loop muted>
         <source class="u-video" src="{{.Content}}" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     {{ else }}
-    <a href="{{ .Permalink }}">
-        <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy" class="hoverable">
+    <a href="{{ .Permalink }}" class="home-photo" style="background-image: url({{ .Thumbnail }});">
+        <!-- <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy" class="hoverable"> -->
     </a>
     {{ end }}
 </article>
