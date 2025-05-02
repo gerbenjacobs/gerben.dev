@@ -1,0 +1,11 @@
+{
+    "type": "note",
+    "markdown": "Spent this week looking at Yunohost, Caprover and Cloudron. These are PaaS solutions that you can #selfhost.\r\n\r\nI just got quite intrigued by the ability to easily install Mastodon, Peertube, Nextcloud etc. I have no use case for them. But that's besides the point.\r\nAnyway, long story short, I ended up with none. \r\n\r\nYunohost is hardcoded to use Debian, which Oracle Cloud doesn't offer as an image and is the host I'm trying to use for their free tier.\r\n\r\nCaprover uses mostly Docker (and Swarm) but requires a wildcard (sub)domain, which Cloudflare (my current DNS provider) doesn't support and it was causing a lot of SSL issues.\r\n\r\nCloudron I got up and running, I was stoked to use it, until I found out (way too late) that you can only have 2 apps or pay a subscription.\r\n\r\nSo my search continues..",
+    "publishedAt": "2025-05-03T00:17:21.9657468+02:00",
+    "slug": "a8dc5436256dfb27b6a7478849e1a18a",
+    "permalink": "/notes/a8dc5436256dfb27b6a7478849e1a18a",
+    "tags": [
+        "PaaS",
+        "Selfhost"
+    ]
+}
