@@ -34,6 +34,10 @@
                     @gerben@todon.nl
                     <b class="secondary-content" style="color: #595aff;">Mastodon</b>
                 </a>
+                <a class="collection-item" href="https://bsky.app/profile/gerben.dev" rel="me">
+                    @gerben.dev
+                    <b class="secondary-content" style="color: #0085FF;">BlueSky</b>
+                </a>
                 <a class="collection-item" href="https://pixelfed.social/@gerben" rel="me">
                     @gerben@pixelfed.social
                     <b class="secondary-content" style="color: #1E1937;">Pixelfed</b>
@@ -83,7 +87,7 @@
         <div class="col">
             <h2>Photos</h2>
             {{ range .Photos }}
-            <article class="home-photo" style="background-image: url({{ .Thumbnail }});">
+            <article class="home-photo" style="background-image: url({{ .Thumbnail }}); filter: drop-shadow(5px 5px 10px #666);">
                 <a href="{{ .Permalink }}">
                     {{ .Type.Emoji }}
                     {{ if .Title -}}

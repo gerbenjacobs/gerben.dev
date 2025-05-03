@@ -128,8 +128,8 @@
                     {{ else }}
                     <figure class="e-content">
                         <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
-                       {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-                       {{- if .Tags }}<p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>{{- end }}
+                        {{- if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+                        {{ if .Tags }}<p>{{ range .Tags }}<a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}</p>{{- end }}
                     </figure>
                     {{ end }}
                 {{ else }}
