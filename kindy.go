@@ -64,6 +64,12 @@ func init() {
 			&hashtag.Extender{
 				Resolver: &HashtagResolver{},
 				Variant:  hashtag.ObsidianVariant,
+				Attributes: []hashtag.Attribute{
+					{
+						Name:  "class",
+						Value: "p-category",
+					},
+				},
 			},
 		),
 		goldmark.WithParserOptions(

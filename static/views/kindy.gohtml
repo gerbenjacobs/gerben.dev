@@ -30,9 +30,6 @@
     .h-geo::before {
         content: "🗺️";
     }
-    .kindy .p-category::before {
-        content: "#";
-    }
     .kindy-header img {
         vertical-align: middle;
         width: 32px;
@@ -166,7 +163,7 @@
                 {{ if .Tags -}}
                 <footer>
                     {{ range .Tags -}}
-                        <a class="p-category" href="/tags/{{.}}">{{.}}</a>
+                        <a class="p-category" href="/tags/{{.}}">#{{.}}</a>
                     {{ end -}}
                 </footer>
                 {{- end }}

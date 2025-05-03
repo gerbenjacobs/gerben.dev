@@ -13,6 +13,8 @@ github.com/dustin/go-humanize v1.0.1 h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkp
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
 github.com/forPelevin/gomoji v1.1.3 h1:7c3dYzVmYhpOL3bS4riXqSWJBX3BhSvH68yoNNf3FH0=
 github.com/forPelevin/gomoji v1.1.3/go.mod h1:ypB7Kz3Fsp+LVR7KoT7mEFOioYBuTuAtaAT4RGl+ASY=
+github.com/forPelevin/gomoji v1.3.0 h1:WPIOLWB1bvRYlKZnSSEevLt3IfKlLs+tK+YA9fFYlkE=
+github.com/forPelevin/gomoji v1.3.0/go.mod h1:mM6GtmCgpoQP2usDArc6GjbXrti5+FffolyQfGgPboQ=
 github.com/frankban/quicktest v1.14.6 h1:7Xjx+VpznH+oBnejlPUj8oUpdxnVs4f8XU8WnHkI4W8=
 github.com/frankban/quicktest v1.14.6/go.mod h1:4ptaffx2x8+WTWXmUCuVU6aPUX1/Mz7zb5vbUoiM6w0=
 github.com/fsnotify/fsnotify v1.9.0 h1:2Ml+OJNzbYCTzsxtv8vKSFD9PbJjmhYF14k/jKC7S9k=
@@ -60,6 +62,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rivo/uniseg v0.2.0 h1:S1pD9weZBuJdFmowNwbpi7BJ8TNftyUImj/0WQi72jY=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
+github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=
+github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
 github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
 github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
 github.com/sagikazarmark/locafero v0.9.0 h1:GbgQGNtTrEmddYDSAH9QLRyfAHY12md+8YFTqyMTC9k=
@@ -83,10 +87,14 @@ github.com/subosito/gotenv v1.6.0/go.mod h1:Dk4QP5c2W3ibzajGcXpNraDfq2IrhjMIvMSW
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 github.com/yuin/goldmark v1.7.10 h1:S+LrtBjRmqMac2UdtB6yyCEJm+UILZ2fefI4p7o0QpI=
 github.com/yuin/goldmark v1.7.10/go.mod h1:ip/1k0VRfGynBgxOz0yCqHrbZXhcjxyuS66Brc7iBKg=
+github.com/yuin/goldmark v1.7.11 h1:ZCxLyDMtz0nT2HFfsYG8WZ47Trip2+JyLysKcMYE5bo=
+github.com/yuin/goldmark v1.7.11/go.mod h1:ip/1k0VRfGynBgxOz0yCqHrbZXhcjxyuS66Brc7iBKg=
 go.abhg.dev/goldmark/frontmatter v0.2.0 h1:P8kPG0YkL12+aYk2yU3xHv4tcXzeVnN+gU0tJ5JnxRw=
 go.abhg.dev/goldmark/frontmatter v0.2.0/go.mod h1:XqrEkZuM57djk7zrlRUB02x8I5J0px76YjkOzhB4YlU=
 go.abhg.dev/goldmark/hashtag v0.3.1 h1:k0FQwEtVQ1SstIRR2fqDJ4VNYUS0AXLp869V0qHOZMg=
 go.abhg.dev/goldmark/hashtag v0.3.1/go.mod h1:rXtvxXPL7auhPMGRdG02UrXn/9LMm6PNdP5HO64zbVU=
+go.abhg.dev/goldmark/hashtag v0.3.2-0.20250428121326-79c8c995ec6a h1:zpVIU9CcP/4ub6nvF8DllwK8TGVas6IgR7XbfCl3Tjk=
+go.abhg.dev/goldmark/hashtag v0.3.2-0.20250428121326-79c8c995ec6a/go.mod h1:5DQwSo2dEHKtsfXOC1+Po7WgVwR5IoGjgeVIerddz9g=
 go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
 go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
