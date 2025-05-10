@@ -1,0 +1,10 @@
+{
+    "type": "note",
+    "content": "\u003cp\u003eGot downtime alerts for one of my sites.. turns out I'm essentially getting DOS'd by Alibaba, Tencent and Huawei cloud.\u003c/p\u003e\r\n\u003cp\u003eI've currently blocked all their AS Numbers.\u003c/p\u003e\r\n\u003cfigure\u003e\u003cimg src=\"/kd/images/notes/2025/hwdos.png\" alt=\"Time graph of network traffic for past 24 hours, showing clear spikes of 55k requests (where baseline is 10k), where eventually the graph color changes, because those spikes are now blocked.\" class=\"u-photo\"\u003e\u003c/figure\u003e",
+    "publishedAt": "2025-05-11T00:36:05.2959091+02:00",
+    "slug": "9a511b0a39fbc9dc6ed1ed3a4c14ce50",
+    "permalink": "/notes/9a511b0a39fbc9dc6ed1ed3a4c14ce50",
+    "tags": [
+        "tech"
+    ]
+}
