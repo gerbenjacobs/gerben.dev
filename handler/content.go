@@ -126,7 +126,7 @@ func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
 	}
 	nextPage := page + 1
 	lastEntry := nextPage * PhotosPerPage
-	if nextPage*PhotosPerPage > totalEntries {
+	if nextPage*PhotosPerPage >= totalEntries {
 		nextPage = 0
 		lastEntry = totalEntries
 	}
