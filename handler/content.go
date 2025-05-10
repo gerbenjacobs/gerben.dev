@@ -13,7 +13,7 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
 
-const PhotosPerPage = 56
+const PhotosPerPage = 12
 
 func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 	pageFile := "static/views/index.gohtml"
