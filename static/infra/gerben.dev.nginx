@@ -7,29 +7,28 @@ server {
 
     client_max_body_size 10m;
 
-    # log access to drop file in /etc/nginx/ but don't log 404
+    # don't write access log for favicon.ico
     location = /favicon.ico {
         access_log drop;
         log_not_found off;
     }
 
-    # log access to denied file in /etc/nginx/ but don't log 404 and also deny all to dot files
+    # deny access to all hidden files
+    # except for .well-known prefix
     location ~ /\.(?!well-known).* {
         access_log denied;
         log_not_found off;
         deny all;
     }
 
+    # pass everything else to the Go server
+    # include Nginx's default proxy params
     location / {
         include proxy_params;
         proxy_pass http://127.0.0.1:8000;
     }
 
-
-    location ~ /\.ht {
-        deny all;
-    }
-
+    # redirect traffic to .well-known to fed.brid.gy
+    # this is used by ActivityPub to discover gerben.dev@gerben.dev
     rewrite ^/\.well-known/(host-meta|webfinger).* https://fed.brid.gy$request_uri? redirect;
-
 }
