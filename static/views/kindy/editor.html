@@ -79,9 +79,16 @@
 
         <form method="post" action="/kindy">
             <input type="hidden" name="type" value="note">
+            <details>
+                <summary><span data-tooltip="Is this note a reply to something?">In reply to?</span></summary>
+                <label>
+                    In reply to
+                    <input type="text" name="in-reply-to" placeholder="https://..." required>
+                </label>
+            </details>
             <label>
                 Content
-                <textarea id="content" name="content" placeholder="Write your note.." required></textarea>
+                <textarea id="content" name="content" placeholder="Write your note.." required rows="8"></textarea>
                 <details>
                     <summary><span data-tooltip="Emoji picker">😀</span></summary>
                     <emoji-picker></emoji-picker>

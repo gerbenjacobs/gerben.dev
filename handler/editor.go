@@ -61,7 +61,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			internal.CreateCaches()
-			http.Redirect(w, r, kindy.KindyURLNotes+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, entry.Permalink, http.StatusFound)
 			return
 		}
 
@@ -74,7 +74,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			internal.CreateCaches()
-			http.Redirect(w, r, kindy.KindyURLLikes+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, entry.Permalink, http.StatusFound)
 			return
 		}
 
@@ -87,7 +87,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			internal.CreateCaches()
-			http.Redirect(w, r, kindy.KindyURLReposts+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, entry.Permalink, http.StatusFound)
 			return
 		}
 
@@ -100,7 +100,7 @@ func kindyEditor(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			internal.CreateCaches()
-			http.Redirect(w, r, kindy.KindyURLPhotos+entry.Slug, http.StatusFound)
+			http.Redirect(w, r, entry.Permalink, http.StatusFound)
 			return
 		}
 
@@ -207,6 +207,13 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		entry.Markdown = data.Get("content")
 	} else {
 		entry.Content = template.HTML(data.Get("content"))
+	}
+
+	// is in reply to?
+	if data.Get("in-reply-to") != "" {
+		entry.Type = kindy.KindyTypeReplies
+		entry.ReplyTo = data.Get("in-reply-to")
+		entry.Permalink = kindy.KindyURLReplies + slug
 	}
 
 	b, err := json.MarshalIndent(entry, "", "    ")
