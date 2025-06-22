@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V2</title>
+    <style>
+        /* 1. Use a more-intuitive box-sizing model */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* 2. Remove default margin */
+        * {
+            margin: 0;
+        }
+
+        body {
+            /* 4. Add accessible line-height */
+            line-height: 1.5;
+            /* 5. Improve text rendering */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 6. Improve media defaults */
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* 7. Inherit fonts for form controls */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* 8. Avoid text overflows */
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+
+        /* 9. Improve line wrapping */
+        p {
+            text-wrap: pretty;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-wrap: balance;
+        }
+
+        header {
+            grid-area: header;
+            background-color: coral;
+        }
+
+        main {
+            grid-area: main;
+            background-color: lightblue;
+            padding: 1em;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: lightgreen;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: lightcoral;
+            padding: 1em;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: lightgray;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        @media (min-width: 1024px) {
+            .wrapper {
+                grid-template-columns: 1fr 4fr 1fr;
+                grid-template-areas:
+                    "header header header"
+                    "nav    main   aside"
+                    "footer footer footer";
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+
+        body {
+            font-family: "Atkinson Hyperlegible", Tahoma, sans-serif;
+        }
+
+        .group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            /* For smaller screens, make the group a single column */
+            .group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figure img {
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+    </style>
+    <link
+        href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700|Montserrat"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="/" class="brand-logo"><img src="/images/favicon.png" alt="Return home"
+                    style="float: left; height: 64px;"></a>
+            <h1>gerben.dev</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/photos/">Photos</a></li>
+                <li><a href="/timeline">Timeline</a></li>
+                <li><a href="/changelog">Changelog</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>A short trip to Sicily, Italy</h1>
+            <p>
+                "Looking back" <b>because</b> this happened in 2017. I was going through my <a href="/photos">photos</a>
+                and found <a href="https://gerben.dev/photos/a0b46fa3475277190600e0b73c5f78f6">only 1 picture</a> from
+                that trip.
+                To be fair, most of the photos aren't super great for &ndash; at the time &ndash; Instagram.
+                But for my blog, I think they are perfect.
+            </p>
+
+            <figure>
+                <a href="/kd/images/sicily/20170513_113951_HDR.jpg" target="_blank" class="u-photo">
+                    <img src="/kd/images/sicily/20170513_113951_HDR.jpg"
+                        alt="A very nice square in Palermo, buildings on every corner appear to bow towards it"
+                        class="responsive-img hoverable" />
+                </a>
+                <figcaption>A very nice square in Palermo, buildings on every corner appear to bow towards it
+                </figcaption>
+            </figure>
+
+            <p>
+                This entire trip was actually a company retreat for my previous job at <a
+                    href="https://www.bol.com">bol.com</a>.
+                <br>It was a couple of days, one day full of team-based games and eventually relaxing at the pool.
+                The other day you could sign up for a guided tour in the capital of <a href="/tags/Palermo">Palermo</a>.
+            </p>
+
+            <p>
+                We were flying with 5 different planes from 3 different airports, with the goal to reach Palermo Airport
+                around
+                the same time. But one of the planes had to divert to an airport on the east coast, because of volcanic
+                activity from Etna. They were shuttled over by bus and arrived later.
+                <br>The other thing that I'm remembering now based on the photos, is that in 2017 Europe was still
+                in heightened terrorist alert and a lot of security was a normal scene.
+            </p>
+            <div class="group">
+                <figure>
+                    <a href="/kd/images/sicily/20170511_102013.jpg" target="_blank" class="u-photo">
+                        <img src="/kd/images/sicily/20170511_102013_thumb.jpg"
+                            alt="Looking out over the tarmac at Rotterdam Airport" />
+                    </a>
+                    <figcaption>Looking out over the tarmac at Rotterdam Airport</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="/kd/images/sicily/20170511_150049.jpg" target="_blank" class="u-photo">
+                        <img src="/kd/images/sicily/20170511_150049_thumb.jpg"
+                            alt="Our accommodation was near some cliffs, with a pool and big slide" />
+                    </a>
+                    <figcaption>Our accommodation was near some cliffs, with a pool and big slide</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="/kd/images/sicily/20170512_142257.jpg" target="_blank" class="u-photo">
+                        <img src="/kd/images/sicily/20170512_142257_thumb.jpg"
+                            alt="If you come from a wet Netherlands, even palm trees look exotic"
+                            class="responsive-img hoverable" />
+                    </a>
+                    <figcaption>If you come from a wet Netherlands, even palm trees look exotic</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="/kd/images/sicily/20170513_083210.jpg" target="_blank" class="u-photo">
+                        <img src="/kd/images/sicily/20170513_083210_thumb.jpg" alt="Cacti, mountains, seas.. where am I"
+                            class="responsive-img hoverable" />
+                    </a>
+                    <figcaption>Cacti, mountains, seas.. where am I</figcaption>
+                </figure>
+            </div>
+            <p>
+                Time to load more layouts..
+            </p>
+            <div class="group">
+                <div>
+                    <h2>Posts</h2>
+
+                    <article>
+                        <h4>📝 <a href="/posts/project-millwheat">Project Millwheat</a></h4>
+                        🕰️
+                        <time datetime="2025-06-01T22:13:00&#43;02:00" title="2025-06-01T22:13:00&#43;02:00">
+                            <a href="/posts/project-millwheat">Jun 01, 2025</a>
+                        </time>
+                        🏷️
+                        <span><a href="/tags/Millwheat">#Millwheat</a>
+                            <a href="/tags/OpenSource">#OpenSource</a>
+                            <a href="/tags/Go">#Go</a>
+                            <a href="/tags/PBBG">#PBBG</a>
+                            <a href="/tags/Medieval">#Medieval</a>
+                        </span>
+                        <p>A post about Project Millwheat, an open-source PBBG written in Go.</p>
+                    </article>
+                    <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
+
+                    <article>
+                        <h4>📝 <a href="/posts/short-trip-sicily-italy">A short trip to Sicily, Italy</a></h4>
+                        🕰️
+                        <time datetime="2025-05-02T14:00:00&#43;02:00" title="2025-05-02T14:00:00&#43;02:00">
+                            <a href="/posts/short-trip-sicily-italy">May 02, 2025</a>
+                        </time>
+                        🏷️
+                        <span><a href="/tags/Sicily">#Sicily</a>
+                            <a href="/tags/Italy">#Italy</a>
+                            <a href="/tags/Palermo">#Palermo</a>
+                        </span>
+                        <p>Looking back at our company retreat in Sicily, Italy from 2017. Team games, mediterranean
+                            sun, and a lot of fun!</p>
+                    </article>
+                    <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
+
+                    <article>
+                        <h4>📝 <a href="/posts/day-at-meinerswijk-arnhem">A day at Meinerswijk, Arnhem</a></h4>
+                        🕰️
+                        <time datetime="2025-04-28T00:57:51&#43;02:00" title="2025-04-28T00:57:51&#43;02:00">
+                            <a href="/posts/day-at-meinerswijk-arnhem">Apr 28, 2025</a>
+                        </time>
+                        🏷️
+                        <span><a href="/tags/Meinerswijk">#Meinerswijk</a>
+                            <a href="/tags/Arnhem">#Arnhem</a>
+                            <a href="/tags/Hiking">#Hiking</a>
+                            <a href="/tags/History">#History</a>
+                        </span>
+                        <p>A nice sunny Sunday and a bit of a Google Maps session later, we found ourselves at
+                            Meinerswijk, a nature reserve in Arnhem.</p>
+                    </article>
+                    <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
+
+                    <a href="/posts/" class="btn">View all posts</a>
+                </div>
+                <div>
+                    <h2>Timeline</h2>
+                    <div style="max-height: 800px; overflow: auto; background-color: #c9c7c7;">
+
+
+                        <article class="kindy read-heavy">
+                            <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
+                            <h2 class="right" style="margin-left: 1em;"><a
+                                    href="/notes/4ae392687ee94945c88cbc8c00ea61b1">📜 note</a></h2>
+                            <p>
+                                <a href="/">
+                                    <img src="https://gerben.dev/images/avatar.jpg" alt="Gerben Jacobs"
+                                        class="timeline-author" loading="lazy">
+                                    <span title="Gerben Jacobs">@gerben.dev</span>
+                                </a>
+                                📜
+                                <time datetime="2025-06-07T22:39:57Z">
+                                    🕰️&nbsp;<a href="/notes/4ae392687ee94945c88cbc8c00ea61b1"
+                                        title="2025-06-07T22:39:57Z">22 hours ago</a>
+                                </time>
+
+
+                            </p>
+                            <div class="timeline-content">
+
+
+
+                                <div>
+                                    <p>Wow so many bands from the early 2000s are coming back.</p>
+                                    <p>I just saw The Starting Line, then a comment pointed me to the fact The
+                                        All-American Rejects released a song, Yellowcard released another song recently.
+                                    </p>
+                                    <p><span class="hashtag"><a class="p-category"
+                                                href="/tags/EmosNotDead">#EmosNotDead</a></span></p>
+                                </div>
+
+
+                            </div>
+                        </article>
+
+                        <article class="kindy read-heavy">
+                            <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
+                            <h2 class="right" style="margin-left: 1em;"><a
+                                    href="/notes/735cd63651b7ef80a01cd297b33233c2">📜 note</a></h2>
+                            <p>
+                                <a href="/">
+                                    <img src="https://gerben.dev/images/avatar.jpg" alt="Gerben Jacobs"
+                                        class="timeline-author" loading="lazy">
+                                    <span title="Gerben Jacobs">@gerben.dev</span>
+                                </a>
+                                📜
+                                <time datetime="2025-06-07T20:30:28&#43;02:00">
+                                    🕰️&nbsp;<a href="/notes/735cd63651b7ef80a01cd297b33233c2"
+                                        title="2025-06-07T20:30:28&#43;02:00">1 day ago</a>
+                                </time>
+
+                                🏷️&nbsp;<a href="/tags/Hiking">#Hiking</a>
+                            </p>
+                            <div class="timeline-content">
+
+
+
+                                <div>
+                                    <p>Took the break in the clouds as an opportunity to go out.
+                                    <p>
+                                    <figure><img src="/kd/images/2025-06-07/PXL_20250607_135028339.jpg" class="u-photo"
+                                            alt="Close up of a route marker, big cumulus clouds in the distance.">
+                                    </figure>
+                                    <figure><img src="/kd/images/2025-06-07/PXL_20250607_141814623.jpg" class="u-photo"
+                                            alt="Found a bit of sheep's wool tied to a tree branch stub."></figure>
+                                    <figure><img src="/kd/images/2025-06-07/PXL_20250607_133030455.jpg" class="u-photo"
+                                            alt="A strange grimacing face on top of a wooden pole, in a kids playground.">
+                                    </figure>
+                                </div>
+
+
+                            </div>
+                        </article>
+
+                        <article class="kindy read-heavy">
+                            <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
+                            <h2 class="right" style="margin-left: 1em;"><a
+                                    href="/reposts/51b7cf9721c7eebf1a7e04facf60fd48">🔁 repost</a></h2>
+                            <p>
+                                <a href="/">
+                                    <img src="https://gerben.dev/images/avatar.jpg" alt="Gerben Jacobs"
+                                        class="timeline-author" loading="lazy">
+                                    <span title="Gerben Jacobs">@gerben.dev</span>
+                                </a>
+                                🔁
+                                <time datetime="2025-06-05T12:10:08Z">
+                                    🕰️&nbsp;<a href="/reposts/51b7cf9721c7eebf1a7e04facf60fd48"
+                                        title="2025-06-05T12:10:08Z">3 days ago</a>
+                                </time>
+
+
+                            </p>
+                            <div class="timeline-content">
+
+                                <div class="opengraph" hx-trigger="revealed"
+                                    hx-post="/api/opengraph?url=https://vt.social/@lethalbit/114627966828148014"></div>
+
+                                <p class="truncate">
+                                    Reposted
+
+                                    <a target="_blank"
+                                        href="https://vt.social/@lethalbit/114627966828148014">https://vt.social/@lethalbit/114627966828148014</a>
+                                </p>
+
+
+                            </div>
+                        </article>
+
+                        <article class="kindy read-heavy">
+                            <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
+                            <h2 class="right" style="margin-left: 1em;"><a
+                                    href="/notes/45a5be3e9af4b3578de591338aafc1e8">📜 note</a></h2>
+                            <p>
+                                <a href="/">
+                                    <img src="https://gerben.dev/images/avatar.jpg" alt="Gerben Jacobs"
+                                        class="timeline-author" loading="lazy">
+                                    <span title="Gerben Jacobs">@gerben.dev</span>
+                                </a>
+                                📜
+                                <time datetime="2025-06-01T20:00:04Z">
+                                    🕰️&nbsp;<a href="/notes/45a5be3e9af4b3578de591338aafc1e8"
+                                        title="2025-06-01T20:00:04Z">1 week ago</a>
+                                </time>
+
+                                🏷️&nbsp;<a href="/tags/Silverstein">#Silverstein</a>🏷️&nbsp;<a
+                                    href="/tags/DawsonsCreek">#DawsonsCreek</a>🏷️&nbsp;<a
+                                    href="/tags/FromAutumnToAshes">#FromAutumnToAshes</a>🏷️&nbsp;<a
+                                    href="/tags/FightClub">#FightClub</a>
+                            </p>
+                            <div class="timeline-content">
+
+
+
+                                <div>
+                                    <p>In &quot;Silverstein - Bleed No More&quot; the lyrics are sampling &quot;You're
+                                        the worst thing that ever happened to me&quot; and I 100% thought this came from
+                                        Dawson's Creek, but apparently it's from Fight Club. I might have mixed it up
+                                        with &quot;Too Bad You're Beautiful&quot; by From Autumn To Ashes.</p>
+                                    <p>Anyway, all of this media was very formative for me 😋</p>
+                                </div>
+
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside>
+            <h2>Socials</h2>
+            <ul>
+                <li>
+                    <a class="collection-item" href="https://linkedin.com/in/gerbenjacobs" rel="me">
+                        gerbenjacobs
+                        <b class="secondary-content" style="color: #2867B2;">LinkedIn</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item" href="https://patreon.com/gerbendev" rel="me">
+                        gerbendev
+                        <b class="secondary-content" style="color: #FE424D;">Patreon</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item" href="https://github.com/gerbenjacobs" rel="me">
+                        gerbenjacobs
+                        <b class="secondary-content" style="color: #24292F;">GitHub</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item" href="https://todon.nl/@gerben" rel="me">
+                        @gerben@todon.nl
+                        <b class="secondary-content" style="color: #595aff;">Mastodon</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item" href="https://bsky.app/profile/gerben.dev" rel="me">
+                        @gerben.dev
+                        <b class="secondary-content" style="color: #0085FF;">BlueSky</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item" href="https://pixelfed.social/@gerben" rel="me">
+                        @gerben@pixelfed.social
+                        <b class="secondary-content" style="color: #1E1937;">Pixelfed</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item hide" href="https://web.brid.gy/gerben.dev" rel="me">
+                        https://web.brid.gy/gerben.dev
+                    </a>
+                </li>
+                <li>
+                    <a class="collection-item hide" href="https://web.brid.gy/r/https://gerben.dev" rel="me">
+                        https://web.brid.gy/r/https://gerben.dev
+                    </a>
+                </li>
+            </ul>
+
+            <h2>Currently listening</h2>
+            <ul>
+                <li>True North - Center Frame</li>
+                <li>True North - The Last Time</li>
+                <li>True North - The Way</li>
+                <li>True North - Solid Ground</li>
+                <li>Summoning the Lich - The Nightmare Begins</li>
+                <li>Incendiary - Awakening</li>
+            </ul>
+        </aside>
+        <footer>The footer</footer>
+    </div>
+</body>
+
+</html>

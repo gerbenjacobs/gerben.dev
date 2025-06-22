@@ -95,6 +95,8 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /tags/{$}", redirect("/timeline"))
 
+	r.HandleFunc("GET /v2", singlePage("static/views/v2.html"))
+
 	// API stuff?
 	r.HandleFunc("POST /api/opengraph", h.apiOpenGraph)
 
