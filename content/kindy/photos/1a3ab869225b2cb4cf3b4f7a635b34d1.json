@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/p1020300_7683833464_o.jpg",
     "slug": "1a3ab869225b2cb4cf3b4f7a635b34d1",
     "permalink": "/photos/1a3ab869225b2cb4cf3b4f7a635b34d1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 36.721454,
         "longitude": -4.415881
-    }
+    },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Harbour"
+    ]
 }

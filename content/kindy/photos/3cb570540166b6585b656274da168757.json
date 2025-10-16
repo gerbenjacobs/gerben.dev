@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/p1020199_7683949366_o.jpg",
     "slug": "3cb570540166b6585b656274da168757",
     "permalink": "/photos/3cb570540166b6585b656274da168757",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 36.721273,
         "longitude": -4.412673
-    }
+    },
+    "tags": [
+        "Spain",
+        "Malaga"
+    ]
 }

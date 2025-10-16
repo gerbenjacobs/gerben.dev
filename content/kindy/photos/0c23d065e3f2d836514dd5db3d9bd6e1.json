@@ -13,5 +13,8 @@
     "geo": {
         "latitude": 52.0333,
         "longitude": 5.66667
-    }
+    },
+    "tags": [
+        "Cows"
+    ]
 }

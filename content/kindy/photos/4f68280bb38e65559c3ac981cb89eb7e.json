@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/terugkomend-op-schiphol-amsterdam_5708142660_o.jpg",
     "slug": "4f68280bb38e65559c3ac981cb89eb7e",
     "permalink": "/photos/4f68280bb38e65559c3ac981cb89eb7e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -21,7 +16,9 @@
         "longitude": 4.758911
     },
     "tags": [
-        "schiphol",
-        "amsterdam"
+        "Schiphol",
+        "Amsterdam",
+        "Netherlands",
+        "Airplane"
     ]
 }

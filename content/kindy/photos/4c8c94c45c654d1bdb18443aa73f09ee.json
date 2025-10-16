@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/skei-ski-center-in-the-summer_9393808874_o.jpg",
     "slug": "4c8c94c45c654d1bdb18443aa73f09ee",
     "permalink": "/photos/4c8c94c45c654d1bdb18443aa73f09ee",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393808874/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Skei"
     ]
 }

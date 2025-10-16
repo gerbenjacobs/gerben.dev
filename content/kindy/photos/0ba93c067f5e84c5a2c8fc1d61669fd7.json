@@ -1,6 +1,6 @@
 {
     "type": "photo",
-    "title": "Mälmo, Sweden",
+    "title": "Malmö, Sweden",
     "publishedAt": "2013-07-27T14:11:21Z",
     "content": "/kd/photos/flickr/mlmo-sweden_9391479141_o.jpg",
     "slug": "0ba93c067f5e84c5a2c8fc1d61669fd7",
@@ -15,5 +15,9 @@
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9391479141/"
         }
+    ],
+    "tags": [
+      "Sweden",
+      "Malmö"
     ]
 }

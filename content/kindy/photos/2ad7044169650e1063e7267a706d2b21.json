@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/insert-witty-comment-here_5157849792_o.jpg",
     "slug": "2ad7044169650e1063e7267a706d2b21",
     "permalink": "/photos/2ad7044169650e1063e7267a706d2b21",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 51.986677,
         "longitude": 4.101676
-    }
+    },
+    "tags": [
+        "Netherlands",
+        "Hoek van Holland",
+        "Industry"
+    ]
 }

@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/p1030595_9393661560_o.jpg",
     "slug": "2dd61d870463aaed5fd2f611ee31ecd4",
     "permalink": "/photos/2dd61d870463aaed5fd2f611ee31ecd4",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393661560/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Camping"
     ]
 }

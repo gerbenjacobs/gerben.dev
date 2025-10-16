@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/in-the-palmy-shade_7683759890_o.jpg",
     "slug": "1bf8f4530189a74e36d450d09cd5866c",
     "permalink": "/photos/1bf8f4530189a74e36d450d09cd5866c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 36.71466,
         "longitude": -4.412448
-    }
+    },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Palms"
+    ]
 }

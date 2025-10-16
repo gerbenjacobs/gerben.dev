@@ -43,7 +43,7 @@
     <div class="row padding">
         <h2>All tags</h2>
         {{ range $t, $d := .AllTags }}
-        <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }} ({{$d.Count}}){{ end }}</a>
+        <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }}&nbsp;({{$d.Count}}){{ end }}</a>
         {{- end }}
     </div>
 </div>

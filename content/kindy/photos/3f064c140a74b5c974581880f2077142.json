@@ -6,15 +6,15 @@
     "content": "/kd/photos/flickr/oslo-harbour_9391122683_o.jpg",
     "slug": "3f064c140a74b5c974581880f2077142",
     "permalink": "/photos/3f064c140a74b5c974581880f2077142",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9391122683/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Oslo",
+        "Harbour"
     ]
 }

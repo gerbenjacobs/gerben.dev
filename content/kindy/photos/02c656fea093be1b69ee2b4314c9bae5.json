@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/city-council-in-oslo_9393919446_o.jpg",
     "slug": "02c656fea093be1b69ee2b4314c9bae5",
     "permalink": "/photos/02c656fea093be1b69ee2b4314c9bae5",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393919446/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Oslo"
     ]
 }

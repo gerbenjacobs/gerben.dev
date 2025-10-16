@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/larmachalm_5487008592_o.jpg",
     "slug": "1ee904533374254fa6eab2f7eaee3792",
     "permalink": "/photos/1ee904533374254fa6eab2f7eaee3792",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 47.25164,
         "longitude": 12.100684
-    }
+    },
+    "tags": [
+        "Austria",
+        "Larmachalm"
+    ]
 }

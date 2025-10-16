@@ -12,5 +12,9 @@
     "geo": {
         "latitude": 52.0307016559,
         "longitude": 5.78609972145
-    }
+    },
+    "tags": [
+        "Deer",
+        "Roe"
+    ]
 }

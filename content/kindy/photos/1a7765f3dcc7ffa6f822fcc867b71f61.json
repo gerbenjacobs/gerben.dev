@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/top-of-tvindefossen-waterfalls_9393248578_o.jpg",
     "slug": "1a7765f3dcc7ffa6f822fcc867b71f61",
     "permalink": "/photos/1a7765f3dcc7ffa6f822fcc867b71f61",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393248578/"
         }
+    ],
+    "tags": [
+      "Norway",
+      "Waterfalls",
+      "Tvindefossen"
     ]
 }

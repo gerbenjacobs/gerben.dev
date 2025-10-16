@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/drinking-spot-for-the-tiniest-of-creatures_21214756492_o.jpg",
     "slug": "4aafafae3559e8775cf4cd419bd6c8b6",
     "permalink": "/photos/4aafafae3559e8775cf4cd419bd6c8b6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 51.763377,
         "longitude": 5.607951
-    }
+    },
+    "tags": [
+        "Netherlands",
+        "Nature",
+        "Forest"
+    ]
 }

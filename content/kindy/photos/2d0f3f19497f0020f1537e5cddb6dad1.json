@@ -6,15 +6,15 @@
     "content": "/kd/photos/flickr/bunkers-at-lkken_9389682718_o.jpg",
     "slug": "2d0f3f19497f0020f1537e5cddb6dad1",
     "permalink": "/photos/2d0f3f19497f0020f1537e5cddb6dad1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9389682718/"
         }
+    ],
+    "tags": [
+        "Denmark",
+        "Bunker",
+        "Løkken"
     ]
 }

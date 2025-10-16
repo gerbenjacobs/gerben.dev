@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/plaza-del-toros-de-mlaga_7683724440_o.jpg",
     "slug": "4cb08fcf36c2008cfcfb9b73cba5aff8",
     "permalink": "/photos/4cb08fcf36c2008cfcfb9b73cba5aff8",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 36.720448,
         "longitude": -4.410828
-    }
+    },
+    "tags": [
+        "Spain",
+        "Malaga"
+    ]
 }

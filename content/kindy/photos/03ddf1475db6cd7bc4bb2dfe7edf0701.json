@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/glacier-at-nigardsbreen_9390776327_o.jpg",
     "slug": "03ddf1475db6cd7bc4bb2dfe7edf0701",
     "permalink": "/photos/03ddf1475db6cd7bc4bb2dfe7edf0701",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9390776327/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Glacier",
+        "Nigardsbreen"
     ]
 }

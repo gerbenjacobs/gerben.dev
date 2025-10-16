@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/sandnes-camping-in-mandal-is-full-just-after-we-arrived_9392806123_o.jpg",
     "slug": "3c0009651d8f772dde57364a1ffabab6",
     "permalink": "/photos/3c0009651d8f772dde57364a1ffabab6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9392806123/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Camping"
     ]
 }

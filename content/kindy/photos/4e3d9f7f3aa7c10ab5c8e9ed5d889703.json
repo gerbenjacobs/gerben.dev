@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/riksvei-55-mountain-pass_9393531468_o.jpg",
     "slug": "4e3d9f7f3aa7c10ab5c8e9ed5d889703",
     "permalink": "/photos/4e3d9f7f3aa7c10ab5c8e9ed5d889703",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393531468/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Riksvei 55"
     ]
 }

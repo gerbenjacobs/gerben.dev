@@ -19,5 +19,8 @@
     "geo": {
         "latitude": 53.046111,
         "longitude": 5.780555
-    }
+    },
+    "tags": [
+        "Terherne"
+    ]
 }

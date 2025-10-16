@@ -6,15 +6,14 @@
     "content": "/kd/photos/flickr/kreuzjoch-express_8321495632_o.jpg",
     "slug": "3bb9c10427d87320f897044397400786",
     "permalink": "/photos/3bb9c10427d87320f897044397400786",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/8321495632/"
         }
+    ],
+    "tags": [
+        "Austria",
+        "Kreuzjoch"
     ]
 }

@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/lake-near-the-camping_9393242214_o.jpg",
     "slug": "1df4b48510e029941564b72a4c89127b",
     "permalink": "/photos/1df4b48510e029941564b72a4c89127b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393242214/"
         }
+    ],
+    "tags": [
+      "Norway",
+      "Lake"
     ]
 }

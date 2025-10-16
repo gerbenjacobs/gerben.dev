@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/scottish-highlander-at-herperduin-netherlands_21037199030_o.jpg",
     "slug": "3f3de977ae55cafb9d55034d9fbf722e",
     "permalink": "/photos/3f3de977ae55cafb9d55034d9fbf722e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,11 @@
     "geo": {
         "latitude": 51.760562,
         "longitude": 5.592749
-    }
+    },
+    "tags": [
+        "Netherlands",
+        "Nature",
+        "Herperduin",
+        "ScottishHighlander"
+    ]
 }

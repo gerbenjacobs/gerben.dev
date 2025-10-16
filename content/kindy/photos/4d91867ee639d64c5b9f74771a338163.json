@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/snowy-day-at-the-barn_8321466784_o.jpg",
     "slug": "4d91867ee639d64c5b9f74771a338163",
     "permalink": "/photos/4d91867ee639d64c5b9f74771a338163",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/8321466784/"
         }
+    ],
+    "tags": [
+        "Austria",
+        "Snow"
     ]
 }

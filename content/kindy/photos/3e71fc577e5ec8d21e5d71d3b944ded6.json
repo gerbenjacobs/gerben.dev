@@ -5,15 +5,16 @@
     "content": "/kd/photos/flickr/vigeland-sculpture-park_9393906928_o.jpg",
     "slug": "3e71fc577e5ec8d21e5d71d3b944ded6",
     "permalink": "/photos/3e71fc577e5ec8d21e5d71d3b944ded6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393906928/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Oslo",
+        "Vigeland",
+        "Monument"
     ]
 }

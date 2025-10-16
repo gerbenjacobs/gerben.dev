@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/old-building_9386921225_o.jpg",
     "slug": "3a5d8753d1a915312f943ab3c24d9efa",
     "permalink": "/photos/3a5d8753d1a915312f943ab3c24d9efa",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9386921225/"
         }
+    ],
+    "tags": [
+        "Denmark",
+        "Architecture"
     ]
 }

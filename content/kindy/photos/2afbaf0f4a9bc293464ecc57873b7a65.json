@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/sailboat-on-lysefjord_9392741120_o.jpg",
     "slug": "2afbaf0f4a9bc293464ecc57873b7a65",
     "permalink": "/photos/2afbaf0f4a9bc293464ecc57873b7a65",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9392741120/"
         }
+    ],
+    "tags": [
+      "Norway",
+      "Lysefjord",
+      "Sailboat"
     ]
 }

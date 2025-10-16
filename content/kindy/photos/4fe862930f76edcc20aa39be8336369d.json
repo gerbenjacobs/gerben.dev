@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/stavkirke-in-lom_9390885315_o.jpg",
     "slug": "4fe862930f76edcc20aa39be8336369d",
     "permalink": "/photos/4fe862930f76edcc20aa39be8336369d",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9390885315/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Lom",
+        "Stavkirke"
     ]
 }

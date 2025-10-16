@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/street-in-bergen_9392899244_o.jpg",
     "slug": "3d1e71645e31d3b145baf0ed2eb11c31",
     "permalink": "/photos/3d1e71645e31d3b145baf0ed2eb11c31",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9392899244/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Bergen"
     ]
 }

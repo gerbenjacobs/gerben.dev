@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/fishing-in-stord_9392901978_o.jpg",
     "slug": "2ee1a71132cb548ba6d403a72e271407",
     "permalink": "/photos/2ee1a71132cb548ba6d403a72e271407",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9392901978/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Fishing",
+        "Stord"
     ]
 }

@@ -1,6 +1,6 @@
 {
     "type": "photo",
-    "title": "Cows on Peer Gyntveggen",
+    "title": "Cows on Peer Gyntvegen",
     "publishedAt": "2013-07-25T11:13:05Z",
     "content": "/kd/photos/flickr/cows-on-peer-gyntveggen_9393811768_o.jpg",
     "slug": "e7a58dec4736b5cc54ff432a16557032",
@@ -15,5 +15,11 @@
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393811768/"
         }
+    ],
+    "tags": [
+      "cows",
+      "Norway",
+      "Peer Gyntvegen",
+      "🐄"
     ]
 }

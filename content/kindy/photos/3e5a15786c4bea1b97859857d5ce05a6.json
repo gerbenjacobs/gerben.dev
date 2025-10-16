@@ -5,15 +5,13 @@
     "content": "/kd/photos/flickr/setting-sun-on-field_9223734293_o.jpg",
     "slug": "3e5a15786c4bea1b97859857d5ce05a6",
     "permalink": "/photos/3e5a15786c4bea1b97859857d5ce05a6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9223734293/"
         }
+    ],
+    "tags": [
+        "Nature"
     ]
 }

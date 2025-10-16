@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/gibralfaro-castle-entrance-at-least-back-in-the-old-days_7683798996_o.jpg",
     "slug": "2fecb6b47c401f22cc58626d0b76715f",
     "permalink": "/photos/2fecb6b47c401f22cc58626d0b76715f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,11 @@
     "geo": {
         "latitude": 36.723415,
         "longitude": -4.411171
-    }
+    },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Gibralfaro",
+        "Castle"
+    ]
 }

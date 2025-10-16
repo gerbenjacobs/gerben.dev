@@ -1,19 +1,20 @@
 {
     "type": "photo",
     "title": "Bryggen in Bergen",
+    "summary": "Bryggen (the dock), also known as Tyskebryggen (Norwegian: the German dock), is a series of Hanseatic heritage commercial buildings lining up the eastern side of the Vågen harbour in the city of Bergen, Norway.",
     "publishedAt": "2013-07-21T11:08:49Z",
     "content": "/kd/photos/flickr/bryggen-in-bergen_9392896228_o.jpg",
     "slug": "3d5797e4f32200242e44ea804d2ed952",
     "permalink": "/photos/3d5797e4f32200242e44ea804d2ed952",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9392896228/"
         }
+    ],
+    "tags": [
+        "Norway",
+        "Bergen",
+        "Bryggen"
     ]
 }

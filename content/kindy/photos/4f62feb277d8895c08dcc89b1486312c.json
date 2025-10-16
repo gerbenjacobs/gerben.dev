@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/a-lot-of-snow-on-a-wire_8321465848_o.jpg",
     "slug": "4f62feb277d8895c08dcc89b1486312c",
     "permalink": "/photos/4f62feb277d8895c08dcc89b1486312c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/8321465848/"
         }
+    ],
+    "tags": [
+        "Snow",
+        "Austria"
     ]
 }

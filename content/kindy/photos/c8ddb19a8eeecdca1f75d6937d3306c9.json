@@ -1,19 +1,18 @@
 {
     "type": "photo",
-    "title": "Mälmo, Sweden",
+    "title": "Malmö, Sweden",
     "publishedAt": "2013-07-27T14:15:58Z",
     "content": "/kd/photos/flickr/mlmo-sweden_9394249374_o.jpg",
     "slug": "c8ddb19a8eeecdca1f75d6937d3306c9",
     "permalink": "/photos/c8ddb19a8eeecdca1f75d6937d3306c9",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9394249374/"
         }
+    ],
+    "tags": [
+        "Sweden",
+        "Malmö"
     ]
 }

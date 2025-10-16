@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/bronze-age-farm-replica_9394294034_o.jpg",
     "slug": "3e495b923502f8af314ea6cfee0c26c7",
     "permalink": "/photos/3e495b923502f8af314ea6cfee0c26c7",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9394294034/"
         }
+    ],
+    "tags": [
+        "Sweden",
+        "History"
     ]
 }

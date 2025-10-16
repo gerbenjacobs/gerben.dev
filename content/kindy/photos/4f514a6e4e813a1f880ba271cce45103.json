@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/evening_7317190260_o.jpg",
     "slug": "4f514a6e4e813a1f880ba271cce45103",
     "permalink": "/photos/4f514a6e4e813a1f880ba271cce45103",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 53.037148,
         "longitude": 5.774087
-    }
+    },
+    "tags": [
+        "Netherlands",
+        "Friesland",
+        "Sunset"
+    ]
 }

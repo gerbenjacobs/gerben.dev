@@ -1,6 +1,6 @@
 {
     "type": "photo",
-    "title": "Peer Gyntveggen",
+    "title": "Peer Gyntvegen",
     "publishedAt": "2013-07-25T10:58:15Z",
     "content": "/kd/photos/flickr/peer-gyntveggen_9393815718_o.jpg",
     "slug": "fffb70956bcb42be5601c1eca851662a",
@@ -15,5 +15,9 @@
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/9393815718/"
         }
+    ],
+    "tags": [
+      "Norway",
+      "Peer Gyntvegen"
     ]
 }
