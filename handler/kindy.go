@@ -73,6 +73,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	type pageData struct {
 		Metadata internal.Metadata
 		local.Kindy
+		RawKindy string
 	}
 
 	metadata := internal.Metadata{
@@ -89,8 +90,33 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	data := pageData{
 		Metadata: metadata,
 		Kindy:    kind,
+		RawKindy: string(b),
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func KindyUpdate(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		http.Error(w, "failed to parse form: "+err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	p := r.Form.Get("permalink")
+	rawKindy := r.Form.Get("raw")
+
+	err = os.WriteFile("content/kindy"+p+".json", []byte(rawKindy), 0644)
+	if err != nil {
+		http.Error(w, "failed to write file: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	http.Redirect(w, r, p, http.StatusSeeOther)
 }

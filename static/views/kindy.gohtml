@@ -171,6 +171,18 @@
                 </footer>
                 {{- end }}
                 <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
+                {{ if eq .Metadata.Env "dev" }}
+                <details open>
+                    <summary>Debug: Raw Source</summary>
+                    <form action="/kindy/update" method="post">
+                        <input type="hidden" name="permalink" value="{{ .Permalink }}">
+                        <label>
+                            <textarea name="raw" style="height: 400px; background: #fff; font-size: 1.5em;">{{ .RawKindy }}</textarea>
+                        </label>
+                        <button type="submit">Update Kindy</button>
+                    </form>
+                </details>
+                {{ end }}
             </article>
         </div>
     </div>
