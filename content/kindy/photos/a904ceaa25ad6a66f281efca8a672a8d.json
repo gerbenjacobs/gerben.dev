@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/lift-station-at-the-top-of-kaiserburg_24016014714_o.jpg",
     "slug": "a904ceaa25ad6a66f281efca8a672a8d",
     "permalink": "/photos/a904ceaa25ad6a66f281efca8a672a8d",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 46.782892,
         "longitude": 13.827205
-    }
+    },
+    "tags": [
+        "Bad Kleinkirchheim",
+        "Kaiserburg",
+        "Austria"
+    ]
 }

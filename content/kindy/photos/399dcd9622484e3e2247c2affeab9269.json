@@ -4,13 +4,13 @@
     "content": "/kd/photos/media/posts/201605/13129829_1564571320508956_1516600644_n_17847404581098212.jpg",
     "slug": "399dcd9622484e3e2247c2affeab9269",
     "permalink": "/photos/399dcd9622484e3e2247c2affeab9269",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
+    "summary": "A little creek with some broken branches",
     "geo": {
         "latitude": 52.28545,
         "longitude": 5.7385302
-    }
+    },
+    "tags": [
+        "Creek",
+        "Nature"
+    ]
 }

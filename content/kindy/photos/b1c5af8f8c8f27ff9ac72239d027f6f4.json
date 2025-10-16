@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/restaurant-piknik-in-novi-sad-serbia_21038658299_o.jpg",
     "slug": "b1c5af8f8c8f27ff9ac72239d027f6f4",
     "permalink": "/photos/b1c5af8f8c8f27ff9ac72239d027f6f4",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/21038658299/"
         }
+    ],
+    "tags": [
+        "Novi Sad",
+        "Serbia"
     ]
 }

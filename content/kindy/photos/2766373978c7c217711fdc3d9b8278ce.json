@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/nationaal-park-veluwezoom_23171322069_o.jpg",
     "slug": "2766373978c7c217711fdc3d9b8278ce",
     "permalink": "/photos/2766373978c7c217711fdc3d9b8278ce",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 52.0293,
         "longitude": 6.016956
-    }
+    },
+    "tags": [
+        "Veluwezoom",
+        "Netherlands"
+    ]
 }

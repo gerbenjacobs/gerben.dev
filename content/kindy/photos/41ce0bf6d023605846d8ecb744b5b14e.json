@@ -1,19 +1,17 @@
 {
-    "type": "photo",
-    "title": "2016-07-03 15.32.53",
-    "publishedAt": "2016-07-03T15:32:53Z",
-    "content": "/kd/photos/flickr/2016-07-03-153253_28113473895_o.jpg",
-    "slug": "41ce0bf6d023605846d8ecb744b5b14e",
-    "permalink": "/photos/41ce0bf6d023605846d8ecb744b5b14e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/28113473895/"
-        }
-    ]
+  "type": "photo",
+  "title": "2016-07-03 15.32.53",
+  "publishedAt": "2016-07-03T15:32:53Z",
+  "content": "/kd/photos/flickr/2016-07-03-153253_28113473895_o.jpg",
+  "slug": "41ce0bf6d023605846d8ecb744b5b14e",
+  "permalink": "/photos/41ce0bf6d023605846d8ecb744b5b14e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/28113473895/"
+    }
+  ],
+  "tags": [
+    "Flower"
+  ]
 }

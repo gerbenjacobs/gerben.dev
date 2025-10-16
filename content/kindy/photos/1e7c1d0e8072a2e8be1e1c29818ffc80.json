@@ -1,6 +1,6 @@
 {
     "type": "photo",
-    "title": "Malmö, Sweden",
+    "title": "Flowers in Malmö, Sweden",
     "publishedAt": "2013-07-27T14:41:28Z",
     "content": "/kd/photos/flickr/mlmo-sweden_9394242288_o.jpg",
     "slug": "1e7c1d0e8072a2e8be1e1c29818ffc80",
@@ -13,6 +13,7 @@
     ],
     "tags": [
       "Sweden",
-      "Malmö"
+      "Malmö",
+      "Flowers"
     ]
 }

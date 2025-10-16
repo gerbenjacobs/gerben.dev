@@ -4,13 +4,13 @@
     "content": "/kd/photos/media/posts/202012/132856496_724120235176131_9159335594028037683_n_18059446198270762.jpg",
     "slug": "e3ca6f0ede29251d33558cc2a677bd38",
     "permalink": "/photos/e3ca6f0ede29251d33558cc2a677bd38",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
+    "summary": "Sunset over Renkumse Beekdal",
     "geo": {
         "latitude": 51.98711,
         "longitude": 5.73016
-    }
+    },
+    "tags": [
+        "Sunset",
+        "Renkum"
+    ]
 }

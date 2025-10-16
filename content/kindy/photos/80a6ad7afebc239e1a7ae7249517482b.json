@@ -5,15 +5,15 @@
     "content": "/kd/photos/flickr/mtbmx-track-at-kwintelooijen_28035975121_o.jpg",
     "slug": "80a6ad7afebc239e1a7ae7249517482b",
     "permalink": "/photos/80a6ad7afebc239e1a7ae7249517482b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/28035975121/"
         }
+    ],
+    "tags": [
+        "Veenendaal",
+        "Kwintelooijen",
+        "MTB"
     ]
 }

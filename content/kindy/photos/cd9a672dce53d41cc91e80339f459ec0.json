@@ -1,5 +1,6 @@
 {
     "type": "photo",
+    "summary": "Cows in a field, across the Rhine, as seen from a hill in Renkum",
     "publishedAt": "2016-05-21T14:22:59+02:00",
     "content": "/kd/photos/media/posts/201605/13277591_553340201503425_474396362_n_17847614635087188.jpg",
     "slug": "cd9a672dce53d41cc91e80339f459ec0",
@@ -12,5 +13,11 @@
     "geo": {
         "latitude": 51.951775,
         "longitude": 5.60089444444
-    }
+    },
+    "tags": [
+        "Renkum",
+        "Netherlands",
+        "Cows",
+        "River"
+    ]
 }

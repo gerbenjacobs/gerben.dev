@@ -1,16 +1,15 @@
 {
     "type": "photo",
+    "summary": "Parachutes landing on the Ginkelse Heide, as part of the Airborne memorial day",
     "publishedAt": "2022-09-17T15:50:49+02:00",
     "content": "/kd/photos/media/posts/202209/307335758_1087055425506207_5626686475219132492_n_18017510758432946.webp",
     "slug": "31994900ef8fb642427e20448c142b54",
     "permalink": "/photos/31994900ef8fb642427e20448c142b54",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "geo": {
         "latitude": 52.0306,
         "longitude": 5.7256
-    }
+    },
+    "tags": [
+        "Airborne"
+    ]
 }

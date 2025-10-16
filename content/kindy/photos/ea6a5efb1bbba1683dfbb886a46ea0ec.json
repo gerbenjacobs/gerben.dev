@@ -5,13 +5,12 @@
     "content": "/kd/photos/media/posts/201601/12479484_1700167303553398_112785443_n_17844124504110531.jpg",
     "slug": "ea6a5efb1bbba1683dfbb886a46ea0ec",
     "permalink": "/photos/ea6a5efb1bbba1683dfbb886a46ea0ec",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "geo": {
         "latitude": 46.78329847,
         "longitude": 13.8262614
-    }
+    },
+    "tags": [
+        "Bad Kleinkirchheim",
+        "Austria"
+    ]
 }

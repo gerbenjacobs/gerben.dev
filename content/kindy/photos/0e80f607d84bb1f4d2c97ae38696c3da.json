@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/harbour-in-terherne-netherlands_21038724479_o.jpg",
     "slug": "0e80f607d84bb1f4d2c97ae38696c3da",
     "permalink": "/photos/0e80f607d84bb1f4d2c97ae38696c3da",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -21,6 +16,7 @@
         "longitude": 5.780555
     },
     "tags": [
-        "Terherne"
+        "Terherne",
+        "Harbour"
     ]
 }

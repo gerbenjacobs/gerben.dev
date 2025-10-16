@@ -4,13 +4,16 @@
     "content": "/kd/photos/media/posts/201605/13108882_1062642740474877_2000297309_n_17847842497079376.jpg",
     "slug": "f59250abfcf8b113f9eec5c0071ff69b",
     "permalink": "/photos/f59250abfcf8b113f9eec5c0071ff69b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "geo": {
         "latitude": 51.82929584,
         "longitude": 5.92671781
-    }
+    },
+    "summary": "Went for a little hike..",
+    "tags": [
+        "Hiking",
+        "Art",
+        "Bumblebee",
+        "Glider",
+        "Gnome"
+    ]
 }

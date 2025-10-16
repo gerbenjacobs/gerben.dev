@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/a-pine-tree-to-be_21214991042_o.jpg",
     "slug": "5c71aae0f8f8910b5022da4f40acb1fa",
     "permalink": "/photos/5c71aae0f8f8910b5022da4f40acb1fa",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,8 @@
     "geo": {
         "latitude": 51.755169,
         "longitude": 5.587513
-    }
+    },
+    "tags": [
+        "Pines"
+    ]
 }

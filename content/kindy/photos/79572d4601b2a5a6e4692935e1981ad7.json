@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/missing-man-formation-at-wings-of-freedom-2015_21038909349_o.jpg",
     "slug": "79572d4601b2a5a6e4692935e1981ad7",
     "permalink": "/photos/79572d4601b2a5a6e4692935e1981ad7",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 52.045509,
         "longitude": 5.591869
-    }
+    },
+    "tags": [
+        "Airplane",
+        "WingsOfFreedom"
+    ]
 }

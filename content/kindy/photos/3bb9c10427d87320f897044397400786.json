@@ -12,8 +12,14 @@
             "url": "https://www.flickr.com/photos/theonewithout/8321495632/"
         }
     ],
+    "geo": {
+        "latitude": 47.251621,
+        "longitude": 11.970077
+    },
     "tags": [
         "Austria",
+        "Gerlos",
+        "Skiing",
         "Kreuzjoch"
     ]
 }

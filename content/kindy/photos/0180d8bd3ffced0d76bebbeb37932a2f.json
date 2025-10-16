@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/snowy-mountaintops-seen-from-afritzer-see_24016016624_o.jpg",
     "slug": "0180d8bd3ffced0d76bebbeb37932a2f",
     "permalink": "/photos/0180d8bd3ffced0d76bebbeb37932a2f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 46.740713,
         "longitude": 13.77193
-    }
+    },
+    "tags": [
+        "Bad Kleinkirchheim",
+        "Afritzer See",
+        "Austria"
+    ]
 }

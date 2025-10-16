@@ -5,15 +5,14 @@
     "content": "/kd/photos/flickr/ground-lackey-malacosoma-castrense-wandering_28113506755_o.jpg",
     "slug": "6bd55a665b4e3b458c04dd71c0312e66",
     "permalink": "/photos/6bd55a665b4e3b458c04dd71c0312e66",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
             "url": "https://www.flickr.com/photos/theonewithout/28113506755/"
         }
+    ],
+    "tags": [
+        "GroundLackey",
+        "Caterpillar"
     ]
 }

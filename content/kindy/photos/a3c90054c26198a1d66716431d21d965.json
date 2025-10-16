@@ -6,11 +6,6 @@
     "content": "/kd/photos/flickr/rhinebarge-on-the-nether-rhine-near-renkum_27833338282_o.jpg",
     "slug": "a3c90054c26198a1d66716431d21d965",
     "permalink": "/photos/a3c90054c26198a1d66716431d21d965",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -20,5 +15,10 @@
     "geo": {
         "latitude": 51.971623,
         "longitude": 5.749486
-    }
+    },
+    "tags": [
+        "Renkum",
+        "Netherlands",
+        "Boats"
+    ]
 }

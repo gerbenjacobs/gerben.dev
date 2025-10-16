@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/snowy-view-outside-the-wendelstein-pension-in-miesbach_24016017184_o.jpg",
     "slug": "121f97933541afae214ebad725213937",
     "permalink": "/photos/121f97933541afae214ebad725213937",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 47.785451,
         "longitude": 11.836534
-    }
+    },
+    "tags": [
+        "Snow",
+        "Miesbach",
+        "Germany"
+    ]
 }

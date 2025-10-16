@@ -4,13 +4,12 @@
     "content": "/kd/photos/media/posts/201604/12976423_437344713141796_1651042185_n_17846649829126993.jpg",
     "slug": "7e5abe3351955cf5aebbe6c7a71338a4",
     "permalink": "/photos/7e5abe3351955cf5aebbe6c7a71338a4",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "geo": {
         "latitude": 52.0551683833,
         "longitude": 5.65504043333
-    }
+    },
+    "title": "Sunset",
+    "tags": [
+        "Sunset"
+    ]
 }

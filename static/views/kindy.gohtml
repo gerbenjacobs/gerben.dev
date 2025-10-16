@@ -177,11 +177,19 @@
                     <form action="/kindy/update" method="post">
                         <input type="hidden" name="permalink" value="{{ .Permalink }}">
                         <label>
-                            <textarea name="raw" style="height: 400px; background: #fff; font-size: 1.5em;">{{ .RawKindy }}</textarea>
+                            <textarea id="raw" name="raw" style="height: 400px; background: #fff; font-size: 1.5em;">{{ .RawKindy }}</textarea>
                         </label>
                         <button type="submit">Update Kindy</button>
+                        <button onclick="prettyPrint(); return false;">Prettify</button>
                     </form>
                 </details>
+                <script>
+                function prettyPrint() {
+                    let ugly = document.getElementById('raw').value;
+                    let obj = JSON.parse(ugly);
+                    document.getElementById('raw').value = JSON.stringify(obj, undefined, 4);
+                }
+                </script>
                 {{ end }}
             </article>
         </div>

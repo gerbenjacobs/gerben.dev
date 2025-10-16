@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/tiergarten-and-park-in-kleve-germany_21233283761_o.jpg",
     "slug": "6950f4aa5cc67d4bb51efdca7f61fa4e",
     "permalink": "/photos/6950f4aa5cc67d4bb51efdca7f61fa4e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 51.795631,
         "longitude": 6.124277
-    }
+    },
+    "tags": [
+        "Kleve",
+        "Germany"
+    ]
 }

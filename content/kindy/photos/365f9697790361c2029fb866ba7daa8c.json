@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/castle-huis-bergh_24883218472_o.jpg",
     "slug": "365f9697790361c2029fb866ba7daa8c",
     "permalink": "/photos/365f9697790361c2029fb866ba7daa8c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,9 @@
     "geo": {
         "latitude": 51.874126,
         "longitude": 6.240137
-    }
+    },
+    "tags": [
+        "Castle",
+        "sHeerenberg"
+    ]
 }

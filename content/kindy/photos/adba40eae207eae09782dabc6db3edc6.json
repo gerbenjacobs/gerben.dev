@@ -5,11 +5,6 @@
     "content": "/kd/photos/flickr/continuing-the-trip-after-clearing-snow_24017352503_o.jpg",
     "slug": "adba40eae207eae09782dabc6db3edc6",
     "permalink": "/photos/adba40eae207eae09782dabc6db3edc6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
     "syndication": [
         {
             "type": "flickr",
@@ -19,5 +14,10 @@
     "geo": {
         "latitude": 47.785451,
         "longitude": 11.836534
-    }
+    },
+    "tags": [
+        "Snow",
+        "Miesbach",
+        "Germany"
+    ]
 }

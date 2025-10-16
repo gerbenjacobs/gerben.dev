@@ -1,20 +1,16 @@
 {
-    "type": "photo",
-    "summary": "The more I come here, the more I fall in love.",
-    "publishedAt": "2017-04-19T20:46:12+02:00",
-    "content": "/kd/photos/media/posts/201704/17931826_744369512408523_2397967287458988032_n_17879061673043224.jpg",
-    "slug": "9f7a8c5dfb331b85a04aa2edf072180f",
-    "permalink": "/photos/9f7a8c5dfb331b85a04aa2edf072180f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 52.0306,
-        "longitude": 5.7256
-    },
-    "tags": [
-        "ginkelseheide"
-    ]
+  "type": "photo",
+  "summary": "The more I come here, the more I fall in love.",
+  "publishedAt": "2017-04-19T20:46:12+02:00",
+  "content": "/kd/photos/media/posts/201704/17931826_744369512408523_2397967287458988032_n_17879061673043224.jpg",
+  "slug": "9f7a8c5dfb331b85a04aa2edf072180f",
+  "permalink": "/photos/9f7a8c5dfb331b85a04aa2edf072180f",
+  "geo": {
+    "latitude": 52.0306,
+    "longitude": 5.7256
+  },
+  "tags": [
+    "ginkelseheide",
+    "selfie"
+  ]
 }
