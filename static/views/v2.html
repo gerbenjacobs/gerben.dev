@@ -68,31 +68,45 @@
             text-wrap: balance;
         }
 
+        body {
+            background-color: #79747c;
+            background-image: url("/images/prism.png");
+        }
+
         header {
             grid-area: header;
-            background-color: coral;
+            background: linear-gradient(64.3deg, rgba(254, 122, 152, 0.81) 17.7%, rgba(255, 206, 134, 1) 64.7%, rgba(172, 253, 163, 0.64) 112.1%);
+            color: #fff;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         main {
             grid-area: main;
-            background-color: lightblue;
+            background-color: #b5b3b8;
             padding: 1em;
         }
 
         nav {
             grid-area: nav;
-            background-color: lightgreen;
+            background-color: #b5b3b8;
         }
 
         aside {
             grid-area: aside;
-            background-color: lightcoral;
+            background: #B5B3B8;
+            background: linear-gradient(90deg, rgba(181, 179, 184, 1) 0%, rgba(181, 179, 184, 1) 50%, rgba(255, 206, 134, 1) 100%);
             padding: 1em;
         }
 
         footer {
             grid-area: footer;
-            background-color: lightgray;
+            background: #121212 url('/images/stars.gif');
+            color: #ffffff;
+            padding: 3em;
+            text-align: center;
         }
 
         .wrapper {
@@ -107,6 +121,28 @@
             margin: 0 auto;
         }
 
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 0.5em;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(254, 122, 152, 0.81);
+        }
+
 
         @media (min-width: 1024px) {
             .wrapper {
@@ -115,10 +151,19 @@
                     "header header header"
                     "nav    main   aside"
                     "footer footer footer";
+                    gap: 1em;
             }
 
-            nav ul {
-                flex-direction: column;
+            nav li {
+                float: none;
+            }
+
+            main {
+                border-radius: 1em;
+            }
+
+            aside {
+                border-radius: 1em 0 0 1em;
             }
         }
 
@@ -160,8 +205,9 @@
 <body>
     <div class="wrapper">
         <header>
-            <a href="/" class="brand-logo"><img src="/images/favicon.png" alt="Return home"
-                    style="float: left; height: 64px;"></a>
+            <a href="/" style="float: left;">
+                <img src="/images/favicon.png" alt="Return home" style="height: 64px;">
+            </a>
             <h1>gerben.dev</h1>
         </header>
         <nav>
@@ -517,7 +563,9 @@
                 <li>Incendiary - Awakening</li>
             </ul>
         </aside>
-        <footer>The footer</footer>
+        <footer>
+            It's dangerous out there, please take some space dust!
+        </footer>
     </div>
 </body>
 
