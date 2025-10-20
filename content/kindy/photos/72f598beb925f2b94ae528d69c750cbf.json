@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Day 1 camping spot",
-  "content": "/kd/photos/flickr/day-1-camping-spot_9389694692_o.jpg",
-  "publishedAt": "2013-07-14T17:40:01Z",
-  "slug": "72f598beb925f2b94ae528d69c750cbf",
-  "permalink": "/photos/72f598beb925f2b94ae528d69c750cbf",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9389694692/"
-    }
-  ]
+    "type": "photo",
+    "title": "Day 1 camping spot",
+    "content": "/kd/photos/flickr/day-1-camping-spot_9389694692_o.jpg",
+    "publishedAt": "2013-07-14T17:40:01Z",
+    "slug": "72f598beb925f2b94ae528d69c750cbf",
+    "permalink": "/photos/72f598beb925f2b94ae528d69c750cbf",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389694692/"
+        }
+    ],
+    "tags": [
+        "Denmark",
+        "Camping",
+        "Sønderborg"
+    ]
 }

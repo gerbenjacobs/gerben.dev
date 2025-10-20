@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Sheep on the Peer Gyntveggen",
-  "content": "/kd/photos/flickr/sheep-on-the-peer-gyntveggen_9391029617_o.jpg",
-  "publishedAt": "2013-07-25T11:31:40Z",
-  "slug": "cba5ce44a9366f29d211bdd78709ca01",
-  "permalink": "/photos/cba5ce44a9366f29d211bdd78709ca01",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9391029617/"
-    }
-  ]
+    "type": "photo",
+    "title": "Sheep on the Peer Gyntveggen",
+    "content": "/kd/photos/flickr/sheep-on-the-peer-gyntveggen_9391029617_o.jpg",
+    "publishedAt": "2013-07-25T11:31:40Z",
+    "slug": "cba5ce44a9366f29d211bdd78709ca01",
+    "permalink": "/photos/cba5ce44a9366f29d211bdd78709ca01",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391029617/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Peer Gyntvegen",
+        "Sheep"
+    ]
 }

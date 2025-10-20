@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 40.75714,
     "longitude": -73.981761
-  }
+  },
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Architecture"
+    ]
 }

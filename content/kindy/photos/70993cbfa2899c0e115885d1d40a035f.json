@@ -1,14 +1,20 @@
 {
-  "type": "photo",
-  "title": "Trollstigen",
-  "content": "/kd/photos/flickr/trollstigen_9393636762_o.jpg",
-  "publishedAt": "2013-07-24T13:21:12Z",
-  "slug": "70993cbfa2899c0e115885d1d40a035f",
-  "permalink": "/photos/70993cbfa2899c0e115885d1d40a035f",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9393636762/"
-    }
-  ]
+    "type": "photo",
+    "title": "Trollstigen",
+    "content": "/kd/photos/flickr/trollstigen_9393636762_o.jpg",
+    "publishedAt": "2013-07-24T13:21:12Z",
+    "slug": "70993cbfa2899c0e115885d1d40a035f",
+    "permalink": "/photos/70993cbfa2899c0e115885d1d40a035f",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393636762/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Trollstigen",
+        "Valley",
+        "Roadtrip"
+    ]
 }

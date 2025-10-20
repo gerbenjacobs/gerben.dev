@@ -1,14 +1,17 @@
 {
-  "type": "photo",
-  "title": "Maserati",
-  "content": "/kd/photos/flickr/maserati_9394257682_o.jpg",
-  "publishedAt": "2013-07-27T08:23:17Z",
-  "slug": "6a6c40c981cb0186449642e63863c4e8",
-  "permalink": "/photos/6a6c40c981cb0186449642e63863c4e8",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9394257682/"
-    }
-  ]
+    "type": "photo",
+    "title": "Maserati",
+    "content": "/kd/photos/flickr/maserati_9394257682_o.jpg",
+    "publishedAt": "2013-07-27T08:23:17Z",
+    "slug": "6a6c40c981cb0186449642e63863c4e8",
+    "permalink": "/photos/6a6c40c981cb0186449642e63863c4e8",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394257682/"
+        }
+    ],
+    "tags": [
+        "Sweden"
+    ]
 }

@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "View of Lysefjord from Preikestolen",
-  "content": "/kd/photos/flickr/view-of-lysefjord-from-preikestolen_9389968463_o.jpg",
-  "publishedAt": "2013-07-19T12:41:52Z",
-  "slug": "f0abd6196b1506ac8942bf497d1051b7",
-  "permalink": "/photos/f0abd6196b1506ac8942bf497d1051b7",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9389968463/"
-    }
-  ]
+    "type": "photo",
+    "title": "View of Lysefjord from Preikestolen",
+    "content": "/kd/photos/flickr/view-of-lysefjord-from-preikestolen_9389968463_o.jpg",
+    "publishedAt": "2013-07-19T12:41:52Z",
+    "slug": "f0abd6196b1506ac8942bf497d1051b7",
+    "permalink": "/photos/f0abd6196b1506ac8942bf497d1051b7",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389968463/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Preikestolen",
+        "Lysefjord"
+    ]
 }

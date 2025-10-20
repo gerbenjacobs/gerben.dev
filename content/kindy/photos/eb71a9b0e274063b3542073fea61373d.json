@@ -1,19 +1,18 @@
 {
-  "type": "photo",
-  "summary": "Fencers practicing near a windmill in Bruge.",
-  "content": "/kd/photos/media/posts/201705/18512539_1895730344047793_8367291372935315456_n_17855902918185627.jpg",
-  "publishedAt": "2017-05-19T17:28:47+02:00",
-  "slug": "eb71a9b0e274063b3542073fea61373d",
-  "permalink": "/photos/eb71a9b0e274063b3542073fea61373d",
-  "geo": {
-    "latitude": 51.2167,
-    "longitude": 3.23333
-  },
-  "tags": [
-    "fencers",
-    "windmill",
-    "mill",
-    "brugge",
-    "bruge"
-  ]
+    "type": "photo",
+    "summary": "Fencers practicing near a windmill in Bruge.",
+    "content": "/kd/photos/media/posts/201705/18512539_1895730344047793_8367291372935315456_n_17855902918185627.jpg",
+    "publishedAt": "2017-05-19T17:28:47+02:00",
+    "slug": "eb71a9b0e274063b3542073fea61373d",
+    "permalink": "/photos/eb71a9b0e274063b3542073fea61373d",
+    "geo": {
+        "latitude": 51.2167,
+        "longitude": 3.23333
+    },
+    "tags": [
+        "fencers",
+        "windmill",
+        "mill",
+        "Brugge"
+    ]
 }

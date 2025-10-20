@@ -1,18 +1,19 @@
 {
-  "type": "photo",
-  "title": "Ganzenven",
-  "summary": "Herperduin, Berghem, Noord-Brabant",
-  "content": "/kd/photos/flickr/ganzenven_8925557979_o.jpg",
-  "publishedAt": "2013-06-02T16:45:47Z",
-  "slug": "a71d9451fb01e9d3188eb04939200bfc",
-  "permalink": "/photos/a71d9451fb01e9d3188eb04939200bfc",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/8925557979/"
-    }
-  ],
-  "tags": [
-    "Herperduin"
-  ]
+    "type": "photo",
+    "title": "Ganzenven",
+    "summary": "Herperduin, Berghem, Noord-Brabant",
+    "content": "/kd/photos/flickr/ganzenven_8925557979_o.jpg",
+    "publishedAt": "2013-06-02T16:45:47Z",
+    "slug": "a71d9451fb01e9d3188eb04939200bfc",
+    "permalink": "/photos/a71d9451fb01e9d3188eb04939200bfc",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8925557979/"
+        }
+    ],
+    "tags": [
+        "Herperduin",
+        "Netherlands"
+    ]
 }

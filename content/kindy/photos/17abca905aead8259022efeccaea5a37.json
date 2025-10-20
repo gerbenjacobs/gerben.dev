@@ -15,5 +15,10 @@
   "geo": {
     "latitude": 40.759513,
     "longitude": -73.979501
-  }
+  },
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Aerial"
+    ]
 }

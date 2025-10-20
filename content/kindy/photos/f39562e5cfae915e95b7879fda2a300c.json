@@ -1,8 +1,8 @@
 {
   "type": "photo",
-  "title": "Backyard of Akerhus fortress",
+  "title": "Backyard of Akershus fortress",
   "summary": "Akershus fortress",
-  "content": "/kd/photos/flickr/backyard-of-akerhus-fortress_9393887146_o.jpg",
+  "content": "/kd/photos/flickr/backyard-of-Akerhus-fortress_9393887146_o.jpg",
   "publishedAt": "2013-07-26T13:28:49Z",
   "slug": "f39562e5cfae915e95b7879fda2a300c",
   "permalink": "/photos/f39562e5cfae915e95b7879fda2a300c",
@@ -11,5 +11,10 @@
       "type": "flickr",
       "url": "https://www.flickr.com/photos/theonewithout/9393887146/"
     }
-  ]
+  ],
+    "tags": [
+        "Oslo",
+        "Norway",
+        "Akershus"
+    ]
 }

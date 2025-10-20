@@ -1,8 +1,13 @@
 {
-  "type": "photo",
-  "summary": "At the top of Zell am Ziller.",
-  "content": "/kd/photos/media/posts/201302/11256394_1453720521592605_1042203104_n_17842811101056293.jpg",
-  "publishedAt": "2013-02-24T15:46:15+01:00",
-  "slug": "7969f38b7fb7e1ceade42f3c4e669d42",
-  "permalink": "/photos/7969f38b7fb7e1ceade42f3c4e669d42"
+    "type": "photo",
+    "summary": "At the top of Zell am Ziller.",
+    "content": "/kd/photos/media/posts/201302/11256394_1453720521592605_1042203104_n_17842811101056293.jpg",
+    "publishedAt": "2013-02-24T15:46:15+01:00",
+    "slug": "7969f38b7fb7e1ceade42f3c4e669d42",
+    "permalink": "/photos/7969f38b7fb7e1ceade42f3c4e669d42",
+    "tags": [
+        "Austria",
+        "ZellAmZiller",
+        "Skiing"
+    ]
 }

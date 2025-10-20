@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 47.25264,
     "longitude": 12.093844
-  }
+  },
+    "tags": [
+        "Austria",
+        "Königsleiten",
+        "Mountains"
+    ]
 }

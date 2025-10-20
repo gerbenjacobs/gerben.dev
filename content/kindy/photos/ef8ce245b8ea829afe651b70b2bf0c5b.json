@@ -16,10 +16,9 @@
     "latitude": 40.756554,
     "longitude": -73.988456
   },
-  "tags": [
-    "nypd",
-    "cops",
-    "coppers",
-    "nyc"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "NYPD"
+    ]
 }

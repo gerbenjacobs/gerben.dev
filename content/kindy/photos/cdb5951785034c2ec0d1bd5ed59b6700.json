@@ -1,14 +1,18 @@
 {
-  "type": "photo",
-  "title": "Rainy day in Göteborg",
-  "content": "/kd/photos/flickr/rainy-day-in-gteborg_9394256896_o.jpg",
-  "publishedAt": "2013-07-27T09:56:25Z",
-  "slug": "cdb5951785034c2ec0d1bd5ed59b6700",
-  "permalink": "/photos/cdb5951785034c2ec0d1bd5ed59b6700",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9394256896/"
-    }
-  ]
+    "type": "photo",
+    "title": "Rainy day in Göteborg",
+    "content": "/kd/photos/flickr/rainy-day-in-gteborg_9394256896_o.jpg",
+    "publishedAt": "2013-07-27T09:56:25Z",
+    "slug": "cdb5951785034c2ec0d1bd5ed59b6700",
+    "permalink": "/photos/cdb5951785034c2ec0d1bd5ed59b6700",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394256896/"
+        }
+    ],
+    "tags": [
+        "Sweden",
+        "Göteborg"
+    ]
 }

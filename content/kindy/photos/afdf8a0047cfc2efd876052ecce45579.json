@@ -15,5 +15,10 @@
   "geo": {
     "latitude": 53.056343,
     "longitude": 5.789709
-  }
+  },
+    "tags": [
+        "Netherlands",
+        "Friesland",
+        "Bicycles"
+    ]
 }

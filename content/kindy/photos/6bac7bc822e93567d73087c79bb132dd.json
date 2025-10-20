@@ -1,6 +1,6 @@
 {
     "type": "photo",
-    "title": "Malmö, Sweden",
+    "title": "Old-timey tram in Malmö, Sweden",
     "publishedAt": "2013-07-27T14:25:41Z",
     "content": "/kd/photos/flickr/mlmo-sweden_9391476049_o.jpg",
     "slug": "6bac7bc822e93567d73087c79bb132dd",
@@ -13,6 +13,7 @@
     ],
     "tags": [
         "Sweden",
-        "Malmö"
+        "Malmö",
+        "Tram"
     ]
 }

@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 51.986677,
     "longitude": 4.101676
-  }
+  },
+    "tags": [
+        "Netherlands",
+        "Hoek van Holland",
+        "Boats"
+    ]
 }

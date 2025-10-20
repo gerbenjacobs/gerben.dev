@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 47.25164,
     "longitude": 12.100684
-  }
+  },
+    "tags": [
+        "Austria",
+        "Königsleiten",
+        "Larmachalm"
+    ]
 }

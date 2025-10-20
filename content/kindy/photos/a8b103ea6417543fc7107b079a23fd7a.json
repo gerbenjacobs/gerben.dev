@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Løkken, Denmark",
-  "content": "/kd/photos/flickr/lkken-denmark_9395575304_o.jpg",
-  "publishedAt": "2013-07-16T13:52:00Z",
-  "slug": "a8b103ea6417543fc7107b079a23fd7a",
-  "permalink": "/photos/a8b103ea6417543fc7107b079a23fd7a",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9395575304/"
-    }
-  ]
+    "type": "photo",
+    "title": "Løkken, Denmark",
+    "content": "/kd/photos/flickr/lkken-denmark_9395575304_o.jpg",
+    "publishedAt": "2013-07-16T13:52:00Z",
+    "slug": "a8b103ea6417543fc7107b079a23fd7a",
+    "permalink": "/photos/a8b103ea6417543fc7107b079a23fd7a",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9395575304/"
+        }
+    ],
+    "tags": [
+        "Denmark",
+        "Løkken",
+        "Beach"
+    ]
 }

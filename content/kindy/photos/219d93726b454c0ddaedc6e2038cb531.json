@@ -14,5 +14,11 @@
   "geo": {
     "latitude": 52.008608,
     "longitude": 5.895709
-  }
+  },
+    "tags": [
+        "Birds",
+        "BurgersZoo",
+        "Arnhem",
+        "Netherlands"
+    ]
 }

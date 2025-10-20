@@ -1,18 +1,19 @@
 {
-  "type": "photo",
-  "title": "Zen dog",
-  "summary": "Totally zoned out.. due to food perhaps? ;)",
-  "content": "/kd/photos/flickr/zen-dog_5020541481_o.jpg",
-  "publishedAt": "2010-09-24T16:34:01Z",
-  "slug": "8e417700bcf2a25a8bb42698249a3c68",
-  "permalink": "/photos/8e417700bcf2a25a8bb42698249a3c68",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/5020541481/"
-    }
-  ],
-  "tags": [
-    "flatcoatretriever"
-  ]
+    "type": "photo",
+    "title": "Zen dog",
+    "summary": "Totally zoned out.. due to food perhaps? ;)",
+    "content": "/kd/photos/flickr/zen-dog_5020541481_o.jpg",
+    "publishedAt": "2010-09-24T16:34:01Z",
+    "slug": "8e417700bcf2a25a8bb42698249a3c68",
+    "permalink": "/photos/8e417700bcf2a25a8bb42698249a3c68",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5020541481/"
+        }
+    ],
+    "tags": [
+        "flatcoatretriever",
+        "dog"
+    ]
 }

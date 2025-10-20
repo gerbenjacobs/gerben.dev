@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Hiking to Preikestolen",
-  "content": "/kd/photos/flickr/hiking-to-preikestolen_9392745126_o.jpg",
-  "publishedAt": "2013-07-19T12:02:34Z",
-  "slug": "6e8c1ae5dd3f1523fc7d3d8299ca3f03",
-  "permalink": "/photos/6e8c1ae5dd3f1523fc7d3d8299ca3f03",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9392745126/"
-    }
-  ]
+    "type": "photo",
+    "title": "Hiking to Preikestolen",
+    "content": "/kd/photos/flickr/hiking-to-preikestolen_9392745126_o.jpg",
+    "publishedAt": "2013-07-19T12:02:34Z",
+    "slug": "6e8c1ae5dd3f1523fc7d3d8299ca3f03",
+    "permalink": "/photos/6e8c1ae5dd3f1523fc7d3d8299ca3f03",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392745126/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Preikestolen",
+        "Hiking"
+    ]
 }

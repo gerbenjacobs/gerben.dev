@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 36.71466,
     "longitude": -4.412448
-  }
+  },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Beach"
+    ]
 }

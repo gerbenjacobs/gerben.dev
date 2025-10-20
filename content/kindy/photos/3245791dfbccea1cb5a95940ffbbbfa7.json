@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Preikestolen",
-  "content": "/kd/photos/flickr/preikestolen_9395576058_o.jpg",
-  "publishedAt": "2013-07-19T11:22:42Z",
-  "slug": "3245791dfbccea1cb5a95940ffbbbfa7",
-  "permalink": "/photos/3245791dfbccea1cb5a95940ffbbbfa7",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9395576058/"
-    }
-  ]
+    "type": "photo",
+    "title": "Preikestolen",
+    "content": "/kd/photos/flickr/preikestolen_9395576058_o.jpg",
+    "publishedAt": "2013-07-19T11:22:42Z",
+    "slug": "3245791dfbccea1cb5a95940ffbbbfa7",
+    "permalink": "/photos/3245791dfbccea1cb5a95940ffbbbfa7",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9395576058/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Preikestolen",
+        "Trailhead"
+    ]
 }

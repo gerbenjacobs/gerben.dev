@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Little swimming bay next to Sponavik camping in Stord",
-  "content": "/kd/photos/flickr/little-swimming-bay-next-to-sponavik-camping-in-stord_9392903566_o.jpg",
-  "publishedAt": "2013-07-20T17:35:38Z",
-  "slug": "d15212aca03cdd0b0a5c735e0bd590d9",
-  "permalink": "/photos/d15212aca03cdd0b0a5c735e0bd590d9",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9392903566/"
-    }
-  ]
+    "type": "photo",
+    "title": "Little swimming bay next to Sponavik camping in Stord",
+    "content": "/kd/photos/flickr/little-swimming-bay-next-to-sponavik-camping-in-stord_9392903566_o.jpg",
+    "publishedAt": "2013-07-20T17:35:38Z",
+    "slug": "d15212aca03cdd0b0a5c735e0bd590d9",
+    "permalink": "/photos/d15212aca03cdd0b0a5c735e0bd590d9",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392903566/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Stord",
+        "Bay"
+    ]
 }

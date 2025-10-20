@@ -15,11 +15,8 @@
     "latitude": 40.75714,
     "longitude": -73.981761
   },
-  "tags": [
-    "random man",
-    "hailing",
-    "cab",
-    "taxi",
-    "new york"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC"
+    ]
 }

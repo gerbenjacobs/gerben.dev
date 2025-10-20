@@ -1,8 +1,12 @@
 {
-  "type": "photo",
-  "summary": "An Austrian barn, sandwiched between hotels and appartments.",
-  "content": "/kd/photos/media/posts/201212/11240427_1428436317474754_1087708081_n_17842788523056293.jpg",
-  "publishedAt": "2012-12-26T10:25:48+01:00",
-  "slug": "dba68df615cf4e460ac6911ddcc862f1",
-  "permalink": "/photos/dba68df615cf4e460ac6911ddcc862f1"
+    "type": "photo",
+    "summary": "An Austrian barn, sandwiched between hotels and appartments.",
+    "content": "/kd/photos/media/posts/201212/11240427_1428436317474754_1087708081_n_17842788523056293.jpg",
+    "publishedAt": "2012-12-26T10:25:48+01:00",
+    "slug": "dba68df615cf4e460ac6911ddcc862f1",
+    "permalink": "/photos/dba68df615cf4e460ac6911ddcc862f1",
+    "tags": [
+        "Austria",
+        "Gerlos"
+    ]
 }

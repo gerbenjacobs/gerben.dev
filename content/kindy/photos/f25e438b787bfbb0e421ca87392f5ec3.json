@@ -1,18 +1,24 @@
 {
-  "type": "photo",
-  "title": "Malagueta beach",
-  "content": "/kd/photos/flickr/malagueta-beach_7683731114_o.jpg",
-  "publishedAt": "2012-07-26T13:59:37Z",
-  "slug": "f25e438b787bfbb0e421ca87392f5ec3",
-  "permalink": "/photos/f25e438b787bfbb0e421ca87392f5ec3",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/7683731114/"
-    }
-  ],
-  "geo": {
-    "latitude": 36.717395,
-    "longitude": -4.409959
-  }
+    "type": "photo",
+    "title": "Malagueta beach",
+    "content": "/kd/photos/flickr/malagueta-beach_7683731114_o.jpg",
+    "publishedAt": "2012-07-26T13:59:37Z",
+    "slug": "f25e438b787bfbb0e421ca87392f5ec3",
+    "permalink": "/photos/f25e438b787bfbb0e421ca87392f5ec3",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683731114/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.717395,
+        "longitude": -4.409959
+    },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Malagueta",
+        "Beach"
+    ]
 }

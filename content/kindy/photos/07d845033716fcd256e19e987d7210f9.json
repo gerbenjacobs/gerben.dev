@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Palace in Oslo",
-  "content": "/kd/photos/flickr/palace-in-oslo_9391141513_o.jpg",
-  "publishedAt": "2013-07-26T11:04:32Z",
-  "slug": "07d845033716fcd256e19e987d7210f9",
-  "permalink": "/photos/07d845033716fcd256e19e987d7210f9",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9391141513/"
-    }
-  ]
+    "type": "photo",
+    "title": "Palace in Oslo",
+    "content": "/kd/photos/flickr/palace-in-oslo_9391141513_o.jpg",
+    "publishedAt": "2013-07-26T11:04:32Z",
+    "slug": "07d845033716fcd256e19e987d7210f9",
+    "permalink": "/photos/07d845033716fcd256e19e987d7210f9",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391141513/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Oslo",
+        "Palace"
+    ]
 }

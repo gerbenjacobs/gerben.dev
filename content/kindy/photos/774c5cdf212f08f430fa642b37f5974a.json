@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "At the top of Zell, looking towards the Italian alps",
-  "content": "/kd/photos/flickr/at-the-top-of-zell-looking-towards-the-italian-alps_9419294077_o.jpg",
-  "publishedAt": "2013-02-18T14:25:11Z",
-  "slug": "774c5cdf212f08f430fa642b37f5974a",
-  "permalink": "/photos/774c5cdf212f08f430fa642b37f5974a",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9419294077/"
-    }
-  ]
+    "type": "photo",
+    "title": "At the top of Zell, looking towards the Italian alps",
+    "content": "/kd/photos/flickr/at-the-top-of-zell-looking-towards-the-italian-alps_9419294077_o.jpg",
+    "publishedAt": "2013-02-18T14:25:11Z",
+    "slug": "774c5cdf212f08f430fa642b37f5974a",
+    "permalink": "/photos/774c5cdf212f08f430fa642b37f5974a",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9419294077/"
+        }
+    ],
+    "tags": [
+        "Austria",
+        "ZellAmZiller",
+        "Skiing"
+    ]
 }

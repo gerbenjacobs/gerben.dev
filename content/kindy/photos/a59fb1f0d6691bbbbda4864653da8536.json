@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 53.024644,
     "longitude": 5.787048
-  }
+  },
+    "tags": [
+        "Netherlands",
+        "Friesland",
+        "Boats"
+    ]
 }

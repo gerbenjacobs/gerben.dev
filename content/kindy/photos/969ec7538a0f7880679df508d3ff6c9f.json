@@ -1,10 +1,12 @@
 {
-  "type": "photo",
-  "content": "/kd/photos/media/posts/201305/11312559_693132020813301_347818799_n_17842851268056293.jpg",
-  "publishedAt": "2013-05-04T21:15:04+02:00",
-  "slug": "969ec7538a0f7880679df508d3ff6c9f",
-  "permalink": "/photos/969ec7538a0f7880679df508d3ff6c9f",
-  "tags": [
-    "sushi"
-  ]
+    "type": "photo",
+    "summary": "Sushi",
+    "content": "/kd/photos/media/posts/201305/11312559_693132020813301_347818799_n_17842851268056293.jpg",
+    "publishedAt": "2013-05-04T21:15:04+02:00",
+    "slug": "969ec7538a0f7880679df508d3ff6c9f",
+    "permalink": "/photos/969ec7538a0f7880679df508d3ff6c9f",
+    "tags": [
+        "Food",
+        "Sushi"
+    ]
 }

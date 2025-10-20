@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Old building in Lom",
-  "content": "/kd/photos/flickr/old-building-in-lom_9390883581_o.jpg",
-  "publishedAt": "2013-07-23T18:43:47Z",
-  "slug": "de6f92275d8d1ed919c7f879dfc5af9b",
-  "permalink": "/photos/de6f92275d8d1ed919c7f879dfc5af9b",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9390883581/"
-    }
-  ]
+    "type": "photo",
+    "title": "Old building in Lom",
+    "content": "/kd/photos/flickr/old-building-in-lom_9390883581_o.jpg",
+    "publishedAt": "2013-07-23T18:43:47Z",
+    "slug": "de6f92275d8d1ed919c7f879dfc5af9b",
+    "permalink": "/photos/de6f92275d8d1ed919c7f879dfc5af9b",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390883581/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Lom",
+        "Architecture"
+    ]
 }

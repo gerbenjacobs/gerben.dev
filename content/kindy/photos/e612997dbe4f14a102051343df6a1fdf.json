@@ -1,22 +1,22 @@
 {
-  "type": "photo",
-  "title": "New York's kruispunt",
-  "content": "/kd/photos/flickr/new-yorks-kruispunt_5694659232_o.jpg",
-  "publishedAt": "2011-05-07T00:43:17Z",
-  "slug": "e612997dbe4f14a102051343df6a1fdf",
-  "permalink": "/photos/e612997dbe4f14a102051343df6a1fdf",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/5694659232/"
-    }
-  ],
-  "geo": {
-    "latitude": 40.749045,
-    "longitude": -73.982248
-  },
-  "tags": [
-    "intersection",
-    "nyc"
-  ]
+    "type": "photo",
+    "title": "New York's kruispunt",
+    "content": "/kd/photos/flickr/new-yorks-kruispunt_5694659232_o.jpg",
+    "publishedAt": "2011-05-07T00:43:17Z",
+    "slug": "e612997dbe4f14a102051343df6a1fdf",
+    "permalink": "/photos/e612997dbe4f14a102051343df6a1fdf",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5694659232/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.749045,
+        "longitude": -73.982248
+    },
+    "tags": [
+        "UnitedStates",
+        "NYC"
+    ]
 }

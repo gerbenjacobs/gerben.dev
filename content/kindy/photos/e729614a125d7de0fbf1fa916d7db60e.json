@@ -1,8 +1,11 @@
 {
-  "type": "photo",
-  "summary": "Gado Gado",
-  "content": "/kd/photos/media/posts/201404/1538581_1413599882239866_2051511769_n_17843195398056293.jpg",
-  "publishedAt": "2014-04-19T20:15:21+02:00",
-  "slug": "e729614a125d7de0fbf1fa916d7db60e",
-  "permalink": "/photos/e729614a125d7de0fbf1fa916d7db60e"
+    "type": "photo",
+    "summary": "Gado Gado",
+    "content": "/kd/photos/media/posts/201404/1538581_1413599882239866_2051511769_n_17843195398056293.jpg",
+    "publishedAt": "2014-04-19T20:15:21+02:00",
+    "slug": "e729614a125d7de0fbf1fa916d7db60e",
+    "permalink": "/photos/e729614a125d7de0fbf1fa916d7db60e",
+    "tags": [
+        "Food"
+    ]
 }

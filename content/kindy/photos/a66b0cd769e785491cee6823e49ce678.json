@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 40.700162,
     "longitude": -74.019184
-  }
+  },
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Helicopter"
+    ]
 }

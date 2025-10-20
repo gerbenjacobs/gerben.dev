@@ -1,18 +1,23 @@
 {
-  "type": "photo",
-  "title": "De Amerikaanse vlag",
-  "content": "/kd/photos/flickr/de-amerikaanse-vlag_5694088491_o.jpg",
-  "publishedAt": "2011-05-07T00:44:02Z",
-  "slug": "ecdcb20d0eb62b5dba1ec854f1d1d830",
-  "permalink": "/photos/ecdcb20d0eb62b5dba1ec854f1d1d830",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/5694088491/"
-    }
-  ],
-  "geo": {
-    "latitude": 40.695411,
-    "longitude": -74.032173
-  }
+    "type": "photo",
+    "title": "De Amerikaanse vlag",
+    "content": "/kd/photos/flickr/de-amerikaanse-vlag_5694088491_o.jpg",
+    "publishedAt": "2011-05-07T00:44:02Z",
+    "slug": "ecdcb20d0eb62b5dba1ec854f1d1d830",
+    "permalink": "/photos/ecdcb20d0eb62b5dba1ec854f1d1d830",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5694088491/"
+        }
+    ],
+    "geo": {
+        "latitude": 40.695411,
+        "longitude": -74.032173
+    },
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Flags"
+    ]
 }

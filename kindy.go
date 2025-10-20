@@ -186,12 +186,15 @@ func (k Kindy) MustDescription() template.HTML {
 	if k.Summary != "" {
 		return template.HTML(p.Sanitize(string(k.Summary)))
 	}
+	if k.Title != "" {
+		return template.HTML(p.Sanitize(string(k.Title)))
+	}
 	content := k.GetContent()
 	if content != "" {
 		return template.HTML(p.Sanitize(string(content)))
 	}
 
-	return template.HTML(k.Type)
+	return template.HTML(k.MustTitle())
 }
 
 func (k Kindy) HasFlickrSyndication() bool {

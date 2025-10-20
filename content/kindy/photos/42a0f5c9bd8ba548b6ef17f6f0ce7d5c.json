@@ -16,8 +16,9 @@
     "latitude": 40.75714,
     "longitude": -73.981761
   },
-  "tags": [
-    "south street seaport",
-    "brooklyn bridge"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Aerial"
+    ]
 }

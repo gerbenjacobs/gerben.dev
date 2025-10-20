@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Bridges in Sweden",
-  "content": "/kd/photos/flickr/bridges-in-sweden_9394257380_o.jpg",
-  "publishedAt": "2013-07-27T09:14:34Z",
-  "slug": "e559695a03d25d355cd0cef0970ec6b5",
-  "permalink": "/photos/e559695a03d25d355cd0cef0970ec6b5",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9394257380/"
-    }
-  ]
+    "type": "photo",
+    "title": "Bridges in Sweden",
+    "content": "/kd/photos/flickr/bridges-in-sweden_9394257380_o.jpg",
+    "publishedAt": "2013-07-27T09:14:34Z",
+    "slug": "e559695a03d25d355cd0cef0970ec6b5",
+    "permalink": "/photos/e559695a03d25d355cd0cef0970ec6b5",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394257380/"
+        }
+    ],
+    "tags": [
+        "Sweden",
+        "Bridge",
+        "Øresund"
+    ]
 }

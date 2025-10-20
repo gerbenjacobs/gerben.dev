@@ -1,17 +1,18 @@
 {
-  "type": "photo",
-  "title": "Dutch sunset",
-  "content": "/kd/photos/flickr/dutch-sunset_8928474675_o.jpg",
-  "publishedAt": "2013-06-02T21:41:57Z",
-  "slug": "31dc919286273b6059d2c86cb1117b04",
-  "permalink": "/photos/31dc919286273b6059d2c86cb1117b04",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/8928474675/"
-    }
-  ],
-  "tags": [
-    "flickrandroidapp:filter=none"
-  ]
+    "type": "photo",
+    "title": "Dutch sunset",
+    "content": "/kd/photos/flickr/dutch-sunset_8928474675_o.jpg",
+    "publishedAt": "2013-06-02T21:41:57Z",
+    "slug": "31dc919286273b6059d2c86cb1117b04",
+    "permalink": "/photos/31dc919286273b6059d2c86cb1117b04",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8928474675/"
+        }
+    ],
+    "tags": [
+        "Netherlands",
+        "Sunset"
+    ]
 }

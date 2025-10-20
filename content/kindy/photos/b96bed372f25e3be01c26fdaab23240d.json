@@ -1,14 +1,18 @@
 {
-  "type": "photo",
-  "title": "Day 9 camping spot",
-  "content": "/kd/photos/flickr/day-9-camping-spot_9394518832_o.jpg",
-  "publishedAt": "2013-07-22T17:04:44Z",
-  "slug": "b96bed372f25e3be01c26fdaab23240d",
-  "permalink": "/photos/b96bed372f25e3be01c26fdaab23240d",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9394518832/"
-    }
-  ]
+    "type": "photo",
+    "title": "Day 9 camping spot",
+    "content": "/kd/photos/flickr/day-9-camping-spot_9394518832_o.jpg",
+    "publishedAt": "2013-07-22T17:04:44Z",
+    "slug": "b96bed372f25e3be01c26fdaab23240d",
+    "permalink": "/photos/b96bed372f25e3be01c26fdaab23240d",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9394518832/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Camping"
+    ]
 }

@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 53.067342,
     "longitude": 5.811467
-  }
+  },
+    "tags": [
+        "Netherlands",
+        "Friesland",
+        "Sheep"
+    ]
 }

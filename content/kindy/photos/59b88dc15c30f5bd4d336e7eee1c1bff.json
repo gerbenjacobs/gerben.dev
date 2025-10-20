@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 47.249725,
     "longitude": 12.125374
-  }
+  },
+    "tags": [
+        "Austria",
+        "Gerlos",
+        "Mountains"
+    ]
 }

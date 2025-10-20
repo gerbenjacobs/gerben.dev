@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 36.718917,
     "longitude": -4.407706
-  }
+  },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Boats"
+    ]
 }

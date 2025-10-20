@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Church in Stavanger",
-  "content": "/kd/photos/flickr/church-in-stavanger_9389980099_o.jpg",
-  "publishedAt": "2013-07-18T15:00:39Z",
-  "slug": "bf6066c3b5198c0d1bff8b5c78e2b2f3",
-  "permalink": "/photos/bf6066c3b5198c0d1bff8b5c78e2b2f3",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9389980099/"
-    }
-  ]
+    "type": "photo",
+    "title": "Church in Stavanger",
+    "content": "/kd/photos/flickr/church-in-stavanger_9389980099_o.jpg",
+    "publishedAt": "2013-07-18T15:00:39Z",
+    "slug": "bf6066c3b5198c0d1bff8b5c78e2b2f3",
+    "permalink": "/photos/bf6066c3b5198c0d1bff8b5c78e2b2f3",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9389980099/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Stavanger",
+        "Church"
+    ]
 }

@@ -1,8 +1,11 @@
 {
-  "type": "photo",
-  "summary": "This nutella bread roll is awaiting imminent death.",
-  "content": "/kd/photos/media/posts/201304/11274471_855922097778966_1037030750_n_17842836526056293.jpg",
-  "publishedAt": "2013-04-14T19:20:59+02:00",
-  "slug": "cd036b38fc22a0a371b0faf8fd1c87a4",
-  "permalink": "/photos/cd036b38fc22a0a371b0faf8fd1c87a4"
+    "type": "photo",
+    "summary": "This nutella bread roll is awaiting imminent death.",
+    "content": "/kd/photos/media/posts/201304/11274471_855922097778966_1037030750_n_17842836526056293.jpg",
+    "publishedAt": "2013-04-14T19:20:59+02:00",
+    "slug": "cd036b38fc22a0a371b0faf8fd1c87a4",
+    "permalink": "/photos/cd036b38fc22a0a371b0faf8fd1c87a4",
+    "tags": [
+        "Food"
+    ]
 }

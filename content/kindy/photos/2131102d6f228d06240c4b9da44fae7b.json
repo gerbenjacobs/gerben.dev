@@ -16,10 +16,9 @@
     "latitude": 40.706994,
     "longitude": -74.002532
   },
-  "tags": [
-    "nyc",
-    "east river",
-    "helicopter",
-    "helipad"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Helicopter"
+    ]
 }

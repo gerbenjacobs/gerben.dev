@@ -16,10 +16,9 @@
     "latitude": 40.75714,
     "longitude": -73.981761
   },
-  "tags": [
-    "brooklyn bridge",
-    "suspension bridge",
-    "new york",
-    "nyc"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "BrooklynBridge"
+    ]
 }

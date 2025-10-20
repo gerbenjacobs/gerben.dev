@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Ferry to Oanes",
-  "content": "/kd/photos/flickr/ferry-to-oanes_9392738468_o.jpg",
-  "publishedAt": "2013-07-20T11:37:00Z",
-  "slug": "016a00a10d0d8eb5e057e6c766b9cf46",
-  "permalink": "/photos/016a00a10d0d8eb5e057e6c766b9cf46",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9392738468/"
-    }
-  ]
+    "type": "photo",
+    "title": "Ferry to Oanes",
+    "content": "/kd/photos/flickr/ferry-to-oanes_9392738468_o.jpg",
+    "publishedAt": "2013-07-20T11:37:00Z",
+    "slug": "016a00a10d0d8eb5e057e6c766b9cf46",
+    "permalink": "/photos/016a00a10d0d8eb5e057e6c766b9cf46",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9392738468/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Ferry",
+        "Lighthouse"
+    ]
 }

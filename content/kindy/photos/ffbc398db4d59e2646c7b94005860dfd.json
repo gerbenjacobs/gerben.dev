@@ -14,5 +14,9 @@
   "geo": {
     "latitude": 40.721762,
     "longitude": -73.998641
-  }
+  },
+    "tags": [
+        "UnitedStates",
+        "NYC"
+    ]
 }

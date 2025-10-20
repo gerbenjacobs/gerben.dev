@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Voss",
-  "content": "/kd/photos/flickr/voss_9393264708_o.jpg",
-  "publishedAt": "2013-07-21T15:54:46Z",
-  "slug": "e71cded3069babd4060b81a8297e4a0a",
-  "permalink": "/photos/e71cded3069babd4060b81a8297e4a0a",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9393264708/"
-    }
-  ]
+    "type": "photo",
+    "title": "Voss",
+    "content": "/kd/photos/flickr/voss_9393264708_o.jpg",
+    "publishedAt": "2013-07-21T15:54:46Z",
+    "slug": "e71cded3069babd4060b81a8297e4a0a",
+    "permalink": "/photos/e71cded3069babd4060b81a8297e4a0a",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393264708/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Voss",
+        "Architecture"
+    ]
 }

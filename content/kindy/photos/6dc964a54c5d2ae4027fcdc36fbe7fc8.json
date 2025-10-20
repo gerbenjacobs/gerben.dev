@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Stavkirke in Lom",
-  "content": "/kd/photos/flickr/stavkirke-in-lom_9390885635_o.jpg",
-  "publishedAt": "2013-07-23T18:39:48Z",
-  "slug": "6dc964a54c5d2ae4027fcdc36fbe7fc8",
-  "permalink": "/photos/6dc964a54c5d2ae4027fcdc36fbe7fc8",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9390885635/"
-    }
-  ]
+    "type": "photo",
+    "title": "Stavkirke in Lom",
+    "content": "/kd/photos/flickr/stavkirke-in-lom_9390885635_o.jpg",
+    "publishedAt": "2013-07-23T18:39:48Z",
+    "slug": "6dc964a54c5d2ae4027fcdc36fbe7fc8",
+    "permalink": "/photos/6dc964a54c5d2ae4027fcdc36fbe7fc8",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390885635/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Lom",
+        "Stavkirke"
+    ]
 }

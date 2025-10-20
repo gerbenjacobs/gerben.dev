@@ -1,7 +1,14 @@
 {
-  "type": "photo",
-  "content": "/kd/photos/media/posts/201304/11296782_1447927992169929_2014586124_n_17842848229056293.jpg",
-  "publishedAt": "2013-04-30T15:06:28+02:00",
-  "slug": "db1aad13961967c90c90155d350c5e7b",
-  "permalink": "/photos/db1aad13961967c90c90155d350c5e7b"
+    "type": "photo",
+    "title": "Flags for Kings Day",
+    "summary": "A lot of flags in celebration of Queens Day (now Kings Day). I kinda got carried away with Instagram filters on this one..",
+    "content": "/kd/photos/media/posts/201304/11296782_1447927992169929_2014586124_n_17842848229056293.jpg",
+    "publishedAt": "2013-04-30T15:06:28+02:00",
+    "slug": "db1aad13961967c90c90155d350c5e7b",
+    "permalink": "/photos/db1aad13961967c90c90155d350c5e7b",
+    "tags": [
+        "Netherlands",
+        "KingsDay",
+        "Flags"
+    ]
 }

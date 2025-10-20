@@ -15,7 +15,9 @@
     "latitude": 40.72089,
     "longitude": -73.995407
   },
-  "tags": [
-    "nyc"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Architecture"
+    ]
 }

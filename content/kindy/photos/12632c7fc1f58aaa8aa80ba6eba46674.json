@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 36.723415,
     "longitude": -4.411171
-  }
+  },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Mountains"
+    ]
 }

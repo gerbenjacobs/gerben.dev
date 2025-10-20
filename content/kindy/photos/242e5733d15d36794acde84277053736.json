@@ -15,10 +15,8 @@
     "latitude": 40.75714,
     "longitude": -73.981761
   },
-  "tags": [
-    "chrysler building",
-    "esb",
-    "empire state building",
-    "nyc"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC"
+    ]
 }

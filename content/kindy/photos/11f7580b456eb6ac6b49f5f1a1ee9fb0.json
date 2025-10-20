@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 47.25564,
     "longitude": 11.312999
-  }
+  },
+    "tags": [
+        "Austria",
+        "Innsbruck",
+        "Airplane"
+    ]
 }

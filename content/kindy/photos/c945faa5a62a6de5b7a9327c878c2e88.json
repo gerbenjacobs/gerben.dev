@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Coots on high alert",
-  "content": "/kd/photos/flickr/coots-on-high-alert_8467053597_o.jpg",
-  "publishedAt": "2013-01-28T15:12:08Z",
-  "slug": "c945faa5a62a6de5b7a9327c878c2e88",
-  "permalink": "/photos/c945faa5a62a6de5b7a9327c878c2e88",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/8467053597/"
-    }
-  ]
+    "type": "photo",
+    "title": "Coots on high alert",
+    "content": "/kd/photos/flickr/coots-on-high-alert_8467053597_o.jpg",
+    "publishedAt": "2013-01-28T15:12:08Z",
+    "slug": "c945faa5a62a6de5b7a9327c878c2e88",
+    "permalink": "/photos/c945faa5a62a6de5b7a9327c878c2e88",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/8467053597/"
+        }
+    ],
+    "tags": [
+        "Netherlands",
+        "Terherne",
+        "Coots"
+    ]
 }

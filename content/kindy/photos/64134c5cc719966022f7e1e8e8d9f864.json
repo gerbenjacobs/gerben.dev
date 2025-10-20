@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 47.232712,
     "longitude": 12.020845
-  }
+  },
+    "tags": [
+        "Austria",
+        "Gerlos",
+        "Skiing"
+    ]
 }

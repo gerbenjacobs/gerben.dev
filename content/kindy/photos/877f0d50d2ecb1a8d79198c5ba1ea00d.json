@@ -1,18 +1,23 @@
 {
-  "type": "photo",
-  "title": "P1020319",
-  "content": "/kd/photos/flickr/p1020319_7683808942_o.jpg",
-  "publishedAt": "2012-07-25T14:14:12Z",
-  "slug": "877f0d50d2ecb1a8d79198c5ba1ea00d",
-  "permalink": "/photos/877f0d50d2ecb1a8d79198c5ba1ea00d",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/7683808942/"
-    }
-  ],
-  "geo": {
-    "latitude": 36.723415,
-    "longitude": -4.411171
-  }
+    "type": "photo",
+    "title": "P1020319",
+    "content": "/kd/photos/flickr/p1020319_7683808942_o.jpg",
+    "publishedAt": "2012-07-25T14:14:12Z",
+    "slug": "877f0d50d2ecb1a8d79198c5ba1ea00d",
+    "permalink": "/photos/877f0d50d2ecb1a8d79198c5ba1ea00d",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/7683808942/"
+        }
+    ],
+    "geo": {
+        "latitude": 36.723415,
+        "longitude": -4.411171
+    },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Gibralfaro"
+    ]
 }

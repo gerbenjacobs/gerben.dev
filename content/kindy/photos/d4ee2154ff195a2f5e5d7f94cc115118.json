@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 53.037148,
     "longitude": 5.774087
-  }
+  },
+    "tags": [
+        "Netherlands",
+        "Friesland",
+        "Sunset"
+    ]
 }

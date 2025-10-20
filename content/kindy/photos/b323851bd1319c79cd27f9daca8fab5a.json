@@ -1,7 +1,7 @@
 {
   "type": "photo",
   "title": "Three tallest mountain in the region",
-  "summary": "At Riksvei 55 mountain pass\n1 Galdhøpiggen\n2 Glittertind\n3 Store Skagastølstinden",
+  "summary": "At Riksvei 55 mountain pass\n1. Galdhøpiggen\n2. Glittertind\n3. Store Skagastølstinden",
   "content": "/kd/photos/flickr/three-tallest-mountain-in-the-region_9393540046_o.jpg",
   "publishedAt": "2013-07-23T12:36:46Z",
   "slug": "b323851bd1319c79cd27f9daca8fab5a",
@@ -11,5 +11,9 @@
       "type": "flickr",
       "url": "https://www.flickr.com/photos/theonewithout/9393540046/"
     }
-  ]
+  ],
+    "tags": [
+        "Norway",
+        "Riksvei 55"
+    ]
 }

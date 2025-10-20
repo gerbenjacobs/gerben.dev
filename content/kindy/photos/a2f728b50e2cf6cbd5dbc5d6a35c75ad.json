@@ -15,13 +15,9 @@
     "latitude": 40.748468,
     "longitude": -73.985964
   },
-  "tags": [
-    "nyc",
-    "ny",
-    "new york",
-    "empire state building",
-    "birdview",
-    "skyline",
-    "midtown"
-  ]
+    "tags": [
+        "UnitedStates",
+        "NYC",
+        "Aerial"
+    ]
 }

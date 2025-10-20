@@ -1,14 +1,19 @@
 {
-  "type": "photo",
-  "title": "Wooden log bridge in Lom",
-  "content": "/kd/photos/flickr/wooden-log-bridge-in-lom_9393651180_o.jpg",
-  "publishedAt": "2013-07-23T18:56:43Z",
-  "slug": "ea9304bff941adedb059f05f51aae469",
-  "permalink": "/photos/ea9304bff941adedb059f05f51aae469",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9393651180/"
-    }
-  ]
+    "type": "photo",
+    "title": "Wooden log bridge in Lom",
+    "content": "/kd/photos/flickr/wooden-log-bridge-in-lom_9393651180_o.jpg",
+    "publishedAt": "2013-07-23T18:56:43Z",
+    "slug": "ea9304bff941adedb059f05f51aae469",
+    "permalink": "/photos/ea9304bff941adedb059f05f51aae469",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9393651180/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Lom",
+        "Bridge"
+    ]
 }

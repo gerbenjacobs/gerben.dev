@@ -14,5 +14,10 @@
   "geo": {
     "latitude": 36.71423,
     "longitude": -4.414755
-  }
+  },
+    "tags": [
+        "Spain",
+        "Malaga",
+        "Lighthouse"
+    ]
 }

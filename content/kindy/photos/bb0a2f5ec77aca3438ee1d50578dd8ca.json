@@ -1,18 +1,24 @@
 {
-  "type": "photo",
-  "title": "Gerlos",
-  "content": "/kd/photos/flickr/gerlos_5487006242_o.jpg",
-  "publishedAt": "2011-02-26T10:41:32Z",
-  "slug": "bb0a2f5ec77aca3438ee1d50578dd8ca",
-  "permalink": "/photos/bb0a2f5ec77aca3438ee1d50578dd8ca",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/5487006242/"
-    }
-  ],
-  "geo": {
-    "latitude": 47.25264,
-    "longitude": 12.093844
-  }
+    "type": "photo",
+    "title": "Gerlos",
+    "content": "/kd/photos/flickr/gerlos_5487006242_o.jpg",
+    "publishedAt": "2011-02-26T10:41:32Z",
+    "slug": "bb0a2f5ec77aca3438ee1d50578dd8ca",
+    "permalink": "/photos/bb0a2f5ec77aca3438ee1d50578dd8ca",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/5487006242/"
+        }
+    ],
+    "geo": {
+        "latitude": 47.25264,
+        "longitude": 12.093844
+    },
+    "tags": [
+        "Austria",
+        "Gerlos",
+        "Skiing",
+        "Mountains"
+    ]
 }
