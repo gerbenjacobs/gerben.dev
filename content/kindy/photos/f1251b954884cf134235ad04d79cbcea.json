@@ -1,20 +1,21 @@
 {
-  "type": "photo",
-  "title": "Vigeland sculpture park",
-  "content": "/kd/photos/flickr/vigeland-sculpture-park_9391135107_o.jpg",
-  "publishedAt": "2013-07-26T11:54:22Z",
-  "slug": "f1251b954884cf134235ad04d79cbcea",
-  "permalink": "/photos/f1251b954884cf134235ad04d79cbcea",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9391135107/"
-    }
-  ],
-  "tags": [
-    "Norway",
-    "Oslo",
-    "Vigeland",
-    "Monument"
-  ]
+    "type": "photo",
+    "title": "Vigeland sculpture park",
+    "content": "/kd/photos/flickr/vigeland-sculpture-park_9391135107_o.jpg",
+    "publishedAt": "2013-07-26T11:54:22Z",
+    "slug": "f1251b954884cf134235ad04d79cbcea",
+    "permalink": "/photos/f1251b954884cf134235ad04d79cbcea",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9391135107/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Oslo",
+        "Vigeland",
+        "Monument",
+        "Park"
+    ]
 }
