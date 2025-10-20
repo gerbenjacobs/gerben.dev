@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Borgund stavkirke",
-    "publishedAt": "2013-07-22T13:22:25Z",
-    "content": "/kd/photos/flickr/borgund-stavkirke_9390470461_o.jpg",
-    "slug": "a944bb4ed62d76ad0b43d891198bec4b",
-    "permalink": "/photos/a944bb4ed62d76ad0b43d891198bec4b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390470461/"
-        }
-    ]
+  "type": "photo",
+  "title": "Borgund stavkirke",
+  "content": "/kd/photos/flickr/borgund-stavkirke_9390470461_o.jpg",
+  "publishedAt": "2013-07-22T13:22:25Z",
+  "slug": "a944bb4ed62d76ad0b43d891198bec4b",
+  "permalink": "/photos/a944bb4ed62d76ad0b43d891198bec4b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390470461/"
+    }
+  ]
 }

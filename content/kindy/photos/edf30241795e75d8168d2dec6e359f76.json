@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Fort in Oslo",
-    "summary": "Akershus fortress",
-    "publishedAt": "2013-07-26T13:05:50Z",
-    "content": "/kd/photos/flickr/fort-in-oslo_9393898952_o.jpg",
-    "slug": "edf30241795e75d8168d2dec6e359f76",
-    "permalink": "/photos/edf30241795e75d8168d2dec6e359f76",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393898952/"
-        }
-    ]
+  "type": "photo",
+  "title": "Fort in Oslo",
+  "summary": "Akershus fortress",
+  "content": "/kd/photos/flickr/fort-in-oslo_9393898952_o.jpg",
+  "publishedAt": "2013-07-26T13:05:50Z",
+  "slug": "edf30241795e75d8168d2dec6e359f76",
+  "permalink": "/photos/edf30241795e75d8168d2dec6e359f76",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393898952/"
+    }
+  ]
 }

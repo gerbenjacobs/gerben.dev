@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "Jellyfish",
-    "summary": "A dead one, to be precise.",
-    "publishedAt": "2010-11-07T16:26:58Z",
-    "content": "/kd/photos/flickr/jellyfish_5157237333_o.jpg",
-    "slug": "edca758c613312bf945d7b286785e7e3",
-    "permalink": "/photos/edca758c613312bf945d7b286785e7e3",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5157237333/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.986677,
-        "longitude": 4.101676
+  "type": "photo",
+  "title": "Jellyfish",
+  "summary": "A dead one, to be precise.",
+  "content": "/kd/photos/flickr/jellyfish_5157237333_o.jpg",
+  "publishedAt": "2010-11-07T16:26:58Z",
+  "slug": "edca758c613312bf945d7b286785e7e3",
+  "permalink": "/photos/edca758c613312bf945d7b286785e7e3",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157237333/"
     }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  }
 }

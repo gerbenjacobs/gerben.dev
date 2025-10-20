@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "View of Brugge",
-    "summary": "Brugge, Belgium",
-    "publishedAt": "2013-09-07T16:23:56Z",
-    "content": "/kd/photos/flickr/view-of-brugge_9693744041_o.jpg",
-    "slug": "0c81c53a44abe2f7ee29e0c70ecc94dd",
-    "permalink": "/photos/0c81c53a44abe2f7ee29e0c70ecc94dd",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9693744041/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "View of Brugge",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/view-of-brugge_9693744041_o.jpg",
+  "publishedAt": "2013-09-07T16:23:56Z",
+  "slug": "0c81c53a44abe2f7ee29e0c70ecc94dd",
+  "permalink": "/photos/0c81c53a44abe2f7ee29e0c70ecc94dd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693744041/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Belfort",
-    "summary": "Brugge, Belgium",
-    "publishedAt": "2013-09-07T14:41:20Z",
-    "content": "/kd/photos/flickr/belfort_9693722359_o.jpg",
-    "slug": "fd798461cde67bc1e9ff5c87fe0fe84b",
-    "permalink": "/photos/fd798461cde67bc1e9ff5c87fe0fe84b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9693722359/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "Belfort",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/belfort_9693722359_o.jpg",
+  "publishedAt": "2013-09-07T14:41:20Z",
+  "slug": "fd798461cde67bc1e9ff5c87fe0fe84b",
+  "permalink": "/photos/fd798461cde67bc1e9ff5c87fe0fe84b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693722359/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Viking boat near Sverd I Fjell",
-    "publishedAt": "2013-07-18T12:13:08Z",
-    "content": "/kd/photos/flickr/viking-boat-near-sverd-i-fjell_9387028915_o.jpg",
-    "slug": "67b0e3046b55d7b36d82417ea0a94d0c",
-    "permalink": "/photos/67b0e3046b55d7b36d82417ea0a94d0c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9387028915/"
-        }
-    ]
+  "type": "photo",
+  "title": "Viking boat near Sverd I Fjell",
+  "content": "/kd/photos/flickr/viking-boat-near-sverd-i-fjell_9387028915_o.jpg",
+  "publishedAt": "2013-07-18T12:13:08Z",
+  "slug": "67b0e3046b55d7b36d82417ea0a94d0c",
+  "permalink": "/photos/67b0e3046b55d7b36d82417ea0a94d0c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9387028915/"
+    }
+  ]
 }

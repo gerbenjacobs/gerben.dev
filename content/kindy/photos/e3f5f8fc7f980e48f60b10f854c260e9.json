@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Løkken villa on the coast",
-    "publishedAt": "2013-07-16T12:41:44Z",
-    "content": "/kd/photos/flickr/lkken-villa-on-the-coast_9389683990_o.jpg",
-    "slug": "e3f5f8fc7f980e48f60b10f854c260e9",
-    "permalink": "/photos/e3f5f8fc7f980e48f60b10f854c260e9",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389683990/"
-        }
-    ]
+  "type": "photo",
+  "title": "Løkken villa on the coast",
+  "content": "/kd/photos/flickr/lkken-villa-on-the-coast_9389683990_o.jpg",
+  "publishedAt": "2013-07-16T12:41:44Z",
+  "slug": "e3f5f8fc7f980e48f60b10f854c260e9",
+  "permalink": "/photos/e3f5f8fc7f980e48f60b10f854c260e9",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389683990/"
+    }
+  ]
 }

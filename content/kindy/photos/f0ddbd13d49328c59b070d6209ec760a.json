@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Overcast in Königsleiten",
-    "publishedAt": "2012-02-20T11:08:17Z",
-    "content": "/kd/photos/flickr/overcast-in-knigsleiten_9419287931_o.jpg",
-    "slug": "f0ddbd13d49328c59b070d6209ec760a",
-    "permalink": "/photos/f0ddbd13d49328c59b070d6209ec760a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9419287931/"
-        }
-    ]
+  "type": "photo",
+  "title": "Overcast in Königsleiten",
+  "content": "/kd/photos/flickr/overcast-in-knigsleiten_9419287931_o.jpg",
+  "publishedAt": "2012-02-20T11:08:17Z",
+  "slug": "f0ddbd13d49328c59b070d6209ec760a",
+  "permalink": "/photos/f0ddbd13d49328c59b070d6209ec760a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9419287931/"
+    }
+  ]
 }

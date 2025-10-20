@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "Tunnel in Norway",
-    "summary": "One of the many to come..",
-    "publishedAt": "2013-07-18T10:03:35Z",
-    "content": "/kd/photos/flickr/tunnel-in-norway_9387030797_o.jpg",
-    "slug": "641d05bb21757ff7e71e02ebd5f170f6",
-    "permalink": "/photos/641d05bb21757ff7e71e02ebd5f170f6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9387030797/"
-        }
-    ],
-    "tags": [
-      "Norway",
-      "Tunnel"
-    ]
+  "type": "photo",
+  "title": "Tunnel in Norway",
+  "summary": "One of the many to come..",
+  "content": "/kd/photos/flickr/tunnel-in-norway_9387030797_o.jpg",
+  "publishedAt": "2013-07-18T10:03:35Z",
+  "slug": "641d05bb21757ff7e71e02ebd5f170f6",
+  "permalink": "/photos/641d05bb21757ff7e71e02ebd5f170f6",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9387030797/"
+    }
+  ],
+  "tags": [
+    "Norway",
+    "Tunnel"
+  ]
 }

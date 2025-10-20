@@ -1,12 +1,12 @@
 {
     "type": "photo",
-    "publishedAt": "2014-10-11T09:46:39+02:00",
     "content": "/kd/photos/media/posts/201410/10666188_267506186706383_352013978_n_17843310010056293.jpg",
+    "publishedAt": "2014-10-11T09:46:39+02:00",
     "slug": "64caa1868c9b74b45a066db2e0123fb1",
     "permalink": "/photos/64caa1868c9b74b45a066db2e0123fb1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+    "summary": "Golden hour on a bridge",
+    "tags": [
+        "Sunset",
+        "Bridge"
+    ]
 }

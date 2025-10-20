@@ -1,26 +1,21 @@
 {
-    "type": "photo",
-    "title": "Two F-16 fighterjets",
-    "publishedAt": "2011-09-16T12:28:05Z",
-    "content": "/kd/photos/flickr/two-f-16-fighterjets_6156384014_o.jpg",
-    "slug": "a9e65175cfef7e00bb5b1f47efd324d6",
-    "permalink": "/photos/a9e65175cfef7e00bb5b1f47efd324d6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6156384014/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.224547,
-        "longitude": 5.753917
-    },
-    "tags": [
-        "Luchtmachtdagen 2011"
-    ]
+  "type": "photo",
+  "title": "Two F-16 fighterjets",
+  "content": "/kd/photos/flickr/two-f-16-fighterjets_6156384014_o.jpg",
+  "publishedAt": "2011-09-16T12:28:05Z",
+  "slug": "a9e65175cfef7e00bb5b1f47efd324d6",
+  "permalink": "/photos/a9e65175cfef7e00bb5b1f47efd324d6",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6156384014/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.224547,
+    "longitude": 5.753917
+  },
+  "tags": [
+    "Luchtmachtdagen 2011"
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Flower on the camping",
-    "publishedAt": "2013-07-25T18:08:05Z",
-    "content": "/kd/photos/flickr/flower-on-the-camping_9391030075_o.jpg",
-    "slug": "ff1d72324931d60e5385b5c432b3816d",
-    "permalink": "/photos/ff1d72324931d60e5385b5c432b3816d",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391030075/"
-        }
-    ]
+  "type": "photo",
+  "title": "Flower on the camping",
+  "content": "/kd/photos/flickr/flower-on-the-camping_9391030075_o.jpg",
+  "publishedAt": "2013-07-25T18:08:05Z",
+  "slug": "ff1d72324931d60e5385b5c432b3816d",
+  "permalink": "/photos/ff1d72324931d60e5385b5c432b3816d",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391030075/"
+    }
+  ]
 }

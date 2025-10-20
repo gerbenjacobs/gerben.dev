@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Backyard of Akerhus fortress",
-    "summary": "Akershus fortress",
-    "publishedAt": "2013-07-26T13:28:49Z",
-    "content": "/kd/photos/flickr/backyard-of-akerhus-fortress_9393887146_o.jpg",
-    "slug": "f39562e5cfae915e95b7879fda2a300c",
-    "permalink": "/photos/f39562e5cfae915e95b7879fda2a300c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393887146/"
-        }
-    ]
+  "type": "photo",
+  "title": "Backyard of Akerhus fortress",
+  "summary": "Akershus fortress",
+  "content": "/kd/photos/flickr/backyard-of-akerhus-fortress_9393887146_o.jpg",
+  "publishedAt": "2013-07-26T13:28:49Z",
+  "slug": "f39562e5cfae915e95b7879fda2a300c",
+  "permalink": "/photos/f39562e5cfae915e95b7879fda2a300c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393887146/"
+    }
+  ]
 }

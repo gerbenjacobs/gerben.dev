@@ -1,28 +1,23 @@
 {
-    "type": "photo",
-    "title": "Augusteinenrei",
-    "summary": "Brugge, Belgium",
-    "publishedAt": "2013-09-07T13:05:12Z",
-    "content": "/kd/photos/flickr/augusteinenrei_9693667795_o.jpg",
-    "slug": "0b5fa899be524afba9313070edad0bed",
-    "permalink": "/photos/0b5fa899be524afba9313070edad0bed",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9693667795/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge",
-        "Augusteinenrei"
-    ]
+  "type": "photo",
+  "title": "Augusteinenrei",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/augusteinenrei_9693667795_o.jpg",
+  "publishedAt": "2013-09-07T13:05:12Z",
+  "slug": "0b5fa899be524afba9313070edad0bed",
+  "permalink": "/photos/0b5fa899be524afba9313070edad0bed",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693667795/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge",
+    "Augusteinenrei"
+  ]
 }

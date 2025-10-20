@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Sunsets ahh..",
-    "publishedAt": "2010-11-07T17:51:01Z",
-    "content": "/kd/photos/flickr/sunsets-ahh_5157242507_o.jpg",
-    "slug": "a36d44c45bdb2681b4a00c5e3b321417",
-    "permalink": "/photos/a36d44c45bdb2681b4a00c5e3b321417",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5157242507/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.986677,
-        "longitude": 4.101676
+  "type": "photo",
+  "title": "Sunsets ahh..",
+  "content": "/kd/photos/flickr/sunsets-ahh_5157242507_o.jpg",
+  "publishedAt": "2010-11-07T17:51:01Z",
+  "slug": "a36d44c45bdb2681b4a00c5e3b321417",
+  "permalink": "/photos/a36d44c45bdb2681b4a00c5e3b321417",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157242507/"
     }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  }
 }

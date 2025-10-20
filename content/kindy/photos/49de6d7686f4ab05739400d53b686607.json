@@ -1,15 +1,10 @@
 {
-    "type": "photo",
-    "publishedAt": "2015-08-10T20:58:43+02:00",
-    "content": "/kd/photos/media/posts/201508/11850010_1616896935235037_720070782_n_17842139170056293.jpg",
-    "slug": "49de6d7686f4ab05739400d53b686607",
-    "permalink": "/photos/49de6d7686f4ab05739400d53b686607",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "tags": [
-        "nofilter"
-    ]
+  "type": "photo",
+  "content": "/kd/photos/media/posts/201508/11850010_1616896935235037_720070782_n_17842139170056293.jpg",
+  "publishedAt": "2015-08-10T20:58:43+02:00",
+  "slug": "49de6d7686f4ab05739400d53b686607",
+  "permalink": "/photos/49de6d7686f4ab05739400d53b686607",
+  "tags": [
+    "nofilter"
+  ]
 }

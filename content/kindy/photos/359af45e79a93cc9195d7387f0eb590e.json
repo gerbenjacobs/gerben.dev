@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Statue of Franklin D. Roosevelt",
-    "publishedAt": "2013-07-26T12:59:39Z",
-    "content": "/kd/photos/flickr/statue-of-franklin-d-roosevelt_9391128219_o.jpg",
-    "slug": "359af45e79a93cc9195d7387f0eb590e",
-    "permalink": "/photos/359af45e79a93cc9195d7387f0eb590e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391128219/"
-        }
-    ]
+  "type": "photo",
+  "title": "Statue of Franklin D. Roosevelt",
+  "content": "/kd/photos/flickr/statue-of-franklin-d-roosevelt_9391128219_o.jpg",
+  "publishedAt": "2013-07-26T12:59:39Z",
+  "slug": "359af45e79a93cc9195d7387f0eb590e",
+  "permalink": "/photos/359af45e79a93cc9195d7387f0eb590e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391128219/"
+    }
+  ]
 }

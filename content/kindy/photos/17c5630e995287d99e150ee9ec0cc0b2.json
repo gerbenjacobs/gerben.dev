@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Snitser Mar, Fryslan",
-    "publishedAt": "2012-01-06T15:58:20Z",
-    "content": "/kd/photos/flickr/snitser-mar-fryslan_6691931233_o.jpg",
-    "slug": "17c5630e995287d99e150ee9ec0cc0b2",
-    "permalink": "/photos/17c5630e995287d99e150ee9ec0cc0b2",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6691931233/"
-        }
-    ]
+  "type": "photo",
+  "title": "Snitser Mar, Fryslan",
+  "content": "/kd/photos/flickr/snitser-mar-fryslan_6691931233_o.jpg",
+  "publishedAt": "2012-01-06T15:58:20Z",
+  "slug": "17c5630e995287d99e150ee9ec0cc0b2",
+  "permalink": "/photos/17c5630e995287d99e150ee9ec0cc0b2",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6691931233/"
+    }
+  ]
 }

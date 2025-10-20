@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Bronze Age farm replica",
-    "publishedAt": "2013-07-26T18:54:07Z",
-    "content": "/kd/photos/flickr/bronze-age-farm-replica_9394300386_o.jpg",
-    "slug": "56a971360b94280599bca5037bbbdd06",
-    "permalink": "/photos/56a971360b94280599bca5037bbbdd06",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9394300386/"
-        }
-    ]
+  "type": "photo",
+  "title": "Bronze Age farm replica",
+  "content": "/kd/photos/flickr/bronze-age-farm-replica_9394300386_o.jpg",
+  "publishedAt": "2013-07-26T18:54:07Z",
+  "slug": "56a971360b94280599bca5037bbbdd06",
+  "permalink": "/photos/56a971360b94280599bca5037bbbdd06",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9394300386/"
+    }
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Sandnes camping, from the ridge",
-    "publishedAt": "2013-07-17T19:47:08Z",
-    "content": "/kd/photos/flickr/sandnes-camping-from-the-ridge_9387032735_o.jpg",
-    "slug": "b31176978dcf07686827c90fe1a7b079",
-    "permalink": "/photos/b31176978dcf07686827c90fe1a7b079",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9387032735/"
-        }
-    ]
+  "type": "photo",
+  "title": "Sandnes camping, from the ridge",
+  "content": "/kd/photos/flickr/sandnes-camping-from-the-ridge_9387032735_o.jpg",
+  "publishedAt": "2013-07-17T19:47:08Z",
+  "slug": "b31176978dcf07686827c90fe1a7b079",
+  "permalink": "/photos/b31176978dcf07686827c90fe1a7b079",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9387032735/"
+    }
+  ]
 }

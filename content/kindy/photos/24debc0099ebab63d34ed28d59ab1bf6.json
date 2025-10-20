@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Squirrel in Bergen",
-    "publishedAt": "2013-07-21T13:03:08Z",
-    "content": "/kd/photos/flickr/squirrel-in-bergen_9390102725_o.jpg",
-    "slug": "24debc0099ebab63d34ed28d59ab1bf6",
-    "permalink": "/photos/24debc0099ebab63d34ed28d59ab1bf6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390102725/"
-        }
-    ]
+  "type": "photo",
+  "title": "Squirrel in Bergen",
+  "content": "/kd/photos/flickr/squirrel-in-bergen_9390102725_o.jpg",
+  "publishedAt": "2013-07-21T13:03:08Z",
+  "slug": "24debc0099ebab63d34ed28d59ab1bf6",
+  "permalink": "/photos/24debc0099ebab63d34ed28d59ab1bf6",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390102725/"
+    }
+  ]
 }

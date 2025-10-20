@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Appartments on the hill down in the Gerlosvalley",
-    "publishedAt": "2012-12-23T16:42:35Z",
-    "content": "/kd/photos/flickr/appartments-on-the-hill-down-in-the-gerlosvalley_8321467678_o.jpg",
-    "slug": "77ad70cb695308deebac0d818b98efed",
-    "permalink": "/photos/77ad70cb695308deebac0d818b98efed",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/8321467678/"
-        }
-    ]
+  "type": "photo",
+  "title": "Appartments on the hill down in the Gerlosvalley",
+  "content": "/kd/photos/flickr/appartments-on-the-hill-down-in-the-gerlosvalley_8321467678_o.jpg",
+  "publishedAt": "2012-12-23T16:42:35Z",
+  "slug": "77ad70cb695308deebac0d818b98efed",
+  "permalink": "/photos/77ad70cb695308deebac0d818b98efed",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/8321467678/"
+    }
+  ]
 }

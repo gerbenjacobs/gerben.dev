@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Königsleiten dorfbahn",
-    "publishedAt": "2012-02-21T12:09:47Z",
-    "content": "/kd/photos/flickr/knigsleiten-dorfbahn_6938018815_o.jpg",
-    "slug": "020a50337da119350a2c11099dae73ea",
-    "permalink": "/photos/020a50337da119350a2c11099dae73ea",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6938018815/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.253193,
-        "longitude": 12.11028
+  "type": "photo",
+  "title": "Königsleiten dorfbahn",
+  "content": "/kd/photos/flickr/knigsleiten-dorfbahn_6938018815_o.jpg",
+  "publishedAt": "2012-02-21T12:09:47Z",
+  "slug": "020a50337da119350a2c11099dae73ea",
+  "permalink": "/photos/020a50337da119350a2c11099dae73ea",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6938018815/"
     }
+  ],
+  "geo": {
+    "latitude": 47.253193,
+    "longitude": 12.11028
+  }
 }

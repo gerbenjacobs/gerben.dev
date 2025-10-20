@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Skei ski center in the summer",
-    "publishedAt": "2013-07-25T11:40:22Z",
-    "content": "/kd/photos/flickr/skei-ski-center-in-the-summer_9391034335_o.jpg",
-    "slug": "9b402a5ffc9a14200d7f4639dd83840c",
-    "permalink": "/photos/9b402a5ffc9a14200d7f4639dd83840c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391034335/"
-        }
-    ]
+  "type": "photo",
+  "title": "Skei ski center in the summer",
+  "content": "/kd/photos/flickr/skei-ski-center-in-the-summer_9391034335_o.jpg",
+  "publishedAt": "2013-07-25T11:40:22Z",
+  "slug": "9b402a5ffc9a14200d7f4639dd83840c",
+  "permalink": "/photos/9b402a5ffc9a14200d7f4639dd83840c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391034335/"
+    }
+  ]
 }

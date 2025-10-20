@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Driving in Norway",
-    "publishedAt": "2013-07-21T15:20:49Z",
-    "content": "/kd/photos/flickr/driving-in-norway_9393266428_o.jpg",
-    "slug": "3974955b7c23a43cedf8d7aa9af5c14f",
-    "permalink": "/photos/3974955b7c23a43cedf8d7aa9af5c14f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393266428/"
-        }
-    ],
-    "tags": [
-      "Norway",
-      "Roadtrip"
-    ]
+  "type": "photo",
+  "title": "Driving in Norway",
+  "content": "/kd/photos/flickr/driving-in-norway_9393266428_o.jpg",
+  "publishedAt": "2013-07-21T15:20:49Z",
+  "slug": "3974955b7c23a43cedf8d7aa9af5c14f",
+  "permalink": "/photos/3974955b7c23a43cedf8d7aa9af5c14f",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393266428/"
+    }
+  ],
+  "tags": [
+    "Norway",
+    "Roadtrip"
+  ]
 }

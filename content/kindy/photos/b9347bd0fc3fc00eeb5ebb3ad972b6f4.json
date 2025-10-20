@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Keeping your water cold in waterfall water!",
-    "publishedAt": "2013-07-21T20:40:41Z",
-    "content": "/kd/photos/flickr/keeping-your-water-cold-in-waterfall-water_9395577028_o.jpg",
-    "slug": "b9347bd0fc3fc00eeb5ebb3ad972b6f4",
-    "permalink": "/photos/b9347bd0fc3fc00eeb5ebb3ad972b6f4",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9395577028/"
-        }
-    ]
+  "type": "photo",
+  "title": "Keeping your water cold in waterfall water!",
+  "content": "/kd/photos/flickr/keeping-your-water-cold-in-waterfall-water_9395577028_o.jpg",
+  "publishedAt": "2013-07-21T20:40:41Z",
+  "slug": "b9347bd0fc3fc00eeb5ebb3ad972b6f4",
+  "permalink": "/photos/b9347bd0fc3fc00eeb5ebb3ad972b6f4",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9395577028/"
+    }
+  ]
 }

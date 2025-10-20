@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Seagull",
-    "publishedAt": "2013-07-18T14:55:01Z",
-    "content": "/kd/photos/flickr/seagull_9389981699_o.jpg",
-    "slug": "0bfa53e2779ef7ca2a1aeb0a663e394e",
-    "permalink": "/photos/0bfa53e2779ef7ca2a1aeb0a663e394e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389981699/"
-        }
-    ],
-    "tags": [
-      "Norway",
-      "Seagull"
-    ]
+  "type": "photo",
+  "title": "Seagull",
+  "content": "/kd/photos/flickr/seagull_9389981699_o.jpg",
+  "publishedAt": "2013-07-18T14:55:01Z",
+  "slug": "0bfa53e2779ef7ca2a1aeb0a663e394e",
+  "permalink": "/photos/0bfa53e2779ef7ca2a1aeb0a663e394e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389981699/"
+    }
+  ],
+  "tags": [
+    "Norway",
+    "Seagull"
+  ]
 }

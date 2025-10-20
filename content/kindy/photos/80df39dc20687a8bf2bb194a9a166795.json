@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Office buildings near Battery Park",
-    "publishedAt": "2011-05-13T21:16:31Z",
-    "content": "/kd/photos/flickr/office-buildings-near-battery-park_5716269037_o.jpg",
-    "slug": "80df39dc20687a8bf2bb194a9a166795",
-    "permalink": "/photos/80df39dc20687a8bf2bb194a9a166795",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5716269037/"
-        }
-    ],
-    "geo": {
-        "latitude": 40.75714,
-        "longitude": -73.981761
+  "type": "photo",
+  "title": "Office buildings near Battery Park",
+  "content": "/kd/photos/flickr/office-buildings-near-battery-park_5716269037_o.jpg",
+  "publishedAt": "2011-05-13T21:16:31Z",
+  "slug": "80df39dc20687a8bf2bb194a9a166795",
+  "permalink": "/photos/80df39dc20687a8bf2bb194a9a166795",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5716269037/"
     }
+  ],
+  "geo": {
+    "latitude": 40.75714,
+    "longitude": -73.981761
+  }
 }

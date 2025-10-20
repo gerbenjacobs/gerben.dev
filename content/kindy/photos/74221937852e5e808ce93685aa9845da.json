@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Loomy weather in Lom",
-    "publishedAt": "2013-07-23T18:54:21Z",
-    "content": "/kd/photos/flickr/loomy-weather-in-lom_9393652178_o.jpg",
-    "slug": "74221937852e5e808ce93685aa9845da",
-    "permalink": "/photos/74221937852e5e808ce93685aa9845da",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393652178/"
-        }
-    ]
+  "type": "photo",
+  "title": "Loomy weather in Lom",
+  "content": "/kd/photos/flickr/loomy-weather-in-lom_9393652178_o.jpg",
+  "publishedAt": "2013-07-23T18:54:21Z",
+  "slug": "74221937852e5e808ce93685aa9845da",
+  "permalink": "/photos/74221937852e5e808ce93685aa9845da",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393652178/"
+    }
+  ]
 }

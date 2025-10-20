@@ -1,26 +1,21 @@
 {
-    "type": "photo",
-    "title": "Hirtshals (DK) - Kristiansand (NO) ferry",
-    "publishedAt": "2013-07-17T09:17:22Z",
-    "content": "/kd/photos/flickr/hirtshals-dk---kristiansand-no-ferry_9389680990_o.jpg",
-    "slug": "4e8b7e6a3e761c9a61b042590e1dcc93",
-    "permalink": "/photos/4e8b7e6a3e761c9a61b042590e1dcc93",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389680990/"
-        }
-    ],
-    "tags": [
-        "Denmark",
-        "Norway",
-        "Ferry",
-        "Hirtshals",
-        "Kristiansand"
-    ]
+  "type": "photo",
+  "title": "Hirtshals (DK) - Kristiansand (NO) ferry",
+  "content": "/kd/photos/flickr/hirtshals-dk---kristiansand-no-ferry_9389680990_o.jpg",
+  "publishedAt": "2013-07-17T09:17:22Z",
+  "slug": "4e8b7e6a3e761c9a61b042590e1dcc93",
+  "permalink": "/photos/4e8b7e6a3e761c9a61b042590e1dcc93",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389680990/"
+    }
+  ],
+  "tags": [
+    "Denmark",
+    "Norway",
+    "Ferry",
+    "Hirtshals",
+    "Kristiansand"
+  ]
 }

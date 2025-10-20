@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Fine dust collected on the car",
-    "publishedAt": "2013-07-25T11:37:54Z",
-    "content": "/kd/photos/flickr/fine-dust-collected-on-the-car_9393809740_o.jpg",
-    "slug": "14d13bd60af3f861da2ff7187bb30c10",
-    "permalink": "/photos/14d13bd60af3f861da2ff7187bb30c10",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393809740/"
-        }
-    ]
+  "type": "photo",
+  "title": "Fine dust collected on the car",
+  "content": "/kd/photos/flickr/fine-dust-collected-on-the-car_9393809740_o.jpg",
+  "publishedAt": "2013-07-25T11:37:54Z",
+  "slug": "14d13bd60af3f861da2ff7187bb30c10",
+  "permalink": "/photos/14d13bd60af3f861da2ff7187bb30c10",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393809740/"
+    }
+  ]
 }

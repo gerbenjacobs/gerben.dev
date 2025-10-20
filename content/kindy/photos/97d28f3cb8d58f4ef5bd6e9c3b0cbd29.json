@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "P1000202",
-    "publishedAt": "2010-09-29T14:44:09Z",
-    "content": "/kd/photos/flickr/p1000202_5059485313_o.jpg",
-    "slug": "97d28f3cb8d58f4ef5bd6e9c3b0cbd29",
-    "permalink": "/photos/97d28f3cb8d58f4ef5bd6e9c3b0cbd29",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5059485313/"
-        }
-    ],
-    "geo": {
-        "latitude": 52.008608,
-        "longitude": 5.895709
+  "type": "photo",
+  "title": "P1000202",
+  "content": "/kd/photos/flickr/p1000202_5059485313_o.jpg",
+  "publishedAt": "2010-09-29T14:44:09Z",
+  "slug": "97d28f3cb8d58f4ef5bd6e9c3b0cbd29",
+  "permalink": "/photos/97d28f3cb8d58f4ef5bd6e9c3b0cbd29",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5059485313/"
     }
+  ],
+  "geo": {
+    "latitude": 52.008608,
+    "longitude": 5.895709
+  }
 }

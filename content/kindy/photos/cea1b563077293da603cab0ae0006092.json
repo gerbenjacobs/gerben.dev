@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Building in Bergen",
-    "publishedAt": "2013-07-21T11:03:20Z",
-    "content": "/kd/photos/flickr/building-in-bergen_9390123237_o.jpg",
-    "slug": "cea1b563077293da603cab0ae0006092",
-    "permalink": "/photos/cea1b563077293da603cab0ae0006092",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390123237/"
-        }
-    ]
+  "type": "photo",
+  "title": "Building in Bergen",
+  "content": "/kd/photos/flickr/building-in-bergen_9390123237_o.jpg",
+  "publishedAt": "2013-07-21T11:03:20Z",
+  "slug": "cea1b563077293da603cab0ae0006092",
+  "permalink": "/photos/cea1b563077293da603cab0ae0006092",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390123237/"
+    }
+  ]
 }

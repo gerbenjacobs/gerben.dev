@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Dutch F-16 Solo Display team",
-    "summary": "Flown by: Tobias \u0026quot;Hitec\u0026quot; Schutte\nFor more: \u003ca href=\"http://www.f16demoteam.nl/\" rel=\"nofollow\"\u003ewww.f16demoteam.nl/\u003c/a\u003e",
-    "publishedAt": "2011-09-16T13:24:42Z",
-    "content": "/kd/photos/flickr/dutch-f-16-solo-display-team_6155843047_o.jpg",
-    "slug": "7c3357669ad2929912718e01b2094e9a",
-    "permalink": "/photos/7c3357669ad2929912718e01b2094e9a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6155843047/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.224547,
-        "longitude": 5.753917
-    },
-    "tags": [
-        "Luchtmachtdagen 2011"
-    ]
+  "type": "photo",
+  "title": "Dutch F-16 Solo Display team",
+  "summary": "Flown by: Tobias \u0026quot;Hitec\u0026quot; Schutte\nFor more: \u003ca href=\"http://www.f16demoteam.nl/\" rel=\"nofollow\"\u003ewww.f16demoteam.nl/\u003c/a\u003e",
+  "content": "/kd/photos/flickr/dutch-f-16-solo-display-team_6155843047_o.jpg",
+  "publishedAt": "2011-09-16T13:24:42Z",
+  "slug": "7c3357669ad2929912718e01b2094e9a",
+  "permalink": "/photos/7c3357669ad2929912718e01b2094e9a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6155843047/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.224547,
+    "longitude": 5.753917
+  },
+  "tags": [
+    "Luchtmachtdagen 2011"
+  ]
 }

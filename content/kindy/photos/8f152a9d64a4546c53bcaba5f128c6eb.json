@@ -1,13 +1,8 @@
 {
-    "type": "photo",
-    "summary": "Handig zo'n bloemenpluk veldje..",
-    "publishedAt": "2013-07-12T14:32:14+02:00",
-    "content": "/kd/photos/media/posts/201307/11335173_863521073723258_1761247772_n_17842917472056293.jpg",
-    "slug": "8f152a9d64a4546c53bcaba5f128c6eb",
-    "permalink": "/photos/8f152a9d64a4546c53bcaba5f128c6eb",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+  "type": "photo",
+  "summary": "Handig zo'n bloemenpluk veldje..",
+  "content": "/kd/photos/media/posts/201307/11335173_863521073723258_1761247772_n_17842917472056293.jpg",
+  "publishedAt": "2013-07-12T14:32:14+02:00",
+  "slug": "8f152a9d64a4546c53bcaba5f128c6eb",
+  "permalink": "/photos/8f152a9d64a4546c53bcaba5f128c6eb"
 }

@@ -1,28 +1,23 @@
 {
-    "type": "photo",
-    "title": "South Street Seaport as seen from the Brooklyn Bridge",
-    "summary": "Inspired me..",
-    "publishedAt": "2011-05-24T01:51:11Z",
-    "content": "/kd/photos/flickr/south-street-seaport-as-seen-from-the-brooklyn-bridge_5752451643_o.jpg",
-    "slug": "42a0f5c9bd8ba548b6ef17f6f0ce7d5c",
-    "permalink": "/photos/42a0f5c9bd8ba548b6ef17f6f0ce7d5c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5752451643/"
-        }
-    ],
-    "geo": {
-        "latitude": 40.75714,
-        "longitude": -73.981761
-    },
-    "tags": [
-        "south street seaport",
-        "brooklyn bridge"
-    ]
+  "type": "photo",
+  "title": "South Street Seaport as seen from the Brooklyn Bridge",
+  "summary": "Inspired me..",
+  "content": "/kd/photos/flickr/south-street-seaport-as-seen-from-the-brooklyn-bridge_5752451643_o.jpg",
+  "publishedAt": "2011-05-24T01:51:11Z",
+  "slug": "42a0f5c9bd8ba548b6ef17f6f0ce7d5c",
+  "permalink": "/photos/42a0f5c9bd8ba548b6ef17f6f0ce7d5c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5752451643/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.75714,
+    "longitude": -73.981761
+  },
+  "tags": [
+    "south street seaport",
+    "brooklyn bridge"
+  ]
 }

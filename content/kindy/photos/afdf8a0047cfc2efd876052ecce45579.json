@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "A postcard from The Netherlands",
-    "summary": ".. at least, it could be.",
-    "publishedAt": "2012-05-28T15:27:50Z",
-    "content": "/kd/photos/flickr/a-postcard-from-the-netherlands_7317203902_o.jpg",
-    "slug": "afdf8a0047cfc2efd876052ecce45579",
-    "permalink": "/photos/afdf8a0047cfc2efd876052ecce45579",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/7317203902/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.056343,
-        "longitude": 5.789709
+  "type": "photo",
+  "title": "A postcard from The Netherlands",
+  "summary": ".. at least, it could be.",
+  "content": "/kd/photos/flickr/a-postcard-from-the-netherlands_7317203902_o.jpg",
+  "publishedAt": "2012-05-28T15:27:50Z",
+  "slug": "afdf8a0047cfc2efd876052ecce45579",
+  "permalink": "/photos/afdf8a0047cfc2efd876052ecce45579",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7317203902/"
     }
+  ],
+  "geo": {
+    "latitude": 53.056343,
+    "longitude": 5.789709
+  }
 }

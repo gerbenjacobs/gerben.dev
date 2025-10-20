@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "\"Rode peony\"",
-    "summary": "Geen idee wat het betekent.. wel mooi..",
-    "publishedAt": "2011-01-01T00:05:49Z",
-    "content": "/kd/photos/flickr/rode-peony_5351761211_o.jpg",
-    "slug": "24e1b0d711100510c3d86f73c07186fa",
-    "permalink": "/photos/24e1b0d711100510c3d86f73c07186fa",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5351761211/"
-        }
-    ],
-    "tags": [
-        "vuurwerk"
-    ]
+  "type": "photo",
+  "title": "\"Rode peony\"",
+  "summary": "Geen idee wat het betekent.. wel mooi..",
+  "content": "/kd/photos/flickr/rode-peony_5351761211_o.jpg",
+  "publishedAt": "2011-01-01T00:05:49Z",
+  "slug": "24e1b0d711100510c3d86f73c07186fa",
+  "permalink": "/photos/24e1b0d711100510c3d86f73c07186fa",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5351761211/"
+    }
+  ],
+  "tags": [
+    "vuurwerk"
+  ]
 }

@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "summary": "Young pine cones.",
-    "publishedAt": "2016-08-22T10:29:41+02:00",
-    "content": "/kd/photos/media/posts/201608/13651863_672720112878747_1766442782_n_17860820386046960.jpg",
-    "slug": "92c264f8e3e0818b5dba10905b459dc9",
-    "permalink": "/photos/92c264f8e3e0818b5dba10905b459dc9",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 51.76118645,
-        "longitude": 5.61197380371
-    },
-    "tags": [
-        "pinecones",
-        "trees",
-        "nature",
-        "herperduin"
-    ]
+  "type": "photo",
+  "summary": "Young pine cones.",
+  "content": "/kd/photos/media/posts/201608/13651863_672720112878747_1766442782_n_17860820386046960.jpg",
+  "publishedAt": "2016-08-22T10:29:41+02:00",
+  "slug": "92c264f8e3e0818b5dba10905b459dc9",
+  "permalink": "/photos/92c264f8e3e0818b5dba10905b459dc9",
+  "geo": {
+    "latitude": 51.76118645,
+    "longitude": 5.61197380371
+  },
+  "tags": [
+    "pinecones",
+    "trees",
+    "nature",
+    "herperduin"
+  ]
 }

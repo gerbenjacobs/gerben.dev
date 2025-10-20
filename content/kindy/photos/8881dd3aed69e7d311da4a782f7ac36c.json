@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Driving to Stord",
-    "publishedAt": "2013-07-20T13:21:05Z",
-    "content": "/kd/photos/flickr/driving-to-stord_9390130171_o.jpg",
-    "slug": "8881dd3aed69e7d311da4a782f7ac36c",
-    "permalink": "/photos/8881dd3aed69e7d311da4a782f7ac36c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390130171/"
-        }
-    ]
+  "type": "photo",
+  "title": "Driving to Stord",
+  "content": "/kd/photos/flickr/driving-to-stord_9390130171_o.jpg",
+  "publishedAt": "2013-07-20T13:21:05Z",
+  "slug": "8881dd3aed69e7d311da4a782f7ac36c",
+  "permalink": "/photos/8881dd3aed69e7d311da4a782f7ac36c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390130171/"
+    }
+  ]
 }

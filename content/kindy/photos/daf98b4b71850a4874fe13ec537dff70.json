@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Fountain in Bergen",
-    "publishedAt": "2013-07-21T10:51:05Z",
-    "content": "/kd/photos/flickr/fountain-in-bergen_9392900008_o.jpg",
-    "slug": "daf98b4b71850a4874fe13ec537dff70",
-    "permalink": "/photos/daf98b4b71850a4874fe13ec537dff70",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392900008/"
-        }
-    ]
+  "type": "photo",
+  "title": "Fountain in Bergen",
+  "content": "/kd/photos/flickr/fountain-in-bergen_9392900008_o.jpg",
+  "publishedAt": "2013-07-21T10:51:05Z",
+  "slug": "daf98b4b71850a4874fe13ec537dff70",
+  "permalink": "/photos/daf98b4b71850a4874fe13ec537dff70",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392900008/"
+    }
+  ]
 }

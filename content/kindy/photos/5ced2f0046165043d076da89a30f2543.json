@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Staring contest",
-    "publishedAt": "2012-05-28T15:00:44Z",
-    "content": "/kd/photos/flickr/staring-contest_7317200900_o.jpg",
-    "slug": "5ced2f0046165043d076da89a30f2543",
-    "permalink": "/photos/5ced2f0046165043d076da89a30f2543",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/7317200900/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.067342,
-        "longitude": 5.811467
+  "type": "photo",
+  "title": "Staring contest",
+  "content": "/kd/photos/flickr/staring-contest_7317200900_o.jpg",
+  "publishedAt": "2012-05-28T15:00:44Z",
+  "slug": "5ced2f0046165043d076da89a30f2543",
+  "permalink": "/photos/5ced2f0046165043d076da89a30f2543",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7317200900/"
     }
+  ],
+  "geo": {
+    "latitude": 53.067342,
+    "longitude": 5.811467
+  }
 }

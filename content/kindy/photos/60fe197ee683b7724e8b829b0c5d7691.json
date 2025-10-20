@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Oslo harbour",
-    "publishedAt": "2013-07-26T10:28:38Z",
-    "content": "/kd/photos/flickr/oslo-harbour_9391145859_o.jpg",
-    "slug": "60fe197ee683b7724e8b829b0c5d7691",
-    "permalink": "/photos/60fe197ee683b7724e8b829b0c5d7691",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391145859/"
-        }
-    ]
+  "type": "photo",
+  "title": "Oslo harbour",
+  "content": "/kd/photos/flickr/oslo-harbour_9391145859_o.jpg",
+  "publishedAt": "2013-07-26T10:28:38Z",
+  "slug": "60fe197ee683b7724e8b829b0c5d7691",
+  "permalink": "/photos/60fe197ee683b7724e8b829b0c5d7691",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391145859/"
+    }
+  ]
 }

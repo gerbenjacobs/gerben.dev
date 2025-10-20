@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Sailboat weather vane",
-    "publishedAt": "2013-07-25T18:08:32Z",
-    "content": "/kd/photos/flickr/sailboat-weather-vane_9393801958_o.jpg",
-    "slug": "114ca68fcc45ce534de56b0ed0cf3029",
-    "permalink": "/photos/114ca68fcc45ce534de56b0ed0cf3029",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393801958/"
-        }
-    ]
+  "type": "photo",
+  "title": "Sailboat weather vane",
+  "content": "/kd/photos/flickr/sailboat-weather-vane_9393801958_o.jpg",
+  "publishedAt": "2013-07-25T18:08:32Z",
+  "slug": "114ca68fcc45ce534de56b0ed0cf3029",
+  "permalink": "/photos/114ca68fcc45ce534de56b0ed0cf3029",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393801958/"
+    }
+  ]
 }

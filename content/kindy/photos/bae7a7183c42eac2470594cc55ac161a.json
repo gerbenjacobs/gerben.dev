@@ -1,17 +1,12 @@
 {
-    "type": "photo",
-    "summary": "Catsitting this lovely kitten!",
-    "publishedAt": "2016-05-06T21:59:06+02:00",
-    "content": "/kd/photos/media/posts/201605/13181504_1142932429071142_847832779_n_17856276688022875.jpg",
-    "slug": "bae7a7183c42eac2470594cc55ac161a",
-    "permalink": "/photos/bae7a7183c42eac2470594cc55ac161a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "tags": [
-        "Semmie",
-        "Cat"
-    ]
+  "type": "photo",
+  "summary": "Catsitting this lovely kitten!",
+  "content": "/kd/photos/media/posts/201605/13181504_1142932429071142_847832779_n_17856276688022875.jpg",
+  "publishedAt": "2016-05-06T21:59:06+02:00",
+  "slug": "bae7a7183c42eac2470594cc55ac161a",
+  "permalink": "/photos/bae7a7183c42eac2470594cc55ac161a",
+  "tags": [
+    "Semmie",
+    "Cat"
+  ]
 }

@@ -1,13 +1,8 @@
 {
-    "type": "photo",
-    "summary": "Watermelooone inside watermeloooowwwnn.",
-    "publishedAt": "2014-06-09T16:23:43+02:00",
-    "content": "/kd/photos/media/posts/201406/10387954_337523323064600_1462585566_n_17843238718056293.jpg",
-    "slug": "f53b09e56d59528bd26c8a0575e922e6",
-    "permalink": "/photos/f53b09e56d59528bd26c8a0575e922e6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+  "type": "photo",
+  "summary": "Watermelooone inside watermeloooowwwnn.",
+  "content": "/kd/photos/media/posts/201406/10387954_337523323064600_1462585566_n_17843238718056293.jpg",
+  "publishedAt": "2014-06-09T16:23:43+02:00",
+  "slug": "f53b09e56d59528bd26c8a0575e922e6",
+  "permalink": "/photos/f53b09e56d59528bd26c8a0575e922e6"
 }

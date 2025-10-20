@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Fløibanen ground station",
-    "publishedAt": "2013-07-21T12:38:50Z",
-    "content": "/kd/photos/flickr/flibanen-ground-station_9392887938_o.jpg",
-    "slug": "b2196b2860cf63fbed95647cd36482c0",
-    "permalink": "/photos/b2196b2860cf63fbed95647cd36482c0",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392887938/"
-        }
-    ]
+  "type": "photo",
+  "title": "Fløibanen ground station",
+  "content": "/kd/photos/flickr/flibanen-ground-station_9392887938_o.jpg",
+  "publishedAt": "2013-07-21T12:38:50Z",
+  "slug": "b2196b2860cf63fbed95647cd36482c0",
+  "permalink": "/photos/b2196b2860cf63fbed95647cd36482c0",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392887938/"
+    }
+  ]
 }

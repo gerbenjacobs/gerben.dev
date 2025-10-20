@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Houses in Bergen",
-    "publishedAt": "2013-07-21T11:41:46Z",
-    "content": "/kd/photos/flickr/houses-in-bergen_9392891478_o.jpg",
-    "slug": "31e9ae59e03844bbffe8d0321239e064",
-    "permalink": "/photos/31e9ae59e03844bbffe8d0321239e064",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392891478/"
-        }
-    ]
+  "type": "photo",
+  "title": "Houses in Bergen",
+  "content": "/kd/photos/flickr/houses-in-bergen_9392891478_o.jpg",
+  "publishedAt": "2013-07-21T11:41:46Z",
+  "slug": "31e9ae59e03844bbffe8d0321239e064",
+  "permalink": "/photos/31e9ae59e03844bbffe8d0321239e064",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392891478/"
+    }
+  ]
 }

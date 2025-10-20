@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Stavanger city square",
-    "publishedAt": "2013-07-18T15:01:38Z",
-    "content": "/kd/photos/flickr/stavanger-city-square_9392754966_o.jpg",
-    "slug": "11d5b0b7d14a9ce4cad8f139f3227673",
-    "permalink": "/photos/11d5b0b7d14a9ce4cad8f139f3227673",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392754966/"
-        }
-    ]
+  "type": "photo",
+  "title": "Stavanger city square",
+  "content": "/kd/photos/flickr/stavanger-city-square_9392754966_o.jpg",
+  "publishedAt": "2013-07-18T15:01:38Z",
+  "slug": "11d5b0b7d14a9ce4cad8f139f3227673",
+  "permalink": "/photos/11d5b0b7d14a9ce4cad8f139f3227673",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392754966/"
+    }
+  ]
 }

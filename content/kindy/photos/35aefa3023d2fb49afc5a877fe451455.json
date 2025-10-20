@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Helicopters in formation",
-    "summary": "4 Apaches, 1 Lynx and 2 Chinooks",
-    "publishedAt": "2011-09-16T12:34:27Z",
-    "content": "/kd/photos/flickr/helicopters-in-formation_6156386160_o.jpg",
-    "slug": "35aefa3023d2fb49afc5a877fe451455",
-    "permalink": "/photos/35aefa3023d2fb49afc5a877fe451455",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6156386160/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.224547,
-        "longitude": 5.753917
-    },
-    "tags": [
-        "Luchtmachtdagen 2011"
-    ]
+  "type": "photo",
+  "title": "Helicopters in formation",
+  "summary": "4 Apaches, 1 Lynx and 2 Chinooks",
+  "content": "/kd/photos/flickr/helicopters-in-formation_6156386160_o.jpg",
+  "publishedAt": "2011-09-16T12:34:27Z",
+  "slug": "35aefa3023d2fb49afc5a877fe451455",
+  "permalink": "/photos/35aefa3023d2fb49afc5a877fe451455",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6156386160/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.224547,
+    "longitude": 5.753917
+  },
+  "tags": [
+    "Luchtmachtdagen 2011"
+  ]
 }

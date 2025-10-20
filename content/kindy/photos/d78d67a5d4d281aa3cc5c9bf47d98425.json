@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "publishedAt": "2021-06-12T17:36:51+02:00",
-    "content": "/kd/photos/media/posts/202106/131485826_275120954381799_6181808425120479953_n_17899151192067891.jpg",
-    "slug": "d78d67a5d4d281aa3cc5c9bf47d98425",
-    "permalink": "/photos/d78d67a5d4d281aa3cc5c9bf47d98425",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 51.50028,
-        "longitude": 3.61556
-    },
-    "tags": [
-        "Middelburg"
-    ]
+  "type": "photo",
+  "content": "/kd/photos/media/posts/202106/131485826_275120954381799_6181808425120479953_n_17899151192067891.jpg",
+  "publishedAt": "2021-06-12T17:36:51+02:00",
+  "slug": "d78d67a5d4d281aa3cc5c9bf47d98425",
+  "permalink": "/photos/d78d67a5d4d281aa3cc5c9bf47d98425",
+  "geo": {
+    "latitude": 51.50028,
+    "longitude": 3.61556
+  },
+  "tags": [
+    "Middelburg"
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Another beautiful day in Zell",
-    "publishedAt": "2012-12-27T10:39:46Z",
-    "content": "/kd/photos/flickr/another-beautiful-day-in-zell_8320435471_o.jpg",
-    "slug": "6bb54359946cb8d5722993a8228c04a7",
-    "permalink": "/photos/6bb54359946cb8d5722993a8228c04a7",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/8320435471/"
-        }
-    ]
+  "type": "photo",
+  "title": "Another beautiful day in Zell",
+  "content": "/kd/photos/flickr/another-beautiful-day-in-zell_8320435471_o.jpg",
+  "publishedAt": "2012-12-27T10:39:46Z",
+  "slug": "6bb54359946cb8d5722993a8228c04a7",
+  "permalink": "/photos/6bb54359946cb8d5722993a8228c04a7",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/8320435471/"
+    }
+  ]
 }

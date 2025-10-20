@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Theatre in Bergen",
-    "publishedAt": "2013-07-21T10:55:00Z",
-    "content": "/kd/photos/flickr/theatre-in-bergen_9392898552_o.jpg",
-    "slug": "222df34fdb115644a2a1d4dd0d898208",
-    "permalink": "/photos/222df34fdb115644a2a1d4dd0d898208",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392898552/"
-        }
-    ]
+  "type": "photo",
+  "title": "Theatre in Bergen",
+  "content": "/kd/photos/flickr/theatre-in-bergen_9392898552_o.jpg",
+  "publishedAt": "2013-07-21T10:55:00Z",
+  "slug": "222df34fdb115644a2a1d4dd0d898208",
+  "permalink": "/photos/222df34fdb115644a2a1d4dd0d898208",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392898552/"
+    }
+  ]
 }

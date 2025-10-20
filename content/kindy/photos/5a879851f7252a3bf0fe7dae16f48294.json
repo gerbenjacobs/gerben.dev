@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Holding ice in Nigardsbreen glacier (and lake)",
-    "publishedAt": "2013-07-23T10:01:58Z",
-    "content": "/kd/photos/flickr/holding-ice-in-nigardsbreen-glacier-and-lake_9392807873_o.jpg",
-    "slug": "5a879851f7252a3bf0fe7dae16f48294",
-    "permalink": "/photos/5a879851f7252a3bf0fe7dae16f48294",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392807873/"
-        }
-    ]
+  "type": "photo",
+  "title": "Holding ice in Nigardsbreen glacier (and lake)",
+  "content": "/kd/photos/flickr/holding-ice-in-nigardsbreen-glacier-and-lake_9392807873_o.jpg",
+  "publishedAt": "2013-07-23T10:01:58Z",
+  "slug": "5a879851f7252a3bf0fe7dae16f48294",
+  "permalink": "/photos/5a879851f7252a3bf0fe7dae16f48294",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392807873/"
+    }
+  ]
 }

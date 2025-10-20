@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Danes love flags",
-    "publishedAt": "2013-07-14T13:49:46Z",
-    "content": "/kd/photos/flickr/danes-love-flags_9386926557_o.jpg",
-    "slug": "a3847994e09b76c92b216a1c55d8ed71",
-    "permalink": "/photos/a3847994e09b76c92b216a1c55d8ed71",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9386926557/"
-        }
-    ]
+  "type": "photo",
+  "title": "Danes love flags",
+  "content": "/kd/photos/flickr/danes-love-flags_9386926557_o.jpg",
+  "publishedAt": "2013-07-14T13:49:46Z",
+  "slug": "a3847994e09b76c92b216a1c55d8ed71",
+  "permalink": "/photos/a3847994e09b76c92b216a1c55d8ed71",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9386926557/"
+    }
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Broken ice in the locks",
-    "publishedAt": "2013-01-28T15:24:46Z",
-    "content": "/kd/photos/flickr/broken-ice-in-the-locks_8468149684_o.jpg",
-    "slug": "24883585d8e272636f8e80879523a383",
-    "permalink": "/photos/24883585d8e272636f8e80879523a383",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/8468149684/"
-        }
-    ]
+  "type": "photo",
+  "title": "Broken ice in the locks",
+  "content": "/kd/photos/flickr/broken-ice-in-the-locks_8468149684_o.jpg",
+  "publishedAt": "2013-01-28T15:24:46Z",
+  "slug": "24883585d8e272636f8e80879523a383",
+  "permalink": "/photos/24883585d8e272636f8e80879523a383",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/8468149684/"
+    }
+  ]
 }

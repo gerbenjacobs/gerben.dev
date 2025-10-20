@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Welcome to Denmark",
-    "publishedAt": "2013-07-14T13:37:01Z",
-    "content": "/kd/photos/flickr/welcome-to-denmark_9386926903_o.jpg",
-    "slug": "e787ef49f80888dd11ddd4f8ec42ac59",
-    "permalink": "/photos/e787ef49f80888dd11ddd4f8ec42ac59",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9386926903/"
-        }
-    ]
+  "type": "photo",
+  "title": "Welcome to Denmark",
+  "content": "/kd/photos/flickr/welcome-to-denmark_9386926903_o.jpg",
+  "publishedAt": "2013-07-14T13:37:01Z",
+  "slug": "e787ef49f80888dd11ddd4f8ec42ac59",
+  "permalink": "/photos/e787ef49f80888dd11ddd4f8ec42ac59",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9386926903/"
+    }
+  ]
 }

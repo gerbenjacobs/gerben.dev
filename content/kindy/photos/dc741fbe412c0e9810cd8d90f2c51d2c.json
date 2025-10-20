@@ -1,12 +1,7 @@
 {
-    "type": "photo",
-    "publishedAt": "2014-06-08T17:58:26+02:00",
-    "content": "/kd/photos/media/posts/201406/10431947_707586139307517_2137545804_n_17843238079056293.jpg",
-    "slug": "dc741fbe412c0e9810cd8d90f2c51d2c",
-    "permalink": "/photos/dc741fbe412c0e9810cd8d90f2c51d2c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+  "type": "photo",
+  "content": "/kd/photos/media/posts/201406/10431947_707586139307517_2137545804_n_17843238079056293.jpg",
+  "publishedAt": "2014-06-08T17:58:26+02:00",
+  "slug": "dc741fbe412c0e9810cd8d90f2c51d2c",
+  "permalink": "/photos/dc741fbe412c0e9810cd8d90f2c51d2c"
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Bergen from the Fløibanen",
-    "publishedAt": "2013-07-21T12:58:56Z",
-    "content": "/kd/photos/flickr/bergen-from-the-flibanen_9390103401_o.jpg",
-    "slug": "265ee30334858fbc4e59f306ea453354",
-    "permalink": "/photos/265ee30334858fbc4e59f306ea453354",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390103401/"
-        }
-    ]
+  "type": "photo",
+  "title": "Bergen from the Fløibanen",
+  "content": "/kd/photos/flickr/bergen-from-the-flibanen_9390103401_o.jpg",
+  "publishedAt": "2013-07-21T12:58:56Z",
+  "slug": "265ee30334858fbc4e59f306ea453354",
+  "permalink": "/photos/265ee30334858fbc4e59f306ea453354",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390103401/"
+    }
+  ]
 }

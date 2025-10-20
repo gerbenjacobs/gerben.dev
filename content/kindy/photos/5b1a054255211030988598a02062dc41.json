@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Lakes at Ry",
-    "publishedAt": "2013-07-15T10:30:11Z",
-    "content": "/kd/photos/flickr/lakes-at-ry_9389692766_o.jpg",
-    "slug": "5b1a054255211030988598a02062dc41",
-    "permalink": "/photos/5b1a054255211030988598a02062dc41",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389692766/"
-        }
-    ]
+  "type": "photo",
+  "title": "Lakes at Ry",
+  "content": "/kd/photos/flickr/lakes-at-ry_9389692766_o.jpg",
+  "publishedAt": "2013-07-15T10:30:11Z",
+  "slug": "5b1a054255211030988598a02062dc41",
+  "permalink": "/photos/5b1a054255211030988598a02062dc41",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389692766/"
+    }
+  ]
 }

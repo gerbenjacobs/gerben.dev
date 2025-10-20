@@ -1,26 +1,21 @@
 {
-    "type": "photo",
-    "title": "Chickens! (Larmachalm)",
-    "publishedAt": "2011-02-26T12:17:29Z",
-    "content": "/kd/photos/flickr/chickens-larmachalm_5486418305_o.jpg",
-    "slug": "0aaf0619e6fa1bef69544916f037a37c",
-    "permalink": "/photos/0aaf0619e6fa1bef69544916f037a37c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5486418305/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.25164,
-        "longitude": 12.100684
-    },
-    "tags": [
-        "chickens"
-    ]
+  "type": "photo",
+  "title": "Chickens! (Larmachalm)",
+  "content": "/kd/photos/flickr/chickens-larmachalm_5486418305_o.jpg",
+  "publishedAt": "2011-02-26T12:17:29Z",
+  "slug": "0aaf0619e6fa1bef69544916f037a37c",
+  "permalink": "/photos/0aaf0619e6fa1bef69544916f037a37c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5486418305/"
+    }
+  ],
+  "geo": {
+    "latitude": 47.25164,
+    "longitude": 12.100684
+  },
+  "tags": [
+    "chickens"
+  ]
 }

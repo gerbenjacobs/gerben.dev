@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "summary": "Lovely outside.",
-    "publishedAt": "2013-06-18T13:12:43+02:00",
-    "content": "/kd/photos/media/posts/201306/11272325_1672271269659576_753561847_n_17842891450056293.jpg",
-    "slug": "5dd5d11d539b440d148cffff231bd5b2",
-    "permalink": "/photos/5dd5d11d539b440d148cffff231bd5b2",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 52.3751614872,
-        "longitude": 4.89637725044
-    },
-    "tags": [
-        "GOTOams"
-    ]
+  "type": "photo",
+  "summary": "Lovely outside.",
+  "content": "/kd/photos/media/posts/201306/11272325_1672271269659576_753561847_n_17842891450056293.jpg",
+  "publishedAt": "2013-06-18T13:12:43+02:00",
+  "slug": "5dd5d11d539b440d148cffff231bd5b2",
+  "permalink": "/photos/5dd5d11d539b440d148cffff231bd5b2",
+  "geo": {
+    "latitude": 52.3751614872,
+    "longitude": 4.89637725044
+  },
+  "tags": [
+    "GOTOams"
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Denmark",
-    "publishedAt": "2013-07-14T13:48:48Z",
-    "content": "/kd/photos/flickr/denmark_9386926821_o.jpg",
-    "slug": "985e675c45c2c48f20074fbf64eec82f",
-    "permalink": "/photos/985e675c45c2c48f20074fbf64eec82f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9386926821/"
-        }
-    ]
+  "type": "photo",
+  "title": "Denmark",
+  "content": "/kd/photos/flickr/denmark_9386926821_o.jpg",
+  "publishedAt": "2013-07-14T13:48:48Z",
+  "slug": "985e675c45c2c48f20074fbf64eec82f",
+  "permalink": "/photos/985e675c45c2c48f20074fbf64eec82f",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9386926821/"
+    }
+  ]
 }

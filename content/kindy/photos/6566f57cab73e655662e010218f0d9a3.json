@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "Outdoor pool with snow",
-    "summary": ".. lots of snow.",
-    "publishedAt": "2012-02-20T07:37:34Z",
-    "content": "/kd/photos/flickr/outdoor-pool-with-snow_6791901296_o.jpg",
-    "slug": "6566f57cab73e655662e010218f0d9a3",
-    "permalink": "/photos/6566f57cab73e655662e010218f0d9a3",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6791901296/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.21099,
-        "longitude": 12.00401
+  "type": "photo",
+  "title": "Outdoor pool with snow",
+  "summary": ".. lots of snow.",
+  "content": "/kd/photos/flickr/outdoor-pool-with-snow_6791901296_o.jpg",
+  "publishedAt": "2012-02-20T07:37:34Z",
+  "slug": "6566f57cab73e655662e010218f0d9a3",
+  "permalink": "/photos/6566f57cab73e655662e010218f0d9a3",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6791901296/"
     }
+  ],
+  "geo": {
+    "latitude": 47.21099,
+    "longitude": 12.00401
+  }
 }

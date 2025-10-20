@@ -1,25 +1,20 @@
 {
-    "type": "photo",
-    "title": "Horse rider on heath",
-    "summary": "Ginkelse Heide, Ede, the Netherlands",
-    "publishedAt": "2015-12-13T15:01:37Z",
-    "content": "/kd/photos/flickr/horse-rider-on-heath_23689530461_o.jpg",
-    "slug": "9a4ba54a865135884bf3fd512a6f13fd",
-    "permalink": "/photos/9a4ba54a865135884bf3fd512a6f13fd",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/23689530461/"
-        }
-    ],
-    "tags": [
-        "Ede",
-        "Ginkelse",
-        "Heide"
-    ]
+  "type": "photo",
+  "title": "Horse rider on heath",
+  "summary": "Ginkelse Heide, Ede, the Netherlands",
+  "content": "/kd/photos/flickr/horse-rider-on-heath_23689530461_o.jpg",
+  "publishedAt": "2015-12-13T15:01:37Z",
+  "slug": "9a4ba54a865135884bf3fd512a6f13fd",
+  "permalink": "/photos/9a4ba54a865135884bf3fd512a6f13fd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/23689530461/"
+    }
+  ],
+  "tags": [
+    "Ede",
+    "Ginkelse",
+    "Heide"
+  ]
 }

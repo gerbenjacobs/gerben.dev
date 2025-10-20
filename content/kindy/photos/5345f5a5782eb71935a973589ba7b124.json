@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Bad weather in Sweden",
-    "publishedAt": "2013-07-27T12:40:11Z",
-    "content": "/kd/photos/flickr/bad-weather-in-sweden_9394256606_o.jpg",
-    "slug": "5345f5a5782eb71935a973589ba7b124",
-    "permalink": "/photos/5345f5a5782eb71935a973589ba7b124",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9394256606/"
-        }
-    ]
+  "type": "photo",
+  "title": "Bad weather in Sweden",
+  "content": "/kd/photos/flickr/bad-weather-in-sweden_9394256606_o.jpg",
+  "publishedAt": "2013-07-27T12:40:11Z",
+  "slug": "5345f5a5782eb71935a973589ba7b124",
+  "permalink": "/photos/5345f5a5782eb71935a973589ba7b124",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9394256606/"
+    }
+  ]
 }

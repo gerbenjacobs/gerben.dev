@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Sunset",
-    "publishedAt": "2012-05-26T21:31:54Z",
-    "content": "/kd/photos/flickr/sunset_7317192306_o.jpg",
-    "slug": "9cd07e77d98d26a47cbbbc4bc621b786",
-    "permalink": "/photos/9cd07e77d98d26a47cbbbc4bc621b786",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/7317192306/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.037645,
-        "longitude": 5.773551
+  "type": "photo",
+  "title": "Sunset",
+  "content": "/kd/photos/flickr/sunset_7317192306_o.jpg",
+  "publishedAt": "2012-05-26T21:31:54Z",
+  "slug": "9cd07e77d98d26a47cbbbc4bc621b786",
+  "permalink": "/photos/9cd07e77d98d26a47cbbbc4bc621b786",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7317192306/"
     }
+  ],
+  "geo": {
+    "latitude": 53.037645,
+    "longitude": 5.773551
+  }
 }

@@ -1,13 +1,8 @@
 {
-    "type": "photo",
-    "summary": "Er zit zelfs weer (orkaan) in de koffie bij MeteoGroup.",
-    "publishedAt": "2014-06-11T11:18:26+02:00",
-    "content": "/kd/photos/media/posts/201406/10413050_248228925385551_1485258811_n_17843239789056293.jpg",
-    "slug": "61262fb4019c233752b1c62c80379b6f",
-    "permalink": "/photos/61262fb4019c233752b1c62c80379b6f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    }
+  "type": "photo",
+  "summary": "Er zit zelfs weer (orkaan) in de koffie bij MeteoGroup.",
+  "content": "/kd/photos/media/posts/201406/10413050_248228925385551_1485258811_n_17843239789056293.jpg",
+  "publishedAt": "2014-06-11T11:18:26+02:00",
+  "slug": "61262fb4019c233752b1c62c80379b6f",
+  "permalink": "/photos/61262fb4019c233752b1c62c80379b6f"
 }

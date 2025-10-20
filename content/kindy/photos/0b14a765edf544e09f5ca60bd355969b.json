@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Lake near the camping",
-    "publishedAt": "2013-07-22T20:46:24Z",
-    "content": "/kd/photos/flickr/lake-near-the-camping_9390468049_o.jpg",
-    "slug": "0b14a765edf544e09f5ca60bd355969b",
-    "permalink": "/photos/0b14a765edf544e09f5ca60bd355969b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390468049/"
-        }
-    ],
-    "tags": [
-      "Norway",
-      "Lake"
-    ]
+  "type": "photo",
+  "title": "Lake near the camping",
+  "content": "/kd/photos/flickr/lake-near-the-camping_9390468049_o.jpg",
+  "publishedAt": "2013-07-22T20:46:24Z",
+  "slug": "0b14a765edf544e09f5ca60bd355969b",
+  "permalink": "/photos/0b14a765edf544e09f5ca60bd355969b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390468049/"
+    }
+  ],
+  "tags": [
+    "Norway",
+    "Lake"
+  ]
 }

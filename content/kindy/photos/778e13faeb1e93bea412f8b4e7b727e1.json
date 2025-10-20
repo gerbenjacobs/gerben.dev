@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Vigeland sculpture park",
-    "publishedAt": "2013-07-26T11:54:32Z",
-    "content": "/kd/photos/flickr/vigeland-sculpture-park_9393907720_o.jpg",
-    "slug": "778e13faeb1e93bea412f8b4e7b727e1",
-    "permalink": "/photos/778e13faeb1e93bea412f8b4e7b727e1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393907720/"
-        }
-    ]
+  "type": "photo",
+  "title": "Vigeland sculpture park",
+  "content": "/kd/photos/flickr/vigeland-sculpture-park_9393907720_o.jpg",
+  "publishedAt": "2013-07-26T11:54:32Z",
+  "slug": "778e13faeb1e93bea412f8b4e7b727e1",
+  "permalink": "/photos/778e13faeb1e93bea412f8b4e7b727e1",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393907720/"
+    }
+  ]
 }

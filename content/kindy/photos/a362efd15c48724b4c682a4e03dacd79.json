@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Friendship",
-    "publishedAt": "2010-09-26T16:28:40Z",
-    "content": "/kd/photos/flickr/friendship_5026930831_o.jpg",
-    "slug": "a362efd15c48724b4c682a4e03dacd79",
-    "permalink": "/photos/a362efd15c48724b4c682a4e03dacd79",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5026930831/"
-        }
-    ]
+  "type": "photo",
+  "title": "Friendship",
+  "content": "/kd/photos/flickr/friendship_5026930831_o.jpg",
+  "publishedAt": "2010-09-26T16:28:40Z",
+  "slug": "a362efd15c48724b4c682a4e03dacd79",
+  "permalink": "/photos/a362efd15c48724b4c682a4e03dacd79",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5026930831/"
+    }
+  ]
 }

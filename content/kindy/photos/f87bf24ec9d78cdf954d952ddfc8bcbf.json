@@ -1,26 +1,21 @@
 {
-    "type": "photo",
-    "summary": "Fogbanks on Ginkelse heide, very big temperature dip after summer storm.",
-    "publishedAt": "2016-08-09T22:55:05+02:00",
-    "content": "/kd/photos/media/posts/201608/13774679_136120953496777_246103307_n_17850636160109682.jpg",
-    "slug": "f87bf24ec9d78cdf954d952ddfc8bcbf",
-    "permalink": "/photos/f87bf24ec9d78cdf954d952ddfc8bcbf",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 52.0306,
-        "longitude": 5.7256
-    },
-    "tags": [
-        "fog",
-        "fogbank",
-        "ginkelseheide",
-        "ede",
-        "heathland",
-        "callunavulgaris",
-        "pines"
-    ]
+  "type": "photo",
+  "summary": "Fogbanks on Ginkelse heide, very big temperature dip after summer storm.",
+  "content": "/kd/photos/media/posts/201608/13774679_136120953496777_246103307_n_17850636160109682.jpg",
+  "publishedAt": "2016-08-09T22:55:05+02:00",
+  "slug": "f87bf24ec9d78cdf954d952ddfc8bcbf",
+  "permalink": "/photos/f87bf24ec9d78cdf954d952ddfc8bcbf",
+  "geo": {
+    "latitude": 52.0306,
+    "longitude": 5.7256
+  },
+  "tags": [
+    "fog",
+    "fogbank",
+    "ginkelseheide",
+    "ede",
+    "heathland",
+    "callunavulgaris",
+    "pines"
+  ]
 }

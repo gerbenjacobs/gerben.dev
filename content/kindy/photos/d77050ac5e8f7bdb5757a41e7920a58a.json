@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Stavkirke in Lom",
-    "publishedAt": "2013-07-23T18:38:10Z",
-    "content": "/kd/photos/flickr/stavkirke-in-lom_9390888247_o.jpg",
-    "slug": "d77050ac5e8f7bdb5757a41e7920a58a",
-    "permalink": "/photos/d77050ac5e8f7bdb5757a41e7920a58a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390888247/"
-        }
-    ]
+  "type": "photo",
+  "title": "Stavkirke in Lom",
+  "content": "/kd/photos/flickr/stavkirke-in-lom_9390888247_o.jpg",
+  "publishedAt": "2013-07-23T18:38:10Z",
+  "slug": "d77050ac5e8f7bdb5757a41e7920a58a",
+  "permalink": "/photos/d77050ac5e8f7bdb5757a41e7920a58a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390888247/"
+    }
+  ]
 }

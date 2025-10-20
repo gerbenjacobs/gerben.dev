@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Road to Trollstigen",
-    "publishedAt": "2013-07-24T13:06:22Z",
-    "content": "/kd/photos/flickr/road-to-trollstigen_9393639182_o.jpg",
-    "slug": "23c0bc6c30350e59da947a952b718e38",
-    "permalink": "/photos/23c0bc6c30350e59da947a952b718e38",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393639182/"
-        }
-    ]
+  "type": "photo",
+  "title": "Road to Trollstigen",
+  "content": "/kd/photos/flickr/road-to-trollstigen_9393639182_o.jpg",
+  "publishedAt": "2013-07-24T13:06:22Z",
+  "slug": "23c0bc6c30350e59da947a952b718e38",
+  "permalink": "/photos/23c0bc6c30350e59da947a952b718e38",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393639182/"
+    }
+  ]
 }

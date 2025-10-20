@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Norwegian flag atop Fløibanen",
-    "publishedAt": "2013-07-21T12:57:39Z",
-    "content": "/kd/photos/flickr/norwegian-flag-atop-flibanen_9390103691_o.jpg",
-    "slug": "99bb91bc5093cbc6240aa463c152d4bb",
-    "permalink": "/photos/99bb91bc5093cbc6240aa463c152d4bb",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390103691/"
-        }
-    ]
+  "type": "photo",
+  "title": "Norwegian flag atop Fløibanen",
+  "content": "/kd/photos/flickr/norwegian-flag-atop-flibanen_9390103691_o.jpg",
+  "publishedAt": "2013-07-21T12:57:39Z",
+  "slug": "99bb91bc5093cbc6240aa463c152d4bb",
+  "permalink": "/photos/99bb91bc5093cbc6240aa463c152d4bb",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390103691/"
+    }
+  ]
 }

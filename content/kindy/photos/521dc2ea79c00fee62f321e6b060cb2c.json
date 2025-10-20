@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Three tallest mountain in the region",
-    "summary": "At Riksvei 55 mountain pass\n1Galdhøpiggen\n2Glittertind\n3Store Skagastølstinden",
-    "publishedAt": "2013-07-23T12:35:35Z",
-    "content": "/kd/photos/flickr/three-tallest-mountain-in-the-region_9390768369_o.jpg",
-    "slug": "521dc2ea79c00fee62f321e6b060cb2c",
-    "permalink": "/photos/521dc2ea79c00fee62f321e6b060cb2c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390768369/"
-        }
-    ]
+  "type": "photo",
+  "title": "Three tallest mountain in the region",
+  "summary": "At Riksvei 55 mountain pass\n1Galdhøpiggen\n2Glittertind\n3Store Skagastølstinden",
+  "content": "/kd/photos/flickr/three-tallest-mountain-in-the-region_9390768369_o.jpg",
+  "publishedAt": "2013-07-23T12:35:35Z",
+  "slug": "521dc2ea79c00fee62f321e6b060cb2c",
+  "permalink": "/photos/521dc2ea79c00fee62f321e6b060cb2c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390768369/"
+    }
+  ]
 }

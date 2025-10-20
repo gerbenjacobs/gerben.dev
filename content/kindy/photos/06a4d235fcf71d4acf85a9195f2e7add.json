@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Sønderborg",
-    "publishedAt": "2013-07-14T14:29:23Z",
-    "content": "/kd/photos/flickr/snderborg_9389695650_o.jpg",
-    "slug": "06a4d235fcf71d4acf85a9195f2e7add",
-    "permalink": "/photos/06a4d235fcf71d4acf85a9195f2e7add",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389695650/"
-        }
-    ]
+  "type": "photo",
+  "title": "Sønderborg",
+  "content": "/kd/photos/flickr/snderborg_9389695650_o.jpg",
+  "publishedAt": "2013-07-14T14:29:23Z",
+  "slug": "06a4d235fcf71d4acf85a9195f2e7add",
+  "permalink": "/photos/06a4d235fcf71d4acf85a9195f2e7add",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389695650/"
+    }
+  ]
 }

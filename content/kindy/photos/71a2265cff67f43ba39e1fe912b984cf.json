@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "summary": "Vegan jajangmyeon!",
-    "publishedAt": "2016-06-11T18:38:42+02:00",
-    "content": "/kd/photos/media/posts/201606/13408986_1055203027907472_1049407208_n_17848240852087333.jpg",
-    "slug": "71a2265cff67f43ba39e1fe912b984cf",
-    "permalink": "/photos/71a2265cff67f43ba39e1fe912b984cf",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "tags": [
-        "vegan",
-        "jajangmyeon",
-        "blackbeanpaste",
-        "sesameseeds",
-        "mommytang"
-    ]
+  "type": "photo",
+  "summary": "Vegan jajangmyeon!",
+  "content": "/kd/photos/media/posts/201606/13408986_1055203027907472_1049407208_n_17848240852087333.jpg",
+  "publishedAt": "2016-06-11T18:38:42+02:00",
+  "slug": "71a2265cff67f43ba39e1fe912b984cf",
+  "permalink": "/photos/71a2265cff67f43ba39e1fe912b984cf",
+  "tags": [
+    "vegan",
+    "jajangmyeon",
+    "blackbeanpaste",
+    "sesameseeds",
+    "mommytang"
+  ]
 }

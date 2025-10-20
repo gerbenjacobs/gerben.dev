@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Sint-Sebastiaansguild",
-    "summary": "Archery guild, Brugge, Belgium",
-    "publishedAt": "2013-09-07T12:35:46Z",
-    "content": "/kd/photos/flickr/sint-sebastiaansguild_9696863174_o.jpg",
-    "slug": "5e412fef73686fb8304da7a5b368076b",
-    "permalink": "/photos/5e412fef73686fb8304da7a5b368076b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9696863174/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "Sint-Sebastiaansguild",
+  "summary": "Archery guild, Brugge, Belgium",
+  "content": "/kd/photos/flickr/sint-sebastiaansguild_9696863174_o.jpg",
+  "publishedAt": "2013-09-07T12:35:46Z",
+  "slug": "5e412fef73686fb8304da7a5b368076b",
+  "permalink": "/photos/5e412fef73686fb8304da7a5b368076b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9696863174/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

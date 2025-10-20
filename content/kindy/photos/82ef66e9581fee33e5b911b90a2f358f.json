@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Church in Bergen",
-    "publishedAt": "2013-07-21T12:25:40Z",
-    "content": "/kd/photos/flickr/church-in-bergen_9390113443_o.jpg",
-    "slug": "82ef66e9581fee33e5b911b90a2f358f",
-    "permalink": "/photos/82ef66e9581fee33e5b911b90a2f358f",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390113443/"
-        }
-    ]
+  "type": "photo",
+  "title": "Church in Bergen",
+  "content": "/kd/photos/flickr/church-in-bergen_9390113443_o.jpg",
+  "publishedAt": "2013-07-21T12:25:40Z",
+  "slug": "82ef66e9581fee33e5b911b90a2f358f",
+  "permalink": "/photos/82ef66e9581fee33e5b911b90a2f358f",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390113443/"
+    }
+  ]
 }

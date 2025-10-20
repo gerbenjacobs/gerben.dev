@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Battlements",
-    "summary": "Akershus fortress",
-    "publishedAt": "2013-07-26T13:18:21Z",
-    "content": "/kd/photos/flickr/battlements_9393893690_o.jpg",
-    "slug": "8041902e02ef5cb407206d471fb76107",
-    "permalink": "/photos/8041902e02ef5cb407206d471fb76107",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393893690/"
-        }
-    ]
+  "type": "photo",
+  "title": "Battlements",
+  "summary": "Akershus fortress",
+  "content": "/kd/photos/flickr/battlements_9393893690_o.jpg",
+  "publishedAt": "2013-07-26T13:18:21Z",
+  "slug": "8041902e02ef5cb407206d471fb76107",
+  "permalink": "/photos/8041902e02ef5cb407206d471fb76107",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393893690/"
+    }
+  ]
 }

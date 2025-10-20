@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Cruiseship seen from the Fløibanen",
-    "publishedAt": "2013-07-21T12:48:01Z",
-    "content": "/kd/photos/flickr/cruiseship-seen-from-the-flibanen_9392885044_o.jpg",
-    "slug": "7749c595eeb1312234472af86b4b797c",
-    "permalink": "/photos/7749c595eeb1312234472af86b4b797c",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392885044/"
-        }
-    ]
+  "type": "photo",
+  "title": "Cruiseship seen from the Fløibanen",
+  "content": "/kd/photos/flickr/cruiseship-seen-from-the-flibanen_9392885044_o.jpg",
+  "publishedAt": "2013-07-21T12:48:01Z",
+  "slug": "7749c595eeb1312234472af86b4b797c",
+  "permalink": "/photos/7749c595eeb1312234472af86b4b797c",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392885044/"
+    }
+  ]
 }

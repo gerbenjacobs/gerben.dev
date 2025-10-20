@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Driving up the pass, looking down on the fjord",
-    "publishedAt": "2013-07-24T11:42:01Z",
-    "content": "/kd/photos/flickr/driving-up-the-pass-looking-down-on-the-fjord_9390868415_o.jpg",
-    "slug": "3551eebb01364056d69972c685353849",
-    "permalink": "/photos/3551eebb01364056d69972c685353849",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390868415/"
-        }
-    ]
+  "type": "photo",
+  "title": "Driving up the pass, looking down on the fjord",
+  "content": "/kd/photos/flickr/driving-up-the-pass-looking-down-on-the-fjord_9390868415_o.jpg",
+  "publishedAt": "2013-07-24T11:42:01Z",
+  "slug": "3551eebb01364056d69972c685353849",
+  "permalink": "/photos/3551eebb01364056d69972c685353849",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390868415/"
+    }
+  ]
 }

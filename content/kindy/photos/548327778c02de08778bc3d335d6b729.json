@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Königsleiten",
-    "publishedAt": "2011-02-26T09:41:02Z",
-    "content": "/kd/photos/flickr/knigsleiten_5487000598_o.jpg",
-    "slug": "548327778c02de08778bc3d335d6b729",
-    "permalink": "/photos/548327778c02de08778bc3d335d6b729",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5487000598/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.25264,
-        "longitude": 12.093844
+  "type": "photo",
+  "title": "Königsleiten",
+  "content": "/kd/photos/flickr/knigsleiten_5487000598_o.jpg",
+  "publishedAt": "2011-02-26T09:41:02Z",
+  "slug": "548327778c02de08778bc3d335d6b729",
+  "permalink": "/photos/548327778c02de08778bc3d335d6b729",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5487000598/"
     }
+  ],
+  "geo": {
+    "latitude": 47.25264,
+    "longitude": 12.093844
+  }
 }

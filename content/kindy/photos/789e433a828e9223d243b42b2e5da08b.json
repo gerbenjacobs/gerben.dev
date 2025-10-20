@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Filmset at Oslo",
-    "summary": "They were filming \u0026quot;Beatles\u0026quot; a movie based on a famous Norwegian book about youth in the 60s.\n\nWe had to take a different route, because they were shooting.",
-    "publishedAt": "2013-07-26T11:26:31Z",
-    "content": "/kd/photos/flickr/filmset-at-oslo_9391112761_o.jpg",
-    "slug": "789e433a828e9223d243b42b2e5da08b",
-    "permalink": "/photos/789e433a828e9223d243b42b2e5da08b",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391112761/"
-        }
-    ]
+  "type": "photo",
+  "title": "Filmset at Oslo",
+  "summary": "They were filming \u0026quot;Beatles\u0026quot; a movie based on a famous Norwegian book about youth in the 60s.\n\nWe had to take a different route, because they were shooting.",
+  "content": "/kd/photos/flickr/filmset-at-oslo_9391112761_o.jpg",
+  "publishedAt": "2013-07-26T11:26:31Z",
+  "slug": "789e433a828e9223d243b42b2e5da08b",
+  "permalink": "/photos/789e433a828e9223d243b42b2e5da08b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391112761/"
+    }
+  ]
 }

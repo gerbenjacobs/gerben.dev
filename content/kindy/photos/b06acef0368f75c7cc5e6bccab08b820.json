@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Houses in Sønderborg",
-    "publishedAt": "2013-07-14T14:19:29Z",
-    "content": "/kd/photos/flickr/houses-in-snderborg_9386925643_o.jpg",
-    "slug": "b06acef0368f75c7cc5e6bccab08b820",
-    "permalink": "/photos/b06acef0368f75c7cc5e6bccab08b820",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9386925643/"
-        }
-    ]
+  "type": "photo",
+  "title": "Houses in Sønderborg",
+  "content": "/kd/photos/flickr/houses-in-snderborg_9386925643_o.jpg",
+  "publishedAt": "2013-07-14T14:19:29Z",
+  "slug": "b06acef0368f75c7cc5e6bccab08b820",
+  "permalink": "/photos/b06acef0368f75c7cc5e6bccab08b820",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9386925643/"
+    }
+  ]
 }

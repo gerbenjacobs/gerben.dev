@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Homegrown deliciousness!",
-    "publishedAt": "2013-07-07T14:51:36Z",
-    "content": "/kd/photos/flickr/homegrown-deliciousness_9231578384_o.jpg",
-    "slug": "cb3c10580f0427017ac381729d33e853",
-    "permalink": "/photos/cb3c10580f0427017ac381729d33e853",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9231578384/"
-        }
-    ]
+  "type": "photo",
+  "title": "Homegrown deliciousness!",
+  "content": "/kd/photos/flickr/homegrown-deliciousness_9231578384_o.jpg",
+  "publishedAt": "2013-07-07T14:51:36Z",
+  "slug": "cb3c10580f0427017ac381729d33e853",
+  "permalink": "/photos/cb3c10580f0427017ac381729d33e853",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9231578384/"
+    }
+  ]
 }

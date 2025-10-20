@@ -1,20 +1,15 @@
 {
-    "type": "photo",
-    "title": "Trollveggen mountain range",
-    "summary": "This is a very 'gneiss' mountain, if you know what I mean ;)",
-    "publishedAt": "2013-07-24T14:02:08Z",
-    "content": "/kd/photos/flickr/trollveggen-mountain-range_9390852337_o.jpg",
-    "slug": "558921e9bc6f7c20d0c7bbe55a3d2d4d",
-    "permalink": "/photos/558921e9bc6f7c20d0c7bbe55a3d2d4d",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390852337/"
-        }
-    ]
+  "type": "photo",
+  "title": "Trollveggen mountain range",
+  "summary": "This is a very 'gneiss' mountain, if you know what I mean ;)",
+  "content": "/kd/photos/flickr/trollveggen-mountain-range_9390852337_o.jpg",
+  "publishedAt": "2013-07-24T14:02:08Z",
+  "slug": "558921e9bc6f7c20d0c7bbe55a3d2d4d",
+  "permalink": "/photos/558921e9bc6f7c20d0c7bbe55a3d2d4d",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390852337/"
+    }
+  ]
 }

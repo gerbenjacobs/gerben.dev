@@ -1,17 +1,12 @@
 {
-    "type": "photo",
-    "summary": "\"Herfststukje\" Loading: 89%",
-    "publishedAt": "2015-10-13T18:52:22+02:00",
-    "content": "/kd/photos/media/posts/201510/12145208_914155501998469_694510358_n_17844249526056293.jpg",
-    "slug": "5bfb8fc6cb73d27825f6cbffe7bb9d52",
-    "permalink": "/photos/5bfb8fc6cb73d27825f6cbffe7bb9d52",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "tags": [
-        "herfststukje",
-        "autumn"
-    ]
+  "type": "photo",
+  "summary": "\"Herfststukje\" Loading: 89%",
+  "content": "/kd/photos/media/posts/201510/12145208_914155501998469_694510358_n_17844249526056293.jpg",
+  "publishedAt": "2015-10-13T18:52:22+02:00",
+  "slug": "5bfb8fc6cb73d27825f6cbffe7bb9d52",
+  "permalink": "/photos/5bfb8fc6cb73d27825f6cbffe7bb9d52",
+  "tags": [
+    "herfststukje",
+    "autumn"
+  ]
 }

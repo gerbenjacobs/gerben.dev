@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Cloud casting shadow on the mountain",
-    "publishedAt": "2013-07-23T18:42:26Z",
-    "content": "/kd/photos/flickr/cloud-casting-shadow-on-the-mountain_9390884247_o.jpg",
-    "slug": "b1e2de3b2717029f0d1ffbb4bc694ca4",
-    "permalink": "/photos/b1e2de3b2717029f0d1ffbb4bc694ca4",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390884247/"
-        }
-    ]
+  "type": "photo",
+  "title": "Cloud casting shadow on the mountain",
+  "content": "/kd/photos/flickr/cloud-casting-shadow-on-the-mountain_9390884247_o.jpg",
+  "publishedAt": "2013-07-23T18:42:26Z",
+  "slug": "b1e2de3b2717029f0d1ffbb4bc694ca4",
+  "permalink": "/photos/b1e2de3b2717029f0d1ffbb4bc694ca4",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390884247/"
+    }
+  ]
 }

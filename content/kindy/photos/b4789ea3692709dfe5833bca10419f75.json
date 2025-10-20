@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Historium",
-    "summary": "Brugge, Belgium",
-    "publishedAt": "2013-09-07T11:47:23Z",
-    "content": "/kd/photos/flickr/historium_9696789142_o.jpg",
-    "slug": "b4789ea3692709dfe5833bca10419f75",
-    "permalink": "/photos/b4789ea3692709dfe5833bca10419f75",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9696789142/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "Historium",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/historium_9696789142_o.jpg",
+  "publishedAt": "2013-09-07T11:47:23Z",
+  "slug": "b4789ea3692709dfe5833bca10419f75",
+  "permalink": "/photos/b4789ea3692709dfe5833bca10419f75",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9696789142/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

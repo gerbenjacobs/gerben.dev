@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Preikestolen",
-    "publishedAt": "2013-07-19T12:45:36Z",
-    "content": "/kd/photos/flickr/preikestolen_9389967701_o.jpg",
-    "slug": "8ac1f5df335c8128a389d9fe9284636a",
-    "permalink": "/photos/8ac1f5df335c8128a389d9fe9284636a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9389967701/"
-        }
-    ]
+  "type": "photo",
+  "title": "Preikestolen",
+  "content": "/kd/photos/flickr/preikestolen_9389967701_o.jpg",
+  "publishedAt": "2013-07-19T12:45:36Z",
+  "slug": "8ac1f5df335c8128a389d9fe9284636a",
+  "permalink": "/photos/8ac1f5df335c8128a389d9fe9284636a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9389967701/"
+    }
+  ]
 }

@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Guard at Oslo Palace",
-    "publishedAt": "2013-07-26T11:07:37Z",
-    "content": "/kd/photos/flickr/guard-at-oslo-palace_9393913136_o.jpg",
-    "slug": "df7907b7d1f92a0ca7cfb04d7f7574f1",
-    "permalink": "/photos/df7907b7d1f92a0ca7cfb04d7f7574f1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393913136/"
-        }
-    ]
+  "type": "photo",
+  "title": "Guard at Oslo Palace",
+  "content": "/kd/photos/flickr/guard-at-oslo-palace_9393913136_o.jpg",
+  "publishedAt": "2013-07-26T11:07:37Z",
+  "slug": "df7907b7d1f92a0ca7cfb04d7f7574f1",
+  "permalink": "/photos/df7907b7d1f92a0ca7cfb04d7f7574f1",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393913136/"
+    }
+  ]
 }

@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Some kind of thistle",
-    "publishedAt": "2016-06-24T20:32:00Z",
-    "content": "/kd/photos/flickr/some-kind-of-thistle_27833338082_o.jpg",
-    "slug": "a5758a7c41eac8da4863675cc9b561e1",
-    "permalink": "/photos/a5758a7c41eac8da4863675cc9b561e1",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/27833338082/"
-        }
-    ],
-    "geo": {
-        "latitude": 52.033538,
-        "longitude": 5.804042
+  "type": "photo",
+  "title": "Some kind of thistle",
+  "content": "/kd/photos/flickr/some-kind-of-thistle_27833338082_o.jpg",
+  "publishedAt": "2016-06-24T20:32:00Z",
+  "slug": "a5758a7c41eac8da4863675cc9b561e1",
+  "permalink": "/photos/a5758a7c41eac8da4863675cc9b561e1",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/27833338082/"
     }
+  ],
+  "geo": {
+    "latitude": 52.033538,
+    "longitude": 5.804042
+  }
 }

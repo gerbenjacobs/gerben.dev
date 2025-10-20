@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "Two cable cars meet halfway",
-    "summary": "Isskögelbahn, Gerlos. Also known as the valleylift.",
-    "publishedAt": "2012-02-21T13:33:59Z",
-    "content": "/kd/photos/flickr/two-cable-cars-meet-halfway_6791904344_o.jpg",
-    "slug": "c3594bf8c5fa80e5118392c33062d753",
-    "permalink": "/photos/c3594bf8c5fa80e5118392c33062d753",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6791904344/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.225688,
-        "longitude": 12.036359
+  "type": "photo",
+  "title": "Two cable cars meet halfway",
+  "summary": "Isskögelbahn, Gerlos. Also known as the valleylift.",
+  "content": "/kd/photos/flickr/two-cable-cars-meet-halfway_6791904344_o.jpg",
+  "publishedAt": "2012-02-21T13:33:59Z",
+  "slug": "c3594bf8c5fa80e5118392c33062d753",
+  "permalink": "/photos/c3594bf8c5fa80e5118392c33062d753",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6791904344/"
     }
+  ],
+  "geo": {
+    "latitude": 47.225688,
+    "longitude": 12.036359
+  }
 }

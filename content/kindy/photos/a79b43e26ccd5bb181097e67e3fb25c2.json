@@ -1,26 +1,21 @@
 {
-    "type": "photo",
-    "title": "C-130 Hercules taking off",
-    "publishedAt": "2011-09-16T12:38:12Z",
-    "content": "/kd/photos/flickr/c-130-hercules-taking-off_6155842743_o.jpg",
-    "slug": "a79b43e26ccd5bb181097e67e3fb25c2",
-    "permalink": "/photos/a79b43e26ccd5bb181097e67e3fb25c2",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/6155842743/"
-        }
-    ],
-    "geo": {
-        "latitude": 53.224547,
-        "longitude": 5.753917
-    },
-    "tags": [
-        "Luchtmachtdagen 2011"
-    ]
+  "type": "photo",
+  "title": "C-130 Hercules taking off",
+  "content": "/kd/photos/flickr/c-130-hercules-taking-off_6155842743_o.jpg",
+  "publishedAt": "2011-09-16T12:38:12Z",
+  "slug": "a79b43e26ccd5bb181097e67e3fb25c2",
+  "permalink": "/photos/a79b43e26ccd5bb181097e67e3fb25c2",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/6155842743/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.224547,
+    "longitude": 5.753917
+  },
+  "tags": [
+    "Luchtmachtdagen 2011"
+  ]
 }

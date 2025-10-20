@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Looking down Zillertal",
-    "publishedAt": "2011-02-26T09:18:52Z",
-    "content": "/kd/photos/flickr/looking-down-zillertal_5486397779_o.jpg",
-    "slug": "f03bbd8b173f083778689fddc437d43a",
-    "permalink": "/photos/f03bbd8b173f083778689fddc437d43a",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5486397779/"
-        }
-    ],
-    "geo": {
-        "latitude": 47.227728,
-        "longitude": 12.028312
+  "type": "photo",
+  "title": "Looking down Zillertal",
+  "content": "/kd/photos/flickr/looking-down-zillertal_5486397779_o.jpg",
+  "publishedAt": "2011-02-26T09:18:52Z",
+  "slug": "f03bbd8b173f083778689fddc437d43a",
+  "permalink": "/photos/f03bbd8b173f083778689fddc437d43a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5486397779/"
     }
+  ],
+  "geo": {
+    "latitude": 47.227728,
+    "longitude": 12.028312
+  }
 }

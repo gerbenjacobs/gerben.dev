@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Entering Sweden",
-    "publishedAt": "2013-07-26T16:03:50Z",
-    "content": "/kd/photos/flickr/entering-sweden_9391539565_o.jpg",
-    "slug": "ee9f38cb83145e9c47d0239a1afc6371",
-    "permalink": "/photos/ee9f38cb83145e9c47d0239a1afc6371",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9391539565/"
-        }
-    ]
+  "type": "photo",
+  "title": "Entering Sweden",
+  "content": "/kd/photos/flickr/entering-sweden_9391539565_o.jpg",
+  "publishedAt": "2013-07-26T16:03:50Z",
+  "slug": "ee9f38cb83145e9c47d0239a1afc6371",
+  "permalink": "/photos/ee9f38cb83145e9c47d0239a1afc6371",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391539565/"
+    }
+  ]
 }

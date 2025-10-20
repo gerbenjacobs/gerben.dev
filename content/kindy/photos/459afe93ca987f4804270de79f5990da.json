@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Bonne-Chière Windmill and fencers",
-    "summary": "Brugge, Belgium\n\nSeen here are the Halberdiers from \u003ca href=\"http://www.hallebardiers.be/\" rel=\"nofollow\"\u003ewww.hallebardiers.be/\u003c/a\u003e",
-    "publishedAt": "2013-09-07T12:21:17Z",
-    "content": "/kd/photos/flickr/bonne-chire-windmill-and-fencers_9693630355_o.jpg",
-    "slug": "459afe93ca987f4804270de79f5990da",
-    "permalink": "/photos/459afe93ca987f4804270de79f5990da",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9693630355/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "Bonne-Chière Windmill and fencers",
+  "summary": "Brugge, Belgium\n\nSeen here are the Halberdiers from \u003ca href=\"http://www.hallebardiers.be/\" rel=\"nofollow\"\u003ewww.hallebardiers.be/\u003c/a\u003e",
+  "content": "/kd/photos/flickr/bonne-chire-windmill-and-fencers_9693630355_o.jpg",
+  "publishedAt": "2013-09-07T12:21:17Z",
+  "slug": "459afe93ca987f4804270de79f5990da",
+  "permalink": "/photos/459afe93ca987f4804270de79f5990da",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693630355/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

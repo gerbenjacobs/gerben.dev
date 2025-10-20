@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Having a break at the top of the slope",
-    "publishedAt": "2012-02-24T11:32:11Z",
-    "content": "/kd/photos/flickr/having-a-break-at-the-top-of-the-slope_9422052102_o.jpg",
-    "slug": "09602f28b3e5fa8207258c5881dc8d8e",
-    "permalink": "/photos/09602f28b3e5fa8207258c5881dc8d8e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9422052102/"
-        }
-    ]
+  "type": "photo",
+  "title": "Having a break at the top of the slope",
+  "content": "/kd/photos/flickr/having-a-break-at-the-top-of-the-slope_9422052102_o.jpg",
+  "publishedAt": "2012-02-24T11:32:11Z",
+  "slug": "09602f28b3e5fa8207258c5881dc8d8e",
+  "permalink": "/photos/09602f28b3e5fa8207258c5881dc8d8e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9422052102/"
+    }
+  ]
 }

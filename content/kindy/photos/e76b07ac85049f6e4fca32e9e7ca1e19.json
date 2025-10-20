@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "On the road to Geiranger",
-    "publishedAt": "2013-07-24T10:10:36Z",
-    "content": "/kd/photos/flickr/on-the-road-to-geiranger_9393648964_o.jpg",
-    "slug": "e76b07ac85049f6e4fca32e9e7ca1e19",
-    "permalink": "/photos/e76b07ac85049f6e4fca32e9e7ca1e19",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393648964/"
-        }
-    ]
+  "type": "photo",
+  "title": "On the road to Geiranger",
+  "content": "/kd/photos/flickr/on-the-road-to-geiranger_9393648964_o.jpg",
+  "publishedAt": "2013-07-24T10:10:36Z",
+  "slug": "e76b07ac85049f6e4fca32e9e7ca1e19",
+  "permalink": "/photos/e76b07ac85049f6e4fca32e9e7ca1e19",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393648964/"
+    }
+  ]
 }

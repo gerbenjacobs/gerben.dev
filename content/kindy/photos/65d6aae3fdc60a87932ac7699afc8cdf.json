@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Fløibanen top station",
-    "publishedAt": "2013-07-21T11:29:11Z",
-    "content": "/kd/photos/flickr/flibanen-top-station_9390118781_o.jpg",
-    "slug": "65d6aae3fdc60a87932ac7699afc8cdf",
-    "permalink": "/photos/65d6aae3fdc60a87932ac7699afc8cdf",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9390118781/"
-        }
-    ]
+  "type": "photo",
+  "title": "Fløibanen top station",
+  "content": "/kd/photos/flickr/flibanen-top-station_9390118781_o.jpg",
+  "publishedAt": "2013-07-21T11:29:11Z",
+  "slug": "65d6aae3fdc60a87932ac7699afc8cdf",
+  "permalink": "/photos/65d6aae3fdc60a87932ac7699afc8cdf",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9390118781/"
+    }
+  ]
 }

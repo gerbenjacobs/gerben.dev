@@ -1,27 +1,22 @@
 {
-    "type": "photo",
-    "title": "Swans",
-    "summary": "Brugge, Belgium",
-    "publishedAt": "2013-09-07T13:24:10Z",
-    "content": "/kd/photos/flickr/swans_9696933788_o.jpg",
-    "slug": "ee12893c3f904b8c5d7af09981c569f8",
-    "permalink": "/photos/ee12893c3f904b8c5d7af09981c569f8",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9696933788/"
-        }
-    ],
-    "geo": {
-        "latitude": 51.209948,
-        "longitude": 3.224744
-    },
-    "tags": [
-        "Brugge"
-    ]
+  "type": "photo",
+  "title": "Swans",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/swans_9696933788_o.jpg",
+  "publishedAt": "2013-09-07T13:24:10Z",
+  "slug": "ee12893c3f904b8c5d7af09981c569f8",
+  "permalink": "/photos/ee12893c3f904b8c5d7af09981c569f8",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9696933788/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
 }

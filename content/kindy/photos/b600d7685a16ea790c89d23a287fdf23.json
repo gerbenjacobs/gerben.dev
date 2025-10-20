@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "title": "Modern office buildings and ancient museums and subway entrances!",
-    "summary": "Yes, the 'house' on the right is an entrance to the underground subway.",
-    "publishedAt": "2011-05-13T21:16:42Z",
-    "content": "/kd/photos/flickr/modern-office-buildings-and-ancient-museums-and-subway-entrances_5716269541_o.jpg",
-    "slug": "b600d7685a16ea790c89d23a287fdf23",
-    "permalink": "/photos/b600d7685a16ea790c89d23a287fdf23",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/5716269541/"
-        }
-    ],
-    "geo": {
-        "latitude": 40.75714,
-        "longitude": -73.981761
+  "type": "photo",
+  "title": "Modern office buildings and ancient museums and subway entrances!",
+  "summary": "Yes, the 'house' on the right is an entrance to the underground subway.",
+  "content": "/kd/photos/flickr/modern-office-buildings-and-ancient-museums-and-subway-entrances_5716269541_o.jpg",
+  "publishedAt": "2011-05-13T21:16:42Z",
+  "slug": "b600d7685a16ea790c89d23a287fdf23",
+  "permalink": "/photos/b600d7685a16ea790c89d23a287fdf23",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5716269541/"
     }
+  ],
+  "geo": {
+    "latitude": 40.75714,
+    "longitude": -73.981761
+  }
 }

@@ -1,24 +1,19 @@
 {
-    "type": "photo",
-    "summary": "Old street in the fortified town of Doesburg with the Martinichurch in the background",
-    "publishedAt": "2017-08-06T19:28:04+02:00",
-    "content": "/kd/photos/media/posts/201708/20589962_1910033659266805_279438930284118016_n_17883782809073455.jpg",
-    "slug": "dbb5b7bbcf6bf786ef05921892d7b2b6",
-    "permalink": "/photos/dbb5b7bbcf6bf786ef05921892d7b2b6",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "geo": {
-        "latitude": 52.016666666667,
-        "longitude": 6.1333333333333
-    },
-    "tags": [
-        "vestingstad",
-        "doesburg",
-        "fortifiedcity",
-        "martinikerk",
-        "cobblestreets"
-    ]
+  "type": "photo",
+  "summary": "Old street in the fortified town of Doesburg with the Martinichurch in the background",
+  "content": "/kd/photos/media/posts/201708/20589962_1910033659266805_279438930284118016_n_17883782809073455.jpg",
+  "publishedAt": "2017-08-06T19:28:04+02:00",
+  "slug": "dbb5b7bbcf6bf786ef05921892d7b2b6",
+  "permalink": "/photos/dbb5b7bbcf6bf786ef05921892d7b2b6",
+  "geo": {
+    "latitude": 52.016666666667,
+    "longitude": 6.1333333333333
+  },
+  "tags": [
+    "vestingstad",
+    "doesburg",
+    "fortifiedcity",
+    "martinikerk",
+    "cobblestreets"
+  ]
 }

@@ -1,23 +1,18 @@
 {
-    "type": "photo",
-    "title": "Ganzenven",
-    "summary": "Herperduin, Berghem, Noord-Brabant",
-    "publishedAt": "2013-06-02T16:47:46Z",
-    "content": "/kd/photos/flickr/ganzenven_8926165314_o.jpg",
-    "slug": "d0022766554c45f56f7d0ac97d2e6aaa",
-    "permalink": "/photos/d0022766554c45f56f7d0ac97d2e6aaa",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/8926165314/"
-        }
-    ],
-    "tags": [
-        "Herperduin"
-    ]
+  "type": "photo",
+  "title": "Ganzenven",
+  "summary": "Herperduin, Berghem, Noord-Brabant",
+  "content": "/kd/photos/flickr/ganzenven_8926165314_o.jpg",
+  "publishedAt": "2013-06-02T16:47:46Z",
+  "slug": "d0022766554c45f56f7d0ac97d2e6aaa",
+  "permalink": "/photos/d0022766554c45f56f7d0ac97d2e6aaa",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/8926165314/"
+    }
+  ],
+  "tags": [
+    "Herperduin"
+  ]
 }

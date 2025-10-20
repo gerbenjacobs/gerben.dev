@@ -1,22 +1,17 @@
 {
-    "type": "photo",
-    "title": "Norway",
-    "publishedAt": "2013-07-18T09:38:42Z",
-    "content": "/kd/photos/flickr/norway_9387031123_o.jpg",
-    "slug": "74e67e040b53220e820459e6b8a7dcfd",
-    "permalink": "/photos/74e67e040b53220e820459e6b8a7dcfd",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9387031123/"
-        }
-    ],
-    "tags": [
-      "Norway"
-    ]
+  "type": "photo",
+  "title": "Norway",
+  "content": "/kd/photos/flickr/norway_9387031123_o.jpg",
+  "publishedAt": "2013-07-18T09:38:42Z",
+  "slug": "74e67e040b53220e820459e6b8a7dcfd",
+  "permalink": "/photos/74e67e040b53220e820459e6b8a7dcfd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9387031123/"
+    }
+  ],
+  "tags": [
+    "Norway"
+  ]
 }

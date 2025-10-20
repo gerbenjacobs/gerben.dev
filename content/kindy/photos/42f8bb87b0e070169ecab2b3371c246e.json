@@ -1,29 +1,27 @@
 {
-    "type": "photo",
-    "publishedAt": "2024-11-30T19:03:00+01:00",
-    "content": "/kd/photos/DJI_20241130153356_0059_D_1280.JPG",
-    "title": "Drone photo taken at Wekeromse Zand",
-    "summary": "It's been a while since I've taken the drone out (8 months). Had to update a bunch of firmware first.\n<br>\n<br>alt-text: Picture is taken 30 meters above the ground, shows a mix of forest and sand dunes, there's a low winter sun, casting rays over the image.",
-    "slug": "42f8bb87b0e070169ecab2b3371c246e",
-    "permalink": "/photos/42f8bb87b0e070169ecab2b3371c246e",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
+  "type": "photo",
+  "title": "Drone photo taken at Wekeromse Zand",
+  "summary": "It's been a while since I've taken the drone out (8 months). Had to update a bunch of firmware first.\n\u003cbr\u003e\n\u003cbr\u003ealt-text: Picture is taken 30 meters above the ground, shows a mix of forest and sand dunes, there's a low winter sun, casting rays over the image.",
+  "content": "/kd/photos/DJI_20241130153356_0059_D_1280.JPG",
+  "publishedAt": "2024-11-30T19:03:00+01:00",
+  "slug": "42f8bb87b0e070169ecab2b3371c246e",
+  "permalink": "/photos/42f8bb87b0e070169ecab2b3371c246e",
+  "syndication": [
+    {
+      "type": "fediverse",
+      "url": "https://todon.nl/@gerben/113573581591986053"
     },
-    "geo": {
-        "latitude": 52.103280,
-        "longitude": 5.689587
-    },
-    "syndication": [
-        {
-            "type": "fediverse",
-            "url": "https://todon.nl/@gerben/113573581591986053"
-        },
-        {
-            "type": "pixelfed",
-            "url": "https://pixelfed.social/i/web/post/771328813831116837"
-        }
-    ],
-    "tags": ["drone", "Wekerom"]
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/i/web/post/771328813831116837"
+    }
+  ],
+  "geo": {
+    "latitude": 52.10328,
+    "longitude": 5.689587
+  },
+  "tags": [
+    "drone",
+    "Wekerom"
+  ]
 }

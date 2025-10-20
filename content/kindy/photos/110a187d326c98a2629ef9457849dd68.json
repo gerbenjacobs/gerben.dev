@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Seagull",
-    "publishedAt": "2013-07-18T14:57:53Z",
-    "content": "/kd/photos/flickr/seagull_9392756206_o.jpg",
-    "slug": "110a187d326c98a2629ef9457849dd68",
-    "permalink": "/photos/110a187d326c98a2629ef9457849dd68",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9392756206/"
-        }
-    ]
+  "type": "photo",
+  "title": "Seagull",
+  "content": "/kd/photos/flickr/seagull_9392756206_o.jpg",
+  "publishedAt": "2013-07-18T14:57:53Z",
+  "slug": "110a187d326c98a2629ef9457849dd68",
+  "permalink": "/photos/110a187d326c98a2629ef9457849dd68",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9392756206/"
+    }
+  ]
 }

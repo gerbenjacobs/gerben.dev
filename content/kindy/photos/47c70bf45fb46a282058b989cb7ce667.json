@@ -1,19 +1,14 @@
 {
-    "type": "photo",
-    "title": "Day 11 camping spot",
-    "publishedAt": "2013-07-24T16:44:55Z",
-    "content": "/kd/photos/flickr/day-11-camping-spot_9393620462_o.jpg",
-    "slug": "47c70bf45fb46a282058b989cb7ce667",
-    "permalink": "/photos/47c70bf45fb46a282058b989cb7ce667",
-    "author": {
-        "name": "Gerben Jacobs",
-        "url": "https://gerben.dev",
-        "photo": "https://gerben.dev/images/avatar.jpg"
-    },
-    "syndication": [
-        {
-            "type": "flickr",
-            "url": "https://www.flickr.com/photos/theonewithout/9393620462/"
-        }
-    ]
+  "type": "photo",
+  "title": "Day 11 camping spot",
+  "content": "/kd/photos/flickr/day-11-camping-spot_9393620462_o.jpg",
+  "publishedAt": "2013-07-24T16:44:55Z",
+  "slug": "47c70bf45fb46a282058b989cb7ce667",
+  "permalink": "/photos/47c70bf45fb46a282058b989cb7ce667",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9393620462/"
+    }
+  ]
 }
