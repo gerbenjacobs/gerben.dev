@@ -5,15 +5,24 @@
             <h1>gerben.dev 👷‍♂️</h1>
             <p>
                 Welcome to my personal website. This website is part of the IndieWeb movement,
-                and has my <a href="/posts/">blog</a>, <a href="/photos/">photos</a>, 
-                and <a href="/projects">projects</a>. You can also browse the <a href="/sitemap">sitemap</a> 
+                and has my <a href="/posts/">blog</a>, <a href="/photos/">photos</a>,
+                and <a href="/projects">projects</a>. You can also browse the <a href="/sitemap">sitemap</a>
                 to see what else there's to do..
             </p>
             <p>
                 Check out my 'socials' on the right, or read more <a href="#me">about me</a>
             </p>
             <p>
-                My Dutch blogposts can be found at <a target="_blank" href="https://blog.gerbenjacobs.nl" rel="me">blog.gerbenjacobs.nl</a>
+                My Dutch blogposts can be found at <a target="_blank" href="https://blog.gerbenjacobs.nl"
+                    rel="me">blog.gerbenjacobs.nl</a>
+            </p>
+            <p>
+                <b>Listening</b><br>
+                {{ range .Songs }}
+                <img src="{{ .AlbumCover }}" alt="{{ .Title }}" class="responsive-img" loading="lazy" width="24"
+                onerror="this.style.display='none';">
+                {{ .Title }} <small class="secondary-content">{{ .PlayedAt }}</small><br>{{ end }}
+                <a href="/listening" class="btn">See more songs</a>
             </p>
         </div>
         <div class="col m6 padding">
@@ -58,7 +67,8 @@
             <article>
                 <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
                 🕰️
-                <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}" 
+                    title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                     <a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a>
                 </time>
                 {{ if .Tags -}}
@@ -78,7 +88,7 @@
         <div class="col m6">
             <h2>Timeline</h2>
             <div style="max-height: 800px; overflow: auto; background-color: #c9c7c7;">
-            {{ template "timeline-paginated" $ }}
+                {{ template "timeline-paginated" $ }}
             </div>
             <a href="/timeline" class="btn" style="margin-top: 1em;">View entire timeline</a>
         </div>
@@ -87,7 +97,8 @@
         <div class="col">
             <h2>Photos</h2>
             {{ range .Photos }}
-            <article class="home-photo" style="background-image: url({{ .Thumbnail }}); filter: drop-shadow(5px 5px 10px #666);">
+            <article class="home-photo"
+                style="background-image: url({{ .Thumbnail }}); filter: drop-shadow(5px 5px 10px #666);">
                 <a href="{{ .Permalink }}">
                     {{ .Type.Emoji }}
                     {{ if .Title -}}
@@ -103,12 +114,12 @@
                     <small>
                         {{ if gt (len .Tags) 2 }}
                         {{- range slice .Tags 0 2 -}}
-                            #{{.}}
+                        #{{.}}
                         {{ end -}}
                         +{{ len (slice .Tags 2) }} tags
                         {{ else }}
                         {{- range .Tags -}}
-                            #{{.}}
+                        #{{.}}
                         {{ end -}}
                         {{ end }}
                     </small>
@@ -116,7 +127,8 @@
                 </a>
             </article>
             {{ end }}
-            <a href="/photos/" class="btn">View all photos</a> or <a href="/photos/featured" class="btn">⭐ View just Featured Photos</a>
+            <a href="/photos/" class="btn">View all photos</a> or
+            <a href="/photos/featured" class="btn">⭐ View just Featured Photos</a>
         </div>
     </div>
     <div style="clear: both;">&nbsp;</div>

@@ -1,13 +1,10 @@
 package handler
 
 import (
-	"bytes"
 	"html/template"
-	"io"
 	"log/slog"
 	"net/http"
 	"strings"
-	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -181,33 +178,12 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 	pageFile := "static/views/listening.html"
 	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile)...))
-	feedUrl := "https://lfm.xiffy.nl/theonewithout"
-	cacheFile := ".cache/listening.xml"
 
-	// check if cache file exists and is not older than 10 minutes
-	b, err := internal.GetCache(cacheFile, 10*time.Minute)
+	feed, err := internal.GetListeningData(true)
 	if err != nil {
-		slog.Warn("downloading new listening feed")
-		resp, err := http.Get(feedUrl)
-		if err != nil {
-			http.Error(w, "failed to get feed:"+err.Error(), http.StatusInternalServerError)
-			return
-		}
-		b, err = io.ReadAll(resp.Body)
-		if err != nil {
-			http.Error(w, "failed to read feed:"+err.Error(), http.StatusInternalServerError)
-			return
-		}
-		internal.SetCache(cacheFile, b)
-	}
-
-	fp := gofeed.NewParser()
-	feed, err := fp.Parse(bytes.NewReader(b))
-	if err != nil {
-		http.Error(w, "failed to parse feed:"+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "failed to get listening data: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 	type pageData struct {
 		Metadata internal.Metadata
 		Feed     *gofeed.Feed

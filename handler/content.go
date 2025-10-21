@@ -10,6 +10,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/dustin/go-humanize"
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
@@ -39,7 +40,18 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 	// get timeline entries
 	entries := internal.GetTimelineData(time.Now(), nil, true, true, true, true)
 
+	// get listening info
+	feed, err := internal.GetListeningData(false)
+	if err != nil {
+		slog.Error("failed to load songs", "error", err)
+	}
+
 	author, _ := getAuthor() // goddamn, what a hack..
+	type song struct {
+		Title      string
+		PlayedAt   string
+		AlbumCover string
+	}
 	type pageData struct {
 		Metadata internal.Metadata
 		Author   *local.KindyAuthor
@@ -47,7 +59,27 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Posts    []local.Kindy
 		Photos   []local.Kindy
 		Entries  []local.Kindy
+		Songs    []song
 	}
+	var songs []song
+	if feed != nil {
+		for _, item := range feed.Items {
+			parsedTime, err := time.Parse(time.RFC1123, item.Published)
+			if err != nil {
+				parsedTime = time.Now()
+			}
+			art := ""
+			if len(item.Enclosures) > 0 {
+				art = item.Enclosures[0].URL
+			}
+			songs = append(songs, song{
+				Title:      item.Title,
+				PlayedAt:   humanize.Time(parsedTime),
+				AlbumCover: art,
+			})
+		}
+	}
+
 	data := pageData{
 		Metadata: internal.Metadata{
 			Env:         Env,
@@ -61,6 +93,9 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Posts:    kindyLimit(posts, 3),
 		Photos:   kindyLimit(photos, 12),
 		Entries:  kindyLimit(entries, 10),
+	}
+	if len(songs) >= 3 {
+		data.Songs = songs[:3]
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
