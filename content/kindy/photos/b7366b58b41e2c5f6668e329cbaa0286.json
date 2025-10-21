@@ -1,27 +1,24 @@
 {
-  "type": "photo",
-  "summary": "Beautiful cold sunny day at Ginkelse Heide.",
-  "content": "/kd/photos/media/posts/201612/15258567_383742048634185_2903157923683237888_n_17856445303116307.jpg",
-  "publishedAt": "2016-12-05T18:15:44+01:00",
-  "slug": "b7366b58b41e2c5f6668e329cbaa0286",
-  "permalink": "/photos/b7366b58b41e2c5f6668e329cbaa0286",
-  "geo": {
-    "latitude": 52.0306,
-    "longitude": 5.7256
-  },
-  "tags": [
-    "ginkelseheide",
-    "ede",
-    "sunny",
-    "cold",
-    "december",
-    "foggy",
-    "sunrays",
-    "forest",
-    "pines",
-    "lovely",
-    "bos",
-    "heide",
-    "veluwe"
-  ]
+    "type": "photo",
+    "summary": "Beautiful cold sunny day at Ginkelse Heide.",
+    "content": "/kd/photos/media/posts/201612/15258567_383742048634185_2903157923683237888_n_17856445303116307.jpg",
+    "publishedAt": "2016-12-05T18:15:44+01:00",
+    "slug": "b7366b58b41e2c5f6668e329cbaa0286",
+    "permalink": "/photos/b7366b58b41e2c5f6668e329cbaa0286",
+    "geo": {
+        "latitude": 52.0306,
+        "longitude": 5.7256
+    },
+    "tags": [
+        "GinkelseHeide",
+        "Ede",
+        "Netherlands",
+        "fog",
+        "sunrays",
+        "forest",
+        "pines",
+        "lovely",
+        "Veluwe",
+        "Featured"
+    ]
 }

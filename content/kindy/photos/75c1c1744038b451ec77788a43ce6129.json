@@ -1,18 +1,19 @@
 {
-  "type": "photo",
-  "title": "Flekkefjord, Norway",
-  "content": "/kd/photos/flickr/flekkefjord-norway_9387030175_o.jpg",
-  "publishedAt": "2013-07-18T10:14:35Z",
-  "slug": "75c1c1744038b451ec77788a43ce6129",
-  "permalink": "/photos/75c1c1744038b451ec77788a43ce6129",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9387030175/"
-    }
-  ],
-  "tags": [
-    "Norway",
-    "Flekkefjord"
-  ]
+    "type": "photo",
+    "title": "Flekkefjord, Norway",
+    "content": "/kd/photos/flickr/flekkefjord-norway_9387030175_o.jpg",
+    "publishedAt": "2013-07-18T10:14:35Z",
+    "slug": "75c1c1744038b451ec77788a43ce6129",
+    "permalink": "/photos/75c1c1744038b451ec77788a43ce6129",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9387030175/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Flekkefjord",
+        "Featured"
+    ]
 }

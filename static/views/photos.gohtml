@@ -5,6 +5,9 @@
             <header class="padding">
                 <h1>{{ .Metadata.Title }} ({{ .TotalEntries }})</h1>
                 <p>{{ .Metadata.Description }}</p>
+                {{ if not .Featured }}
+                <a href="/photos/featured" class="btn">⭐ Show featured photos only</a>
+                {{ end }}
             </header>
         </div>
     </div>

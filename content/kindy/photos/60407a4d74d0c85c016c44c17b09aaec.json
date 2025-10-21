@@ -1,22 +1,24 @@
 {
-  "type": "photo",
-  "title": "Academiestraat",
-  "summary": "Brugge, Belgium",
-  "content": "/kd/photos/flickr/academiestraat_9693586109_o.jpg",
-  "publishedAt": "2013-09-07T11:58:42Z",
-  "slug": "60407a4d74d0c85c016c44c17b09aaec",
-  "permalink": "/photos/60407a4d74d0c85c016c44c17b09aaec",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9693586109/"
-    }
-  ],
-  "geo": {
-    "latitude": 51.209948,
-    "longitude": 3.224744
-  },
-  "tags": [
-    "Brugge"
-  ]
+    "type": "photo",
+    "title": "Academiestraat",
+    "summary": "Brugge, Belgium",
+    "content": "/kd/photos/flickr/academiestraat_9693586109_o.jpg",
+    "publishedAt": "2013-09-07T11:58:42Z",
+    "slug": "60407a4d74d0c85c016c44c17b09aaec",
+    "permalink": "/photos/60407a4d74d0c85c016c44c17b09aaec",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9693586109/"
+        }
+    ],
+    "geo": {
+        "latitude": 51.209948,
+        "longitude": 3.224744
+    },
+    "tags": [
+        "Brugge",
+        "Architecture",
+        "Featured"
+    ]
 }

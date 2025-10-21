@@ -1,18 +1,19 @@
 {
-  "type": "photo",
-  "title": "Lake near the camping",
-  "content": "/kd/photos/flickr/lake-near-the-camping_9390470019_o.jpg",
-  "publishedAt": "2013-07-22T20:40:00Z",
-  "slug": "d4de5ac853ff0990e78246e8adc9faf1",
-  "permalink": "/photos/d4de5ac853ff0990e78246e8adc9faf1",
-  "syndication": [
-    {
-      "type": "flickr",
-      "url": "https://www.flickr.com/photos/theonewithout/9390470019/"
-    }
-  ],
-  "tags": [
-    "Norway",
-    "Boats"
-  ]
+    "type": "photo",
+    "title": "Lake near the camping",
+    "content": "/kd/photos/flickr/lake-near-the-camping_9390470019_o.jpg",
+    "publishedAt": "2013-07-22T20:40:00Z",
+    "slug": "d4de5ac853ff0990e78246e8adc9faf1",
+    "permalink": "/photos/d4de5ac853ff0990e78246e8adc9faf1",
+    "syndication": [
+        {
+            "type": "flickr",
+            "url": "https://www.flickr.com/photos/theonewithout/9390470019/"
+        }
+    ],
+    "tags": [
+        "Norway",
+        "Boats",
+        "Featured"
+    ]
 }

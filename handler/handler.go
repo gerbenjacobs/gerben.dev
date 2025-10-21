@@ -90,7 +90,8 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
 
 	r.HandleFunc("GET /posts/{$}", h.posts)
-	r.HandleFunc("GET /photos/{$}", h.photos)
+	r.HandleFunc("GET /photos/featured", h.photos(true))
+	r.HandleFunc("GET /photos/{$}", h.photos(false))
 	r.HandleFunc("GET /notes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /likes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))

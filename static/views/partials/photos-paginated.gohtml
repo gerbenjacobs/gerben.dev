@@ -48,8 +48,8 @@
 </article>
 {{ end }}
     {{ if .NextPage }}
-    <div hx-get="/photos/?page={{ .NextPage }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
-        <a href="/photos/?page={{ .NextPage }}">Next page</a>
+    <div hx-get="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
+        <a href="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}">Next page</a>
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue-only">
             <div class="circle-clipper left">
