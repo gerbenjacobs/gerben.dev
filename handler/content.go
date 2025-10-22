@@ -29,11 +29,18 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 	}
 	// get photos
 	kindyType = local.KindyTypePhoto
-	photos, err := internal.GetKindyCacheByType(kindyType)
+	photosUnfiltered, err := internal.GetKindyCacheByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)
 		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
 		return
+	}
+	// filter out videos from photos
+	var photos []local.Kindy
+	for _, photo := range photosUnfiltered {
+		if !photo.IsVideo() {
+			photos = append(photos, photo)
+		}
 	}
 	// get timeline entries
 	entries := internal.GetTimelineData(time.Now(), nil, true, true, true, true)
