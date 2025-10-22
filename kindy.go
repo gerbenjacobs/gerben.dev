@@ -210,6 +210,13 @@ func (k Kindy) TimeAgo() string {
 	return humanize.Time(k.PublishedAt)
 }
 
+func (k Kindy) IsVideo() bool {
+	if k.Type != KindyTypePhoto {
+		return false
+	}
+	return strings.HasSuffix(string(k.Content), ".mp4")
+}
+
 func (kt KindyType) Emoji() string {
 	emojis := map[KindyType]string{
 		KindyTypePost:    "📝",

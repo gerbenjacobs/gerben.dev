@@ -4,10 +4,8 @@ import (
 	"html/template"
 	"log/slog"
 	"net/http"
-	"path"
 	"slices"
 	"strconv"
-	"strings"
 	"time"
 
 	"github.com/dustin/go-humanize"
@@ -137,14 +135,7 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) photos(featured bool) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		pageFile := "static/views/photos.gohtml"
-		funcs := map[string]any{
-			"hasSuffix": func(s template.HTML, suffix string) bool {
-				return strings.HasSuffix(string(s), suffix)
-			},
-		}
-		t := template.Must(template.New(path.Base(layoutFiles[0])).
-			Funcs(funcs).
-			ParseFiles(append(layoutFiles, pageFile, "static/views/partials/photos-paginated.gohtml")...))
+		t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/photos-paginated.gohtml")...))
 
 		// get photos
 		kindyType := local.KindyTypePhoto

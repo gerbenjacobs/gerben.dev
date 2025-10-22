@@ -23,12 +23,21 @@
         {{- end }}
     </p>
     {{ if eq .Type "photo" }}
+        {{ if .IsVideo }}
+        <div class="center-align">
+            <video class="responsive-video" style="width: 300px;" autoplay loop muted>
+                <source class="u-video" src="{{.Content}}" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {{ else }}
         <figure class="center-align" style="margin: 0;">
             <a href="{{ .Permalink }}">
                 <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" class="hoverable" loading="lazy">
             </a>
             {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
         </figure>
+        {{ end }}
     {{ else}}
         {{ if .Summary }}
             <p>

@@ -6,7 +6,6 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
-	"path"
 	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
@@ -16,12 +15,7 @@ import (
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
-	funcs := map[string]any{
-		"hasSuffix": func(s template.HTML, suffix string) bool {
-			return strings.HasSuffix(string(s), suffix)
-		},
-	}
-	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 
 	kindyFile := "content/kindy" + r.URL.Path + ".json"
 	b, err := os.ReadFile(kindyFile)

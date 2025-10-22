@@ -116,7 +116,7 @@
                     </div>
                 </header>
                 {{ if eq .Type "photo" }}
-                    {{ if hasSuffix .Content ".mp4" }}
+                    {{ if .IsVideo }}
                     <div class="e-content">
                         <video class="responsive-video" autoplay loop muted controls>
                             <source class="u-video" src="{{.Content}}" type="video/mp4" />
