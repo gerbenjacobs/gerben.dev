@@ -48,7 +48,7 @@ func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
 		return nil, ErrCacheCreated
 	case err != nil:
 		return nil, err
-	case info.ModTime().Before(time.Now().Add(-10 * expiry)):
+	case info.ModTime().Before(time.Now().Add(-expiry)):
 		return nil, ErrCacheExpired
 	}
 
