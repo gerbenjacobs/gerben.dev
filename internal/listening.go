@@ -17,7 +17,7 @@ func GetListeningData(downloadFresh bool) (*gofeed.Feed, error) {
 
 	// check if cache file exists and is not older than 10 minutes
 	expiry := 10 * time.Minute
-	if downloadFresh {
+	if !downloadFresh {
 		expiry = 0
 	}
 	b, err := GetCache(cacheFile, expiry)
