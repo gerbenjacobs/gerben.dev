@@ -16,8 +16,12 @@ func GetListeningData(downloadFresh bool) (*gofeed.Feed, error) {
 	cacheFile := ".cache/listening.xml"
 
 	// check if cache file exists and is not older than 10 minutes
-	b, err := GetCache(cacheFile, 10*time.Minute)
-	if err != nil && downloadFresh {
+	expiry := 10 * time.Minute
+	if downloadFresh {
+		expiry = 0
+	}
+	b, err := GetCache(cacheFile, expiry)
+	if err != nil {
 		slog.Warn("downloading new listening feed")
 		resp, err := http.Get(feedUrl)
 		if err != nil {
