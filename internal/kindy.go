@@ -2,7 +2,9 @@ package internal
 
 import (
 	"encoding/json"
+	"log/slog"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 
@@ -11,28 +13,29 @@ import (
 
 func GetKindyByType(kindyType local.KindyType) (entries []local.Kindy, err error) {
 	contentPath := local.KindyContentPath + kindyType.URL()
-	files, err := os.ReadDir(contentPath)
-	if err != nil {
-		return nil, err
-	}
 
-	// Do folder walking, file reading and JSON unmarshalling
-	for _, f := range files {
+	err = filepath.WalkDir(contentPath, func(path string, f os.DirEntry, walkErr error) error {
+		// Do folder walking, file reading and JSON unmarshalling
 		if !strings.HasSuffix(f.Name(), ".json") {
 			// skip all non .json files
-			continue
+			return nil
 		}
 
-		b, err := os.ReadFile(contentPath + "/" + f.Name())
+		b, err := os.ReadFile(path)
 		if err != nil {
-			return nil, err
+			return err
 		}
 
 		var tmp local.Kindy
 		if err := json.Unmarshal(b, &tmp); err != nil {
-			return nil, err
+			return err
 		}
 		entries = append(entries, tmp)
+		return nil
+	})
+	if err != nil {
+		slog.Error("failed to walk kindy content", "error", err)
+		return nil, err
 	}
 
 	// Sort the entries on published date

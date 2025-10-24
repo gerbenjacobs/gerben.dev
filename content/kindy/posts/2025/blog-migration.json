@@ -1,0 +1,12 @@
+{
+  "type": "post",
+  "title": "Blog Migration: What does #BlogMigration mean?",
+  "summary": "Spend a few hours migrating blog posts from my old site to this one. This post explains the reasoning.",
+  "content": "/posts/2025/blog-migration.html",
+  "publishedAt": "2025-04-23T20:00:00+02:00",
+  "permalink": "/posts/blog-migration",
+  "slug": "2025/blog-migration",
+  "tags": [
+    "BlogMigration"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "My first experience with PagodaBox",
+    "summary": "PagodaBox is a cloud hosting service that allows you to deploy your PHP applications easily. This post details my first experience with it.",
+    "content": "/posts/blogmigration/first-experience-with-pagodabox.html",
+    "publishedAt": "2013-05-10T12:00:00+02:00",
+    "slug": "blogmigration/first-experience-with-pagodabox",
+    "permalink": "/posts/first-experience-with-pagodabox",
+    "tags": [
+        "tech",
+        "PaaS",
+        "PHP",
+        "BlogMigration"
+    ]
+}

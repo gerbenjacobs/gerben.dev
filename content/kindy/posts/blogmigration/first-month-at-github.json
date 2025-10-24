@@ -1,0 +1,14 @@
+{
+    "type": "post",
+    "title": "First month at GitHub",
+    "summary": "These are my experiences after completing my first month at GitHub as a Software Engineer!",
+    "content": "/posts/blogmigration/first-month-at-github.html",
+    "publishedAt": "2022-03-12T00:00:00+02:00",
+    "slug": "blogmigration/first-month-at-github",
+    "permalink": "/posts/first-month-at-github",
+    "tags": [
+        "tech",
+        "personal",
+        "BlogMigration"
+    ]
+}

@@ -15,9 +15,38 @@ import (
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
+	redirects := map[string]string{
+		"/posts/20241128-bringing-the-indieweb": "/posts/bringing-the-indieweb",
+		"/posts/20241204-instagram-archive":     "/posts/instagram-archive",
+	}
+	for from, to := range redirects {
+		if r.URL.Path == from {
+			http.Redirect(w, r, to, http.StatusMovedPermanently)
+			return
+		}
+	}
 
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 	kindyFile := "content/kindy" + r.URL.Path + ".json"
+
+	_, err := os.Stat(kindyFile)
+	// Posts can live in subfolders, so we need to find them by permalink
+	// and use the slug to find the json file
+	if os.IsNotExist(err) && strings.HasPrefix(r.URL.Path, local.KindyURLPosts) {
+		posts, err := internal.GetKindyCacheByType(local.KindyTypePost)
+		if err != nil {
+			slog.Error("failed to get posts", "error", err)
+			// in the rare case that this happens, just ignore
+		} else {
+			for _, post := range posts {
+				if r.URL.Path == post.Permalink {
+					kindyFile = "content/kindy/posts/" + post.Slug + ".json"
+					break
+				}
+			}
+		}
+	}
+
 	b, err := os.ReadFile(kindyFile)
 	if err != nil {
 		slog.Error("failed to read file", "file", r.URL.Path, "error", err)
@@ -44,7 +73,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 
 	// if our content is inside another file, load it
 	// for HTML content
-	if string(kind.Content) == r.URL.Path+".html" {
+	if strings.HasSuffix(string(kind.Content), ".html") {
 		b, err = os.ReadFile("content/kindy" + string(kind.Content))
 		if err != nil {
 			slog.Error("failed to read content file", "file", r.URL.Path, "content", kind.Content, "error", err)

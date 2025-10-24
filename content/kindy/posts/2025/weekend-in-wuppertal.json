@@ -1,0 +1,20 @@
+{
+    "type": "post",
+    "title": "A weekend in Wuppertal, Germany",
+    "summary": "Spent an impromptu weeked in Wuppertal, Germany. Looking for hills and the unique Schwebebahn.",
+    "content": "/posts/2025/weekend-in-wuppertal.html",
+    "publishedAt": "2025-03-09T13:00:00.4352088+01:00",
+    "slug": "2025/weekend-in-wuppertal",
+    "permalink": "/posts/weekend-in-wuppertal",
+    "tags": [
+        "Wuppertal",
+        "Germany",
+        "Travel"
+    ],
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3ljx5nzbql3t2"
+        }
+    ]
+}
