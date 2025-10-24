@@ -66,6 +66,9 @@
             {{ range .Posts }}
             <article>
                 <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+                {{ if .Image }}
+                <div class="home-photo" style='background-image: url({{ .Image }}); filter: drop-shadow(5px 5px 10px #666); margin-right: 2em;'></div>
+                {{ end }}
                 🕰️
                 <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}" 
                     title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">

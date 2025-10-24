@@ -85,6 +85,7 @@ type Kindy struct {
 	Summary     template.HTML      `json:"summary,omitempty"`
 	Content     template.HTML      `json:"content,omitempty"`
 	Markdown    string             `json:"markdown,omitempty"`
+	Image       string             `json:"image,omitempty"`
 	PublishedAt time.Time          `json:"publishedAt"`
 	Slug        string             `json:"slug,omitempty"`
 	Permalink   string             `json:"permalink,omitempty"`

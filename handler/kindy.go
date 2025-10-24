@@ -107,6 +107,9 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		Kindy:       &kind,
 		SourceLink:  codeSourcePath + kindyFile,
 	}
+	if kind.Image != "" {
+		metadata.Image = kind.Image
+	}
 	if kind.Type == "photo" {
 		metadata.Image = string(kind.Content)
 	}

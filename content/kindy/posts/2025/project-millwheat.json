@@ -3,6 +3,7 @@
     "title": "Project Millwheat",
     "summary": "A post about Project Millwheat, an open-source PBBG written in Go.",
     "content": "/posts/2025/project-millwheat.html",
+    "image": "/kd/images/screencapture_millwheat.png",
     "publishedAt": "2025-06-01T22:13:00+02:00",
     "slug": "2025/project-millwheat",
     "permalink": "/posts/project-millwheat",
