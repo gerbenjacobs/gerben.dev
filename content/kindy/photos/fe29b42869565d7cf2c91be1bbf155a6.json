@@ -12,5 +12,11 @@
     "tags": [
         "Decorations",
         "Gnome"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/887411099178424430"
+        }
     ]
 }
