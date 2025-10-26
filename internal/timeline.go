@@ -2,6 +2,7 @@ package internal
 
 import (
 	"encoding/xml"
+	"log/slog"
 	"slices"
 	"sort"
 	"time"
@@ -78,6 +79,11 @@ func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, s
 		entries = append(entries, likes...)
 	}
 
+	// Sort the entries on published date
+	sort.Slice(entries, func(i, j int) bool {
+		return entries[i].PublishedAt.After(entries[j].PublishedAt)
+	})
+
 	// Filter out entries if a since query is provided
 	entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
 		return e.PublishedAt.After(since)
@@ -85,15 +91,15 @@ func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, s
 
 	// Filter out entries if an upto query is provided
 	if len(entries) > MinimumTimelineEntries && upto != nil {
+		tmpEntries := slices.Clone(entries)
 		entries = slices.DeleteFunc(entries, func(e local.Kindy) bool {
 			return e.PublishedAt.Before(*upto)
 		})
+		if len(entries) < MinimumTimelineEntries {
+			slog.Warn("restoring entries to meet minimum", "current", len(entries), "minimum", MinimumTimelineEntries, "restoredFrom", len(tmpEntries))
+			entries = tmpEntries[:MinimumTimelineEntries]
+		}
 	}
-
-	// Sort the entries on published date
-	sort.Slice(entries, func(i, j int) bool {
-		return entries[i].PublishedAt.After(entries[j].PublishedAt)
-	})
 
 	return entries
 }

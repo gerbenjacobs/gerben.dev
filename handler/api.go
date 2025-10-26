@@ -8,6 +8,8 @@ import (
 	"html/template"
 	"log/slog"
 	"net/http"
+	"net/url"
+	"strings"
 
 	app "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -19,7 +21,10 @@ var opengraphCache = ".cache/opengraph/"
 var opengraphTemplate = `
 <blockquote>
 	<div>
-		<p><img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy"> <b>{{.Title}}</b></p>
+		<p>
+			{{ if .Favicon.URL }}<img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy" onerror="this.style.display='none';">{{ end }}
+			<b>{{.Title}}</b>
+		</p>
 		<p>{{.DescriptionHTML}}</p>
 	</div>
 	{{range .Image}}
@@ -36,18 +41,18 @@ func init() {
 }
 
 func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
-	url := r.URL.Query().Get("url")
-	if url == "" {
+	u := r.URL.Query().Get("url")
+	if u == "" {
 		http.Error(w, "missing url parameter", http.StatusBadRequest)
 		return
 	}
 
-	cacheFile := fmt.Sprintf("%s%x.json", opengraphCache, md5.Sum([]byte(url)))
+	cacheFile := fmt.Sprintf("%s%x.json", opengraphCache, md5.Sum([]byte(u)))
 	b, err := internal.GetCache(cacheFile, 0)
 	if err != nil {
-		slog.Info("downloading new opengraph data", "url", url)
+		slog.Info("downloading new opengraph data", "url", u)
 		// fetch fresh data
-		ogp, err := internal.Opengraph(url)
+		ogp, err := internal.Opengraph(u)
 		if err != nil {
 			http.Error(w, fmt.Sprintf("failed to fetch opengraph data: %v", err), http.StatusInternalServerError)
 			return
@@ -79,6 +84,15 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 	if err != nil || absErr != nil {
 		http.Error(w, fmt.Sprintf("failed to unmarshal opengraph data: %v", err), http.StatusInternalServerError)
 		return
+	}
+	slog.Warn("og", "og", og)
+	// double check favicon for absolute URL
+	if strings.HasPrefix(og.Favicon.URL, "/") || strings.HasPrefix(og.Favicon.URL, ":") {
+		base, err := url.Parse(u)
+		if err != nil {
+			slog.Warn("failed to parse base URL for favicon", "url", u, "err", err)
+		}
+		og.Favicon.URL = base.Scheme + "://" + base.Host + og.Favicon.URL
 	}
 
 	data := struct {
