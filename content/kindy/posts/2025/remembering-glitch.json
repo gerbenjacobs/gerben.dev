@@ -11,5 +11,11 @@
     "Glitch",
     "MMO",
     "Gaming"
+  ],
+  "syndication": [
+    {
+      "type": "IndieNews",
+      "url": "https://news.indieweb.org/en"
+    }
   ]
 }
