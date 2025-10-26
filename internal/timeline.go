@@ -56,7 +56,7 @@ func CreateTimelineXML() ([]byte, error) {
 		Channel:          &feed,
 	}
 
-	return xml.Marshal(fullRss)
+	return xml.MarshalIndent(fullRss, "", "  ")
 }
 
 func GetTimelineData(since time.Time, upto *time.Time, showNotes, showReplies, showReposts, showLikes bool) []local.Kindy {

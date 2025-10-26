@@ -85,7 +85,7 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("failed to unmarshal opengraph data: %v", err), http.StatusInternalServerError)
 		return
 	}
-	slog.Warn("og", "og", og)
+
 	// double check favicon for absolute URL
 	if strings.HasPrefix(og.Favicon.URL, "/") || strings.HasPrefix(og.Favicon.URL, ":") {
 		base, err := url.Parse(u)

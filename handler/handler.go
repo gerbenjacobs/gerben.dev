@@ -74,6 +74,10 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /listening", h.listening)
 	r.HandleFunc("GET /timeline", h.timeline)
 	r.HandleFunc("GET /timeline.xml", h.timelineXML)
+	r.HandleFunc("GET /feed.xml", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/rss+xml; charset=utf-8")
+		http.ServeFile(w, r, internal.PostsRssCache)
+	})
 
 	// Kindy endpoints
 	r.HandleFunc("GET /notes/{file}", Kindy)
