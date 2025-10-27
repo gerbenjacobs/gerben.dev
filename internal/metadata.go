@@ -24,6 +24,13 @@ type Metadata struct {
 	SourceLink  string
 }
 
+func (m Metadata) SafeImage() string {
+	if strings.HasPrefix(m.Image, "http") {
+		return m.Image
+	}
+	return "https://gerben.dev" + m.Image
+}
+
 func Titlify(title string) string {
 	title = html.UnescapeString(title)
 	title = strings.Join(strings.Fields(title), " ")

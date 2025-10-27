@@ -203,6 +203,9 @@ func (h *Handler) listening(w http.ResponseWriter, r *http.Request) {
 		},
 		Feed: feed,
 	}
+	if feed != nil && len(feed.Items) > 0 && feed.Items[0].Image != nil {
+		data.Metadata.Image = feed.Items[0].Image.URL
+	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}

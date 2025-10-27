@@ -41,7 +41,7 @@
     <meta property="og:url" content="{{ $permalink }}">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description}}">
-    {{ if .Metadata.Image }}<meta property="og:image" content="https://gerben.dev{{ .Metadata.Image }}">{{ end }}
+    {{ if .Metadata.Image }}<meta property="og:image" content="{{ .Metadata.SafeImage }}">{{ end }}
     {{- if .Metadata.Kindy }}
     <link rel="preload" as="fetch" href="https://octothorp.es/?uri={{ $permalink }}">
     <meta property="og:type" content="article">
