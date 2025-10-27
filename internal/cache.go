@@ -87,7 +87,7 @@ func CreateCaches() error {
 		return fmt.Errorf("failed to create tag cache: %w", err)
 	}
 
-	// timeline rss cache
+	// timeline rss creation and cache
 	b, err := CreateTimelineXML()
 	if err != nil {
 		return fmt.Errorf("failed to create timeline rss: %w", err)
@@ -96,7 +96,7 @@ func CreateCaches() error {
 		return fmt.Errorf("failed to set timeline rss cache: %w", err)
 	}
 
-	// posts rss cache
+	// posts rss creation and cache
 	b, err = CreatePostsXML()
 	if err != nil {
 		return fmt.Errorf("failed to create posts rss: %w", err)
@@ -105,7 +105,7 @@ func CreateCaches() error {
 		return fmt.Errorf("failed to set posts rss cache: %w", err)
 	}
 
-	// sitemap cache
+	// sitemap creation and cache
 	b, err = CreateSitemapXML()
 	if err != nil {
 		return fmt.Errorf("failed to create sitemap xml: %w", err)

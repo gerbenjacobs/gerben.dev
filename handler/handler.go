@@ -98,8 +98,9 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /tags/{$}", redirect("/timeline"))
 
-	// API stuff?
+	// API endpoints
 	r.HandleFunc("POST /api/opengraph", h.apiOpenGraph)
+	r.HandleFunc("POST /api/nextprevious", h.apiNextPrevious)
 
 	h.mux = internal.LogWriter(r)
 	return h

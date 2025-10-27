@@ -78,7 +78,7 @@ func init() {
 	)
 }
 
-// Kindy is a datastructure for content that adheres to Microformats 2
+// Kindy is a data structure for content that adheres to Microformats 2
 type Kindy struct {
 	Type        KindyType          `json:"type"`
 	Title       string             `json:"title,omitempty"`
@@ -251,6 +251,18 @@ func (kt KindyType) URL() string {
 	default:
 		return ""
 	}
+}
+
+func (kt KindyType) IsValid() bool {
+	if kt == KindyTypeNote ||
+		kt == KindyTypePhoto ||
+		kt == KindyTypePost ||
+		kt == KindyTypeRepost ||
+		kt == KindyTypeLike ||
+		kt == KindyTypeReplies {
+		return true
+	}
+	return false
 }
 
 func MarkdownToHTML(md string) string {

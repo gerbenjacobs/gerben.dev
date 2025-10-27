@@ -106,3 +106,48 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("failed to execute template: %v", err), http.StatusInternalServerError)
 	}
 }
+
+func (h *Handler) apiNextPrevious(w http.ResponseWriter, r *http.Request) {
+	// get slug from post
+	type requestData struct {
+		Type string `json:"type"`
+		Slug string `json:"slug"`
+	}
+	var req requestData
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		slog.Error("failed to decode request body", "err", err)
+		http.Error(w, "failed to decode request body", http.StatusBadRequest)
+		return
+	}
+
+	// validation
+	if req.Slug == "" {
+		http.Error(w, "missing slug in request body", http.StatusBadRequest)
+		return
+	}
+	typedType := app.KindyType(req.Type)
+	if !typedType.IsValid() {
+		http.Error(w, "invalid type in request body", http.StatusBadRequest)
+		return
+	}
+
+	slog.Warn("searching next/previous", "slug", req.Slug, "type", req.Type)
+
+	prev, next, err := internal.GetKindyNeighbours(typedType, req.Slug)
+	if err != nil {
+		slog.Error("failed to get kindy neighbours", "err", err)
+		http.Error(w, "failed to get neighbours", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Previous string `json:"previous,omitempty"`
+		Next     string `json:"next,omitempty"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Previous: prev,
+		Next:     next,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
+	}
+}

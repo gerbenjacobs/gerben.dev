@@ -46,6 +46,7 @@ func GetKindyByType(kindyType local.KindyType) (entries []local.Kindy, err error
 	return entries, nil
 }
 
+// GetKindyPaths loads multiple Kindy entries from given file paths
 func GetKindyPaths(paths []string) (entries []local.Kindy, err error) {
 	for _, f := range paths {
 
@@ -67,4 +68,28 @@ func GetKindyPaths(paths []string) (entries []local.Kindy, err error) {
 	})
 
 	return entries, nil
+}
+
+func GetKindyNeighbours(t local.KindyType, slug string) (prev string, next string, err error) {
+	entries, err := GetKindyCacheByType(t)
+	if err != nil {
+		return "", "", err
+	}
+
+	var index int
+	for i, entry := range entries {
+		if entry.Slug == slug {
+			index = i
+			break
+		}
+	}
+
+	if index > 0 {
+		prev = entries[index-1].Permalink
+	}
+	if index < len(entries)-1 {
+		next = entries[index+1].Permalink
+	}
+
+	return prev, next, nil
 }
