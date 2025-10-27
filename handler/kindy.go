@@ -111,6 +111,10 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 }
 
 func KindyUpdate(w http.ResponseWriter, r *http.Request) {
+	if Env != "dev" {
+		http.Error(w, "not allowed", http.StatusForbidden)
+		return
+	}
 	if r.Method != http.MethodPost {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 		return
