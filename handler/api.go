@@ -131,8 +131,6 @@ func (h *Handler) apiNextPrevious(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	slog.Warn("searching next/previous", "slug", req.Slug, "type", req.Type)
-
 	prev, next, err := internal.GetKindyNeighbours(typedType, req.Slug)
 	if err != nil {
 		slog.Error("failed to get kindy neighbours", "err", err)
