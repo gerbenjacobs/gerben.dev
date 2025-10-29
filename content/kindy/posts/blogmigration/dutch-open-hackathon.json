@@ -3,6 +3,7 @@
     "title": "Dutch Open Hackathon",
     "summary": "In september 2014 I attended the first Dutch Open Hackathon and together with an awesome team created working prototype for our travel assistance app!",
     "content": "/posts/blogmigration/dutch-open-hackathon.html",
+    "image": "/kd/gj/2014/doh/billie.jpg",
     "publishedAt": "2014-09-25T12:00:00+01:00",
     "slug": "blogmigration/dutch-open-hackathon",
     "permalink": "/posts/dutch-open-hackathon",
@@ -10,7 +11,7 @@
         "tech",
         "personal",
         "hackathon",
-        "dutchopenhackathon",
+        "DutchOpenHackathon",
         "BlogMigration"
     ]
 }

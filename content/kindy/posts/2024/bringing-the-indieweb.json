@@ -1,12 +1,13 @@
 {
-  "type": "post",
-  "title": "Bringing the indieweb!",
-  "summary": "Making my website #indieweb ready. I'm actively developing a publishing system.. yes, hand-rolled \uD83D\uDE2C",
-  "content": "/posts/2024/bringing-the-indieweb.html",
-  "publishedAt": "2024-11-28T19:30:00+01:00",
-  "permalink": "/posts/bringing-the-indieweb",
-  "slug": "2024/bringing-the-indieweb",
-  "tags": [
-    "indieweb"
-  ]
+    "type": "post",
+    "title": "Bringing the indieweb!",
+    "summary": "Making my website #indieweb ready. I'm actively developing a publishing system.. yes, hand-rolled 😬",
+    "content": "/posts/2024/bringing-the-indieweb.html",
+    "image": "/kd/photos/media/posts/202012/132856496_724120235176131_9159335594028037683_n_18059446198270762.jpg",
+    "publishedAt": "2024-11-28T19:30:00+01:00",
+    "permalink": "/posts/bringing-the-indieweb",
+    "slug": "2024/bringing-the-indieweb",
+    "tags": [
+        "indieweb"
+    ]
 }

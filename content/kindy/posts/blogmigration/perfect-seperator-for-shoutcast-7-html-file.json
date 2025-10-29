@@ -3,6 +3,7 @@
     "title": "Perfect separator for Shoutcast 7.html file",
     "summary": "If you use the Shoutcast 7.html trick to get some quick stats about your stream broadcast but are getting some inconsistencies with parsing the comma-separated input you get, try this!",
     "content": "/posts/blogmigration/perfect-seperator-for-shoutcast-7-html-file.html",
+    "image": "/kd/images/screenshot_shoutcast.png",
     "publishedAt": "2012-04-08T12:00:00+02:00",
     "slug": "blogmigration/perfect-seperator-for-shoutcast-7-html-file",
     "permalink": "/posts/perfect-seperator-for-shoutcast-7-html-file",

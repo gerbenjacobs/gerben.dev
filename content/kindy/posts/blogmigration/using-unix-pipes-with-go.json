@@ -1,23 +1,24 @@
 {
-	"type": "post",
-	"title": "Using Unix pipes with Go",
-	"summary": "Built your own Unix tool that allows data to be piped via stdin and stdout",
-	"content": "/posts/blogmigration/using-unix-pipes-with-go.html",
-	"publishedAt": "2024-10-06T12:00:00+02:00",
-	"slug": "blogmigration/using-unix-pipes-with-go",
-	"permalink": "/posts/using-unix-pipes-with-go",
-	"tags": [
-		"tech",
-		"go",
-		"unix",
-		"tutorial",
-		"OpenSource",
+    "type": "post",
+    "title": "Using Unix pipes with Go",
+    "summary": "Built your own Unix tool that allows data to be piped via stdin and stdout",
+    "content": "/posts/blogmigration/using-unix-pipes-with-go.html",
+    "image": "/kd/photos/media/posts/201610/14566787_1086642861412924_4404589172224950272_n_17853296395125334.jpg",
+    "publishedAt": "2024-10-06T12:00:00+02:00",
+    "slug": "blogmigration/using-unix-pipes-with-go",
+    "permalink": "/posts/using-unix-pipes-with-go",
+    "tags": [
+        "tech",
+        "go",
+        "unix",
+        "tutorial",
+        "OpenSource",
         "BlogMigration"
-	],
-	"syndication": [
-		{
-			"type": "linkedin",
-			"url": "https://www.linkedin.com/feed/update/urn:li:activity:7255290871355469824/"
-		}
-	]
+    ],
+    "syndication": [
+        {
+            "type": "linkedin",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7255290871355469824/"
+        }
+    ]
 }
