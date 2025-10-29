@@ -208,7 +208,8 @@
                         <details>
                             <summary>Debug: Raw Source</summary>
                             <form action="/kindy/update" method="post">
-                                <input type="hidden" name="permalink" value="{{ .Permalink }}">
+                                <input type="hidden" name="type" value="{{ .Type }}">
+                                <input type="hidden" name="slug" value="{{ .Slug }}">
                                 <label>
                                     <textarea id="raw" name="raw"
                                               style="height: 400px; background: #fff; font-size: 1.5em;">{{ .RawKindy }}</textarea>

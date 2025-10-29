@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"log/slog"
 	"net/http"
@@ -126,14 +127,21 @@ func KindyUpdate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p := r.Form.Get("permalink")
+	t := local.KindyType(r.Form.Get("type"))
+	slug := r.Form.Get("slug")
 	rawKindy := r.Form.Get("raw")
 
-	err = os.WriteFile("content/kindy"+p+".json", []byte(rawKindy), 0644)
+	f := fmt.Sprintf("%s%s/%s.json", local.KindyContentPath, t.URL(), slug)
+	err = os.WriteFile(f, []byte(rawKindy), 0644)
 	if err != nil {
 		http.Error(w, "failed to write file: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	http.Redirect(w, r, p, http.StatusSeeOther)
+	var kind local.Kindy
+	if err := json.Unmarshal([]byte(rawKindy), &kind); err != nil {
+		http.Error(w, "failed to unmarshal kindy: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	http.Redirect(w, r, kind.Permalink, http.StatusSeeOther)
 }
