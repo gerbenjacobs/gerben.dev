@@ -241,7 +241,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             const container = document.querySelector('#next-previous');
             async function fetchLinks() {
-                console.log(container)
                 const response = await fetch('/api/nextprevious',
                     {
                         method: 'POST',
