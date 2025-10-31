@@ -71,9 +71,25 @@ func GetKindyPaths(paths []string) (entries []local.Kindy, err error) {
 }
 
 func GetKindyNeighbours(t local.KindyType, slug string) (prev string, next string, err error) {
-	entries, err := GetKindyCacheByType(t)
-	if err != nil {
-		return "", "", err
+	var entries []local.Kindy
+	if t.IsTimelineType() {
+		likes, _ := GetKindyCacheByType(local.KindyTypeLike)
+		entries = append(entries, likes...)
+		replies, _ := GetKindyCacheByType(local.KindyTypeReplies)
+		entries = append(entries, replies...)
+		reposts, _ := GetKindyCacheByType(local.KindyTypeRepost)
+		entries = append(entries, reposts...)
+		notes, _ := GetKindyCacheByType(local.KindyTypeNote)
+		entries = append(entries, notes...)
+		// Sort the entries on published date
+		sort.Slice(entries, func(i, j int) bool {
+			return entries[i].PublishedAt.After(entries[j].PublishedAt)
+		})
+	} else {
+		entries, err = GetKindyCacheByType(t)
+		if err != nil {
+			return "", "", err
+		}
 	}
 
 	var index int

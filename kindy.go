@@ -254,15 +254,19 @@ func (kt KindyType) URL() string {
 }
 
 func (kt KindyType) IsValid() bool {
-	if kt == KindyTypeNote ||
+	return kt == KindyTypeNote ||
 		kt == KindyTypePhoto ||
 		kt == KindyTypePost ||
 		kt == KindyTypeRepost ||
 		kt == KindyTypeLike ||
-		kt == KindyTypeReplies {
-		return true
-	}
-	return false
+		kt == KindyTypeReplies
+}
+
+func (kt KindyType) IsTimelineType() bool {
+	return kt == KindyTypeNote ||
+		kt == KindyTypeReplies ||
+		kt == KindyTypeRepost ||
+		kt == KindyTypeLike
 }
 
 func MarkdownToHTML(md string) string {
