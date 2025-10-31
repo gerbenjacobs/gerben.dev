@@ -223,8 +223,8 @@ func (h *Handler) photos(featured bool) func(http.ResponseWriter, *http.Request)
 	}
 }
 
-func (h *Handler) timehop(w http.ResponseWriter, r *http.Request) {
-	pageFile := "static/views/timehop.gohtml"
+func (h *Handler) previously(w http.ResponseWriter, r *http.Request) {
+	pageFile := "static/views/previously.gohtml"
 	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/timeline-paginated.gohtml")...))
 
 	// get all entries
@@ -271,13 +271,21 @@ func (h *Handler) timehop(w http.ResponseWriter, r *http.Request) {
 		NewSince string
 	}
 	author, _ := getAuthor()
+	image := ""
+	for _, entry := range entries {
+		if entry.GetImage() != "" {
+			image = entry.GetImage()
+			break
+		}
+	}
 	data := pageData{
 		Metadata: internal.Metadata{
 			Env:         Env,
-			Title:       "Timehop",
-			Description: "All the content I've posted on this day in history.",
-			Permalink:   "/timehop",
+			Title:       "Previously on...",
+			Description: "A look back at what I was posting on this day in previous years.",
+			Permalink:   "/previously",
 			SourceLink:  codeSourcePath + pageFile,
+			Image:       image,
 		},
 		Author:  author,
 		Entries: entries,

@@ -13,6 +13,7 @@ var sitemapPages = []*xmlSitemapItem{
 	{Loc: "https://gerben.dev/photos/", ChangeFreq: "weekly", Priority: "0.8"},
 	{Loc: "https://gerben.dev/photos/featured", ChangeFreq: "monthly", Priority: "0.7"},
 	{Loc: "https://gerben.dev/timeline", ChangeFreq: "daily", Priority: "1.0"},
+	{Loc: "https://gerben.dev/previously", ChangeFreq: "daily", Priority: "0.6"},
 	{Loc: "https://gerben.dev/changelog", ChangeFreq: "weekly", Priority: "0.5"},
 	{Loc: "https://gerben.dev/sitemap", ChangeFreq: "daily", Priority: "0.6"},
 	{Loc: "https://gerben.dev/listening", ChangeFreq: "daily", Priority: "0.6"},

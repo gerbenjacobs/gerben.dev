@@ -218,6 +218,16 @@ func (k Kindy) IsVideo() bool {
 	return strings.HasSuffix(string(k.Content), ".mp4")
 }
 
+func (k Kindy) GetImage() string {
+	if k.Type == KindyTypePhoto {
+		return string(k.Content)
+	}
+	if k.Image != "" {
+		return k.Image
+	}
+	return ""
+}
+
 func (kt KindyType) Emoji() string {
 	emojis := map[KindyType]string{
 		KindyTypePost:    "📝",

@@ -39,7 +39,7 @@
             <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
             {{- end }}
             {{ if .Summary }}
-            <p class="truncate">
+            <p>
                 {{ .Summary }}
                 {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
                 {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
