@@ -9,6 +9,12 @@
         "latitude": 52.0629778,
         "longitude": 5.648475
     },
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/847188044930553792"
+        }
+    ],
     "tags": [
         "Crabapple",
         "Macro",

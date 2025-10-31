@@ -5,6 +5,12 @@
     "publishedAt": "2025-10-31T17:49:00Z",
     "slug": "5b0361e83f1919495d14866e07eee0ed",
     "permalink": "/photos/5b0361e83f1919495d14866e07eee0ed",
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/889952218071456015"
+        }
+    ],
     "tags": [
         "Halloween",
         "Pizza"
