@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"net/http"
 	"slices"
+	"sort"
 	"strconv"
 	"time"
 
@@ -219,5 +220,69 @@ func (h *Handler) photos(featured bool) func(http.ResponseWriter, *http.Request)
 		if err := t.Execute(w, data); err != nil {
 			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 		}
+	}
+}
+
+func (h *Handler) timehop(w http.ResponseWriter, r *http.Request) {
+	pageFile := "static/views/timehop.gohtml"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/timeline-paginated.gohtml")...))
+
+	// get all entries
+	var entries []local.Kindy
+	for _, kindyType := range []local.KindyType{
+		local.KindyTypePost,
+		local.KindyTypePhoto,
+		local.KindyTypeNote,
+		local.KindyTypeRepost,
+		local.KindyTypeReplies,
+		local.KindyTypeLike,
+	} {
+		kindyEntries, _ := internal.GetKindyCacheByType(kindyType)
+		entries = append(entries, kindyEntries...)
+	}
+	// filter entries from this day in history, plus 8 hours on each side
+	today := time.Now()
+	if r.URL.Query().Get("date") != "" {
+		parse, err := time.Parse("2006-01-02", r.URL.Query().Get("date"))
+		if err != nil {
+			slog.Warn("failed to parse date", "date", r.URL.Query().Get("date"), "error", err)
+		} else {
+			today = parse
+		}
+	}
+	var filteredEntries []local.Kindy
+	for _, entry := range entries {
+		if entry.PublishedAt.Month() == today.Month() && entry.PublishedAt.Day() == today.Day() && entry.PublishedAt.Year() != today.Year() {
+			filteredEntries = append(filteredEntries, entry)
+			continue
+		}
+	}
+	entries = filteredEntries
+
+	// sort entries by published date descending
+	sort.Slice(entries, func(i, j int) bool {
+		return entries[i].PublishedAt.After(entries[j].PublishedAt)
+	})
+
+	type pageData struct {
+		Metadata internal.Metadata
+		Author   *local.KindyAuthor
+		Entries  []local.Kindy
+		NewSince string
+	}
+	author, _ := getAuthor()
+	data := pageData{
+		Metadata: internal.Metadata{
+			Env:         Env,
+			Title:       "Timehop",
+			Description: "All the content I've posted on this day in history.",
+			Permalink:   "/timehop",
+			SourceLink:  codeSourcePath + pageFile,
+		},
+		Author:  author,
+		Entries: entries,
+	}
+	if err := t.Execute(w, data); err != nil {
+		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
 }

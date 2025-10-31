@@ -1,0 +1,20 @@
+{{ define "content" }}
+    <header class="container" id="timeline-header">
+        <div id="timeline-header-content" class="padding center-align">
+            <h1>Timehop</h1>
+            <p>
+                A look back at what I was posting on this day in previous years.
+            </p>
+        </div>
+    </header>
+
+    <div class="container padding">
+        {{ if not .Entries }}
+            <p>No entries found for today!</p>
+        {{ else }}
+        {{ template "timeline-paginated" $ }}
+        {{ end}}
+    </div>
+
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+{{ end }}

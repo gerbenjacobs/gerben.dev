@@ -78,6 +78,7 @@ func New(env string, dependencies Dependencies) *Handler {
 		w.Header().Set("Content-Type", "application/rss+xml; charset=utf-8")
 		http.ServeFile(w, r, internal.PostsRssCache)
 	})
+	r.HandleFunc("GET /timehop", h.timehop)
 
 	// Kindy endpoints
 	r.HandleFunc("GET /notes/{file}", Kindy)
