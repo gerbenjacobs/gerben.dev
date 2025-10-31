@@ -1,0 +1,10 @@
+{
+    "type": "note",
+    "markdown": "A quick test.. this Tag (which is a URL) should not generate a Link Preview.",
+    "publishedAt": "2025-10-31T22:40:13.9508519+01:00",
+    "slug": "d81408ec5f6b18a6128225641b6bf7e0",
+    "permalink": "/notes/d81408ec5f6b18a6128225641b6bf7e0",
+    "tags": [
+        "AutoDelete"
+    ]
+}
