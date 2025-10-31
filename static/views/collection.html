@@ -1,7 +1,6 @@
 {{ define "content" }}
 <style>
     @keyframes bounce2 {
-
         0%,
         20%,
         50%,
@@ -40,23 +39,40 @@
             transform: rotate(0deg);
         }
     }
+
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+        50% {
+            transform: translatey(-20px);
+        }
+        100% {
+            transform: translatey(0px);
+        }
+    }
+
 </style>
 <div class="container">
     <div class="row padding">
         <h2>{{ .Metadata.Title }}</h2>
         <p>{{ .Metadata.Description }}</p>
         <p><small>This page is best-viewed in desktop mode. <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This
-                    photo</a> is used for the background.</small></p>
+            photo</a> is used for the background.</small></p>
     </div>
     <div class="collected" id="collected">
         <div style="position: absolute; top: 420px; right: 50px; animation: bounce2 2s ease infinite;">
             <img src="/images/collected/toothless.webp"
-                alt="Toothless, the Night Fury dragon from How to Train Your Dragon" loading="lazy" width="400"
-                height="225">
+                 alt="Toothless, the Night Fury dragon from How to Train Your Dragon" loading="lazy" width="400"
+                 height="225">
         </div>
         <div style="position: absolute; top: 334px; left: 175px; animation: wiggle 2.5s ease infinite;">
             <img src="/images/collected/0134Vaporeon.png" alt="Vaporeon, the water-based evolution of Eevee"
-                loading="lazy" width="300" height="300">
+                 loading="lazy" width="300" height="300">
+        </div>
+        <div style="position: absolute; top: 550px; left: 550px; animation: float 3s ease-in-out infinite;">
+            <img src="/images/collected/squidcrab.png" alt="A Crabsquid, a fictional sea creature"
+                 loading="lazy" width="185" height="334">
         </div>
     </div>
     <div class="row padding">
@@ -64,24 +80,40 @@
             <summary>Collected items</summary>
             <table>
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Item</th>
-                        <th>Reason</th>
-                    </tr>
+                <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Reason</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><time datetime="2025-04-19">Apr 19th, 2025</time></td>
-                        <td>Vaporeon</td>
-                        <td>Pokémon has been all the rage, my 2-year-old's favourite is "water Eevee".</td>
-                    </tr>
-                    <tr>
-                        <td><time datetime="2024-12-29">Dec 29th, 2024</time></td>
-                        <td>Toothless, the Night Fury dragon</td>
-                        <td>We've watched movie 1 and 2 and I had to tame one with fish, then it became mine, like I was
-                            Hiccup.</td>
-                    </tr>
+                <tr>
+                    <td>
+                        <time datetime="2025-10-31">Oct 31st, 2025</time>
+                    </td>
+                    <td>Crabsquid</td>
+                    <td>
+                        I caught this <i>"Crabsquid"</i> in <b>"RQNautica"</b>, a pen-and-paper game
+                        based on Subnautica, but in <span class="space-background" style="padding: 5px;">space</span>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <time datetime="2025-04-19">Apr 19th, 2025</time>
+                    </td>
+                    <td>Vaporeon</td>
+                    <td>Pokémon has been all the rage, my 2-year-old's favourite is "water Eevee".</td>
+                </tr>
+                <tr>
+                    <td>
+                        <time datetime="2024-12-29">Dec 29th, 2024</time>
+                    </td>
+                    <td>Toothless, the Night Fury dragon</td>
+                    <td>
+                        We've watched movie 1 and 2, and I had to tame one with fish before it became mine, like I was
+                        Hiccup.
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </details>

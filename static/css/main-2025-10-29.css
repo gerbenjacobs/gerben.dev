@@ -41,7 +41,7 @@ nav ul a,
     font-size: 1.2rem;
 }
 
-#site #space {
+#site #space, .space-background {
     background: #121212 url('/images/stars.gif');
     color: #ffffff;
     margin-bottom: 0;
