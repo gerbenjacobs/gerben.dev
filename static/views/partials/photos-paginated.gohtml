@@ -2,7 +2,7 @@
 {{ range .Entries }}
 <article class="padding">
     <div style="height: 5em; line-height: 1em;">
-    <h6>{{if .HasFlickrSyndication}}🖼️{{else}}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
+    <h6>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
             {{- if .Title -}}
             {{ .Title }}
             {{- else if .Summary -}}
