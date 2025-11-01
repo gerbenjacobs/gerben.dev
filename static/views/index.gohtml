@@ -47,7 +47,7 @@
                     @gerben.dev
                     <b class="secondary-content" style="color: #0085FF;">BlueSky</b>
                 </a>
-                <a class="collection-item" href="https://pixelfed.social/@gerben" rel="me" target="_blank">
+                <a class="collection-item truncate" href="https://pixelfed.social/@gerben" rel="me" target="_blank">
                     @gerben@pixelfed.social
                     <b class="secondary-content" style="color: #1E1937;">Pixelfed</b>
                 </a>
@@ -65,7 +65,7 @@
             <h2>Posts <a href="/feed.xml">🛜</a></h2>
             {{ range .Posts }}
             <article>
-                <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+                <h3 style="font-size: 2rem;">{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h3>
                 {{ if .Image }}
                 <div class="home-photo" style='background-image: url({{ .Image }}); filter: drop-shadow(5px 5px 10px #666); margin-right: 2em;'></div>
                 {{ end }}
@@ -86,11 +86,11 @@
             </article>
             <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
             {{ end }}
-            <a href="/posts/" class="btn">View all posts</a>
+            <a href="/posts/" class="btn" style="margin-bottom: 1em;">View all posts</a>
         </div>
         <div class="col m6">
-            <h2>Timeline <a href="/timeline.xml">🛜</a></h2>
-            <div style="margin-top: 1em;max-height: 1000px; overflow: auto; background-color: #c9c7c7;">
+            <h2 style="margin-bottom: 0.3em;">Timeline <a href="/timeline.xml">🛜</a></h2>
+            <div style="max-height: 1000px; overflow: auto; background-color: #c9c7c7; padding: 0 1em;">
                 {{ template "timeline-paginated" $ }}
             </div>
             <a href="/timeline" class="btn" style="margin-top: 1em;">View entire timeline</a>
@@ -130,8 +130,8 @@
                 </a>
             </article>
             {{ end }}
-            <a href="/photos/" class="btn">View all photos</a> or
-            <a href="/photos/featured" class="btn">⭐ View just Featured Photos</a>
+            <a href="/photos/" class="btn" style="margin-bottom: 1em;">View all photos</a> or
+            <a href="/photos/featured" class="btn" style="margin-bottom: 1em;">⭐ View just Featured Photos</a>
         </div>
     </div>
     <div style="clear: both;">&nbsp;</div>
