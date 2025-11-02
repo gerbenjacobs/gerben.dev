@@ -146,19 +146,28 @@
                                     Your browser does not support the video tag.
                                 </video>
                                 {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
-                                {{- if .Tags }}<p>{{ range .Tags }}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}
-                                </p>{{- end }}
+                                {{- if .Tags }}
+                                <p>
+                                    {{- range .Tags -}}
+                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                    {{- end -}}
+                                </p>
+                                {{- end }}
                             </div>
                         {{ else }}
                             <figure class="e-content center-align">
                                 <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
                                 {{- if .Summary -}}
-                                <figcaption>{{ .Summary }}</figcaption>{{- end }}
-                                {{ if .Tags }}<p>{{ range .Tags }}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}
-                                </p>{{- end }}
+                                <figcaption>{{ .Summary }}</figcaption>
+                                {{- end }}
                             </figure>
+                            {{- if .Tags }}
+                            <p>
+                                {{- range .Tags -}}
+                                    <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                {{- end -}}
+                            </p>
+                            {{- end }}
                         {{ end }}
                     {{ else }}
                         {{ if eq .Type "like" "repost" "reply" -}}
@@ -170,28 +179,31 @@
                                 {{ .Summary }}
                                 {{ if .LikeOf }}
                                     <span class="kindy-like">
-                                <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
-                            </span>
+                                        <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
+                                    </span>
                                 {{ end }}
                                 {{ if .RepostOf }}
                                     <span class="kindy-repost">
-                                <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
-                            </span>
+                                        <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
+                                    </span>
                                 {{ end }}
                             </p>
                         {{- end }}
                         {{- if .ReplyTo }}
                             <p>
-                                <small>In reply to: <a class="u-in-reply-to"
-                                                       href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
+                                <small>In reply to: <a class="u-in-reply-to" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
                             </p>
                         {{- end }}
                         {{ if .HasContent -}}
                             <div class="e-content">
                                 {{ .GetContent }}
-                                {{- if .Tags }}<p>{{ range .Tags }}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}">#{{.}}</a> {{ end }}
-                                </p>{{- end }}
+                                {{- if .Tags }}
+                                <p>
+                                    {{- range .Tags -}}
+                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                    {{- end -}}
+                                </p>
+                                {{- end }}
                             </div>
                         {{- end }}
                     {{ end }}
