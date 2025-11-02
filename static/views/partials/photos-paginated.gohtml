@@ -39,7 +39,11 @@
     </div>
     {{ if .IsVideo }}
     <video class="home-photo responsive-video" autoplay loop muted>
-        <source class="u-video" src="{{.Content}}" type="video/mp4" />
+        {{ if .Thumbnail }}
+            <source class="u-video" src="{{.Thumbnail}}" type="video/mp4"/>
+        {{- else }}
+            <source class="u-video" src="{{.Content}}" type="video/mp4"/>
+        {{ end }}
         Your browser does not support the video tag.
     </video>
     {{ else }}

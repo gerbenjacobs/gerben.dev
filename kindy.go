@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"log/slog"
+	"os"
 	"path/filepath"
 	"strings"
 	"time"
@@ -123,7 +124,17 @@ func (k Kindy) Thumbnail() string {
 	if k.Type == KindyTypePhoto {
 		filePath := string(k.Content)
 		ext := filepath.Ext(filePath)
-		return fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
+		thumb := fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
+
+		// if ext is mp4, double check the file exists
+		if ext == ".mp4" {
+			f := filepath.Clean(filepath.Join(KindyContentPath, "data", k.Type.URL(), strings.TrimSuffix(filepath.Base(filePath), ext)+"_thumb"+ext))
+			if _, err := os.Stat(f); err != nil {
+				return ""
+			}
+		}
+
+		return thumb
 	}
 
 	return ""
