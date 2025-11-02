@@ -120,20 +120,19 @@
                                 {{- end }}
                             </time>
                             {{ if .Geo -}}
-                                <span class="p-location h-geo">
-                            <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}"
-                               target="_blank">
-                                <span class="p-latitude">{{ .Geo.Latitude }}</span>,
-                                <span class="p-longitude">{{ .Geo.Longitude }}</span>
-                            </a>
-                        </span>
+                            <span class="p-location h-geo">
+                                <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">
+                                    <span class="p-latitude">{{ .Geo.Latitude }}</span>,
+                                    <span class="p-longitude">{{ .Geo.Longitude }}</span>
+                                </a>
+                            </span>
                             {{- end }}
                             {{ if .Syndication -}}
                                 {{- range $syn := .Syndication -}}
-                                    <span class="kindy-syndication {{ $syn.Type }}">
-                                <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}"
-                                   target="_blank">{{ $syn.Type }}</a>
-                            </span>
+                                <span class="kindy-syndication {{ $syn.Type }}">
+                                    <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}"
+                                    target="_blank">{{ $syn.Type }}</a>
+                                </span>
                                 {{- end -}}
                             {{- end }}
                         </div>
@@ -149,7 +148,7 @@
                                 {{- if .Tags }}
                                 <p>
                                     {{- range .Tags -}}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
                                     {{- end -}}
                                 </p>
                                 {{- end }}
@@ -164,7 +163,7 @@
                             {{- if .Tags }}
                             <p>
                                 {{- range .Tags -}}
-                                    <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                    <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
                                 {{- end -}}
                             </p>
                             {{- end }}
@@ -200,7 +199,7 @@
                                 {{- if .Tags }}
                                 <p>
                                     {{- range .Tags -}}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>
+                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
                                     {{- end -}}
                                 </p>
                                 {{- end }}
