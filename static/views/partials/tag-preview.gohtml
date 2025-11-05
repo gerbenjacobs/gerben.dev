@@ -39,6 +39,9 @@
         </figure>
         {{ end }}
     {{ else}}
+        {{ if .Image }}
+        <div class="home-photo" style='background-image: url({{ .Image }}); filter: drop-shadow(5px 5px 10px #666); margin-right: 2em;'></div>
+        {{ end }}
         {{ if .Summary }}
             <p>
                 {{ .Summary }}
