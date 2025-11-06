@@ -16,6 +16,7 @@ import (
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"go.abhg.dev/goldmark/frontmatter"
 	"go.abhg.dev/goldmark/hashtag"
 )
@@ -59,6 +60,7 @@ func (r *HashtagResolver) ResolveHashtag(n *hashtag.Node) (destination []byte, e
 
 func init() {
 	gm = goldmark.New(
+		goldmark.WithRendererOptions(html.WithUnsafe()),
 		goldmark.WithExtensions(
 			extension.GFM,
 			&frontmatter.Extender{},
