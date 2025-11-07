@@ -105,6 +105,9 @@ func CreatePhotosXML() ([]byte, error) {
 	for _, entry := range entries {
 		url := "https://gerben.dev" + entry.Permalink
 		img := fmt.Sprintf(`<img src="https://gerben.dev%s" alt="%s" loading="lazy">`, entry.Content, entry.MustTitle())
+		if entry.IsVideo() {
+			img = fmt.Sprintf(`<video controls src="https://gerben.dev%s" alt="%s"></video>`, entry.Content, entry.MustTitle())
+		}
 		item := &RssItem{
 			Title:       Titlify(entry.MustTitle()),
 			Link:        url,
