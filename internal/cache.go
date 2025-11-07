@@ -33,6 +33,7 @@ var (
 	KindyRepliesCache = ".cache/kindy_replies.json"
 	TimelineRssCache  = ".cache/timeline_rss.xml"
 	PostsRssCache     = ".cache/posts_rss.xml"
+	PhotosRssCache    = ".cache/photos_rss.xml"
 	SitemapXMLCache   = ".cache/sitemap.xml"
 )
 
@@ -103,6 +104,15 @@ func CreateCaches() error {
 	}
 	if err := SetCache(PostsRssCache, b); err != nil {
 		return fmt.Errorf("failed to set posts rss cache: %w", err)
+	}
+
+	// Photos rss creation and cache
+	b, err = CreatePhotosXML()
+	if err != nil {
+		return fmt.Errorf("failed to create photos rss: %w", err)
+	}
+	if err := SetCache(PhotosRssCache, b); err != nil {
+		return fmt.Errorf("failed to set photos rss cache: %w", err)
 	}
 
 	// sitemap creation and cache

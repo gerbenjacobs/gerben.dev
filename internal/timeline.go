@@ -21,10 +21,11 @@ func CreateTimelineXML() ([]byte, error) {
 
 	lastUpdatedTime := entries[0].PublishedAt
 	feed := RssFeed{
-		Title:       "@gerben.dev timeline",
-		Link:        "https://gerben.dev/timeline",
-		Description: "A collection of all my notes, reposts and likes, sorted by date.",
-		PubDate:     lastUpdatedTime.Format(time.RFC1123Z),
+		Title:         "@gerben.dev timeline",
+		Link:          "https://gerben.dev/timeline",
+		Description:   "A collection of all my notes, reposts and likes, sorted by date.",
+		PubDate:       lastUpdatedTime.Format(time.RFC1123Z),
+		LastBuildDate: time.Now().Format(time.RFC1123Z),
 	}
 
 	for _, entry := range entries {

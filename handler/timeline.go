@@ -87,11 +87,6 @@ func (h *Handler) timeline(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (h *Handler) timelineXML(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/rss+xml; charset=utf-8")
-	http.ServeFile(w, r, internal.TimelineRssCache)
-}
-
 func (h *Handler) handleTimePagination(timeString string, lastTime time.Time) (from, to time.Time, cursor string) {
 	from = time.Now()
 	sinceQuery := timeString
