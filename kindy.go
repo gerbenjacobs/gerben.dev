@@ -72,6 +72,10 @@ func init() {
 						Name:  "class",
 						Value: "p-category",
 					},
+					{
+						Name:  "rel",
+						Value: "tag",
+					},
 				},
 			},
 		),
