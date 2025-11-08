@@ -7,7 +7,6 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
-	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -27,21 +26,22 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 	kindyFile := "content/kindy" + r.URL.Path + ".json"
 
 	_, err := os.Stat(kindyFile)
-	// Posts can live in subfolders, so we need to find them by permalink
+	// Anything can live in subfolders, so we need to find them by permalink
 	// and use the slug to find the json file
-	if os.IsNotExist(err) && strings.HasPrefix(r.URL.Path, local.KindyURLPosts) {
-		posts, err := internal.GetKindyCacheByType(local.KindyTypePost)
+	if os.IsNotExist(err) {
+		// determine type by url path
+		kt := local.URLToKindyType(r.URL.Path)
+		entities, err := internal.GetKindyCacheByType(kt)
 		if err != nil {
-			slog.Error("failed to get posts", "error", err)
+			slog.Error("failed to get kindy", "error", err)
 			// in the rare case that this happens, just ignore
 		} else {
-			for _, post := range posts {
-				if r.URL.Path == post.Permalink {
-					kindyFile = "content/kindy/posts/" + post.Slug + ".json"
+			for _, entity := range entities {
+				if r.URL.Path == entity.Permalink {
+					kindyFile = "content/kindy/" + kt.URL() + "/" + entity.Slug + ".json"
 					break
 				}
 			}
@@ -106,6 +106,7 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		Kindy:    kind,
 		RawKindy: string(b),
 	}
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}

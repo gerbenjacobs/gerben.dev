@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Crowded pier",
+  "content": "/kd/photos/flickr/crowded-pier_5157239299_o.jpg",
+  "publishedAt": "2010-11-07T16:32:15Z",
+  "slug": "2010/3f8a4c2d72cbea4fa4712d9f8c497b37",
+  "permalink": "/photos/3f8a4c2d72cbea4fa4712d9f8c497b37",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157239299/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  },
+  "tags": [
+    "Netherlands",
+    "Fishing",
+    "Hoek van Holland"
+  ]
+}

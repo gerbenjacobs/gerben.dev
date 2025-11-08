@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "summary": "\"Toelleturm\" is a tower that offers a panoramic view",
+  "content": "/kd/photos/PXL_20250308_135438265.jpg",
+  "publishedAt": "2025-03-08T13:54:00Z",
+  "slug": "2025/9e81fe1b5ac16c9e5782241d6027cc28",
+  "permalink": "/photos/9e81fe1b5ac16c9e5782241d6027cc28",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/804789961306132574"
+    }
+  ],
+  "geo": {
+    "latitude": 51.2563722,
+    "longitude": 7.2016361
+  },
+  "tags": [
+    "Toelleturm",
+    "Wuppertal",
+    "Germany"
+  ]
+}

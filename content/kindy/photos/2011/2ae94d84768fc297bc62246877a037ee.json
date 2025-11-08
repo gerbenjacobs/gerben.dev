@@ -1,0 +1,25 @@
+{
+  "type": "photo",
+  "title": "Flatiron Building",
+  "summary": "On a summery hot day, New Yorkers come here to rub their clothes against the wall; ironing.",
+  "content": "/kd/photos/flickr/flatiron-building_5816024646_o.jpg",
+  "publishedAt": "2011-05-02T16:41:35Z",
+  "slug": "2011/2ae94d84768fc297bc62246877a037ee",
+  "permalink": "/photos/2ae94d84768fc297bc62246877a037ee",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5816024646/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.75714,
+    "longitude": -73.981761
+  },
+  "tags": [
+    "UnitedStates",
+    "NYC",
+    "Aerial",
+    "Featured"
+  ]
+}

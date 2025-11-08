@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "Malaga",
+  "summary": "Shot from the Alcazaba, on the right the garden of the cityhall, in the middle the Plaza del Toro and in the background the alboran sea (Mediterranean sea)",
+  "content": "/kd/photos/flickr/malaga_7683854832_o.jpg",
+  "publishedAt": "2012-07-25T12:58:27Z",
+  "slug": "2012/535eb8326dc1750572a92cdbc6f550b6",
+  "permalink": "/photos/535eb8326dc1750572a92cdbc6f550b6",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683854832/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.721454,
+    "longitude": -4.415881
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Featured"
+  ]
+}

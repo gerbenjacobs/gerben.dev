@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "summary": "Bad weather looming on the horizon, while the sun sets over the IJssel river.",
+  "content": "/kd/photos/PXL_20240225_155915686.jpg",
+  "publishedAt": "2024-02-25T15:59:00Z",
+  "slug": "2024/da72e10864e96919da9d9bf1e0259b69",
+  "permalink": "/photos/da72e10864e96919da9d9bf1e0259b69",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/778354007199038609"
+    }
+  ],
+  "geo": {
+    "latitude": 52.0176,
+    "longitude": 6.129325
+  },
+  "tags": [
+    "IJssel",
+    "Doesburg",
+    "Nature",
+    "Weather"
+  ]
+}

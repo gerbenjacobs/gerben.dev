@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "P1000231",
+  "content": "/kd/photos/flickr/p1000231_5059493683_o.jpg",
+  "publishedAt": "2010-09-29T15:17:11Z",
+  "slug": "2010/219d93726b454c0ddaedc6e2038cb531",
+  "permalink": "/photos/219d93726b454c0ddaedc6e2038cb531",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5059493683/"
+    }
+  ],
+  "geo": {
+    "latitude": 52.008608,
+    "longitude": 5.895709
+  },
+  "tags": [
+    "Birds",
+    "BurgersZoo",
+    "Arnhem",
+    "Netherlands"
+  ]
+}

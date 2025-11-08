@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "summary": "Panoramic overview of Wuppertal, taken from the \"Skywalk\" vantage point in the \"Nordpark\".",
+  "content": "/kd/photos/PXL_20250308_144749122.jpg",
+  "publishedAt": "2025-03-08T14:47:00Z",
+  "slug": "2025/005ebd9e14b6ebf4c9c02f5d00e427c4",
+  "permalink": "/photos/005ebd9e14b6ebf4c9c02f5d00e427c4",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/804789961306132574"
+    }
+  ],
+  "geo": {
+    "latitude": 51.2864639,
+    "longitude": 7.2027556
+  },
+  "tags": [
+    "Wuppertal",
+    "Germany"
+  ]
+}

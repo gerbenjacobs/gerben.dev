@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Poortersloge / Porters Lodge",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/poortersloge--porters-lodge_9696808260_o.jpg",
+  "publishedAt": "2013-09-07T11:58:23Z",
+  "slug": "2013/9189c350c11fa4738b3ec450a6445f39",
+  "permalink": "/photos/9189c350c11fa4738b3ec450a6445f39",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9696808260/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
+}

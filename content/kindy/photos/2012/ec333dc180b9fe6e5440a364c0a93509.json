@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Meehhhh.",
+  "content": "/kd/photos/flickr/meehhhh_7317210604_o.jpg",
+  "publishedAt": "2012-05-28T15:08:49Z",
+  "slug": "2012/ec333dc180b9fe6e5440a364c0a93509",
+  "permalink": "/photos/ec333dc180b9fe6e5440a364c0a93509",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7317210604/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.067342,
+    "longitude": 5.811467
+  },
+  "tags": [
+    "Netherlands",
+    "Friesland",
+    "Sheep"
+  ]
+}

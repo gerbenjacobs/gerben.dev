@@ -1,0 +1,18 @@
+{
+  "type": "photo",
+  "title": "View from Kaiserburg, Bad Kleinkirchheim",
+  "content": "/kd/photos/flickr/view-from-kaiserburg-bad-kleinkirchheim_24617967386_o.jpg",
+  "publishedAt": "2016-01-22T14:58:43Z",
+  "slug": "2016/2362b85ba16b2f9b68f143ca981f4dda",
+  "permalink": "/photos/2362b85ba16b2f9b68f143ca981f4dda",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/24617967386/"
+    }
+  ],
+  "geo": {
+    "latitude": 46.778947,
+    "longitude": 13.828032
+  }
+}

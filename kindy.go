@@ -280,6 +280,26 @@ func (kt KindyType) URL() string {
 	}
 }
 
+// URLToKindyType finds the KindyType based on the URL path
+func URLToKindyType(url string) KindyType {
+	switch {
+	case strings.HasPrefix(url, KindyURLNotes):
+		return KindyTypeNote
+	case strings.HasPrefix(url, KindyURLPhotos):
+		return KindyTypePhoto
+	case strings.HasPrefix(url, KindyURLPosts):
+		return KindyTypePost
+	case strings.HasPrefix(url, KindyURLReposts):
+		return KindyTypeRepost
+	case strings.HasPrefix(url, KindyURLLikes):
+		return KindyTypeLike
+	case strings.HasPrefix(url, KindyURLReplies):
+		return KindyTypeReplies
+	default:
+		return KindyTypeNote
+	}
+}
+
 func (kt KindyType) IsValid() bool {
 	return kt == KindyTypeNote ||
 		kt == KindyTypePhoto ||

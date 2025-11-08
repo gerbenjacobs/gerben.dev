@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "Malaga Puerto",
+  "content": "/kd/photos/flickr/malaga-puerto_7683795670_o.jpg",
+  "publishedAt": "2012-07-25T14:34:42Z",
+  "slug": "2012/7c90510906cec564fa37ca89b5894a25",
+  "permalink": "/photos/7c90510906cec564fa37ca89b5894a25",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683795670/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.718917,
+    "longitude": -4.407706
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Harbour",
+    "Featured"
+  ]
+}

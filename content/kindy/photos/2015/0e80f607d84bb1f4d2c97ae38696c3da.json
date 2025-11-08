@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Harbour in Terherne, Netherlands",
+  "content": "/kd/photos/flickr/harbour-in-terherne-netherlands_21038724479_o.jpg",
+  "publishedAt": "2015-09-07T22:03:05Z",
+  "slug": "2015/0e80f607d84bb1f4d2c97ae38696c3da",
+  "permalink": "/photos/0e80f607d84bb1f4d2c97ae38696c3da",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/21038724479/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.046111,
+    "longitude": 5.780555
+  },
+  "tags": [
+    "Terherne",
+    "Harbour"
+  ]
+}

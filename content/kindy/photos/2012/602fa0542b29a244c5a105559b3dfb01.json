@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Malaga Airport",
+  "content": "/kd/photos/flickr/malaga-airport_7683738834_o.jpg",
+  "publishedAt": "2012-07-30T12:40:58Z",
+  "slug": "2012/602fa0542b29a244c5a105559b3dfb01",
+  "permalink": "/photos/602fa0542b29a244c5a105559b3dfb01",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683738834/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.676817,
+    "longitude": -4.492034
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Airport"
+  ]
+}

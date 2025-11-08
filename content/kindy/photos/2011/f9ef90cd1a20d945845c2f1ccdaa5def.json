@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Central Park en kantoorgebouwen",
+  "content": "/kd/photos/flickr/central-park-en-kantoorgebouwen_5694659930_o.jpg",
+  "publishedAt": "2011-05-07T00:43:40Z",
+  "slug": "2011/f9ef90cd1a20d945845c2f1ccdaa5def",
+  "permalink": "/photos/f9ef90cd1a20d945845c2f1ccdaa5def",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5694659930/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.759082,
+    "longitude": -73.979523
+  },
+  "tags": [
+    "UnitedStates",
+    "NYC",
+    "CentralPark"
+  ]
+}

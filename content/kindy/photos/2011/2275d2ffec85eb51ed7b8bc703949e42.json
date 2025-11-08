@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Pine cone",
+  "summary": "Yum yum, Sunny D and rum.",
+  "content": "/kd/photos/flickr/pine-cone_5526495795_o.jpg",
+  "publishedAt": "2011-03-13T13:58:20Z",
+  "slug": "2011/2275d2ffec85eb51ed7b8bc703949e42",
+  "permalink": "/photos/2275d2ffec85eb51ed7b8bc703949e42",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5526495795/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.64998,
+    "longitude": 5.102462
+  },
+  "tags": [
+    "Pinecones",
+    "Macro"
+  ]
+}

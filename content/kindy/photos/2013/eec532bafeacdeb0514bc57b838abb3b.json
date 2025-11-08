@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Augusteinenrei",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/augusteinenrei_9693654299_o.jpg",
+  "publishedAt": "2013-09-07T13:01:32Z",
+  "slug": "2013/eec532bafeacdeb0514bc57b838abb3b",
+  "permalink": "/photos/eec532bafeacdeb0514bc57b838abb3b",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693654299/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
+}

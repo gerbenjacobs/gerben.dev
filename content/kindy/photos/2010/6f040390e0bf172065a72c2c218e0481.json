@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "P1000201",
+  "content": "/kd/photos/flickr/p1000201_5060096612_o.jpg",
+  "publishedAt": "2010-09-29T14:43:44Z",
+  "slug": "2010/6f040390e0bf172065a72c2c218e0481",
+  "permalink": "/photos/6f040390e0bf172065a72c2c218e0481",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5060096612/"
+    }
+  ],
+  "geo": {
+    "latitude": 52.008608,
+    "longitude": 5.895709
+  },
+  "tags": [
+    "Snake",
+    "BurgersZoo",
+    "Arnhem",
+    "Netherlands"
+  ]
+}

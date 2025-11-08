@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Oslo harbour",
+  "content": "/kd/photos/flickr/oslo-harbour_9391142799_o.jpg",
+  "publishedAt": "2013-07-26T10:46:23Z",
+  "slug": "2013/b643181629f623c00e5a843c4ae9bd5a",
+  "permalink": "/photos/b643181629f623c00e5a843c4ae9bd5a",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9391142799/"
+    }
+  ],
+  "tags": [
+    "Norway",
+    "Oslo",
+    "Harbour",
+    "Boats",
+    "Sailboat",
+    "Seagull",
+    "Featured"
+  ]
+}

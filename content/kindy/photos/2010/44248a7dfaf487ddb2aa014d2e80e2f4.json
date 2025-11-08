@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "P1000245",
+  "content": "/kd/photos/flickr/p1000245_5059495997_o.jpg",
+  "publishedAt": "2010-09-29T15:38:59Z",
+  "slug": "2010/44248a7dfaf487ddb2aa014d2e80e2f4",
+  "permalink": "/photos/44248a7dfaf487ddb2aa014d2e80e2f4",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5059495997/"
+    }
+  ],
+  "geo": {
+    "latitude": 52.008608,
+    "longitude": 5.895709
+  },
+  "tags": [
+    "Zebra",
+    "BurgersZoo",
+    "Arnhem",
+    "Netherlands"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Cabin on Ebenfeld",
+  "content": "/kd/photos/flickr/cabin-on-ebenfeld_5486989052_o.jpg",
+  "publishedAt": "2011-02-26T09:14:17Z",
+  "slug": "2011/fd43b7c5fe7a4c33b7dbef414833eb37",
+  "permalink": "/photos/fd43b7c5fe7a4c33b7dbef414833eb37",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5486989052/"
+    }
+  ],
+  "geo": {
+    "latitude": 47.233498,
+    "longitude": 12.032089
+  },
+  "tags": [
+    "Austria",
+    "Gerlos"
+  ]
+}

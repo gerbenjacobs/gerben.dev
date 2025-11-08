@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Malaga's \"Furola\"",
+  "content": "/kd/photos/flickr/malagas-furola_7683728548_o.jpg",
+  "publishedAt": "2012-07-26T12:58:04Z",
+  "slug": "2012/f2fe2ed7e85646308fa24ea3b9ac3482",
+  "permalink": "/photos/f2fe2ed7e85646308fa24ea3b9ac3482",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683728548/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.71423,
+    "longitude": -4.414755
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Lighthouse"
+  ]
+}

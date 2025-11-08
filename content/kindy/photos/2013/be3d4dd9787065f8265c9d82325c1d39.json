@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Onze-Lieve-Vrouwe church",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/onze-lieve-vrouwe-church_9693554435_o.jpg",
+  "publishedAt": "2013-09-07T15:55:13Z",
+  "slug": "2013/be3d4dd9787065f8265c9d82325c1d39",
+  "permalink": "/photos/be3d4dd9787065f8265c9d82325c1d39",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9693554435/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
+}

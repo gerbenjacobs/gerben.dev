@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "Beach",
+  "content": "/kd/photos/flickr/beach_7683753710_o.jpg",
+  "publishedAt": "2012-07-26T13:03:56Z",
+  "slug": "2012/7e82a76f89dd49421f59a19e1edfa9ac",
+  "permalink": "/photos/7e82a76f89dd49421f59a19e1edfa9ac",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683753710/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.71466,
+    "longitude": -4.412448
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Malagueta",
+    "Beach"
+  ]
+}

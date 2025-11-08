@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "P1000205",
+  "content": "/kd/photos/flickr/p1000205_5060099494_o.jpg",
+  "publishedAt": "2010-09-29T14:46:35Z",
+  "slug": "2010/ee3563519d86b6356819677a6fc2e8dd",
+  "permalink": "/photos/ee3563519d86b6356819677a6fc2e8dd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5060099494/"
+    }
+  ],
+  "geo": {
+    "latitude": 52.008608,
+    "longitude": 5.895709
+  },
+  "tags": [
+    "Monkey",
+    "BurgersZoo",
+    "Arnhem",
+    "Netherlands"
+  ]
+}
