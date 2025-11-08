@@ -12,5 +12,11 @@
     "tags": [
         "ScottishHighlander",
         "Featured"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/892147429175182299"
+        }
     ]
 }

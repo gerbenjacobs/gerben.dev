@@ -12,5 +12,11 @@
     "tags": [
         "Waterlily",
         "Featured"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/890337777085196486"
+        }
     ]
 }

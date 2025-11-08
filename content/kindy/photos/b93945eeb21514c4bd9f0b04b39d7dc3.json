@@ -14,5 +14,11 @@
         "Rhine",
         "River",
         "Featured"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/890636263395118820"
+        }
     ]
 }
