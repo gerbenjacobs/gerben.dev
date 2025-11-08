@@ -197,7 +197,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 	entry := kindy.Kindy{
 		Type:        kindy.KindyTypeNote,
 		PublishedAt: publishedAt,
-		Slug:        slug,
+		Slug:        fmt.Sprintf("%d/%s", publishedAt.Year(), slug),
 		Permalink:   kindy.KindyURLNotes + slug,
 		Tags:        tags,
 	}
@@ -221,7 +221,7 @@ func postNote(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, writeFileSafely(&entry, b)
 }
 
 func postLike(data url.Values) (*kindy.Kindy, error) {
@@ -237,7 +237,7 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 		Summary:     kindy.KindySummaryLike,
 		LikeOf:      data.Get("url"),
 		PublishedAt: publishedAt,
-		Slug:        slug,
+		Slug:        fmt.Sprintf("%d/%s", publishedAt.Year(), slug),
 		Permalink:   kindy.KindyURLLikes + slug,
 	}
 
@@ -246,7 +246,7 @@ func postLike(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, writeFileSafely(&entry, b)
 }
 
 func postRepost(data url.Values) (*kindy.Kindy, error) {
@@ -262,7 +262,7 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 		Summary:     kindy.KindySummaryRepost,
 		RepostOf:    data.Get("url"),
 		PublishedAt: publishedAt,
-		Slug:        slug,
+		Slug:        fmt.Sprintf("%d/%s", publishedAt.Year(), slug),
 		Permalink:   kindy.KindyURLReposts + slug,
 	}
 
@@ -271,7 +271,7 @@ func postRepost(data url.Values) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, writeFileSafely(&entry, b)
 }
 
 func postPhotos(req *http.Request) (*kindy.Kindy, error) {
@@ -335,9 +335,9 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		Type:        kindy.KindyTypePhoto,
 		Title:       data.Get("title"),
 		Summary:     template.HTML(data.Get("summary")),
-		Content:     template.HTML(kindy.KindyDataPath + "photos/" + filepath.Base(f.Name())),
+		Content:     template.HTML(kindy.KindyDataPath + "photos/" + publishedAt.Format("2006") + "/" + filepath.Base(f.Name())),
 		PublishedAt: publishedAt,
-		Slug:        slug,
+		Slug:        fmt.Sprintf("%d/%s", publishedAt.Year(), slug),
 		Permalink:   kindy.KindyURLPhotos + slug,
 		Tags:        tags,
 	}
@@ -351,7 +351,7 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 		return nil, err
 	}
 
-	return &entry, os.WriteFile(kindy.KindyContentPath+entry.Permalink+".json", b, 0644)
+	return &entry, writeFileSafely(&entry, b)
 }
 
 func getTitleURLFromString(title string) (output string) {
@@ -382,4 +382,15 @@ func getTitleURLFromString(title string) (output string) {
 	output = re.ReplaceAllString(output, substitution)
 
 	return output
+}
+
+func writeFileSafely(entry *kindy.Kindy, b []byte) error {
+	fileLocation := kindy.KindyContentPath + entry.Type.URL() + entry.Slug + ".json"
+	// create folder if not exists
+	err := os.MkdirAll(filepath.Dir(fileLocation), os.ModePerm)
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile(fileLocation, b, 0644)
 }
