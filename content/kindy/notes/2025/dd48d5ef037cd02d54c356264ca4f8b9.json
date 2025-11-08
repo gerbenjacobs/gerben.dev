@@ -1,0 +1,12 @@
+{
+  "type": "note",
+  "content": "\u003cfigure\u003e\u003ca href=\"/kd/images/notes/2025/alpha-dev.png\"\u003e\u003cimg src=\"/kd/images/notes/2025/alpha-dev.png\" alt=\"Screenshot of Spaceship part\" class=\"u-photo hoverable\"\u003e\u003c/a\u003e\u003c/figure\u003e\r\n\u003cp\u003eI released an \u003cb\u003eearly\u003c/b\u003e development build of my \u003ca href=\"https://gerben.dev/tags/SpaceGame\" rel=\"tag\"\u003e#SpaceGame\u003c/a\u003e project in order to get some feedback.\u003c/p\u003e\r\n\u003cp\u003eI posted this as \u003ca href=\"https://www.reddit.com/r/PBBG/comments/1orryvc/project_spacegame_looking_for_very_early_alphadev/\"\u003ea Reddit topic\u003c/a\u003e or you can head straight to the \u003ca href=\"https://spacegame.gerben.dev/alpha-test\"\u003eAlpha Test page\u003c/a\u003e in the game.\u003c/p\u003e",
+  "publishedAt": "2025-11-08T16:25:06.5183639+01:00",
+  "slug": "2025/dd48d5ef037cd02d54c356264ca4f8b9",
+  "permalink": "/notes/dd48d5ef037cd02d54c356264ca4f8b9",
+  "tags": [
+    "SpaceGame",
+    "GameDesign",
+    "PBBG"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "note",
+  "content": "\u003cp\u003eI'm trying something new, as part of the indieweb movement, I'm trying to have my 'social media' originate from my own site. I.e. \u003ca href=\"https://indieweb.org/own_your_data\" target=\"_blank\"\u003eown my own data\u003c/a\u003e.\u003cbr\u003eI'm using \u003ca href=\"https://fed.brid.gy\"\u003efed.brid.gy\u003c/a\u003e to have these notes (likes and reposts) bridged to the Fediverse and Bluesky.\u003c/p\u003e\u003cp\u003eI still have my \u003ca href=\"https://todon.nl/@gerben\" class=\"u-mention-of\"\u003e@gerben@todon.nl\u003c/a\u003e account and I won't cross-post directly to there (maybe boost my other account's posts), but I'll be experimenting with this new approach.\u003c/p\u003e\u003cp\u003eHowever, because of the federated nature of this, and the fact that my bridged account is 'not real' (long story), it'd be helpful if you could follow \u003ca href=\"https://gerben.dev/timeline\"\u003e@gerben.dev@gerben.dev\u003c/a\u003e from other servers than todon.nl, so it appears in more local timelines.\u003c/p\u003e\r\n🥰",
+  "publishedAt": "2024-12-09T20:16:28.0095822+01:00",
+  "slug": "2024/94d0f11c31bcd357fdf7c6599476cecc",
+  "permalink": "/notes/94d0f11c31bcd357fdf7c6599476cecc",
+  "tags": [
+    "indieweb",
+    "fediverse"
+  ]
+}

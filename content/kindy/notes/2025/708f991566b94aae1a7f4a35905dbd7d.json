@@ -1,0 +1,12 @@
+{
+  "type": "note",
+  "markdown": "I was removing some retoots on my #IndieWeb site because I noticed they were returning 404s..\r\n\r\nBut now recently I'm made aware that the most popular fediverse software Mastodon has a feature to auto-delete and apparently a lot of people are actively using this.. https://defcon.social/@sarahatlee/114410855115861052 asked for reasons and they're all valid.\r\n\r\nBut now I do wonder what the policy on https://gerben.dev should be.. 🤔",
+  "publishedAt": "2025-04-27T18:43:22.8777199+02:00",
+  "slug": "2025/708f991566b94aae1a7f4a35905dbd7d",
+  "permalink": "/notes/708f991566b94aae1a7f4a35905dbd7d",
+  "tags": [
+    "Fediverse",
+    "Mastodon",
+    "Policy"
+  ]
+}

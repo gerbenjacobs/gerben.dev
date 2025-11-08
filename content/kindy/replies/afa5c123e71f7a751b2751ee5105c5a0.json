@@ -1,8 +1,0 @@
-{
-    "type": "reply",
-    "markdown": "Oh nice indeed.\r\n\r\nI went to check the docs and they have an even more intricate example with multiple checks https://pkg.go.dev/cmp#example-Or-Sort\r\n\r\n```\r\n\tslices.SortFunc(orders, func(a, b Order) int {\r\n\t\treturn cmp.Or(\r\n\t\t\tstrings.Compare(a.Customer, b.Customer),\r\n\t\t\tstrings.Compare(a.Product, b.Product),\r\n\t\t\tcmp.Compare(b.Price, a.Price),\r\n\t\t)\r\n\t})\r\n``` ",
-    "publishedAt": "2025-01-14T13:36:45.263364+01:00",
-    "slug": "afa5c123e71f7a751b2751ee5105c5a0",
-    "permalink": "/replies/afa5c123e71f7a751b2751ee5105c5a0",
-    "replyTo": "https://hachyderm.io/@anderseknert/113826582394790857"
-}
