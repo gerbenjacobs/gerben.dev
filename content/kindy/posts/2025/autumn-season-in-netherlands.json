@@ -12,5 +12,11 @@
         "IndieWeb",
         "IndieWebCarnival",
         "Netherlands"
+    ],
+    "syndication": [
+        {
+            "type": "IndieNews",
+            "url": "https://news.indieweb.org/en"
+        }
     ]
 }
