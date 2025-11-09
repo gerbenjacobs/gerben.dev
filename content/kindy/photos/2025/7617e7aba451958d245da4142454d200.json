@@ -14,5 +14,11 @@
         "Drone",
         "Nature",
         "Trees"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/893255447498974050"
+        }
     ]
 }
