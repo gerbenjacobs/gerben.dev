@@ -120,8 +120,9 @@
                                 {{- end }}
                             </time>
                             {{ if .Geo -}}
-                            <span class="p-location h-geo">
-                                <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">
+                                <span class="p-location h-geo">
+                                <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}"
+                                   target="_blank">
                                     <span class="p-latitude">{{ .Geo.Latitude }}</span>,
                                     <span class="p-longitude">{{ .Geo.Longitude }}</span>
                                 </a>
@@ -129,9 +130,9 @@
                             {{- end }}
                             {{ if .Syndication -}}
                                 {{- range $syn := .Syndication -}}
-                                <span class="kindy-syndication {{ $syn.Type }}">
+                                    <span class="kindy-syndication {{ $syn.Type }}">
                                     <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}"
-                                    target="_blank">{{ $syn.Type }}</a>
+                                       target="_blank">{{ $syn.Type }}</a>
                                 </span>
                                 {{- end -}}
                             {{- end }}
@@ -146,26 +147,28 @@
                                 </video>
                                 {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
                                 {{- if .Tags }}
-                                <p>
-                                    {{- range .Tags -}}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
-                                    {{- end -}}
-                                </p>
+                                    <p>
+                                        {{- range .Tags -}}
+                                            <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                               rel="tag">#{{.}}</a>&#32;
+                                        {{- end -}}
+                                    </p>
                                 {{- end }}
                             </div>
                         {{ else }}
                             <figure class="e-content center-align">
                                 <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
                                 {{- if .Summary -}}
-                                <figcaption>{{ .Summary }}</figcaption>
+                                    <figcaption>{{ .Summary }}</figcaption>
                                 {{- end }}
                             </figure>
                             {{- if .Tags }}
-                            <p>
-                                {{- range .Tags -}}
-                                    <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
-                                {{- end -}}
-                            </p>
+                                <p>
+                                    {{- range .Tags -}}
+                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                           rel="tag">#{{.}}</a>&#32;
+                                    {{- end -}}
+                                </p>
                             {{- end }}
                         {{ end }}
                     {{ else }}
@@ -190,18 +193,20 @@
                         {{- end }}
                         {{- if .ReplyTo }}
                             <p>
-                                <small>In reply to: <a class="u-in-reply-to" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
+                                <small>In reply to: <a class="u-in-reply-to"
+                                                       href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
                             </p>
                         {{- end }}
                         {{ if .HasContent -}}
                             <div class="e-content">
                                 {{ .GetContent }}
                                 {{- if .Tags }}
-                                <p>
-                                    {{- range .Tags -}}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}" rel="tag">#{{.}}</a>&#32;
-                                    {{- end -}}
-                                </p>
+                                    <p>
+                                        {{- range .Tags -}}
+                                            <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                               rel="tag">#{{.}}</a>&#32;
+                                        {{- end -}}
+                                    </p>
                                 {{- end }}
                             </div>
                         {{- end }}
@@ -240,10 +245,37 @@
                 </article>
             </div>
         </div>
-        <div class="row padding">
+        <div class="row">
             <link rel="stylesheet" href="/css/webmention.css">
-            <div id="webmentions"></div>
+            <div id="webmentions" class="padding"></div>
             <script src="/js/webmention.js" data-page-url="https://gerben.dev{{ .Permalink }}"></script>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row padding">
+            <h2 id="leave-a-note">Leave a note</h2>
+            <p>
+                This website uses WebMentions and ActivityPub (via brid.gy), you can respond
+                to this post by linking from your page or replying directly to the Fediverse post.
+            </p>
+            <div class="col s6">
+                <h3 style="font-size: 1.5em;">WebMention</h3>
+                <form action="https://webmention.io/gerben.dev/webmention" method="post">
+                    <input type="hidden" name="target" value="https://gerben.dev{{ .Permalink }}">
+                    <label for="source">Your URL:</label>
+                    <input class="input-field" type="url" id="source" name="source" required
+                           placeholder="https://example.com/your-post">
+                    <input class="btn" type="submit" value="Send WebMention">
+                </form>
+            </div>
+            <div class="col s6">
+                <h3 style="font-size: 1.5em;">Fediverse</h3>
+                <p>
+                    On the Fediverse you can search for the URL
+                    <span style="color: rebeccapurple;">https://gerben.dev{{ .Permalink }}</span>
+                    or search for my handle <span style="color: rebeccapurple;">@gerben.dev@gerben.dev</span>.
+                </p>
+            </div>
         </div>
     </div>
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
@@ -251,6 +283,7 @@
         // Find Next and Previous link
         document.addEventListener("DOMContentLoaded", function () {
             const container = document.querySelector('#next-previous');
+
             async function fetchLinks() {
                 const response = await fetch('/api/nextprevious',
                     {
@@ -278,6 +311,7 @@
                     container.appendChild(nextLink);
                 }
             }
+
             fetchLinks();
         });
     </script>
