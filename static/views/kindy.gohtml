@@ -296,6 +296,7 @@
                 const data = await response.json();
                 if (data.previous) {
                     const prevLink = document.createElement('a');
+                    prevLink.rel = 'prev';
                     prevLink.href = data.previous;
                     prevLink.textContent = '← Previous';
                     container.appendChild(prevLink);
@@ -306,6 +307,7 @@
                         container.appendChild(separator);
                     }
                     const nextLink = document.createElement('a');
+                    nextLink.rel = 'next';
                     nextLink.href = data.next;
                     nextLink.textContent = 'Next →';
                     container.appendChild(nextLink);
