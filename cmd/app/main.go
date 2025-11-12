@@ -15,6 +15,7 @@ import (
 	"github.com/lmittmann/tint"
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+	"go.opentelemetry.io/otel/trace"
 )
 
 func main() {
@@ -49,7 +50,7 @@ func main() {
 
 	// set up the route handler and server
 	app := handler.New(c.Svc.Env, dependencies)
-	appHandler := otelhttp.NewHandler(app, "server")
+	appHandler := otelhttp.NewHandler(app, "server", otelhttp.WithSpanOptions(trace.WithSpanKind(trace.SpanKindServer)))
 	srv := &http.Server{
 		Addr:         c.Svc.Address,
 		ReadTimeout:  5 * time.Second,
