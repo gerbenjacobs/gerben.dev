@@ -40,6 +40,7 @@ const (
 	KindySummaryLike   = "Liked"
 	KindySummaryRepost = "Reposted"
 
+	KindyTypeInvalid KindyType = "invalid"
 	KindyTypeNote    KindyType = "note"
 	KindyTypePost    KindyType = "post"
 	KindyTypePhoto   KindyType = "photo"
@@ -296,7 +297,7 @@ func URLToKindyType(url string) KindyType {
 	case strings.HasPrefix(url, KindyURLReplies):
 		return KindyTypeReplies
 	default:
-		return KindyTypeNote
+		return KindyTypeInvalid
 	}
 }
 

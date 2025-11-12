@@ -149,3 +149,74 @@ func (h *Handler) apiNextPrevious(w http.ResponseWriter, r *http.Request) {
 		slog.Error("failed to encode response data", "err", err)
 	}
 }
+
+func (h *Handler) apiThumbsUp(w http.ResponseWriter, r *http.Request) {
+	// get permalink from post body
+	type requestData struct {
+		Permalink string `json:"permalink"`
+	}
+	var req requestData
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		slog.Error("failed to decode request body", "err", err)
+		http.Error(w, "failed to decode request body", http.StatusBadRequest)
+		return
+	}
+	if req.Permalink == "" {
+		http.Error(w, "missing permalink in request body", http.StatusBadRequest)
+		return
+	}
+	if app.URLToKindyType(req.Permalink) == app.KindyTypeInvalid {
+		http.Error(w, "invalid permalink provided", http.StatusBadRequest)
+		return
+	}
+
+	// ip without port
+	ip := r.RemoteAddr
+	if strings.Contains(ip, ":") {
+		ip = strings.Split(ip, ":")[0]
+	}
+	count, err := internal.ToggleThumbsUp(req.Permalink, ip)
+	if err != nil {
+		slog.Error("failed to increment thumbs up", "err", err)
+		http.Error(w, "failed to increment thumbs up", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Count int `json:"count"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Count: count,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
+	}
+
+}
+
+func (h *Handler) apiThumbsUpCount(w http.ResponseWriter, r *http.Request) {
+	p := r.URL.Query().Get("permalink")
+	if p == "" {
+		http.Error(w, "missing permalink parameter", http.StatusBadRequest)
+		return
+	}
+	if app.URLToKindyType(p) == app.KindyTypeInvalid {
+		http.Error(w, "invalid permalink provided", http.StatusBadRequest)
+		return
+	}
+
+	count, err := internal.GetThumbsUpCount(p)
+	if err != nil {
+		slog.Error("failed to get thumbs up count", "err", err)
+		http.Error(w, "failed to get thumbs up count", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Count int `json:"count"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Count: count,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
+	}
+}

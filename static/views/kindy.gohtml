@@ -276,11 +276,20 @@
                     or search for my handle <span style="color: rebeccapurple;">@gerben.dev@gerben.dev</span>.
                 </p>
             </div>
+            <div class="col">
+                <h3 style="font-size: 1.5em;">Acknowledgment</h3>
+                <p>
+                    Just wanna leave an acknowledgment? Use this anonymous thumbs up button.
+                </p>
+                <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
+                    👍
+                    <span id="thumbsup-count"></span>
+                </button>
+            </div>
         </div>
     </div>
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <script>
-        // Find Next and Previous link
         document.addEventListener("DOMContentLoaded", function () {
             const container = document.querySelector('#next-previous');
 
@@ -314,7 +323,30 @@
                 }
             }
 
+            async function fetchThumbsUp() {
+                const response = await fetch('/api/thumbsup/count?permalink={{ .Permalink }}');
+                const data = await response.json();
+                const countSpan = document.getElementById('thumbsup-count');
+                countSpan.textContent = data.count;
+            }
+
             fetchLinks();
+            fetchThumbsUp();
+        });
+
+        // Thumbs up button handler
+        document.getElementById('thumbsup').addEventListener('click', async function () {
+            const permalink = this.getAttribute('data-permalink');
+            const response = await fetch('/api/thumbsup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ permalink: permalink })
+            });
+            const data = await response.json();
+            const countSpan = document.getElementById('thumbsup-count');
+            countSpan.textContent = data.count;
         });
     </script>
 {{ end}}

@@ -102,6 +102,8 @@ func New(env string, dependencies Dependencies) *Handler {
 	// API endpoints
 	r.HandleFunc("POST /api/opengraph", h.apiOpenGraph)
 	r.HandleFunc("POST /api/nextprevious", h.apiNextPrevious)
+	r.HandleFunc("POST /api/thumbsup", h.apiThumbsUp)
+	r.HandleFunc("GET /api/thumbsup/count", h.apiThumbsUpCount)
 
 	h.mux = internal.LogWriter(r)
 	return h

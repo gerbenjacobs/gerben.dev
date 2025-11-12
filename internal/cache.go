@@ -35,19 +35,20 @@ var (
 	PostsRssCache     = ".cache/posts_rss.xml"
 	PhotosRssCache    = ".cache/photos_rss.xml"
 	SitemapXMLCache   = ".cache/sitemap.xml"
+	ThumbsUpCache     = ".cache/thumbsup.json"
 )
 
 func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
 	info, err := os.Stat(filePath)
 	switch {
-	// if no expiry, skip switch, always fetch from cache
-	case expiry == 0:
 	case os.IsNotExist(err):
 		_, err := os.Create(filePath)
 		if err != nil {
 			return nil, err
 		}
-		return nil, ErrCacheCreated
+		//return nil, ErrCacheCreated
+	// if no expiry, skip switch, always fetch from cache
+	case expiry == 0:
 	case err != nil:
 		return nil, err
 	case info.ModTime().Before(time.Now().Add(-expiry)):
