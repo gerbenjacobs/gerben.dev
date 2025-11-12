@@ -46,7 +46,7 @@ func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
 		if err != nil {
 			return nil, err
 		}
-		//return nil, ErrCacheCreated
+		return nil, ErrCacheCreated
 	// if no expiry, skip switch, always fetch from cache
 	case expiry == 0:
 	case err != nil:
