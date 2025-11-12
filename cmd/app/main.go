@@ -13,6 +13,8 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/handler"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/lmittmann/tint"
+
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 func main() {
@@ -30,6 +32,12 @@ func main() {
 	}
 	slog.SetDefault(logger)
 
+	// load opentelemetry
+	otelShutdown, err := internal.SetupOTelSDK(context.Background(), c.Svc.Env, "gerben.dev", "v1.0.0")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// create caches
 	if err := internal.CreateCaches(); err != nil {
 		log.Fatalf("failed to create cache: %v", err)
@@ -41,11 +49,12 @@ func main() {
 
 	// set up the route handler and server
 	app := handler.New(c.Svc.Env, dependencies)
+	appHandler := otelhttp.NewHandler(app, "server")
 	srv := &http.Server{
 		Addr:         c.Svc.Address,
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
-		Handler:      app,
+		Handler:      appHandler,
 	}
 
 	// start running the server
@@ -60,6 +69,10 @@ func main() {
 	<-shutdown
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
+	if err := otelShutdown(ctx); err != nil {
+		slog.Error("Failed to shutdown OpenTelemetry", "error", err)
+		os.Exit(1)
+	}
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Fatalf("Server shutdown failed: %v", err)
 	}

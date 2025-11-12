@@ -9,6 +9,7 @@ import (
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/mmcdole/gofeed"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 const (
@@ -49,61 +50,62 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("static/images"))))
 	r.Handle("GET /css/", http.StripPrefix("/css/", http.FileServer(http.Dir("static/css"))))
 	r.Handle("GET /js/", http.StripPrefix("/js/", http.FileServer(http.Dir("static/js"))))
-	r.HandleFunc("GET /robots.txt", singlePage("static/robots.txt"))
-	r.HandleFunc("GET /humans.txt", singlePage("static/humans.txt"))
+	r.Handle("GET /robots.txt", otelhttp.WithRouteTag("/robots.txt", http.HandlerFunc(singlePage("static/robots.txt"))))
+	r.Handle("GET /humans.txt", otelhttp.WithRouteTag("/humans.txt", http.HandlerFunc(singlePage("static/humans.txt"))))
 	// r.HandleFunc("GET /.well-known/atproto-did", singlePage("static/did")) // disabled for now
 
 	// Pages
-	r.HandleFunc("GET /{$}", h.indexPage)
-	r.HandleFunc("GET /changelog", h.singlePageLayout("static/views/changelog.html", internal.Metadata{
+	r.Handle("GET /{$}", otelhttp.WithRouteTag("/", http.HandlerFunc(h.indexPage)))
+	r.Handle("GET /changelog", otelhttp.WithRouteTag("/changelog", http.HandlerFunc(h.singlePageLayout("static/views/changelog.html", internal.Metadata{
 		Env: Env, Permalink: "/changelog", Title: "Changelog",
 		Description: "This page explains all the (structural) changes that happened to this site.",
 	},
-	))
-	r.HandleFunc("GET /collection", h.singlePageLayout("static/views/collection.html", internal.Metadata{
+	))))
+	r.Handle("GET /collection", otelhttp.WithRouteTag("/collection", http.HandlerFunc(h.singlePageLayout("static/views/collection.html", internal.Metadata{
 		Env: Env, Permalink: "/collection", Title: "My Collection", Image: "/kd/photos/PXL_20240911_124800628.jpg",
 		Description: "Sometimes when my kids and I play, I collect things, achievements, and other stuff. This page lists them.",
-	}))
-	r.HandleFunc("GET /projects", h.singlePageLayout("static/views/projects.html", internal.Metadata{
+	}))))
+	r.Handle("GET /projects", otelhttp.WithRouteTag("/projects", http.HandlerFunc(h.singlePageLayout("static/views/projects.html", internal.Metadata{
 		Env: Env, Permalink: "/projects", Title: "My projects", Image: "/kd/photos/PXL_20240924_105523447.jpg",
 		Description: "These are some of the projects, tools and libraries I have worked on.",
-	}))
-	r.HandleFunc("GET /sitemap", h.sitemap)
-	r.HandleFunc("GET /sitemap.xml", h.sitemapXML)
-	r.HandleFunc("GET /tags/{tag}", h.tags)
-	r.HandleFunc("GET /listening", h.listening)
-	r.HandleFunc("GET /timeline", h.timeline)
-	r.HandleFunc("GET /previously", h.previously)
+	}))))
+
+	r.Handle("GET /sitemap", otelhttp.WithRouteTag("/sitemap", http.HandlerFunc(h.sitemap)))
+	r.Handle("GET /sitemap.xml", otelhttp.WithRouteTag("/sitemap.xml", http.HandlerFunc(h.sitemapXML)))
+	r.Handle("GET /tags/{tag}", otelhttp.WithRouteTag("/tags/{tag}", http.HandlerFunc(h.tags)))
+	r.Handle("GET /listening", otelhttp.WithRouteTag("/listening", http.HandlerFunc(h.listening)))
+	r.Handle("GET /timeline", otelhttp.WithRouteTag("/timeline", http.HandlerFunc(h.timeline)))
+	r.Handle("GET /previously", otelhttp.WithRouteTag("/previously", http.HandlerFunc(h.previously)))
 
 	// XML/RSS feeds
-	r.HandleFunc("GET /timeline.xml", h.timelineXML)
-	r.HandleFunc("GET /feed.xml", h.postsXML)
-	r.HandleFunc("GET /photos.xml", h.photosXML)
+	r.Handle("GET /timeline.xml", otelhttp.WithRouteTag("/timeline.xml", http.HandlerFunc(h.timelineXML)))
+	r.Handle("GET /feed.xml", otelhttp.WithRouteTag("/feed.xml", http.HandlerFunc(h.postsXML)))
+	r.Handle("GET /photos.xml", otelhttp.WithRouteTag("/photos.xml", http.HandlerFunc(h.photosXML)))
 
 	// Kindy endpoints
-	r.HandleFunc("GET /notes/{file}", Kindy)
-	r.HandleFunc("GET /posts/{file}", Kindy)
-	r.HandleFunc("GET /likes/{file}", Kindy)
-	r.HandleFunc("GET /reposts/{file}", Kindy)
-	r.HandleFunc("GET /replies/{file}", Kindy)
-	r.HandleFunc("GET /photos/{file}", Kindy)
-	r.HandleFunc("POST /kindy/update", KindyUpdate)
-	r.Handle("GET /kd/", http.StripPrefix("/kd/", http.FileServer(http.Dir("content/kindy/data"))))
-	r.HandleFunc("/kindy", internal.BasicAuth(kindyEditor, h.SecretKey))
+	r.Handle("GET /notes/{file}", otelhttp.WithRouteTag("/notes/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("GET /posts/{file}", otelhttp.WithRouteTag("/posts/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("GET /likes/{file}", otelhttp.WithRouteTag("/likes/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("GET /reposts/{file}", otelhttp.WithRouteTag("/reposts/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("GET /replies/{file}", otelhttp.WithRouteTag("/replies/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("GET /photos/{file}", otelhttp.WithRouteTag("/photos/{file}", http.HandlerFunc(Kindy)))
+	r.Handle("POST /kindy/update", otelhttp.WithRouteTag("/kindy/update", http.HandlerFunc(KindyUpdate)))
+	r.Handle("GET /kd/", otelhttp.WithRouteTag("/kd/", http.StripPrefix("/kd/", http.FileServer(http.Dir("content/kindy/data")))))
+	r.Handle("/kindy", otelhttp.WithRouteTag("/kindy", http.HandlerFunc(internal.BasicAuth(kindyEditor, h.SecretKey))))
 
-	r.HandleFunc("GET /posts/{$}", h.posts)
-	r.HandleFunc("GET /photos/featured", h.photos(true))
-	r.HandleFunc("GET /photos/{$}", h.photos(false))
+	r.Handle("GET /posts/{$}", otelhttp.WithRouteTag("/posts/{$}", http.HandlerFunc(h.posts)))
+	r.Handle("GET /photos/featured", otelhttp.WithRouteTag("/photos/featured", http.HandlerFunc(h.photos(true))))
+	r.Handle("GET /photos/{$}", otelhttp.WithRouteTag("/photos/{$}", http.HandlerFunc(h.photos(false))))
 	r.HandleFunc("GET /notes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /likes/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /reposts/{$}", redirect("/timeline"))
 	r.HandleFunc("GET /tags/{$}", redirect("/timeline"))
 
 	// API endpoints
-	r.HandleFunc("POST /api/opengraph", h.apiOpenGraph)
-	r.HandleFunc("POST /api/nextprevious", h.apiNextPrevious)
-	r.HandleFunc("POST /api/thumbsup", h.apiThumbsUp)
-	r.HandleFunc("GET /api/thumbsup/count", h.apiThumbsUpCount)
+	r.Handle("POST /api/opengraph", otelhttp.WithRouteTag("/api/opengraph", http.HandlerFunc(h.apiOpenGraph)))
+	r.Handle("POST /api/nextprevious", otelhttp.WithRouteTag("/api/nextprevious", http.HandlerFunc(h.apiNextPrevious)))
+	r.Handle("POST /api/thumbsup", otelhttp.WithRouteTag("/api/thumbsup", http.HandlerFunc(h.apiThumbsUp)))
+	r.Handle("GET /api/thumbsup/count", otelhttp.WithRouteTag("/api/thumbsup/count", http.HandlerFunc(h.apiThumbsUpCount)))
 
 	h.mux = internal.LogWriter(r)
 	return h

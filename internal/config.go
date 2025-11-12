@@ -8,11 +8,12 @@ import (
 
 type Configuration struct {
 	Svc struct {
-		Name        string
-		Version     string
-		Env         string
-		Address     string
-		SecretToken string
+		Name         string
+		Version      string
+		Env          string
+		Address      string
+		SecretToken  string
+		GrafanaToken string
 	}
 	DB struct {
 		Host     string
