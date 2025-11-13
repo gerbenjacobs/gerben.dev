@@ -3,19 +3,21 @@ package internal
 import (
 	"context"
 	"errors"
-	"log"
 	"time"
 
 	"go.opentelemetry.io/contrib/instrumentation/runtime"
 	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp"
 	"go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+	"go.opentelemetry.io/otel/log/global"
 	"go.opentelemetry.io/otel/propagation"
+	"go.opentelemetry.io/otel/sdk/log"
 	"go.opentelemetry.io/otel/sdk/metric"
 	"go.opentelemetry.io/otel/sdk/resource"
 	"go.opentelemetry.io/otel/sdk/trace"
-	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.37.0"
 )
 
 // SetupOTelSDK bootstraps the OpenTelemetry pipeline.
@@ -48,7 +50,7 @@ func SetupOTelSDK(ctx context.Context, env, serviceName, serviceVersion string) 
 	res := resource.NewSchemaless(
 		semconv.ServiceNameKey.String(serviceName),
 		semconv.ServiceVersionKey.String(serviceVersion),
-		semconv.DeploymentEnvironment(env),
+		semconv.DeploymentEnvironmentName(env),
 	)
 
 	prop := propagation.NewCompositeTextMapPropagator(
@@ -89,10 +91,32 @@ func SetupOTelSDK(ctx context.Context, env, serviceName, serviceVersion string) 
 	shutdownFuncs = append(shutdownFuncs, meterProvider.Shutdown)
 	otel.SetMeterProvider(meterProvider)
 
+	loggerProvider, err := newLoggerProvider(ctx, res)
+	if err != nil {
+		handleErr(err)
+		return
+	}
+	shutdownFuncs = append(shutdownFuncs, loggerProvider.Shutdown)
+	global.SetLoggerProvider(loggerProvider)
+
 	err = runtime.Start(runtime.WithMinimumReadMemStatsInterval(time.Second))
 	if err != nil {
-		log.Fatal(err)
+		handleErr(err)
+		return
 	}
 
 	return
+}
+
+func newLoggerProvider(ctx context.Context, res *resource.Resource) (*log.LoggerProvider, error) {
+	exporter, err := otlploghttp.New(ctx)
+	if err != nil {
+		return nil, err
+	}
+	processor := log.NewBatchProcessor(exporter)
+	provider := log.NewLoggerProvider(
+		log.WithResource(res),
+		log.WithProcessor(processor),
+	)
+	return provider, nil
 }

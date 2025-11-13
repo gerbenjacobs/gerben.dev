@@ -12,10 +12,10 @@ import (
 
 	"github.com/gerbenjacobs/gerben.dev/handler"
 	"github.com/gerbenjacobs/gerben.dev/internal"
-	"github.com/go-slog/otelslog"
 	"github.com/lmittmann/tint"
-
+	"go.opentelemetry.io/contrib/bridges/otelslog"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+	"go.opentelemetry.io/otel/log/global"
 	"go.opentelemetry.io/otel/trace"
 )
 
@@ -27,18 +27,18 @@ func main() {
 	// load configuration
 	c := internal.NewConfig()
 
-	// set output logging
-	logger := slog.New(otelslog.NewHandler(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo})))
-	if c.Svc.Env == "dev" {
-		logger = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: slog.LevelDebug}))
-	}
-	slog.SetDefault(logger)
-
 	// load opentelemetry
 	otelShutdown, err := internal.SetupOTelSDK(context.Background(), c.Svc.Env, "gerben.dev", "v1.0.0")
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// set output logging
+	logger := otelslog.NewLogger("server", otelslog.WithLoggerProvider(global.GetLoggerProvider()))
+	if c.Svc.Env == "dev" {
+		logger = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: slog.LevelDebug}))
+	}
+	slog.SetDefault(logger)
 
 	// create caches
 	if err := internal.CreateCaches(); err != nil {
