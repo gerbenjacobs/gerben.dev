@@ -1,1 +1,6 @@
-# robots.txt
+User-agent: *
+Allow: /
+Disallow: /tags/
+Disallow: /api/
+
+Sitemap: https://gerben.dev/sitemap.xml
