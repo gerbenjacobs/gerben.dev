@@ -21,6 +21,10 @@ import (
 // SetupOTelSDK bootstraps the OpenTelemetry pipeline.
 // If it does not return an error, make sure to call shutdown for proper cleanup.
 func SetupOTelSDK(ctx context.Context, env, serviceName, serviceVersion string) (shutdown func(context.Context) error, err error) {
+	if env == "dev" {
+		return func(context.Context) error { return nil }, nil
+	}
+
 	var shutdownFuncs []func(context.Context) error
 
 	// shutdown calls cleanup functions registered via shutdownFuncs.

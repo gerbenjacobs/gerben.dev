@@ -12,6 +12,7 @@ import (
 
 	"github.com/gerbenjacobs/gerben.dev/handler"
 	"github.com/gerbenjacobs/gerben.dev/internal"
+	"github.com/go-slog/otelslog"
 	"github.com/lmittmann/tint"
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
@@ -27,7 +28,7 @@ func main() {
 	c := internal.NewConfig()
 
 	// set output logging
-	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
+	logger := slog.New(otelslog.NewHandler(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo})))
 	if c.Svc.Env == "dev" {
 		logger = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: slog.LevelDebug}))
 	}
