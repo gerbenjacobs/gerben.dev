@@ -1,0 +1,11 @@
+{
+    "type": "note",
+    "markdown": "Thinking of my #IndieWeb friends..\r\n\r\nI added OpenTelemetry to my site (mostly as a technical exercise) and I'm quite often monitoring Nginx's `access.log`.. \r\nI've got Cloudflare activated and turned on all the anti-bot settings.. but so much still gets through. I'm basically blocking any Tencent ASNs the moment I find a new one.\r\n\r\nThis made me think of my IndieWeb friends who might not be aware how their hosts are bombarded by useless traffic. All of this still costs bandwidth and resources..",
+    "publishedAt": "2025-11-15T01:02:35.2518234+01:00",
+    "slug": "2025/236c28c454185b10b4edec63948ee295",
+    "permalink": "/notes/236c28c454185b10b4edec63948ee295",
+    "tags": [
+        "IndieWeb",
+        "AI"
+    ]
+}
