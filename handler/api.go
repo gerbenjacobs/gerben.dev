@@ -170,16 +170,11 @@ func (h *Handler) apiThumbsUp(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// ip without port
-
 	// get real IP from CF-Connecting-IP
 	ip := r.Header.Get("CF-Connecting-IP")
 	if ip == "" {
 		// fallback to remote address
 		ip = r.RemoteAddr
-	}
-	if strings.Contains(ip, ":") {
-		ip = strings.Split(ip, ":")[0]
 	}
 	count, err := internal.ToggleThumbsUp(req.Permalink, ip)
 	if err != nil {
