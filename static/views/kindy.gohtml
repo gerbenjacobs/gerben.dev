@@ -212,14 +212,17 @@
                         {{- end }}
                     {{ end }}
                     {{ if .Tags -}}
-                        <footer>
+                        <footer style="margin-bottom: 1em;">
                             {{ range .Tags -}}
                                 <a class="p-category" href="/tags/{{.}}" rel="tag">#{{.}}</a>
                             {{ end -}}
                         </footer>
                     {{- end }}
-                    <div id="next-previous"></div>
+                    <div id="next-previous" style="margin-bottom: 1em;"></div>
                     <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
+                    <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
+                        👍 <span id="thumbsup-count"></span>
+                    </button>
                     {{ if eq .Metadata.Env "dev" }}
                         <details>
                             <summary>Debug: Raw Source</summary>
@@ -266,6 +269,7 @@
                     <input class="input-field" type="url" id="source" name="source" required
                            placeholder="https://example.com/your-post">
                     <input class="btn" type="submit" value="Send WebMention">
+                    or <a href="https://webmention.io/gerben.dev/webmention" target="_blank">manually</a>.
                 </form>
             </div>
             <div class="col m6">
@@ -275,16 +279,6 @@
                     <span style="color: rebeccapurple; word-break: break-word;">https://gerben.dev{{ .Permalink }}</span>
                     or search for my handle <span style="color: rebeccapurple;">@gerben.dev@gerben.dev</span>.
                 </p>
-            </div>
-            <div class="col">
-                <h3 style="font-size: 1.5em;">Acknowledgment</h3>
-                <p>
-                    Just wanna leave an acknowledgment? Use this anonymous thumbs up button.
-                </p>
-                <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
-                    👍
-                    <span id="thumbsup-count"></span>
-                </button>
             </div>
         </div>
     </div>
