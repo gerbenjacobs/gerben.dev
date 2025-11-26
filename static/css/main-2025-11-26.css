@@ -1,3 +1,7 @@
+:root {
+    --main-container-color: #d0ced3;
+}
+
 body {
     background-color: #79747c;
     background-image: url("/images/prism.png");
@@ -41,14 +45,22 @@ nav ul a,
     font-size: 1.2rem;
 }
 
-#site #space, .space-background {
+#site #space,
+.space-background {
     background: #121212 url('/images/stars.gif');
     color: #ffffff;
     margin-bottom: 0;
 }
 
 #site .container {
-    background: #b5b3b8;
+    background: var(--main-container-color);
+}
+
+#home-timeline {
+    max-height: 1000px;
+    overflow: auto;
+    background-color: var(--main-container-color);
+    padding: 0 1em;
 }
 
 #intro .padding {
@@ -150,11 +162,12 @@ iframe,
     background-position: 50% 50%;
     background-size: cover;
 }
+
 /* First anchor in .home-photo */
 .home-photo a {
     position: absolute;
     left: 0;
-    right:0;
+    right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 0.2em;

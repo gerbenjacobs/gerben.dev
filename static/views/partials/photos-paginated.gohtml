@@ -47,7 +47,7 @@
         Your browser does not support the video tag.
     </video>
     {{ else }}
-    <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});"></a>
+    <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page" aria-hidden="true"></a>
     {{ end }}
 </article>
 {{ end }}

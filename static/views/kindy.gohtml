@@ -102,7 +102,7 @@
                             {{ if .Author -}}
                                 <span class="h-card p-author">
                             {{ if .Author.Photo -}}
-                                <img class="u-photo" src="{{ .Author.Photo }}" alt="Photo of {{ .Author.Name }}"
+                                <img class="u-photo" src="{{ .Author.Photo }}" alt="{{ .Author.Name }}"
                                      loading="lazy">
                             {{ end -}}
                             <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
@@ -149,7 +149,7 @@
                                 {{- if .Tags }}
                                     <p>
                                         {{- range .Tags -}}
-                                            <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                            <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
                                                rel="tag">#{{.}}</a>&#32;
                                         {{- end -}}
                                     </p>
@@ -165,7 +165,7 @@
                             {{- if .Tags }}
                                 <p>
                                     {{- range .Tags -}}
-                                        <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                        <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
                                            rel="tag">#{{.}}</a>&#32;
                                     {{- end -}}
                                 </p>
@@ -203,7 +203,7 @@
                                 {{- if .Tags }}
                                     <p>
                                         {{- range .Tags -}}
-                                            <a hidden="hidden" href="https://gerben.dev/tags/{{.}}"
+                                            <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
                                                rel="tag">#{{.}}</a>&#32;
                                         {{- end -}}
                                     </p>
@@ -301,7 +301,7 @@
                     const prevLink = document.createElement('a');
                     prevLink.rel = 'prev';
                     prevLink.href = data.previous;
-                    prevLink.textContent = '← Previous';
+                    prevLink.innerHTML = '<span aria-hidden="true">←</span> Previous';
                     container.appendChild(prevLink);
                 }
                 if (data.next) {
@@ -312,7 +312,7 @@
                     const nextLink = document.createElement('a');
                     nextLink.rel = 'next';
                     nextLink.href = data.next;
-                    nextLink.textContent = 'Next →';
+                    nextLink.innerHTML = 'Next <span aria-hidden="true">→</span>';
                     container.appendChild(nextLink);
                 }
             }
