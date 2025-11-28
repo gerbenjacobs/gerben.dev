@@ -72,7 +72,7 @@ But maybe I should just _ship a small human thing_. ✨
 [1pw.me]: https://1pw.me/
 [found.as]: https://found.as/
 [xmit.dev]: https://xmit.dev/
-[shipping small things]: https://xmit.dev/posts/shipping-small-things/
+[shipping small things]: https://xmit.dev/posts/small-things/
 [things on my mind]: https://gerben.dev/notes/e4769fbbef1d6c9076584a9ba6092c4f
 [jaded about capitalism]: https://gerben.dev/posts/monday-morning-in-capitalism
 [games]: https://gerben.dev/tags/SpaceGame
