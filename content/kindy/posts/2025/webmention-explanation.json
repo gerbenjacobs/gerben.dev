@@ -1,0 +1,14 @@
+{
+    "type": "post",
+    "title": "Webmentions: A short explanation",
+    "summary": "An explanation of what webmentions are and how they work. A failed attempt at making it not too technical?",
+    "content": "/posts/2025/webmention-explanation.html",
+    "image": "/kd/images/notes/2025/webmention.png",
+    "publishedAt": "2025-11-30T16:38:30+01:00",
+    "slug": "2025/webmention-explanation",
+    "permalink": "/posts/webmention-explanation",
+    "tags": [
+        "Webmentions",
+        "IndieWeb"
+    ]
+}
