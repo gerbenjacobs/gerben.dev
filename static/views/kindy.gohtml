@@ -1,4 +1,9 @@
 {{ define "content" }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+    <script defer async  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
     <style>
         #site .kindy h1 {
             margin-bottom: 1em;
@@ -285,6 +290,8 @@
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll();
+
             const container = document.querySelector('#next-previous');
 
             async function fetchLinks() {
