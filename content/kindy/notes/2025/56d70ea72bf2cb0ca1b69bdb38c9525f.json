@@ -1,19 +1,20 @@
 {
-  "type": "note",
-  "content": "\u003cfigure\u003e\u003cimg class=\"u-photo\" src=\"/kd/images/screenshot_spacegame.png\" alt=\"Screenshot of a browser based game with lots of dark and neon colours, it shows a ships page with operations and its current status\"\u003e\u003c/figure\u003e\r\n\u003cp\u003eRecently opened this project, from a year or so ago, again and made it compatible with PHP 8.4.\u003c/p\u003e\r\n\u003cp\u003eThe idea was to create a 🚀 space \u003ca href=\"/tags/PBBG\"\u003e#PBBG\u003c/a\u003e and I was quite fond of the HTML/CSS mockups I made for it.\u003c/p\u003e\r\n\u003cp\u003eHowever, I know creating this will be a lot of work.. and to be 100% honest.. It's not like I'm \"that into\" space games. 🤷‍♂️\u003c/p\u003e",
-  "publishedAt": "2025-01-06T21:28:03.0461803+01:00",
-  "slug": "2025/56d70ea72bf2cb0ca1b69bdb38c9525f",
-  "permalink": "/notes/56d70ea72bf2cb0ca1b69bdb38c9525f",
-  "syndication": [
-    {
-      "type": "bsky",
-      "url": "https://bsky.app/profile/gerben.dev/post/3lf3xzmisag62"
-    }
-  ],
-  "tags": [
-    "SpaceGame",
-    "PBBG",
-    "PHP",
-    "Development"
-  ]
+    "type": "note",
+    "content": "<figure><img class=\"u-photo\" src=\"/kd/images/screenshot_spacegame.png\" alt=\"Screenshot of a browser based game with lots of dark and neon colours, it shows a ships page with operations and its current status\"></figure>\r\n<p>Recently opened this project, from a year or so ago, again and made it compatible with PHP 8.4.</p>\r\n<p>The idea was to create a 🚀 space <a href=\"/tags/PBBG\">#PBBG</a> and I was quite fond of the HTML/CSS mockups I made for it.</p>\r\n<p>However, I know creating this will be a lot of work.. and to be 100% honest.. It's not like I'm \"that into\" space games. 🤷‍♂️</p>",
+    "publishedAt": "2025-01-06T21:28:03.0461803+01:00",
+    "slug": "2025/56d70ea72bf2cb0ca1b69bdb38c9525f",
+    "permalink": "/notes/56d70ea72bf2cb0ca1b69bdb38c9525f",
+    "syndication": [
+        {
+            "type": "bsky",
+            "url": "https://bsky.app/profile/gerben.dev/post/3lf3xzmisag62"
+        }
+    ],
+    "tags": [
+        "SpaceGame",
+        "PBBG",
+        "PHP",
+        "Development",
+        "GameDev"
+    ]
 }

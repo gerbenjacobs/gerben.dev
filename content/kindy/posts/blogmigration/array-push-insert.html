@@ -34,7 +34,7 @@
     both arrays back together, and you're done!
 </p>
 
-<pre><code class="language-go">function array_push_insert($array, $index, $value) {
+<pre><code class="language-php">function array_push_insert($array, $index, $value) {
     if (array_key_exists($index, $array)) {
         $firstArray = array_slice($array, 0, ($index + 1));
         $lastArray = array_slice($array, ($index + 1));
@@ -54,7 +54,7 @@
     array ($array), the key (1) and our new value ("D").
 </p>
 
-<pre><code class="language-go">$array = array(
+<pre><code class="language-php">$array = array(
     "A", // 0
 
     "B", // 1
@@ -68,16 +68,10 @@ $finalArray = array_push_insert($array, 1, "D");
 
 <p>So when we print_r() the <code>$finalArray</code>, it looks like this:</p>
 
-<pre><code class="language-go">Array (
+<pre><code class="language-php">Array (
     [0] => A
     [1] => B
     [2] => D
     [3] => C
 )
 </code></pre>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
-<script>hljs.highlightAll();</script>
