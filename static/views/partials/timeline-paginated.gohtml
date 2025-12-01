@@ -1,15 +1,15 @@
 {{ define "timeline-paginated" }}
 {{ range .Entries }}
-<article class="kindy read-heavy">
+<article class="kindy read-heavy h-entry">
     <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
-    <h2 class="right" style="margin-left: 1em;"><a href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+    <h2 class="right" style="margin-left: 1em;"><a class="u-url" href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
     <p>
-        <a href="/">
-            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author" loading="lazy">
-            <span title="{{ $.Author.Name }}">@gerben.dev</span>
+        <a href="/" class="h-card p-author u-url">
+            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy">
+            <span title="{{ $.Author.Name }}" class="p-name">@gerben.dev</span>
         </a>
         {{ .Type.Emoji }}
-        <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+        <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">
             🕰️&nbsp;<a href="{{ .Permalink }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                 {{- .TimeAgo -}}
             </a>
@@ -22,11 +22,11 @@
         {{- end }}
         {{ if .Tags -}}
         {{- range .Tags -}}
-        🏷️&nbsp;<a href="/tags/{{ . }}">#{{ . }}</a>
+        🏷️&nbsp;<a href="/tags/{{ . }}" rel="tag" class="p-category">#{{ . }}</a>
         {{- end -}}
         {{- end }}
     </p>
-    <div class="timeline-content">
+    <div class="timeline-content e-content">
         {{ if eq .Type "photo" }}
             <figure class="center-align" style="margin: 0;">
                 <a href="{{ .Permalink }}">
