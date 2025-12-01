@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #79747c;
+    background-color: #333;
     background-image: url("/images/prism.png");
     font-family: "Atkinson Hyperlegible", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 1.2em;
@@ -59,7 +59,7 @@ nav ul a,
 #home-timeline {
     max-height: 1000px;
     overflow: auto;
-    background-color: var(--main-container-color);
+    background-color: #ebe9ec;
     padding: 0 1em;
 }
 

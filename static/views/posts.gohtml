@@ -11,7 +11,7 @@
                         🕰️
                         <time datetime='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'
                               title='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'>
-                            <a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a>
+                            {{- .PublishedAt.Format "Jan 02, 2006" -}}
                         </time>
                         {{ if .Tags -}}
                             🏷️

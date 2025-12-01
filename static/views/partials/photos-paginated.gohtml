@@ -13,7 +13,7 @@
         </a></h6>
     🕰️
     <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-        <small><a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a></small>
+        <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
     </time>
     {{ if .Geo -}}
     <span>
