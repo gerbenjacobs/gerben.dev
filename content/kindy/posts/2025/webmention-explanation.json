@@ -10,5 +10,11 @@
     "tags": [
         "Webmentions",
         "IndieWeb"
+    ],
+    "syndication": [
+        {
+            "type": "IndieNews",
+            "url": "https://news.indieweb.org/en"
+        }
     ]
 }
