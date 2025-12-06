@@ -76,6 +76,10 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("GET /listening", otelhttp.WithRouteTag("/listening", http.HandlerFunc(h.listening)))
 	r.Handle("GET /timeline", otelhttp.WithRouteTag("/timeline", http.HandlerFunc(h.timeline)))
 	r.Handle("GET /previously", otelhttp.WithRouteTag("/previously", http.HandlerFunc(h.previously)))
+	r.Handle("GET /poems", otelhttp.WithRouteTag("/poems", http.HandlerFunc(h.singlePageLayout("static/views/poems.html", internal.Metadata{
+		Env: Env, Permalink: "/poems", Title: "Poems", Image: "",
+		Description: "My poems, mostly from my teenage years..",
+	}))))
 
 	// XML/RSS feeds
 	r.Handle("GET /timeline.xml", otelhttp.WithRouteTag("/timeline.xml", http.HandlerFunc(h.timelineXML)))
