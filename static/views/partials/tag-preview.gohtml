@@ -26,7 +26,11 @@
         {{ if .IsVideo }}
         <div class="center-align">
             <video class="responsive-video" style="width: 300px;" autoplay loop muted>
-                <source class="u-video" src="{{.Content}}" type="video/mp4" />
+                {{ if .Thumbnail }}
+                    <source class="u-video" src="{{.Thumbnail}}" type="video/mp4"/>
+                {{- else }}
+                    <source class="u-video" src="{{.Content}}" type="video/mp4"/>
+                {{ end }}
                 Your browser does not support the video tag.
             </video>
         </div>
