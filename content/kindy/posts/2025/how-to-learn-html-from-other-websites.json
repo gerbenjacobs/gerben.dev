@@ -1,0 +1,22 @@
+{
+    "type": "post",
+    "title": "How to learn HTML from other websites",
+    "summary": "Viewing source code, using developer tools, and inspecting elements to learn how websites are built.",
+    "content": "/posts/2025/how-to-learn-html-from-other-websites.html",
+    "image": "/kd/photos/PXL_20210509_101219715.MP_thumb.jpg",
+    "publishedAt": "2025-12-09T19:30:00+01:00",
+    "slug": "2025/how-to-learn-html-from-other-websites",
+    "permalink": "/posts/how-to-learn-html-from-other-websites",
+    "tags": [
+        "Development",
+        "IndieWeb",
+        "HTML",
+        "WebDevelopment"
+    ],
+    "syndication": [
+        {
+            "type": "IndieNews",
+            "url": "https://news.indieweb.org/en"
+        }
+    ]
+}
