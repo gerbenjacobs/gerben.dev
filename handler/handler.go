@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	codeSourcePath = "https://github.com/gerbenjacobs/gerben.dev/blob/master/"
+	codeSourcePath = "https://github.com/gerbenjacobs/gerben.dev/blob/main/"
 )
 
 var Env string
