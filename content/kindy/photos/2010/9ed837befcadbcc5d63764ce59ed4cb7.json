@@ -1,0 +1,21 @@
+{
+  "type": "photo",
+  "title": "My oldest dog",
+  "summary": "\u0026quot;Old\u0026quot; is relative..",
+  "content": "/kd/photos/flickr/my-oldest-dog_5020525031_o.jpg",
+  "publishedAt": "2010-09-24T16:34:23Z",
+  "slug": "2010/9ed837befcadbcc5d63764ce59ed4cb7",
+  "permalink": "/photos/9ed837befcadbcc5d63764ce59ed4cb7",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5020525031/"
+    }
+  ],
+  "tags": [
+    "dog",
+    "flatcoat",
+    "retriever",
+    "flatcoatretriever"
+  ]
+}

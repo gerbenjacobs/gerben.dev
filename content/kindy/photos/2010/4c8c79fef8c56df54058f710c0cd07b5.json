@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Coming back from England",
+  "content": "/kd/photos/flickr/coming-back-from-england_5157241521_o.jpg",
+  "publishedAt": "2010-11-07T16:56:26Z",
+  "slug": "2010/4c8c79fef8c56df54058f710c0cd07b5",
+  "permalink": "/photos/4c8c79fef8c56df54058f710c0cd07b5",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157241521/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  },
+  "tags": [
+    "Netherlands",
+    "Ferry",
+    "Hoek van Holland"
+  ]
+}

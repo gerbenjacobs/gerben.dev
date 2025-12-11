@@ -1,0 +1,197 @@
+<p>
+    <em>To put this blog post into context; this is written by a 25-year-old developer who uses the Dutch open data
+        (<a title="Dutch Open Data" href="https://data.overheid.nl">https://data.overheid.nl</a>) and doesn't like to read too much.
+        I rather hack tutorials than read specs and I code stuff for the use of the public, i.e.: data needs to accommodate to the common people.</em>
+</p>
+
+<p>
+    With that out of the way and allowing you to see this from my perspective here goes; the biggest problem(s) with Open Data.
+</p>
+
+<figure>
+    <img src="/kd/gj/2013/data.overheid.nl.png" class="u-photo responsive-img">
+    <figcaption>data.overheid.nl</figcaption>
+</figure>
+
+<p>
+    <b>I love Open Data</b>, I love all kinds of data really, I can easily browse my phpMyAdmin page for an entire day and not get bored.
+    I also love real-timeness and my first use of data/APIs was with the Twitter API.
+    <br>Can't get it more real-time than that!
+</p>
+<p>
+    But the open data ecosystem (in the Netherlands at least) is just like a retirement home, where one zealous intern occasionally organizes bingo
+    events and turns the place buzzing before it's time for pudding.
+</p>
+
+<h2>Static data</h2>
+<p>
+    As you can see I like real-time data, here's where we see one problem; dead tree data a.k.a. static data.
+    <br>Sure, it's nice to have any data at all, but what's the added benefit of forging this into something interactive,
+    like an app for example? Static data is only useful for infographics, graphs or historical references.
+</p>
+
+<p>
+    The Dutch open data collection contains a lot of this dead weight data (sorry, I like to make up silly synonyms).
+    Big files containing lots of numbers, which, in their appropriate use case, can provide a lot of insight, no doubt.
+    But it's this category of infographics and historical references that pioneers this data.
+    I'm sure that when you add geographical data it could be slightly more interesting, you can view the information on a map,
+    but it's still a bunch of static information whether you view it in an infographic or on a map.
+</p>
+
+<h2>Data formats and delivery</h2>
+<p>
+    There's a big movement within the Open Knowledge sphere that we need to push for Open Formats. This is wonderful and most formats are indeed <em>open</em>.
+    But what does open mean? It clearly doesn't mean <b>accessible</b>.
+</p>
+
+<p>
+    Most of the Open Data sets at <a title="Open Data at Overheid.nl" href="https://data.overheid.nl">Overheid.nl</a> that contain geo-data
+    (which I find the best kind of data) are using this wonderful X,Y coordinate system called
+    '<a title="RD coordinate system on Wikipedia" href="https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten">Rijksdriehoekscoördinaten</a>',
+    a word that even for Dutch standards is long. This system is based on ancient times when we had to plot stuff from 3 points, preferably high points like churches or hills.
+</p>
+
+<p>
+    The code below shows you how to convert RD to WGS, by brute forcing it with pow()'s and floats. You don't want to convert this data on the fly! Specially not in Javascript.
+</p>
+
+<pre><code class="language-php">function rd2wgs ($x, $y)
+{
+    // Calculate WGS84 coordinates
+    $dX = ($x - 155000) * pow(10, - 5);
+    $dY = ($y - 463000) * pow(10, - 5);
+    $SomN = (3235.65389 * $dY) + (- 32.58297 * pow($dX, 2)) + (- 0.2475 *
+    pow($dY, 2)) + (- 0.84978 * pow($dX, 2) * $dY) + (- 0.0655 * pow($dY, 3))
+    + (- 0.01709 * pow($dX, 2) * pow($dY, 2)) + (- 0.00738 * $dX) + (0.0053 *
+    pow($dX, 4)) + (- 0.00039 * pow($dX, 2) * pow($dY, 3)) + (0.00033
+    * pow($dX, 4) * $dY) + (- 0.00012 * $dX * $dY);
+
+    $SomE = (5260.52916 * $dX) + (105.94684 * $dX * $dY) + (2.45656 *
+    $dX * pow($dY, 2)) + (- 0.81885 * pow($dX, 3)) + (0.05594 *
+    $dX * pow($dY, 3)) + (- 0.05607 * pow($dX, 3) * $dY) + (0.01199 *
+    $dY) + (- 0.00256 * pow($dX, 3) * pow($dY, 2)) + (0.00128 *
+    $dX * pow($dY, 4)) + (0.00022 * pow($dY,2)) + (- 0.00022 * pow($dX, 2))
+    + (0.00026 * pow($dX, 5));
+
+    $Latitude = 52.15517 + ($SomN / 3600);
+    $Longitude = 5.387206 + ($SomE / 3600);
+
+    return array(
+        'latitude' => $Latitude,
+        'longitude' => $Longitude
+    );
+}
+</code></pre>
+
+<p>
+    But then we got satellites and GPS and Europe even has their own Galileo project <small>(what's happening with that?)</small> so coordinates became global.
+    Truth be told, a lot of the internet innovations have been led by the United States to a point where GPS coordinates, actually called
+    <a title="WGS 84 at Wikipedia" href="https://en.wikipedia.org/wiki/World_Geodetic_System" >WGS 84</a> <small>(oh god no, specs!)</small>,
+    are the de-facto digits we use when it comes to geographical data. So why do we still use this RD system? The answer is probably legacy code..
+</p>
+
+<p>
+    <b>Delivery</b><br>
+    So there are some annoying formats, that while open are not accessible at all. But how does this get delivered?
+    <br>For any person who's native tongue is not Dutch, it's impossible to use any of the data. A lot of open data sets are behind websites, weird link structures,
+    deeply nested Dutch named folders FTP servers and whatever horrible solution you can think of.
+</p>
+
+<p>
+    I haven't checked everything out, but I don't think there's any dataset that comes with a RESTful API. But that was to be expected, since most data is static.
+</p>
+
+<figure>
+    <img src="https://farm9.staticflickr.com/8449/8031260093_81cd87d40f_b.jpg" class="u-photo responsive-img">
+    <figcaption>Wiegtotweg.nl (From cradle to road)</figcaption>
+</figure>
+
+<p>
+    I do have actively used 3 datasets though; meteorological data by the KNMI (weather service),
+    sensory data from Rijkswaterstaat (agency for infrastructure and environment) and car registration data from RDW.
+</p>
+<p>
+    For that last one <a title="RDW app, 3rd place submission" href="/projects#archived" >I made "Wieg tot Weg"</a>
+    when they first opened their data to the public along with a competition, which I became 3rd in! They actually used Microsoft's Azure cloud-platform
+    to have some kind of API, not properly RESTful though.
+</p>
+<p>
+    For the first one I wrote what I call an "API", but it's not really,
+    <a title="KNMI Longterm predictions &quot;API&quot;" href="http://api.gerbenjacobs.nl/knmi/longterm/" >just see for yourself</a>.
+    And at the moment I'm making a library for the sensory data from RWS that combines some of the files (.dat and .adm. Wtf?) that they put in their zip-file.
+    <a title="RWS library on Github" href="https://github.com/gerbenjacobs/rws" >The library</a> is at a hacked stage;
+    yes it works, but no it won't win "Best code ever"-awards.
+</p>
+
+<p>
+    If you look at <a title="RWS.php class on Github" href="https://github.com/gerbenjacobs/rws/blob/master/src/RWS/RWS.php">the class</a> I wrote,
+    you can see through what kind of hoops I have to jump to collect and combine the data. First 1) download a .zip, 2) unzip it, 3) collect the .adm and .dat files,
+    4) <code>explode()</code> them on newlines, 5) then per line parse them as comma-seperated values, 6) also trim the data values (whitespace everywhere!),
+    then when both files are as arrays in memory, 7) combine them on their linenumber (so fragile!) and 8) format them a bit.
+</p>
+
+<p>
+    At the moment I still haven't incorporated the locations XML file, this file does however contain GPS coords instead of RD, so a plus point there!
+</p>
+
+<p>
+    But the point here, at least now 'normal' people can use the data, you don't need to have a PhD in
+    <a title="Fluid Mechanics article" href="https://en.wikipedia.org/wiki/Fluid_mechanics" >Fluid Mechanics</a>
+    <small>(yeah, I actually had to look this stuff up to decipher the dataset)</small> and use the tools of the trade, some obscure Visual Basic program
+    that only runs on governmental supplied Windows XP machines.
+</p>
+
+<h2>Bureaucracy</h2>
+<p>
+    Which brings me to the last point, for which I'm not sure if this is the right heading title, but we all hate the bureacracy so it will do!
+</p>
+
+<p>
+    What I mean here, is the fact you have to open this data in ancient programs, which are used in the governmental industry and while they probably work,
+    it's not what's being used in tech. Just like the RD coordinates I already mentioned, there are other bumps in the open data road.
+    A favourite format/extension (I don't even know exactly what it is!) is 'GIS'. Which is 'open' of course.
+    But you need this program OpenGIS or ArcGis or VB6XPOpenGovSuperExclusiveGIS, okay maybe that last one won't work but I hope you catch my drift.
+</p>
+
+<p>
+    Why not JSON or XML with GPS coordinates? Or be totally hip and provide them as
+    <a title="Github enabled GeoJSON" href="https://github.com/blog/1541-geojson-rendering-improvements" >GeoJSON so they instantly work in Github</a>.
+    <br>Ask yourself "Who am I opening up this data for?", if the answer is your colleague in another department or ministry, then carry on.
+    If not, hire some adviser and 'youthify' your data.
+</p>
+
+<h1>How to fix Open Data</h1>
+
+<figure>
+    <img src="/kd/gj/2013/fix_open_data.png" class="u-photo responsive-img">
+    <figcaption>Fixing open data</figcaption>
+</figure>
+
+<p>
+    This surely isn't a checklist, just merely some of my ideas and I hope some discussion material for whoever (that damn bureacracy!) is in charge.
+</p>
+
+<p>
+    Note that when I say 'fix', I mean make it accessible to all the young hipster programmers out there that can actually skyrocket the open data initiative,
+    open it up to the broader public and have open data interest and passion be something that could end up in the Maslow pyramid. Or at least the public agenda.
+</p>
+
+<ul>
+    <li>Open AND accessible formats (XML, JSON, CSV, TSV)</li>
+    <li>Cut the bureaucracy, show code (Use Github, it's hip!)</li>
+    <li>Focus on live data (that's the most interesting, sorry infographics!)</li>
+</ul>
+
+<p>
+    Even when I'm done with my water sensory library and finding no usecase to use it and having that licensenumber app which is just a gimmick,
+    I know that one day the ideas will be in overflow and we could use all the data we need.
+    </p>
+<p>
+    That's why I think it's <b>important to</b> make sure,
+    at this point in time, that we <b>open up more</b> (preferably live) data and have them formatted and delivered <b>in a way that the tech industry wants them</b>.
+</p>
+
+<p>
+    P.s. I <em>do</em> like infographics, I just needed a black sheep for this blog post!
+    <br>P.p.s. This once was a concrete idea but while writing it became a big blur of stuff I wanted to say, congratulations if you read through all of it!
+</p>

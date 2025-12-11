@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Nice look down a street",
+  "summary": "I'm not sure which neighbourhood this was, but the guide (on the speaker) said he had to whisper because people like their peace over there..",
+  "content": "/kd/photos/flickr/nice-look-down-a-street_5716169777_o.jpg",
+  "publishedAt": "2011-05-13T20:34:33Z",
+  "slug": "2011/067778ba041c0361e651ee99d43bd0e5",
+  "permalink": "/photos/067778ba041c0361e651ee99d43bd0e5",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5716169777/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.75714,
+    "longitude": -73.981761
+  },
+  "tags": [
+    "UnitedStates",
+    "NYC"
+  ]
+}

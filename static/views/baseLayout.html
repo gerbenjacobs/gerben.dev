@@ -23,16 +23,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700|Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main-2025-05-03.css">
+    <link rel="stylesheet" href="/css/main-2025-12-06.css">
+    <link rel="preload" href="/css/ytlite.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/css/ytlite.css">
+    </noscript>
 
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     <link rel=webmention href=https://webmention.io/gerben.dev/webmention>
     <meta name="fediverse:creator" content="@gerben.dev@gerben.dev">
 
-
-    <link rel="alternate" type="application/rss+xml" title="@gerben.dev Timeline" href="https://gerben.dev/timeline.xml">
+    <link rel="alternate" type="application/rss+xml" title="@gerben.dev timeline" href="https://gerben.dev/timeline.xml">
+    <link rel="alternate" type="application/rss+xml" title="gerben.dev posts" href="https://gerben.dev/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="gerben.dev photos" href="https://gerben.dev/photos.xml">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gerben.dev/sitemap.xml">
+    {{ if $permalink -}}<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/{{ $permalink }}">{{ end }}
 
     <meta name="description" content="{{ $description }}">
     {{ if $permalink -}}<link rel="canonical" href="{{ $permalink }}">{{ end }}
@@ -40,18 +46,21 @@
     <meta property="og:url" content="{{ $permalink }}">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description}}">
-    {{ if .Metadata.Image }}<meta property="og:image" content="https://gerben.dev{{ .Metadata.Image }}">{{ end }}
+    {{ if .Metadata.Image }}<meta property="og:image" content="{{ .Metadata.SafeImage }}">{{ end }}
     {{- if .Metadata.Kindy }}
+    {{ if ne .Metadata.Env "dev"}}<link rel="preload" as="fetch" href="https://octothorp.es/?uri={{ $permalink }}">{{ end }}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ .Metadata.Kindy.PublishedAt.Format "2006-01-02T15:04:05-07:00" }}">
     {{- range .Metadata.Kindy.Tags }}
     <meta property="article:tag" content="{{ . }}">
+    <link rel="octo:octothorpes" href="{{ . }}" >
     {{- end }}
     {{- else }}
     <meta property="og:type" content="website">
     {{- end }}
 
     {{ if ne .Metadata.Env "dev"}}
+    <script src="https://mochi.meadow.cafe/reaper/gerben/embed/1.js" async></script>
     <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-2961761-29"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -64,6 +73,7 @@
         gtag('config', 'UA-2961761-29');
     </script>
     {{ end }}
+    <script defer src="/js/ytlite.js"></script>
 </head>
 
 <body id="site">
@@ -95,10 +105,16 @@
     <footer>
         <div class="container" id="space">
             <p class="center-align padding">
-                It's dangerous out there, please take some space dust!
+                ✨ It's dangerous out there, please take some space dust! ✨
             </p>
         </div>
     </footer>
+
+    <p class="center-align" style="color: #fff;">
+        This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:azure;">CC BY-NC-SA 4.0</a>
+        |
+        🤖 No AI
+    </p>
 
     <button class="btn-floating btn-large waves-effect waves-light purple" id="btn-back-to-top">☝️</button>
 

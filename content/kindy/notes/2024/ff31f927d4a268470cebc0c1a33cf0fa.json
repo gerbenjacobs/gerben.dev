@@ -1,0 +1,11 @@
+{
+  "type": "note",
+  "content": "Just found out that Go's \u003ccode\u003eflag\u003c/code\u003e package does indeed understand double dashes \u003ccode\u003e--\u003c/code\u003e for calling flag arguments. \u003ca href=\"/tags/TIL\"\u003e#TIL\u003c/a\u003e \u003ca href=\"https://pkg.go.dev/flag#hdr-Command_line_flag_syntax\"\u003ehttps://pkg.go.dev/flag#hdr-Command_line_flag_syntax\u003c/a\u003e",
+  "publishedAt": "2024-12-05T22:57:43.9212545+01:00",
+  "slug": "2024/ff31f927d4a268470cebc0c1a33cf0fa",
+  "permalink": "/notes/ff31f927d4a268470cebc0c1a33cf0fa",
+  "tags": [
+    "Go",
+    "cli"
+  ]
+}

@@ -1,8 +1,8 @@
 {{ define "photos-paginated"}}
 {{ range .Entries }}
-<article class="padding">
+<article class="padding h-entry">
     <div style="height: 5em; line-height: 1em;">
-    <h6>{{if .HasFlickrSyndication}}🖼️{{else}}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
+    <h6>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}} <a class="u-url p-name" href="{{ .Permalink }}">
             {{- if .Title -}}
             {{ .Title }}
             {{- else if .Summary -}}
@@ -12,8 +12,9 @@
             {{- end -}}
         </a></h6>
     🕰️
-    <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-        <small><a href="{{ .Permalink }}">{{- .PublishedAt.Format "Jan 02, 2006" -}}</a></small>
+    <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
+    class="dt-published">
+        <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
     </time>
     {{ if .Geo -}}
     <span>
@@ -26,30 +27,36 @@
     <small>
     {{- if gt (len .Tags) 2 }}
         {{ range slice .Tags 0 2 -}}
-        <a href="/tags/{{.}}">#{{.}}</a>
+        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
         {{ end }}
         +{{ len (slice .Tags 2) }} tags
     {{- else }}
         {{- range .Tags -}}
-        <a href="/tags/{{.}}">#{{.}}</a>
+        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
         {{ end -}}
     {{- end }}
     </small>
     {{- end }}
     </div>
-    {{ if hasSuffix .Content ".mp4" }}
+    <div class="e-content">
+    {{ if .IsVideo }}
     <video class="home-photo responsive-video" autoplay loop muted>
-        <source class="u-video" src="{{.Content}}" type="video/mp4" />
+        {{ if .Thumbnail }}
+            <source class="u-video" src="{{.Thumbnail}}" type="video/mp4"/>
+        {{- else }}
+            <source class="u-video" src="{{.Content}}" type="video/mp4"/>
+        {{ end }}
         Your browser does not support the video tag.
     </video>
     {{ else }}
-    <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});"></a>
+    <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page" aria-hidden="true"></a>
     {{ end }}
+    </div>
 </article>
 {{ end }}
     {{ if .NextPage }}
-    <div hx-get="/photos/?page={{ .NextPage }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
-        <a href="/photos/?page={{ .NextPage }}">Next page</a>
+    <div hx-get="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
+        <a href="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}">Next page</a>
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue-only">
             <div class="circle-clipper left">

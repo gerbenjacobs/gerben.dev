@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"log/slog"
+	"os"
 	"path/filepath"
 	"strings"
 	"time"
@@ -15,6 +16,7 @@ import (
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"go.abhg.dev/goldmark/frontmatter"
 	"go.abhg.dev/goldmark/hashtag"
 )
@@ -38,6 +40,7 @@ const (
 	KindySummaryLike   = "Liked"
 	KindySummaryRepost = "Reposted"
 
+	KindyTypeInvalid KindyType = "invalid"
 	KindyTypeNote    KindyType = "note"
 	KindyTypePost    KindyType = "post"
 	KindyTypePhoto   KindyType = "photo"
@@ -58,6 +61,7 @@ func (r *HashtagResolver) ResolveHashtag(n *hashtag.Node) (destination []byte, e
 
 func init() {
 	gm = goldmark.New(
+		goldmark.WithRendererOptions(html.WithUnsafe()),
 		goldmark.WithExtensions(
 			extension.GFM,
 			&frontmatter.Extender{},
@@ -69,6 +73,10 @@ func init() {
 						Name:  "class",
 						Value: "p-category",
 					},
+					{
+						Name:  "rel",
+						Value: "tag",
+					},
 				},
 			},
 		),
@@ -78,13 +86,14 @@ func init() {
 	)
 }
 
-// Kindy is a datastructure for content that adheres to Microformats 2
+// Kindy is a data structure for content that adheres to Microformats 2
 type Kindy struct {
 	Type        KindyType          `json:"type"`
 	Title       string             `json:"title,omitempty"`
 	Summary     template.HTML      `json:"summary,omitempty"`
 	Content     template.HTML      `json:"content,omitempty"`
 	Markdown    string             `json:"markdown,omitempty"`
+	Image       string             `json:"image,omitempty"`
 	PublishedAt time.Time          `json:"publishedAt"`
 	Slug        string             `json:"slug,omitempty"`
 	Permalink   string             `json:"permalink,omitempty"`
@@ -122,7 +131,17 @@ func (k Kindy) Thumbnail() string {
 	if k.Type == KindyTypePhoto {
 		filePath := string(k.Content)
 		ext := filepath.Ext(filePath)
-		return fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
+		thumb := fmt.Sprintf("%s_thumb%s", strings.TrimSuffix(filePath, ext), ext)
+
+		// if ext is mp4, double check the file exists
+		if ext == ".mp4" {
+			f := filepath.Clean(filepath.Join(KindyContentPath, "data", k.Type.URL(), strings.TrimSuffix(filepath.Base(filePath), ext)+"_thumb"+ext))
+			if _, err := os.Stat(f); err != nil {
+				return ""
+			}
+		}
+
+		return thumb
 	}
 
 	return ""
@@ -186,12 +205,15 @@ func (k Kindy) MustDescription() template.HTML {
 	if k.Summary != "" {
 		return template.HTML(p.Sanitize(string(k.Summary)))
 	}
+	if k.Title != "" {
+		return template.HTML(p.Sanitize(string(k.Title)))
+	}
 	content := k.GetContent()
 	if content != "" {
 		return template.HTML(p.Sanitize(string(content)))
 	}
 
-	return template.HTML(k.Type)
+	return template.HTML(k.MustTitle())
 }
 
 func (k Kindy) HasFlickrSyndication() bool {
@@ -205,6 +227,23 @@ func (k Kindy) HasFlickrSyndication() bool {
 
 func (k Kindy) TimeAgo() string {
 	return humanize.Time(k.PublishedAt)
+}
+
+func (k Kindy) IsVideo() bool {
+	if k.Type != KindyTypePhoto {
+		return false
+	}
+	return strings.HasSuffix(string(k.Content), ".mp4")
+}
+
+func (k Kindy) GetImage() string {
+	if k.Type == KindyTypePhoto {
+		return string(k.Content)
+	}
+	if k.Image != "" {
+		return k.Image
+	}
+	return ""
 }
 
 func (kt KindyType) Emoji() string {
@@ -240,6 +279,42 @@ func (kt KindyType) URL() string {
 	default:
 		return ""
 	}
+}
+
+// URLToKindyType finds the KindyType based on the URL path
+func URLToKindyType(url string) KindyType {
+	switch {
+	case strings.HasPrefix(url, KindyURLNotes):
+		return KindyTypeNote
+	case strings.HasPrefix(url, KindyURLPhotos):
+		return KindyTypePhoto
+	case strings.HasPrefix(url, KindyURLPosts):
+		return KindyTypePost
+	case strings.HasPrefix(url, KindyURLReposts):
+		return KindyTypeRepost
+	case strings.HasPrefix(url, KindyURLLikes):
+		return KindyTypeLike
+	case strings.HasPrefix(url, KindyURLReplies):
+		return KindyTypeReplies
+	default:
+		return KindyTypeInvalid
+	}
+}
+
+func (kt KindyType) IsValid() bool {
+	return kt == KindyTypeNote ||
+		kt == KindyTypePhoto ||
+		kt == KindyTypePost ||
+		kt == KindyTypeRepost ||
+		kt == KindyTypeLike ||
+		kt == KindyTypeReplies
+}
+
+func (kt KindyType) IsTimelineType() bool {
+	return kt == KindyTypeNote ||
+		kt == KindyTypeReplies ||
+		kt == KindyTypeRepost ||
+		kt == KindyTypeLike
 }
 
 func MarkdownToHTML(md string) string {

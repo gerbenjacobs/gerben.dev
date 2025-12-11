@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Nationaal park Veluwezoom",
+  "content": "/kd/photos/flickr/nationaal-park-veluwezoom_23539279425_o.jpg",
+  "publishedAt": "2015-12-05T14:54:41Z",
+  "slug": "2015/eaa67f01c7392f7f6868ae27fa209ddd",
+  "permalink": "/photos/eaa67f01c7392f7f6868ae27fa209ddd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/23539279425/"
+    }
+  ],
+  "geo": {
+    "latitude": 52.023894,
+    "longitude": 6.010143
+  },
+  "tags": [
+    "Veluwezoom",
+    "Netherlands"
+  ]
+}

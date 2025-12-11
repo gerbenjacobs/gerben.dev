@@ -1,0 +1,16 @@
+{
+    "type": "post",
+    "title": "svc; an opinionated Go service framework",
+    "summary": "I wrote a Go service framework that I use for my personal projects.",
+    "content": "/posts/blogmigration/svc-an-opinionated-go-service-framework.html",
+    "image": "/kd/gj/2022/layers.png",
+    "publishedAt": "2022-06-17T00:00:00+02:00",
+    "slug": "blogmigration/svc-an-opinionated-go-service-framework",
+    "permalink": "/posts/svc-an-opinionated-go-service-framework",
+    "tags": [
+        "tech",
+        "go",
+        "OpenSource",
+        "BlogMigration"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "photo",
+  "summary": "Misty morning in the forest.",
+  "content": "/kd/photos/PXL_20221114_075339649.MP.jpg",
+  "publishedAt": "2022-11-14T07:53:00Z",
+  "slug": "2022/93e81f5d8694e16e68a17603742e373c",
+  "permalink": "/photos/93e81f5d8694e16e68a17603742e373c",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/497712690642071672"
+    }
+  ],
+  "geo": {
+    "latitude": 52.0303833,
+    "longitude": 5.7395639
+  },
+  "tags": [
+    "GinkelseHeide",
+    "Fog",
+    "Sunrays",
+    "Nature",
+    "Featured"
+  ]
+}

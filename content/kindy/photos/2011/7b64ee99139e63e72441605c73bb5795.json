@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Funpark @ Gerlos",
+  "content": "/kd/photos/flickr/funpark--gerlos_5486388087_o.jpg",
+  "publishedAt": "2011-02-26T09:13:59Z",
+  "slug": "2011/7b64ee99139e63e72441605c73bb5795",
+  "permalink": "/photos/7b64ee99139e63e72441605c73bb5795",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5486388087/"
+    }
+  ],
+  "geo": {
+    "latitude": 47.233498,
+    "longitude": 12.032089
+  },
+  "tags": [
+    "Austria",
+    "Gerlos",
+    "Skiing"
+  ]
+}

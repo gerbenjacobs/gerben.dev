@@ -1,0 +1,22 @@
+{
+  "type": "post",
+  "title": "Raccoonfooding \uD83E\uDD9D",
+  "summary": "You've heard of dogfooding, now get ready for..",
+  "content": "/posts/2025/raccoonfooding.html",
+  "image": "/kd/photos/PXL_20230623_120559450.MP_thumb.jpg",
+  "publishedAt": "2025-12-11T14:57:00+01:00",
+  "slug": "2025/raccoonfooding",
+  "permalink": "/posts/raccoonfooding",
+  "tags": [
+    "RaccoonFooding",
+    "DogFooding",
+    "IndieWeb",
+    "Software"
+  ],
+  "syndication": [
+    {
+      "type": "IndieNews",
+      "url": "https://news.indieweb.org/en"
+    }
+  ]
+}

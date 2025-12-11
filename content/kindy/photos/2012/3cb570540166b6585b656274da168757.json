@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "P1020199",
+  "content": "/kd/photos/flickr/p1020199_7683949366_o.jpg",
+  "publishedAt": "2012-07-25T12:05:40Z",
+  "slug": "2012/3cb570540166b6585b656274da168757",
+  "permalink": "/photos/3cb570540166b6585b656274da168757",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683949366/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.721273,
+    "longitude": -4.412673
+  },
+  "tags": [
+    "Spain",
+    "Malaga"
+  ]
+}

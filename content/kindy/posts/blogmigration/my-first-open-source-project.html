@@ -1,0 +1,85 @@
+<p>
+    Since november last year I started working on <a href="https://github.com/gerbenjacobs/HabboAPI" >the HabboAPI project</a>.
+    While it is <a href="https://github.com/gerbenjacobs?tab=repositories" >not my first repository</a>,
+    and maybe also not the first serious project (that would be my attempt of the <a href="https://github.com/gerbenjacobs/rws" >RWS library</a>),
+    it's the first where I went the extra mile to create documentation, tests, continuous integration and Packagist support.
+</p>
+
+<p>
+    I also intend to support this and hope to see other people contribute. So far I have one favourite!
+</p>
+
+<h2 id="slope-of-enlightenment">Slope of enlightenment</h2>
+<p>
+    When it comes to PHP development, something I've been doing for well over 10 years now,
+    I feel like I'm on the so called <em>'slope of enlightenment'</em> when you look at
+    <a href="http://www.gartner.com/it/products/research/media_products/book/about_hypecycle.jsp" >Gartners Hype Cycle graph</a>.
+</p>
+
+<figure>
+    <img src="/kd/gj/2015/hypecycle.gif" alt="While meant for technologies, also good analogy for learning (programming) languages" />
+    <figcaption>While meant for technologies, also good analogy for learning (programming) languages</figcaption>
+</figure>
+
+<p>
+    I spent a lot of time in the 'trough of disillusionment'. First after I learned about security, forcefully so, because my applications and sites were
+    targeted by scriptkiddies. I had to learn about cookie hijacking, XSS and SQL injection. After that I spend more time on defensive programming than actually
+    delivering things. I was bummed out because it felt like I couldn't get anything done. I guess ignorance really is bliss.
+</p>
+<p>
+    Secondly an era that came around was where I had to try and understand concepts such as Git, Composer, PHPUnit
+    and of course make the jump from PHP4 to PHP5; classes and namespaces.
+</p>
+<p>
+    I'm not at the desired 'plateau', but I'm also not panicking.
+</p>
+
+<h2 id="lessons-learned">The lessons I learned</h2>
+<p>
+    My project is now on Packagist as v1.0.5 and stable on Travis. I already created some Github issues for future versions.
+</p>
+<p>
+    In no particular order, here are some things that I wish I had done, I'm glad I learned from or that I would probably do the same next time.
+</p>
+
+<h3>Unit tests</h3>
+<p>
+    It kind of goes without saying nowadays, but unit tests are going to save your life.
+    Being able to make changes and run your tests, relying on them to tell you the truth is a wonderful feeling. 
+    You're no longer afraid to refactor your code or have to set up your local development server and do some arbitrary tasks to see if it still works as you designed it to.
+</p>
+
+<h3>Example.php</h3>
+<p>
+    I created an <code>example.php</code> file to test and showcase the usage of my library and I also used this to test my changes visually, next to the unit tests.
+    In October, I started to have a real use for this library and started to implement it in my new project. I quickly discovered that both my unit tests and example.php
+    didn't catch all the situations. For example the most basic sad path <i>(as opposed to happy path)</i> caused errors, so instead I had to have it
+    throw exceptions and then catch it in my project code and that of the example.php page.
+    <br>I'm not sure what the lesson is, but sometimes you can only find things out during real use, so maybe instead of an example.php, you could
+    use with a small Hello World application
+</p>
+
+<h3>README</h3>
+<p>
+    Whether you intend of publishing your project or not, creating a readme is something that you also do for yourself.
+    I still see many projects which have a really minimal readme or none at all. What said readme should include is another topic completely,
+    but luckily for you there are already quite some blog posts about that.
+</p>
+
+<h3>Continuous integration</h3>
+<p>
+    Something that I only recently became well aware of is continuous integration. Especially the option of running your tests with different versions of
+    (in this case) PHP, is a wonderful thing and allows you to easily detect what your minimal version should be set to.
+    <br>Don't be afraid for your git log to look like this, while you're figuring things out.
+</p>
+
+<figure>
+    <img src="/kd/gj/2015/getting-travis-to-work.png" alt="Getting Travis to do what you want is not always easy and straight forward." />
+    <figcaption>Getting Travis to do what you want is not always easy and straight forward.</figcaption>
+</figure>
+
+<p class="text-success small">
+    <b>Tip:</b> If you're using Composer and Travis-ci.org, use <code>composer update</code> in the 'install' phase because
+    that will take care of the correct dependencies based on the PHP version you're running it from instead of taking it from your Composer.lock file
+    that has taken your development setup into account.
+</p>

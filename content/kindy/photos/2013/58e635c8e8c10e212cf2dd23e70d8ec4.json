@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Spiegelrei",
+  "summary": "Brugge, Belgium",
+  "content": "/kd/photos/flickr/spiegelrei_9696836854_o.jpg",
+  "publishedAt": "2013-09-07T12:07:14Z",
+  "slug": "2013/58e635c8e8c10e212cf2dd23e70d8ec4",
+  "permalink": "/photos/58e635c8e8c10e212cf2dd23e70d8ec4",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/9696836854/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.209948,
+    "longitude": 3.224744
+  },
+  "tags": [
+    "Brugge"
+  ]
+}

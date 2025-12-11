@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Malaga city center",
+  "content": "/kd/photos/flickr/malaga-city-center_7683779392_o.jpg",
+  "publishedAt": "2012-07-25T14:35:48Z",
+  "slug": "2012/41864daa8486ab97edb8e767a35e6420",
+  "permalink": "/photos/41864daa8486ab97edb8e767a35e6420",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683779392/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.718736,
+    "longitude": -4.412598
+  },
+  "tags": [
+    "Spain",
+    "Malaga"
+  ]
+}

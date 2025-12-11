@@ -1,0 +1,7 @@
+{
+    "type": "note",
+    "markdown": "[@flamed](https://social.lol/@flamed) I see you support webmentions, but you don't seem to have `\u003clink\u003e` (`\u003clink rel=\"webmention\" href=\"https://webmention.io/username/webmention\" /\u003e`) on your page. \r\n\r\nI'm not sure if you did this on purpose, but I noticed it when my bookmarklet could not find anything.",
+    "publishedAt": "2025-12-04T14:10:51.873858661Z",
+    "slug": "2025/119316dc577c1467908a78656beee3f4",
+    "permalink": "/notes/119316dc577c1467908a78656beee3f4"
+}

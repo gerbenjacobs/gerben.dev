@@ -1,0 +1,16 @@
+{
+    "type": "post",
+    "title": "How to programmatically add an IP address to a Shoutcast Reserved IP list in PHP",
+    "summary": "If you have a private Shoutcast server you need to add IP addresses to the Reserved IP List (RIP). Find out how to do this automatically in PHP.",
+    "content": "/posts/blogmigration/add-ip-address-to-shoutcast-rip.html",
+    "image": "/kd/gj/2012/shoutcast.gif",
+    "publishedAt": "2012-04-07T12:00:00+02:00",
+    "slug": "blogmigration/add-ip-address-to-shoutcast-rip",
+    "permalink": "/posts/add-ip-address-to-shoutcast-rip",
+    "tags": [
+        "tech",
+        "php",
+        "Shoutcast",
+        "BlogMigration"
+    ]
+}

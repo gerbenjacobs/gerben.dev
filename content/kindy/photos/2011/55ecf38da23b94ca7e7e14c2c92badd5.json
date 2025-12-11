@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Little church",
+  "content": "/kd/photos/flickr/little-church_5487015126_o.jpg",
+  "publishedAt": "2011-02-21T07:48:41Z",
+  "slug": "2011/55ecf38da23b94ca7e7e14c2c92badd5",
+  "permalink": "/photos/55ecf38da23b94ca7e7e14c2c92badd5",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5487015126/"
+    }
+  ],
+  "geo": {
+    "latitude": 47.21196,
+    "longitude": 12.002091
+  },
+  "tags": [
+    "Austria",
+    "Gerlos"
+  ]
+}

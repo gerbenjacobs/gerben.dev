@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "YouTube is my TV",
+    "summary": "Recently I realized that I'm really using YouTube as if it was my cable TV. I could also clear see the type of content that I'm watching, and it made me think that I've actually built my own TV channel.",
+    "content": "/posts/blogmigration/youtube-is-my-tv.html",
+    "image": "/kd/gj/yt-tv/undecided.webp",
+    "publishedAt": "2022-12-28T23:00:00+01:00",
+    "slug": "blogmigration/youtube-is-my-tv",
+    "permalink": "/posts/youtube-is-my-tv",
+    "tags": [
+        "personal",
+        "youtube",
+        "BlogMigration"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "summary": "Water droplets on a crab apple or sometimes called ornamental apple, which matches closely to our Dutch word of \"sierappel\"",
+  "content": "/kd/photos/PXL_20250705_112049767.MP.jpg",
+  "publishedAt": "2025-07-05T11:20:00Z",
+  "slug": "2025/b2591a6bf9a9bb852cd971f5915edec2",
+  "permalink": "/photos/b2591a6bf9a9bb852cd971f5915edec2",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/847188044930553792"
+    }
+  ],
+  "geo": {
+    "latitude": 52.0629778,
+    "longitude": 5.648475
+  },
+  "tags": [
+    "Crabapple",
+    "Macro",
+    "Featured"
+  ]
+}

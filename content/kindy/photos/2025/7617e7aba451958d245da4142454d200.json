@@ -1,0 +1,24 @@
+{
+    "type": "photo",
+    "summary": "The top of trees talk about autumn..",
+    "content": "/kd/photos/2025/DJI_20251108142210_0010_D.JPG",
+    "publishedAt": "2025-11-08T13:22:00Z",
+    "slug": "2025/7617e7aba451958d245da4142454d200",
+    "permalink": "/photos/7617e7aba451958d245da4142454d200",
+    "geo": {
+        "latitude": 52.0357686,
+        "longitude": 5.7656537
+    },
+    "tags": [
+        "Autumn",
+        "Drone",
+        "Nature",
+        "Trees"
+    ],
+    "syndication": [
+        {
+            "type": "pixelfed",
+            "url": "https://pixelfed.social/p/gerben/893255447498974050"
+        }
+    ]
+}

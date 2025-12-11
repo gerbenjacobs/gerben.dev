@@ -1,0 +1,25 @@
+{
+  "type": "photo",
+  "title": "Freedom Tower",
+  "summary": "The biggest tower that's being build on Ground Zero",
+  "content": "/kd/photos/flickr/freedom-tower_5737116005_o.jpg",
+  "publishedAt": "2011-05-19T20:14:30Z",
+  "slug": "2011/489dae9f65d0eb02c60e5e08956ba09e",
+  "permalink": "/photos/489dae9f65d0eb02c60e5e08956ba09e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5737116005/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.71337,
+    "longitude": -74.011631
+  },
+  "tags": [
+    "UnitedStates",
+    "NYC",
+    "FreedomTower",
+    "GroundZero"
+  ]
+}

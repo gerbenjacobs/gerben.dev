@@ -1,0 +1,129 @@
+<p>
+    I wanted to react to <a href="https://mastodon.social/@enocc/115634896943066331">@enocc</a> about his question, but
+    figured I'd take the opportunity to explain webmentions in general.
+</p>
+<p>
+    <em>I'm a developer in my day job, so hopefully this will not become too technical.</em>
+</p>
+
+<h2>What is a Webmention?</h2>
+
+<p>
+    Webmentions are a way to notify another site of a mention, this could be a post that links to them, a reaction to
+    something or just a heads up to say you mention them in a blogroll or any other place.
+</p>
+
+<p>
+    To use webmentions, the receiving site needs to have a <strong>webmention endpoint</strong>, which is basically a
+    URL that accepts webmention notifications.
+    This can be done via their own site, but often it's a 3rd-party service that handles webmentions for them.
+    The most common one is <a href="https://webmention.io/">webmention.io</a>.
+</p>
+
+<p>
+    The sending site technically doesn't need to have webmention support. But where's the fun in this?
+</p>
+
+<h2>How does it work</h2>
+
+<figure>
+    <a href="/kd/images/notes/2025/webmention.png">
+        <img src="/kd/images/notes/2025/webmention.png"
+            alt="Three boxes are drawn: my site, webmention endpoint, your site. An arrow goes from my site to the webmention endpoint, and another arrow goes from the webmention endpoint to your site."
+            class="u-photo hoverable" />
+    </a>
+</figure>
+
+<h3 style="font-size: 1.2em;">Step 1: We create a page and mention something</h3>
+<p>
+    So in the above scenario, we've found someone's picture about "Winter in Poland", you create a page on your site and
+    write a response to it.
+    A reply, or maybe you write a blog about winter in your country and you want to link to their picture as well.
+</p>
+
+<p>
+    Once you've published your post, and the URL for it is available to the public internet, you can use the
+    <em>Webmention Endpoint</em>
+    to send a webmention to <em>Your site</em> from <em>My site</em>.
+</p>
+
+<blockquote>
+    The webmention endpoint is defined by <em>Your site</em> and is stored in the source code:
+    <code>&lt;link rel="webmention" href="https://webmention.endpoint/yoursite.tld/webmention"&gt;</code>.
+    But it could also be <code>https://yoursite.tld/api/1.0/wm</code>.
+    <br>
+    The important part is that there's a <code>&lt;link&gt;</code> tag with the <code>rel="webmention"</code> attribute.
+</blockquote>
+
+<h3 style="font-size: 1.2em;">Step 2: We notify the receiving site, via the webmention endpoint</h3>
+<pre><code class="language-php">    // Fake code-like example
+    SEND 
+        source="https://mysite.tld/posts/winter"
+        target="https://yoursite.tld/photos/winter-in-poland"
+    VIA
+        https://webmention.endpoint/yoursite.tld/webmention
+</code></pre>
+
+<p>
+    In short, we're sending a request to the <em>Webmention Endpoint</em> with two important pieces of information:
+    what is the URL you own, and which URL is it mentioning?
+</p>
+
+<blockquote>
+    <p>
+        Most endpoints will then verify if the <code>source</code> URL actually exists and whether it links to the
+        <code>target</code> URL. That's technically enough to adhere to the <a
+            href="https://www.w3.org/TR/webmention/">official specification</a>.
+    </p>
+
+    <p>
+        But some endpoints can also check if you as a user have not blocked the sending domain, they can send you a
+        webhook,
+        which can be used to notify you on any device.
+    </p>
+</blockquote>
+
+<h3 style="font-size: 1.2em;">Step 3: The receiving site processes the webmention</h3>
+
+<p>
+    This last part is optional, but is of course the fun part about webmentions.
+</p>
+
+<p>
+    Once <em>Your site</em> receives the webmention, it can process it in any way it wants.
+    It could just store it for logging purposes, but often it's used to create a visible reaction on the target page.
+</p>
+
+<p>
+    In the case of webmention.io, you can use some Javascript to fetch and display the webmentions on your page.
+    For the Wordpress implementation, I believe, it just handles as if it were a normal comment.
+</p>
+
+<blockquote>
+    The specification doesn't really say how to handle anything at this point, only that the receiving site is allowed
+    to fetch data from the source.
+    In the case of webmention.io, it uses <a href="https://indieweb.org/microformats">Microformats 2</a> to fetch
+    specific type of data, in order to show a nice looking preview.
+</blockquote>
+
+<h2>Some more thoughts</h2>
+
+<p>So <a href="https://mastodon.social/@enocc" class="u-mention">@enocc</a> had some more questions...</p>
+
+<dt><b>How do they differ from manually e-mailing people when you cite them?</b></dt>
+<dd>It's almost the same, except that you're actively promoting your use of webmentions and there's a standardized
+    protocol for it. So once your system is set up and automatically working, it's hands-off.</dd>
+<dt><b>..a post that gets shared to Hacker News..</b></dt>
+<dd>It would be possible for someone to send a webmention to your site, where the <code>source</code> is Hacker News.
+    Each 'unique' URL can be send.</dd>
+<dt><b>Surely not all mentions are worth adding to your site</b></dt>
+<dd>Probably. There's quite a few ways for abuse, and the onus of moderation falls on the receiving site.</dd>
+<dt><b>Is the benefit that a post can be replied to from the fediverse?</b></dt>
+<dd>So this is not 100% part of webmentions, but related. With a service such as <a
+        href="https://fed.brid.gy/">fed.brid.gy</a> you can turn your site into a fediverse-compatible 'user'.
+    <small>(Also uses Microformats 2)</small></dd>
+
+<p>
+    Personally I'm using <a href="https://webmention.io">webmention.io</a> as my 3rd-party endpoint
+    and <a href="https://github.com/PlaidWeb/webmention.js/">PlaidWeb/webmention.js</a> code to display them on my site.
+</p>

@@ -1,0 +1,25 @@
+{
+    "type": "post",
+    "title": "Song of the Year: 2024 Edition",
+    "summary": "I've been 'Loving' songs in my Last.fm account for years, including 2024, and I'd figure I'd go through this year's list and pick the 'winner' for Song Of The Year 2024!",
+    "content": "/posts/2024/song-of-the-year-2024.html",
+    "image": "https://img.youtube.com/vi/uh8OWsszFjE/maxresdefault.jpg",
+    "publishedAt": "2024-12-22T01:00:00.4352088+01:00",
+    "slug": "2024/song-of-the-year-2024",
+    "permalink": "/posts/song-of-the-year-2024",
+    "tags": [
+        "music",
+        "MelodicHardcore",
+        "PopPunk",
+        "Metalcore",
+        "Hardcore",
+        "SongOfTheYear",
+        "SOTY"
+    ],
+    "syndication": [
+        {
+            "type": "fediverse",
+            "url": "https://todon.nl/@gerben/113709569623500647"
+        }
+    ]
+}

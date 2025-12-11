@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "summary": "A fluffy feather resting in the grass.",
+  "content": "/kd/photos/PXL_20240831_134738177.jpg",
+  "publishedAt": "2024-08-31T13:47:00Z",
+  "slug": "2024/924d77657d0b86300b06508f61e074fe",
+  "permalink": "/photos/924d77657d0b86300b06508f61e074fe",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/i/web/post/778737317359941102"
+    }
+  ],
+  "geo": {
+    "latitude": 52.0379806,
+    "longitude": 5.7578861
+  },
+  "tags": [
+    "Feather",
+    "Nature"
+  ]
+}

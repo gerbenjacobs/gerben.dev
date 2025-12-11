@@ -1,0 +1,18 @@
+{
+  "type": "photo",
+  "title": "Sint-Jansberg at Plasmolen, Netherlands",
+  "content": "/kd/photos/flickr/sint-jansberg-at-plasmolen-netherlands_20604259413_o.jpg",
+  "publishedAt": "2015-04-27T15:13:07Z",
+  "slug": "2015/5a94af97ff3001225a0b2fb14af91790",
+  "permalink": "/photos/5a94af97ff3001225a0b2fb14af91790",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/20604259413/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.742522,
+    "longitude": 5.919399
+  }
+}

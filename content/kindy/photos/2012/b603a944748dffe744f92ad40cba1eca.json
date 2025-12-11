@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "P1020229",
+  "content": "/kd/photos/flickr/p1020229_7683706620_o.jpg",
+  "publishedAt": "2012-07-25T12:31:17Z",
+  "slug": "2012/b603a944748dffe744f92ad40cba1eca",
+  "permalink": "/photos/b603a944748dffe744f92ad40cba1eca",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683706620/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.721454,
+    "longitude": -4.415881
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Featured"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "P1020300",
+  "content": "/kd/photos/flickr/p1020300_7683833464_o.jpg",
+  "publishedAt": "2012-07-25T13:34:50Z",
+  "slug": "2012/1a3ab869225b2cb4cf3b4f7a635b34d1",
+  "permalink": "/photos/1a3ab869225b2cb4cf3b4f7a635b34d1",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683833464/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.721454,
+    "longitude": -4.415881
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Harbour"
+  ]
+}

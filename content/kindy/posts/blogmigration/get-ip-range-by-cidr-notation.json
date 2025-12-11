@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "Get IP range by CIDR notation",
+    "summary": "Calculate the lowest and highest IP in a range by giving a (incomplete) CIDR notation string in PHP",
+    "content": "/posts/blogmigration/get-ip-range-by-cidr-notation.html",
+    "image": "/kd/images/screenshot_iprange.png",
+    "publishedAt": "2012-11-21T12:00:00+01:00",
+    "slug": "blogmigration/get-ip-range-by-cidr-notation",
+    "permalink": "/posts/get-ip-range-by-cidr-notation",
+    "tags": [
+        "tech",
+        "php",
+        "BlogMigration"
+    ]
+}

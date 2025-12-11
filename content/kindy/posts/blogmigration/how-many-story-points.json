@@ -1,0 +1,15 @@
+{
+    "type": "post",
+    "title": "How many points would you give this story?",
+    "summary": "I finished what I thought would be a small story the other day. A blogpost about the dangers of pokering story points.",
+    "content": "/posts/blogmigration/how-many-story-points.html",
+    "image": "/kd/gj/2018/form_birthday.png",
+    "publishedAt": "2018-01-05T18:00:00+02:00",
+    "slug": "blogmigration/how-many-story-points",
+    "permalink": "/posts/how-many-story-points",
+    "tags": [
+        "tech",
+        "agile",
+        "BlogMigration"
+    ]
+}

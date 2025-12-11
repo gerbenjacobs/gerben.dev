@@ -4,11 +4,12 @@ import (
 	"html/template"
 	"log/slog"
 	"net/http"
-	"path"
+	"slices"
+	"sort"
 	"strconv"
-	"strings"
 	"time"
 
+	"github.com/dustin/go-humanize"
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 )
@@ -29,16 +30,34 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 	}
 	// get photos
 	kindyType = local.KindyTypePhoto
-	photos, err := internal.GetKindyCacheByType(kindyType)
+	photosUnfiltered, err := internal.GetKindyCacheByType(kindyType)
 	if err != nil {
 		slog.Error("failed to load entries", "type", kindyType, "error", err)
 		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
+	// filter out videos from photos
+	var photos []local.Kindy
+	for _, photo := range photosUnfiltered {
+		if !photo.IsVideo() {
+			photos = append(photos, photo)
+		}
+	}
 	// get timeline entries
 	entries := internal.GetTimelineData(time.Now(), nil, true, true, true, true)
 
+	// get listening info
+	feed, err := internal.GetListeningData(false)
+	if err != nil {
+		slog.Error("failed to load songs", "error", err)
+	}
+
 	author, _ := getAuthor() // goddamn, what a hack..
+	type song struct {
+		Title      string
+		PlayedAt   string
+		AlbumCover string
+	}
 	type pageData struct {
 		Metadata internal.Metadata
 		Author   *local.KindyAuthor
@@ -46,7 +65,27 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Posts    []local.Kindy
 		Photos   []local.Kindy
 		Entries  []local.Kindy
+		Songs    []song
 	}
+	var songs []song
+	if feed != nil {
+		for _, item := range feed.Items {
+			parsedTime, err := time.Parse(time.RFC1123, item.Published)
+			if err != nil {
+				parsedTime = time.Now()
+			}
+			art := ""
+			if len(item.Enclosures) > 0 {
+				art = item.Enclosures[0].URL
+			}
+			songs = append(songs, song{
+				Title:      item.Title,
+				PlayedAt:   humanize.Time(parsedTime),
+				AlbumCover: art,
+			})
+		}
+	}
+
 	data := pageData{
 		Metadata: internal.Metadata{
 			Env:         Env,
@@ -60,6 +99,9 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Posts:    kindyLimit(posts, 3),
 		Photos:   kindyLimit(photos, 12),
 		Entries:  kindyLimit(entries, 10),
+	}
+	if len(songs) >= 3 {
+		data.Songs = songs[:3]
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
@@ -98,69 +140,156 @@ func (h *Handler) posts(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (h *Handler) photos(w http.ResponseWriter, r *http.Request) {
-	pageFile := "static/views/photos.gohtml"
-	funcs := map[string]any{
-		"hasSuffix": func(s template.HTML, suffix string) bool {
-			return strings.HasSuffix(string(s), suffix)
-		},
-	}
-	t := template.Must(template.New(path.Base(layoutFiles[0])).
-		Funcs(funcs).
-		ParseFiles(append(layoutFiles, pageFile, "static/views/partials/photos-paginated.gohtml")...))
+func (h *Handler) photos(featured bool) func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		pageFile := "static/views/photos.gohtml"
+		t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/photos-paginated.gohtml")...))
 
-	// get posts
-	kindyType := local.KindyTypePhoto
-	entries, err := internal.GetKindyCacheByType(kindyType)
-	if err != nil {
-		slog.Error("failed to load entries", "type", kindyType, "error", err)
-		http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
-		return
-	}
-	totalEntries := len(entries)
+		// get photos
+		kindyType := local.KindyTypePhoto
+		entries, err := internal.GetKindyCacheByType(kindyType)
+		if err != nil {
+			slog.Error("failed to load entries", "type", kindyType, "error", err)
+			http.Error(w, "failed to load entries: "+err.Error(), http.StatusInternalServerError)
+			return
+		}
+		// filter featured photos if needed
+		if featured {
+			var featuredEntries []local.Kindy
+			for _, entry := range entries {
+				if slices.Contains(entry.Tags, "featured") || slices.Contains(entry.Tags, "Featured") {
+					featuredEntries = append(featuredEntries, entry)
+				}
+			}
+			entries = featuredEntries
+		}
+		totalEntries := len(entries)
 
-	// paginate
-	page := 0
-	if r.URL.Query().Get("page") != "" {
-		page, _ = strconv.Atoi(r.URL.Query().Get("page"))
+		// paginate
+		page := 0
+		if r.URL.Query().Get("page") != "" {
+			page, _ = strconv.Atoi(r.URL.Query().Get("page"))
+		}
+		nextPage := page + 1
+		lastEntry := nextPage * PhotosPerPage
+		if nextPage*PhotosPerPage >= totalEntries {
+			nextPage = 0
+			lastEntry = totalEntries
+		}
+		entries = entries[page*PhotosPerPage : lastEntry]
+
+		type pageData struct {
+			Metadata     internal.Metadata
+			TotalEntries int
+			NextPage     int
+			Entries      []local.Kindy
+			Featured     bool
+		}
+		data := pageData{
+			Metadata: internal.Metadata{
+				Env:         Env,
+				Title:       "Photos",
+				Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
+				Permalink:   "/photos/",
+				SourceLink:  codeSourcePath + pageFile,
+			},
+			NextPage:     nextPage,
+			TotalEntries: totalEntries,
+			Entries:      entries,
+			Featured:     featured,
+		}
+		if len(entries) > 0 {
+			data.Metadata.Image = string(entries[0].Content) // use latest photo as og:image
+		}
+
+		if featured {
+			data.Metadata.Title = "Featured Photos"
+			data.Metadata.Description = "Since I've gathered quite a collection of photos over the years, here are some of my favorite photos."
+			data.Metadata.Permalink = "/photos/featured"
+		}
+
+		// if HTMX call, we return partials only
+		isHX := r.Header.Get("HX-Request") //r.URL.Query().Get("HX-Request") to test
+		if isHX == "true" {
+			if err := t.ExecuteTemplate(w, "photos-paginated", data); err != nil {
+				http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+			}
+			return
+		}
+
+		if err := t.Execute(w, data); err != nil {
+			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+		}
 	}
-	nextPage := page + 1
-	lastEntry := nextPage * PhotosPerPage
-	if nextPage*PhotosPerPage >= totalEntries {
-		nextPage = 0
-		lastEntry = totalEntries
+}
+
+func (h *Handler) previously(w http.ResponseWriter, r *http.Request) {
+	pageFile := "static/views/previously.gohtml"
+	t := template.Must(template.ParseFiles(append(layoutFiles, pageFile, "static/views/partials/timeline-paginated.gohtml")...))
+
+	// get all entries
+	var entries []local.Kindy
+	for _, kindyType := range []local.KindyType{
+		local.KindyTypePost,
+		local.KindyTypePhoto,
+		local.KindyTypeNote,
+		local.KindyTypeRepost,
+		local.KindyTypeReplies,
+		local.KindyTypeLike,
+	} {
+		kindyEntries, _ := internal.GetKindyCacheByType(kindyType)
+		entries = append(entries, kindyEntries...)
 	}
-	entries = entries[page*PhotosPerPage : lastEntry]
+	// filter entries from this day in history, plus 8 hours on each side
+	today := time.Now()
+	if r.URL.Query().Get("date") != "" {
+		parse, err := time.Parse("2006-01-02", r.URL.Query().Get("date"))
+		if err != nil {
+			slog.Warn("failed to parse date", "date", r.URL.Query().Get("date"), "error", err)
+		} else {
+			today = parse
+		}
+	}
+	var filteredEntries []local.Kindy
+	for _, entry := range entries {
+		if entry.PublishedAt.Month() == today.Month() && entry.PublishedAt.Day() == today.Day() && entry.PublishedAt.Year() != today.Year() {
+			filteredEntries = append(filteredEntries, entry)
+			continue
+		}
+	}
+	entries = filteredEntries
+
+	// sort entries by published date descending
+	sort.Slice(entries, func(i, j int) bool {
+		return entries[i].PublishedAt.After(entries[j].PublishedAt)
+	})
 
 	type pageData struct {
-		Metadata     internal.Metadata
-		TotalEntries int
-		NextPage     int
-		Entries      []local.Kindy
+		Metadata internal.Metadata
+		Author   *local.KindyAuthor
+		Entries  []local.Kindy
+		NewSince string
+	}
+	author, _ := getAuthor()
+	image := ""
+	for _, entry := range entries {
+		if entry.GetImage() != "" {
+			image = entry.GetImage()
+			break
+		}
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
 			Env:         Env,
-			Title:       "Photos",
-			Description: "My photos some by digital camera, others by phone, some pictures from Instagram and some because I just feel like it!",
-			Permalink:   "/photos/",
+			Title:       "Previously on...",
+			Description: "A look back at what I was posting on this day in previous years.",
+			Permalink:   "/previously",
 			SourceLink:  codeSourcePath + pageFile,
-			Image:       string(entries[0].Content), // use latest photo as og:image
+			Image:       image,
 		},
-		NextPage:     nextPage,
-		TotalEntries: totalEntries,
-		Entries:      entries,
+		Author:  author,
+		Entries: entries,
 	}
-
-	// if HTMX call, we return partials only
-	isHX := r.Header.Get("HX-Request") //r.URL.Query().Get("HX-Request") to test
-	if isHX == "true" {
-		if err := t.ExecuteTemplate(w, "photos-paginated", data); err != nil {
-			http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
-		}
-		return
-	}
-
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}

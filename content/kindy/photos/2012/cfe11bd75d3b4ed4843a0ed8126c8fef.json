@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Alcazaba",
+  "content": "/kd/photos/flickr/alcazaba_7683907100_o.jpg",
+  "publishedAt": "2012-07-25T12:30:57Z",
+  "slug": "2012/cfe11bd75d3b4ed4843a0ed8126c8fef",
+  "permalink": "/photos/cfe11bd75d3b4ed4843a0ed8126c8fef",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7683907100/"
+    }
+  ],
+  "geo": {
+    "latitude": 36.721454,
+    "longitude": -4.415881
+  },
+  "tags": [
+    "Spain",
+    "Malaga",
+    "Alcazaba"
+  ]
+}

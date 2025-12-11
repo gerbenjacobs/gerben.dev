@@ -1,0 +1,13 @@
+{
+  "type": "note",
+  "content": "\u003cp\u003eI added some of the infrastructure resources to my repo, this includes the configuration for Systemd and Nginx, both are used to run my website gerben.dev.\u003c/p\u003e\r\n\r\n\u003cp\u003eCreated a readme for that folder with some more information and a diagram. It's not a full on guide, but for anyone on the \u003ca href=\"/tags/IndieWeb\" class=\"p-category\"\u003e#IndieWeb\u003c/a\u003e who wants to learn more, you can use it as a learning resource.\u003c/p\u003e\r\n\r\n\u003cp\u003eYou can find it on \u003ca href=\"https://github.com/gerbenjacobs/gerben.dev/tree/master/static/infra\"\u003eGitHub\u003c/a\u003e or \u003ca href=\"https://codeberg.org/gerbenjacobs/gerben.dev/src/branch/master/static/infra\"\u003eCodeberg\u003c/a\u003e.\u003c/p\u003e\r\n\r\n\u003cfigure\u003e\u003cimg src=\"/kd/images/gerben.dev.infra.png\" class=\"u-photo\" alt=\"Diagram of gerben.dev infrastructure: Let's Encrypt, Cloudflare, to a VPS with Nginx and Systemd and a Go service that hosts it\"\u003e\u003c/figure\u003e",
+  "publishedAt": "2025-05-15T15:28:00.598334+02:00",
+  "slug": "2025/1b0ed6d88d5470c3fa8c3adbe3c91325",
+  "permalink": "/notes/1b0ed6d88d5470c3fa8c3adbe3c91325",
+  "tags": [
+    "Infra",
+    "Systemd",
+    "Nginx",
+    "IndieWeb"
+  ]
+}

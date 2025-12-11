@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Larmachalm",
+  "content": "/kd/photos/flickr/larmachalm_5487008592_o.jpg",
+  "publishedAt": "2011-02-26T12:16:19Z",
+  "slug": "2011/1ee904533374254fa6eab2f7eaee3792",
+  "permalink": "/photos/1ee904533374254fa6eab2f7eaee3792",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5487008592/"
+    }
+  ],
+  "geo": {
+    "latitude": 47.25164,
+    "longitude": 12.100684
+  },
+  "tags": [
+    "Austria",
+    "Königsleiten",
+    "Larmachalm"
+  ]
+}

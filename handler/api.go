@@ -8,6 +8,8 @@ import (
 	"html/template"
 	"log/slog"
 	"net/http"
+	"net/url"
+	"strings"
 
 	app "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -19,7 +21,10 @@ var opengraphCache = ".cache/opengraph/"
 var opengraphTemplate = `
 <blockquote>
 	<div>
-		<p><img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy"> <b>{{.Title}}</b></p>
+		<p>
+			{{ if .Favicon.URL }}<img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy" onerror="this.style.display='none';">{{ end }}
+			<b>{{.Title}}</b>
+		</p>
 		<p>{{.DescriptionHTML}}</p>
 	</div>
 	{{range .Image}}
@@ -36,18 +41,18 @@ func init() {
 }
 
 func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
-	url := r.URL.Query().Get("url")
-	if url == "" {
+	u := r.URL.Query().Get("url")
+	if u == "" {
 		http.Error(w, "missing url parameter", http.StatusBadRequest)
 		return
 	}
 
-	cacheFile := fmt.Sprintf("%s%x.json", opengraphCache, md5.Sum([]byte(url)))
+	cacheFile := fmt.Sprintf("%s%x.json", opengraphCache, md5.Sum([]byte(u)))
 	b, err := internal.GetCache(cacheFile, 0)
 	if err != nil {
-		slog.Info("downloading new opengraph data", "url", url)
+		slog.Info("downloading new opengraph data", "url", u)
 		// fetch fresh data
-		ogp, err := internal.Opengraph(url)
+		ogp, err := internal.Opengraph(u)
 		if err != nil {
 			http.Error(w, fmt.Sprintf("failed to fetch opengraph data: %v", err), http.StatusInternalServerError)
 			return
@@ -81,6 +86,15 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// double check favicon for absolute URL
+	if strings.HasPrefix(og.Favicon.URL, "/") || strings.HasPrefix(og.Favicon.URL, ":") {
+		base, err := url.Parse(u)
+		if err != nil {
+			slog.Warn("failed to parse base URL for favicon", "url", u, "err", err)
+		}
+		og.Favicon.URL = base.Scheme + "://" + base.Host + og.Favicon.URL
+	}
+
 	data := struct {
 		opengraph.OpenGraph
 		DescriptionHTML template.HTML
@@ -90,5 +104,120 @@ func (h *Handler) apiOpenGraph(w http.ResponseWriter, r *http.Request) {
 	}
 	if err := tmpl.Execute(w, data); err != nil {
 		http.Error(w, fmt.Sprintf("failed to execute template: %v", err), http.StatusInternalServerError)
+	}
+}
+
+func (h *Handler) apiNextPrevious(w http.ResponseWriter, r *http.Request) {
+	// get slug from post
+	type requestData struct {
+		Type string `json:"type"`
+		Slug string `json:"slug"`
+	}
+	var req requestData
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		slog.Error("failed to decode request body", "err", err)
+		http.Error(w, "failed to decode request body", http.StatusBadRequest)
+		return
+	}
+
+	// validation
+	if req.Slug == "" {
+		http.Error(w, "missing slug in request body", http.StatusBadRequest)
+		return
+	}
+	typedType := app.KindyType(req.Type)
+	if !typedType.IsValid() {
+		http.Error(w, "invalid type in request body", http.StatusBadRequest)
+		return
+	}
+
+	prev, next, err := internal.GetKindyNeighbours(typedType, req.Slug)
+	if err != nil {
+		slog.Error("failed to get kindy neighbours", "err", err)
+		http.Error(w, "failed to get neighbours", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Previous string `json:"previous,omitempty"`
+		Next     string `json:"next,omitempty"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Previous: prev,
+		Next:     next,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
+	}
+}
+
+func (h *Handler) apiThumbsUp(w http.ResponseWriter, r *http.Request) {
+	// get permalink from post body
+	type requestData struct {
+		Permalink string `json:"permalink"`
+	}
+	var req requestData
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		slog.Error("failed to decode request body", "err", err)
+		http.Error(w, "failed to decode request body", http.StatusBadRequest)
+		return
+	}
+	if req.Permalink == "" {
+		http.Error(w, "missing permalink in request body", http.StatusBadRequest)
+		return
+	}
+	if app.URLToKindyType(req.Permalink) == app.KindyTypeInvalid {
+		http.Error(w, "invalid permalink provided", http.StatusBadRequest)
+		return
+	}
+
+	// get real IP from CF-Connecting-IP
+	ip := r.Header.Get("CF-Connecting-IP")
+	if ip == "" {
+		// fallback to remote address
+		ip = r.RemoteAddr
+	}
+	count, err := internal.ToggleThumbsUp(req.Permalink, ip)
+	if err != nil {
+		slog.Error("failed to increment thumbs up", "err", err)
+		http.Error(w, "failed to increment thumbs up", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Count int `json:"count"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Count: count,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
+	}
+
+}
+
+func (h *Handler) apiThumbsUpCount(w http.ResponseWriter, r *http.Request) {
+	p := r.URL.Query().Get("permalink")
+	if p == "" {
+		http.Error(w, "missing permalink parameter", http.StatusBadRequest)
+		return
+	}
+	if app.URLToKindyType(p) == app.KindyTypeInvalid {
+		http.Error(w, "invalid permalink provided", http.StatusBadRequest)
+		return
+	}
+
+	count, err := internal.GetThumbsUpCount(p)
+	if err != nil {
+		slog.Error("failed to get thumbs up count", "err", err)
+		http.Error(w, "failed to get thumbs up count", http.StatusInternalServerError)
+		return
+	}
+
+	type responseData struct {
+		Count int `json:"count"`
+	}
+	if err := json.NewEncoder(w).Encode(responseData{
+		Count: count,
+	}); err != nil {
+		slog.Error("failed to encode response data", "err", err)
 	}
 }

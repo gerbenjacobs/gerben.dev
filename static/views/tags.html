@@ -35,6 +35,11 @@
                         https://ecosia.org/search?q=site:gerben.dev {{.Tag}}
                     </a>
                 </li>
+                <li>
+                    🏷️ <a href="https://octothorp.es/explore?what=pages&o={{.Tag}}&match=fuzzy&limit=50">
+                        https://octothorp.es/~/{{.Tag}}
+                    </a>
+                </li>
             </ul>
         </div>
 </div>
@@ -43,7 +48,7 @@
     <div class="row padding">
         <h2>All tags</h2>
         {{ range $t, $d := .AllTags }}
-        <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }} ({{$d.Count}}){{ end }}</a>
+        <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }}&nbsp;({{$d.Count}}){{ end }}</a>
         {{- end }}
     </div>
 </div>

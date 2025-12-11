@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/resize"
@@ -31,7 +32,13 @@ func HandleUploadedFile(file multipart.File, header *multipart.FileHeader) (*os.
 		img = resize.Resize(MaxImageWidth, 0, img, resize.Lanczos3)
 	}
 
-	dst, err := os.Create(local.KindyContentPath + "data/photos/" + header.Filename)
+	// create folder if not exists
+	yearFolder := local.KindyContentPath + "data/photos/" + fmt.Sprintf("%d/", time.Now().Year())
+	err = os.MkdirAll(yearFolder, os.ModePerm)
+	if err != nil {
+		return nil, err
+	}
+	dst, err := os.Create(yearFolder + header.Filename)
 	if err != nil {
 		return nil, err
 	}

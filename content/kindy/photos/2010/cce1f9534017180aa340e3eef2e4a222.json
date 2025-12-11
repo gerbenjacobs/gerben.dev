@@ -1,0 +1,24 @@
+{
+  "type": "photo",
+  "title": "The harbour of Hoek van Holland",
+  "content": "/kd/photos/flickr/the-harbour-of-hoek-van-holland_5157847794_o.jpg",
+  "publishedAt": "2010-11-07T16:31:54Z",
+  "slug": "2010/cce1f9534017180aa340e3eef2e4a222",
+  "permalink": "/photos/cce1f9534017180aa340e3eef2e4a222",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157847794/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  },
+  "tags": [
+    "Netherlands",
+    "Hoek van Holland",
+    "Harbour",
+    "Featured"
+  ]
+}

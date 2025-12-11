@@ -5,10 +5,14 @@
             <header class="padding">
                 <h1>{{ .Metadata.Title }} ({{ .TotalEntries }})</h1>
                 <p>{{ .Metadata.Description }}</p>
+                {{ if not .Featured }}
+                <a href="/photos/featured" class="btn">⭐ Show featured photos only</a>
+                {{ end }}
             </header>
         </div>
     </div>
-    <div class="photogrid">
+    <div class="photogrid h-feed">
+        <p class="p-name" hidden="hidden"><a class="u-url" href="/photos">Photos | gerben.dev</a></p>
         {{ template "photos-paginated" $ }}
     </div>
 </div>

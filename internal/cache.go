@@ -32,23 +32,26 @@ var (
 	KindyNotesCache   = ".cache/kindy_notes.json"
 	KindyRepliesCache = ".cache/kindy_replies.json"
 	TimelineRssCache  = ".cache/timeline_rss.xml"
+	PostsRssCache     = ".cache/posts_rss.xml"
+	PhotosRssCache    = ".cache/photos_rss.xml"
 	SitemapXMLCache   = ".cache/sitemap.xml"
+	ThumbsUpCache     = ".cache/thumbsup.json"
 )
 
 func GetCache(filePath string, expiry time.Duration) ([]byte, error) {
 	info, err := os.Stat(filePath)
 	switch {
-	// if no expiry, skip switch, always fetch from cache
-	case expiry == 0:
 	case os.IsNotExist(err):
 		_, err := os.Create(filePath)
 		if err != nil {
 			return nil, err
 		}
 		return nil, ErrCacheCreated
+	// if no expiry, skip switch, always fetch from cache
+	case expiry == 0:
 	case err != nil:
 		return nil, err
-	case info.ModTime().Before(time.Now().Add(-10 * expiry)):
+	case info.ModTime().Before(time.Now().Add(-expiry)):
 		return nil, ErrCacheExpired
 	}
 
@@ -86,7 +89,7 @@ func CreateCaches() error {
 		return fmt.Errorf("failed to create tag cache: %w", err)
 	}
 
-	// timeline rss cache
+	// timeline rss creation and cache
 	b, err := CreateTimelineXML()
 	if err != nil {
 		return fmt.Errorf("failed to create timeline rss: %w", err)
@@ -95,7 +98,25 @@ func CreateCaches() error {
 		return fmt.Errorf("failed to set timeline rss cache: %w", err)
 	}
 
-	// sitemap cache
+	// posts rss creation and cache
+	b, err = CreatePostsXML()
+	if err != nil {
+		return fmt.Errorf("failed to create posts rss: %w", err)
+	}
+	if err := SetCache(PostsRssCache, b); err != nil {
+		return fmt.Errorf("failed to set posts rss cache: %w", err)
+	}
+
+	// Photos rss creation and cache
+	b, err = CreatePhotosXML()
+	if err != nil {
+		return fmt.Errorf("failed to create photos rss: %w", err)
+	}
+	if err := SetCache(PhotosRssCache, b); err != nil {
+		return fmt.Errorf("failed to set photos rss cache: %w", err)
+	}
+
+	// sitemap creation and cache
 	b, err = CreateSitemapXML()
 	if err != nil {
 		return fmt.Errorf("failed to create sitemap xml: %w", err)

@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Tiergarten and park in Kleve, Germany",
+  "content": "/kd/photos/flickr/tiergarten-and-park-in-kleve-germany_21233283761_o.jpg",
+  "publishedAt": "2015-04-18T15:01:37Z",
+  "slug": "2015/6950f4aa5cc67d4bb51efdca7f61fa4e",
+  "permalink": "/photos/6950f4aa5cc67d4bb51efdca7f61fa4e",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/21233283761/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.795631,
+    "longitude": 6.124277
+  },
+  "tags": [
+    "Kleve",
+    "Germany"
+  ]
+}

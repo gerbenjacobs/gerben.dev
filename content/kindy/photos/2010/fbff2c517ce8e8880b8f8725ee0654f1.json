@@ -1,0 +1,26 @@
+{
+  "type": "photo",
+  "title": "The Hague on the horizon",
+  "content": "/kd/photos/flickr/the-hague-on-the-horizon_5157842578_o.jpg",
+  "publishedAt": "2010-11-07T16:12:28Z",
+  "slug": "2010/fbff2c517ce8e8880b8f8725ee0654f1",
+  "permalink": "/photos/fbff2c517ce8e8880b8f8725ee0654f1",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5157842578/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.986677,
+    "longitude": 4.101676
+  },
+  "tags": [
+    "Netherlands",
+    "Hoek van Holland",
+    "Beach",
+    "Skyline",
+    "Den Haag",
+    "Featured"
+  ]
+}

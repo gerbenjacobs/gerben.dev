@@ -13,6 +13,10 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/handler"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/lmittmann/tint"
+	"go.opentelemetry.io/contrib/bridges/otelslog"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+	"go.opentelemetry.io/otel/log/global"
+	"go.opentelemetry.io/otel/trace"
 )
 
 func main() {
@@ -23,8 +27,14 @@ func main() {
 	// load configuration
 	c := internal.NewConfig()
 
+	// load opentelemetry
+	otelShutdown, err := internal.SetupOTelSDK(context.Background(), c.Svc.Env, "gerben.dev", "v1.0.0")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	// set output logging
-	logger := slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
+	logger := otelslog.NewLogger("server", otelslog.WithLoggerProvider(global.GetLoggerProvider()))
 	if c.Svc.Env == "dev" {
 		logger = slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: slog.LevelDebug}))
 	}
@@ -41,11 +51,12 @@ func main() {
 
 	// set up the route handler and server
 	app := handler.New(c.Svc.Env, dependencies)
+	appHandler := otelhttp.NewHandler(app, "server", otelhttp.WithSpanOptions(trace.WithSpanKind(trace.SpanKindServer)))
 	srv := &http.Server{
 		Addr:         c.Svc.Address,
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
-		Handler:      app,
+		Handler:      appHandler,
 	}
 
 	// start running the server
@@ -60,6 +71,10 @@ func main() {
 	<-shutdown
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
+	if err := otelShutdown(ctx); err != nil {
+		slog.Error("Failed to shutdown OpenTelemetry", "error", err)
+		os.Exit(1)
+	}
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Fatalf("Server shutdown failed: %v", err)
 	}

@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Fields at Groesbeek, Netherlands",
+  "content": "/kd/photos/flickr/fields-at-groesbeek-netherlands_20604258233_o.jpg",
+  "publishedAt": "2015-04-27T16:03:23Z",
+  "slug": "2015/2e36dc12fc68bab5bd3c17f9ca3c3973",
+  "permalink": "/photos/2e36dc12fc68bab5bd3c17f9ca3c3973",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/20604258233/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.748335,
+    "longitude": 5.925225
+  },
+  "tags": [
+    "Netherlands",
+    "Groesbeek",
+    "Cherry"
+  ]
+}

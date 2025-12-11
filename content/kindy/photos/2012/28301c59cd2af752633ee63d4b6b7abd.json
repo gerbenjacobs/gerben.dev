@@ -1,0 +1,23 @@
+{
+  "type": "photo",
+  "title": "Dutch pride",
+  "content": "/kd/photos/flickr/dutch-pride_7087545495_o.jpg",
+  "publishedAt": "2012-04-08T12:02:30Z",
+  "slug": "2012/28301c59cd2af752633ee63d4b6b7abd",
+  "permalink": "/photos/28301c59cd2af752633ee63d4b6b7abd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/7087545495/"
+    }
+  ],
+  "geo": {
+    "latitude": 53.036361,
+    "longitude": 5.789537
+  },
+  "tags": [
+    "terherne",
+    "friesland",
+    "sneekermeer"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Heading west",
+  "summary": "We don't see planes flying low where I live.. So they're always just tiny white dots, but not if you have 18x optical zoom!",
+  "content": "/kd/photos/flickr/heading-west_5014818877_o.jpg",
+  "publishedAt": "2010-09-22T19:07:59Z",
+  "slug": "2010/869a7174d1bbdfafb7c08dc2f9bddecf",
+  "permalink": "/photos/869a7174d1bbdfafb7c08dc2f9bddecf",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5014818877/"
+    }
+  ],
+  "geo": {
+    "latitude": 51.980703,
+    "longitude": 5.636844
+  },
+  "tags": [
+    "airplane"
+  ]
+}

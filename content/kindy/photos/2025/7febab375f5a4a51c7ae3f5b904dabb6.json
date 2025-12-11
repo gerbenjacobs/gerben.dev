@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "summary": "Waterlily with raindrops 🪷",
+  "content": "/kd/photos/PXL_20250610_121203033.jpg",
+  "publishedAt": "2025-06-10T12:12:00Z",
+  "slug": "2025/7febab375f5a4a51c7ae3f5b904dabb6",
+  "permalink": "/photos/7febab375f5a4a51c7ae3f5b904dabb6",
+  "syndication": [
+    {
+      "type": "pixelfed",
+      "url": "https://pixelfed.social/p/gerben/890337777085196486"
+    }
+  ],
+  "geo": {
+    "latitude": 52.1733194,
+    "longitude": 5.8192139
+  },
+  "tags": [
+    "Waterlily",
+    "Featured"
+  ]
+}

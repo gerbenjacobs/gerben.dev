@@ -1,0 +1,22 @@
+{
+  "type": "photo",
+  "title": "Ambulance and cars on a street in New York",
+  "content": "/kd/photos/flickr/ambulance-and-cars-on-a-street-in-new-york_5711269518_o.jpg",
+  "publishedAt": "2011-05-11T22:15:37Z",
+  "slug": "2011/ffbc398db4d59e2646c7b94005860dfd",
+  "permalink": "/photos/ffbc398db4d59e2646c7b94005860dfd",
+  "syndication": [
+    {
+      "type": "flickr",
+      "url": "https://www.flickr.com/photos/theonewithout/5711269518/"
+    }
+  ],
+  "geo": {
+    "latitude": 40.721762,
+    "longitude": -73.998641
+  },
+  "tags": [
+    "UnitedStates",
+    "NYC"
+  ]
+}

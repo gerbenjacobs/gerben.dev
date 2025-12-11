@@ -2,12 +2,11 @@ package handler
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"log/slog"
 	"net/http"
 	"os"
-	"path"
-	"strings"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
@@ -16,14 +15,39 @@ import (
 )
 
 func Kindy(w http.ResponseWriter, r *http.Request) {
-	funcs := map[string]any{
-		"hasSuffix": func(s template.HTML, suffix string) bool {
-			return strings.HasSuffix(string(s), suffix)
-		},
+	redirects := map[string]string{
+		"/posts/20241128-bringing-the-indieweb": "/posts/bringing-the-indieweb",
+		"/posts/20241204-instagram-archive":     "/posts/instagram-archive",
 	}
-	t := template.Must(template.New(path.Base(layoutFiles[0])).Funcs(funcs).ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
+	for from, to := range redirects {
+		if r.URL.Path == from {
+			http.Redirect(w, r, to, http.StatusMovedPermanently)
+			return
+		}
+	}
 
 	kindyFile := "content/kindy" + r.URL.Path + ".json"
+
+	_, err := os.Stat(kindyFile)
+	// Anything can live in subfolders, so we need to find them by permalink
+	// and use the slug to find the json file
+	if os.IsNotExist(err) {
+		// determine type by url path
+		kt := local.URLToKindyType(r.URL.Path)
+		entities, err := internal.GetKindyCacheByType(kt)
+		if err != nil {
+			slog.Error("failed to get kindy", "error", err)
+			// in the rare case that this happens, just ignore
+		} else {
+			for _, entity := range entities {
+				if r.URL.Path == entity.Permalink {
+					kindyFile = "content/kindy/" + kt.URL() + "/" + entity.Slug + ".json"
+					break
+				}
+			}
+		}
+	}
+
 	b, err := os.ReadFile(kindyFile)
 	if err != nil {
 		slog.Error("failed to read file", "file", r.URL.Path, "error", err)
@@ -49,30 +73,18 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// if our content is inside another file, load it
-	// for HTML content
-	if string(kind.Content) == r.URL.Path+".html" {
-		b, err = os.ReadFile("content/kindy" + string(kind.Content))
-		if err != nil {
-			slog.Error("failed to read content file", "file", r.URL.Path, "content", kind.Content, "error", err)
-			http.Error(w, "entry not found", http.StatusNotFound)
-			return
-		}
-		kind.Content = template.HTML(b)
+	content, err := internal.GetPostContent(string(kind.Content))
+	if err != nil {
+		slog.Error("failed to get post content", "file", r.URL.Path, "error", err)
+		http.Error(w, "failed to load content", http.StatusInternalServerError)
+		return
 	}
-	// for markdown content
-	if strings.HasSuffix(string(kind.Content), ".md") {
-		b, err = os.ReadFile("content/kindy" + string(kind.Content))
-		if err != nil {
-			slog.Error("failed to read content file", "file", r.URL.Path, "content", kind.Content, "error", err)
-			http.Error(w, "entry not found", http.StatusNotFound)
-			return
-		}
-		kind.Content = template.HTML(local.MarkdownToHTML(string(b)))
-	}
+	kind.Content = content
 
 	type pageData struct {
 		Metadata internal.Metadata
 		local.Kindy
+		RawKindy string
 	}
 
 	metadata := internal.Metadata{
@@ -83,14 +95,54 @@ func Kindy(w http.ResponseWriter, r *http.Request) {
 		Kindy:       &kind,
 		SourceLink:  codeSourcePath + kindyFile,
 	}
+	if kind.Image != "" {
+		metadata.Image = kind.Image
+	}
 	if kind.Type == "photo" {
 		metadata.Image = string(kind.Content)
 	}
 	data := pageData{
 		Metadata: metadata,
 		Kindy:    kind,
+		RawKindy: string(b),
 	}
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/kindy.gohtml")...))
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func KindyUpdate(w http.ResponseWriter, r *http.Request) {
+	if Env != "dev" {
+		http.Error(w, "not allowed", http.StatusForbidden)
+		return
+	}
+	if r.Method != http.MethodPost {
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	err := r.ParseForm()
+	if err != nil {
+		http.Error(w, "failed to parse form: "+err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	t := local.KindyType(r.Form.Get("type"))
+	slug := r.Form.Get("slug")
+	rawKindy := r.Form.Get("raw")
+
+	f := fmt.Sprintf("%s%s/%s.json", local.KindyContentPath, t.URL(), slug)
+	err = os.WriteFile(f, []byte(rawKindy), 0644)
+	if err != nil {
+		http.Error(w, "failed to write file: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var kind local.Kindy
+	if err := json.Unmarshal([]byte(rawKindy), &kind); err != nil {
+		http.Error(w, "failed to unmarshal kindy: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	http.Redirect(w, r, kind.Permalink, http.StatusSeeOther)
 }

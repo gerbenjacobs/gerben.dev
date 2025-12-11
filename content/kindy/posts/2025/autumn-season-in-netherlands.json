@@ -1,0 +1,22 @@
+{
+    "type": "post",
+    "title": "The autumn season in the Netherlands",
+    "summary": "A blog for the IndieWeb Carnival theme: cycles and fluctuations. What does autumn look like in the Netherlands?",
+    "content": "/posts/2025/autumn-season-in-netherlands.html",
+    "image": "/kd/photos/flickr/dutch-pride_7087545495_o.jpg",
+    "publishedAt": "2025-11-09T13:40:00.8898405+02:00",
+    "slug": "2025/autumn-season-in-netherlands",
+    "permalink": "/posts/autumn-season-in-netherlands",
+    "tags": [
+        "Autumn",
+        "IndieWeb",
+        "IndieWebCarnival",
+        "Netherlands"
+    ],
+    "syndication": [
+        {
+            "type": "IndieNews",
+            "url": "https://news.indieweb.org/en"
+        }
+    ]
+}
