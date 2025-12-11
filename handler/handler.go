@@ -80,6 +80,10 @@ func New(env string, dependencies Dependencies) *Handler {
 		Env: Env, Permalink: "/poems", Title: "Poems", Image: "",
 		Description: "My poems, mostly from my teenage years..",
 	}))))
+	r.Handle("GET /guestbook", otelhttp.WithRouteTag("/guestbook", http.HandlerFunc(h.singlePageLayout("static/views/guestbook.html", internal.Metadata{
+		Env: Env, Permalink: "/guestbook", Title: "Guestbook", Image: "",
+		Description: "Feel free to leave a message in my guestbook!",
+	}))))
 
 	// XML/RSS feeds
 	r.Handle("GET /timeline.xml", otelhttp.WithRouteTag("/timeline.xml", http.HandlerFunc(h.timelineXML)))
