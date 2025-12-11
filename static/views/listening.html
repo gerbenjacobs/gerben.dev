@@ -66,9 +66,9 @@
             {{ $lfm := index .Extensions "lfm" }}
             {{ $album := index $lfm "album" }}
             <div class="col s12 m10 offset-m1 l8 offset-l2">
-                <div class="card-panel grey lighten-5 z-depth-1">
+                <article class="card-panel grey lighten-5 z-depth-1">
                     <div class="row valign-wrapper">
-                        <div class="col center-align m4">
+                        <div class="col center-align m4" style="float:left; margin-right: 2em;">
                             {{ range .Enclosures }}
                             <img src="{{ .URL }}" alt="{{ $title }}" class="circle responsive-img" loading="lazy">
                             {{ end }}
@@ -98,7 +98,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             {{ end }}
         </div>

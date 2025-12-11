@@ -1,11 +1,12 @@
 {{ define "timeline-paginated" }}
 {{ range .Entries }}
-<article class="kindy read-heavy h-entry">
-    <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
-    <h2 class="right" style="margin-left: 1em;"><a class="u-url" href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+<article class="kindy read-heavy h-entry overflow-auto">
+{{/*    <p class="kindy-divider">──────────๑♡⁠๑──────────</p>*/}}
+    <hgroup>
+    <h2 style="float: right;"><a class="u-url" href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
     <p>
         <a href="/" class="h-card p-author u-url">
-            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy">
+            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy" style="width: 32px; border-radius:50%;">
             <span title="{{ $.Author.Name }}" class="p-name">@gerben.dev</span>
         </a>
         {{ .Type.Emoji }}
@@ -24,6 +25,7 @@
         {{- end -}}
         {{- end }}
     </p>
+    </hgroup>
     <div class="timeline-content e-content">
         {{ if eq .Type "photo" }}
             <figure class="center-align" style="margin: 0;">

@@ -20,7 +20,8 @@ var Env string
 
 // layoutFiles are all the files required to create the site w.r.t. template/define
 var layoutFiles = []string{
-	"static/views/baseLayout.html",
+	//"static/views/baseLayout.html",
+	"static/views/v2.html",
 	"static/views/partials/navbar.html",
 	"static/views/partials/aside-hcard.html",
 	"static/views/partials/tag-preview.gohtml",
@@ -114,7 +115,6 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("POST /api/nextprevious", otelhttp.WithRouteTag("/api/nextprevious", http.HandlerFunc(h.apiNextPrevious)))
 	r.Handle("POST /api/thumbsup", otelhttp.WithRouteTag("/api/thumbsup", http.HandlerFunc(h.apiThumbsUp)))
 	r.Handle("GET /api/thumbsup/count", otelhttp.WithRouteTag("/api/thumbsup/count", http.HandlerFunc(h.apiThumbsUpCount)))
-
 
 	r.HandleFunc("GET /v2", singlePage("static/views/v2.html"))
 
