@@ -77,11 +77,11 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("GET /timeline", otelhttp.WithRouteTag("/timeline", http.HandlerFunc(h.timeline)))
 	r.Handle("GET /previously", otelhttp.WithRouteTag("/previously", http.HandlerFunc(h.previously)))
 	r.Handle("GET /poems", otelhttp.WithRouteTag("/poems", http.HandlerFunc(h.singlePageLayout("static/views/poems.html", internal.Metadata{
-		Env: Env, Permalink: "/poems", Title: "Poems", Image: "",
+		Env: Env, Permalink: "/poems", Title: "Poems", Image: "/kd/photos/PXL_20250427_110359379.jpg",
 		Description: "My poems, mostly from my teenage years..",
 	}))))
 	r.Handle("GET /guestbook", otelhttp.WithRouteTag("/guestbook", http.HandlerFunc(h.singlePageLayout("static/views/guestbook.html", internal.Metadata{
-		Env: Env, Permalink: "/guestbook", Title: "Guestbook", Image: "",
+		Env: Env, Permalink: "/guestbook", Title: "Guestbook", Image: "/kd/photos/media/posts/201708/20589962_1910033659266805_279438930284118016_n_17883782809073455.jpg",
 		Description: "Feel free to leave a message in my guestbook!",
 	}))))
 
