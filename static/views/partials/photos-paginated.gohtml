@@ -1,8 +1,8 @@
 {{ define "photos-paginated"}}
 {{ range .Entries }}
-<article class="padding">
+<article class="padding h-entry">
     <div style="height: 5em; line-height: 1em;">
-    <h6>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}} <a href="{{ .Permalink }}">
+    <h6>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}} <a class="u-url" href="{{ .Permalink }}">
             {{- if .Title -}}
             {{ .Title }}
             {{- else if .Summary -}}
@@ -12,7 +12,8 @@
             {{- end -}}
         </a></h6>
     🕰️
-    <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+    <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
+    class="dt-published">
         <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
     </time>
     {{ if .Geo -}}
@@ -26,17 +27,18 @@
     <small>
     {{- if gt (len .Tags) 2 }}
         {{ range slice .Tags 0 2 -}}
-        <a href="/tags/{{.}}">#{{.}}</a>
+        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
         {{ end }}
         +{{ len (slice .Tags 2) }} tags
     {{- else }}
         {{- range .Tags -}}
-        <a href="/tags/{{.}}">#{{.}}</a>
+        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
         {{ end -}}
     {{- end }}
     </small>
     {{- end }}
     </div>
+    <div class="e-content">
     {{ if .IsVideo }}
     <video class="home-photo responsive-video" autoplay loop muted>
         {{ if .Thumbnail }}
@@ -49,6 +51,7 @@
     {{ else }}
     <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page" aria-hidden="true"></a>
     {{ end }}
+    </div>
 </article>
 {{ end }}
     {{ if .NextPage }}
