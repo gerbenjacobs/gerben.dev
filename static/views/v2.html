@@ -40,6 +40,32 @@
             width: 8em;
             border-radius: 4em;
         }
+
+        .photogrid {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(310px, auto));
+        }
+        .home-photo {
+            position: relative;
+            float: left;
+            margin: 0.4em;
+            width: 270px;
+            height: 200px;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        /* First anchor in .home-photo */
+        .home-photo a {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.2em;
+            color: #000;
+        }
     </style>
 <!--    <style>-->
 <!--        /* 1. Use a more-intuitive box-sizing model */-->
