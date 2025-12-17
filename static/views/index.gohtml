@@ -1,7 +1,7 @@
 {{ define "content" }}
 <div class="container" id="intro">
     <div class="grid">
-        <div class="">
+        <div>
             <h1>gerben.dev 👷‍♂️</h1>
             <p>
                 Welcome to my personal website. This website is part of the IndieWeb movement,
@@ -25,46 +25,42 @@
                 <a href="/listening" class="btn">See more songs</a>
             </p>
         </div>
-        <div class="">
-            <div class="collection">
-                <a class="collection-item" href="https://linkedin.com/in/gerbenjacobs" rel="me" target="_blank">
-                    gerbenjacobs
-                    <b class="secondary-content" style="color: #2867B2;">LinkedIn</b>
-                </a>
-                <a class="collection-item" href="https://patreon.com/gerbendev" rel="me" target="_blank">
-                    gerbendev
-                    <b class="secondary-content" style="color: #FE424D;">Patreon</b>
-                </a>
-                <a class="collection-item" href="https://github.com/gerbenjacobs" rel="me" target="_blank">
-                    gerbenjacobs
-                    <b class="secondary-content" style="color: #24292F;">GitHub</b>
-                </a>
-                <a class="collection-item" href="https://todon.nl/@gerben" rel="me" target="_blank">
-                    @gerben@todon.nl <small>personal</small>
-                    <b class="secondary-content" style="color: #595aff;">Mastodon</b>
-                </a>
-                <a class="collection-item" href="/timeline" rel="me" target="_blank">
-                    @gerben.dev@gerben.dev <small>this site</small>
-                    <b class="secondary-content" style="color: #595aff;">Fediverse</b>
-                </a>
-                <a class="collection-item" href="https://bsky.app/profile/gerben.dev" rel="me" target="_blank">
-                    @gerben.dev <small>this site</small>
-                    <b class="secondary-content" style="color: #0085FF;">BlueSky</b>
-                </a>
-                <a class="collection-item truncate" href="https://pixelfed.social/@gerben" rel="me" target="_blank">
-                    @gerben@pixelfed.social
-                    <b class="secondary-content" style="color: #1E1937;">Pixelfed</b>
-                </a>
-                <a class="collection-item hide" href="https://web.brid.gy/gerben.dev" rel="me">
-                    https://web.brid.gy/gerben.dev
-                </a>
-                <a class="collection-item hide" href="https://web.brid.gy/r/https://gerben.dev" rel="me">
-                    https://web.brid.gy/r/https://gerben.dev
-                </a>
-                <a class="collection-item hide" href="https://web.brid.gy/r/https://bsky.app/profile/gerben.dev" rel="me">
-                    https://web.brid.gy/r/https://bsky.app.profile/gerben.dev
-                </a>
-            </div>
+        <div>
+            <picture style="float: right; margin-right: 2em;">
+                <img src="/images/avatar.jpg" alt="Gerben Jacobs" class="u-photo" loading="lazy">
+            </picture>
+            <ul>
+                <li style="color:#2867B2;">
+                    <a href="https://linkedin.com/in/gerbenjacobs" rel="me" target="_blank">LinkedIn</a>
+                </li>
+                <li style="color:#FE424D;">
+                    <a href="https://patreon.com/gerbendev" rel="me" target="_blank">Patreon</a>
+                </li>
+                <li style="color:#24292F;">
+                    <a href="https://github.com/gerbenjacobs" rel="me" target="_blank">GitHub</a>
+                </li>
+                <li style="color:#595aff;">
+                    <a href="https://todon.nl/@gerben" rel="me" target="_blank">Mastodon (personal)</a>
+                </li>
+                <li style="color:#595aff;">
+                    <a href="/timeline" rel="me" target="_blank">Fediverse (this site)</a>
+                </li>
+                <li style="color:#0085FF;">
+                    <a href="https://bsky.app/profile/gerben.dev" rel="me" target="_blank">BlueSky (this site)</a>
+                </li>
+                <li style="color:#1E1937;">
+                    <a href="https://pixelfed.social/@gerben" rel="me" target="_blank">Pixelfed</a>     
+                </li>
+                <li hidden="hidden">
+                   <a href="https://web.brid.gy/gerben.dev" rel="me">&nbsp;</a>
+                </li>
+                <li hidden="hidden">
+                   <a href="https://web.brid.gy/r/https://gerben.dev" rel="me">&nbsp;</a>
+                </li>
+                <li hidden="hidden">
+                   <a href="https://web.brid.gy/r/https://bsky.app/profile/gerben.dev" rel="me">&nbsp;</a>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="row">

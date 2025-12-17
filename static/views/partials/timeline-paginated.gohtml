@@ -36,7 +36,7 @@
             </figure>
         {{ else}}
             {{ if eq .Type "like" "repost" "reply" -}}
-            <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+            <div style="min-height: 200px;" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
             {{- end }}
             {{ if .Summary }}
             <p>
