@@ -24,7 +24,6 @@ var layoutFiles = []string{
 	"static/views/v2.html",
 	"static/views/partials/navbar.html",
 	"static/views/partials/aside-hcard.html",
-	"static/views/partials/tag-preview.gohtml",
 }
 
 // Handler is your dependency container
@@ -77,10 +76,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("GET /listening", otelhttp.WithRouteTag("/listening", http.HandlerFunc(h.listening)))
 	r.Handle("GET /timeline", otelhttp.WithRouteTag("/timeline", http.HandlerFunc(h.timeline)))
 	r.Handle("GET /previously", otelhttp.WithRouteTag("/previously", http.HandlerFunc(h.previously)))
-	r.Handle("GET /poems", otelhttp.WithRouteTag("/poems", http.HandlerFunc(h.singlePageLayout("static/views/poems.html", internal.Metadata{
-		Env: Env, Permalink: "/poems", Title: "Poems", Image: "",
-		Description: "My poems, mostly from my teenage years..",
-	}))))
+	r.Handle("GET /poems", otelhttp.WithRouteTag("/poems", http.HandlerFunc(h.poems)))
 	r.Handle("GET /guestbook", otelhttp.WithRouteTag("/guestbook", http.HandlerFunc(h.singlePageLayout("static/views/guestbook.html", internal.Metadata{
 		Env: Env, Permalink: "/guestbook", Title: "Guestbook", Image: "",
 		Description: "Feel free to leave a message in my guestbook!",
@@ -156,7 +152,7 @@ func (h *Handler) singlePageLayout(fileName string, metadata internal.Metadata) 
 }
 
 func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html")...))
+	t := template.Must(template.ParseFiles(append(layoutFiles, "static/views/tags.html", "static/views/partials/timeline-paginated.gohtml")...))
 
 	// find all Kindy content with the tag
 	tag := strings.ToLower(r.PathValue("tag"))
@@ -179,6 +175,7 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 		Tag      string
 		Entries  []local.Kindy
 		AllTags  map[string]internal.TagInfo
+		NewSince string
 	}
 	data := pageData{
 		Metadata: internal.Metadata{
@@ -187,9 +184,10 @@ func (h *Handler) tags(w http.ResponseWriter, r *http.Request) {
 			Description: "All content on gerben.dev for the term: #" + tag,
 			Permalink:   "/tags/" + tag,
 		},
-		Tag:     tag,
-		Entries: entries,
-		AllTags: allTags,
+		Tag:      tag,
+		Entries:  entries,
+		AllTags:  allTags,
+		NewSince: "",
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)

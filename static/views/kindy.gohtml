@@ -6,9 +6,9 @@
     <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <script defer async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
     <style>
-        #site .kindy h1 {
+        /* #site .kindy h1 {
             margin-bottom: 1em;
-        }
+        } */
 
         .kindy .dt-published::before {
             content: "🕰️";
@@ -49,212 +49,164 @@
         .h-geo::before {
             content: "🗺️";
         }
-
-        .kindy-header img {
-            vertical-align: middle;
-            width: 32px;
-            border-radius: 50%;
-            margin-right: 0.5em;
-        }
-
-        .kindy-type-post .p-summary {
-            font-style: italic;
-        }
-
-        .kindy .e-content {
-            margin-top: 1em;
-        }
-
-        .kindy .p-summary > .u-photo,
-        .kindy .e-content > .u-photo,
-        .kindy-type-photo figure > .u-photo {
-            max-width: 100%;
-        }
-
-        .kindy-type-photo figure > .u-photo {
-            filter: drop-shadow(5px 5px 10px #666);
-        }
-
-        .kindy figure {
-            /* reset */
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 800px) {
-            /*.kindy {*/
-            /*    display: block;*/
-            /*    margin: auto;*/
-            /*    width: clamp(320px, 80%, 800px);*/
-            /*}*/
-            .kindy-type-photo {
-                width: 100%;
-            }
-
-            .kindy figure {
-                margin: 2rem;
-            }
-        }
     </style>
     <div class="container">
-        <div class="row">
-            <div class="padding">
-                <article class="kindy kindy-type-{{ .Type }} {{ .MFType }}">
-                    <header>
-                        {{- if .Title -}}
-                            <h1 class="p-name">{{ .Title }}</h1>
-                        {{- end }}
-                        <div class="kindy-header">
-                            {{ if .Author -}}
-                                <span class="h-card p-author">
-                            {{ if .Author.Photo -}}
-                                <img class="u-photo" src="{{ .Author.Photo }}" alt="{{ .Author.Name }}"
-                                     loading="lazy">
-                            {{ end -}}
-                            <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
-                        </span>
-                            {{- end }}
-                            <span title="{{ .Type }}">{{ .Type.Emoji }}</span>
-                            <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-                                {{ if .Permalink -}}
-                                    <a href="{{ .Permalink }}" class="u-url"
-                                       title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
-                                        {{ .PublishedAt.Format "Jan 02, 2006" }}
-                                    </a>
-                                {{- else -}}
-                                    {{ .PublishedAt.Format "Jan 02, 2006" }}
-                                {{- end }}
-                            </time>
-                            {{ if .Geo -}}
-                                <span class="p-location h-geo">
-                                <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}"
-                                   target="_blank">
-                                    <span class="p-latitude">{{ .Geo.Latitude }}</span>,
-                                    <span class="p-longitude">{{ .Geo.Longitude }}</span>
-                                </a>
-                            </span>
-                            {{- end }}
-                            {{ if .Syndication -}}
-                                {{- range $syn := .Syndication -}}
-                                    <span class="kindy-syndication {{ $syn.Type }}">
-                                    <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}"
-                                       target="_blank">{{ $syn.Type }}</a>
-                                </span>
-                                {{- end -}}
-                            {{- end }}
-                        </div>
-                    </header>
-                    {{ if eq .Type "photo" }}
-                        {{ if .IsVideo }}
-                            <div class="e-content">
-                                <video class="responsive-video" autoplay loop muted controls>
-                                    <source class="u-video" src="{{.Content}}" type="video/mp4"/>
-                                    Your browser does not support the video tag.
-                                </video>
-                                {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
-                                {{- if .Tags }}
-                                    <p>
-                                        {{- range .Tags -}}
-                                            <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
-                                               rel="tag">#{{.}}</a>&#32;
-                                        {{- end -}}
-                                    </p>
-                                {{- end }}
-                            </div>
-                        {{ else }}
-                            <figure class="e-content center-align">
-                                <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
-                                {{- if .Summary -}}
-                                    <figcaption>{{ .Summary }}</figcaption>
-                                {{- end }}
-                            </figure>
-                            {{- if .Tags }}
-                                <p>
-                                    {{- range .Tags -}}
-                                        <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
-                                           rel="tag">#{{.}}</a>&#32;
-                                    {{- end -}}
-                                </p>
-                            {{- end }}
-                        {{ end }}
-                    {{ else }}
-                        {{ if eq .Type "like" "repost" "reply" -}}
-                            <div class="opengraph" hx-trigger="revealed"
-                                 hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
-                        {{- end }}
-                        {{ if .Summary -}}
-                            <p class="p-summary">
-                                {{ .Summary }}
-                                {{ if .LikeOf }}
-                                    <span class="kindy-like">
-                                        <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
-                                    </span>
-                                {{ end }}
-                                {{ if .RepostOf }}
-                                    <span class="kindy-repost">
-                                        <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
-                                    </span>
-                                {{ end }}
-                            </p>
-                        {{- end }}
-                        {{- if .ReplyTo }}
-                            <p>
-                                <small>In reply to: <a class="u-in-reply-to"
-                                                       href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
-                            </p>
-                        {{- end }}
-                        {{ if .HasContent -}}
-                            <div class="e-content">
-                                {{ .GetContent }}
-                                {{- if .Tags }}
-                                    <p>
-                                        {{- range .Tags -}}
-                                            <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
-                                               rel="tag">#{{.}}</a>&#32;
-                                        {{- end -}}
-                                    </p>
-                                {{- end }}
-                            </div>
-                        {{- end }}
-                    {{ end }}
-                    {{ if .Tags -}}
-                        <footer style="margin-bottom: 1em;">
-                            {{ range .Tags -}}
-                                <a class="p-category" href="/tags/{{.}}" rel="tag">#{{.}}</a>
-                            {{ end -}}
-                        </footer>
+        <article class="kindy kindy-type-{{ .Type }} {{ .MFType }}">
+            <header>
+                {{- if .Title -}}
+                    <h1 class="p-name">{{ .Title }}</h1>
+                {{- end }}
+                <div class="kindy-header">
+                    {{ if .Author -}}
+                    <span class="h-card p-author">
+                    {{ if .Author.Photo -}}
+                        <img class="u-photo" src="{{ .Author.Photo }}" alt="{{ .Author.Name }}"
+                                loading="lazy" width="32">
+                    {{ end -}}
+                        <a class="u-url p-name" href="{{ .Author.URL }}" rel="me author">{{ .Author.Name }}</a>
+                    </span>
                     {{- end }}
-                    <div id="next-previous" style="margin-bottom: 1em;"></div>
-                    <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
-                    <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
-                        👍 <span id="thumbsup-count"></span>
-                    </button>
-                    {{ if eq .Metadata.Env "dev" }}
-                        <details>
-                            <summary>Debug: Raw Source</summary>
-                            <form action="/kindy/update" method="post">
-                                <input type="hidden" name="type" value="{{ .Type }}">
-                                <input type="hidden" name="slug" value="{{ .Slug }}">
-                                <textarea id="raw" name="raw">{{ .RawKindy }}</textarea>
-                                <button type="submit">Update Kindy</button>
-                                <button onclick="prettyPrint(); return false;">Prettify</button>
-                            </form>
-                        </details>
-                        <script>
-                            function prettyPrint() {
-                                let ugly = document.getElementById('raw').value;
-                                let obj = JSON.parse(ugly);
-                                document.getElementById('raw').value = JSON.stringify(obj, undefined, 4);
-                            }
-                        </script>
-                    {{ end }}
-                </article>
-            </div>
-        </div>
-        <div class="row">
+                    <span title="{{ .Type }}">{{ .Type.Emoji }}</span>
+                    <time class="dt-published" datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                        {{ if .Permalink -}}
+                            <a href="{{ .Permalink }}" class="u-url"
+                                title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+                                {{ .PublishedAt.Format "Jan 02, 2006" }}
+                            </a>
+                        {{- else -}}
+                            {{ .PublishedAt.Format "Jan 02, 2006" }}
+                        {{- end }}
+                    </time>
+                    {{ if .Geo -}}
+                        <span class="p-location h-geo">
+                        <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}"
+                            target="_blank">
+                            <span class="p-latitude">{{ .Geo.Latitude }}</span>,
+                            <span class="p-longitude">{{ .Geo.Longitude }}</span>
+                        </a>
+                    </span>
+                    {{- end }}
+                    {{ if .Syndication -}}
+                        {{- range $syn := .Syndication -}}
+                            <span class="kindy-syndication {{ $syn.Type }}">
+                            <a class="u-syndication" href="{{ $syn.URL}}" title="Also posted on {{ $syn.Type }}"
+                                target="_blank">{{ $syn.Type }}</a>
+                        </span>
+                        {{- end -}}
+                    {{- end }}
+                </div>
+            </header>
+            {{ if eq .Type "photo" }}
+                {{ if .IsVideo }}
+                <div class="e-content">
+                    <video class="responsive-video" autoplay loop muted controls>
+                        <source class="u-video" src="{{.Content}}" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                    {{ if .Summary }}<p>{{ .Summary }}</p>{{- end }}
+                    {{- if .Tags }}
+                    <p>
+                    {{- range .Tags -}}
+                        <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
+                            rel="tag">#{{.}}</a>&#32;
+                    {{- end -}}
+                    </p>
+                    {{- end }}
+                </div>
+                {{ else }}
+                <figure class="e-content">
+                    <img class="u-photo" src="{{ .Content }}" alt="{{ .MustTitle }}">
+                    {{- if .Summary -}}
+                        <figcaption>{{ .Summary }}</figcaption>
+                    {{- end }}
+                </figure>
+                {{- if .Tags }}
+                <p>
+                {{- range .Tags -}}
+                    <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
+                        rel="tag">#{{.}}</a>&#32;
+                {{- end -}}
+                </p>
+                {{- end }}
+                {{ end }}
+            {{ else }}
+                {{ if eq .Type "like" "repost" "reply" -}}
+                    <div class="opengraph" hx-trigger="revealed"
+                            hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+                {{- end }}
+                {{ if .Summary -}}
+                    <p class="p-summary">
+                        {{ .Summary }}
+                        {{ if .LikeOf }}
+                            <span class="kindy-like">
+                                <a class="u-like-of" href="{{ .LikeOf }}">{{ .LikeOf }}</a>
+                            </span>
+                        {{ end }}
+                        {{ if .RepostOf }}
+                            <span class="kindy-repost">
+                                <a class="u-repost-of" href="{{ .RepostOf }}">{{ .RepostOf }}</a>
+                            </span>
+                        {{ end }}
+                    </p>
+                {{- end }}
+                {{- if .ReplyTo }}
+                <p><small>
+                    In reply to: <a class="u-in-reply-to" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a>
+                </small></p>
+                {{- end }}
+                {{ if .HasContent -}}
+                    <div class="e-content">
+                        {{ .GetContent }}
+                        {{- if .Tags }}
+                            <p>
+                                {{- range .Tags -}}
+                                    <a hidden="hidden" aria-hidden="true" href="https://gerben.dev/tags/{{.}}"
+                                        rel="tag">#{{.}}</a>&#32;
+                                {{- end -}}
+                            </p>
+                        {{- end }}
+                    </div>
+                {{- end }}
+            {{ end }}
+            {{ if .Tags -}}
+                <section>
+                    {{ range .Tags -}}
+                        <a class="p-category" href="/tags/{{.}}" rel="tag">#{{.}}</a>
+                    {{ end -}}
+                </section>
+            {{- end }}
+            <footer>
+                <div id="next-previous" style="margin-bottom: 1em;"></div>
+                <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
+                <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
+                    👍 <span id="thumbsup-count"></span>
+                </button>
+            </footer>
+            {{ if eq .Metadata.Env "dev" }}
+                <details>
+                    <summary>Debug: Raw Source</summary>
+                    <form action="/kindy/update" method="post">
+                        <input type="hidden" name="type" value="{{ .Type }}">
+                        <input type="hidden" name="slug" value="{{ .Slug }}">
+                        <textarea id="raw" name="raw">{{ .RawKindy }}</textarea>
+                        <button type="submit">Update Kindy</button>
+                        <button onclick="prettyPrint(); return false;">Prettify</button>
+                    </form>
+                </details>
+                <script>
+                    function prettyPrint() {
+                        let ugly = document.getElementById('raw').value;
+                        let obj = JSON.parse(ugly);
+                        document.getElementById('raw').value = JSON.stringify(obj, undefined, 4);
+                    }
+                </script>
+            {{ end }}
+        </article>
+        <section>
             <link rel="stylesheet" href="/css/webmention.css">
             <div id="webmentions" class="padding"></div>
             <script src="/js/webmention.js" data-page-url="https://gerben.dev{{ .Permalink }}"></script>
-        </div>
+        </section>
     </div>
     <div class="container">
         <h2 id="leave-a-note">Leave a note</h2>
@@ -264,7 +216,7 @@
         </p>
         <div class="grid">
             <div>
-                <h3 style="font-size: 1.5em;">WebMention</h3>
+                <h3>WebMention</h3>
                 <form action="https://webmention.io/gerben.dev/webmention" method="post">
                     <input type="hidden" name="target" value="https://gerben.dev{{ .Permalink }}">
                     <label for="source">Your URL:</label>
@@ -275,7 +227,7 @@
                 </form>
             </div>
             <div>
-                <h3 style="font-size: 1.5em;">Fediverse</h3>
+                <h3>Fediverse</h3>
                 <p>
                     On the Fediverse or BlueSky you can search for the URL
                     <span class="contrast" style="word-break: break-word;">https://gerben.dev{{ .Permalink }}</span>

@@ -1,14 +1,15 @@
 {{ define "timeline-paginated" }}
 {{ range .Entries }}
 <article class="kindy read-heavy h-entry overflow-auto">
-{{/*    <p class="kindy-divider">──────────๑♡⁠๑──────────</p>*/}}
     <hgroup>
-    <h2 style="float: right;"><a class="u-url" href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
+    <h2 style="float: right;">{{ .Type.Emoji }} <a class="u-url" href="{{.Permalink}}">{{.Type}}</a></h2>
     <p>
+        {{ if .Author }}
         <a href="/" class="h-card p-author u-url">
-            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy" style="width: 32px; border-radius:50%;">
+            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy" style="width: 32px; border-radius: 50%;">
             <span title="{{ $.Author.Name }}" class="p-name">@gerben.dev</span>
         </a>
+        {{ end }}
         {{ .Type.Emoji }}
         <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">
             🕰️&nbsp;{{- .TimeAgo -}}
@@ -28,7 +29,7 @@
     </hgroup>
     <div class="timeline-content e-content">
         {{ if eq .Type "photo" }}
-            <figure class="center-align" style="margin: 0;">
+            <figure>
                 <a href="{{ .Permalink }}">
                     <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
                 </a>
@@ -36,7 +37,7 @@
             </figure>
         {{ else}}
             {{ if eq .Type "like" "repost" "reply" -}}
-            <div style="min-height: 200px;" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+            <div hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
             {{- end }}
             {{ if .Summary }}
             <p>

@@ -1,7 +1,7 @@
 {{ define "photos-paginated"}}
     {{ range .Entries }}
-        <article class="padding h-entry">
-            <div style="height: 5em; line-height: 1em;">
+        <article class="h-entry">
+            <div>
                 <p style="font-weight: bold;">{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}}
                     <a class="u-url p-name" href="{{ .Permalink }}">
                         {{- if .Title -}}
@@ -15,14 +15,14 @@
                 </p>
                 🕰️
                 <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}"
-                      title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
+                      data-tooltip="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
                       class="dt-published">
                     <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
                 </time>
                 {{ if .Geo -}}
-                    <span>
-        <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">🗺️</a>
-    </span>
+                <span>
+                    <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">🗺️</a>
+                </span>
                 {{- end }}
                 {{ if .Tags -}}
                     <br>

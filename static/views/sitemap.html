@@ -9,7 +9,7 @@
     </hgroup>
 
     <div class="grid">
-        <div>
+        <section>
             <h2>Navbar pages</h2>
             <p>
                 These pages are also available in the navigation bar.
@@ -62,8 +62,8 @@
                 <br><small>This dinosaur hates 'too much' whitespace. <br>He won't clarify how much is too
                 much..</small>
             </p>
-        </div>
-        <div>
+        </section>
+        <section>
             <h2>Posts ({{ index .Counts "posts" }})</h2>
             {{ if .Posts -}}
             <ul>
@@ -134,7 +134,7 @@
                 {{- end }}
             </ul>
             {{- end }}
-        </div>
+        </section>
     </div>
 </div>
 

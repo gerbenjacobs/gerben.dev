@@ -24,14 +24,10 @@
             --pico-font-family: 'Atkinson Hyperlegible', cursive;
         }
 
-        .kindy-divider {
-            text-align: center;
-            font-weight: bolder;
-            background: linear-gradient(to left, #cc2b5e 25%, #753a88 70%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            clear: both;
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1200px;
+            }
         }
 
         #me a {
@@ -41,6 +37,11 @@
         #me img {
             width: 8em;
             border-radius: 4em;
+        }
+
+        .timeline-author {
+            width: 32px;
+            border-radius: 50%;
         }
 
         .photogrid {
@@ -53,10 +54,9 @@
             position: relative;
             float: left;
             margin: 0.4em;
-            width: 270px;
-            height: 200px;
+            width: 300px;
+            height: 225px;
             background-position: 50% 50%;
-            background-size: cover;
         }
 
         /* First anchor in .home-photo */
@@ -77,6 +77,12 @@
             border-radius: 1em;
             text-align: center;
         }
+
+        .poem-nav {
+            color: darkblue;
+            font-weight: bolder;
+            background-image: linear-gradient(65.9deg, rgba(85, 228, 224, 1) 5.5%, rgba(75, 68, 224, 0.74) 54.2%, rgba(64, 198, 238, 1) 55.2%, rgba(177, 36, 224, 1) 98.4%);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700"
         rel="stylesheet">
@@ -84,8 +90,8 @@
 
 <body>
     <header class="container">
+        <img src="/images/favicon.png" alt="" height="64">
         <a href="/">
-            <img src="/images/favicon.png" alt="" height="64">
             <h1>gerben.dev</h1>
         </a>
         <nav class="overflow-auto">
@@ -98,11 +104,11 @@
         {{ template "content" . }}
     </main>
     {{ template "aside-hcard" . }}
-    <footer class="container" id="space">
+    <section class="container" id="space">
         ✨ It's dangerous out there, please take some space dust! ✨
-    </footer>
+    </section>
     <p style="text-align: center;">
-        This work is licensed under 
+        This work is licensed under
         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
         |
         🤖 No AI

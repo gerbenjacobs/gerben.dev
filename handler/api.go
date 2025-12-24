@@ -20,13 +20,11 @@ var tmpl *template.Template
 var opengraphCache = ".cache/opengraph/"
 var opengraphTemplate = `
 <blockquote>
-	<div>
-		<p>
-			{{ if .Favicon.URL }}<img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy" onerror="this.style.display='none';">{{ end }}
-			<b>{{.Title}}</b>
-		</p>
-		<p>{{.DescriptionHTML}}</p>
-	</div>
+	<p>
+		{{ if .Favicon.URL }}<img src="{{.Favicon.URL}}" alt="{{.Title}}" class="timeline-author" loading="lazy" onerror="this.style.display='none';" width="32">{{ end }}
+		<b>{{.Title}}</b>
+	</p>
+	<p>{{.DescriptionHTML}}</p>
 	{{range .Image}}
 	{{ if .URL }}
 	<figure><img src="{{.URL}}" alt="{{or .Alt $.Title}}" loading="lazy"><figcaption>{{.Alt}}</figcaption></figure>
