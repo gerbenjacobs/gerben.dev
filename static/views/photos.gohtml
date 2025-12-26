@@ -10,10 +10,10 @@
         </p>
     {{ end }}
 
-    <div class="photogrid h-feed">
+    <section class="photogrid h-feed">
         <p class="p-name" hidden="hidden"><a class="u-url" href="/photos">Photos | gerben.dev</a></p>
         {{ template "photos-paginated" $ }}
-    </div>
+    </section>
 
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 {{ end }}

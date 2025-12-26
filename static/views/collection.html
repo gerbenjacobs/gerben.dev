@@ -1,6 +1,7 @@
 {{ define "content" }}
 <style>
     @keyframes bounce2 {
+
         0%,
         20%,
         50%,
@@ -44,49 +45,55 @@
         0% {
             transform: translatey(0px);
         }
+
         50% {
             transform: translatey(-20px);
         }
+
         100% {
             transform: translatey(0px);
         }
     }
-
 </style>
-<div class="container">
-    <div class="row padding">
+
+<section>
+    <hgroup>
         <h2>{{ .Metadata.Title }}</h2>
         <p>{{ .Metadata.Description }}</p>
-        <p><small>This page is best-viewed in desktop mode. <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This
-            photo</a> is used for the background.</small></p>
+    </hgroup>
+    <p>
+        <small>
+            This page is best-viewed in desktop mode.
+            <a href="/photos/473ec0437742a223d88e8d5e11c62b64">This photo</a> is used for the background.
+        </small>
+    </p>
+</section>
+<section class="collected" id="collected">
+    <div style="position: absolute; top: 420px; right: 50px; animation: bounce2 2s ease infinite;">
+        <img src="/images/collected/toothless.webp" alt="Toothless, the Night Fury dragon from How to Train Your Dragon"
+            loading="lazy" width="400" height="225">
     </div>
-    <div class="collected" id="collected">
-        <div style="position: absolute; top: 420px; right: 50px; animation: bounce2 2s ease infinite;">
-            <img src="/images/collected/toothless.webp"
-                 alt="Toothless, the Night Fury dragon from How to Train Your Dragon" loading="lazy" width="400"
-                 height="225">
-        </div>
-        <div style="position: absolute; top: 334px; left: 175px; animation: wiggle 2.5s ease infinite;">
-            <img src="/images/collected/0134Vaporeon.png" alt="Vaporeon, the water-based evolution of Eevee"
-                 loading="lazy" width="300" height="300">
-        </div>
-        <div style="position: absolute; top: 550px; left: 550px; animation: float 3s ease-in-out infinite;">
-            <img src="/images/collected/squidcrab.png" alt="A Crabsquid, a fictional sea creature"
-                 loading="lazy" width="185" height="334">
-        </div>
+    <div style="position: absolute; top: 334px; left: 175px; animation: wiggle 2.5s ease infinite;">
+        <img src="/images/collected/0134Vaporeon.png" alt="Vaporeon, the water-based evolution of Eevee" loading="lazy"
+            width="300" height="300">
     </div>
-    <div class="row padding">
-        <details open>
-            <summary>Collected items</summary>
-            <table>
-                <thead>
+    <div style="position: absolute; top: 550px; left: 550px; animation: float 3s ease-in-out infinite;">
+        <img src="/images/collected/squidcrab.png" alt="A Crabsquid, a fictional sea creature" loading="lazy"
+            width="185" height="334">
+    </div>
+</section>
+<section>
+    <details open>
+        <summary>Collected items</summary>
+        <table>
+            <thead>
                 <tr>
                     <th>Date</th>
                     <th>Item</th>
                     <th>Reason</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 <tr>
                     <td>
                         <time datetime="2025-10-31">Oct 31st, 2025</time>
@@ -114,9 +121,8 @@
                         Hiccup.
                     </td>
                 </tr>
-                </tbody>
-            </table>
-        </details>
-    </div>
-</div>
+            </tbody>
+        </table>
+    </details>
+</section>
 {{ end }}

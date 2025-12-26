@@ -1,12 +1,18 @@
 {{ define "aside-hcard" }}
 
 <footer class="container h-card" id="me">
-    <picture style="float: right; margin-right: 2em;">
-        <img src="/images/avatar.jpg" alt="Gerben Jacobs" class="u-photo" loading="lazy">
-    </picture>
-    <img src="/images/goth_girl_by_loish.jpg" class="u-featured" style="float: right;"
-        alt="Hand-drawn image of a lady with a white/grey-ish bobcut, septum piercing and black lipstick, to a backdrop of roses and other flowers."
-        title="Image by Loish (Lois van Baarle)" loading="lazy">
+    <div style="float: right;">
+        <figure>
+            <img src="/images/avatar.jpg" alt="Gerben Jacobs" class="u-photo" loading="lazy">
+        </figure>
+        <figure>
+        <img src="/images/goth_girl_by_loish.jpg" class="u-featured"
+            alt="Hand-drawn image of a lady with a white/grey-ish bobcut, septum piercing and black lipstick, to a backdrop of roses and other flowers."
+            title="Image by Loish (Lois van Baarle)" loading="lazy"
+            aria-roledescription="Used as header for my generated profile">
+        </figure>
+    </div>
+
     <h2>Hi, my name is <b><span class="p-name">Gerben<span hidden="hidden"> 🌱</span></span> Jacobs</b></h2>
     <p class="p-note">
         A <span class="p-job-title">software engineer</span> from

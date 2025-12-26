@@ -1,13 +1,17 @@
 {{ define "photos-paginated"}}
     {{ range .Entries }}
-        <article class="h-entry">
-            <div>
-                <p style="font-weight: bold;">{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}}
+        <article class="h-entry" style="display: grid; align-content: space-between;">
+            <header>
+                <p>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}}
                     <a class="u-url p-name" href="{{ .Permalink }}">
                         {{- if .Title -}}
                             {{ .Title }}
                         {{- else if .Summary -}}
-                            {{ printf "%.50s.." .Summary }}
+                            {{ if gt (len .Summary) 35 }}
+                            {{ printf "%.35s.." .Summary }}
+                            {{ else }}
+                            {{ .Summary }}
+                            {{ end }}
                         {{- else -}}
                             Untitled
                         {{- end -}}
@@ -40,8 +44,8 @@
                         {{- end }}
                     </small>
                 {{- end }}
-            </div>
-            <div class="e-content">
+            </header>
+            <main class="e-content">
                 {{ if .IsVideo }}
                     <video class="home-photo responsive-video" autoplay loop muted>
                         {{ if .Thumbnail }}
@@ -52,11 +56,11 @@
                         Your browser does not support the video tag.
                     </video>
                 {{ else }}
-                    <a href="{{ .Permalink }}" class="home-photo hoverable"
+                    <a href="{{ .Permalink }}" class="home-photo"
                        style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page"
-                       aria-hidden="true"></a>
+                       aria-hidden="true" tabindex="-1"></a>
                 {{ end }}
-            </div>
+            </main>
         </article>
     {{ end }}
     {{ if .NextPage }}

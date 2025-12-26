@@ -103,8 +103,8 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Photos:   kindyLimit(photos, 12),
 		Entries:  kindyLimit(entries, 10),
 	}
-	if len(songs) >= 3 {
-		data.Songs = songs[:3]
+	if len(songs) >= 5 {
+		data.Songs = songs[:5]
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
@@ -322,7 +322,7 @@ func (p Poem) Lang() string {
 
 func (h *Handler) poems(w http.ResponseWriter, r *http.Request) {
 	pageFile := "static/views/poems.gohtml"
-	t := template.New("v2.html").Funcs(template.FuncMap{"mod": func(i, j int) bool { return i > 0 && i%j == 0 }})
+	t := template.New("baseLayout.html").Funcs(template.FuncMap{"mod": func(i, j int) bool { return i > 0 && i%j == 0 }})
 	t, err := t.ParseFiles(append(layoutFiles, pageFile)...)
 	if err != nil {
 		slog.Error("failed to parse template files", "err", err)

@@ -1,31 +1,26 @@
 {{ define "content" }}
-    <div class="container">
-        <div class="row">
-            <div class="col padding">
-                {{ range .Entries }}
-                    {{ if .Image }}
-                    <div class="home-photo" style='background-image: url({{ .Image }}); filter: drop-shadow(5px 5px 10px #666); margin-right: 2em;'></div>
-                    {{ end }}
-                    <article>
-                        <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
-                        🕰️
-                        <time datetime='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'
-                              title='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'>
-                            {{- .PublishedAt.Format "Jan 02, 2006" -}}
-                        </time>
-                        {{ if .Tags -}}
-                            🏷️
-                            <span>
-                            {{- range .Tags -}}
-                                <a href="/tags/{{.}}">#{{.}}</a>
-                            {{ end -}}
-                        </span>
-                        {{- end }}
-                        <p>{{ or .Summary .GetContent }}</p>
-                    </article>
-                    <p class="kindy-divider">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
-                {{ end}}
-            </div>
-        </div>
-    </div>
+<section>
+    {{ range .Entries }}
+    <article class="overflow-auto mobile">
+        {{ if .Image }}
+        <div class="home-photo hide-on-mobile" style="background-image: url({{ .Image }});  width: 300px; margin-right: .4em;"></div>
+        {{ end }}
+        <h4>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h4>
+        🕰️
+        <time datetime='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'
+            title='{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{- .PublishedAt.Format "Jan 02, 2006" -}}
+        </time>
+        {{ if .Tags -}}
+        🏷️
+        <span>
+            {{- range .Tags -}}
+            <a href="/tags/{{.}}">#{{.}}</a>
+            {{ end -}}
+        </span>
+        {{- end }}
+        <p>{{ or .Summary .GetContent }}</p>
+    </article>
+    {{ end}}
+</section>
 {{ end }}

@@ -18,17 +18,15 @@
         <p>
             <b>Listening</b><br>
             {{ range .Songs }}
-            <img src="{{ .AlbumCover }}" alt="{{ .Title }}" class="responsive-img" loading="lazy" width="24"
+            <img src="{{ .AlbumCover }}" alt="{{ .Title }}" loading="lazy" width="24"
                 onerror="this.style.display='none';">
-            {{ .Title }} <small class="secondary-content">{{ .PlayedAt }}</small><br>{{ end }}
+            {{ .Title }} <sub>{{ .PlayedAt }}</sub><br>{{ end }}
+        </p>
+        <p>
             <a href="/listening" role="button">See more songs</a>
         </p>
     </section>
-    <section>
-        <picture>
-            <img src="/images/avatar.jpg" alt="Gerben Jacobs" class="u-photo" loading="lazy"
-                style="max-width: 300px; border-radius: 10%;">
-        </picture>
+    <section class="grid">
         <ul>
             <li style="color:#2867B2;">
                 <a href="https://linkedin.com/in/gerbenjacobs" rel="me" target="_blank">LinkedIn</a>
@@ -51,16 +49,19 @@
             <li style="color:#1E1937;">
                 <a href="https://pixelfed.social/@gerben" rel="me" target="_blank">Pixelfed</a>
             </li>
-            <li hidden="hidden">
+            <li hidden="hidden" aria-hidden="true">
                 <a href="https://web.brid.gy/gerben.dev" rel="me">&nbsp;</a>
             </li>
-            <li hidden="hidden">
+            <li hidden="hidden" aria-hidden="true">
                 <a href="https://web.brid.gy/r/https://gerben.dev" rel="me">&nbsp;</a>
             </li>
-            <li hidden="hidden">
+            <li hidden="hidden" aria-hidden="true">
                 <a href="https://web.brid.gy/r/https://bsky.app/profile/gerben.dev" rel="me">&nbsp;</a>
             </li>
         </ul>
+        <picture>
+            <img src="/images/portrait.jpg" alt="Gerben Jacobs" loading="lazy" style="border-radius: 10%;">
+        </picture>
     </section>
 </div>
 <div class="grid">
@@ -70,8 +71,7 @@
         <article>
             <h3>{{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ or .Title .Slug }}</a></h3>
             🕰️
-            <time datetime="{{ .PublishedAt.Format " 2006-01-02T15:04:05Z07:00" }}" 
-                title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
+            <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}">
                 {{- .PublishedAt.Format "Jan 02, 2006" -}}
             </time>
             {{ if .Tags -}}
@@ -96,10 +96,10 @@
         <a href="/timeline" role="button">View entire timeline</a>
     </section>
 </div>
-<section id="photos">
-    <h2>Photos <a href="/photos.xml">🛜</a></h2>
+<h2 id="photos">Photos <a href="/photos.xml">🛜</a></h2>
+<section class="photogrid">
     {{ range .Photos }}
-    <article class="home-photo" style="background-image: url({{ .Thumbnail }});">
+    <article class="home-photo" style="background-image: url({{ .Thumbnail }}); margin: 0;">
         <a href="{{ .Permalink }}">
             {{ .Type.Emoji }}
             {{ if .Title -}}
@@ -129,8 +129,6 @@
     </article>
     {{ end }}
 </section>
-
-<hr style="clear: both;">
 
 <a href="/photos/" role="button">View all photos</a> or
 <a href="/photos/featured" role="button">⭐ View just Featured Photos</a>
