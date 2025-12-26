@@ -1,73 +1,81 @@
 {{ define "timeline-paginated" }}
 {{ range .Entries }}
-<article class="kindy read-heavy h-entry">
-    <p class="kindy-divider">──────────๑♡⁠๑──────────</p>
-    <h2 class="right" style="margin-left: 1em;"><a class="u-url" href="{{.Permalink}}">{{ .Type.Emoji }} {{.Type}}</a></h2>
-    <p>
-        <a href="/" class="h-card p-author u-url">
-            <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy">
-            <span title="{{ $.Author.Name }}" class="p-name">@gerben.dev</span>
-        </a>
-        {{ .Type.Emoji }}
-        <time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">
-            🕰️&nbsp;{{- .TimeAgo -}}
-        </time>
-        {{ if .Geo -}}
-        🗺️&nbsp;<a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">
-            <span>{{ .Geo.Latitude }}</span>,
-            <span>{{ .Geo.Longitude }}</span>
-        </a>
-        {{- end }}
-        {{ if .Tags -}}
-        {{- range .Tags -}}
-        🏷️&nbsp;<a href="/tags/{{ . }}" rel="tag" class="p-category">#{{ . }}</a>
-        {{- end -}}
-        {{- end }}
-    </p>
+<article class="kindy read-heavy h-entry overflow-auto">
+    <hgroup>
+        <h2 style="float: right;">{{ .Type.Emoji }} <a class="u-url" href="{{.Permalink}}">{{.Type}}</a></h2>
+        <p>
+            {{ if .Author }}
+            <a href="/" class="h-card p-author u-url">
+                <img src="{{ $.Author.Photo }}" alt="" class="timeline-author u-photo" loading="lazy"
+                    style="width: 32px; border-radius: 50%;">
+                <span title="{{ $.Author.Name }}" class="p-name">@gerben.dev</span>
+            </a>
+            {{ end }}
+            {{ .Type.Emoji }}
+            🕰️&nbsp;<time datetime="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" data-placement="right"
+                data-tooltip="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}" class="dt-published">
+                {{- .TimeAgo -}}
+            </time>
+            {{ if .Geo -}}
+            🗺️&nbsp;<a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}"
+                target="_blank">
+                <span>{{ .Geo.Latitude }}</span>,
+                <span>{{ .Geo.Longitude }}</span>
+            </a>
+            {{- end }}
+            {{ if .Tags -}}
+            {{- range .Tags -}}
+            🏷️&nbsp;<a href="/tags/{{ . }}" rel="tag" class="p-category">#{{ . }}</a>
+            {{- end -}}
+            {{- end }}
+        </p>
+    </hgroup>
     <div class="timeline-content e-content">
         {{ if eq .Type "photo" }}
-            <figure class="center-align" style="margin: 0;">
-                <a href="{{ .Permalink }}">
-                    <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
-                </a>
-                {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
-            </figure>
+        <figure>
+            <a href="{{ .Permalink }}">
+                <img src="{{ .Thumbnail }}" alt="{{ .MustTitle }}" loading="lazy">
+            </a>
+            {{ if .Summary -}}<figcaption>{{ .Summary }}</figcaption>{{- end }}
+        </figure>
         {{ else}}
-            {{ if eq .Type "like" "repost" "reply" -}}
-            <div class="opengraph" hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
-            {{- end }}
-            {{ if .Summary }}
-            <p>
-                {{ .Summary }}
-                {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
-                {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
-            </p>
-            {{else}}
-                {{- if .ReplyTo }}
-                <p>
-                    <small>In reply to: <a target="_blank" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
-                </p>
-                {{- end }}
-            <div>{{ .GetContent }}</div>
-            {{ end }}
+        {{ if eq .Type "like" "repost" "reply" -}}
+        <div hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
+        {{- end }}
+        {{ if .Summary }}
+        <p>
+            {{ .Summary }}
+            {{ if .LikeOf }}<a target="_blank" href="{{ .LikeOf }}">{{ .LikeOf }}</a>{{ end }}
+            {{ if .RepostOf }}<a target="_blank" href="{{ .RepostOf }}">{{ .RepostOf }}</a>{{ end }}
+        </p>
+        {{else}}
+        {{- if .ReplyTo }}
+        <p>
+            <small>In reply to: <a target="_blank" href="{{ .ReplyTo }}">{{ .ReplyTo }}</a></small>
+        </p>
+        {{- end }}
+        <div>{{ .GetContent }}</div>
+        {{ end }}
         {{ end }}
     </div>
 </article>
 {{ end }}
 {{ if .NewSince }}
-<div hx-get="/timeline?since={{ .NewSince }}{{if .ShowNotes}}&showNotes=on{{end}}{{if .ShowReplies}}&showReplies=on{{end}}{{if .ShowReposts}}&showReposts=on{{end}}{{if .ShowLikes}}&showLikes=on{{end}}" 
-hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
+<div hx-get="/timeline?since={{ .NewSince }}{{if .ShowNotes}}&showNotes=on{{end}}{{if .ShowReplies}}&showReplies=on{{end}}{{if .ShowReposts}}&showReposts=on{{end}}{{if .ShowLikes}}&showLikes=on{{end}}"
+    hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
     <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
         </div>
-      </div>
+    </div>
 </div>
 {{ end }}
 {{ end }}

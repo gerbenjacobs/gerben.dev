@@ -7,23 +7,21 @@
 {{- $permalink := print "https://gerben.dev" .Metadata.Permalink -}}
 {{- if eq .Metadata.Permalink "" }}{{ $permalink = "https://gerben.dev" }}{{ end -}}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="color-scheme" content="dark light">
     <title>{{ $title }}</title>
 
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <meta name="theme-color" content="#ee6e73">
     <link rel="apple-touch-icon" sizes="160x160" href="/images/favicon.png">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700|Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main-2025-12-06.css">
+
+    <link rel="stylesheet" href="/css/pico/indigo.css">
+    <link rel="stylesheet" href="/css/v2-2025-12-26.css">
     <link rel="preload" href="/css/ytlite.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/css/ytlite.css">
@@ -31,29 +29,34 @@
 
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-    <link rel=webmention href=https://webmention.io/gerben.dev/webmention>
+    <link rel="webmention" href="https://webmention.io/gerben.dev/webmention">
     <meta name="fediverse:creator" content="@gerben.dev@gerben.dev">
 
-    <link rel="alternate" type="application/rss+xml" title="@gerben.dev timeline" href="https://gerben.dev/timeline.xml">
+    <link rel="alternate" type="application/rss+xml" title="@gerben.dev timeline"
+        href="https://gerben.dev/timeline.xml">
     <link rel="alternate" type="application/rss+xml" title="gerben.dev posts" href="https://gerben.dev/feed.xml">
     <link rel="alternate" type="application/rss+xml" title="gerben.dev photos" href="https://gerben.dev/photos.xml">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gerben.dev/sitemap.xml">
-    {{ if $permalink -}}<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/{{ $permalink }}">{{ end }}
+    {{ if $permalink -}}
+    <link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/{{ $permalink }}">{{ end }}
 
     <meta name="description" content="{{ $description }}">
-    {{ if $permalink -}}<link rel="canonical" href="{{ $permalink }}">{{ end }}
+    {{ if $permalink -}}
+    <link rel="canonical" href="{{ $permalink }}">{{ end }}
 
     <meta property="og:url" content="{{ $permalink }}">
     <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ $description}}">
-    {{ if .Metadata.Image }}<meta property="og:image" content="{{ .Metadata.SafeImage }}">{{ end }}
+    {{ if .Metadata.Image }}
+    <meta property="og:image" content="{{ .Metadata.SafeImage }}">{{ end }}
     {{- if .Metadata.Kindy }}
-    {{ if ne .Metadata.Env "dev"}}<link rel="preload" as="fetch" href="https://octothorp.es/?uri={{ $permalink }}">{{ end }}
+    {{ if ne .Metadata.Env "dev"}}
+    <link rel="preload" as="fetch" href="https://octothorp.es/?uri={{ $permalink }}">{{ end }}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ .Metadata.Kindy.PublishedAt.Format "2006-01-02T15:04:05-07:00" }}">
     {{- range .Metadata.Kindy.Tags }}
     <meta property="article:tag" content="{{ . }}">
-    <link rel="octo:octothorpes" href="{{ . }}" >
+    <link rel="octo:octothorpes" href="{{ . }}">
     {{- end }}
     {{- else }}
     <meta property="og:type" content="website">
@@ -74,56 +77,46 @@
     </script>
     {{ end }}
     <script defer src="/js/ytlite.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700"
+        rel="stylesheet">
 </head>
 
-<body id="site">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo"><img src="/images/favicon.png" alt="Return home" height="64"></a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="hide-on-med-and-down" style="margin-left: 64px;">
-                {{ template "navbar" . }}
+<body>
+    <header class="container">
+        <img src="/images/favicon.png" alt="" height="64">
+        <a href="/">
+            <h1>gerben.dev</h1>
+        </a>
+        <nav class="overflow-auto">
+            <ul class="mobile">
+                {{- template "navbar" . -}}
             </ul>
-        </div>
-    </nav>
-
-    <ul class="sidenav" id="mobile-nav">
-        {{ template "navbar" . }}
-    </ul>
-
-    <main>
+        </nav>
+    </header>
+    <main class="container">
         {{ template "content" . }}
         {{ if .Metadata.SourceLink }}
-        <p class="center-align">
-            <a href="{{ .Metadata.SourceLink }}" class="btn purple">View source</a>
+        <p class="center">
+            <a href="{{ .Metadata.SourceLink }}" role="button">View source</a>
         </p>
         {{ end }}
     </main>
-
     {{ template "aside-hcard" . }}
-
-    <footer>
-        <div class="container" id="space">
-            <p class="center-align padding">
-                ✨ It's dangerous out there, please take some space dust! ✨
-            </p>
-        </div>
-    </footer>
-
-    <p class="center-align" style="color: #fff;">
-        This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:azure;">CC BY-NC-SA 4.0</a>
+    <section class="container" id="space">
+        ✨ It's dangerous out there, please take some space dust! ✨
+    </section>
+    <section class="container center">
+        This work is licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
         |
         🤖 No AI
         |
-        📊 <a href="https://stats.uptimerobot.com/JgMdUvqfrA/801708697" style="color: azure;">Uptime Status</a>
-    </p>
+        📊 <a href="https://stats.uptimerobot.com/JgMdUvqfrA/801708697">Uptime Status</a>
 
-    <button class="btn-floating btn-large waves-effect waves-light purple" id="btn-back-to-top">☝️</button>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <button id="btn-back-to-top">☝️</button>
+    </section>
     <script>
-        M.AutoInit(document.body);
-
         let upButton = document.getElementById("btn-back-to-top");
         document.addEventListener("DOMContentLoaded", function () {
             upButton.addEventListener("click", backToTop);
@@ -144,11 +137,9 @@
         }
 
         function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-
 </body>
 
 </html>

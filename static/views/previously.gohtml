@@ -1,20 +1,21 @@
 {{ define "content" }}
-    <header class="container" style="background: 8% 63% url('/kd/photos/media/posts/202209/307335758_1087055425506207_5626686475219132492_n_18017510758432946.webp');">
-        <div id="timeline-header-content" class="padding center-align">
+<section>
+    <header>
+        <hgroup>
             <h1>{{ .Metadata.Title }}</h1>
-            <p>
-                {{ .Metadata.Description }}
-            </p>
-        </div>
+            <p>{{ .Metadata.Description }}</p>
+        </hgroup>
     </header>
+</section>
 
-    <div class="container padding">
-        {{ if not .Entries }}
-            <p>No entries found for today!</p>
-        {{ else }}
-        {{ template "timeline-paginated" $ }}
-        {{ end}}
-    </div>
 
-    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+<section>
+    {{ if not .Entries }}
+    <p>No entries found for today!</p>
+    {{ else }}
+    {{ template "timeline-paginated" $ }}
+    {{ end}}
+</section>
+
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
 {{ end }}

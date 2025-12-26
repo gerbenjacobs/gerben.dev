@@ -1,0 +1,59 @@
+{{ define "content" }}
+
+<section>
+    <h1>Poems</h1>
+    <p>
+        These poems are mostly from 2004-2007, when I was between 16 and 19 year old.<br>
+        I'm not super fond of most of these, they're very angsty emo teen writings, but still I'd like to archive
+        them.<br>
+    </p>
+    <p>
+        There are a handful that I think still hold up today, more than 20 years later, specifically if you consider
+        them as being written by a teenager in his second language.
+    </p>
+    <p>
+        <br>✨ Recommended / personal favorite
+        <br>✅ Not that bad / still like it
+        <br><small><b>Content warning:</b> suicide, self mutilation</small>
+    </p>
+</section>
+
+<section aria-hidden="true" class="poem-nav" style="height: 5rem;">
+    &nbsp;
+</section>
+
+<section class="grid">
+    <section>
+        <ul>
+            {{ range $k, $v := .Poems -}}
+            {{ if mod $k 39 -}}
+        </ul>
+    </section>
+    <section>
+        <ul>
+            {{ end -}}
+            <li>{{ if eq .Rating 2 }}✨ {{ end }}{{ if eq .Rating 1 }}✅ {{ end }}<a href="#{{ .Slug }}">{{ .Title }}</a>
+                ({{ .Lang }}, {{ .Date }})</li>
+            {{ end -}}
+        </ul>
+    </section>
+</section>
+
+<section class="grid">
+    {{ range $k, $v := .Poems -}}
+    {{ if mod $k 2 }}
+</section>
+<section class="grid">
+    {{ end -}}
+    <article class="h-entry" id="{{ .Slug }}" lang="{{ .Language }}">
+        <div class="e-content">
+            <hgroup>
+                <h2>{{ .Title }}</h2>
+                <p class="dt-published">{{ .Date }}</p>
+            </hgroup>
+            {{ .Content -}}
+        </div>
+    </article>
+    {{ end }}
+</section>
+{{ end }}

@@ -1,20 +1,19 @@
 {{ define "content" }}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <header class="padding">
-                <h1>{{ .Metadata.Title }} ({{ .TotalEntries }})</h1>
-                <p>{{ .Metadata.Description }}</p>
-                {{ if not .Featured }}
-                <a href="/photos/featured" class="btn">⭐ Show featured photos only</a>
-                {{ end }}
-            </header>
-        </div>
-    </div>
-    <div class="photogrid h-feed">
+    <hgroup>
+        <h1>{{ .Metadata.Title }} ({{ .TotalEntries }})</h1>
+        <p>{{ .Metadata.Description }}</p>
+    </hgroup>
+
+    {{ if not .Featured }}
+        <p>
+            <a href="/photos/featured" role="button">⭐ Show featured photos only</a>
+        </p>
+    {{ end }}
+
+    <section class="photogrid h-feed">
         <p class="p-name" hidden="hidden"><a class="u-url" href="/photos">Photos | gerben.dev</a></p>
         {{ template "photos-paginated" $ }}
-    </div>
-</div>
-<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    </section>
+
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 {{ end }}

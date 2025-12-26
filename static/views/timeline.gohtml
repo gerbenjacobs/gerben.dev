@@ -1,48 +1,49 @@
 {{ define "content" }}
 
-<header class="container" id="timeline-header">
-    <div id="timeline-header-content" class="padding center-align">
-        <h1>@gerben.dev &mdash; Timeline <a href="/timeline.xml">🛜</a></h1>
-        <p>A collection of all my notes, reposts and likes, sorted by date. <a href="/notes/94d0f11c31bcd357fdf7c6599476cecc">(Why?)</a></p>
+<header>
+    <hgroup>
+        <h1>@gerben.dev &mdash; Timeline <a href="/timeline.xml">(rss)</a></h1>
         <p>
-            You can follow this site on the Fediverse at <span style="color: rgb(102,51,153); background-color: rgba(102,51,153,.1);">@gerben.dev@gerben.dev</span>
-            <br>or on Bluesky at <span style="color: rgb(42,88,138); background-color: rgba(42,88,138,.1)">@gerben.dev</span>, thanks to <a href="https://fed.brid.gy">fed.brid.gy</a> 🩵.
-            <br><small>I do have a native Fediverse account, but try to use this site as my main source.</small>
+            A collection of all my notes, reposts and likes, sorted by date.
+            <a href="/notes/94d0f11c31bcd357fdf7c6599476cecc">(Why?)</a>
         </p>
-    </div>
+    </hgroup>
+    <p>
+        You can follow this site on the Fediverse at <b>@gerben.dev@gerben.dev</b>
+        <br>or on Bluesky at <b>@gerben.dev</b>, thanks to <a href="https://fed.brid.gy">fed.brid.gy</a> 🩵.
+        <br>
+        <small>I do have a native Fediverse account, but try to use this site as my main source.</small>
+    </p>
 </header>
 
-<div class="container padding h-feed">
-    <p class="p-name" hidden="hidden"><a class="u-url" href="/timeline">@gerben.dev &mdash; Timeline</a></p>
-    <div class="center-align">
-        <form method="get" action="/timeline">
-            <div class="switch">
-                <label>
-                Notes
+<section>
+    <form method="get" action="/timeline">
+        <fieldset role="group">
+            <label>
                 <input type="checkbox" {{ if .ShowNotes }}checked{{ end }} name="showNotes">
-                <span class="lever"></span>
-                </label>
-                <label>
-                Replies
+                Notes
+            </label>
+            <label>
                 <input type="checkbox" {{ if .ShowReplies }}checked{{ end }} name="showReplies">
-                <span class="lever"></span>
-                </label>
-                <label>
-                Reposts
+                Replies
+            </label>
+            <label>
                 <input type="checkbox" {{ if .ShowReposts }}checked{{ end }} name="showReposts">
-                <span class="lever"></span>
-                </label>
-                <label>
-                Likes
+                Reposts
+            </label>
+            <label>
                 <input type="checkbox" {{ if .ShowLikes }}checked{{ end }} name="showLikes">
-                <span class="lever"></span>
-                </label>
-                <button type="submit" class="btn">Filter</button>
-            </div>
-        </form>
-    </div>
+                Likes
+            </label>
+            <input type="submit" value="Filter">
+        </fieldset>
+    </form>
+</section>
+
+<section class="h-feed">
+    <p class="p-name" hidden="hidden"><a class="u-url" href="/timeline">@gerben.dev &mdash; Timeline</a></p>
     {{ template "timeline-paginated" $ }}
-</div>
+</section>
 
 <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 {{ end }}

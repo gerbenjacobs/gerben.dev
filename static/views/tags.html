@@ -1,56 +1,48 @@
 {{ define "content" }}
 
-<div class="container">
-    <div class="row padding">
-        <h1>Content for tag <span style="color: rebeccapurple;">#{{.Tag}}</span> ({{len .Entries}})</h1>
-
-        {{ if .Entries }}
-            {{ range .Entries }}
-            {{ template "tag-preview" . }}
-            {{ end }}
-        {{ else }}
-        <p>No tags found.</p>
-        {{ end }}
-
+<section>
+    <h1>Content for tag <span style="color: rebeccapurple;">#{{.Tag}}</span> ({{len .Entries}})</h1>
+    {{ if .Entries }}
+    {{ template "timeline-paginated" . }}
+    {{ else }}
+    <p>No tags found.</p>
+    {{ end }}
     </div>
-</div>
-<div class="container">
-        <div class="row padding">
-            <p>
-                You could try searching <b>{{.Tag}}</b> on &hellip;
-            </p>
-            <ul>
-                <li>
-                    🌎 <a href="https://google.com/search?q=site:gerben.dev {{.Tag}}">
-                        https://google.com/search?q=site:gerben.dev {{.Tag}}
-                    </a>
-                </li>
-                <li>
-                    🦆 <a href="https://duckduckgo.com/?q=site:gerben.dev {{.Tag}}">
-                        https://duckduckgo.com/?q=site:gerben.dev {{.Tag}}
-                    </a>
-                </li>
-                <li>
-                    🌳 <a href="https://ecosia.org/search?q=site:gerben.dev {{.Tag}}">
-                        https://ecosia.org/search?q=site:gerben.dev {{.Tag}}
-                    </a>
-                </li>
-                <li>
-                    🏷️ <a href="https://octothorp.es/explore?what=pages&o={{.Tag}}&match=fuzzy&limit=50">
-                        https://octothorp.es/~/{{.Tag}}
-                    </a>
-                </li>
-            </ul>
-        </div>
-</div>
+</section>
+<section>
+    <p>
+        You could try searching <b>{{.Tag}}</b> on &hellip;
+    </p>
+    <ul>
+        <li>
+            🌎 <a href="https://google.com/search?q=site:gerben.dev {{.Tag}}">
+                https://google.com/search?q=site:gerben.dev {{.Tag}}
+            </a>
+        </li>
+        <li>
+            🦆 <a href="https://duckduckgo.com/?q=site:gerben.dev {{.Tag}}">
+                https://duckduckgo.com/?q=site:gerben.dev {{.Tag}}
+            </a>
+        </li>
+        <li>
+            🌳 <a href="https://ecosia.org/search?q=site:gerben.dev {{.Tag}}">
+                https://ecosia.org/search?q=site:gerben.dev {{.Tag}}
+            </a>
+        </li>
+        <li>
+            🏷️ <a href="https://octothorp.es/explore?what=pages&o={{.Tag}}&match=fuzzy&limit=50">
+                https://octothorp.es/~/{{.Tag}}
+            </a>
+        </li>
+    </ul>
 
-<div class="container">
-    <div class="row padding">
-        <h2>All tags</h2>
-        {{ range $t, $d := .AllTags }}
-        <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }}&nbsp;({{$d.Count}}){{ end }}</a>
-        {{- end }}
-    </div>
-</div>
+</section>
+
+<section>
+    <h2>All tags</h2>
+    {{ range $t, $d := .AllTags }}
+    <a href="/tags/{{ $t }}">{{ $t }}{{ if gt $d.Count 1 }}&nbsp;({{$d.Count}}){{ end }}</a>
+    {{- end }}
+</section>
 
 {{ end }}

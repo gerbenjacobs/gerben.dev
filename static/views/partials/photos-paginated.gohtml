@@ -1,73 +1,85 @@
 {{ define "photos-paginated"}}
-{{ range .Entries }}
-<article class="padding h-entry">
-    <div style="height: 5em; line-height: 1em;">
-    <h6>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}} <a class="u-url p-name" href="{{ .Permalink }}">
-            {{- if .Title -}}
-            {{ .Title }}
-            {{- else if .Summary -}}
-            {{ printf "%.50s.." .Summary }}
-            {{- else -}}
-            Untitled
-            {{- end -}}
-        </a></h6>
-    🕰️
-    <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}" title="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
-    class="dt-published">
-        <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
-    </time>
-    {{ if .Geo -}}
-    <span>
-        <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">🗺️</a>
-    </span>
-    {{- end }}
-    {{ if .Tags -}}
-    <br>
-    🏷️
-    <small>
-    {{- if gt (len .Tags) 2 }}
-        {{ range slice .Tags 0 2 -}}
-        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
-        {{ end }}
-        +{{ len (slice .Tags 2) }} tags
-    {{- else }}
-        {{- range .Tags -}}
-        <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
-        {{ end -}}
-    {{- end }}
-    </small>
-    {{- end }}
-    </div>
-    <div class="e-content">
-    {{ if .IsVideo }}
-    <video class="home-photo responsive-video" autoplay loop muted>
-        {{ if .Thumbnail }}
-            <source class="u-video" src="{{.Thumbnail}}" type="video/mp4"/>
-        {{- else }}
-            <source class="u-video" src="{{.Content}}" type="video/mp4"/>
-        {{ end }}
-        Your browser does not support the video tag.
-    </video>
-    {{ else }}
-    <a href="{{ .Permalink }}" class="home-photo hoverable" style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page" aria-hidden="true"></a>
+    {{ range .Entries }}
+        <article class="h-entry" style="display: grid; align-content: space-between;">
+            <header>
+                <p>{{if .HasFlickrSyndication}}🖼️{{else if .IsVideo }}🎥{{ else }}{{ .Type.Emoji }}{{end}}
+                    <a class="u-url p-name" href="{{ .Permalink }}">
+                        {{- if .Title -}}
+                            {{ .Title }}
+                        {{- else if .Summary -}}
+                            {{ if gt (len .Summary) 35 }}
+                            {{ printf "%.35s.." .Summary }}
+                            {{ else }}
+                            {{ .Summary }}
+                            {{ end }}
+                        {{- else -}}
+                            Untitled
+                        {{- end -}}
+                    </a>
+                </p>
+                🕰️
+                <time datetime="{{ .PublishedAt.Format  "2006-01-02T15:04:05Z07:00" }}"
+                      data-tooltip="{{ .PublishedAt.Format "2006-01-02T15:04:05Z07:00" }}"
+                      class="dt-published">
+                    <small>{{- .PublishedAt.Format "Jan 02, 2006" -}}</small>
+                </time>
+                {{ if .Geo -}}
+                <span>
+                    <a href="https://www.openstreetmap.org/#map=15/{{ .Geo.Latitude }}/{{ .Geo.Longitude }}" target="_blank">🗺️</a>
+                </span>
+                {{- end }}
+                {{ if .Tags -}}
+                    <br>
+                    🏷️
+                    <small>
+                        {{- if gt (len .Tags) 2 }}
+                            {{ range slice .Tags 0 2 -}}
+                                <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
+                            {{ end }}
+                            +{{ len (slice .Tags 2) }} tags
+                        {{- else }}
+                            {{- range .Tags -}}
+                                <a href="/tags/{{.}}" rel="tag" class="p-category">#{{.}}</a>
+                            {{ end -}}
+                        {{- end }}
+                    </small>
+                {{- end }}
+            </header>
+            <main class="e-content">
+                {{ if .IsVideo }}
+                    <video class="home-photo responsive-video" autoplay loop muted>
+                        {{ if .Thumbnail }}
+                            <source class="u-video" src="{{.Thumbnail}}" type="video/mp4"/>
+                        {{- else }}
+                            <source class="u-video" src="{{.Content}}" type="video/mp4"/>
+                        {{ end }}
+                        Your browser does not support the video tag.
+                    </video>
+                {{ else }}
+                    <a href="{{ .Permalink }}" class="home-photo"
+                       style="background-image: url({{ .Thumbnail }});" aria-label="Link to photo page"
+                       aria-hidden="true" tabindex="-1"></a>
+                {{ end }}
+            </main>
+        </article>
     {{ end }}
-    </div>
-</article>
-{{ end }}
     {{ if .NextPage }}
-    <div hx-get="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}" hx-trigger="revealed" hx-swap="outerHTML" style="text-align: center;">
-        <a href="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}">Next page</a>
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
+        <div hx-get="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}" hx-trigger="revealed"
+             hx-swap="outerHTML" style="text-align: center;">
+            <a href="/photos/{{ if .Featured }}featured{{ end }}?page={{ .NextPage }}">Next page</a>
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     {{ end }}
 {{ end }}

@@ -1,16 +1,15 @@
 {{ define "content" }}
 
 <div class="container">
-    <div class="row">
-        <div class="col padding">
-            <h1>Sitemap</h1>
-            <p>
-                This sitemap is (partially) manually generated. There's also an <a href="/sitemap.xml">XML version</a>.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col l5 padding">
+    <hgroup>
+        <h1>Sitemap</h1>
+        <p>
+            This sitemap is (partially) manually generated. There's also an <a href="/sitemap.xml">XML version</a>.
+        </p>
+    </hgroup>
+
+    <div class="grid">
+        <section>
             <h2>Navbar pages</h2>
             <p>
                 These pages are also available in the navigation bar.
@@ -24,19 +23,29 @@
                 These pages are standalone endpoints, and are not necessarily listed.
             </p>
             <ul>
-                <li><a href="/photos/featured">/photos/featured</a> - A subset of my photos that I liked/favourited/featured.</li>
+                <li><a href="/photos/featured">/photos/featured</a> - A subset of my photos that I
+                    liked/favourited/featured.
+                </li>
                 <li><a href="/projects">/projects</a> - Some of the projects, tools and libraries I have worked on.</li>
-                <li><a href="/poems">/poems</a> - This page lists my poems, from 2004 to 2007, written by a teenager in his second language.</li>
+                <li><a href="/poems">/poems</a> - This page lists my poems, from 2004 to 2007, written by a teenager in
+                    his second language.
+                </li>
                 <li><a href="/listening">/listening</a> - This page lists what I'm currently listening to.</li>
-                <li><a href="/collection">/collection</a> - Sometimes when my kids and I play, I collect things, achievements, and other stuff. This page lists them.</li>
-                <li><a href="/previously">/previously</a> - A look back at what I was posting on this day in previous years.</li>
+                <li><a href="/collection">/collection</a> - Sometimes when my kids and I play, I collect things,
+                    achievements, and other stuff. This page lists them.
+                </li>
+                <li><a href="/previously">/previously</a> - A look back at what I was posting on this day in previous
+                    years.
+                </li>
             </ul>
 
             <h2>Feeds</h2>
             <ul>
                 <li><a href="/feed.xml">/feed.xml</a> - The main RSS feed for all posts.</li>
                 <li><a href="/photos.xml">/photos.xml</a> - An RSS feed for the photos.</li>
-                <li><a href="/timeline.xml">/timeline.xml</a> - An RSS feed for the timeline (notes, replies, likes, reposts).</li>
+                <li><a href="/timeline.xml">/timeline.xml</a> - An RSS feed for the timeline (notes, replies, likes,
+                    reposts).
+                </li>
             </ul>
 
             <h2>Text files</h2>
@@ -46,18 +55,21 @@
             </ul>
 
             <p class="center-align">
-                <img class="responsive-img" src="/images/kurzgesagt-blue-dino.webp" width="304" height="200" loading="lazy"
-                alt="An animated blue cartoon style dragon, stomping on the ground, growling and blowing steam out its nose"
-                title="Blue dragon by Kurzgesagt, from Giphy">
-                <br><small>This dinosaur hates 'too much' whitespace. <br>He won't clarify how much is too much..</small>
+                <img class="responsive-img" src="/images/kurzgesagt-blue-dino.webp" width="304" height="200"
+                     loading="lazy"
+                     alt="An animated blue cartoon style dragon, stomping on the ground, growling and blowing steam out its nose"
+                     title="Blue dragon by Kurzgesagt, from Giphy">
+                <br><small>This dinosaur hates 'too much' whitespace. <br>He won't clarify how much is too
+                much..</small>
             </p>
-        </div>
-        <div class="col l7 padding">
+        </section>
+        <section>
             <h2>Posts ({{ index .Counts "posts" }})</h2>
             {{ if .Posts -}}
             <ul>
                 {{- range .Posts }}
-                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} {{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                <li>{{ .PublishedAt.Format "Jan 02, 2006" }} {{ .Type.Emoji }} <a href="{{ .Permalink }}">{{ .Title
+                    }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -83,7 +95,9 @@
             {{ if .Notes -}}
             <ul>
                 {{- range .Notes }}
-                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{ .ContentStripped 130 }}</li>
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{
+                    .ContentStripped 130 }}
+                </li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -93,7 +107,8 @@
             <ul>
                 {{- range .Likes }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    {{ .Type.Emoji }} <a target="_blank" href="{{ .LikeOf }}" style="word-break: break-all;">{{ .LikeOf }}</a></li>
+                    {{ .Type.Emoji }} <a target="_blank" href="{{ .LikeOf }}" style="word-break: break-all;">{{ .LikeOf
+                        }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -103,7 +118,8 @@
             <ul>
                 {{- range .Reposts }}
                 <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a>
-                    {{ .Type.Emoji }} <a target="_blank" href="{{ .RepostOf }}" style="word-break: break-all;">{{ .RepostOf }}</a></li>
+                    {{ .Type.Emoji }} <a target="_blank" href="{{ .RepostOf }}" style="word-break: break-all;">{{
+                        .RepostOf }}</a></li>
                 {{- end }}
             </ul>
             {{- end }}
@@ -112,11 +128,13 @@
             {{ if .Replies -}}
             <ul>
                 {{- range .Replies }}
-                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{ .ContentStripped 130 }}</li>
+                <li><a href="{{ .Permalink }}">{{ .PublishedAt.Format "Jan 02, 2006" }}</a> {{ .Type.Emoji }} {{
+                    .ContentStripped 130 }}
+                </li>
                 {{- end }}
             </ul>
             {{- end }}
-        </div>
+        </section>
     </div>
 </div>
 

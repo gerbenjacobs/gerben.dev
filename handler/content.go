@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log/slog"
 	"net/http"
+	"os"
 	"slices"
 	"sort"
 	"strconv"
@@ -12,6 +13,8 @@ import (
 	"github.com/dustin/go-humanize"
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
+	"github.com/gosimple/slug"
+	"go.yaml.in/yaml/v3"
 )
 
 const PhotosPerPage = 12
@@ -100,8 +103,8 @@ func (h *Handler) indexPage(w http.ResponseWriter, r *http.Request) {
 		Photos:   kindyLimit(photos, 12),
 		Entries:  kindyLimit(entries, 10),
 	}
-	if len(songs) >= 3 {
-		data.Songs = songs[:3]
+	if len(songs) >= 5 {
+		data.Songs = songs[:5]
 	}
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
@@ -290,6 +293,72 @@ func (h *Handler) previously(w http.ResponseWriter, r *http.Request) {
 		Author:  author,
 		Entries: entries,
 	}
+	if err := t.Execute(w, data); err != nil {
+		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
+	}
+}
+
+type Poem struct {
+	Title      string
+	CustomSlug string `yaml:"custom_slug"`
+	Content    template.HTML
+	Date       string
+	Language   string
+	Rating     int
+}
+
+func (p Poem) Slug() string {
+	if p.CustomSlug != "" {
+		return p.CustomSlug
+	}
+	return slug.Make(p.Title)
+}
+func (p Poem) Lang() string {
+	if p.Language == "nl" {
+		return "Dutch"
+	}
+	return "English"
+}
+
+func (h *Handler) poems(w http.ResponseWriter, r *http.Request) {
+	pageFile := "static/views/poems.gohtml"
+	t := template.New("baseLayout.html").Funcs(template.FuncMap{"mod": func(i, j int) bool { return i > 0 && i%j == 0 }})
+	t, err := t.ParseFiles(append(layoutFiles, pageFile)...)
+	if err != nil {
+		slog.Error("failed to parse template files", "err", err)
+		http.Error(w, "failed to parse template files: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	type pageData struct {
+		Metadata internal.Metadata
+		Poems    []Poem
+	}
+	data := pageData{
+		Metadata: internal.Metadata{
+			Env:         Env,
+			Title:       "Poems",
+			Description: "My poems, mostly from my teenage years..",
+			Permalink:   "/poems",
+			SourceLink:  codeSourcePath + pageFile,
+			Image:       "/kd/photos/PXL_20250427_110359379.jpg",
+		},
+		Poems: nil,
+	}
+
+	// Load poems
+	yamlFile, err := os.Open("content/poem.yaml")
+	if err != nil {
+		slog.Error("failed to read poems yaml file", "err", err)
+		http.Error(w, "failed to read poems yaml file", http.StatusInternalServerError)
+		return
+	}
+	if err := yaml.NewDecoder(yamlFile).Decode(&data.Poems); err != nil {
+		slog.Error("failed to decode poems yaml file", "err", err)
+		http.Error(w, "failed to decode poems yaml file", http.StatusInternalServerError)
+		return
+	}
+
 	if err := t.Execute(w, data); err != nil {
 		http.Error(w, "failed to execute template:"+err.Error(), http.StatusInternalServerError)
 	}
