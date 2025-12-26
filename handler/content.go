@@ -341,6 +341,7 @@ func (h *Handler) poems(w http.ResponseWriter, r *http.Request) {
 			Description: "My poems, mostly from my teenage years..",
 			Permalink:   "/poems",
 			SourceLink:  codeSourcePath + pageFile,
+			Image:       "/kd/photos/PXL_20250427_110359379.jpg",
 		},
 		Poems: nil,
 	}
