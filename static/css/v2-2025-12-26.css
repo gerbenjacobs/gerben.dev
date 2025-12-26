@@ -1,125 +1,129 @@
- :root {
-     --pico-font-family: 'Atkinson Hyperlegible', cursive;
- }
+:root {
+    --pico-font-family: 'Atkinson Hyperlegible', cursive;
+}
 
- @media (min-width: 1536px) {
-     .container {
-         max-width: 1200px;
-     }
- }
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1200px;
+    }
+}
 
- #me img {
-     width: 8em;
-     border-radius: 4em;
-     margin-bottom: 1em;
- }
+#me img {
+    width: 8em;
+    border-radius: 4em;
+    margin-bottom: 1em;
+}
 
- .timeline-author {
-     width: 32px;
-     border-radius: 50%;
- }
+.timeline-author {
+    width: 32px;
+    border-radius: 50%;
+}
 
- .photogrid {
-     display: grid;
-     grid-gap: 10px;
-     grid-template-columns: repeat(auto-fill, minmax(270px, auto));
- }
+.photogrid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, auto));
+}
 
- .home-photo {
-     position: relative;
-     float: left;
-     width: 100%;
-     height: 225px;
-     background-position: 50% 50%;
-     background-size: cover;
- }
+.home-photo {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 225px;
+    background-position: 50% 50%;
+    background-size: cover;
+}
 
- /* First anchor in .home-photo */
- .home-photo a {
-     position: absolute;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-color: rgba(255, 255, 255, 0.7);
-     padding: 0.2em;
-     color: #000;
- }
+/* First anchor in .home-photo */
+.home-photo a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.2em;
+    color: #000;
+}
 
- #space {
-     background: #121212 url('/images/stars.gif');
-     color: #ffffff;
-     padding: 2em;
-     border-radius: 1em;
-     text-align: center;
- }
+#space {
+    background: #121212 url('/images/stars.gif');
+    color: #ffffff;
+    padding: 2em;
+    border-radius: 1em;
+    text-align: center;
+}
 
- .poem-nav {
-     color: darkblue;
-     font-weight: bolder;
-     background-image: linear-gradient(65.9deg, rgba(85, 228, 224, 1) 5.5%, rgba(75, 68, 224, 0.74) 54.2%, rgba(64, 198, 238, 1) 55.2%, rgba(177, 36, 224, 1) 98.4%);
- }
+.poem-nav {
+    color: darkblue;
+    font-weight: bolder;
+    background-image: linear-gradient(65.9deg, rgba(85, 228, 224, 1) 5.5%, rgba(75, 68, 224, 0.74) 54.2%, rgba(64, 198, 238, 1) 55.2%, rgba(177, 36, 224, 1) 98.4%);
+}
 
- #btn-back-to-top {
-     position: fixed;
-     bottom: 20px;
-     right: 20px;
-     display: none;
-     opacity: 0.7;
- }
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    opacity: 0.7;
+}
 
- #btn-back-to-top:hover {
-     opacity: 1.0;
- }
+#btn-back-to-top:hover {
+    opacity: 1.0;
+}
 
- .collected {
-     position: relative;
-     width: 100%;
-     height: 960px;
-     background: url("/kd/photos/PXL_20240911_124800628.jpg") no-repeat center center;
-     overflow: auto;
- }
+.collected {
+    position: relative;
+    width: 100%;
+    height: 960px;
+    background: url("/kd/photos/PXL_20240911_124800628.jpg") no-repeat center center;
+    overflow: auto;
+}
 
- .center,
- .center-align {
-     text-align: center;
- }
+.center,
+.center-align {
+    text-align: center;
+}
 
- .hoverable:hover {
-     box-shadow: 3px 3px 11px 1px var(--pico-primary-hover);
-     cursor: zoom-in;
- }
+.hoverable:hover {
+    box-shadow: 3px 3px 11px 1px var(--pico-primary-hover);
+    cursor: zoom-in;
+}
 
- figure {
-     margin: 1em;
- }
+figure {
+    margin: 1em;
+}
 
- blockquote>p:first-of-type {
-     margin: 0;
- }
+video {
+    width: 100%;
+}
 
- a[href^="http"]::after {
-     content: " ↗";
- }
+blockquote>p:first-of-type {
+    margin: 0;
+}
 
- a[href^="https://gerben.dev"]::after {
-     content: "";
- }
+a[href^="http"]::after {
+    content: " ↗";
+}
 
- @media (max-width: 768px) {
+a[href^="https://gerben.dev"]::after {
+    content: "";
+}
 
-     /* Put all collected items under eachother */
-     .collected * {
-         position: relative !important;
-         top: inherit !important;
-         left: inherit !important;
-         right: inherit !important;
-     }
+@media (max-width: 768px) {
 
-     .mobile .hide-on-mobile {
-         display: none;
-     }
+    /* Put all collected items under eachother */
+    .collected * {
+        position: relative !important;
+        top: inherit !important;
+        left: inherit !important;
+        right: inherit !important;
+    }
 
-     figure {
-         margin: 0;
-     }
- }
+    .mobile .hide-on-mobile {
+        display: none;
+    }
+
+    figure {
+        margin: 0;
+    }
+}
