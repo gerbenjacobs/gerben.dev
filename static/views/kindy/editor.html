@@ -170,7 +170,7 @@
             </label>
             <label>
                 Publishing date
-                <input id="photo-publishedat" type="datetime-local" name="publishedat" aria-label="Datetime local">
+                <input id="photo-publishedat" type="datetime-local" name="publishedat" aria-label="Datetime local" step="1">
                 <small>By default, we'll set the date when you submit the form.</small>
             </label>
             <fieldset class="grid">
@@ -260,7 +260,7 @@
                 document.querySelector('input[name="longitude"]').value = gps.longitude.toFixed(7)
             }
             let exif = await window.exifr.parse(file)
-            photoPublishedAt.value = exif.DateTimeOriginal.toISOString().slice(0, 16)
+            photoPublishedAt.value = exif.DateTimeOriginal.toISOString().slice(0, 19)
 
             preview.src = await window.exifr.thumbnailUrl(file)
         })

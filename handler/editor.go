@@ -291,7 +291,7 @@ func postPhotos(req *http.Request) (*kindy.Kindy, error) {
 
 	publishedAt := time.Now()
 	if data.Get("publishedat") != "" {
-		pa, err := time.Parse("2006-01-02T15:04", data.Get("publishedat"))
+		pa, err := time.Parse("2006-01-02T15:04:05", data.Get("publishedat"))
 		if err != nil {
 			return nil, err
 		}
