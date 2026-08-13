@@ -5,12 +5,12 @@ import (
 	"log/slog"
 	"net/http"
 	"strings"
+	"time"
 
 	local "github.com/gerbenjacobs/gerben.dev"
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/mmcdole/gofeed"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
-	"golang.org/x/time/rate"
 )
 
 const (
@@ -123,14 +123,11 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
 }
 
-var limiter = rate.NewLimiter(1, 3) // 1 requests per second, with a burst of 3 requests
+var rl = internal.NewRateLimiter(1000, 1*time.Second)
+
 func ratelimiter(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if limiter.Allow() == false {
-			http.Error(w, http.StatusText(429), http.StatusTooManyRequests)
-			return
-		}
-
+		<-rl.C
 		next.ServeHTTP(w, r)
 	})
 }
