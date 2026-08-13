@@ -227,14 +227,15 @@ func (h *Handler) apiHabbo(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "missing hotel parameter", http.StatusBadRequest)
 		return
 	}
-	query := r.PathValue("query")
+	query := r.PathValue("route")
 	if query == "" {
 		http.Error(w, "missing query parameter", http.StatusBadRequest)
 		return
 	}
 	queryFields := r.URL.Query()
 	// use this method as a proxy to a real hotel
-	url := fmt.Sprintf("https://habbo.%s/api/public/%s?%s", hotel, query, queryFields.Encode())
+	url := fmt.Sprintf("https://habbo.%s/%s?%s", hotel, query, queryFields.Encode())
+	slog.Debug("proxying habbo request", "url", url)
 	resp, err := http.Get(url)
 	if err != nil {
 		slog.Error("failed to fetch habbo data", "err", err)

@@ -110,7 +110,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("POST /api/nextprevious", otelhttp.WithRouteTag("/api/nextprevious", http.HandlerFunc(h.apiNextPrevious)))
 	r.Handle("POST /api/thumbsup", otelhttp.WithRouteTag("/api/thumbsup", http.HandlerFunc(h.apiThumbsUp)))
 	r.Handle("GET /api/thumbsup/count", otelhttp.WithRouteTag("/api/thumbsup/count", http.HandlerFunc(h.apiThumbsUpCount)))
-	r.Handle("GET /api/habbo/{hotel}/{query}", otelhttp.WithRouteTag("/api/habbo/{hotel}/{query}", http.HandlerFunc(h.apiHabbo)))
+	r.Handle("GET /api/habbo/{hotel}/{route...}", otelhttp.WithRouteTag("/api/habbo/{hotel}/{route...}", http.HandlerFunc(h.apiHabbo)))
 
 	h.mux = internal.LogWriter(r)
 	return h
