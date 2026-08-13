@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"html/template"
+	"io"
 	"log/slog"
 	"net/http"
 	"net/url"
@@ -217,5 +218,35 @@ func (h *Handler) apiThumbsUpCount(w http.ResponseWriter, r *http.Request) {
 		Count: count,
 	}); err != nil {
 		slog.Error("failed to encode response data", "err", err)
+	}
+}
+
+func (h *Handler) apiHabbo(w http.ResponseWriter, r *http.Request) {
+	hotel := r.PathValue("hotel")
+	if hotel == "" {
+		http.Error(w, "missing hotel parameter", http.StatusBadRequest)
+		return
+	}
+	query := r.PathValue("query")
+	if query == "" {
+		http.Error(w, "missing query parameter", http.StatusBadRequest)
+		return
+	}
+	queryFields := r.URL.Query()
+	// use this method as a proxy to a real hotel
+	url := fmt.Sprintf("https://habbo.%s/api/public/%s?%s", hotel, query, queryFields.Encode())
+	resp, err := http.Get(url)
+	if err != nil {
+		slog.Error("failed to fetch habbo data", "err", err)
+		http.Error(w, "failed to fetch habbo data", http.StatusInternalServerError)
+		return
+	}
+	defer resp.Body.Close()
+	w.Header().Set("Content-Type", resp.Header.Get("Content-Type"))
+	_, err = io.Copy(w, resp.Body)
+	if err != nil {
+		slog.Error("failed to copy response body", "err", err)
+		http.Error(w, "failed to copy response body", http.StatusInternalServerError)
+		return
 	}
 }
