@@ -10,6 +10,7 @@ import (
 	"github.com/gerbenjacobs/gerben.dev/internal"
 	"github.com/mmcdole/gofeed"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+	"golang.org/x/time/rate"
 )
 
 const (
@@ -110,7 +111,7 @@ func New(env string, dependencies Dependencies) *Handler {
 	r.Handle("POST /api/nextprevious", otelhttp.WithRouteTag("/api/nextprevious", http.HandlerFunc(h.apiNextPrevious)))
 	r.Handle("POST /api/thumbsup", otelhttp.WithRouteTag("/api/thumbsup", http.HandlerFunc(h.apiThumbsUp)))
 	r.Handle("GET /api/thumbsup/count", otelhttp.WithRouteTag("/api/thumbsup/count", http.HandlerFunc(h.apiThumbsUpCount)))
-	r.Handle("GET /api/habbo/{hotel}/{route...}", otelhttp.WithRouteTag("/api/habbo/{hotel}/{route...}", http.HandlerFunc(h.apiHabbo)))
+	r.Handle("GET /api/habbo/{hotel}/{route...}", ratelimiter(otelhttp.WithRouteTag("/api/habbo/{hotel}/{route...}", http.HandlerFunc(h.apiHabbo))))
 
 	h.mux = internal.LogWriter(r)
 	return h
@@ -120,6 +121,18 @@ func New(env string, dependencies Dependencies) *Handler {
 // this keeps the underlying mux private
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
+}
+
+var limiter = rate.NewLimiter(1, 1) // 5 requests per second
+func ratelimiter(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if limiter.Allow() == false {
+			http.Error(w, http.StatusText(429), http.StatusTooManyRequests)
+			return
+		}
+
+		next.ServeHTTP(w, r)
+	})
 }
 
 func redirect(url string) func(w http.ResponseWriter, r *http.Request) {

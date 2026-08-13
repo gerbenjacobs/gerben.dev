@@ -242,6 +242,15 @@ func (h *Handler) apiHabbo(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "failed to fetch habbo data", http.StatusInternalServerError)
 		return
 	}
+	// mock respsone headers to mimic a real user agent, this is needed for some habbo endpoints to work
+	resp.Header.Set("Access-Control-Allow-Origin", "*")
+	resp.Header.Set("Accept", "*/*")
+	// resp.Header.Set("Accept-Encoding", "gzip, deflate, br")
+	resp.Header.Set("Accept-Language", "en-US,en;q=0.9")
+	// resp.Header.Set("Cache-Control", "no-cache")
+	// resp.Header.Set("Connection", "keep-alive")
+	// resp.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+	resp.Header.Set("User-Agent", "Habbowidgets/1.0-ratelimited")
 	defer resp.Body.Close()
 	w.Header().Set("Content-Type", resp.Header.Get("Content-Type"))
 	_, err = io.Copy(w, resp.Body)
