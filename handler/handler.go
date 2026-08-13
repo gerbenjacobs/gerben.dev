@@ -123,7 +123,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
 }
 
-var limiter = rate.NewLimiter(1, 1) // 5 requests per second
+var limiter = rate.NewLimiter(1, 3) // 1 requests per second, with a burst of 3 requests
 func ratelimiter(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if limiter.Allow() == false {
