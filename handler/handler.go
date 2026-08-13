@@ -123,7 +123,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.mux.ServeHTTP(w, r)
 }
 
-var rl = internal.NewRateLimiter(1000, 1*time.Second)
+var rl = internal.NewRateLimiter(60, 1*time.Second)
 
 func ratelimiter(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
