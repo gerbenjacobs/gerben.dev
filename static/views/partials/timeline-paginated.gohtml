@@ -42,6 +42,9 @@
         {{ if eq .Type "like" "repost" "reply" -}}
         <div hx-trigger="revealed" hx-post="/api/opengraph?url={{ .LikeOf }}{{ .RepostOf }}{{ .ReplyTo }}"></div>
         {{- end }}
+        {{ if eq .Type "post" }}
+            <h3>{{ .Title }}</h3>
+        {{ end }}
         {{ if .Summary }}
         <p>
             {{ .Summary }}
