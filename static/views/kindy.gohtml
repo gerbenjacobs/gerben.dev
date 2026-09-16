@@ -168,8 +168,9 @@
     <footer>
         <div id="next-previous" style="margin-bottom: 1em;"></div>
         <a class="u-bridgy-fed" href="https://fed.brid.gy" hidden="hidden"></a>
+        <em>Appreciation button:</em>
         <button type="submit" class="btn" id="thumbsup" data-permalink="{{ .Permalink }}">
-            👍 <span id="thumbsup-count"></span>
+            {{ if .Emoji }}{{ .Emoji }}{{ else }}👍{{ end }} <span id="thumbsup-count"></span>
         </button>
     </footer>
     {{ if eq .Metadata.Env "dev" }}

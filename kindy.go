@@ -104,6 +104,7 @@ type Kindy struct {
 	ReplyTo     string             `json:"replyTo,omitempty"`
 	Geo         *KindyGeo          `json:"geo,omitempty"`
 	Tags        []string           `json:"tags,omitempty"`
+	Emoji       string             `json:"emoji,omitempty"`
 }
 
 type KindyAuthor struct {
