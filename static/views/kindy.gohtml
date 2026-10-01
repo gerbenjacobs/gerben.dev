@@ -248,7 +248,7 @@
                 const prevLink = document.createElement('a');
                 prevLink.rel = 'prev';
                 prevLink.href = data.previous;
-                prevLink.innerHTML = '<span aria-hidden="true">←</span> Previous';
+                prevLink.innerHTML = '<span aria-hidden="true">←</span> Next';
                 container.appendChild(prevLink);
             }
             if (data.next) {
@@ -259,7 +259,7 @@
                 const nextLink = document.createElement('a');
                 nextLink.rel = 'next';
                 nextLink.href = data.next;
-                nextLink.innerHTML = 'Next <span aria-hidden="true">→</span>';
+                nextLink.innerHTML = 'Previous <span aria-hidden="true">→</span>';
                 container.appendChild(nextLink);
             }
         }
