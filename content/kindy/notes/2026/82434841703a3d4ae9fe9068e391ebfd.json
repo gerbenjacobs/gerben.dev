@@ -1,0 +1,7 @@
+{
+    "type": "note",
+    "markdown": "Two years ago I wrote a #Golang guide (tutorial) on how Go interacts with stdin, stdout and the #Unix piping philosophy. It also has a small section on cross-compiling if you're interested. This is meant for beginner to intermediate Go developers or system engineers that want to learn about making small tools.\r\n\r\nhttps://gerben.dev/posts/using-unix-pipes-with-go",
+    "publishedAt": "2026-10-05T11:21:17.791065734+02:00",
+    "slug": "2026/82434841703a3d4ae9fe9068e391ebfd",
+    "permalink": "/notes/82434841703a3d4ae9fe9068e391ebfd"
+}
