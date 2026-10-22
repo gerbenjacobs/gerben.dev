@@ -110,7 +110,7 @@ blockquote>p:first-of-type {
 }
 
 a[href^="http"]::after {
-    content: " ↗";
+    content: "↗";
 }
 
 a[href^="https://gerben.dev"]::after {
