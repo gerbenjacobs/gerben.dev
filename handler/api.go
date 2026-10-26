@@ -235,7 +235,6 @@ func (h *Handler) apiHabbo(w http.ResponseWriter, r *http.Request) {
 	queryFields := r.URL.Query()
 	// use this method as a proxy to a real hotel
 	url := fmt.Sprintf("https://habbo.%s/%s?%s", hotel, query, queryFields.Encode())
-	slog.Debug("proxying habbo request", "url", url)
 	resp, err := http.Get(url)
 	if err != nil {
 		slog.Error("failed to fetch habbo data", "err", err)
