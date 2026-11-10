@@ -1,0 +1,7 @@
+{
+    "type": "note",
+    "markdown": "Migrated two sites to a new VPS. One left to do.. but it's database is too big.. and really.. it should be rewritten in Go 🥲",
+    "publishedAt": "2026-11-10T19:16:47.125573164Z",
+    "slug": "2026/ee1b5675179dd52ecddd6be5a88de496",
+    "permalink": "/notes/ee1b5675179dd52ecddd6be5a88de496"
+}
